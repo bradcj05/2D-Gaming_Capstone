@@ -6,9 +6,10 @@ public class Bullet : MonoBehaviour
 {
 
      //TODO: Update to provide bullet functionality
-     void OnCollisionEnter2D(Collision2D collision)
+     void OnTriggerEnter2D(Collider2D collision)
      {
           //collision.gameObject
+          Debug.Log(collision.name);
           Destroy(gameObject);
      }
 
