@@ -7,7 +7,7 @@ public class PlayerGunFire : MonoBehaviour
 
      public Transform gun;
      public GameObject shellType;
-     public float speed = 20f;
+     public float speed;
 
     // Update is called once per frame
     void Update()
