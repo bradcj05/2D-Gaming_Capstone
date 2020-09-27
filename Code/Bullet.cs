@@ -11,7 +11,11 @@ public class Bullet : MonoBehaviour
      {
           Debug.Log(collision.name);
           //TODO add bullet damage and hit effect
-
+          Enemy e = collision.GetComponent<Enemy>();
+          if(e != null)
+          {
+               e.TakeDamage(damageValue);
+          }
           Destroy(gameObject);
      }
 
