@@ -5,6 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
      public int damageValue;
+     
+     //Need to find out how to implement this.
+     public int penetration;
+     public float degregation;
 
      //TODO: Update to provide bullet functionality
      void OnTriggerEnter2D(Collider2D collision)
