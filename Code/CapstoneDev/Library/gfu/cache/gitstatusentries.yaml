@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 6
+  lastUpdatedAtString: 2020-10-16T18:06:08.105-04:00
+  initializedAtString: 2020-10-16T18:06:08.105-04:00
+  entries:
+  - path: Code\CapstoneDev\Library\ArtifactDB
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\Artifacts\4f\4f35c3d0f1e71309922f49053d368f59
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\4f\4f35c3d0f1e71309922f49053d368f59
+    projectPath: Library\Artifacts\4f\4f35c3d0f1e71309922f49053d368f59
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Code\CapstoneDev\Library\Artifacts\e9\e93b5ea4a9fa35556a58ca50d0281251
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e9\e93b5ea4a9fa35556a58ca50d0281251
+    projectPath: Library\Artifacts\e9\e93b5ea4a9fa35556a58ca50d0281251
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Code\CapstoneDev\Library\EditorInstance.json
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\EditorInstance.json
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Code\CapstoneDev\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Code\CapstoneDev\Library\gfu\cache\repoinfo.yaml
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Code\CapstoneDev\Library\PackageManager\ProjectCache.bin
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\PackageManager\ProjectCache.bin
+    projectPath: Library\PackageManager\ProjectCache.bin
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\SourceAssetDB
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\SourceAssetDB
+    projectPath: Library\SourceAssetDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\StateCache\MainStageHierarchy\8f\8fd65426490f636435c901d65ce7ed24.json
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\MainStageHierarchy\8f\8fd65426490f636435c901d65ce7ed24.json
+    projectPath: Library\StateCache\MainStageHierarchy\8f\8fd65426490f636435c901d65ce7ed24.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Temp\__Backupscenes\0.backup
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\__Backupscenes\0.backup
+    projectPath: Temp\__Backupscenes\0.backup
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Code\CapstoneDev\Temp\UnityLockfile
+    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityLockfile
+    projectPath: Temp\UnityLockfile
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
