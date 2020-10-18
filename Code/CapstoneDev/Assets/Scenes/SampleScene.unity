@@ -915,16 +915,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1483424404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708499c71b3d3ca41b0156224b6f47a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 56d4be8b164fedc4480ddfa968c407fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  defense: 4
+  defense: 0
   hb: {fileID: 1390211283}
   gun: {fileID: 1247062413}
   shellType: {fileID: 8977783968469312899, guid: 8806a5e58a00b1e4b91822b3b42ecc84,
     type: 3}
-  bulletSpeed: 100
+  bulletSpeed: 5
   waitTime: 5
 --- !u!1 &1585319015
 GameObject:

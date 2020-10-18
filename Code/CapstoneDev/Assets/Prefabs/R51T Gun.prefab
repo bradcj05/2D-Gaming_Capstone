@@ -48,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -99,6 +100,10 @@ MonoBehaviour:
   shellType: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
     type: 3}
   speed: 20
+  fireRate: 500
+  spread: 0
+  powerBuff: 0.1
+  speedBuff: 0.1
 --- !u!1 &7681439109548903377
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
      public Rigidbody2D rig;
      Vector2 movement;
 
-     public int health;
-     public int defense;
+     public float health;
+     public float defense;
      public HealthBar hb;
      //Add death animation
 
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
      }
 
      //Take damage
-     public void TakeDamage(int damage)
+     public void TakeDamage(float damage)
      {
           if ((damage - defense) > 0)
           {

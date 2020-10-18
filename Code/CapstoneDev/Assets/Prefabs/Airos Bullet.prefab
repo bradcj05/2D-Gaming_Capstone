@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b54d1b000f5f814197161d7806ba9d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageValue: 5
-  penetration: 0
-  degregation: 0
+  power: 5
+  speed: 5
+  penetration: 5
+  deterioration: 5

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-     public int damageValue;
-
-     //Need to find out how to implement this.
-     public int penetration;
-     public float degregation;
+     public float power;
+     public float speed;
+     public float penetration;
+     public float deterioration; //ratio/second
 
      //TODO: Update to provide bullet functionality
      void OnTriggerEnter2D(Collider2D collision)
@@ -18,8 +17,8 @@ public class EnemyBullet : MonoBehaviour
           Player p = collision.GetComponent<Player>();
           if (p != null)
           {
-               p.TakeDamage(damageValue);
+               p.TakeDamage(power);
+               Destroy(gameObject);
           }
-          Destroy(gameObject);
      }
 }

@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-     public int damageValue;
+     public float power;
+     public float speed;
+     public float penetration;
+     public float deterioration; //ratio/second
+     float time = 0;
 
-     //Need to find out how to implement this.
-     public int penetration;
-     public float degregation;
+     void Update()
+     {
+          time += Time.deltaTime;
+     }
 
-     //TODO: Update to provide bullet functionality
      void OnTriggerEnter2D(Collider2D collision)
      {
           Debug.Log(collision.name);
-          //TODO add bullet damage and hit effect
+          //TODO add hit effect
           Enemy e = collision.GetComponent<Enemy>();
           if(e != null)
           {
-               e.TakeDamage(damageValue);
+               //Fix
+               e.TakeDamage(power);
+               //e.TakeDamage(power * Math.Pow(1 - deterioration * time, 2) - Math.Max(e.defense - penetration, 0));
+               Destroy(gameObject);
           }
-          Destroy(gameObject);
      }
 
 }

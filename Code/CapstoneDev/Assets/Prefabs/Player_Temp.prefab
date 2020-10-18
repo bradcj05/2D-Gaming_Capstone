@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rig: {fileID: 6973898103469409745}
-  health: 250
+  health: 10
   defense: 4
   hb: {fileID: 0}
 --- !u!1001 &3424239020026447048
@@ -358,6 +358,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6973898103469409756}
     m_Modifications:
+    - target: {fileID: 5365192277569748272, guid: 9ac853685815c8b46a0e25e1b144d1b8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_Name
