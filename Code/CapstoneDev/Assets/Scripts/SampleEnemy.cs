@@ -15,6 +15,15 @@ public class SampleEnemy : MonoBehaviour, Enemy
      public float waitTime = 5f;
      float timer = 0f;
 
+     //Movement Variables
+     public float moveSpeed = 5f;
+     public GameObject player;
+     public Rigidbody2D rig;
+     Vector3 playerPos;
+     Vector2 movement;
+     float moveWaitTime = 5f;
+     float moveTimer = 0f;
+
      //public float fireRate;
      //public float spread; //In degrees
      //public float powerBuff;
@@ -23,6 +32,7 @@ public class SampleEnemy : MonoBehaviour, Enemy
      void Start()
      {
           hb.SetMax(health);
+          player = GameObject.FindWithTag("Player");
      }
 
      void Update()
@@ -32,6 +42,37 @@ public class SampleEnemy : MonoBehaviour, Enemy
           {
                Fire();
                timer = timer - waitTime;
+          }
+
+          if(rig != null)
+          {
+               playerPos = player.transform.position;
+               moveTimer += Time.deltaTime;
+               if (playerPos.x > rig.position.x)
+               {
+                    movement.x = 1;
+               }
+               else if (playerPos.x < rig.position.x)
+               {
+                    movement.x = -1;
+               }
+               else
+               {
+                    movement.x = 0;
+               }
+          }
+     }
+
+     void FixedUpdate()
+     {
+          if(rig != null)
+          {
+               //Fix basic movement AI
+               if (moveTimer < moveWaitTime / 2)
+                    rig.MovePosition(rig.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+               if (moveTimer >= moveWaitTime)
+                    moveTimer = 0f;
           }
      }
 

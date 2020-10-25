@@ -7,8 +7,8 @@ public class Turret : MonoBehaviour, Enemy
      public float health;
      public float defense;
      public HealthBar hb;
-     //Add Explosion when destroyed and crater to replace it
-     //public GameObject crater;
+     //Add Explosion when destroyed
+     public GameObject crater;
 
      public Transform bulletSpawn;
      public Transform bulletSpawn2;
@@ -18,9 +18,6 @@ public class Turret : MonoBehaviour, Enemy
      float timer = 0f;
 
      public Rigidbody2D rb;
-     public Camera cam;
-     //To be replaced with player position later
-     Vector2 mousePos;
      public GameObject player;
 
      //public float fireRate;
@@ -34,12 +31,8 @@ public class Turret : MonoBehaviour, Enemy
           player = GameObject.FindWithTag("Player");
      }
 
-     //Change rotation to be based on player location
-     //Move with the main body
      void Update()
      {
-          mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
           timer += Time.deltaTime;
           if (timer > waitTime)
           {
@@ -88,6 +81,9 @@ public class Turret : MonoBehaviour, Enemy
      {
           //Play death animation
           Destroy(gameObject);
+
           //Add crater
+          GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
+          c.transform.parent = GameObject.Find("Terrod").transform;
      }
 }
