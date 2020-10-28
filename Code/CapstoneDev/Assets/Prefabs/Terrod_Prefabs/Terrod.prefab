@@ -718,6 +718,7 @@ GameObject:
   - component: {fileID: 2950377142593911742}
   - component: {fileID: 1746120138275466258}
   - component: {fileID: 2773999130068875512}
+  - component: {fileID: 94747734980215621}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT (1)
   m_TagString: Enemy
@@ -881,6 +882,24 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
+--- !u!255 &94747734980215621
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742676034705855852}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 4303817118163597469}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 2.34, y: -1.0999999}
+  m_DampingRatio: 1
+  m_Frequency: 1
 --- !u!1 &1909895763893614665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1727,7 @@ GameObject:
   - component: {fileID: 3254349730296300958}
   - component: {fileID: 922163504860534836}
   - component: {fileID: 1219643015901902710}
+  - component: {fileID: 3830293395311919746}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT
   m_TagString: Enemy
@@ -1871,6 +1891,24 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
+--- !u!255 &3830293395311919746
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956354324052869860}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 4303817118163597469}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -2.44, y: -1.0799999}
+  m_DampingRatio: 1
+  m_Frequency: 1
 --- !u!1 &4694785858668283144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3754,6 +3792,7 @@ GameObject:
   - component: {fileID: 2643179448242269268}
   - component: {fileID: 1046880143066191726}
   - component: {fileID: 6812275203410375421}
+  - component: {fileID: 6238691121607484662}
   m_Layer: 0
   m_Name: TerrodTurret
   m_TagString: Enemy
@@ -3960,6 +3999,24 @@ MonoBehaviour:
   waitTime: 5
   rb: {fileID: 2643179448242269268}
   player: {fileID: 0}
+--- !u!255 &6238691121607484662
+FixedJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992804577924838666}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 4303817118163597469}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.080000006, y: 0.84000015}
+  m_DampingRatio: 1
+  m_Frequency: 1
 --- !u!1 &9183365948673619127
 GameObject:
   m_ObjectHideFlags: 0

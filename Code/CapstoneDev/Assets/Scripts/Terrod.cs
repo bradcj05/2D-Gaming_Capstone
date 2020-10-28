@@ -32,6 +32,8 @@ public class Terrod : MonoBehaviour
                movement.y = -0.5f;
           }
 
+          
+
           if (turretRigMain == null && turretRig1 == null && turretRig2 == null && flak1 == null && flak2 == null)
           {
                //Death animation
