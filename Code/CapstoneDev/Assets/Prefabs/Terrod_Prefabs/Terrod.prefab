@@ -718,7 +718,11 @@ GameObject:
   - component: {fileID: 2950377142593911742}
   - component: {fileID: 1746120138275466258}
   - component: {fileID: 2773999130068875512}
+<<<<<<< Updated upstream
   - component: {fileID: 94747734980215621}
+=======
+  - component: {fileID: 4244884046815636784}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT (1)
   m_TagString: Enemy
@@ -882,7 +886,11 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
+<<<<<<< Updated upstream
 --- !u!255 &94747734980215621
+=======
+--- !u!255 &4244884046815636784
+>>>>>>> Stashed changes
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1727,7 +1735,11 @@ GameObject:
   - component: {fileID: 3254349730296300958}
   - component: {fileID: 922163504860534836}
   - component: {fileID: 1219643015901902710}
+<<<<<<< Updated upstream
   - component: {fileID: 3830293395311919746}
+=======
+  - component: {fileID: 2737676309251103475}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT
   m_TagString: Enemy
@@ -1891,7 +1903,11 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
+<<<<<<< Updated upstream
 --- !u!255 &3830293395311919746
+=======
+--- !u!255 &2737676309251103475
+>>>>>>> Stashed changes
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3792,7 +3808,11 @@ GameObject:
   - component: {fileID: 2643179448242269268}
   - component: {fileID: 1046880143066191726}
   - component: {fileID: 6812275203410375421}
+<<<<<<< Updated upstream
   - component: {fileID: 6238691121607484662}
+=======
+  - component: {fileID: 5260960184505127818}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: TerrodTurret
   m_TagString: Enemy
@@ -3881,7 +3901,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1000
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 500
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -3999,7 +4019,11 @@ MonoBehaviour:
   waitTime: 5
   rb: {fileID: 2643179448242269268}
   player: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!255 &6238691121607484662
+=======
+--- !u!255 &5260960184505127818
+>>>>>>> Stashed changes
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
