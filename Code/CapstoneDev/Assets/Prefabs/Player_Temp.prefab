@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6973898103469409745}
   - component: {fileID: 6973898103469409757}
   - component: {fileID: 6973898103469409746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Temp
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -368,6 +368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: R51T Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5714245901337699406, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7681439109548903377, guid: 9ac853685815c8b46a0e25e1b144d1b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}

@@ -19,6 +19,7 @@ public class Turret : MonoBehaviour, Enemy
 
      public Rigidbody2D rb;
      public GameObject player;
+     public Vector3 CenterOfMass;
 
      //public float fireRate;
      //public float spread; //In degrees
@@ -27,6 +28,8 @@ public class Turret : MonoBehaviour, Enemy
 
      void Start()
      {
+          if (CenterOfMass != null)
+               rb.centerOfMass = CenterOfMass;
           hb.SetMax(health);
           player = GameObject.FindWithTag("Player");
      }
