@@ -13,25 +13,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-<<<<<<< HEAD
-  lastUpdatedAtString: 2020-10-29T19:49:31.185-04:00
-  initializedAtString: 2020-10-29T19:49:29.862-04:00
+  lastUpdatedAtString: 2020-11-07T21:32:34.624-05:00
+  initializedAtString: 2020-11-07T20:24:31.925-05:00
   localBranches:
   - name: Harris
     tracking: origin/Harris
+  - name: Harris_Branch_2
+    tracking: 
   - name: master
     tracking: origin/master
   remoteBranches:
   - name: origin/Harris
     tracking: '[None]'
-=======
-  lastUpdatedAtString: 2020-10-27T20:03:55.600-04:00
-  initializedAtString: 2020-10-27T20:00:25.627-04:00
-  localBranches:
-  - name: master
-    tracking: origin/master
-  remoteBranches:
->>>>>>> Harris
   - name: origin/HEAD
     tracking: '[None]'
   - name: origin/master
@@ -46,8 +39,8 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
-<<<<<<< HEAD
     - Harris
+    - Harris_Branch_2
     - master
     values:
     - name: Harris
@@ -55,10 +48,11 @@ MonoBehaviour:
         name: origin
         url: https://github.com/bradcj05/2D-Gaming_Capstone.git
       trackingBranch: Harris
-=======
-    - master
-    values:
->>>>>>> Harris
+    - name: Harris_Branch_2
+      remote:
+        name: 
+        url: 
+      trackingBranch: 
     - name: master
       remote:
         name: origin
@@ -69,22 +63,16 @@ MonoBehaviour:
     - origin
     subKeys:
     - Values:
-<<<<<<< HEAD
       - Harris
-=======
->>>>>>> Harris
       - HEAD
       - master
     subKeyValues:
     - Values:
-<<<<<<< HEAD
       - name: Harris
         remote:
           name: origin
           url: https://github.com/bradcj05/2D-Gaming_Capstone.git
         trackingBranch: 
-=======
->>>>>>> Harris
       - name: HEAD
         remote:
           name: origin
