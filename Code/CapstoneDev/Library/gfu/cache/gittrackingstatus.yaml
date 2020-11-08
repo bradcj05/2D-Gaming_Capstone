@@ -1,24 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &1
-MonoBehaviour:
-  m_ObjectHideFlags: 61
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1611343397, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cacheType: 5
-<<<<<<< Updated upstream
-  lastUpdatedAtString: 2020-10-27T20:09:31.863-04:00
-  initializedAtString: 2020-10-27T20:09:31.863-04:00
-=======
-  lastUpdatedAtString: 2020-10-27T20:41:28.073-04:00
-  initializedAtString: 2020-10-27T20:41:28.073-04:00
->>>>>>> Stashed changes
-  ahead: 0
-  behind: 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:4dc732e58fccd449583a6b469f461fbb7eb608dc40b3297b3ca9bb271946f502
+size 529
