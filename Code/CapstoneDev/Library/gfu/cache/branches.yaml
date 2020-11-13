@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-11-07T21:32:34.624-05:00
-  initializedAtString: 2020-11-07T20:24:31.925-05:00
+  lastUpdatedAtString: 2020-11-13T16:58:50.654-05:00
+  initializedAtString: 2020-11-13T16:58:49.717-05:00
   localBranches:
-  - name: Harris
-    tracking: origin/Harris
   - name: Harris_Branch_2
-    tracking: 
-  - name: master
-    tracking: origin/master
+    tracking: origin/Harris_Branch_2
   remoteBranches:
-  - name: origin/Harris
+  - name: origin/Connor
+    tracking: '[None]'
+  - name: origin/Harris_Branch_2
     tracking: '[None]'
   - name: origin/HEAD
     tracking: '[None]'
-  - name: origin/master
+  - name: origin/hong_pivot-test
+    tracking: '[None]'
+  - name: origin/Ricky's
     tracking: '[None]'
   remotes:
   - name: origin
@@ -39,36 +39,31 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
-    - Harris
     - Harris_Branch_2
-    - master
     values:
-    - name: Harris
-      remote:
-        name: origin
-        url: https://github.com/bradcj05/2D-Gaming_Capstone.git
-      trackingBranch: Harris
     - name: Harris_Branch_2
       remote:
-        name: 
-        url: 
-      trackingBranch: 
-    - name: master
-      remote:
         name: origin
         url: https://github.com/bradcj05/2D-Gaming_Capstone.git
-      trackingBranch: master
+      trackingBranch: Harris_Branch_2
   remoteConfigBranches:
     keys:
     - origin
     subKeys:
     - Values:
-      - Harris
+      - Connor
+      - Harris_Branch_2
       - HEAD
-      - master
+      - hong_pivot-test
+      - Ricky's
     subKeyValues:
     - Values:
-      - name: Harris
+      - name: Connor
+        remote:
+          name: origin
+          url: https://github.com/bradcj05/2D-Gaming_Capstone.git
+        trackingBranch: 
+      - name: Harris_Branch_2
         remote:
           name: origin
           url: https://github.com/bradcj05/2D-Gaming_Capstone.git
@@ -78,7 +73,12 @@ MonoBehaviour:
           name: origin
           url: https://github.com/bradcj05/2D-Gaming_Capstone.git
         trackingBranch: 
-      - name: master
+      - name: hong_pivot-test
+        remote:
+          name: origin
+          url: https://github.com/bradcj05/2D-Gaming_Capstone.git
+        trackingBranch: 
+      - name: Ricky's
         remote:
           name: origin
           url: https://github.com/bradcj05/2D-Gaming_Capstone.git

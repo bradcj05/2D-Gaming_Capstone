@@ -10,7 +10,7 @@ public class GameOverMenu : MonoBehaviour
     public void Retry()
      {
           //Unsure of how to implement this
-          //SceneManager.LoadScene();
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
           Debug.Log("I don't know how to make this work.");
      }
 
