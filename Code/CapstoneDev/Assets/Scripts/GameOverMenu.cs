@@ -9,13 +9,13 @@ public class GameOverMenu : MonoBehaviour
 {
     public void Retry()
      {
-          //Unsure of how to implement this
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-          Debug.Log("I don't know how to make this work.");
+          Debug.Log("Reloading Scene");
      }
 
      public void BackToMainMenu()
      {
           SceneManager.LoadScene(0);
+          Debug.Log("Back to Main Menu");
      }
 }

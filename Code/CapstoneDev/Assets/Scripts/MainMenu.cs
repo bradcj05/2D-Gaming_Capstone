@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
      //TODO: Modify this so that we don't have to change it each time the scene order is changed
      public void GoToSettings()
      {
-          SceneManager.LoadScene(4);
+          SceneManager.LoadScene(5);
      }
 
      //Quits the application

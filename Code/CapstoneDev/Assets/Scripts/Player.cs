@@ -12,12 +12,14 @@ public class Player : MonoBehaviour
      public float health;
      public float defense;
      public HealthBar hb;
+     int isDestroyed;
      //Add death animation
 
 
     void Start()
      {
           hb.SetMax(health);
+          isDestroyed = 1;
      }
     // Update is called once per frame
     //Input
@@ -55,8 +57,12 @@ public class Player : MonoBehaviour
      //Player Death
      void Die()
      {
-          //Play death animation
-          Destroy(gameObject);
+          if(isDestroyed == 1)
+          {
+               //Play death animation
+               Destroy(gameObject);
+               isDestroyed = 0;
+          }
 
           //Load game over screen / swap to another plane
 

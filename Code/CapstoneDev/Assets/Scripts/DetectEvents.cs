@@ -8,6 +8,11 @@ public class DetectEvents : MonoBehaviour
      public GameObject player;
      public GameObject gameOverMenu;
 
+     public void Start()
+     {
+
+     }
+
      public void Update()
      {
           if(player == null)
