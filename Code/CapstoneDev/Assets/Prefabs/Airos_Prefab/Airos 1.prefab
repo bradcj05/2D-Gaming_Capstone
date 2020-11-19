@@ -749,6 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6132400314409679088}
   - component: {fileID: 6132400314409679095}
+  - component: {fileID: 5538316657363002781}
   m_Layer: 0
   m_Name: Airos Turret
   m_TagString: Enemy
@@ -824,6 +825,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5538316657363002781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6132400314409679089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09efb3e351c6e9347afaa4198568c38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  defense: 0
+  hb: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  bulletSpawn2: {fileID: 0}
+  shellType: {fileID: 0}
+  bulletSpeed: 0
+  waitTime: 5
+  rb: {fileID: 0}
+  cam: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6132400314745986508
 GameObject:
   m_ObjectHideFlags: 0
