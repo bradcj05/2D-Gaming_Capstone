@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adec66fe0f88eba5b339407afd5bb35c54426cc4f56680e87be6a2d01cf63d0f
-size 494
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using UnityEngine;
+
+public class CenterOfMass : MonoBehaviour
+{
+    public Vector3 centerOfMass;
+    public Rigidbody2D rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.centerOfMass = centerOfMass;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

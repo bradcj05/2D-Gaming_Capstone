@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b2c92176742151d71bc3a51e66c37513b56ddd08f98c84ea66d024b28720485
-size 976
+using System;
+using UnityEngine.Timeline;
+
+namespace UnityEditor.Timeline
+{
+    interface ITimelineItem : IEquatable<ITimelineItem>
+    {
+        double start { get; set; }
+        double end { get; }
+        double duration { get; }
+
+        TrackAsset parentTrack { get; set; }
+        bool IsCompatibleWithTrack(TrackAsset track);
+
+        void Delete();
+        ITimelineItem CloneTo(TrackAsset parent, double time);
+        void PushUndo(string operation);
+
+        TimelineItemGUI gui { get; }
+    }
+
+    interface ITrimmable : ITimelineItem
+    {
+        void SetStart(double time);
+        void SetEnd(double time, bool affectTimeScale);
+        void TrimStart(double time);
+        void TrimEnd(double time);
+    }
+
+    interface IBlendable : ITimelineItem
+    {
+        bool supportsBlending { get; }
+        bool hasLeftBlend { get; }
+        bool hasRightBlend { get; }
+
+        double leftBlendDuration { get; }
+        double rightBlendDuration { get; }
+    }
+}

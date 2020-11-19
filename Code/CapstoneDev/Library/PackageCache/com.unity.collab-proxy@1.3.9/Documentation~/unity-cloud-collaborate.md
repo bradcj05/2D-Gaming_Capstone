@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d94c0c0487c9dc53503e35a947d77560d3f0dc2b405ade83d133db354c1b7548
-size 216
+# About Unity Collaborate
+
+Collaborate is a simple way for teams to save, share, and sync their Unity project.
+
+Please refer to the online documentation [here.](https://docs.unity3d.com/Manual/UnityCollaborate.html)

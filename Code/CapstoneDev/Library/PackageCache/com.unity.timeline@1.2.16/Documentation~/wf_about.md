@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:81093b46ed65540dc63e4466db38ae64b2a455780ea6934ea2393e421c34504b
-size 576
+# Using the Timeline window 
+
+Use the Timeline window to create Timeline Assets and Timeline instances, record animation, schedule animation, and create cinematic content. This section shows you how to do the following tasks:
+
+* [Create a Timeline Asset and Timeline instance](wf_instance.md)
+* [Record basic animation with an Infinite clip](wf_rec_anim.md)
+* [Convert an Infinite clip to an Animation clip](wf_conv_infinite.md)
+* [Animate a humanoid](wf_char_anim.md)
+* [Use Animation Override tracks and Avatar Masking](wf_mask.md)
+* [Nest Timeline Instances](wf_nested.md)
