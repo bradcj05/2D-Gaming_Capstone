@@ -718,11 +718,7 @@ GameObject:
   - component: {fileID: 2950377142593911742}
   - component: {fileID: 1746120138275466258}
   - component: {fileID: 2773999130068875512}
-<<<<<<< Updated upstream
-  - component: {fileID: 94747734980215621}
-=======
-  - component: {fileID: 4244884046815636784}
->>>>>>> Stashed changes
+  - component: {fileID: 1933747026493025938}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT (1)
   m_TagString: Enemy
@@ -886,11 +882,7 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
-<<<<<<< Updated upstream
---- !u!255 &94747734980215621
-=======
---- !u!255 &4244884046815636784
->>>>>>> Stashed changes
+--- !u!255 &1933747026493025938
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1735,11 +1727,7 @@ GameObject:
   - component: {fileID: 3254349730296300958}
   - component: {fileID: 922163504860534836}
   - component: {fileID: 1219643015901902710}
-<<<<<<< Updated upstream
-  - component: {fileID: 3830293395311919746}
-=======
-  - component: {fileID: 2737676309251103475}
->>>>>>> Stashed changes
+  - component: {fileID: 5985504822157595355}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT
   m_TagString: Enemy
@@ -1903,11 +1891,7 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.21}
       - {x: 0.39999998, y: 0.099999994}
       - {x: 0.38, y: 0.11}
-<<<<<<< Updated upstream
---- !u!255 &3830293395311919746
-=======
---- !u!255 &2737676309251103475
->>>>>>> Stashed changes
+--- !u!255 &5985504822157595355
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2288,7 +2272,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1000000
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000000
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -2863,7 +2847,7 @@ MonoBehaviour:
   gun: {fileID: 3668704708801179685}
   shellType: {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5,
     type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 5
   waitTime: 5
   moveSpeed: 5
   player: {fileID: 0}
@@ -3047,7 +3031,7 @@ MonoBehaviour:
   gun: {fileID: 4733831525521122984}
   shellType: {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5,
     type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 5
   waitTime: 5
   moveSpeed: 5
   player: {fileID: 0}
@@ -3402,7 +3386,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 40294dd89d564ef469b9c9040efd507e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3808,11 +3792,7 @@ GameObject:
   - component: {fileID: 2643179448242269268}
   - component: {fileID: 1046880143066191726}
   - component: {fileID: 6812275203410375421}
-<<<<<<< Updated upstream
-  - component: {fileID: 6238691121607484662}
-=======
-  - component: {fileID: 5260960184505127818}
->>>>>>> Stashed changes
+  - component: {fileID: 7881298080091199498}
   m_Layer: 0
   m_Name: TerrodTurret
   m_TagString: Enemy
@@ -3901,7 +3881,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1000
   m_LinearDrag: 0
-  m_AngularDrag: 500
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -4019,11 +3999,7 @@ MonoBehaviour:
   waitTime: 5
   rb: {fileID: 2643179448242269268}
   player: {fileID: 0}
-<<<<<<< Updated upstream
---- !u!255 &6238691121607484662
-=======
---- !u!255 &5260960184505127818
->>>>>>> Stashed changes
+--- !u!255 &7881298080091199498
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
