@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d0099a5253f937c20a1a9143fbc1bc1588d789a0413a6accb164b52ad05b0e7
-size 92
+sceneSetups: []

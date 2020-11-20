@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ecf201edd6600d0d80bce608254731fe5eab34abb2618c88fe425cc8ab3f1869
-size 1042
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1109517887, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 1
+  lastUpdatedAtString: 2020-11-19T23:47:24.525-05:00
+  initializedAtString: 2020-11-19T23:47:24.525-05:00
+  currentGitRemote:
+    name: origin
+    url: https://github.com/bradcj05/2D-Gaming_Capstone.git
+    login: 
+    user: 
+    host: 
+    function: 0
+    token: 
+  currentGitBranch:
+    name: Harris_Branch_2
+    tracking: origin/Harris_Branch_2
+  currentConfigBranch:
+    name: Harris_Branch_2
+    remote:
+      name: origin
+      url: https://github.com/bradcj05/2D-Gaming_Capstone.git
+    trackingBranch: Harris_Branch_2
+  currentConfigRemote:
+    name: origin
+    url: https://github.com/bradcj05/2D-Gaming_Capstone.git
+  currentHead: 
