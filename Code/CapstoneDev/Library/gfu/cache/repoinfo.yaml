@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-11-19T05:12:27.962-05:00
-  initializedAtString: 2020-11-19T05:12:27.962-05:00
+  lastUpdatedAtString: 2020-10-24T20:08:02.911-04:00
+  initializedAtString: 2020-10-24T20:08:02.911-04:00
   currentGitRemote:
     name: origin
     url: https://github.com/bradcj05/2D-Gaming_Capstone.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: hong_pivot-test
-    tracking: origin/hong_pivot-test
+    name: master
+    tracking: origin/master
   currentConfigBranch:
-    name: hong_pivot-test
+    name: master
     remote:
       name: origin
       url: https://github.com/bradcj05/2D-Gaming_Capstone.git
-    trackingBranch: hong_pivot-test
+    trackingBranch: master
   currentConfigRemote:
     name: origin
     url: https://github.com/bradcj05/2D-Gaming_Capstone.git
