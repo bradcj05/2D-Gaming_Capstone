@@ -13,461 +13,117 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2020-11-19T23:11:13.139-05:00
-  initializedAtString: 2020-11-19T23:02:44.437-05:00
+  lastUpdatedAtString: 2020-11-19T23:20:08.798-05:00
+  initializedAtString: 2020-11-19T23:17:19.225-05:00
   entries:
-  - path: Code\CapstoneDev\.gitattributes
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\.gitattributes
-    projectPath: .gitattributes
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\leftbaseFlak.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\leftbaseFlak.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\leftbaseFlak.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\LeftFlakBarrel.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\LeftFlakBarrel.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\LeftFlakBarrel.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\rightbaseFlak.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\rightbaseFlak.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\rightbaseFlak.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\RightFlakBarrel.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\RightFlakBarrel.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\RightFlakBarrel.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\ship_rightTrack#1.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\ship_rightTrack#1.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\ship_rightTrack#1.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\ship_rightTrack#2.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\ship_rightTrack#2.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\ship_rightTrack#2.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-CenterCannon_final.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-CenterCannon_final.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\Terrod-CenterCannon_final.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-LEFT-Turent_final.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-LEFT-Turent_final.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\Terrod-LEFT-Turent_final.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-mainbase_final.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-mainbase_final.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\Terrod-mainbase_final.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-RIGHT-turent_final.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\Final_Terrod\Terrod-RIGHT-turent_final.png
-    projectPath: Assets\Images\Terrod\Final_Terrod\Terrod-RIGHT-turent_final.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefab\Airos 1.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefab\Airos
-      1.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefab\Airos 1.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefab\Airos.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefab\Airos.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefab\Airos.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos 1.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      1.prefab
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos 1.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos 1.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      1.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos 1.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos Bullet.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      Bullet.prefab
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos Bullet.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos Bullet.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      Bullet.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos Bullet.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos Variant.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      Variant.prefab
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos Variant.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos Variant.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos
-      Variant.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos Variant.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos.prefab
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos.prefab.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\Airos.prefab.meta
-    projectPath: Assets\Prefabs\Airos_Prefabs\Airos.prefab.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\x
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\x
-    projectPath: Assets\Prefabs\Airos_Prefabs\x
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\x.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos_Prefabs\x.meta
-    projectPath: Assets\Prefabs\Airos_Prefabs\x.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Prefabs\Enemy Health.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Enemy
-      Health.prefab
-    projectPath: Assets\Prefabs\Enemy Health.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Player_Temp.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Player_Temp.prefab
-    projectPath: Assets\Prefabs\Player_Temp.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    projectPath: Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scenes\AirosScene.unity
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scenes\AirosScene.unity
-    projectPath: Assets\Scenes\AirosScene.unity
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scenes\TerrodScene.unity
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scenes\TerrodScene.unity
-    projectPath: Assets\Scenes\TerrodScene.unity
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scenes\TerrodSceneSettings.lighting
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scenes\TerrodSceneSettings.lighting
-    projectPath: Assets\Scenes\TerrodSceneSettings.lighting
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scripts\CenterOfMass.cs
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\CenterOfMass.cs
-    projectPath: Assets\Scripts\CenterOfMass.cs
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Scripts\CenterOfMass.cs.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\CenterOfMass.cs.meta
-    projectPath: Assets\Scripts\CenterOfMass.cs.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Scripts\Terrod.cs
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\Terrod.cs
-    projectPath: Assets\Scripts\Terrod.cs
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scripts\Turret.cs
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\Turret.cs
-    projectPath: Assets\Scripts\Turret.cs
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Terrod-CenterCannon_final.png
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Terrod-CenterCannon_final.png
-    projectPath: Assets\Terrod-CenterCannon_final.png
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Assets\Terrod-CenterCannon_final.png.meta
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Terrod-CenterCannon_final.png.meta
-    projectPath: Assets\Terrod-CenterCannon_final.png.meta
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\APIUpdater\project-dependencies.graph
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\APIUpdater\project-dependencies.graph
-    projectPath: Library\APIUpdater\project-dependencies.graph
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\ArtifactDB
     fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ArtifactDB
     projectPath: Library\ArtifactDB
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\Artifacts\03\03f8f1a74a120b76bc5457a5656e47a2
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\03\03f8f1a74a120b76bc5457a5656e47a2
-    projectPath: Library\Artifacts\03\03f8f1a74a120b76bc5457a5656e47a2
+  - path: Code\CapstoneDev\Library\Artifacts\19\19e724bb1813d019b95263e68cd65b4e
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\19\19e724bb1813d019b95263e68cd65b4e
+    projectPath: Library\Artifacts\19\19e724bb1813d019b95263e68cd65b4e
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\07\07188cda7de4a5cf5b0a30dfc92e3079
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\07\07188cda7de4a5cf5b0a30dfc92e3079
-    projectPath: Library\Artifacts\07\07188cda7de4a5cf5b0a30dfc92e3079
-    originalPath: 
-    indexStatus: 5
-    workTreeStatus: 0
-  - path: Code\CapstoneDev\Library\Artifacts\19\19250af857df63857b1fb6881a78099a
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\19\19250af857df63857b1fb6881a78099a
-    projectPath: Library\Artifacts\19\19250af857df63857b1fb6881a78099a
+  - path: Code\CapstoneDev\Library\Artifacts\40\40c1c18c1fbfcdc566e195a290f649f7
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\40\40c1c18c1fbfcdc566e195a290f649f7
+    projectPath: Library\Artifacts\40\40c1c18c1fbfcdc566e195a290f649f7
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\26\261732c0fec782227082e1945d874846
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\26\261732c0fec782227082e1945d874846
-    projectPath: Library\Artifacts\26\261732c0fec782227082e1945d874846
+  - path: Code\CapstoneDev\Library\Artifacts\46\4624f68ee29d48cb49c6b546fd87d1f0
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\46\4624f68ee29d48cb49c6b546fd87d1f0
+    projectPath: Library\Artifacts\46\4624f68ee29d48cb49c6b546fd87d1f0
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\29\29986d674bc2037ff98d9350a30d4649
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\29\29986d674bc2037ff98d9350a30d4649
-    projectPath: Library\Artifacts\29\29986d674bc2037ff98d9350a30d4649
+  - path: Code\CapstoneDev\Library\Artifacts\47\4700f14caf7eca52afbacae308d62284
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\47\4700f14caf7eca52afbacae308d62284
+    projectPath: Library\Artifacts\47\4700f14caf7eca52afbacae308d62284
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\2d\2d61235cc897d8ce0d81d25274593345
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\2d\2d61235cc897d8ce0d81d25274593345
-    projectPath: Library\Artifacts\2d\2d61235cc897d8ce0d81d25274593345
+  - path: Code\CapstoneDev\Library\Artifacts\59\5900416015d0f9e23fdc87ad4493ef68
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\59\5900416015d0f9e23fdc87ad4493ef68
+    projectPath: Library\Artifacts\59\5900416015d0f9e23fdc87ad4493ef68
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\33\3360ab3cb783870f4df08bf845519ec0
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\33\3360ab3cb783870f4df08bf845519ec0
-    projectPath: Library\Artifacts\33\3360ab3cb783870f4df08bf845519ec0
+  - path: Code\CapstoneDev\Library\Artifacts\68\6809420804bcfc6f02e6dd64d739b012
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\68\6809420804bcfc6f02e6dd64d739b012
+    projectPath: Library\Artifacts\68\6809420804bcfc6f02e6dd64d739b012
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\3b\3bf5ae18f615335791c6c7d59446cf84
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\3b\3bf5ae18f615335791c6c7d59446cf84
-    projectPath: Library\Artifacts\3b\3bf5ae18f615335791c6c7d59446cf84
+  - path: Code\CapstoneDev\Library\Artifacts\69\69e7bbaa7db3aff82cbca67b153c864f
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\69\69e7bbaa7db3aff82cbca67b153c864f
+    projectPath: Library\Artifacts\69\69e7bbaa7db3aff82cbca67b153c864f
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\4b\4bb27d9ca368da3fee9c46d8cd9bd2cf
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\4b\4bb27d9ca368da3fee9c46d8cd9bd2cf
-    projectPath: Library\Artifacts\4b\4bb27d9ca368da3fee9c46d8cd9bd2cf
+  - path: Code\CapstoneDev\Library\Artifacts\82\82d9d8da7c5c2f6719045fa4109c63ed
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\82\82d9d8da7c5c2f6719045fa4109c63ed
+    projectPath: Library\Artifacts\82\82d9d8da7c5c2f6719045fa4109c63ed
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\4c\4c701fce61bae32775fc56dc9b23fb0e
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\4c\4c701fce61bae32775fc56dc9b23fb0e
-    projectPath: Library\Artifacts\4c\4c701fce61bae32775fc56dc9b23fb0e
+  - path: Code\CapstoneDev\Library\Artifacts\86\867b0daa77bcd5ad54a3cae5187ac17c
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\86\867b0daa77bcd5ad54a3cae5187ac17c
+    projectPath: Library\Artifacts\86\867b0daa77bcd5ad54a3cae5187ac17c
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\59\59deb241d31b369c7d76f7ac997d6601
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\59\59deb241d31b369c7d76f7ac997d6601
-    projectPath: Library\Artifacts\59\59deb241d31b369c7d76f7ac997d6601
+  - path: Code\CapstoneDev\Library\Artifacts\87\87d4f221371204fc69cf5f44c7f42895
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\87\87d4f221371204fc69cf5f44c7f42895
+    projectPath: Library\Artifacts\87\87d4f221371204fc69cf5f44c7f42895
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\5a\5ac9c9b7773954199182ff21f7133c5e
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5a\5ac9c9b7773954199182ff21f7133c5e
-    projectPath: Library\Artifacts\5a\5ac9c9b7773954199182ff21f7133c5e
+  - path: Code\CapstoneDev\Library\Artifacts\92\92e6780b3eaef4b1cfb816b2b3627ef5
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\92\92e6780b3eaef4b1cfb816b2b3627ef5
+    projectPath: Library\Artifacts\92\92e6780b3eaef4b1cfb816b2b3627ef5
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\5b\5ba8c8f9715677e7d62699a8f8af450c
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5b\5ba8c8f9715677e7d62699a8f8af450c
-    projectPath: Library\Artifacts\5b\5ba8c8f9715677e7d62699a8f8af450c
+  - path: Code\CapstoneDev\Library\Artifacts\99\99c69011e0162204b6f0cb7d371488ad
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\99\99c69011e0162204b6f0cb7d371488ad
+    projectPath: Library\Artifacts\99\99c69011e0162204b6f0cb7d371488ad
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\5c\5c5897410c37995f4005b36bcd92e9a3
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5c\5c5897410c37995f4005b36bcd92e9a3
-    projectPath: Library\Artifacts\5c\5c5897410c37995f4005b36bcd92e9a3
+  - path: Code\CapstoneDev\Library\Artifacts\cc\cc3ec42ecccc3f49fdbcc78bbaf4729f
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\cc\cc3ec42ecccc3f49fdbcc78bbaf4729f
+    projectPath: Library\Artifacts\cc\cc3ec42ecccc3f49fdbcc78bbaf4729f
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\6a\6ae60a7b906f8852b1a2c81fe0edc395
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\6a\6ae60a7b906f8852b1a2c81fe0edc395
-    projectPath: Library\Artifacts\6a\6ae60a7b906f8852b1a2c81fe0edc395
+  - path: Code\CapstoneDev\Library\Artifacts\d3\d34c9abb4100907f7b54e3b570d88bbe
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\d3\d34c9abb4100907f7b54e3b570d88bbe
+    projectPath: Library\Artifacts\d3\d34c9abb4100907f7b54e3b570d88bbe
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\73\73649e9469b5509d1b524afd497ed7a6
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\73\73649e9469b5509d1b524afd497ed7a6
-    projectPath: Library\Artifacts\73\73649e9469b5509d1b524afd497ed7a6
+  - path: Code\CapstoneDev\Library\Artifacts\ee\ee22671641a427f2e52df69facd4624a
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ee\ee22671641a427f2e52df69facd4624a
+    projectPath: Library\Artifacts\ee\ee22671641a427f2e52df69facd4624a
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\7f\7f6c40e52cd4b3628717072e69838a24
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\7f\7f6c40e52cd4b3628717072e69838a24
-    projectPath: Library\Artifacts\7f\7f6c40e52cd4b3628717072e69838a24
+  - path: Code\CapstoneDev\Library\Artifacts\f5\f56638efb6b56da0ebedec1151c90b89
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f5\f56638efb6b56da0ebedec1151c90b89
+    projectPath: Library\Artifacts\f5\f56638efb6b56da0ebedec1151c90b89
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\8b\8b8c562c0d1cb823172af3d772768ca1
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\8b\8b8c562c0d1cb823172af3d772768ca1
-    projectPath: Library\Artifacts\8b\8b8c562c0d1cb823172af3d772768ca1
+  - path: Code\CapstoneDev\Library\Artifacts\f5\f5a811fd485995448ecc5aebc9658a39
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f5\f5a811fd485995448ecc5aebc9658a39
+    projectPath: Library\Artifacts\f5\f5a811fd485995448ecc5aebc9658a39
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\8c\8c0b1d7cb4314ffc94134f33f289ab61
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\8c\8c0b1d7cb4314ffc94134f33f289ab61
-    projectPath: Library\Artifacts\8c\8c0b1d7cb4314ffc94134f33f289ab61
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\93\93d4d3a4157882c08b8b25913a64cbab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\93\93d4d3a4157882c08b8b25913a64cbab
-    projectPath: Library\Artifacts\93\93d4d3a4157882c08b8b25913a64cbab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\b1\6b44c5fe1405d21d57940691dedd0afd
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b1\6b44c5fe1405d21d57940691dedd0afd
-    projectPath: Library\Artifacts\b1\6b44c5fe1405d21d57940691dedd0afd
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\b1\b1cc1cf25bd2faa923fe702d8eae0e51
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b1\b1cc1cf25bd2faa923fe702d8eae0e51
-    projectPath: Library\Artifacts\b1\b1cc1cf25bd2faa923fe702d8eae0e51
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\b5\b5f78a01338ee5064172f2b0de4c48f1
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b5\b5f78a01338ee5064172f2b0de4c48f1
-    projectPath: Library\Artifacts\b5\b5f78a01338ee5064172f2b0de4c48f1
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\bc\bc7bd180c26d17a48fcee2abdede492d
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\bc\bc7bd180c26d17a48fcee2abdede492d
-    projectPath: Library\Artifacts\bc\bc7bd180c26d17a48fcee2abdede492d
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\be\be891b218534a2a2bd86878a394318dd
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\be\be891b218534a2a2bd86878a394318dd
-    projectPath: Library\Artifacts\be\be891b218534a2a2bd86878a394318dd
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\c5\c5d0e243218228f569ff8aeb1ec4c557
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\c5\c5d0e243218228f569ff8aeb1ec4c557
-    projectPath: Library\Artifacts\c5\c5d0e243218228f569ff8aeb1ec4c557
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\c6\c600330d46f28ab9e461932a242fff61
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\c6\c600330d46f28ab9e461932a242fff61
-    projectPath: Library\Artifacts\c6\c600330d46f28ab9e461932a242fff61
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\d3\d387893f5322ea986b8f1eca6edb7645
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\d3\d387893f5322ea986b8f1eca6edb7645
-    projectPath: Library\Artifacts\d3\d387893f5322ea986b8f1eca6edb7645
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\db\db24b4934ccad6e97c700a188a289c70
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\db\db24b4934ccad6e97c700a188a289c70
-    projectPath: Library\Artifacts\db\db24b4934ccad6e97c700a188a289c70
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\dd\dd9dafdfd81521178bcd3b8418951856
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\dd\dd9dafdfd81521178bcd3b8418951856
-    projectPath: Library\Artifacts\dd\dd9dafdfd81521178bcd3b8418951856
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\e1\e16ac988917a07de21d6a57a028ef008
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e1\e16ac988917a07de21d6a57a028ef008
-    projectPath: Library\Artifacts\e1\e16ac988917a07de21d6a57a028ef008
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\ea\eaa7903a4761488c772b7791e73c75b9
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ea\eaa7903a4761488c772b7791e73c75b9
-    projectPath: Library\Artifacts\ea\eaa7903a4761488c772b7791e73c75b9
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\f0\f0d77e467650a78b74352eb7686379f5
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f0\f0d77e467650a78b74352eb7686379f5
-    projectPath: Library\Artifacts\f0\f0d77e467650a78b74352eb7686379f5
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\f5\f53a645dc3417ec0c2579fe8f151c7db
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f5\f53a645dc3417ec0c2579fe8f151c7db
-    projectPath: Library\Artifacts\f5\f53a645dc3417ec0c2579fe8f151c7db
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\fc\fc328dc3881190331cda30086e01c809
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fc\fc328dc3881190331cda30086e01c809
-    projectPath: Library\Artifacts\fc\fc328dc3881190331cda30086e01c809
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\fc\fc4f488c417a58dddbb4f651fbb2c6ab
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fc\fc4f488c417a58dddbb4f651fbb2c6ab
-    projectPath: Library\Artifacts\fc\fc4f488c417a58dddbb4f651fbb2c6ab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\CurrentLayout-default.dwlt
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\CurrentLayout-default.dwlt
-    projectPath: Library\CurrentLayout-default.dwlt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
     fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
     projectPath: Library\gfu\cache\gitlocks.yaml
@@ -492,12 +148,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\InspectorExpandedItems.asset
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\InspectorExpandedItems.asset
-    projectPath: Library\InspectorExpandedItems.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\SceneVisibilityState.asset
     fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\SceneVisibilityState.asset
     projectPath: Library\SceneVisibilityState.asset
@@ -510,213 +160,9 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\PsdPlugin.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\PsdPlugin.dll
-    projectPath: Library\ScriptAssemblies\PsdPlugin.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
-    projectPath: Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
-    projectPath: Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.Mathematics.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.Mathematics.dll
-    projectPath: Library\ScriptAssemblies\Unity.Mathematics.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.Timeline.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.Timeline.dll
-    projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-    projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-    projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\UnityEditor.UI.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\UnityEditor.UI.dll
-    projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\UnityEngine.UI.dll
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\UnityEngine.UI.dll
-    projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe0.log
     fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe0.log
     projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe11.log
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe11.log
-    projectPath: Library\shadercompiler-UnityShaderCompiler.exe11.log
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe12.log
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe12.log
-    projectPath: Library\shadercompiler-UnityShaderCompiler.exe12.log
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe7.log
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe7.log
-    projectPath: Library\shadercompiler-UnityShaderCompiler.exe7.log
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe8.log
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe8.log
-    projectPath: Library\shadercompiler-UnityShaderCompiler.exe8.log
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -735,24 +181,6 @@ MonoBehaviour:
   - path: Code\CapstoneDev\Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
     fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
     projectPath: Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\ProjectSettings\DynamicsManager.asset
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\ProjectSettings\DynamicsManager.asset
-    projectPath: ProjectSettings\DynamicsManager.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\ProjectSettings\Physics2DSettings.asset
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\ProjectSettings\Physics2DSettings.asset
-    projectPath: ProjectSettings\Physics2DSettings.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\ProjectSettings\TagManager.asset
-    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\ProjectSettings\TagManager.asset
-    projectPath: ProjectSettings\TagManager.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-10-24T20:08:02.911-04:00
-  initializedAtString: 2020-10-24T20:08:02.911-04:00
+  lastUpdatedAtString: 2020-11-19T23:17:18.469-05:00
+  initializedAtString: 2020-11-19T23:17:18.469-05:00
   currentGitRemote:
     name: origin
     url: https://github.com/bradcj05/2D-Gaming_Capstone.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: master
-    tracking: origin/master
+    name: Connor
+    tracking: origin/Connor
   currentConfigBranch:
-    name: master
+    name: Connor
     remote:
       name: origin
       url: https://github.com/bradcj05/2D-Gaming_Capstone.git
-    trackingBranch: master
+    trackingBranch: Connor
   currentConfigRemote:
     name: origin
     url: https://github.com/bradcj05/2D-Gaming_Capstone.git
