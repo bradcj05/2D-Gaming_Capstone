@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 75d10017488935d46914bd94004bd8d2
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: a60d2169dcb1e814b84e65736f58a0a4
+  - enabled: 1
+    path: Assets/Scenes/AirosScene.unity
+    guid: cfaa8a1325edcaa4fbf5f074de55c2d7
+  - enabled: 1
+    path: Assets/Scenes/TerrodScene.unity
+    guid: c03318751af60bd4eaafa98a6200516d
+  - enabled: 1
+    path: Assets/Scenes/Hangar.unity
+    guid: 12fa15ef09b94c34c87776246412df7a
   m_configObjects: {}
