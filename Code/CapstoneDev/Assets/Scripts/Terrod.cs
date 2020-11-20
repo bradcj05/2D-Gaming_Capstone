@@ -32,22 +32,24 @@ public class Terrod : MonoBehaviour
                movement.y = -0.5f;
           }
 
+          
+
           if (turretRigMain == null && turretRig1 == null && turretRig2 == null && flak1 == null && flak2 == null)
           {
                //Death animation
                Destroy(gameObject);
           }
      }
-
+     
      void FixedUpdate()
      {
           rig.MovePosition(rig.position + movement * moveSpeed * Time.fixedDeltaTime);
-          if(turretRig1 != null)
-               turretRig1.MovePosition(turretRig1.position + movement * moveSpeed * Time.fixedDeltaTime);
-          if(turretRig2 != null)
-               turretRig2.MovePosition(turretRig2.position + movement * moveSpeed * Time.fixedDeltaTime);
           if(turretRigMain != null)
                turretRigMain.MovePosition(turretRigMain.position + movement * moveSpeed * Time.fixedDeltaTime);
+          if(turretRig1)
+               turretRig1.MovePosition(turretRig1.position + movement * moveSpeed * Time.fixedDeltaTime);
+          if(turretRig2)
+               turretRig2.MovePosition(turretRig2.position + movement * moveSpeed * Time.fixedDeltaTime);
      }
      
 }

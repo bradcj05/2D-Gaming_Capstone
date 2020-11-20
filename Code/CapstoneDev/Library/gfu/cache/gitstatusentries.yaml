@@ -13,835 +13,300 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2020-10-24T21:51:48.314-04:00
-  initializedAtString: 2020-10-24T20:08:04.449-04:00
+  lastUpdatedAtString: 2020-11-19T05:16:33.968-05:00
+  initializedAtString: 2020-11-19T05:12:29.634-05:00
   entries:
-  - path: Code\CapstoneDev\Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png
-    projectPath: Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png.meta
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png.meta
-    projectPath: Assets\Images\Terrod\TerrodSmallTurretCrater_EDIT.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Images\Terrod\TerrodTurretCrater_EDIT.png
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\TerrodTurretCrater_EDIT.png
-    projectPath: Assets\Images\Terrod\TerrodTurretCrater_EDIT.png
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Images\Terrod\TerrodTurretCrater_EDIT.png.meta
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Images\Terrod\TerrodTurretCrater_EDIT.png.meta
-    projectPath: Assets\Images\Terrod\TerrodTurretCrater_EDIT.png.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Prefabs\Airos Bullet.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Airos
-      Bullet.prefab
-    projectPath: Assets\Prefabs\Airos Bullet.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Player_Temp.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Player_Temp.prefab
-    projectPath: Assets\Prefabs\Player_Temp.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\R-5AP.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\R-5AP.prefab
-    projectPath: Assets\Prefabs\R-5AP.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    projectPath: Assets\Prefabs\Terrod_Prefabs\Terrod.prefab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab
-    projectPath: Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab.meta
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab.meta
-    projectPath: Assets\Prefabs\Terrod_Prefabs\TerrodSmallTurretCrater_EDIT.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab
-    projectPath: Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab.meta
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab.meta
-    projectPath: Assets\Prefabs\Terrod_Prefabs\TerrodTurretCrater_EDIT.prefab.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Assets\Scenes\SampleScene.unity
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scenes\SampleScene.unity
-    projectPath: Assets\Scenes\SampleScene.unity
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scenes\TerrodScene.unity
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scenes\TerrodScene.unity
-    projectPath: Assets\Scenes\TerrodScene.unity
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scripts\SampleEnemy.cs
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\SampleEnemy.cs
-    projectPath: Assets\Scripts\SampleEnemy.cs
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Assets\Scripts\Terrod.cs
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\Terrod.cs
-    projectPath: Assets\Scripts\Terrod.cs
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Assets\Scripts\Turret.cs
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\Turret.cs
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Assets\Scripts\Turret.cs
     projectPath: Assets\Scripts\Turret.cs
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\APIUpdater\project-dependencies.graph
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\APIUpdater\project-dependencies.graph
+    projectPath: Library\APIUpdater\project-dependencies.graph
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\ArtifactDB
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\ArtifactDB
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ArtifactDB
     projectPath: Library\ArtifactDB
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\Artifacts\00\0054f6cf0d4d986bc6451db60744ff0d
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\00\0054f6cf0d4d986bc6451db60744ff0d
-    projectPath: Library\Artifacts\00\0054f6cf0d4d986bc6451db60744ff0d
+  - path: Code\CapstoneDev\Library\ArtifactDB-lock
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ArtifactDB-lock
+    projectPath: Library\ArtifactDB-lock
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\01\011a0f21cad867341a0e1198f75c4691
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\01\011a0f21cad867341a0e1198f75c4691
-    projectPath: Library\Artifacts\01\011a0f21cad867341a0e1198f75c4691
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\Artifacts\02\020b7451a2a53af4f1bb72b9c1ad5daf
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\02\020b7451a2a53af4f1bb72b9c1ad5daf
+    projectPath: Library\Artifacts\02\020b7451a2a53af4f1bb72b9c1ad5daf
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\01\01e98fc805a4535bed2209ec57eb3d79
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\01\01e98fc805a4535bed2209ec57eb3d79
-    projectPath: Library\Artifacts\01\01e98fc805a4535bed2209ec57eb3d79
+  - path: Code\CapstoneDev\Library\Artifacts\09\097c92ba7ed13804b5700b04d3fc6550
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\09\097c92ba7ed13804b5700b04d3fc6550
+    projectPath: Library\Artifacts\09\097c92ba7ed13804b5700b04d3fc6550
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\03\0357aeb844c9f1ed4923a8626a722372
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\03\0357aeb844c9f1ed4923a8626a722372
-    projectPath: Library\Artifacts\03\0357aeb844c9f1ed4923a8626a722372
+  - path: Code\CapstoneDev\Library\Artifacts\15\15a0683b65f69561c264e24f44b3f50e
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\15\15a0683b65f69561c264e24f44b3f50e
+    projectPath: Library\Artifacts\15\15a0683b65f69561c264e24f44b3f50e
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\04\046166fb6b5e5c1a7b1dadf93df20a8c
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\04\046166fb6b5e5c1a7b1dadf93df20a8c
-    projectPath: Library\Artifacts\04\046166fb6b5e5c1a7b1dadf93df20a8c
+  - path: Code\CapstoneDev\Library\Artifacts\1d\1d32f17859527b4c60955d1cbfb42999
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\1d\1d32f17859527b4c60955d1cbfb42999
+    projectPath: Library\Artifacts\1d\1d32f17859527b4c60955d1cbfb42999
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\05\05edb25d6bf0511591a9b1416f5f2c98
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\05\05edb25d6bf0511591a9b1416f5f2c98
-    projectPath: Library\Artifacts\05\05edb25d6bf0511591a9b1416f5f2c98
+  - path: Code\CapstoneDev\Library\Artifacts\22\222ca7a9adb57a6be719830111136792
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\22\222ca7a9adb57a6be719830111136792
+    projectPath: Library\Artifacts\22\222ca7a9adb57a6be719830111136792
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\06\065b7d92ddff0e6bdab602e852588775
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\06\065b7d92ddff0e6bdab602e852588775
-    projectPath: Library\Artifacts\06\065b7d92ddff0e6bdab602e852588775
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\07\071474dfe1543af49dee21eb56f9c610
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\07\071474dfe1543af49dee21eb56f9c610
-    projectPath: Library\Artifacts\07\071474dfe1543af49dee21eb56f9c610
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\0b\0bfccfeacd1583d8634f429db51d1217
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\0b\0bfccfeacd1583d8634f429db51d1217
-    projectPath: Library\Artifacts\0b\0bfccfeacd1583d8634f429db51d1217
+  - path: Code\CapstoneDev\Library\Artifacts\31\31b36133e4287b9750609e4983ddd14d
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\31\31b36133e4287b9750609e4983ddd14d
+    projectPath: Library\Artifacts\31\31b36133e4287b9750609e4983ddd14d
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\0f\0f419a64293d34e8a2641a173ca4ce30
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\0f\0f419a64293d34e8a2641a173ca4ce30
-    projectPath: Library\Artifacts\0f\0f419a64293d34e8a2641a173ca4ce30
+  - path: Code\CapstoneDev\Library\Artifacts\42\424c4de73f539f169c68b7d1df89e692
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\42\424c4de73f539f169c68b7d1df89e692
+    projectPath: Library\Artifacts\42\424c4de73f539f169c68b7d1df89e692
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\0f\0fb911a2bd820fed734a92cf1870be7b
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\0f\0fb911a2bd820fed734a92cf1870be7b
-    projectPath: Library\Artifacts\0f\0fb911a2bd820fed734a92cf1870be7b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\12\12a79aef6490492b756ae7a3286bcd3f
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\12\12a79aef6490492b756ae7a3286bcd3f
-    projectPath: Library\Artifacts\12\12a79aef6490492b756ae7a3286bcd3f
+  - path: Code\CapstoneDev\Library\Artifacts\4c\4ccc433ecc28eb1b854764b9f2d08dd5
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\4c\4ccc433ecc28eb1b854764b9f2d08dd5
+    projectPath: Library\Artifacts\4c\4ccc433ecc28eb1b854764b9f2d08dd5
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\13\1312aa69b70bfb943fd3665dbb9887ac
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\13\1312aa69b70bfb943fd3665dbb9887ac
-    projectPath: Library\Artifacts\13\1312aa69b70bfb943fd3665dbb9887ac
+  - path: Code\CapstoneDev\Library\Artifacts\5b\5b98c7e2d0b54bb4915a1c760087097f
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5b\5b98c7e2d0b54bb4915a1c760087097f
+    projectPath: Library\Artifacts\5b\5b98c7e2d0b54bb4915a1c760087097f
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\14\1444cb092815ad1c8b80bb255b64e2bc
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\14\1444cb092815ad1c8b80bb255b64e2bc
-    projectPath: Library\Artifacts\14\1444cb092815ad1c8b80bb255b64e2bc
+  - path: Code\CapstoneDev\Library\Artifacts\5d\5dd5d31b009e838c772dce31e517f395
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5d\5dd5d31b009e838c772dce31e517f395
+    projectPath: Library\Artifacts\5d\5dd5d31b009e838c772dce31e517f395
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\19\190d0c81a51b180a1f379ca469608bb6
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\19\190d0c81a51b180a1f379ca469608bb6
-    projectPath: Library\Artifacts\19\190d0c81a51b180a1f379ca469608bb6
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\1c\1c0729b6cee083f00fe895b7d2f510b8
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\1c\1c0729b6cee083f00fe895b7d2f510b8
-    projectPath: Library\Artifacts\1c\1c0729b6cee083f00fe895b7d2f510b8
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\1f\1fcd49e9e5ccd9966b878dbccd429efe
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\1f\1fcd49e9e5ccd9966b878dbccd429efe
-    projectPath: Library\Artifacts\1f\1fcd49e9e5ccd9966b878dbccd429efe
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\23\23547ad180cfd9ca7ed30212d3f1d299
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\23\23547ad180cfd9ca7ed30212d3f1d299
-    projectPath: Library\Artifacts\23\23547ad180cfd9ca7ed30212d3f1d299
+  - path: Code\CapstoneDev\Library\Artifacts\5e\5e6354e54d261f40ffb52f71cc5689c3
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5e\5e6354e54d261f40ffb52f71cc5689c3
+    projectPath: Library\Artifacts\5e\5e6354e54d261f40ffb52f71cc5689c3
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\28\280d9ce76a0dc3114c9d7223c97b029a
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\28\280d9ce76a0dc3114c9d7223c97b029a
-    projectPath: Library\Artifacts\28\280d9ce76a0dc3114c9d7223c97b029a
+  - path: Code\CapstoneDev\Library\Artifacts\64\64f9e1a8600f799def444ea2b0a9e7e6
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\64\64f9e1a8600f799def444ea2b0a9e7e6
+    projectPath: Library\Artifacts\64\64f9e1a8600f799def444ea2b0a9e7e6
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\2a\2ab4c29b695658d99d67789d42c4be98
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\2a\2ab4c29b695658d99d67789d42c4be98
-    projectPath: Library\Artifacts\2a\2ab4c29b695658d99d67789d42c4be98
+  - path: Code\CapstoneDev\Library\Artifacts\66\6636f82ce925d1b10baddae0f03f996b
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\66\6636f82ce925d1b10baddae0f03f996b
+    projectPath: Library\Artifacts\66\6636f82ce925d1b10baddae0f03f996b
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\2c\2cdd6c5d8de5eb5cba11275ecdbbd785
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\2c\2cdd6c5d8de5eb5cba11275ecdbbd785
-    projectPath: Library\Artifacts\2c\2cdd6c5d8de5eb5cba11275ecdbbd785
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\36\36c989e1955ceaf34f48b835e39c8d50
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\36\36c989e1955ceaf34f48b835e39c8d50
-    projectPath: Library\Artifacts\36\36c989e1955ceaf34f48b835e39c8d50
+  - path: Code\CapstoneDev\Library\Artifacts\7a\7aecb59e5257ae43ee7c9d9c49772b51
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\7a\7aecb59e5257ae43ee7c9d9c49772b51
+    projectPath: Library\Artifacts\7a\7aecb59e5257ae43ee7c9d9c49772b51
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\38\38652b8c0f9dc704e0050365255e252a
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\38\38652b8c0f9dc704e0050365255e252a
-    projectPath: Library\Artifacts\38\38652b8c0f9dc704e0050365255e252a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\3a\3a5285d0fce75e9ece9da17e3d7615ce
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\3a\3a5285d0fce75e9ece9da17e3d7615ce
-    projectPath: Library\Artifacts\3a\3a5285d0fce75e9ece9da17e3d7615ce
+  - path: Code\CapstoneDev\Library\Artifacts\81\81f4bb119a8bcf6211f17aabc1558918
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\81\81f4bb119a8bcf6211f17aabc1558918
+    projectPath: Library\Artifacts\81\81f4bb119a8bcf6211f17aabc1558918
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\3b\3b5a8f7389537bc1497c1fd75baa811d
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\3b\3b5a8f7389537bc1497c1fd75baa811d
-    projectPath: Library\Artifacts\3b\3b5a8f7389537bc1497c1fd75baa811d
+  - path: Code\CapstoneDev\Library\Artifacts\8a\8adc0a0bf304c798d3ee685a3ca82df5
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\8a\8adc0a0bf304c798d3ee685a3ca82df5
+    projectPath: Library\Artifacts\8a\8adc0a0bf304c798d3ee685a3ca82df5
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\3e\3e5e432c0578e5c3096c1fe9e97f3e03
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\3e\3e5e432c0578e5c3096c1fe9e97f3e03
-    projectPath: Library\Artifacts\3e\3e5e432c0578e5c3096c1fe9e97f3e03
+  - path: Code\CapstoneDev\Library\Artifacts\a7\a70b9c40220d59fef9179bf8ef044a8a
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\a7\a70b9c40220d59fef9179bf8ef044a8a
+    projectPath: Library\Artifacts\a7\a70b9c40220d59fef9179bf8ef044a8a
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\40\40226fd2efd33e48e8cc25876293bd6b
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\40\40226fd2efd33e48e8cc25876293bd6b
-    projectPath: Library\Artifacts\40\40226fd2efd33e48e8cc25876293bd6b
+  - path: Code\CapstoneDev\Library\Artifacts\a7\a77085afb98e3894674b22e617cd297d
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\a7\a77085afb98e3894674b22e617cd297d
+    projectPath: Library\Artifacts\a7\a77085afb98e3894674b22e617cd297d
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\41\414390c02e51223b5ce431b1cf44cdcd
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\41\414390c02e51223b5ce431b1cf44cdcd
-    projectPath: Library\Artifacts\41\414390c02e51223b5ce431b1cf44cdcd
+  - path: Code\CapstoneDev\Library\Artifacts\b5\b52f4c0237de3761749414a017d6aa90
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b5\b52f4c0237de3761749414a017d6aa90
+    projectPath: Library\Artifacts\b5\b52f4c0237de3761749414a017d6aa90
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\48\48165f1a336c3c14a7a8a1b174d2c9cf
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\48\48165f1a336c3c14a7a8a1b174d2c9cf
-    projectPath: Library\Artifacts\48\48165f1a336c3c14a7a8a1b174d2c9cf
+  - path: Code\CapstoneDev\Library\Artifacts\ca\caac8dd42c1cce21b7babe11ed7773f0
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ca\caac8dd42c1cce21b7babe11ed7773f0
+    projectPath: Library\Artifacts\ca\caac8dd42c1cce21b7babe11ed7773f0
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\4c\4c43743040d0b06075d6e62711cdb3f8
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\4c\4c43743040d0b06075d6e62711cdb3f8
-    projectPath: Library\Artifacts\4c\4c43743040d0b06075d6e62711cdb3f8
+  - path: Code\CapstoneDev\Library\Artifacts\cc\cce08580fce14ded136cdc94f74962cc
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\cc\cce08580fce14ded136cdc94f74962cc
+    projectPath: Library\Artifacts\cc\cce08580fce14ded136cdc94f74962cc
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\51\51e0c6b260e20f691a1f5a39df6bc4e4
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\51\51e0c6b260e20f691a1f5a39df6bc4e4
-    projectPath: Library\Artifacts\51\51e0c6b260e20f691a1f5a39df6bc4e4
+  - path: Code\CapstoneDev\Library\Artifacts\ea\ea55e443fb4dd4f9c4b1fe74063cc97c
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ea\ea55e443fb4dd4f9c4b1fe74063cc97c
+    projectPath: Library\Artifacts\ea\ea55e443fb4dd4f9c4b1fe74063cc97c
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\54\54fa0e70976af3555ad54fe6077d48b6
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\54\54fa0e70976af3555ad54fe6077d48b6
-    projectPath: Library\Artifacts\54\54fa0e70976af3555ad54fe6077d48b6
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\56\56db8813fd170b20bf3fc08a3f84ac37
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\56\56db8813fd170b20bf3fc08a3f84ac37
-    projectPath: Library\Artifacts\56\56db8813fd170b20bf3fc08a3f84ac37
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\5e\5e18e2aebb919318d3eadae072036c9a
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5e\5e18e2aebb919318d3eadae072036c9a
-    projectPath: Library\Artifacts\5e\5e18e2aebb919318d3eadae072036c9a
+  - path: Code\CapstoneDev\Library\Artifacts\ec\ec8e19b32c287cbab3cc00ed5562cffc
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ec\ec8e19b32c287cbab3cc00ed5562cffc
+    projectPath: Library\Artifacts\ec\ec8e19b32c287cbab3cc00ed5562cffc
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\5f\5fe2085abafbdd5e6eff45ca6d276930
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\5f\5fe2085abafbdd5e6eff45ca6d276930
-    projectPath: Library\Artifacts\5f\5fe2085abafbdd5e6eff45ca6d276930
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\60\603e263b2c220c30e8327a12094191b8
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\60\603e263b2c220c30e8327a12094191b8
-    projectPath: Library\Artifacts\60\603e263b2c220c30e8327a12094191b8
+  - path: Code\CapstoneDev\Library\Artifacts\fb\fbcf9a7568fc8cd895f5ce33eff39ec9
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fb\fbcf9a7568fc8cd895f5ce33eff39ec9
+    projectPath: Library\Artifacts\fb\fbcf9a7568fc8cd895f5ce33eff39ec9
     originalPath: 
     indexStatus: 0
     workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\68\685862c06d2bba2422099f8809bc402f
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\68\685862c06d2bba2422099f8809bc402f
-    projectPath: Library\Artifacts\68\685862c06d2bba2422099f8809bc402f
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\69\694c3a4bcb6a34fbc6befda8556234be
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\69\694c3a4bcb6a34fbc6befda8556234be
-    projectPath: Library\Artifacts\69\694c3a4bcb6a34fbc6befda8556234be
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\6b\6b297e27e0b5a836cf72ce445682699c
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\6b\6b297e27e0b5a836cf72ce445682699c
-    projectPath: Library\Artifacts\6b\6b297e27e0b5a836cf72ce445682699c
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\6f\6f6f8b160142a69b649d8c64c139a556
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\6f\6f6f8b160142a69b649d8c64c139a556
-    projectPath: Library\Artifacts\6f\6f6f8b160142a69b649d8c64c139a556
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\77\7789355aa734e8c3841e91a50b026be7
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\77\7789355aa734e8c3841e91a50b026be7
-    projectPath: Library\Artifacts\77\7789355aa734e8c3841e91a50b026be7
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\81\813c56d787fcecdb7c082659bd0383b0
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\81\813c56d787fcecdb7c082659bd0383b0
-    projectPath: Library\Artifacts\81\813c56d787fcecdb7c082659bd0383b0
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\82\82d24a6142bd1fa5b8970e0b1e14d9e1
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\82\82d24a6142bd1fa5b8970e0b1e14d9e1
-    projectPath: Library\Artifacts\82\82d24a6142bd1fa5b8970e0b1e14d9e1
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\82\82e74e2fb5a76668c3871f61770ed59d
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\82\82e74e2fb5a76668c3871f61770ed59d
-    projectPath: Library\Artifacts\82\82e74e2fb5a76668c3871f61770ed59d
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\8b\8b5c7c3b2a403dd4df8b8dfb84340875
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\8b\8b5c7c3b2a403dd4df8b8dfb84340875
-    projectPath: Library\Artifacts\8b\8b5c7c3b2a403dd4df8b8dfb84340875
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\93\93093c0a51591558feb9662bab70d7a5
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\93\93093c0a51591558feb9662bab70d7a5
-    projectPath: Library\Artifacts\93\93093c0a51591558feb9662bab70d7a5
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\93\935e97370b52d282ce59e97345e6a1b4
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\93\935e97370b52d282ce59e97345e6a1b4
-    projectPath: Library\Artifacts\93\935e97370b52d282ce59e97345e6a1b4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\9a\9ac1185ba5625b79f20a90397a4feb75
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\9a\9ac1185ba5625b79f20a90397a4feb75
-    projectPath: Library\Artifacts\9a\9ac1185ba5625b79f20a90397a4feb75
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\9b\9b7e92fd2bb405068cf7c2139e5619cd
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\9b\9b7e92fd2bb405068cf7c2139e5619cd
-    projectPath: Library\Artifacts\9b\9b7e92fd2bb405068cf7c2139e5619cd
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\9b\9bf7e2b2fc953386375d26713a706b21
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\9b\9bf7e2b2fc953386375d26713a706b21
-    projectPath: Library\Artifacts\9b\9bf7e2b2fc953386375d26713a706b21
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\9e\9eb2684ed987d2b022dee4aa66b68ca5
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\9e\9eb2684ed987d2b022dee4aa66b68ca5
-    projectPath: Library\Artifacts\9e\9eb2684ed987d2b022dee4aa66b68ca5
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\9f\9f131e99eff778d7521f53331867f43e
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\9f\9f131e99eff778d7521f53331867f43e
-    projectPath: Library\Artifacts\9f\9f131e99eff778d7521f53331867f43e
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\a1\a135810c35575c109fb1e63f73ea9355
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\a1\a135810c35575c109fb1e63f73ea9355
-    projectPath: Library\Artifacts\a1\a135810c35575c109fb1e63f73ea9355
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\a8\a82535147363558ab7dc76ca10f07f9b
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\a8\a82535147363558ab7dc76ca10f07f9b
-    projectPath: Library\Artifacts\a8\a82535147363558ab7dc76ca10f07f9b
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\b3\b377e0ec59de1e4e1ec1db591b737f06
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b3\b377e0ec59de1e4e1ec1db591b737f06
-    projectPath: Library\Artifacts\b3\b377e0ec59de1e4e1ec1db591b737f06
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\b8\b85474a3d66fedc7174dcbada4d7e6b1
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b8\b85474a3d66fedc7174dcbada4d7e6b1
-    projectPath: Library\Artifacts\b8\b85474a3d66fedc7174dcbada4d7e6b1
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\b9\b957a958d68ec0ef1c63209b571aae71
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\b9\b957a958d68ec0ef1c63209b571aae71
-    projectPath: Library\Artifacts\b9\b957a958d68ec0ef1c63209b571aae71
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\ba\bab65e6596d915d410f660529232718c
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ba\bab65e6596d915d410f660529232718c
-    projectPath: Library\Artifacts\ba\bab65e6596d915d410f660529232718c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\be\be7584be3401c34d30c34fd09dc2e62e
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\be\be7584be3401c34d30c34fd09dc2e62e
-    projectPath: Library\Artifacts\be\be7584be3401c34d30c34fd09dc2e62e
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\c4\c440b96fed36eda6221fde20d10b1b0f
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\c4\c440b96fed36eda6221fde20d10b1b0f
-    projectPath: Library\Artifacts\c4\c440b96fed36eda6221fde20d10b1b0f
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\ce\ce1b9856d9beceb426a453e1a76813f4
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ce\ce1b9856d9beceb426a453e1a76813f4
-    projectPath: Library\Artifacts\ce\ce1b9856d9beceb426a453e1a76813f4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\d2\d220b311b6423eaa7dc0f074e04569af
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\d2\d220b311b6423eaa7dc0f074e04569af
-    projectPath: Library\Artifacts\d2\d220b311b6423eaa7dc0f074e04569af
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\d2\d268c8556b143c4519334bbb73687ed4
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\d2\d268c8556b143c4519334bbb73687ed4
-    projectPath: Library\Artifacts\d2\d268c8556b143c4519334bbb73687ed4
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\d6\d60dc5dd54d77d14bbb51ee0fa7bbaf5
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\d6\d60dc5dd54d77d14bbb51ee0fa7bbaf5
-    projectPath: Library\Artifacts\d6\d60dc5dd54d77d14bbb51ee0fa7bbaf5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\da\da11e06d60d5dcc157841d687cfce5da
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\da\da11e06d60d5dcc157841d687cfce5da
-    projectPath: Library\Artifacts\da\da11e06d60d5dcc157841d687cfce5da
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\dd\dd5217fe578eed4c253b72881b22c631
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\dd\dd5217fe578eed4c253b72881b22c631
-    projectPath: Library\Artifacts\dd\dd5217fe578eed4c253b72881b22c631
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\e2\e24b310de8d1a34bd373bf4203a2d7bc
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e2\e24b310de8d1a34bd373bf4203a2d7bc
-    projectPath: Library\Artifacts\e2\e24b310de8d1a34bd373bf4203a2d7bc
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\e2\e2529322e429704224b2498414539f34
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e2\e2529322e429704224b2498414539f34
-    projectPath: Library\Artifacts\e2\e2529322e429704224b2498414539f34
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\e6\e6fca03bbf60bb4ad1891feba7559463
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e6\e6fca03bbf60bb4ad1891feba7559463
-    projectPath: Library\Artifacts\e6\e6fca03bbf60bb4ad1891feba7559463
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\e7\e7c55ac74262af2885ecfb921328c589
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\e7\e7c55ac74262af2885ecfb921328c589
-    projectPath: Library\Artifacts\e7\e7c55ac74262af2885ecfb921328c589
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\ef\efc74aa6a2c5987676b1613cbcf1a326
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\ef\efc74aa6a2c5987676b1613cbcf1a326
-    projectPath: Library\Artifacts\ef\efc74aa6a2c5987676b1613cbcf1a326
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\f1\f1751eb8972d0350feea86929616b5ea
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f1\f1751eb8972d0350feea86929616b5ea
-    projectPath: Library\Artifacts\f1\f1751eb8972d0350feea86929616b5ea
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\f3\f3e200afaf1fa483173b262eac5754e6
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\f3\f3e200afaf1fa483173b262eac5754e6
-    projectPath: Library\Artifacts\f3\f3e200afaf1fa483173b262eac5754e6
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Library\Artifacts\fa\fa44f3377d925dc4fdd34356e78c73cb
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fa\fa44f3377d925dc4fdd34356e78c73cb
-    projectPath: Library\Artifacts\fa\fa44f3377d925dc4fdd34356e78c73cb
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\fa\fa95fc33c3aa2503f39a3e2414db7be1
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fa\fa95fc33c3aa2503f39a3e2414db7be1
-    projectPath: Library\Artifacts\fa\fa95fc33c3aa2503f39a3e2414db7be1
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\Artifacts\fe\fe0cce5b26d39d98a698bf3f5231c5b5
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\Artifacts\fe\fe0cce5b26d39d98a698bf3f5231c5b5
-    projectPath: Library\Artifacts\fe\fe0cce5b26d39d98a698bf3f5231c5b5
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Code\CapstoneDev\Library\CurrentLayout-default.dwlt
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\CurrentLayout-default.dwlt
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\CurrentLayout-default.dwlt
     projectPath: Library\CurrentLayout-default.dwlt
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\EditorInstance.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\EditorInstance.json
-    projectPath: Library\EditorInstance.json
+  - path: Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
   - path: Code\CapstoneDev\Library\gfu\cache\gitstatusentries.yaml
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gitstatusentries.yaml
     projectPath: Library\gfu\cache\gitstatusentries.yaml
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
   - path: Code\CapstoneDev\Library\gfu\cache\gittrackingstatus.yaml
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\gittrackingstatus.yaml
     projectPath: Library\gfu\cache\gittrackingstatus.yaml
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
   - path: Code\CapstoneDev\Library\gfu\cache\repoinfo.yaml
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\repoinfo.yaml
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\gfu\cache\repoinfo.yaml
     projectPath: Library\gfu\cache\repoinfo.yaml
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\InspectorExpandedItems.asset
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\InspectorExpandedItems.asset
-    projectPath: Library\InspectorExpandedItems.asset
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\LastSceneManagerSetup.txt
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\LastSceneManagerSetup.txt
-    projectPath: Library\LastSceneManagerSetup.txt
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 3
   - path: Code\CapstoneDev\Library\SceneVisibilityState.asset
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\SceneVisibilityState.asset
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\SceneVisibilityState.asset
     projectPath: Library\SceneVisibilityState.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp.dll
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp.dll
-    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+  - path: Code\CapstoneDev\Library\ShaderCache\EditorEncounteredVariants
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\ShaderCache\EditorEncounteredVariants
+    projectPath: Library\ShaderCache\EditorEncounteredVariants
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp.pdb
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\ScriptAssemblies\Assembly-CSharp.pdb
-    projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe0.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe0.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe10.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe10.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe10.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe11.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe11.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe11.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe12.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe12.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe12.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe4.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe4.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe4.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe5.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe5.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe5.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe6.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe6.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe6.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe7.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe7.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe7.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe8.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe8.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe8.log
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe9.log
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\shadercompiler-UnityShaderCompiler.exe9.log
+    projectPath: Library\shadercompiler-UnityShaderCompiler.exe9.log
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
   - path: Code\CapstoneDev\Library\SourceAssetDB
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\SourceAssetDB
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\SourceAssetDB
     projectPath: Library\SourceAssetDB
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Library\StateCache\MainStageHierarchy\80\8095450abd84287838047d48b55cb3d8.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\MainStageHierarchy\80\8095450abd84287838047d48b55cb3d8.json
-    projectPath: Library\StateCache\MainStageHierarchy\80\8095450abd84287838047d48b55cb3d8.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\MainStageHierarchy\bb\bb33e63fd3770d2bf9677452c9cd11e0.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\MainStageHierarchy\bb\bb33e63fd3770d2bf9677452c9cd11e0.json
-    projectPath: Library\StateCache\MainStageHierarchy\bb\bb33e63fd3770d2bf9677452c9cd11e0.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\PrefabStageHierarchy\2c\2c227553bde935530e7ce7752614fbb2.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\PrefabStageHierarchy\2c\2c227553bde935530e7ce7752614fbb2.json
-    projectPath: Library\StateCache\PrefabStageHierarchy\2c\2c227553bde935530e7ce7752614fbb2.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\PrefabStageHierarchy\a9\a92e637f08e53fb6ca943e6732c44b9d.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\PrefabStageHierarchy\a9\a92e637f08e53fb6ca943e6732c44b9d.json
-    projectPath: Library\StateCache\PrefabStageHierarchy\a9\a92e637f08e53fb6ca943e6732c44b9d.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\SceneView\36\36496ba59555be80cad3cb79dfd17aed.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\36\36496ba59555be80cad3cb79dfd17aed.json
-    projectPath: Library\StateCache\SceneView\36\36496ba59555be80cad3cb79dfd17aed.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\SceneView\89\891a558fe9b0869160b056e7c6a1eb29.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\89\891a558fe9b0869160b056e7c6a1eb29.json
-    projectPath: Library\StateCache\SceneView\89\891a558fe9b0869160b056e7c6a1eb29.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\SceneView\94\9498934e94f0918952eac0518e1a162b.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\94\9498934e94f0918952eac0518e1a162b.json
-    projectPath: Library\StateCache\SceneView\94\9498934e94f0918952eac0518e1a162b.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Library\StateCache\SceneView\c7\c76905ccc2ab423a929796f5cda99f12.json
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\c7\c76905ccc2ab423a929796f5cda99f12.json
-    projectPath: Library\StateCache\SceneView\c7\c76905ccc2ab423a929796f5cda99f12.json
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\__Backupscenes\0.backup
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\__Backupscenes\0.backup
-    projectPath: Temp\__Backupscenes\0.backup
+  - path: Code\CapstoneDev\Library\SourceAssetDB-lock
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\SourceAssetDB-lock
+    projectPath: Library\SourceAssetDB-lock
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Temp\UnityLockfile
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityLockfile
-    projectPath: Temp\UnityLockfile
+  - path: Code\CapstoneDev\Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
+    projectPath: Library\StateCache\MainStageHierarchy\4d\4d2a36d9faf65734f0bbefb3ee623532.json
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Code\CapstoneDev\Temp\UnityTempFile-09ec5ba509f61ba4987294355935259d
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-09ec5ba509f61ba4987294355935259d
-    projectPath: Temp\UnityTempFile-09ec5ba509f61ba4987294355935259d
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-159dec2aa1faaea4bb48ed70ef38a783
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-159dec2aa1faaea4bb48ed70ef38a783
-    projectPath: Temp\UnityTempFile-159dec2aa1faaea4bb48ed70ef38a783
+  - path: Code\CapstoneDev\Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
+    fullPath: D:\Documents\Schoolwork\CS 460\Battle Vendetta\2D-Gaming_Capstone\Code\CapstoneDev\Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
+    projectPath: Library\StateCache\SceneView\8c\8cd7c613bf844de3b80696e27a479d5e.json
     originalPath: 
     indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-185d4e5cd8d692b41ae08864c246ad82
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-185d4e5cd8d692b41ae08864c246ad82
-    projectPath: Temp\UnityTempFile-185d4e5cd8d692b41ae08864c246ad82
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-1f352348dfc83bd48addc8d20cc0884e
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-1f352348dfc83bd48addc8d20cc0884e
-    projectPath: Temp\UnityTempFile-1f352348dfc83bd48addc8d20cc0884e
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-1f64e84378a89c046a23cd1aad3ae9a6
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-1f64e84378a89c046a23cd1aad3ae9a6
-    projectPath: Temp\UnityTempFile-1f64e84378a89c046a23cd1aad3ae9a6
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-26e251b6adf45b2408b7ddf315bc4f98
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-26e251b6adf45b2408b7ddf315bc4f98
-    projectPath: Temp\UnityTempFile-26e251b6adf45b2408b7ddf315bc4f98
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-2a6f865655662754fb9e75202db969e2
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-2a6f865655662754fb9e75202db969e2
-    projectPath: Temp\UnityTempFile-2a6f865655662754fb9e75202db969e2
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-338e17d55b5a9fe478cc0837f483cb2f
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-338e17d55b5a9fe478cc0837f483cb2f
-    projectPath: Temp\UnityTempFile-338e17d55b5a9fe478cc0837f483cb2f
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-4db0ac1199f10a74daa6283dcf3eb86a
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-4db0ac1199f10a74daa6283dcf3eb86a
-    projectPath: Temp\UnityTempFile-4db0ac1199f10a74daa6283dcf3eb86a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-5258fc055baa9564885a7cefc9296ed6
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-5258fc055baa9564885a7cefc9296ed6
-    projectPath: Temp\UnityTempFile-5258fc055baa9564885a7cefc9296ed6
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-64f63c7eab2e51f49a5a26640c4dea2f
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-64f63c7eab2e51f49a5a26640c4dea2f
-    projectPath: Temp\UnityTempFile-64f63c7eab2e51f49a5a26640c4dea2f
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-6731629475b03bb47965bafbebcf9cab
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-6731629475b03bb47965bafbebcf9cab
-    projectPath: Temp\UnityTempFile-6731629475b03bb47965bafbebcf9cab
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-6d322f59e9e7e0446afb7ea9f10ba1b1
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-6d322f59e9e7e0446afb7ea9f10ba1b1
-    projectPath: Temp\UnityTempFile-6d322f59e9e7e0446afb7ea9f10ba1b1
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-7a4f4c10cd919ee4ca9808e7aa38cf0a
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-7a4f4c10cd919ee4ca9808e7aa38cf0a
-    projectPath: Temp\UnityTempFile-7a4f4c10cd919ee4ca9808e7aa38cf0a
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-8c12103d3e51b744e884fc4c923b5a35
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-8c12103d3e51b744e884fc4c923b5a35
-    projectPath: Temp\UnityTempFile-8c12103d3e51b744e884fc4c923b5a35
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-9ab625294a21f3a4986c656d470d4a7c
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-9ab625294a21f3a4986c656d470d4a7c
-    projectPath: Temp\UnityTempFile-9ab625294a21f3a4986c656d470d4a7c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-9e16c01e1d6dc3f4dae4e083bee25b58
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-9e16c01e1d6dc3f4dae4e083bee25b58
-    projectPath: Temp\UnityTempFile-9e16c01e1d6dc3f4dae4e083bee25b58
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-b669aeb3f5420c54799dceb22c8b309e
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-b669aeb3f5420c54799dceb22c8b309e
-    projectPath: Temp\UnityTempFile-b669aeb3f5420c54799dceb22c8b309e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-b908a303a7da8544a9b8eb7d9fd87920
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-b908a303a7da8544a9b8eb7d9fd87920
-    projectPath: Temp\UnityTempFile-b908a303a7da8544a9b8eb7d9fd87920
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Code\CapstoneDev\Temp\UnityTempFile-c19cfc9f5cd462c4fadc1e1936f8482c
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-c19cfc9f5cd462c4fadc1e1936f8482c
-    projectPath: Temp\UnityTempFile-c19cfc9f5cd462c4fadc1e1936f8482c
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-d502a395a7c52d740a21e39709acf5f0
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-d502a395a7c52d740a21e39709acf5f0
-    projectPath: Temp\UnityTempFile-d502a395a7c52d740a21e39709acf5f0
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-e541dc6b9c4a6684ea9fe074d0758581
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-e541dc6b9c4a6684ea9fe074d0758581
-    projectPath: Temp\UnityTempFile-e541dc6b9c4a6684ea9fe074d0758581
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
-  - path: Code\CapstoneDev\Temp\UnityTempFile-f6537f920838cf34bbe19c32b1aaebea
-    fullPath: C:\Users\treyh\OneDrive\UnityProjects\2D-Gaming_Capstone\Code\CapstoneDev\Temp\UnityTempFile-f6537f920838cf34bbe19c32b1aaebea
-    projectPath: Temp\UnityTempFile-f6537f920838cf34bbe19c32b1aaebea
-    originalPath: 
-    indexStatus: 0
-    workTreeStatus: 5
+    workTreeStatus: 3
