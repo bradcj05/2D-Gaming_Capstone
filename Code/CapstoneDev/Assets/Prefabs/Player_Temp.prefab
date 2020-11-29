@@ -348,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rig: {fileID: 6973898103469409745}
-  health: 10
+  maxHealth: 10
   defense: 4
   hb: {fileID: 0}
 --- !u!1001 &3424239020026447048

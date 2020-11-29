@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
      public Rigidbody2D rig;
      Vector2 movement;
 
-     public float health;
+     public float maxHealth;
+     float health;
      public float defense;
      public HealthBar hb;
      int isDestroyed;
@@ -18,7 +19,8 @@ public class Player : MonoBehaviour
 
     void Start()
      {
-          hb.SetMax(health);
+          hb.SetMax(maxHealth);
+          health = maxHealth;
           isDestroyed = 1;
      }
     // Update is called once per frame
@@ -27,7 +29,9 @@ public class Player : MonoBehaviour
     {
           movement.x = Input.GetAxisRaw("Horizontal");
           movement.y = Input.GetAxisRaw("Vertical");
-    }
+          hb.SetMax(maxHealth);
+          hb.SetHealth(health);
+     }
 
      //Movement
      void FixedUpdate()
@@ -63,8 +67,5 @@ public class Player : MonoBehaviour
                Destroy(gameObject);
                isDestroyed = 0;
           }
-
-          //Load game over screen / swap to another plane
-
      }
 }

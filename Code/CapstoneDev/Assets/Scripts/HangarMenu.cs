@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class HangarMenu : MonoBehaviour
 {
-     //May not need this class in the future
      int index;
      int selectionIndex;
+
+     //List of objects TODO: use
+     public Transform planes;
+     //public Transform guns;
+     //public Transform shells;
 
      public GameObject AS57;
      public GameObject P62;
@@ -31,7 +35,7 @@ public class HangarMenu : MonoBehaviour
           switch (selectionIndex)
           {
                case 0:
-                    if(AS57.GetComponent<SpriteRenderer>() == true)
+                    if(AS57.activeInHierarchy == true)
                     {
                          selectedPlane = AS57;
                     }
@@ -39,16 +43,16 @@ public class HangarMenu : MonoBehaviour
                     {
                          selectedPlane = P62;
                     }
-                    AS57.GetComponent<SpriteRenderer>().enabled = false;
-                    P62.GetComponent<SpriteRenderer>().enabled = false;
-                    gunR51T.GetComponent<SpriteRenderer>().enabled = true;
+                    AS57.gameObject.SetActive(false);
+                    P62.gameObject.SetActive(false);
+                    gunR51T.gameObject.SetActive(true);
                     selectionIndex++;
                     index = 0;
                     break;
                case 1:
                     selectedGun = gunR51T;
-                    gunR51T.GetComponent<SpriteRenderer>().enabled = false;
-                    shellR5AP.GetComponent<SpriteRenderer>().enabled = true;
+                    gunR51T.gameObject.SetActive(false);
+                    shellR5AP.gameObject.SetActive(true);
                     selectionIndex++;
                     index = 0;
                     break;
@@ -64,28 +68,50 @@ public class HangarMenu : MonoBehaviour
      public void NextOption()
      {
           //Set Current image to not active
-          //index++;
           //Set next image to active
 
           //Temporary Solution
           if(selectionIndex == 0)
           {
-               AS57.GetComponent<SpriteRenderer>().enabled = false;
-               P62.GetComponent<SpriteRenderer>().enabled = true;
+               if (index >= planes.childCount - 1)
+                    index = 0;
+               else
+                    index++;
+
+               int p = 0;
+               foreach(Transform current in planes)
+               {
+                    if (p == index)
+                         current.gameObject.SetActive(true);
+                    else
+                         current.gameObject.SetActive(false);
+                    p++;
+               }
           }
      }
 
      public void PreviousOption()
      {
           //Set Current image to not active
-          //index--;
           //Set next image to active
 
           //Temporary Solution
           if (selectionIndex == 0)
           {
-               AS57.GetComponent<SpriteRenderer>().enabled = true;
-               P62.GetComponent<SpriteRenderer>().enabled = false;
+               if (index <= 0)
+                    index = planes.childCount - 1;
+               else
+                    index--;
+
+               int p = 0;
+               foreach (Transform current in planes)
+               {
+                    if (p == index)
+                         current.gameObject.SetActive(true);
+                    else
+                         current.gameObject.SetActive(false);
+                    p++;
+               }
           }
      }
 
