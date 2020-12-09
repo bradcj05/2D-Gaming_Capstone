@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 /*
  * This class serves to manage the main menu of the game.
@@ -10,15 +11,44 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 
+    public AudioMixer audioMixer;
+
+    public Dropdown resolutionDropdown;
+
+    Resolution[] resolutions; 
 
 
+     public void Start() {
 
+        resolutions  = Screen.resolutions;
+        
+        //clear out default options to start with a cealn resoulation 
+        resolutionDropdown.ClearOptions();
 
-    public void Start() {
+        //converting array to list for add options
+        List<string> options = new List<string>();
 
+        //add element option list
+        for (int i =0; i < resolutions.Length; i++)
+        {
+           
+            string option = resolutions[i].width +" x "+ resolutions[i].height;
 
-    
+            options.Add(option);
+
+        }
+
+        resolutionDropdown.AddOptions(options);
+
     }
+
+
+
+    public void SetFullScreen (bool isFullscreen) {
+
+        Screen.fullScreen = isFullscreen;
+    }   
+
 
     //Starts the game
     public void PlayGame()
@@ -35,6 +65,14 @@ public class MainMenu : MonoBehaviour
    
        
     }
+
+    //adjust music 
+    public void SetVolume(float volume) {
+
+        audioMixer.SetFloat("volume", volume);
+        
+    }
+
 
      //Quits the application
      public void QuitGame()
