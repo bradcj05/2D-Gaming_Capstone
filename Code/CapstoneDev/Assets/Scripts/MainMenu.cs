@@ -10,15 +10,40 @@ using UnityEngine.Audio;
  */
 public class MainMenu : MonoBehaviour
 {
-
+    public GameObject OptionMenu;
+    
     public AudioMixer audioMixer;
 
     public Dropdown resolutionDropdown;
 
-    Resolution[] resolutions; 
+    Resolution[] resolutions;
 
+    public AudioSource myFx;
+    public AudioClip hoverFx;
+    public AudioClip clickFx;
 
-     public void Start() {
+    public void HoverSound() {
+
+        myFx.PlayOneShot(hoverFx);
+    
+    }
+
+    public void ClickSound() {
+
+        myFx.PlayOneShot(clickFx);
+    }
+
+    public void delay() {
+        StartCoroutine(TemporarilyDeactivate(2.0f));
+    }
+
+    private IEnumerator TemporarilyDeactivate(float duration)
+    {
+        OptionMenu.SetActive(false);
+        yield return new WaitForSeconds(duration);
+        OptionMenu.SetActive(true);
+    }
+    public void Start() {
 
         resolutions  = Screen.resolutions;
         
@@ -47,12 +72,19 @@ public class MainMenu : MonoBehaviour
     public void SetFullScreen (bool isFullscreen) {
 
         Screen.fullScreen = isFullscreen;
-    }   
+    }
 
+    
+    public void LoadingGame() {
+        Invoke("PlayGame", 2.0f);
+    }
+   
+    
 
     //Starts the game
     public void PlayGame()
      {
+
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
      }
 
@@ -60,9 +92,8 @@ public class MainMenu : MonoBehaviour
      //TODO: Modify this so that we don't have to change it each time the scene order is changed
      public void GoToSettings()
      {
-         SceneManager.LoadScene(5);
 
-   
+        SceneManager.LoadScene(5);
        
     }
 
@@ -72,6 +103,7 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
         
     }
+
 
 
      //Quits the application
