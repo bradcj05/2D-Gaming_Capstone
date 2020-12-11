@@ -92,6 +92,6 @@ public class AirosTurret : MonoBehaviour, Enemy
 
         //Add crater
         GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
-        c.transform.parent = GameObject.Find("Airos").transform;
+        c.transform.parent = GameObject.Find("Airos Variant 2").transform; //Quick Fix
     }
 }
