@@ -9,14 +9,13 @@ public class HomingMissile : MonoBehaviour
      public float power;
      public float speed;
      public float rotateSpeed = 10f;
-     float rotateAmount;
+     public float rotateAmount; //public for better testing
      public float penetration;
      public float deterioration; //ratio/second
 
      public Transform target;
      private Rigidbody2D rb;
-     //TODO Implement timer
-     float timer;
+     public float timer; //public for better testing
      public float rotationTime = 5f;
 
      //For Matt's explosion animation
@@ -25,33 +24,66 @@ public class HomingMissile : MonoBehaviour
      void Start()
      {
           rb = GetComponent<Rigidbody2D>();
-          target = GameObject.FindGameObjectWithTag("Player").transform;
+          try
+          {
+               target = GameObject.FindGameObjectWithTag("Player").transform;
+          }
+          catch(System.NullReferenceException e)
+          {
+               target = null;
+          }
           timer = 0f;
      }
 
      //Handles the physics and math for the homing missile
-     //TODO test
+     //TODO fix so homing missiles don't loop around forever after the timer ends.
      void FixedUpdate()
      {
-          if (timer < rotationTime)
+          if (target != null)
           {
+
+               //tutorial version with timer
+               
+               if (timer < rotationTime)
+               {
+                    Vector2 direction = (Vector2)target.position - rb.position;
+                    direction.Normalize();
+                    rotateAmount = Vector3.Cross(direction, transform.up).z;
+
+                    timer += Time.deltaTime;
+               }
+               else
+               {
+                    //Maybe just destroy gameObject here?
+                    rotateAmount = 0;
+               }
+               rb.angularVelocity = -(rotateAmount) * rotateSpeed;
+               rb.velocity = transform.up * speed;
+
+
+               //Tutorial version without timer
+               /*
                Vector2 direction = (Vector2)target.position - rb.position;
                direction.Normalize();
                rotateAmount = Vector3.Cross(direction, transform.up).z;
+               rb.angularVelocity = -rotateAmount * rotateSpeed;
+               rb.velocity = transform.up * speed;
+               */
 
-               timer += Time.deltaTime;
+               //Different version
+               //Vector2 direction = (Vector2)target.position - rb.position;
+
           }
           else
-               rotateAmount = 0;
-          rb.angularVelocity = -rotateAmount * rotateSpeed;
-          rb.velocity = transform.up * speed;
+          {
+               rb.velocity = transform.up * speed;
+          }
      }
 
-     //TODO: Update to provide bullet functionality
      void OnTriggerEnter2D(Collider2D collision)
      {
           Debug.Log(collision.name);
-          //TODO add bullet damage and hit effect
+          //TODO add hit effect
           Player p = collision.GetComponent<Player>();
           if (p != null)
           {

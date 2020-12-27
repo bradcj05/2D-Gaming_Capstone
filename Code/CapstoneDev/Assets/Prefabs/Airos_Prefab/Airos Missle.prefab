@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3526166680021626122}
   - component: {fileID: 9094661351592575046}
   - component: {fileID: 373011891191439428}
-  - component: {fileID: 8960378476217627517}
+  - component: {fileID: -2268569179948717408}
   m_Layer: 0
   m_Name: Airos Missle
   m_TagString: Bullet
@@ -99,13 +99,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 500
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!70 &373011891191439428
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.11, y: 0.31}
   m_Direction: 0
---- !u!114 &8960378476217627517
+--- !u!114 &-2268569179948717408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,10 +131,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8977783968469312899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b54d1b000f5f814197161d7806ba9d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e641d6355045a74ca09d5248d9c6974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 5
-  speed: 5
+  speed: 2
+  rotateSpeed: 10
+  rotateAmount: 0
   penetration: 5
   deterioration: 5
+  target: {fileID: 0}
+  timer: 0
+  rotationTime: 5
+  explosion: {fileID: 0}
