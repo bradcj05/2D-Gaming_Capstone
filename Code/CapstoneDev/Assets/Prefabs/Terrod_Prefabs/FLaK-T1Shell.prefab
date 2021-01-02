@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4569935417585082975}
   - component: {fileID: 1003579451580281548}
   - component: {fileID: -5559220870669834888}
+  - component: {fileID: 5462458563592472462}
   m_Layer: 0
   m_Name: FLaK-T1Shell
   m_TagString: Bullet
@@ -101,6 +102,7 @@ MonoBehaviour:
   speed: 5
   penetration: 5
   deterioration: 5
+  explosion: {fileID: 0}
 --- !u!50 &1003579451580281548
 Rigidbody2D:
   serializedVersion: 4
@@ -138,3 +140,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: 0}
   m_Size: {x: 0.6, y: 4.8}
   m_Direction: 0
+--- !u!114 &5462458563592472462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722760165447307521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 5
