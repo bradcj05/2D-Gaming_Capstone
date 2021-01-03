@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 //Manages the level select menu
 public class LevelSelect : MonoBehaviour
+
 {
     public void AirosStart()
      {
+
+
           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
      }
 
@@ -20,4 +23,6 @@ public class LevelSelect : MonoBehaviour
      {
           Debug.Log("Coming Soon");
      }
+
+
 }

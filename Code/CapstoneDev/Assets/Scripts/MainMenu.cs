@@ -109,7 +109,9 @@ public class MainMenu : MonoBehaviour
      //Quits the application
      public void QuitGame()
      {
-          Debug.Log("Game Quit");
-          Application.Quit();
+        Debug.Log("Game Quit");
+        //reset all levels
+        PlayerPrefs.DeleteAll();
+        Application.Quit();
      }
 }
