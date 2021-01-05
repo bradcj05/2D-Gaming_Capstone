@@ -158,7 +158,7 @@ MonoBehaviour:
   shellType: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
     type: 3}
   bulletSpeed: 3.5
-  waitTime: 4.5
+  waitTime: 0.5
   rb: {fileID: 25835577}
   player: {fileID: 2116028202}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   shellType: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
     type: 3}
   bulletSpeed: 3.5
-  waitTime: 4.5
+  waitTime: 0.5
   rb: {fileID: 47961124}
   player: {fileID: 2116028202}
   CenterOfMass: {x: 0, y: 0, z: 0}

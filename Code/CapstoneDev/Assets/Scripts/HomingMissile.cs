@@ -48,8 +48,14 @@ public class HomingMissile : MonoBehaviour
                {
                     Vector2 direction = (Vector2)target.position - rb.position;
                     direction.Normalize();
-                    rotateAmount = Vector3.Cross(direction, transform.up).z;
-
+                    if(Vector3.Dot(direction, transform.up) <= 0)
+                    {
+                        rotateAmount = 1;
+                    } 
+                    else
+                    {
+                        rotateAmount = Vector3.Cross(direction, transform.up).z;
+                    }
                     timer += Time.deltaTime;
                }
                else
@@ -57,8 +63,10 @@ public class HomingMissile : MonoBehaviour
                     //Maybe just destroy gameObject here?
                     rotateAmount = 0;
                }
-               rb.angularVelocity = -(rotateAmount) * rotateSpeed;
-               rb.velocity = transform.up * speed;
+                float curRot = transform.localRotation.eulerAngles.z;
+                transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+                //rb.angularVelocity = -rotateSpeed * rotateAmount;
+                rb.velocity = transform.up * speed;
 
 
                //Tutorial version without timer
@@ -76,6 +84,7 @@ public class HomingMissile : MonoBehaviour
           }
           else
           {
+               rb.angularVelocity = 0;
                rb.velocity = transform.up * speed;
           }
      }
