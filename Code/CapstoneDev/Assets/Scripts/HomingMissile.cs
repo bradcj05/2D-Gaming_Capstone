@@ -30,42 +30,43 @@ public class HomingMissile : MonoBehaviour, IEnemyProjectile
           }
           catch(System.NullReferenceException e)
           {
+               Debug.Log(e);
                target = null;
           }
           timer = 0f;
      }
 
      //Handles the physics and math for the homing missile
-     //TODO fix so homing missiles don't loop around forever after the timer ends.
-     //TODO figure out torque situation
      void FixedUpdate()
      {
           if (target != null)
           {
 
-               float slowDown = 0.1f;
-
                if (timer < rotationTime)
                {
                     Vector2 direction = (Vector2)target.position - rb.position;
                     direction.Normalize();
-                    rotateAmount = Vector3.Cross(direction, transform.up).z;
-                    rb.angularVelocity = -(rotateAmount) * rotateSpeed;
-
-                    rb.AddTorque(-rb.angularVelocity * slowDown, ForceMode2D.Force);
-
+                    if(Vector3.Dot(direction, transform.up) <= 0)
+                    {
+                         rotateAmount = 1;
+                    }
+                    else
+                    {
+                         rotateAmount = Vector3.Cross(direction, transform.up).z;
+                    }
                     timer += Time.deltaTime;
                }
                else
                {
-                    //Maybe just destroy gameObject here?
-                    rb.angularVelocity = 0;
+                    rotateAmount = 0;
                }
+               float curRot = transform.localRotation.eulerAngles.z;
+               transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
                rb.velocity = transform.up * speed;
-               //rb.AddTorque(slowDown, ForceMode2D.Force);
           }
           else
           {
+               rb.angularVelocity = 0;
                rb.velocity = transform.up * speed;
           }
      }

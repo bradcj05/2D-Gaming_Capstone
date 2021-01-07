@@ -137,7 +137,7 @@ MonoBehaviour:
   power: 5
   speed: 2
   rotateSpeed: 10
-  rotateAmount: 0
+  rotateAmount: 1
   penetration: 5
   deterioration: 5
   target: {fileID: 0}
