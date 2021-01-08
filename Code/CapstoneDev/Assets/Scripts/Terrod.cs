@@ -43,6 +43,7 @@ public class Terrod : MonoBehaviour
      
      void FixedUpdate()
      {
+          /* //Changing Terrod's movement
           rig.MovePosition(rig.position + movement * moveSpeed * Time.fixedDeltaTime);
           if(turretRigMain != null)
                turretRigMain.MovePosition(turretRigMain.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -50,6 +51,9 @@ public class Terrod : MonoBehaviour
                turretRig1.MovePosition(turretRig1.position + movement * moveSpeed * Time.fixedDeltaTime);
           if(turretRig2)
                turretRig2.MovePosition(turretRig2.position + movement * moveSpeed * Time.fixedDeltaTime);
+          */
+
+
      }
      
 }

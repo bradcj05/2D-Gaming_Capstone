@@ -13,7 +13,7 @@ public class HomingMissile : MonoBehaviour, IEnemyProjectile
      public float penetration;
      public float deterioration; //ratio/second
 
-     public Transform target;
+     private Transform target;
      private Rigidbody2D rb;
      public float timer; //public for better testing
      public float rotationTime = 5f;

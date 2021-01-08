@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO Finish and Test
 public class Turret : MonoBehaviour, Enemy
 {
      public float health;
@@ -17,9 +18,11 @@ public class Turret : MonoBehaviour, Enemy
      public float waitTime = 5f;
      float timer = 0f;
 
-     public Rigidbody2D rb;
-     public GameObject player;
+     private Rigidbody2D rb;
+     private Transform target;
      public Vector3 CenterOfMass;
+     public float rotateSpeed = 10f;
+     public float rotateAmount;//public for better testing
 
      //public float fireRate;
      //public float spread; //In degrees
@@ -28,10 +31,19 @@ public class Turret : MonoBehaviour, Enemy
 
      void Start()
      {
+          rb = GetComponent<Rigidbody2D>();
           if (CenterOfMass != null)
                rb.centerOfMass = CenterOfMass;
           hb.SetMax(health);
-          player = GameObject.FindWithTag("Player");
+          try
+          {
+               target = GameObject.FindGameObjectWithTag("Player").transform;
+          }
+          catch (System.NullReferenceException e)
+          {
+               Debug.Log(e);
+               target = null;
+          }
      }
 
      void Update()
@@ -46,11 +58,41 @@ public class Turret : MonoBehaviour, Enemy
 
      void FixedUpdate()
      {
-          if(player != null)
+          if(target != null)
           {
-               Vector2 lookDir = player.GetComponent<Rigidbody2D>().position - rb.position;
+               
+               Vector2 lookDir = target.GetComponent<Rigidbody2D>().position - rb.position;
                float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
                rb.rotation = angle;
+               
+
+               /*//Causes the Turrets to spin in circles rapidly; Fix
+               Vector2 direction = (Vector2)target.position - rb.position;
+               direction.Normalize();
+               if (Vector3.Dot(direction, transform.up) <= 0)
+               {
+                    rotateAmount = 1;
+               }
+               else
+               {
+                    rotateAmount = Vector3.Cross(direction, transform.up).z;
+               }
+               float curRot = transform.localRotation.eulerAngles.z;
+               transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+               */
+          }
+          else
+          {
+               //Try to find the next player plane when it spawns
+               try
+               {
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+               }
+               catch (System.NullReferenceException e)
+               {
+                    Debug.Log(e);
+                    target = null;
+               }
           }
      }
 

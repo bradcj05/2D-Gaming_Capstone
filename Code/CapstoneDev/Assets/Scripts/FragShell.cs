@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Script for Terrod's fragmentation shells
-//TODO Finish and test
-public class FragShell : MonoBehaviour, IEnemyProjectile
+//TODO Finish and TEST
+public class FragShell : MonoBehaviour
 {
-
      public int numFragments = 8;
      public bool fixedSpread = true;
-     public float spin = 45f;
+     public float spin = 0f;
+     public GameObject fragProjectile; //The fragmentation created
+     public float bulletSpeed;
      public Rigidbody2D rb; //May not be needed?
 
      float curAngle = 0f;
      float angle = 0f;
-
-     //Checking to see when the GameObject should be destroyed
-     public void FixedUpdate()
-     {
-          //For when it is time for this object to be destroyed
-          //Fracture();
-     }
      
      //Here to allow for the mathmatics to be implemented
      public void Fracture()
      {
-          //TODO Look into Unity Engine's Random Class
           System.Random rand = new System.Random();
 
           for (int i = 0; i < numFragments; i++)
@@ -35,27 +28,34 @@ public class FragShell : MonoBehaviour, IEnemyProjectile
                {
                     curAngle = i * (360f / numFragments);
                     angle = transform.up.x + curAngle + spin;
-                    //Fire Projectile at angle
+                    //Fire Projectile at angle; Test and FIX
+                    //Implements the rotation math from the HM
+                    GameObject bullet = Instantiate(fragProjectile, transform.position, rb.transform.rotation);
+                    //Now rotate
+                    float curRot = transform.localRotation.eulerAngles.z;
+                    bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
+                    //Propel forward
+                    Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
+                    rig.AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
                } else if(numFragments > 0)
                {
                     curAngle = rand.Next(361);
                     angle = transform.up.x + curAngle + spin;
-                    //Fire Projectile at angle
+                    //Fire Projectile at angle; Test with fixed spread first
+                    GameObject bullet = Instantiate(fragProjectile, transform.position, rb.transform.rotation);
+                    //Now rotate
+                    float curRot = transform.localRotation.eulerAngles.z;
+                    bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
+                    //Propel forward
+                    Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
+                    rig.AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
                }
           }
-
-          Destroy(gameObject);
      }
 
-     public void OnTriggerEnter2D(Collider2D collision)
+     void OnDisable()
      {
-          Debug.Log(collision.name);
-          //TODO add bullet damage and hit effect
-          Player p = collision.GetComponent<Player>();
-          if (p != null)
-          {
-               //p.TakeDamage(power);
-               Destroy(gameObject);
-          }
+          if(this.enabled)
+               Fracture();
      }
 }
