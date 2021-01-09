@@ -660,6 +660,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 2
+  target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   rotateSpeed: 10
   rotateAmount: 0
@@ -2522,6 +2523,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 2
+  target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   rotateSpeed: 10
   rotateAmount: 0
@@ -2649,7 +2651,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271384652}
-  m_LocalRotation: {x: 0.0003723992, y: 0.0054870793, z: 0.9990949, w: 0.04217887}
+  m_LocalRotation: {x: -0, y: 0, z: -0.99911004, w: -0.04218075}
   m_LocalPosition: {x: -3.21, y: -1.97, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2658,7 +2660,7 @@ Transform:
   - {fileID: 1914613344}
   m_Father: {fileID: 396692242}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.626, y: 0.069, z: -184.835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -184.835}
 --- !u!1 &1349751146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3799,6 +3801,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 5
+  target: {fileID: 0}
   CenterOfMass: {x: -0.08, y: 1.27, z: 0}
   rotateSpeed: 10
   rotateAmount: 0

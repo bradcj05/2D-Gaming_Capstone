@@ -19,7 +19,7 @@ public class Turret : MonoBehaviour, Enemy
      float timer = 0f;
 
      private Rigidbody2D rb;
-     private Transform target;
+     public Transform target;//public for better testing
      public Vector3 CenterOfMass;
      public float rotateSpeed = 1f;
      public float rotateAmount;//public for better testing
@@ -69,14 +69,14 @@ public class Turret : MonoBehaviour, Enemy
                //Causes the Turrets to spin in circles rapidly; Fix
                Vector2 direction = (Vector2)target.position - rb.position;
                direction.Normalize();
-               if (Vector3.Dot(direction, transform.up) <= 0)
-               {
-                    rotateAmount = 1;
-               }
-               else
-               {
+               //if (Vector3.Dot(direction, transform.up) <= 0)
+               //{
                     rotateAmount = Vector3.Cross(direction, transform.up).z;
-               }
+               //}
+               //else
+               //{
+                    //rotateAmount = Vector3.Cross(direction, transform.up).z;
+               //}
                float curRot = transform.localRotation.eulerAngles.z;
                transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
                

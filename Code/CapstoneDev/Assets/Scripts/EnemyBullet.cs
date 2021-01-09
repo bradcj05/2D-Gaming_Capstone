@@ -18,9 +18,14 @@ public class EnemyBullet : MonoBehaviour, IEnemyProjectile
           Debug.Log(collision.name);
           //TODO add bullet damage and hit effect
           Player p = collision.GetComponent<Player>();
+          FragShell fs = gameObject.GetComponent<FragShell>();
           if (p != null)
           {
                p.TakeDamage(power);
+
+               if (fs != null)
+                    fs.Fracture();
+
                Destroy(gameObject);
           }
      }
