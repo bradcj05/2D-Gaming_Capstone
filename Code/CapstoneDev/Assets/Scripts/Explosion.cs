@@ -40,12 +40,19 @@ public class Explosion : MonoBehaviour
      {
           knockbackForce.x = pureKnockbackForce.x;
           knockbackForce.y = pureKnockbackForce.y;
-          Rigidbody2D rb = c.GetComponent<Rigidbody2D>();
+          try
+          {
+               Rigidbody2D rb = c.GetComponent<Rigidbody2D>();
 
-          //Make sure the vector for knockback force is pointing in the correct direction
-          Vector3 relativePos = c.transform.position - this.transform.position;
-          knockbackForce = Vector3.RotateTowards(knockbackForce, relativePos.normalized, 10f, 0f);
+               //Make sure the vector for knockback force is pointing in the correct direction
+               Vector3 relativePos = c.transform.position - this.transform.position;
+               knockbackForce = Vector3.RotateTowards(knockbackForce, relativePos.normalized, 10f, 0f);
 
-          rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+               rb.AddForce(knockbackForce, ForceMode2D.Impulse);
+          }
+          catch (System.Exception e)
+          {
+               Debug.Log(e);
+          }
      }
 }
