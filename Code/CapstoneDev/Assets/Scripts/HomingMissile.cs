@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO fix so that it inherits from EnemyBullet or another interface
+//TODO improve interface implementation.
 [RequireComponent(typeof(Rigidbody2D))]
-public class HomingMissile : MonoBehaviour
+public class HomingMissile : MonoBehaviour, IEnemyProjectile
 {
      public float power;
      public float speed;
@@ -13,7 +13,7 @@ public class HomingMissile : MonoBehaviour
      public float penetration;
      public float deterioration; //ratio/second
 
-     public Transform target;
+     private Transform target;
      private Rigidbody2D rb;
      public float timer; //public for better testing
      public float rotationTime = 5f;
@@ -30,57 +30,48 @@ public class HomingMissile : MonoBehaviour
           }
           catch(System.NullReferenceException e)
           {
+               Debug.Log(e);
                target = null;
           }
           timer = 0f;
      }
 
      //Handles the physics and math for the homing missile
-     //TODO fix so homing missiles don't loop around forever after the timer ends.
      void FixedUpdate()
      {
           if (target != null)
           {
 
-               //tutorial version with timer
-               
                if (timer < rotationTime)
                {
                     Vector2 direction = (Vector2)target.position - rb.position;
                     direction.Normalize();
-                    rotateAmount = Vector3.Cross(direction, transform.up).z;
-
+                    if(Vector3.Dot(direction, transform.up) <= 0)
+                    {
+                         rotateAmount = 1;
+                    }
+                    else
+                    {
+                         rotateAmount = Vector3.Cross(direction, transform.up).z;
+                    }
                     timer += Time.deltaTime;
                }
                else
                {
-                    //Maybe just destroy gameObject here?
                     rotateAmount = 0;
                }
-               rb.angularVelocity = -(rotateAmount) * rotateSpeed;
+               float curRot = transform.localRotation.eulerAngles.z;
+               transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
                rb.velocity = transform.up * speed;
-
-
-               //Tutorial version without timer
-               /*
-               Vector2 direction = (Vector2)target.position - rb.position;
-               direction.Normalize();
-               rotateAmount = Vector3.Cross(direction, transform.up).z;
-               rb.angularVelocity = -rotateAmount * rotateSpeed;
-               rb.velocity = transform.up * speed;
-               */
-
-               //Different version
-               //Vector2 direction = (Vector2)target.position - rb.position;
-
           }
           else
           {
+               rb.angularVelocity = 0;
                rb.velocity = transform.up * speed;
           }
      }
 
-     void OnTriggerEnter2D(Collider2D collision)
+     public void OnTriggerEnter2D(Collider2D collision)
      {
           Debug.Log(collision.name);
           //TODO add hit effect

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour, IEnemyProjectile
 {
      public float power;
      public float speed;
@@ -13,7 +13,7 @@ public class EnemyBullet : MonoBehaviour
      public GameObject explosion;
 
      //TODO: Update to provide bullet functionality
-     void OnTriggerEnter2D(Collider2D collision)
+     public void OnTriggerEnter2D(Collider2D collision)
      {
           Debug.Log(collision.name);
           //TODO add bullet damage and hit effect
