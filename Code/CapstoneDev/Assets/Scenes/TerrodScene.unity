@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 396692241}
   - component: {fileID: 396692240}
   - component: {fileID: 396692239}
+  - component: {fileID: 396692243}
   m_Layer: 0
   m_Name: Terrod
   m_TagString: Enemy
@@ -578,6 +579,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396692243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396692238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e641d6355045a74ca09d5248d9c6974, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0
+  speed: 0.5
+  rotateSpeed: 0.15
+  rotateAmount: 0
+  penetration: 0
+  deterioration: 0
+  timer: 0
+  rotationTime: 50
+  headingDown: 1
+  timed: 0
+  explosion: {fileID: 0}
 --- !u!1 &448293769
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,8 +613,8 @@ GameObject:
   - component: {fileID: 448293775}
   - component: {fileID: 448293774}
   - component: {fileID: 448293770}
-  - component: {fileID: 448293772}
   - component: {fileID: 448293771}
+  - component: {fileID: 448293772}
   - component: {fileID: 448293773}
   m_Layer: 10
   m_Name: Terrod-RIGHT-Turret_final
@@ -2451,8 +2475,8 @@ GameObject:
   - component: {fileID: 1271384658}
   - component: {fileID: 1271384657}
   - component: {fileID: 1271384653}
-  - component: {fileID: 1271384655}
   - component: {fileID: 1271384654}
+  - component: {fileID: 1271384655}
   - component: {fileID: 1271384656}
   m_Layer: 10
   m_Name: Terrod-LEFT-Turret_final
@@ -2649,7 +2673,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271384652}
-  m_LocalRotation: {x: 0.0003723992, y: 0.0054870793, z: 0.9990949, w: 0.04217887}
+  m_LocalRotation: {x: -0, y: 0, z: -0.99911004, w: -0.04218075}
   m_LocalPosition: {x: -3.21, y: -1.97, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2658,7 +2682,7 @@ Transform:
   - {fileID: 1914613344}
   m_Father: {fileID: 396692242}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.626, y: 0.069, z: -184.835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -184.835}
 --- !u!1 &1349751146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,8 +3751,8 @@ GameObject:
   - component: {fileID: 1909997708}
   - component: {fileID: 1909997707}
   - component: {fileID: 1909997703}
-  - component: {fileID: 1909997705}
   - component: {fileID: 1909997704}
+  - component: {fileID: 1909997705}
   - component: {fileID: 1909997706}
   - component: {fileID: 1909997709}
   m_Layer: 9

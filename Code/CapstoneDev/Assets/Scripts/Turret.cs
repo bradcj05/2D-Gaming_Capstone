@@ -52,7 +52,7 @@ public class Turret : MonoBehaviour, Enemy
           if (timer > waitTime)
           {
                Fire();
-               timer = timer - waitTime;
+               timer -= waitTime;
           }
      }
 
