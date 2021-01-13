@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/RickysMainMenu.unity
     guid: 3df100a77e79c07458aa2b2c69c7386b
   - enabled: 1
-    path: Assets/Scenes/TerrodScene.unity
-    guid: c03318751af60bd4eaafa98a6200516d
-  - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: a60d2169dcb1e814b84e65736f58a0a4
   - enabled: 1
     path: Assets/Scenes/AirosScene.unity
     guid: cfaa8a1325edcaa4fbf5f074de55c2d7
+  - enabled: 1
+    path: Assets/Scenes/TerrodScene.unity
+    guid: c03318751af60bd4eaafa98a6200516d
   - enabled: 1
     path: Assets/Scenes/Hangar.unity
     guid: 12fa15ef09b94c34c87776246412df7a
