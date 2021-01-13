@@ -684,6 +684,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 2
+  target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   rotateSpeed: 10
   rotateAmount: 0
@@ -2546,6 +2547,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 2
+  target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   rotateSpeed: 10
   rotateAmount: 0
@@ -3823,6 +3825,7 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 5
   waitTime: 5
+  target: {fileID: 0}
   CenterOfMass: {x: -0.08, y: 1.27, z: 0}
   rotateSpeed: 10
   rotateAmount: 0

@@ -15,6 +15,19 @@ public class FragShell : MonoBehaviour
 
      float curAngle = 0f;
      float angle = 0f;
+
+     float timer = 0f;
+     float timeLimit = 3f;
+
+     public void FixedUpdate()
+     {
+          timer += Time.deltaTime;
+          if(timer >= timeLimit)
+          {
+               Fracture();
+               Destroy(gameObject);
+          }
+     }
      
      //Here to allow for the mathmatics to be implemented
      public void Fracture()
@@ -27,7 +40,7 @@ public class FragShell : MonoBehaviour
                if(fixedSpread && numFragments > 0)
                {
                     curAngle = i * (360f / numFragments);
-                    angle = transform.up.x + curAngle + spin;
+                    angle = curAngle + spin;
                     //Fire Projectile at angle; Test and FIX
                     //Implements the rotation math from the HM
                     GameObject bullet = Instantiate(fragProjectile, transform.position, rb.transform.rotation);
@@ -40,7 +53,7 @@ public class FragShell : MonoBehaviour
                } else if(numFragments > 0)
                {
                     curAngle = rand.Next(361);
-                    angle = transform.up.x + curAngle + spin;
+                    angle = curAngle + spin;
                     //Fire Projectile at angle; Test with fixed spread first
                     GameObject bullet = Instantiate(fragProjectile, transform.position, rb.transform.rotation);
                     //Now rotate
@@ -51,11 +64,5 @@ public class FragShell : MonoBehaviour
                     rig.AddForce(bullet.transform.up * bulletSpeed, ForceMode2D.Impulse);
                }
           }
-     }
-
-     void OnDisable()
-     {
-          if(this.enabled)
-               Fracture();
      }
 }
