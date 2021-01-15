@@ -613,9 +613,9 @@ GameObject:
   - component: {fileID: 448293775}
   - component: {fileID: 448293774}
   - component: {fileID: 448293770}
-  - component: {fileID: 448293771}
   - component: {fileID: 448293772}
   - component: {fileID: 448293773}
+  - component: {fileID: 448293776}
   m_Layer: 10
   m_Name: Terrod-RIGHT-Turret_final
   m_TagString: Enemy
@@ -644,24 +644,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!255 &448293771
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448293769}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 396692240}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 3.2800002, y: -1.9199998}
-  m_DampingRatio: 1
-  m_Frequency: 1
 --- !u!114 &448293772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,16 +660,17 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 153315338}
   crater: {fileID: 6337988809978362316, guid: 58dbe780e469019449c2d626276280cb, type: 3}
-  bulletSpawn: {fileID: 1882001350}
-  bulletSpawn2: {fileID: 1425840609}
   shellType: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
     type: 3}
   bulletSpeed: 5
   waitTime: 2
   target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
-  rotateSpeed: 10
+  rotateSpeed: 1
   rotateAmount: 0
+  bulletSpawns:
+  - {fileID: 1882001350}
+  - {fileID: 1425840609}
 --- !u!60 &448293773
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -824,6 +807,25 @@ Transform:
   m_Father: {fileID: 396692242}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -178.211}
+--- !u!254 &448293776
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448293769}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 396692240}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_MaxForce: 10000
+  m_MaxTorque: 10000
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 4.109681, y: -2.5812538}
+  m_AngularOffset: 3.1103632
 --- !u!1 &487418987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1675,7 @@ PrefabInstance:
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.43
+      value: -3.59
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -2216,7 +2218,7 @@ Transform:
   m_LocalScale: {x: 1.8583663, y: 1.8583663, z: 1.8583663}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &925241118
 PrefabInstance:
@@ -2991,9 +2993,9 @@ GameObject:
   - component: {fileID: 1271384658}
   - component: {fileID: 1271384657}
   - component: {fileID: 1271384653}
-  - component: {fileID: 1271384654}
   - component: {fileID: 1271384655}
   - component: {fileID: 1271384656}
+  - component: {fileID: 1271384659}
   m_Layer: 10
   m_Name: Terrod-LEFT-Turret_final
   m_TagString: Enemy
@@ -3022,24 +3024,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!255 &1271384654
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271384652}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 396692240}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -3.21, y: -1.9699998}
-  m_DampingRatio: 1
-  m_Frequency: 1
 --- !u!114 &1271384655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3056,16 +3040,17 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 1049602559}
   crater: {fileID: 6337988809978362316, guid: 58dbe780e469019449c2d626276280cb, type: 3}
-  bulletSpawn: {fileID: 1373632781}
-  bulletSpawn2: {fileID: 2094625853}
   shellType: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
     type: 3}
   bulletSpeed: 5
   waitTime: 2
   target: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
-  rotateSpeed: 10
+  rotateSpeed: 1
   rotateAmount: 0
+  bulletSpawns:
+  - {fileID: 1373632781}
+  - {fileID: 2094625853}
 --- !u!60 &1271384656
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3200,6 +3185,25 @@ Transform:
   m_Father: {fileID: 396692242}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -184.835}
+--- !u!254 &1271384659
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271384652}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 396692240}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_MaxForce: 10000
+  m_MaxTorque: 10000
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: -3.8722818, y: -2.852048}
+  m_AngularOffset: -3.0572062
 --- !u!1 &1337930449
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +4023,7 @@ Transform:
   m_LocalScale: {x: 1.8583663, y: 1.8583663, z: 1.8583663}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1714762025
 PrefabInstance:
@@ -4532,10 +4536,10 @@ GameObject:
   - component: {fileID: 1909997708}
   - component: {fileID: 1909997707}
   - component: {fileID: 1909997703}
-  - component: {fileID: 1909997704}
   - component: {fileID: 1909997705}
   - component: {fileID: 1909997706}
   - component: {fileID: 1909997709}
+  - component: {fileID: 1909997710}
   m_Layer: 9
   m_Name: Terrod-CenterCannon_final
   m_TagString: Enemy
@@ -4564,24 +4568,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!255 &1909997704
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909997702}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 396692240}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.010000001, y: 1.1100004}
-  m_DampingRatio: 1
-  m_Frequency: 1
 --- !u!114 &1909997705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4598,16 +4584,17 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 1221923273}
   crater: {fileID: 8649370860654125051, guid: 31473258a54f92145a01c74a285e9709, type: 3}
-  bulletSpawn: {fileID: 822827859}
-  bulletSpawn2: {fileID: 1447824653}
   shellType: {fileID: 1927717893260739586, guid: 8b44b6ebc0c217f4b92e142979d95759,
     type: 3}
   bulletSpeed: 5
   waitTime: 5
   target: {fileID: 0}
   CenterOfMass: {x: -0.08, y: 1.27, z: 0}
-  rotateSpeed: 10
+  rotateSpeed: 0.5
   rotateAmount: 0
+  bulletSpawns:
+  - {fileID: 822827859}
+  - {fileID: 1447824653}
 --- !u!60 &1909997706
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4945,6 +4932,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerOfMass: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+--- !u!254 &1909997710
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909997702}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 396692240}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_MaxForce: 10000
+  m_MaxTorque: 10000
+  m_CorrectionScale: 0.3
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 0.02224957, y: 1.4172571}
+  m_AngularOffset: 3.1349037
 --- !u!1001 &1914613343
 PrefabInstance:
   m_ObjectHideFlags: 0
