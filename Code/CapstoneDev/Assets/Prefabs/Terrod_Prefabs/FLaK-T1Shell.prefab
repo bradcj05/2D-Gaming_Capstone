@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 5
-  pureKnockbackForce: {x: 0, y: 0, z: 0}
+  pureKnockbackForce: {x: 100, y: 100, z: 0}
 --- !u!114 &3719626658114299722
 MonoBehaviour:
   m_ObjectHideFlags: 0
