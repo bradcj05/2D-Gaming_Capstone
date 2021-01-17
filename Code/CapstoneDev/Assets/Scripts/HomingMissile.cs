@@ -17,7 +17,7 @@ public class HomingMissile : Bullet
     public bool headingDown = false;    // Whether the sprite is heading down
     public bool timed = true;           // Whether the homing is only activated for a certain time
 
-    public void Start()
+    public new void Start()
     {
         base.Start();
         // May have to change player target to something else for allies

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5742629456958975553}
   - component: {fileID: 5636249566231994053}
   - component: {fileID: 2618778991887617309}
+  - component: {fileID: 4098889355986946197}
   m_Layer: 8
   m_Name: Z-85EShell
   m_TagString: Bullet
@@ -138,7 +139,24 @@ MonoBehaviour:
   speed: 7
   penetration: 0
   deterioration: 0.1
+  selfDestructTime: 2
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
   hitEffect: {fileID: 0}
+--- !u!114 &4098889355986946197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927717893260739586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 100
+  radius: 10
+  forceThreshold: 1000
+  decentralized: 0

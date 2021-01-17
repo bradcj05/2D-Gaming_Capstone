@@ -28,7 +28,7 @@ public class Destructible : MonoBehaviour
     public void Update() { }
 
     // Damage calculations
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         if (damage > 0)
         {

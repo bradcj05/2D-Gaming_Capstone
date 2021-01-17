@@ -5,13 +5,13 @@ using UnityEngine;
 public class Enemy : Destructible
 {
     // Start is called before the first frame
-    public void Start()
+    public new void Start()
     {
         base.Start();
     }
 
     // Update is called once per frame
-    public void Update()
+    public new void Update()
     {
         base.Update();
     }

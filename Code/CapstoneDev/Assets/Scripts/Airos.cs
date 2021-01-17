@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 {
-    float timer = 0f;
-
     //Movement Variables
     public float moveSpeed = 5f;
     public Rigidbody2D rig;
     public Rigidbody2D turretL1;
     public Rigidbody2D turretR2;
     Vector2 movement;
-    float moveWaitTime = 5f;
-    float moveTimer = 0f;
 
-
-    void Start()
+    new void Start()
     {
-
         movement.x = -0.6f;
     }
 
-    void Update()
+    new void Update()
     {
         if (movement.x < 0 && rig.position.x <= -6.5)
         {

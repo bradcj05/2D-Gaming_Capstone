@@ -11,14 +11,14 @@ public class Turret : Gun
     protected Rigidbody2D rb;
 
     // Initialize rigid body
-    public void Start()
+    public new void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    public void Update() {
+    public new void Update() {
         base.Update();
     }
 
@@ -38,8 +38,7 @@ public class Turret : Gun
                 rotateAmount = Vector3.Cross(direction, transform.up).z;
             }
             float curRot = transform.rotation.eulerAngles.z;
-            transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
-
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
         }
         else
         {

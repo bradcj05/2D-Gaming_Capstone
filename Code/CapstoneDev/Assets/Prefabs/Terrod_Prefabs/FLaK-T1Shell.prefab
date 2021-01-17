@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 296998226985687499}
   - component: {fileID: 1003579451580281548}
   - component: {fileID: -5559220870669834888}
-  - component: {fileID: 5462458563592472462}
   - component: {fileID: 3719626658114299722}
   - component: {fileID: -8951550908174403135}
   m_Layer: 8
@@ -124,20 +123,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: 0}
   m_Size: {x: 0.6, y: 4.8}
   m_Direction: 0
---- !u!114 &5462458563592472462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722760165447307521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  pureKnockbackForce: {x: 0, y: 0, z: 0}
 --- !u!114 &3719626658114299722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +140,6 @@ MonoBehaviour:
   spin: 0
   fragProjectile: {fileID: 5508660762800847285, guid: f618d44c3d210da4fb4fb7e54ea3abe7,
     type: 3}
-  bulletSpeed: 10
 --- !u!114 &-8951550908174403135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,9 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 5
-  speed: 5
+  speed: 4
   penetration: 0
   deterioration: 0
+  selfDestructTime: 3
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}

@@ -24,13 +24,13 @@ public class SampleEnemy : Enemy
      //public float powerBuff;
      //public float speedBuff
 
-     void Start()
+     new void Start()
      {
           hb.SetMax(health);
           player = GameObject.FindWithTag("Player");
      }
 
-     void Update()
+     new void Update()
      {
           timer += Time.deltaTime;
           if (timer > waitTime)
@@ -76,25 +76,5 @@ public class SampleEnemy : Enemy
           GameObject bullet = Instantiate(shellType, gun.position, gun.rotation);
           Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
           rig.AddForce(gun.up * bulletSpeed, ForceMode2D.Impulse);
-     }
-
-     public void TakeDamage(float damage)
-     {
-          if ((damage - defense) > 0)
-          {
-               health -= (damage - defense);
-          }
-          hb.SetHealth(health);
-
-          if (health <= 0)
-          {
-               Die();
-          }
-     }
-
-     public void Die()
-     {
-          //Play death animation
-          Destroy(gameObject);
      }
 }

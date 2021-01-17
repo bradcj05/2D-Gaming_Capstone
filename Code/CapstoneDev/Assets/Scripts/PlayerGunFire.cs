@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerGunFire : Gun
 {
-    public void Start() { }
+    public new void Start()
+    {
+        base.Start();
+    }
 
     // Update is called once per frame
     public new void Update()
