@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4696215701178848518}
   - component: {fileID: 2072869082587749642}
-  - component: {fileID: 1620507345891122612}
   - component: {fileID: 4860951874880019715}
   - component: {fileID: -867384195615070257}
-  m_Layer: 0
+  - component: {fileID: -1589576271335674171}
+  m_Layer: 8
   m_Name: KA-4PShell
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1620507345891122612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386605503765369876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b54d1b000f5f814197161d7806ba9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  speed: 5
-  penetration: 5
-  deterioration: 5
 --- !u!50 &4860951874880019715
 Rigidbody2D:
   serializedVersion: 4
@@ -138,3 +122,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00000052457335, y: -0.054025218}
   m_Size: {x: 0.28770435, y: 1.0138147}
   m_Direction: 0
+--- !u!114 &-1589576271335674171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386605503765369876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff76c42603c3a46ac62f40ec625637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 5
+  speed: 10
+  penetration: 0.15
+  deterioration: 0
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}

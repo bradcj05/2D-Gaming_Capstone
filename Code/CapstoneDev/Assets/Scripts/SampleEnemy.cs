@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SampleEnemy : MonoBehaviour, Enemy
+public class SampleEnemy : Enemy
 {
-     public float health;
-     public float defense;
-     public HealthBar hb;
-     //Add death animation
-
      public Transform gun;
      public GameObject shellType;
      public float bulletSpeed;

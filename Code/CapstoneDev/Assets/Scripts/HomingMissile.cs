@@ -5,30 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //TODO improve interface implementation.
-[RequireComponent(typeof(Rigidbody2D))]
-public class HomingMissile : MonoBehaviour, IEnemyProjectile
+public class HomingMissile : Bullet
 {
-    public float power;
-    public float speed;
     public float rotateSpeed = 10f;
-    public float rotateAmount;          //public for better testing
-    public float penetration;
-    public float deterioration;         //ratio/second
+    protected float rotateAmount;          //public for better testing
 
     private Transform target;
-    private Rigidbody2D rb;
     public float timer;                 //public for better testing
     public float rotationTime = 5f;
 
     public bool headingDown = false;    // Whether the sprite is heading down
     public bool timed = true;           // Whether the homing is only activated for a certain time
 
-    //For Matt's explosion animation
-    public GameObject explosion;
-
-    void Start()
+    public void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Start();
+        // May have to change player target to something else for allies
         try
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -42,7 +34,7 @@ public class HomingMissile : MonoBehaviour, IEnemyProjectile
     }
 
     //Handles the physics and math for the homing missile
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         if (target != null)
         {
@@ -95,18 +87,6 @@ public class HomingMissile : MonoBehaviour, IEnemyProjectile
         else
         {
             rb.velocity = transform.up * speed;
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log(collision.name);
-        //TODO add hit effect
-        Player p = collision.GetComponent<Player>();
-        if (p != null)
-        {
-            p.TakeDamage(power);
-            Destroy(gameObject);
         }
     }
 }
