@@ -15,12 +15,23 @@ public class cardDisplay : MonoBehaviour
     public Text nameText;
     public Text costText;
 
+    public Text speedText;
+    public Text healthText;
+    public Text defenseText;
+
     // Start is called before the first frame update
     void Start()
     {
         nameText.text = cards.name;
         costText.text = cards.cost;
         artwork.sprite = cards.artwork;
+
+        speedText.text = cards.speed;
+        healthText.text = cards.health;
+        defenseText.text = cards.defense;
+
+
+
     }
 
    
