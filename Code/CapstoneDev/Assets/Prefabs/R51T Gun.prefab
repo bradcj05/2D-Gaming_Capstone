@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5714245901337699406}
   - component: {fileID: 5714245901337699407}
-  - component: {fileID: 840552461953724828}
+  - component: {fileID: 3068016708045959597}
   m_Layer: 0
   m_Name: R51T Gun
   m_TagString: Untagged
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &840552461953724828
+--- !u!114 &3068016708045959597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,14 +96,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e87d4f3ecdb925459f120fb3a38a0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 5365192277569748272}
   shellType: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
     type: 3}
-  speed: 20
-  fireRate: 500
-  spread: 0
-  powerBuff: 0.1
-  speedBuff: 0.1
+  waitTime: 0.5
+  spread: 3
+  powerBuff: 0
+  speedBuff: 0
+  bulletSpawns:
+  - {fileID: 5365192277569748272}
 --- !u!1 &7681439109548903377
 GameObject:
   m_ObjectHideFlags: 0

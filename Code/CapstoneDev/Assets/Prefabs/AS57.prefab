@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 7.5, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1796143006649410900
@@ -327,8 +327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rig: {fileID: 0}
-  health: 0
+  health: 10
   defense: 0
   hb: {fileID: 0}
+  crater: {fileID: 0}
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
+  maxHealth: 10

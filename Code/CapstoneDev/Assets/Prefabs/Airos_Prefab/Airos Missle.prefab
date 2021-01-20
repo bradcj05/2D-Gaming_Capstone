@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9094661351592575046}
   - component: {fileID: 373011891191439428}
   - component: {fileID: -2268569179948717408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Airos Missle
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8977783968469312899}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.004084, y: -8.428046, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -870944659
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 964ed9c5617741a48a7fe5ccef8b7c1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,13 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e641d6355045a74ca09d5248d9c6974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
-  speed: 2
-  rotateSpeed: 10
-  rotateAmount: 1
+  power: 10
+  speed: 7
   penetration: 5
-  deterioration: 5
-  target: {fileID: 0}
+  deterioration: 0.05
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
+  rotateSpeed: 10
   timer: 0
   rotationTime: 5
-  explosion: {fileID: 0}
+  headingDown: 0
+  timed: 1

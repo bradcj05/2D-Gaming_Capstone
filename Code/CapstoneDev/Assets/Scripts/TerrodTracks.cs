@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerrodTracks : MonoBehaviour, Enemy
+public class TerrodTracks : Enemy
 {
-     public float maxHealth;
-     public float health;
-     public float defense;
-     public HealthBar hb;
-     private bool isWorking;
+     protected float maxHealth;
+     protected bool isWorking;
      public float repairTime;
      float repairTimer;
      float repairRate; //Percentage of HP after repair
 
-     void Start()
+     public new void Start()
      {
+          maxHealth = health;
           hb.SetMax(maxHealth);
-          health = maxHealth;
           isWorking = true;
 
           repairTimer = 0f;
@@ -24,7 +21,7 @@ public class TerrodTracks : MonoBehaviour, Enemy
      }
 
      //If the track becomes broken, start repairing it
-     void Update()
+     public new void Update()
      {
           if (!isWorking)
           {
@@ -41,11 +38,8 @@ public class TerrodTracks : MonoBehaviour, Enemy
           }
      }
 
-     //Blank on Purpose
-     public void Fire() { }
-
      //Damages the GameObject when it collides with a player projectile
-     public void TakeDamage(float damage)
+     public override void TakeDamage(float damage)
      {
           if ((damage - defense) > 0)
           {
@@ -61,9 +55,6 @@ public class TerrodTracks : MonoBehaviour, Enemy
                isWorking = false;
           }
      }
-
-     //Blank on Purpose
-     public void Die() { }
 
      public bool TracksWorking()
      {

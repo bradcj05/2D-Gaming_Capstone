@@ -6,75 +6,72 @@ using UnityEngine;
 //To be used with Terrod's Flak shells and other explosive GameObjects
 public class Explosion : MonoBehaviour
 {
-     public GameObject source;
-     public float power = 5f;
-     public float radius = 5f;
+    public float power = 5f;
+    public float radius = 5f;
 
-     public float forceThreashold = 5f;
-     public Vector3 pureKnockbackForce;
-     protected Vector3 knockbackForce;
+    public float forceThreshold = 0.5f;
 
-     //May not need
-     void Detonate()
-     {
-          Collider[] targets = Physics.OverlapSphere(source.transform.position, radius);
-          foreach (Collider hit in targets)
-          {
-               //Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
-               //rb.AddExplosionForce(power, explosionPos, radius, 0f, ForceMode.Impulse);
-               Vector3 distanceVec = hit.transform.position - transform.position;
-               float distance = distanceVec.magnitude;
-               float effectivePower = power / (float)System.Math.Pow(distance, 2);
-               float effectiveForce = forceThreashold * (float)System.Math.Pow(radius / distance, 2);
-               Player p = hit.GetComponent<Player>();
-               if (p != null)
-                    p.TakeDamage(effectivePower);
-               Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
-               if(rb != null)
-               {
+    public bool decentralized = false; // Whether the explosion deals constant damage among radius.
+
+    //May not need
+    public void Detonate()
+    {
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, LayerMask.GetMask("Player"));
+        foreach (Collider2D hit in targets)
+        {
+            //Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+            //rb.AddExplosionForce(power, explosionPos, radius, 0f, ForceMode.Impulse);
+            Vector3 distanceVec = hit.transform.position - transform.position;
+            float distance = distanceVec.magnitude;
+            if (distance > 0)
+            {
+                // Calculate effective power and force
+                float effectivePower;
+                float effectiveForce;
+                if (decentralized)
+                {
+                    effectivePower = power;
+                    effectiveForce = 0;
+                }
+                else
+                {
+                    effectivePower = power / Mathf.Pow(distance, 2);
+                    effectiveForce = forceThreshold * Mathf.Pow(radius / distance, 2);
+                }
+                // Deal explosion damage
+                Destructible p = hit.GetComponent<Destructible>();
+                if (p != null)
+                {
+                    p.TakeDamage(effectivePower - p.defense);
+                }
+                // Knockback
+                Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
                     distanceVec.Normalize();
-                    rb.AddForce(distanceVec * effectiveForce, ForceMode2D.Impulse);
-               }
-          }
-     }
+                    rb.AddForce(effectiveForce * distanceVec, ForceMode2D.Force);
+                }
+            }
+        }
+    }
 
-     /*//Damages the player if they collide with the explosion
-     void OnTriggerEnter2D(Collider2D collision)
-     {
-          
-          Debug.Log(collision.name);
+    /*//Damages the player if they collide with the explosion
+    void OnTriggerEnter2D(Collider2D collision)
+    {
 
-          Player p = collision.GetComponent<Player>();
-          float distance = (source.transform.position - p.transform.position).magnitude; //Change
-          if(distance <= radius)
-          {
-               float effectivePower = power / Math.Pow(distance, 2);
-               float effectiveKnockback = forceThreashold * Math.Pow(radius / distance, 2);
-               if(p != null)
-                    p.TakeDamage(effectivePower);
-               Knockback(collision.gameObject, effectiveKnockback); //Change
-          }
-          
-     }
-     */
-     //Applys knockback force to objects that collide with the explosion
-     void Knockback(GameObject c, float effectiveKnockback)
-     {
-          knockbackForce.x = pureKnockbackForce.x;
-          knockbackForce.y = pureKnockbackForce.y;
-          try
-          {
-               Rigidbody2D rb = c.GetComponent<Rigidbody2D>();
+         Debug.Log(collision.name);
 
-               //Make sure the vector for knockback force is pointing in the correct direction
-               Vector3 relativePos = c.transform.position - this.transform.position;
-               knockbackForce = Vector3.RotateTowards(knockbackForce, relativePos.normalized, 10f, 0f);
+         Player p = collision.GetComponent<Player>();
+         float distance = (source.transform.position - p.transform.position).magnitude; //Change
+         if(distance <= radius)
+         {
+              float effectivePower = power / Math.Pow(distance, 2);
+              float effectiveKnockback = forceThreshold * Math.Pow(radius / distance, 2);
+              if(p != null)
+                   p.TakeDamage(effectivePower);
+              Knockback(collision.gameObject, effectiveKnockback); //Change
+         }
 
-               rb.AddForce(knockbackForce, ForceMode2D.Impulse);
-          }
-          catch (System.Exception e)
-          {
-               Debug.Log(e);
-          }
-     }
+    }
+    */
 }

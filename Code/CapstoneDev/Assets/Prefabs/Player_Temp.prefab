@@ -346,11 +346,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rig: {fileID: 6973898103469409745}
-  maxHealth: 10
+  health: 10
   defense: 4
   hb: {fileID: 0}
+  crater: {fileID: 0}
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  maxSpeed: 5
+  acceleration: 100
+  maxHealth: 10
 --- !u!1001 &3424239020026447048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,12 +380,12 @@ PrefabInstance:
     - target: {fileID: 5714245901337699406, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5714245901337699406, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.64
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 5714245901337699406, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}

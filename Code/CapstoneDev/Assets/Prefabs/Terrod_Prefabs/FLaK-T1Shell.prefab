@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8994593752570565882}
   - component: {fileID: 296998226985687499}
-  - component: {fileID: 4569935417585082975}
   - component: {fileID: 1003579451580281548}
   - component: {fileID: -5559220870669834888}
-  - component: {fileID: 5462458563592472462}
   - component: {fileID: 3719626658114299722}
-  m_Layer: 0
+  - component: {fileID: -8951550908174403135}
+  m_Layer: 8
   m_Name: FLaK-T1Shell
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -87,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4569935417585082975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722760165447307521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b54d1b000f5f814197161d7806ba9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  speed: 5
-  penetration: 5
-  deterioration: 5
-  explosion: {fileID: 0}
 --- !u!50 &1003579451580281548
 Rigidbody2D:
   serializedVersion: 4
@@ -141,20 +123,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: 0}
   m_Size: {x: 0.6, y: 4.8}
   m_Direction: 0
---- !u!114 &5462458563592472462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722760165447307521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  pureKnockbackForce: {x: 100, y: 100, z: 0}
 --- !u!114 &3719626658114299722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,9 +136,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numFragments: 8
-  fixedSpread: 1
+  fixedSpread: 0
   spin: 0
-  fragProjectile: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
+  fragProjectile: {fileID: 5508660762800847285, guid: f618d44c3d210da4fb4fb7e54ea3abe7,
     type: 3}
-  bulletSpeed: 5
-  rb: {fileID: 1003579451580281548}
+--- !u!114 &-8951550908174403135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722760165447307521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff76c42603c3a46ac62f40ec625637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 5
+  speed: 4
+  penetration: 0
+  deterioration: 0
+  selfDestructTime: 3
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}

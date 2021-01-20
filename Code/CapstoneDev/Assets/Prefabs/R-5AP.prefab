@@ -135,6 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 5
-  speed: 5
+  speed: 10
   penetration: 5
-  deterioration: 5
+  deterioration: 0.15
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}

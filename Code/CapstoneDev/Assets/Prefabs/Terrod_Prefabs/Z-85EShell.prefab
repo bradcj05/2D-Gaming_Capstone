@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5794538509344763867}
   - component: {fileID: 5874442400835072155}
-  - component: {fileID: 5268196884458759656}
   - component: {fileID: 5742629456958975553}
   - component: {fileID: 5636249566231994053}
-  m_Layer: 0
+  - component: {fileID: 2618778991887617309}
+  - component: {fileID: 4098889355986946197}
+  m_Layer: 8
   m_Name: Z-85EShell
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -85,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5268196884458759656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927717893260739586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b54d1b000f5f814197161d7806ba9d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 5
-  speed: 5
-  penetration: 5
-  deterioration: 5
 --- !u!50 &5742629456958975553
 Rigidbody2D:
   serializedVersion: 4
@@ -138,3 +123,40 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.88, y: 1.78}
   m_Direction: 0
+--- !u!114 &2618778991887617309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927717893260739586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff76c42603c3a46ac62f40ec625637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 15
+  speed: 7
+  penetration: 0
+  deterioration: 0.1
+  selfDestructTime: 2
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
+--- !u!114 &4098889355986946197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927717893260739586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 100
+  radius: 10
+  forceThreshold: 1000
+  decentralized: 0
