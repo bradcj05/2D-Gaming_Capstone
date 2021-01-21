@@ -13,7 +13,7 @@ public class PlayerGunFire : Gun
     public new void Update()
     {
         timer += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && timer >= waitTime)
+        if (Input.GetButton("Fire1") && timer >= waitTime)
         {
             Fire();
             timer = 0f;

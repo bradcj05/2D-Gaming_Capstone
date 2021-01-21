@@ -26,4 +26,20 @@ public class EnemyTurret : Turret
     {
         base.Update();
     }
+
+    public new void FixedUpdate()
+    {
+        //Try to find the next player plane when it spawns
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log(e);
+            target = null;
+        }
+        // Perform turret behavior on player plane
+        base.FixedUpdate();
+    }
 }

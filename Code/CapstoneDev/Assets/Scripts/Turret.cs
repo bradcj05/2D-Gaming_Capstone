@@ -40,18 +40,5 @@ public class Turret : Gun
             float curRot = transform.rotation.eulerAngles.z;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
         }
-        else
-        {
-            //Try to find the next player plane when it spawns
-            try
-            {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-            }
-            catch (System.NullReferenceException e)
-            {
-                Debug.Log(e);
-                target = null;
-            }
-        }
     }
 }

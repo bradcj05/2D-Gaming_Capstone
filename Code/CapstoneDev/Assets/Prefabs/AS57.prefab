@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1796143006649410900}
   - component: {fileID: 953929561468873170}
   - component: {fileID: 4427152316762893356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AS57
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -29,8 +29,9 @@ Transform:
   m_GameObject: {fileID: 2183660915927818866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.28034, y: -7.3953805, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children:
+  - {fileID: 6667016141907723099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: fef158954d3b5f04bb9bd0fcfdadb522, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36c2fa427f50c9e47a7d2e9362765032, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 7.5, y: 7.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &1796143006649410900
@@ -97,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -333,5 +334,86 @@ MonoBehaviour:
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
+  maxSpeed: 9
+  acceleration: 2000
   maxHealth: 10
+--- !u!1001 &8465102854753736504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1100022922499271454}
+    m_Modifications:
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.743
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120377998642513973, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_Name
+      value: SR5 Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120377998642513973, guid: 04820f265e0467d488fe3761de6df88f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04820f265e0467d488fe3761de6df88f, type: 3}
+--- !u!4 &6667016141907723099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8465102854753736504}
+  m_PrefabAsset: {fileID: 0}
