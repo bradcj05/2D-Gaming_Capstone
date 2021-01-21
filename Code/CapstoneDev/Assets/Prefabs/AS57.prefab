@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2183660915927818866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.28034, y: -7.3953805, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 6667016141907723099}
   m_Father: {fileID: 0}
@@ -335,7 +335,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   maxSpeed: 9
-  acceleration: 2000
+  enginePower: 1000
+  cam: {fileID: 0}
   maxHealth: 10
 --- !u!1001 &8465102854753736504
 PrefabInstance:

@@ -825,6 +825,7 @@ MonoBehaviour:
   spread: 2
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 1882001350}
   - {fileID: 1425840609}
@@ -1231,6 +1232,11 @@ PrefabInstance:
       propertyPath: hb
       value: 
       objectReference: {fileID: 821371744}
+    - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 57457345}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
 --- !u!4 &572292698 stripped
@@ -3726,6 +3732,7 @@ MonoBehaviour:
   spread: 2
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 1373632781}
   - {fileID: 2094625853}
@@ -4900,6 +4907,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 1486641054}
 --- !u!212 &1801435257
@@ -5313,6 +5321,7 @@ MonoBehaviour:
   spread: 2
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 822827859}
   - {fileID: 1447824653}
@@ -6013,6 +6022,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 1349751147}
 --- !u!212 &2065640214
