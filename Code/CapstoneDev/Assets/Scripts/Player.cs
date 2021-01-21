@@ -9,6 +9,10 @@ public class Player : Destructible
     public float enginePower = 1000f;
     Vector2 movement;
 
+     //Values for rotation
+     public Camera cam;
+     Vector2 mousePos;
+
     public float maxHealth;
     int isDestroyed;
     //Add death animation
@@ -28,6 +32,10 @@ public class Player : Destructible
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+          //Get Mouse Position
+          mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
         hb.SetMax(maxHealth);
         hb.SetHealth(health);
     }
@@ -45,6 +53,11 @@ public class Player : Destructible
         {
             rb.velocity = maxSpeed * moveDir;
         }
+
+        //Rotate the Player
+          Vector2 lookDir = mousePos - rb.position;
+          float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+          rb.rotation = angle;
     }
 
     //Player Death

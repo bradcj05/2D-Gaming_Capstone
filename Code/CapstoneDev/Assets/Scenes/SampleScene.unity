@@ -901,8 +901,11 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 1390211283}
+  crater: {fileID: 0}
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
   gun: {fileID: 1247062413}
-  shellType: {fileID: 8977783968469312899, guid: 8806a5e58a00b1e4b91822b3b42ecc84,
+  shellType: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
     type: 3}
   bulletSpeed: 5
   waitTime: 5
@@ -1179,11 +1182,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rig: {fileID: 2018458282}
-  maxHealth: 10
+  health: 0
   defense: 0
   hb: {fileID: 1585319017}
+  crater: {fileID: 0}
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  maxSpeed: 5
+  acceleration: 1000
+  cam: {fileID: 519420031}
+  maxHealth: 10
 --- !u!60 &2018458281
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1627,6 +1635,11 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6973898103469409746, guid: b4c878b797dc8cf42825ebd96a280674,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 6973898103469409756, guid: b4c878b797dc8cf42825ebd96a280674,
         type: 3}
       propertyPath: m_LocalPosition.x
