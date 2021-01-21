@@ -102,6 +102,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 5365192277569748272}
 --- !u!1 &7681439109548903377

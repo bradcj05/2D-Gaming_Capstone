@@ -6,7 +6,7 @@ public class Player : Destructible
 {
 
     public float maxSpeed = 5f;
-    public float acceleration = 1000f;
+    public float enginePower = 1000f;
     Vector2 movement;
 
     public float maxHealth;
@@ -39,7 +39,7 @@ public class Player : Destructible
         movement.Normalize();
         // Move in the direction specified, then force the speed back to max speed if it is already reached.
         // (Provided the max speed is due to moment and not knockback or external factor)
-        rb.AddForce(movement * acceleration, ForceMode2D.Force);
+        rb.AddForce(movement * enginePower, ForceMode2D.Force);
         Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
         if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
         {

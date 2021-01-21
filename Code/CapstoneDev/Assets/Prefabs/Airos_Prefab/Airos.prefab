@@ -429,6 +429,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 2143285099781132611}
   - {fileID: 2143285098815639805}
@@ -824,6 +825,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 7471767695453142347}
   - {fileID: 7471767694605773039}
@@ -1089,6 +1091,7 @@ MonoBehaviour:
   spread: 0
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 7471767695960041377}
   - {fileID: 7471767695050052746}
@@ -1319,6 +1322,7 @@ MonoBehaviour:
   spread: 0
   powerBuff: 0
   speedBuff: 0
+  ammo: -1
   bulletSpawns:
   - {fileID: 7471767695663386049}
   - {fileID: 7471767696086322331}

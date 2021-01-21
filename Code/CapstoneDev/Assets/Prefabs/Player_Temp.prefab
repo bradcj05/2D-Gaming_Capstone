@@ -353,7 +353,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   maxSpeed: 5
-  acceleration: 100
+  enginePower: 1500
   maxHealth: 10
 --- !u!1001 &3424239020026447048
 PrefabInstance:
