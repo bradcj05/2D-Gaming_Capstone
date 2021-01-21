@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee73734d6a3878042910a338eac35496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 50
+  power: 20
   radius: 3
   forceThreshold: 1000
   decentralized: 0
