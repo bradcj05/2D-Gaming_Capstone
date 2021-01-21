@@ -4216,6 +4216,7 @@ MonoBehaviour:
   CenterOfMass: {x: 0, y: 0, z: 0}
   maxSpeed: 5
   acceleration: 1000
+  cam: {fileID: 57457345}
   maxHealth: 10
 --- !u!60 &1496572251
 PolygonCollider2D:
@@ -4812,6 +4813,11 @@ PrefabInstance:
       propertyPath: health
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6973898103469409746, guid: b4c878b797dc8cf42825ebd96a280674,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 57457345}
     - target: {fileID: 6973898103469409756, guid: b4c878b797dc8cf42825ebd96a280674,
         type: 3}
       propertyPath: m_LocalPosition.x
