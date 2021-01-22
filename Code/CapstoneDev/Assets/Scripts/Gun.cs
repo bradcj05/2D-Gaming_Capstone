@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject shellType;
+    public GameObject[] shellType;
     public float waitTime = 5f; // Time between shots in seconds. Inverse of fire rate.
     protected float timer = 0f;
 
@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
             float curRot = bulletSpawn.rotation.eulerAngles.z;
             Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2)));
             // Create bullet
-            GameObject bullet = Instantiate(shellType, bulletSpawn.position, bulletAngle) as GameObject;
+            GameObject bullet = Instantiate(shellType[0], bulletSpawn.position, bulletAngle) as GameObject;
             Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
             // Apply speed and power buff
             float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
