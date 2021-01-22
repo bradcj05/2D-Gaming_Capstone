@@ -38,25 +38,30 @@ public class Gun : MonoBehaviour
     {
         foreach (Transform bulletSpawn in bulletSpawns)
         {
-            // Fire only if ammo is not 0
-            if (ammo != 0)
+            Fire(bulletSpawn);
+        }
+    }
+
+    protected void Fire(Transform bulletSpawn)
+    {
+        // Fire only if ammo is not 0
+        if (ammo != 0)
+        {
+            // Account for spread by generating random angle
+            float curRot = bulletSpawn.rotation.eulerAngles.z;
+            Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2)));
+            // Create bullet
+            GameObject bullet = Instantiate(shellType, bulletSpawn.position, bulletAngle) as GameObject;
+            Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
+            // Apply speed and power buff
+            float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
+            bullet.GetComponent<Bullet>().power *= (1 + powerBuff);
+            // Push bullet
+            rig.velocity = bulletSpawn.up * bulletSpeed;
+            // Deplete ammo if not unlimited
+            if (ammo > 0)
             {
-                // Account for spread by generating random angle
-                float curRot = bulletSpawn.rotation.eulerAngles.z;
-                Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2)));
-                // Create bullet
-                GameObject bullet = Instantiate(shellType, bulletSpawn.position, bulletAngle) as GameObject;
-                Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
-                // Apply speed and power buff
-                float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
-                bullet.GetComponent<Bullet>().power *= (1 + powerBuff);
-                // Push bullet
-                rig.velocity = bulletSpawn.up * bulletSpeed;
-                // Deplete ammo if not unlimited
-                if (ammo > 0)
-                {
-                    ammo--;
-                }
+                ammo--;
             }
         }
     }
