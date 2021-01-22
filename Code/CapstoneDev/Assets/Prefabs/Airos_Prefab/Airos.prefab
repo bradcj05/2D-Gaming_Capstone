@@ -993,10 +993,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7471767695800399992}
   - component: {fileID: 7471767695800399993}
-  - component: {fileID: 3837183432490122791}
   - component: {fileID: 3311601074618218179}
   - component: {fileID: 6259741498033580194}
   - component: {fileID: 3566647196293343814}
+  - component: {fileID: 8687323907632181314}
   m_Layer: 0
   m_Name: Airos_missle_launcher (1)
   m_TagString: Untagged
@@ -1073,29 +1073,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3837183432490122791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7471767695800399995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22092736e2733ba4e8c708a608f9e029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shellType: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
-    type: 3}
-  waitTime: 10
-  spread: 0
-  powerBuff: 0
-  speedBuff: 0
-  ammo: -1
-  bulletSpawns:
-  - {fileID: 7471767695960041377}
-  - {fileID: 7471767695050052746}
-  - {fileID: 7471767695742905242}
 --- !u!114 &3311601074618218179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1131,31 @@ RelativeJoint2D:
   m_AutoConfigureOffset: 1
   m_LinearOffset: {x: -1.0791152, y: 0.61316276}
   m_AngularOffset: -0.6108651
+--- !u!114 &8687323907632181314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471767695800399995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1690551e9b0c7e045a90125999fb49c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellType: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
+    type: 3}
+  waitTime: 10
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  ammo: -1
+  bulletSpawns:
+  - {fileID: 7471767695960041377}
+  - {fileID: 7471767695050052746}
+  - {fileID: 7471767695742905242}
+  firstLauncher: 0
+  timeBetweenShots: 0.5
 --- !u!1 &7471767695960041376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,10 +1226,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7471767696117941088}
   - component: {fileID: 7471767696117941091}
-  - component: {fileID: 8564638896459510445}
   - component: {fileID: 3605396637820013586}
   - component: {fileID: 3869148334696060031}
   - component: {fileID: 7004648611609178438}
+  - component: {fileID: 1868215618956258957}
   m_Layer: 0
   m_Name: Airos_missle_launcher
   m_TagString: Untagged
@@ -1304,29 +1306,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8564638896459510445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7471767696117941090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22092736e2733ba4e8c708a608f9e029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shellType: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
-    type: 3}
-  waitTime: 10
-  spread: 0
-  powerBuff: 0
-  speedBuff: 0
-  ammo: -1
-  bulletSpawns:
-  - {fileID: 7471767695663386049}
-  - {fileID: 7471767696086322331}
-  - {fileID: 7471767694695558261}
 --- !u!114 &3605396637820013586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1364,31 @@ RelativeJoint2D:
   m_AutoConfigureOffset: 1
   m_LinearOffset: {x: 1.1183035, y: 0.6406013}
   m_AngularOffset: 0.6108651
+--- !u!114 &1868215618956258957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471767696117941090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1690551e9b0c7e045a90125999fb49c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shellType: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
+    type: 3}
+  waitTime: 10
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  ammo: -1
+  bulletSpawns:
+  - {fileID: 7471767694695558261}
+  - {fileID: 7471767696086322331}
+  - {fileID: 7471767695663386049}
+  firstLauncher: 0
+  timeBetweenShots: 0.5
 --- !u!1001 &1961551903629121989
 PrefabInstance:
   m_ObjectHideFlags: 0
