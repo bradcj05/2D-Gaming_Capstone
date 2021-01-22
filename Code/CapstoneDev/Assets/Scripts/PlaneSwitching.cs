@@ -8,6 +8,7 @@ public class PlaneSwitching : MonoBehaviour
      float switchDelay = 5f;
      float switchTimer;
      int squadronSize;
+     Transform[] squadArr;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,13 @@ public class PlaneSwitching : MonoBehaviour
           SelectPlane(selectedPlane);
           switchTimer = 0;
           squadronSize = transform.childCount;
+
+          //Assign numbers to the planes
+          squadArr = new Transform[transform.childCount];
+          for(int i = 0; i < transform.childCount; i++)
+          {
+               squadArr[i] = transform.GetChild(i);
+          }
     }
 
     // Update is called once per frame
@@ -23,21 +31,46 @@ public class PlaneSwitching : MonoBehaviour
           if (transform.childCount == 0)
                Destroy(transform.gameObject);
           int previousPlane = selectedPlane;
-          switchTimer += Time.deltaTime;
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f && switchTimer >= switchDelay)
+          if(switchTimer < switchDelay)
+               switchTimer += Time.deltaTime;
+
+          //Q and E based plane switching
+          if(switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.Q) && transform.childCount != 1)
           {
-               if (selectedPlane >= transform.childCount - 1)
-                    selectedPlane = 0;
-               else
-                    selectedPlane++;
+               int j = selectedPlane - 1;
+               while(j != selectedPlane)
+               {
+                    if (j < 0)
+                         j = transform.childCount - 1;
+
+                    if(squadArr[j] != null)
+                    {
+                         SelectPlane(selectedPlane);
+                         selectedPlane = j;
+                         break;
+                    }
+                    j--;
+               }
+               switchTimer = 0;
           }
-        if(Input.GetAxis("Mouse ScrollWheel") < 0f && switchTimer >= switchDelay)
+          else if (switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.E) && transform.childCount != 1)
           {
-               if (selectedPlane <= 0)
-                    selectedPlane = transform.childCount - 1;
-               else
-                    selectedPlane--;
+               int j = selectedPlane + 1;
+               while (j != selectedPlane)
+               {
+                    if (j == transform.childCount)
+                         j = 0;
+
+                    if (squadArr[j] != null)
+                    {
+                         SelectPlane(selectedPlane);
+                         selectedPlane = j;
+                         break;
+                    }
+                    j++;
+               }
+               switchTimer = 0;
           }
 
         //TODO swap to next plane if previous plane dies
@@ -49,12 +82,6 @@ public class PlaneSwitching : MonoBehaviour
                switchTimer = 0f;
                squadronSize = transform.childCount;
           }
-
-          if (previousPlane != selectedPlane && switchTimer >= switchDelay)
-          {
-               SelectPlane(previousPlane);
-               switchTimer = 0f;
-          }
     }
 
      //Changes which of the planes in the squadron are active
@@ -64,11 +91,13 @@ public class PlaneSwitching : MonoBehaviour
           int i = 0;
           foreach (Transform plane in transform)
           {
+               //Loop through the squadron to determine which one is the one to set active
                if (i == selectedPlane)
                {
                     plane.gameObject.SetActive(true);
 
                     //Fixes positioning issues by moving the selected plane to the previous plane's position
+                    //TODO FIX
                     int p = 0;
                     foreach(Transform prev in transform)
                     {
