@@ -25,22 +25,22 @@ PrefabInstance:
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.30162928
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9534253
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
@@ -65,12 +65,12 @@ PrefabInstance:
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.62499994
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8749999
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447032, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 4666128475739447039, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}
       propertyPath: m_Name
-      value: lturretsplosion Variant
+      value: Basic Explosion
       objectReference: {fileID: 0}
     - target: {fileID: 4666128475739447039, guid: 505767436c5c9a54dbd22403cb16d8fa,
         type: 3}

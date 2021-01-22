@@ -160,3 +160,6 @@ MonoBehaviour:
   radius: 3
   forceThreshold: 1000
   decentralized: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256

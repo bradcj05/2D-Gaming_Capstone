@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lasertimer : MonoBehaviour
+// Script for basic laser behavior with charging
+
+public class Laser : MonoBehaviour
 {
+    // Effect variables
     public ParticleSystem laserStartParticles;
     public ParticleSystem prelaserStartParticles;
     public LineRenderer line;
@@ -11,15 +14,22 @@ public class lasertimer : MonoBehaviour
     private bool startParticlesPlaying = false;
     private bool prestartParticlesPlaying = false;
     private RaycastHit2D hit;
+
+    // Timing variables
     public float timeBetweenFiring = 10;
     public float preLaserDuration = 2;
     public float laserDuration = 2;
-    public float laserLength = 10f;
+    public float laserLength = 25f;
     public LayerMask layerMask;
 
+    // Timer variables
     float startTime;
     float timePassed;
     float timeDifference;
+
+    // Laser damage variables
+    public float power; // Maximum power per second
+    public float laserEfficiency; // k term in Sigmoid function
 
     // Start is called before the first frame update
     void Start()
@@ -38,11 +48,13 @@ public class lasertimer : MonoBehaviour
     {
         timePassed = Time.time;
         timeDifference = timePassed - startTime;
-        if ( (timeDifference > timeBetweenFiring) || 
+        if ((timeDifference > timeBetweenFiring) ||
             (timeDifference > preLaserDuration && prestartParticlesPlaying == true) ||
             (timeDifference > laserDuration && startParticlesPlaying == true))
         {
             startTime = Time.time;
+
+            // Charging beam start
             if (prestartParticlesPlaying == false && startParticlesPlaying == false)
             {
                 prestartParticlesPlaying = true;
@@ -52,6 +64,7 @@ public class lasertimer : MonoBehaviour
                 return;
             }
 
+            // Laser start
             if (prestartParticlesPlaying == true && (timeDifference > preLaserDuration))
             {
                 prestartParticlesPlaying = false;
@@ -63,21 +76,31 @@ public class lasertimer : MonoBehaviour
                 line.enabled = true;
                 return;
             }
-            /**if(startParticlesPlaying == true)
+
+            // Hit effect
+            if (startParticlesPlaying == true)
             {
-                hit = Physics2D.Raycast(transform.position, Vector2.right, laserLength, layerMask);
+                hit = Physics2D.Raycast(transform.position, transform.right, laserLength, layerMask);
                 if (hit)
                 {
                     //addplayer
                     float distance = ((Vector2)hit.point - (Vector2)transform.position).magnitude;
                     line.SetPosition(1, new Vector3(distance, 0, 0));
+                    // Take damage by Sigmoid function
+                    Destructible e = hit.collider.gameObject.GetComponent<Destructible>();
+                    if (e != null)
+                    {
+                        float timeLaserOn = timeDifference - preLaserDuration;
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeLaserOn * laserEfficiency)) - 1));
+                    }
                 }
                 else
                 {
                     line.SetPosition(1, new Vector3(laserLength, 0, 0));
                 }
-            }**/
+            }
 
+            // Laser stop
             if (startParticlesPlaying == true && (timeDifference > laserDuration))
             {
                 startParticlesPlaying = false;

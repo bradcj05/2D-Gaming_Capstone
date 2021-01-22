@@ -12,11 +12,12 @@ public class Explosion : MonoBehaviour
     public float forceThreshold = 0.5f;
 
     public bool decentralized = false; // Whether the explosion deals constant damage among radius.
+    public LayerMask layerMask; // Layer to perform explosion on
 
     //May not need
     public void Detonate()
     {
-        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, LayerMask.GetMask("Player"));
+        Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
         foreach (Collider2D hit in targets)
         {
             Vector3 distanceVec = hit.transform.position - transform.position;
