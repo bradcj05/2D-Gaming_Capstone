@@ -8,6 +8,7 @@ public class Destructible : MonoBehaviour
     public float defense;
     public HealthBar hb;
     //Add Explosion when destroyed
+    public ParticleSystem planeBoom;
     public GameObject crater;
 
     public GameObject parent;
@@ -38,6 +39,8 @@ public class Destructible : MonoBehaviour
 
         if (health <= 0)
         {
+            planeBoom.gameObject.transform.position = transform.position;
+            planeBoom.Play(true);
             Die();
         }
     }
