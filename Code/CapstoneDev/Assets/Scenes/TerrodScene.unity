@@ -5254,9 +5254,9 @@ GameObject:
   - component: {fileID: 1909997707}
   - component: {fileID: 1909997703}
   - component: {fileID: 1909997710}
+  - component: {fileID: 1909997705}
   - component: {fileID: 1909997704}
   - component: {fileID: 1909997706}
-  - component: {fileID: 1909997705}
   m_Layer: 9
   m_Name: Terrod-CenterCannon_final
   m_TagString: Enemy
