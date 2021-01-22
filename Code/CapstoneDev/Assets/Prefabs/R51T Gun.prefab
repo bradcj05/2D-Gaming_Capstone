@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e87d4f3ecdb925459f120fb3a38a0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
-    type: 3}
+  shellType:
+  - {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487, type: 3}
   waitTime: 0.5
   spread: 3
   powerBuff: 0
