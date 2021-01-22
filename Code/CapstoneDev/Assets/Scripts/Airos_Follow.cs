@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Airos_Follow : MonoBehaviour
 {
-    [SerializedField]
-    private Transform[] routes;
+    public Transform[] routes;
 
     private int routeToGo;
 
@@ -22,8 +21,8 @@ public class Airos_Follow : MonoBehaviour
     {
 
         routeToGo = 0;
-        tParam = 0;
-        speed = .5;
+        tParam = 0f;
+        speed = .5f;
         coroutineAllowed = true;
     }
 
