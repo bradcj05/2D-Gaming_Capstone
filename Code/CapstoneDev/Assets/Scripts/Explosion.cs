@@ -8,15 +8,29 @@ public class Explosion : MonoBehaviour
 {
     public float power = 5f;
     public float radius = 5f;
+    public float effectDuration = 0.5f;
+    public ParticleSystem effect;
 
     public float forceThreshold = 0.5f;
 
     public bool decentralized = false; // Whether the explosion deals constant damage among radius.
     public LayerMask layerMask; // Layer to perform explosion on
 
+    // Base explosion's value for effect
+    public float baseExplosionRadius = 3f;
+
     //May not need
     public void Detonate()
     {
+        // Generate explosion effect
+        ParticleSystem curEffect = Instantiate(effect, this.transform.position, Quaternion.identity) as ParticleSystem;
+        var main = curEffect.main;
+        main.simulationSpeed = main.duration / effectDuration;
+        float scale = radius / baseExplosionRadius;
+        curEffect.transform.localScale = new Vector3(scale, scale, scale);
+        curEffect.Play(true);
+
+        // Explosion damage code
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
         foreach (Collider2D hit in targets)
         {
@@ -41,7 +55,7 @@ public class Explosion : MonoBehaviour
                 Destructible p = hit.GetComponent<Destructible>();
                 if (p != null)
                 {
-                    p.TakeDamage(Mathf.Max(power,effectivePower) - p.defense);
+                    p.TakeDamage(Mathf.Min(power,effectivePower) - p.defense);
                 }
                 // Knockback
                 Rigidbody2D rb = hit.GetComponent<Rigidbody2D>();

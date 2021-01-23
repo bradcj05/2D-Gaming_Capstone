@@ -7,16 +7,10 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
-
-
-    public int nextSceneLoad;
-
-    public GameObject levelBoss;
     public GameObject pauseMenuUI;
 
-    void Start() {
-        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
-
+    void Start()
+    {
     }
 
     // Update is called once per frame
@@ -33,27 +27,9 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-
-
-
-        if (levelBoss == null)
-        {
-            Debug.Log("boss is dead");
-            SceneManager.LoadScene(nextSceneLoad);
-
-            if (nextSceneLoad > PlayerPrefs.GetInt("levelAt")) {
-                PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-
-                Debug.Log("level unlock");
-            }
-        }
     }
 
-    //check if boss is destoryed
-  
-
-
-   public void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -70,18 +46,15 @@ public class PauseMenu : MonoBehaviour
     }
 
     //TODO: create a variable for loadscene menu
-    public void LoadMenu() {
-
-
+    public void LoadMenu()
+    {
         Time.timeScale = 1f;
         SceneManager.LoadScene("RickysMainMenu");
-        
     }
 
-
-    public void Quit(){
+    public void Quit()
+    {
         Debug.Log("Quiting game");
         Application.Quit();
-
     }
 }

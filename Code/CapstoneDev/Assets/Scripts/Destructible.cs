@@ -7,8 +7,10 @@ public class Destructible : MonoBehaviour
     public float health;
     public float defense;
     public HealthBar hb;
-    //Add Explosion when destroyed
+    
+    // Explosion effects
     public ParticleSystem explosion;
+    public float explosionDuration = 2f;
     public GameObject crater;
 
     public GameObject parent;
@@ -61,16 +63,10 @@ public class Destructible : MonoBehaviour
         //Play explosion
         if (explosion != null)
         {
-            explosion.gameObject.transform.position = transform.position;
-            if (!explosion.isPlaying)
-            {
-                explosion.Play(true);
-            }
-            else
-            {
-                explosion.Stop(true);
-                explosion.Play(true);
-            }
+            ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
+            var main = curExplosion.main;
+            main.simulationSpeed = main.duration / explosionDuration;
+            curExplosion.Play(true);
         }
 
         //Actually destroy object

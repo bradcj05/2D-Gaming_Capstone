@@ -805,6 +805,7 @@ MonoBehaviour:
   defense: 2
   hb: {fileID: 2070685056}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1373,8 +1374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5084ea9ac3f1e0e45b51fe6ec0f7c689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneLoad: 1
-  levelBoss: {fileID: 396692238}
   pauseMenuUI: {fileID: 750965054}
 --- !u!114 &649816577
 MonoBehaviour:
@@ -2904,6 +2903,7 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 2017349357}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3909,6 +3909,7 @@ MonoBehaviour:
   defense: 2
   hb: {fileID: 1049602559}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4521,6 +4522,7 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 1474787829}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5082,6 +5084,7 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 745709551}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 1757042057}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5306,6 +5309,7 @@ MonoBehaviour:
   defense: 5
   hb: {fileID: 786853938}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5867,7 +5871,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1472654373}
+  levelBoss: {fileID: 396692238}
   gameOverMenu: {fileID: 1256306184}
+  nextSceneLoad: 0
 --- !u!114 &2017349357 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5837915535480465994, guid: badb78e174c033641bd5d98afe0b0eba,
@@ -6199,6 +6205,7 @@ MonoBehaviour:
   defense: 0
   hb: {fileID: 925241120}
   explosion: {fileID: 0}
+  explosionDuration: 2
   crater: {fileID: 0}
   parent: {fileID: 837572673}
   CenterOfMass: {x: 0, y: 0, z: 0}
