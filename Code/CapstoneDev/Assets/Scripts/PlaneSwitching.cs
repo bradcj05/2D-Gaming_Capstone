@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlaneSwitching : MonoBehaviour
 {
      public int selectedPlane = 0;
-     float switchDelay = 5f;
-     float switchTimer;
+     float switchDelay = 2f;
+     public float switchTimer; // Public for better testing
      int squadronSize;
      Transform[] squadArr;
+     Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
-          SelectPlane(selectedPlane);
           switchTimer = 0;
           squadronSize = transform.childCount;
 
@@ -23,18 +23,20 @@ public class PlaneSwitching : MonoBehaviour
           {
                squadArr[i] = transform.GetChild(i);
           }
-    }
+          SelectPlane(squadArr[selectedPlane].position);
+          startPos = squadArr[selectedPlane].position;
+     }
 
     // Update is called once per frame
     void Update()
     {
           if (transform.childCount == 0)
                Destroy(transform.gameObject);
-          int previousPlane = selectedPlane;
 
           if(switchTimer < switchDelay)
                switchTimer += Time.deltaTime;
 
+          int previousPlane = selectedPlane;
           //Q and E based plane switching
           if(switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.Q) && transform.childCount != 1)
           {
@@ -46,8 +48,8 @@ public class PlaneSwitching : MonoBehaviour
 
                     if(squadArr[j] != null)
                     {
-                         SelectPlane(selectedPlane);
                          selectedPlane = j;
+                         SelectPlane(squadArr[previousPlane].position);
                          break;
                     }
                     j--;
@@ -64,8 +66,8 @@ public class PlaneSwitching : MonoBehaviour
 
                     if (squadArr[j] != null)
                     {
-                         SelectPlane(selectedPlane);
                          selectedPlane = j;
+                         SelectPlane(squadArr[previousPlane].position);
                          break;
                     }
                     j++;
@@ -74,40 +76,39 @@ public class PlaneSwitching : MonoBehaviour
           }
 
         //TODO swap to next plane if previous plane dies
-        //Fix
-        if(squadronSize < transform.childCount)
+        //Fix?
+        if(squadronSize > transform.childCount)
           {
-               selectedPlane = 0;
-               SelectPlane(previousPlane);
-               switchTimer = 0f;
-               squadronSize = transform.childCount;
+               for(int j = 0; j < squadArr.Length; j++)
+               {
+                    if(squadArr[j] != null)
+                    {
+                         selectedPlane = j;
+                         SelectPlane(startPos);
+                         switchTimer = 0f;
+                         squadronSize = transform.childCount;
+                         break;
+                    }
+               }
           }
     }
 
      //Changes which of the planes in the squadron are active
-     void SelectPlane(int previousPlane)
+     void SelectPlane(Vector3 prevPos)
      {
           //Add Animation
           int i = 0;
-          foreach (Transform plane in transform)
+          foreach (Transform plane in squadArr)
           {
                //Loop through the squadron to determine which one is the one to set active
                if (i == selectedPlane)
                {
                     plane.gameObject.SetActive(true);
-
-                    //Fixes positioning issues by moving the selected plane to the previous plane's position
-                    //TODO FIX
-                    int p = 0;
-                    foreach(Transform prev in transform)
-                    {
-                         if (p == previousPlane && p != selectedPlane)
-                              plane.position = prev.position;
-                         p++;
-                    }
+                    plane.position = prevPos;
                }
                else
-                    plane.gameObject.SetActive(false);
+                    if(plane != null)
+                         plane.gameObject.SetActive(false);
                i++;
           }
      }
