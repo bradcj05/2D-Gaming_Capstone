@@ -12,9 +12,6 @@ public class Player : Destructible
     public Text nameText;
 
    
-
-
-
     public float maxSpeed = 5f;
     public float acceleration = 1000f;
     Vector2 movement;
@@ -25,7 +22,7 @@ public class Player : Destructible
      Vector2 mousePos;
 
     public float maxHealth;
-    public float maxDefense;
+    public float maxShield;
 
     int isDestroyed;
     //Add death animation
@@ -38,9 +35,9 @@ public class Player : Destructible
 
         base.Start();
         hb.SetMax(maxHealth);
-        db.SetMax(maxDefense);
+        sb.SetMax(maxShield);
 
-        defense = maxDefense;
+        shield = maxShield;
         health = maxHealth;
         isDestroyed = 1;
     }
@@ -58,9 +55,9 @@ public class Player : Destructible
         hb.SetMax(maxHealth);
         hb.SetHealth(health);
 
-       
-        db.SetMax(maxDefense);
-        db.SetDefense(defense);
+
+       sb.SetMax(maxShield);
+       sb.SetShield(maxShield);
     }
 
     //Movement

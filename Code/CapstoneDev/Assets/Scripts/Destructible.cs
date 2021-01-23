@@ -7,10 +7,10 @@ public class Destructible : MonoBehaviour
 
     public float health;
     public float defense;
-
+    public float shield;
 
     public HealthBar hb;
-    public DefenseBar db;
+    public ShieldBar sb;
 
     //Add Explosion when destroyed
     public GameObject crater;
@@ -28,7 +28,6 @@ public class Destructible : MonoBehaviour
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
 
-        db.SetMax(defense);
         hb.SetMax(health);
     }
 
@@ -38,16 +37,14 @@ public class Destructible : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         
-        if (damage > 0)
-        {
-            defense -= damage;
-
-            if (defense <= 0)
-            {
+        if (damage > 0){
+           // shield -= damage;
+            //if (shield <= 0)
+            
                 health -= damage;
-            }
+            
         }
-        db.SetDefense(defense);
+        sb.SetShield(shield);
         hb.SetHealth(health);
 
         if (health <= 0)
