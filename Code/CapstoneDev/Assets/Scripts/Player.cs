@@ -10,7 +10,8 @@ public class Player : Destructible
 
 
     public Text nameText;
-
+    public Slider CooldownSlider;
+ 
    
     public float maxSpeed = 5f;
     public float acceleration = 1000f;
@@ -22,7 +23,7 @@ public class Player : Destructible
      Vector2 mousePos;
 
     public float maxHealth;
-    public float maxShield;
+  
 
     int isDestroyed;
     //Add death animation
@@ -35,11 +36,13 @@ public class Player : Destructible
 
         base.Start();
         hb.SetMax(maxHealth);
-        sb.SetMax(maxShield);
 
-        shield = maxShield;
+        
         health = maxHealth;
         isDestroyed = 1;
+
+        //starting the slider
+       
     }
 
     // Update is called once per frame
@@ -56,8 +59,8 @@ public class Player : Destructible
         hb.SetHealth(health);
 
 
-       sb.SetMax(maxShield);
-       sb.SetShield(maxShield);
+
+      
     }
 
     //Movement
@@ -78,6 +81,8 @@ public class Player : Destructible
           Vector2 lookDir = mousePos - rb.position;
           float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
           rb.rotation = angle;
+
+          
     }
 
     //Player Death

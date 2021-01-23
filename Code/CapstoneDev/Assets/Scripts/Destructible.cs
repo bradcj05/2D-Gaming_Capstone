@@ -7,10 +7,10 @@ public class Destructible : MonoBehaviour
 
     public float health;
     public float defense;
-    public float shield;
+    
 
     public HealthBar hb;
-    public ShieldBar sb;
+   
 
     //Add Explosion when destroyed
     public GameObject crater;
@@ -38,13 +38,11 @@ public class Destructible : MonoBehaviour
     {
         
         if (damage > 0){
-           // shield -= damage;
-            //if (shield <= 0)
-            
+
                 health -= damage;
             
         }
-        sb.SetShield(shield);
+      
         hb.SetHealth(health);
 
         if (health <= 0)
