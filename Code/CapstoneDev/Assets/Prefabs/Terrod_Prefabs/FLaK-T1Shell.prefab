@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5559220870669834888}
   - component: {fileID: 3719626658114299722}
   - component: {fileID: -8951550908174403135}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: FLaK-T1Shell
   m_TagString: Bullet
   m_Icon: {fileID: 0}

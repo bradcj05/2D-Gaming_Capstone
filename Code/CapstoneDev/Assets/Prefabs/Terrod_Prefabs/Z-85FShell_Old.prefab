@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8055132858426331548}
   - component: {fileID: 85143465969558225}
   - component: {fileID: 9203012090478578261}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Z-85FShell_Old
   m_TagString: Bullet
   m_Icon: {fileID: 0}

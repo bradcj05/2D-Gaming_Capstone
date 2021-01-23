@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4860951874880019715}
   - component: {fileID: -867384195615070257}
   - component: {fileID: -1589576271335674171}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: KA-4PShell
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -138,6 +138,7 @@ MonoBehaviour:
   speed: 10
   penetration: 0.15
   deterioration: 0
+  selfDestructTime: -1
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}

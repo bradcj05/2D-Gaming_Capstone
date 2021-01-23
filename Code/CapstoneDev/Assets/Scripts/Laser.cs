@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Script for basic laser behavior with charging
+// IMPORTANT: Please make sure laser is scaled by 1 in WORLD SCALE for correct rendering
 
 public class Laser : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class Laser : MonoBehaviour
     public LineRenderer preLine;
     private bool startParticlesPlaying = false;
     private bool prestartParticlesPlaying = false;
-    private RaycastHit2D hit;
 
     // Timing variables
     public float timeBetweenFiring = 10;
@@ -30,6 +30,8 @@ public class Laser : MonoBehaviour
     // Laser damage variables
     public float power; // Maximum power per second
     public float laserEfficiency; // k term in Sigmoid function
+
+    public bool piercing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,7 @@ public class Laser : MonoBehaviour
                 prelaserStartParticles.Play(true);
                 //prelaserStartParticles.gameObject.transform.position = transform.position;
                 preLine.enabled = true;
+                preLine.SetPosition(1, new Vector3(laserLength, 0, 0));
                 return;
             }
 
@@ -77,29 +80,6 @@ public class Laser : MonoBehaviour
                 return;
             }
 
-            // Hit effect
-            if (startParticlesPlaying == true)
-            {
-                hit = Physics2D.Raycast(transform.position, transform.right, laserLength, layerMask);
-                if (hit)
-                {
-                    //addplayer
-                    float distance = ((Vector2)hit.point - (Vector2)transform.position).magnitude;
-                    line.SetPosition(1, new Vector3(distance, 0, 0));
-                    // Take damage by Sigmoid function
-                    Destructible e = hit.collider.gameObject.GetComponent<Destructible>();
-                    if (e != null)
-                    {
-                        float timeLaserOn = timeDifference - preLaserDuration;
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeLaserOn * laserEfficiency)) - 1));
-                    }
-                }
-                else
-                {
-                    line.SetPosition(1, new Vector3(laserLength, 0, 0));
-                }
-            }
-
             // Laser stop
             if (startParticlesPlaying == true && (timeDifference > laserDuration))
             {
@@ -107,6 +87,50 @@ public class Laser : MonoBehaviour
                 laserStartParticles.Stop(true);
                 line.enabled = false;
                 return;
+            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Hit effect
+        if (startParticlesPlaying == true)
+        {
+            // If piercing laser, ray cast all and deal damage to each target
+            if (piercing)
+            {
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserLength, layerMask);
+                foreach (RaycastHit2D hit in hits)
+                {
+                    Destructible e = hit.collider.gameObject.GetComponent<Destructible>();
+                    if (e != null)
+                    {
+                        // Take damage by Sigmoid function
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                    }
+                }
+            }
+            else
+            // If not a piercing, use normal ray cast
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, laserLength, layerMask);
+                if (hit.collider != null)
+                {
+                    Destructible e = hit.collider.gameObject.GetComponent<Destructible>();
+                    if (e != null)
+                    {
+                        // Shorten laser to hit point only
+                        float distance = (hit.point - (Vector2)transform.position).magnitude;
+                        line.SetPosition(1, new Vector3(distance, 0, 0));
+                        // Take damage by Sigmoid function
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                    }
+                }
+                // If hit not detected, laser has normal length
+                else
+                {
+                    line.SetPosition(1, new Vector3(laserLength, 0, 0));
+                }
             }
         }
     }

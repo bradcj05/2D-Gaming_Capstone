@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 373011891191439428}
   - component: {fileID: -2268569179948717408}
   - component: {fileID: -6587145811558306058}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Airos Missle
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -172,7 +172,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   baseExplosionRadius: 3
-  baseExplosionDuration: 2
 --- !u!1001 &7558961216614942322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}

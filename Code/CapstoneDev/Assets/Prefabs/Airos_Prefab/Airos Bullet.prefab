@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9094661351592575046}
   - component: {fileID: 373011891191439428}
   - component: {fileID: 5847401649412687049}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Airos Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}

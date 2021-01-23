@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5636249566231994053}
   - component: {fileID: 2618778991887617309}
   - component: {fileID: 4098889355986946197}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Z-85EShell
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -167,7 +167,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   baseExplosionRadius: 3
-  baseExplosionDuration: 2
 --- !u!1001 &3501878489011008518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,6 +233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}
