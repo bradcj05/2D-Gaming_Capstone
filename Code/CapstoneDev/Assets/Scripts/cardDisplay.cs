@@ -6,14 +6,10 @@ using UnityEngine.UI;
 
 public class cardDisplay : MonoBehaviour
 {
+    public GameObject attributes;
+  
 
     public Card cards;
-
-    //attributes represent Health, defense, speed under Attributes canvas
-    public GameObject attributes;
-    
-
-   
 
     public Image artwork;
     public Text nameText;
