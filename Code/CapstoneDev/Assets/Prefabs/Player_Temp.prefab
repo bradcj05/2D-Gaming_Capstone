@@ -365,6 +365,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6973898103469409756}
     m_Modifications:
+    - target: {fileID: 3068016708045959597, guid: 9ac853685815c8b46a0e25e1b144d1b8,
+        type: 3}
+      propertyPath: shellTypes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3068016708045959597, guid: 9ac853685815c8b46a0e25e1b144d1b8,
+        type: 3}
+      propertyPath: shellTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
+        type: 3}
     - target: {fileID: 5365192277569748272, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_LocalPosition.z

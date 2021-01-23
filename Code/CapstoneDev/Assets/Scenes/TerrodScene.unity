@@ -804,6 +804,7 @@ MonoBehaviour:
   health: 10
   defense: 2
   hb: {fileID: 2070685056}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -819,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db582c1e28e26f74e9094c3f6a89c2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType:
+  shellTypes:
   - {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540, type: 3}
   waitTime: 1
   spread: 2
@@ -2902,6 +2903,7 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 2017349357}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3726,7 +3728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db582c1e28e26f74e9094c3f6a89c2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType:
+  shellTypes:
   - {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540, type: 3}
   waitTime: 1
   spread: 2
@@ -3906,6 +3908,7 @@ MonoBehaviour:
   health: 10
   defense: 2
   hb: {fileID: 1049602559}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4517,6 +4520,7 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 1474787829}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -4901,7 +4905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22092736e2733ba4e8c708a608f9e029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType:
+  shellTypes:
   - {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5, type: 3}
   waitTime: 6
   spread: 3
@@ -5077,6 +5081,7 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 745709551}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 1757042057}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5300,6 +5305,7 @@ MonoBehaviour:
   health: 20
   defense: 5
   hb: {fileID: 786853938}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 396692238}
   CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5315,8 +5321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54167ff8e6c2fc4692f5a54078f5642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType:
-  - {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5, type: 3}
+  shellTypes:
+  - {fileID: 3415526167857150346, guid: 490cc2aeac5035346b8353aa66d3b36f, type: 3}
   - {fileID: 1927717893260739586, guid: 8b44b6ebc0c217f4b92e142979d95759, type: 3}
   waitTime: 5
   spread: 2
@@ -5328,6 +5334,7 @@ MonoBehaviour:
   - {fileID: 1447824653}
   rotateSpeed: 0.3
   target: {fileID: 0}
+  attack: 0
   numShellsPerAttack: 4
 --- !u!60 &1909997706
 PolygonCollider2D:
@@ -6018,7 +6025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22092736e2733ba4e8c708a608f9e029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellType:
+  shellTypes:
   - {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5, type: 3}
   waitTime: 6
   spread: 3
@@ -6191,6 +6198,7 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 925241120}
+  explosion: {fileID: 0}
   crater: {fileID: 0}
   parent: {fileID: 837572673}
   CenterOfMass: {x: 0, y: 0, z: 0}
