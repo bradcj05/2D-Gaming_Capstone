@@ -6,7 +6,9 @@ public class Destructible : MonoBehaviour
 {
     public float health;
     public float defense;
+
     public HealthBar hb;
+    public DefenseBar db;
     
     // Explosion effects
     public ParticleSystem explosion;
@@ -25,6 +27,8 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
+
+        db.SetMax(defense);
         hb.SetMax(health);
     }
 
@@ -33,10 +37,17 @@ public class Destructible : MonoBehaviour
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
+        
         if (damage > 0)
         {
-            health -= damage;
+            defense -= damage;
+
+            if (defense <= 0)
+            {
+                health -= damage;
+            }
         }
+        db.SetDefense(defense);
         hb.SetHealth(health);
 
         if (health <= 0)
