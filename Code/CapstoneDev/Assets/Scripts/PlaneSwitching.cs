@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaneSwitching : MonoBehaviour
 {
      public int selectedPlane = 0;
-     float switchDelay = 5f;
+     float switchDelay = 0;
      float switchTimer;
      int squadronSize;
      Transform[] squadArr;

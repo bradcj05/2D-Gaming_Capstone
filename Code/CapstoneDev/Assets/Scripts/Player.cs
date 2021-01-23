@@ -1,27 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Destructible
 {
+    //To get access to scriptable objects information
+    public Card cards;
+
+
+    public Text nameText;
+
+   
+
+
 
     public float maxSpeed = 5f;
     public float acceleration = 1000f;
     Vector2 movement;
+
 
      //Values for rotation
      public Camera cam;
      Vector2 mousePos;
 
     public float maxHealth;
+    public float maxDefense;
+
     int isDestroyed;
     //Add death animation
 
-
+    
     new void Start()
     {
+        //To display name on HealthDock
+        nameText.text = cards.name;
+
         base.Start();
         hb.SetMax(maxHealth);
+        db.SetMax(maxDefense);
+
+        defense = maxDefense;
         health = maxHealth;
         isDestroyed = 1;
     }
@@ -38,6 +57,10 @@ public class Player : Destructible
 
         hb.SetMax(maxHealth);
         hb.SetHealth(health);
+
+       
+        db.SetMax(maxDefense);
+        db.SetDefense(defense);
     }
 
     //Movement
@@ -63,6 +86,8 @@ public class Player : Destructible
     //Player Death
     public new void Die()
     {
+     
+
         if (isDestroyed == 1)
         {
             //Play death animation
