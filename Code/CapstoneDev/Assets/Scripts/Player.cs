@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Destructible
 {
     //To get access to scriptable objects information
     public Card cards;
-    public Text nameText;
+    protected Text nameText;
     public Slider CooldownSlider;
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
@@ -15,18 +16,17 @@ public class Player : Destructible
     public Camera cam;
     Vector2 mousePos;
 
-    public float maxHealth;
+    protected float maxHealth;
 
     int isDestroyed;
     //Add death animation
 
     new void Start()
     {
+        base.Start();
         //To display name on HealthDock
         nameText.text = cards.name;
-        base.Start();
-        hb.SetMax(maxHealth);
-        health = maxHealth;
+        maxHealth = health;
         isDestroyed = 1;
     }
 
@@ -34,20 +34,17 @@ public class Player : Destructible
     //Input
     new void Update()
     {
+        base.Update();
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-          //Get Mouse Position
-          mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        hb.SetMax(maxHealth);
-        hb.SetHealth(health);
+        //Get Mouse Position
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     //Movement
     void FixedUpdate()
     {
-        //rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         movement.Normalize();
         // Move in the direction specified, then force the speed back to max speed if it is already reached.
         // (Provided the max speed is due to moment and not knockback or external factor)
@@ -59,9 +56,9 @@ public class Player : Destructible
         }
 
         //Rotate the Player
-          Vector2 lookDir = mousePos - rb.position;
-          float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-          rb.rotation = angle;
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 
     //Player Death

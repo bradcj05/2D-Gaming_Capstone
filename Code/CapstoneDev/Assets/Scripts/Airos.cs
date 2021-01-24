@@ -13,11 +13,13 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
     new void Start()
     {
+        base.Start();
         movement.x = -0.6f;
     }
 
     new void Update()
     {
+        base.Update();
         if (movement.x < 0 && rig.position.x <= -6.5)
         {
             movement.x = 0.6f;

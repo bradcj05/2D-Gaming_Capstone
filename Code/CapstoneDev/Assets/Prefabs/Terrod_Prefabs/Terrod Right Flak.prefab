@@ -435,6 +435,7 @@ MonoBehaviour:
   health: 10
   defense: 0
   hb: {fileID: 9153758475929731859}
+  db: {fileID: 1421870468362705115}
   explosion: {fileID: 0}
   explosionDuration: 2
   crater: {fileID: 0}
@@ -633,6 +634,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6751079352522190642, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751079352522190642, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: badb78e174c033641bd5d98afe0b0eba, type: 3}
 --- !u!224 &9153758476339587204 stripped
@@ -644,6 +655,18 @@ RectTransform:
 --- !u!114 &9153758475929731859 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5837915535480465994, guid: badb78e174c033641bd5d98afe0b0eba,
+    type: 3}
+  m_PrefabInstance: {fileID: 3318273223536109913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1421870468362705115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4447199362982867330, guid: badb78e174c033641bd5d98afe0b0eba,
     type: 3}
   m_PrefabInstance: {fileID: 3318273223536109913}
   m_PrefabAsset: {fileID: 0}

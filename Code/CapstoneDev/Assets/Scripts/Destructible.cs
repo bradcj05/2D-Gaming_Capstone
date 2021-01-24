@@ -6,8 +6,8 @@ public class Destructible : MonoBehaviour
 {
     public float health;
     public float defense;
-    public HealthBar hb;
-    public DefenseBar db;
+    public HealthBar hb; // Health bar
+    public HealthBar db; // Transparent DEFENSE bar
     
     // Explosion effects
     public ParticleSystem explosion;
@@ -19,6 +19,11 @@ public class Destructible : MonoBehaviour
     protected Rigidbody2D rb;
     public Vector3 CenterOfMass;
 
+    // Defense bar stuff
+    protected bool nonPenetration = false;
+    protected float penetrationTimer = 0f;
+    protected float penetrationTime = 0.1f;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -26,21 +31,46 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
-        db.SetMax(defense);
-        hb.SetMax(health);
+        if (db != null)
+        {
+            db.SetMax(defense);
+        }
+        if (hb != null)
+        {
+            hb.SetMax(health);
+        }
     }
 
-    public void Update() { }
+    public void Update() {
+        // If defense bar is present
+        if (db != null)
+        {
+            if (nonPenetration)
+            {
+                penetrationTimer += Time.deltaTime;
+            }
+            if (penetrationTimer > penetrationTime)
+            {
+                nonPenetration = false;
+                db.SetHealth(defense);
+            }
+        }
+    }
 
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
-        if (damage > 0)
+        if (damage > 0 && hb != null)
         {
             health -= damage;
+            hb.SetHealth(health);
         }
-        db.SetDefense(defense);
-        hb.SetHealth(health);
+        else if (damage < 0 && db != null)
+        {
+            nonPenetration = true;
+            penetrationTimer = 0f;
+            db.SetHealth(-damage);
+        }
         if (health <= 0)
         {
             Die();
