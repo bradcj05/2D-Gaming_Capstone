@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6973898103469409746}
   - component: {fileID: 1124189146208134926}
   m_Layer: 8
-  m_Name: Player_Temp
+  m_Name: P62
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  defense: 4
+  health: 20
+  defense: 3
   hb: {fileID: 0}
   db: {fileID: 0}
   explosion: {fileID: 6977633893847995241}

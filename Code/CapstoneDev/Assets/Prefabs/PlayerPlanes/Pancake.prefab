@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4427152316762893356}
   - component: {fileID: 989908066360215635}
   m_Layer: 8
-  m_Name: AS57
+  m_Name: Pancake
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   defense: 0
   hb: {fileID: 0}
   db: {fileID: 0}
