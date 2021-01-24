@@ -13,12 +13,17 @@ public class Bullet : MonoBehaviour
     protected float time = 0;
 
     // Effects
-    public GameObject trailEffect;
-    public GameObject engineEffect;
-    public GameObject coverEffect;
-    public GameObject hitEffect;
+    public ParticleSystem trailEffect;
+    public ParticleSystem engineEffect;
+    public ParticleSystem coverEffect;
+    public ParticleSystem hitEffect;
 
     protected Rigidbody2D rb;
+
+    // Base explosion's value for effect
+    public float hitEffectRadius = 5f;
+    public float hitEffectDuration = 0.5f;
+    public float baseExplosionRadius = 3f;
 
     // Start is called before first frame
     public void Start()
@@ -54,6 +59,17 @@ public class Bullet : MonoBehaviour
             if (expl != null)
                 expl.Detonate();
 
+            // Generate hit effect (assuming explosion)
+            if (hitEffect != null)
+            {
+                ParticleSystem curHitEffect = Instantiate(hitEffect, this.transform.position, Quaternion.identity) as ParticleSystem;
+                var main = curHitEffect.main;
+                main.simulationSpeed = main.duration / hitEffectDuration;
+                float scale = hitEffectRadius / baseExplosionRadius;
+                curHitEffect.transform.localScale = new Vector3(scale, scale, scale);
+                curHitEffect.Play(true);
+            }
+
             // Destroy shell
             Destroy(gameObject);
         }
@@ -80,6 +96,17 @@ public class Bullet : MonoBehaviour
             // Explosion effect
             if (expl != null)
                 expl.Detonate();
+
+            // Generate hit effect (assuming explosion)
+            if (hitEffect != null)
+            {
+                ParticleSystem curHitEffect = Instantiate(hitEffect, this.transform.position, Quaternion.identity) as ParticleSystem;
+                var main = curHitEffect.main;
+                main.simulationSpeed = main.duration / hitEffectDuration;
+                float scale = hitEffectRadius / baseExplosionRadius;
+                curHitEffect.transform.localScale = new Vector3(scale, scale, scale);
+                curHitEffect.Play(true);
+            }
 
             // Power calculation accounting for deterioration, penetration, and target's defense
             e.TakeDamage(power * Mathf.Pow(1 - deterioration * time, 2) - Mathf.Max(e.defense - penetration, 0));
