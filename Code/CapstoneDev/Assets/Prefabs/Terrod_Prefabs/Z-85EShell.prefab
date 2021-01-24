@@ -145,6 +145,9 @@ MonoBehaviour:
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
   hitEffect: {fileID: 0}
+  hitEffectRadius: 5
+  hitEffectDuration: 0.5
+  baseExplosionRadius: 3
 --- !u!114 &4098889355986946197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +164,7 @@ MonoBehaviour:
   radius: 10
   effectDuration: 0.5
   effect: {fileID: 640691860937166766}
-  forceThreshold: 1000
+  forceThreshold: 3000
   decentralized: 0
   layerMask:
     serializedVersion: 2

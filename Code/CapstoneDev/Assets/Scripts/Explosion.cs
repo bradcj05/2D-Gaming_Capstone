@@ -11,7 +11,7 @@ public class Explosion : MonoBehaviour
     public float effectDuration = 0.5f;
     public ParticleSystem effect;
 
-    public float forceThreshold = 0.5f;
+    public float forceThreshold = 3000f;
 
     public bool decentralized = false; // Whether the explosion deals constant damage among radius.
     public LayerMask layerMask; // Layer to perform explosion on

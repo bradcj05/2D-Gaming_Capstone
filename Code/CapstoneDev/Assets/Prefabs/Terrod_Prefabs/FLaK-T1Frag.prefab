@@ -108,6 +108,9 @@ MonoBehaviour:
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
   hitEffect: {fileID: 0}
+  hitEffectRadius: 5
+  hitEffectDuration: 0.5
+  baseExplosionRadius: 3
 --- !u!50 &4704289319445064899
 Rigidbody2D:
   serializedVersion: 4
@@ -161,7 +164,7 @@ MonoBehaviour:
   radius: 3
   effectDuration: 0.5
   effect: {fileID: 2107516674024899632}
-  forceThreshold: 1000
+  forceThreshold: 3000
   decentralized: 0
   layerMask:
     serializedVersion: 2
