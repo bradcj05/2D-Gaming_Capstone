@@ -140,7 +140,7 @@ MonoBehaviour:
   speed: 10
   penetration: 2
   deterioration: 0.15
-  selfDestructTime: 2
+  selfDestructTime: 1.5
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
