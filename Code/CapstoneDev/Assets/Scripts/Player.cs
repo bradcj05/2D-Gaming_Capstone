@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class Player : Destructible
 {
-
+    //To get access to scriptable objects information
+    public Card cards;
+    public Text nameText;
+    public Slider CooldownSlider;
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
     Vector2 movement;
-
-     //Values for rotation
-     public Camera cam;
-     Vector2 mousePos;
+    //Values for rotation
+    public Camera cam;
+    Vector2 mousePos;
 
     public float maxHealth;
+
     int isDestroyed;
     //Add death animation
 
-
     new void Start()
     {
+        //To display name on HealthDock
+        nameText.text = cards.name;
         base.Start();
         hb.SetMax(maxHealth);
         health = maxHealth;
