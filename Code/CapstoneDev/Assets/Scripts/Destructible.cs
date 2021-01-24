@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
+
     public float health;
     public float defense;
+    
+
     public HealthBar hb;
+   
+
     //Add Explosion when destroyed
     public GameObject crater;
 
@@ -22,6 +27,7 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
+
         hb.SetMax(health);
     }
 
@@ -30,10 +36,13 @@ public class Destructible : MonoBehaviour
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
-        if (damage > 0)
-        {
-            health -= damage;
+        
+        if (damage > 0){
+
+                health -= damage;
+            
         }
+      
         hb.SetHealth(health);
 
         if (health <= 0)
