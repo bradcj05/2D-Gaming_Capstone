@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     // Update is called every frame
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         time += Time.deltaTime;
         // Speed deterioration, destroy without any behavior if expires
-        if (deterioration * time >= 1)
+        if (deterioration * time >= 0.9)
         {
             Destroy(gameObject);
         }
@@ -89,20 +90,22 @@ public class Bullet : MonoBehaviour
         if (e != null && time > 0)
         {
             // Calculate effective defense [Effective defense = defense / cos(angle of contact)]
-            ContactPoint2D[] contacts = new ContactPoint2D[2];
-            collision.GetContacts(contacts);
-
-            Vector3 normal = contacts[0].normal;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 5);
+            Vector3 normal = hit.normal;
             float penCoeff = Mathf.Abs(Vector3.Cross(rb.velocity.normalized, normal).z);
             // Debug penCoeff for "bullet traps"
-            if (penCoeff < 0.2)
+            if (penCoeff < 0.2f)
             {
-                penCoeff = 1 - penCoeff;
+                penCoeff = 1f - penCoeff;
+            }
+            if (float.IsNaN(penCoeff) || float.IsInfinity(penCoeff))
+            {
+                penCoeff = 1f;
             }
             float effectiveDefense = e.defense / penCoeff;
 
             // Calculate effective damage [Damage = power * (1- det*time)^2 - Max (effective defense - penetration, 0)]
-            float damage = power * Mathf.Pow(1 - deterioration * time, 2) - Mathf.Max(effectiveDefense - penetration, 0);
+            float damage = power * Mathf.Pow(1f - deterioration * time, 2f) - Mathf.Max(effectiveDefense - penetration, 0);
             e.TakeDamage(damage);
 
             // Determine penetration status
@@ -131,8 +134,14 @@ public class Bullet : MonoBehaviour
             // Non-penetration, reflect with energy loss.
             else
             {
-                time = time + (1 / deterioration - time) * penCoeff; // HAX
-                rb.velocity = Vector3.Reflect(rb.velocity * Mathf.Sqrt(1 - penCoeff), normal);
+                time = time + (1f / deterioration - time) * penCoeff; // HAX
+                rb.velocity = Vector3.Reflect(rb.velocity * Mathf.Sqrt(1f - penCoeff), normal);
+                //Store new direction
+                Vector3 newDirection = Vector3.Reflect(transform.up, normal);
+                //Rotate bullet to new direction
+                newDirection = Quaternion.Euler(0, 0, -90) * newDirection;
+                Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: newDirection);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100000);
             }
         }
     }
