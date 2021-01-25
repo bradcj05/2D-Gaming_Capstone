@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 98082189393698161}
   - component: {fileID: 1092141215139076464}
   - component: {fileID: 6004406674698331662}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: R-5AP
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -95,11 +95,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.0500002, y: 0.3400001}
+  m_Offset: {x: 0.005209416, y: -0.009528279}
+  m_Size: {x: 0.26853186, y: 1.0309548}
   m_Direction: 0
 --- !u!50 &1092141215139076464
 Rigidbody2D:
@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -143,3 +143,6 @@ MonoBehaviour:
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
   hitEffect: {fileID: 0}
+  hitEffectRadius: 5
+  hitEffectDuration: 0.5
+  baseExplosionRadius: 3

@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5365192277569748272}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

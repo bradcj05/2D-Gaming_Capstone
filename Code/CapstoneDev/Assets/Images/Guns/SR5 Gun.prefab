@@ -117,6 +117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletSpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 8097747961547388224, guid: d7c625d9dc954c24fb93ec8f8a751445,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 9066724407613783347, guid: d7c625d9dc954c24fb93ec8f8a751445,
         type: 3}
       propertyPath: m_LocalPosition.x

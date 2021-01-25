@@ -101,7 +101,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538547675676979459}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &538547675676979470
 PolygonCollider2D:
@@ -243,6 +243,11 @@ PrefabInstance:
       propertyPath: bulletSpawns.Array.data[2]
       value: 
       objectReference: {fileID: 7471767694695558261}
+    - target: {fileID: 4530364101076584756, guid: b97d5b419d64c524187551d15dbcde6e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5139003667144364610, guid: b97d5b419d64c524187551d15dbcde6e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -771,6 +776,11 @@ PrefabInstance:
       propertyPath: bulletSpawns.Array.data[2]
       value: 
       objectReference: {fileID: 700832967244101261}
+    - target: {fileID: 4530364101076584756, guid: b97d5b419d64c524187551d15dbcde6e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5139003667144364610, guid: b97d5b419d64c524187551d15dbcde6e,
         type: 3}
       propertyPath: m_AnchorMax.x

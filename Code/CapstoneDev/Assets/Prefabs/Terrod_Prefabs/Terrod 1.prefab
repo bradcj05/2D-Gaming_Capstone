@@ -765,6 +765,11 @@ PrefabInstance:
       propertyPath: m_LinearOffset.y
       value: 1.1099085
       objectReference: {fileID: 0}
+    - target: {fileID: 8410924365959853182, guid: 0f389feebc99efc4391eda38b767236c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8410924365959853183, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
       propertyPath: m_Name

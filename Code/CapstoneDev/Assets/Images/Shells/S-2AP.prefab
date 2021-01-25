@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5217038836275870248}
   - component: {fileID: 8243989010315215837}
   - component: {fileID: -3668739710715719027}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: S-2AP
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -106,6 +106,9 @@ MonoBehaviour:
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}
   hitEffect: {fileID: 0}
+  hitEffectRadius: 5
+  hitEffectDuration: 0.5
+  baseExplosionRadius: 3
 --- !u!50 &8243989010315215837
 Rigidbody2D:
   serializedVersion: 4
@@ -116,16 +119,16 @@ Rigidbody2D:
   m_GameObject: {fileID: 3850216058706245252}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &-3668739710715719027
 CapsuleCollider2D:
@@ -137,7 +140,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.1727055, y: 0.9607687}
