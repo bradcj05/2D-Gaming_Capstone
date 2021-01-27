@@ -7,7 +7,7 @@ public class Player : Destructible
 {
     //To get access to scriptable objects information
     public Card cards;
-    protected Text nameText;
+    public Text nameText;
     public Slider CooldownSlider;
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
