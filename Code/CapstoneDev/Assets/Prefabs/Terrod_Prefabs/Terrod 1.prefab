@@ -532,6 +532,7 @@ MonoBehaviour:
   track2: {fileID: 4895027039258377203}
   moveSpeed: 0.7
   rotateSpeed: 0.15
+  reverseSpeed: 0.5
   optimumDistance: 15
   accelTime: 3
   decelTime: 1
