@@ -34,7 +34,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
         try
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
         }
         catch (System.NullReferenceException e)
         {
@@ -45,13 +45,23 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
     new void Update() //// check on this HERE!!!!!!!!
     {
+        base.Update();
+        //Try to find the next player plane when it spawns
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log(e);
+            target = null;
+        }
         if (coroutineAllowed)
             StartCoroutine(GoByTheRoute(routeToGo));
     }           //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     void FixedUpdate()
     {
-        base.Update();
         if (target != null)
         {
             Vector2 direction = (Vector2)target.position - rig.position;
@@ -67,19 +77,6 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
             float curRot = transform.rotation.eulerAngles.z;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
            // rig.velocity = -transform.up * moveSpeed;
-        }
-        else
-        {
-            //Try to find the next player plane when it spawns
-            try
-            {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-            }
-            catch (System.NullReferenceException e)
-            {
-                Debug.Log(e);
-                target = null;
-            }
         }
     }
 
