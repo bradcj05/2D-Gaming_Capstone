@@ -21,6 +21,9 @@ public class Terrod : MonoBehaviour
     //Movement
     public float moveSpeed = 0.5f;
     public float rotateSpeed = 0.01f;
+    public float optimumDistance = 15f; // Optimum distance to player before stopping
+    public float accelTime = 1f;  // Acceleration time
+    public float decelTime = 0.5f;  // Deceleration time
     protected float rotateAmount; //public for better testing
     protected Transform target;
 
@@ -32,7 +35,7 @@ public class Terrod : MonoBehaviour
         isWorking2 = true;
         try
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
         }
         catch (System.NullReferenceException e)
         {
@@ -43,9 +46,20 @@ public class Terrod : MonoBehaviour
 
     public void Update()
     {
+        //Try to find the next player plane when it spawns
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log(e);
+            target = null;
+        }
+        // Track behavior
         isWorking1 = track1.GetComponent<TerrodTracks>().TracksWorking();
         isWorking2 = track2.GetComponent<TerrodTracks>().TracksWorking();
-
+        // Stop movement when a track is not working, else activate it
         if (!isWorking1 || !isWorking2)
         {
             rig.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -54,7 +68,7 @@ public class Terrod : MonoBehaviour
         {
             rig.constraints = RigidbodyConstraints2D.None;
         }
-
+        // "Death" upon destruction of all mounted weapons
         if (turretRigMain == null && turretRig1 == null && turretRig2 == null && flak1 == null && flak2 == null)
         {
             //Death animation
@@ -67,8 +81,8 @@ public class Terrod : MonoBehaviour
         //Changing Terrod's movement
         if (target != null && isWorking1 && isWorking2)
         {
-            Vector2 direction = (Vector2)target.position - rig.position;
-            direction.Normalize();
+            Vector2 distance = (Vector2)target.position - rig.position;
+            Vector2 direction = distance.normalized;
             if (Vector3.Dot(direction, -transform.up) <= 0)
             {
                 rotateAmount = 1f;
@@ -79,21 +93,44 @@ public class Terrod : MonoBehaviour
             }
             float curRot = transform.rotation.eulerAngles.z;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
-            rig.velocity = -transform.up * moveSpeed;
-        }
-        else
-        {
-            //Try to find the next player plane when it spawns
-            try
+            // Move only if distance to player is larger than "optimum" distance
+            if (distance.magnitude > optimumDistance)
             {
-                target = GameObject.FindGameObjectWithTag("Player").transform;
-            }
-            catch (System.NullReferenceException e)
+                Run();
+            } 
+            else
             {
-                Debug.Log(e);
-                target = null;
+                Stop();
             }
         }
     }
 
+    // Custom acceleration and deceleration
+    public void Run()
+    {
+        // Acceleration
+        if (rig.velocity.magnitude < moveSpeed)
+        {
+            rig.velocity = -transform.up * (rig.velocity.magnitude + moveSpeed * Time.deltaTime / accelTime);
+        }
+        // Velocity capping
+        if (rig.velocity.magnitude > moveSpeed)
+        {
+            rig.velocity = -transform.up * moveSpeed;
+        }
+    }
+
+    public void Stop()
+    {
+        // Deceleration
+        if (rig.velocity.magnitude > 0)
+        {
+            rig.velocity = -transform.up * (rig.velocity.magnitude - moveSpeed * Time.deltaTime / accelTime);
+        }
+        // Velocity capping
+        if (Vector3.Dot(rig.velocity, -transform.up) < 0)
+        {
+            rig.velocity = new Vector2(0,0);
+        }
+    }
 }

@@ -37,6 +37,7 @@ public class TerrodMainTurret : EnemyTurret
     // Update is called once per frame
     public new void Update()
     {
+        base.Update();
         // Update timer
         timer += Time.deltaTime;
         // Regular fire code for Attacks 1 and 2

@@ -497,11 +497,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4895027039873484411}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 500000
   m_GravityScale: 0
@@ -532,6 +532,9 @@ MonoBehaviour:
   track2: {fileID: 4895027039258377203}
   moveSpeed: 0.7
   rotateSpeed: 0.15
+  optimumDistance: 15
+  accelTime: 3
+  decelTime: 1
 --- !u!1001 &1912969303286006975
 PrefabInstance:
   m_ObjectHideFlags: 0
