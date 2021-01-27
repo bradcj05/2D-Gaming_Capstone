@@ -82,17 +82,6 @@ public class Terrod : MonoBehaviour
         if (target != null && isWorking1 && isWorking2)
         {
             Vector2 distance = (Vector2)target.position - rig.position;
-            Vector2 direction = distance.normalized;
-            if (Vector3.Dot(direction, -transform.up) <= 0)
-            {
-                rotateAmount = 1f;
-            }
-            else
-            {
-                rotateAmount = Vector3.Cross(direction, -transform.up).z;
-            }
-            float curRot = transform.rotation.eulerAngles.z;
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
             // Move only if distance to player is larger than "optimum" distance
             if (distance.magnitude > optimumDistance)
             {
@@ -105,9 +94,28 @@ public class Terrod : MonoBehaviour
         }
     }
 
+    // Custom rotation
+    public void Rotate()
+    {
+        // Rotate
+        Vector2 direction = ((Vector2)target.position - rig.position).normalized;
+        if (Vector3.Dot(direction, -transform.up) <= 0)
+        {
+            rotateAmount = 1f;
+        }
+        else
+        {
+            rotateAmount = Vector3.Cross(direction, -transform.up).z;
+        }
+        float curRot = transform.rotation.eulerAngles.z;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+    }
+
     // Custom acceleration and deceleration
     public void Run()
     {
+        // Rotate when running
+        Rotate();
         // Acceleration
         if (rig.velocity.magnitude < moveSpeed)
         {
@@ -127,10 +135,14 @@ public class Terrod : MonoBehaviour
         {
             rig.velocity = -transform.up * (rig.velocity.magnitude - moveSpeed * Time.deltaTime / accelTime);
         }
-        // Velocity capping
+        // Velocity capping, also rotate when "completely" stopped
         if (Vector3.Dot(rig.velocity, -transform.up) < 0)
         {
             rig.velocity = new Vector2(0,0);
+        }
+        if (rig.velocity.magnitude < moveSpeed / 10)
+        {
+            Rotate();
         }
     }
 }
