@@ -104,6 +104,7 @@ public class TerrodMainTurret : EnemyTurret
                     attack = 2;
                 else
                     attack = 3;
+                    timer -= (waitTime - beat); // Timer compensation for alternating shots
                 break;
             case 2:
                 sentinel = rand.NextDouble(); // NextDouble produces a random double >= 0 and < 1
@@ -111,6 +112,7 @@ public class TerrodMainTurret : EnemyTurret
                     attack = 1;
                 else
                     attack = 3;
+                    timer -= (waitTime - beat); // Timer compensation for alternating shots
                 break;
             case 3:
                 sentinel = rand.NextDouble(); // NextDouble produces a random double >= 0 and < 1

@@ -17,7 +17,8 @@ public class FragShell : MonoBehaviour
     // Here to allow for the mathmatics to be implemented
     public void Fracture()
     {
-        System.Random rand = new System.Random();
+        // Set seed based on position so bullets launched at the same time can still be random.
+        Random.seed += (int)((transform.position.x + transform.position.y)*65535);
 
         for (int i = 0; i < numFragments; i++)
         {
@@ -30,7 +31,7 @@ public class FragShell : MonoBehaviour
             }
             else
             {
-                curAngle = rand.Next(361);
+                curAngle = Random.Range(0,360);
                 angle = curAngle + spin;
             }
             // Implements the rotation math from the HM

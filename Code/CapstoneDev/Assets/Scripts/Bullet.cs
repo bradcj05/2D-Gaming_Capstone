@@ -41,10 +41,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
-            rb.velocity = speed * (1 - deterioration * time) * rb.transform.up;
-        }
+        rb.velocity = speed * (1f - deterioration * time) * rb.transform.up;
 
         // Effect calls
         if (time >= selfDestructTime && selfDestructTime > 0)
@@ -135,7 +132,7 @@ public class Bullet : MonoBehaviour
             else
             {
                 time = time + (1f / deterioration - time) * penCoeff; // HAX
-                rb.velocity = Vector3.Reflect(rb.velocity * Mathf.Sqrt(1f - penCoeff), normal);
+                rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
                 //Store new direction
                 Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                 //Rotate bullet to new direction
