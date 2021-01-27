@@ -11,7 +11,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     public Rigidbody2D turretR2;
     //Vector2 movement;
 
-   // public float moveSpeed = 5f;
+    public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
     public float rotateSpeed = 0.01f;
     protected float rotateAmount; //public for better testing
     protected Transform target;
@@ -29,7 +29,6 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         base.Start();
         routeToGo = 0;
         tParam = 0f;
-        // speed = 0.5f;
         coroutineAllowed = true;
 
         try
@@ -92,7 +91,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
         while (tParam < 1)
         {
-            tParam += Time.deltaTime * speed;   /// requires some form of speed variable
+            tParam += Time.deltaTime * bezierSpeed;   /// requires some form of speed variable
 
             AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
                        3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +

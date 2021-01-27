@@ -222,10 +222,13 @@ MonoBehaviour:
   crater: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
-  moveSpeed: 2
   rig: {fileID: 538547675676979458}
   turretL1: {fileID: 2143285099219235545}
   turretR2: {fileID: 0}
+  bezierSpeed: 0.3
+  rotateSpeed: 0.01
+  routes: []
+  speed: 0
 --- !u!1001 &823859443639803211
 PrefabInstance:
   m_ObjectHideFlags: 0
