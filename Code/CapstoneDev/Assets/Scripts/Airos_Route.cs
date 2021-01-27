@@ -15,6 +15,7 @@ public class Airos_Route : MonoBehaviour
                        3 * (1 - t) * Mathf.Pow(t, 2) * controlSpots[2].position +
                         Mathf.Pow(t, 3) * controlSpots[3].position;
 
+            Gizmos.color = Color.black;   // dotted line color
             Gizmos.DrawSphere(TracPosition, 0.25f);
         }
 

@@ -46,7 +46,7 @@ public class Airos_Follow : MonoBehaviour
 
         while (tParam < 1)
         {
-            tParam += Time.deltaTime * speed;
+            tParam += Time.deltaTime * speed;   /// requires some form of speed variable
 
             AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
                        3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
