@@ -33,6 +33,21 @@ public class HomingMissile : Bullet
         timer = 0f;
     }
 
+    public void Update()
+    {
+        base.Update();
+        // Try to find target
+        try
+        {
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log(e);
+            target = null;
+        }
+    }
+
     //Handles the physics and math for the homing missile
     public void FixedUpdate()
     {
