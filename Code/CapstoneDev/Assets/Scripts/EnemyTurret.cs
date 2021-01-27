@@ -12,7 +12,7 @@ public class EnemyTurret : Turret
         // May have to change player target to something else for allies
         try
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
         }
         catch (System.NullReferenceException e)
         {
@@ -24,21 +24,21 @@ public class EnemyTurret : Turret
     // Update is called once per frame
     public new void Update()
     {
-        base.Update();
-    }
-
-    public new void FixedUpdate()
-    {
         //Try to find the next player plane when it spawns
         try
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
         }
         catch (System.NullReferenceException e)
         {
             Debug.Log(e);
             target = null;
         }
+        base.Update();
+    }
+
+    public new void FixedUpdate()
+    {
         // Perform turret behavior on player plane
         base.FixedUpdate();
     }
