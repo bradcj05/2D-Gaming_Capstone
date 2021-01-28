@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4696215701178848518}
   - component: {fileID: 2072869082587749642}
-  - component: {fileID: 4860951874880019715}
-  - component: {fileID: -867384195615070257}
   - component: {fileID: -1589576271335674171}
+  - component: {fileID: 3368296973729803646}
+  - component: {fileID: 2544623598446073239}
   m_Layer: 13
   m_Name: KA-4PShell
   m_TagString: Bullet
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8386605503765369876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.93, y: -2.1, z: 0}
-  m_LocalScale: {x: 0.4545, y: 0.4545, z: 0.4545}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.4545}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,43 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4860951874880019715
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386605503765369876}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 1
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!70 &-867384195615070257
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386605503765369876}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00000052457335, y: -0.0046615554}
-  m_Size: {x: 0.28770435, y: 0.9150874}
-  m_Direction: 0
 --- !u!114 &-1589576271335674171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +100,7 @@ MonoBehaviour:
   power: 5
   speed: 10
   penetration: 1
-  deterioration: 0
+  deterioration: 0.15
   selfDestructTime: -1
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
@@ -146,3 +109,40 @@ MonoBehaviour:
   hitEffectRadius: 5
   hitEffectDuration: 0.5
   baseExplosionRadius: 3
+--- !u!70 &3368296973729803646
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386605503765369876}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0023767685, y: -0.011882849}
+  m_Size: {x: 0.2701018, y: 0.88873994}
+  m_Direction: 0
+--- !u!50 &2544623598446073239
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386605503765369876}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0

@@ -684,21 +684,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8410924365959853169, guid: 0f389feebc99efc4391eda38b767236c,
-        type: 3}
-      propertyPath: parent
-      value: 
-      objectReference: {fileID: 4895027039873484411}
-    - target: {fileID: 8410924365959853169, guid: 0f389feebc99efc4391eda38b767236c,
-        type: 3}
-      propertyPath: db
-      value: 
-      objectReference: {fileID: 9104309678614032487}
-    - target: {fileID: 8410924365959853169, guid: 0f389feebc99efc4391eda38b767236c,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8410924365959853173, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -756,23 +741,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410924365959853175, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
-      propertyPath: m_ConnectedRigidBody
-      value: 
-      objectReference: {fileID: 4895027039873484389}
-    - target: {fileID: 8410924365959853175, guid: 0f389feebc99efc4391eda38b767236c,
-        type: 3}
       propertyPath: m_LinearOffset.x
-      value: 0.017424492
+      value: -0.007222969
       objectReference: {fileID: 0}
     - target: {fileID: 8410924365959853175, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
       propertyPath: m_LinearOffset.y
-      value: 1.1099085
-      objectReference: {fileID: 0}
-    - target: {fileID: 8410924365959853182, guid: 0f389feebc99efc4391eda38b767236c,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
+      value: 7.8902254
       objectReference: {fileID: 0}
     - target: {fileID: 8410924365959853183, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
@@ -793,18 +768,6 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 3987719826232375692}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9104309678614032487 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5264210330773113323, guid: 0f389feebc99efc4391eda38b767236c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3987719826232375692}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4895027039662568439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1468,15 +1431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea1770edf0936d4687dcd0583420c5e, type: 3}
---- !u!50 &4895027039922956031 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 2088311986729981585, guid: dea1770edf0936d4687dcd0583420c5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6851538093928951918}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4895027039922956026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2088311986729981588, guid: dea1770edf0936d4687dcd0583420c5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6851538093928951918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &4895027039922956031 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2088311986729981585, guid: dea1770edf0936d4687dcd0583420c5e,
     type: 3}
   m_PrefabInstance: {fileID: 6851538093928951918}
   m_PrefabAsset: {fileID: 0}

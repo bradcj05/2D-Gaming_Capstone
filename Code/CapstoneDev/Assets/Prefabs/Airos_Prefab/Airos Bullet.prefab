@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  speed: 10
+  speed: 12
   penetration: 0
   deterioration: 0.15
   selfDestructTime: -1
