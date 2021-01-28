@@ -21,7 +21,6 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     private int routeToGo;
     private float tParam;
     private Vector2 AirPosition;
-    public float speed;
     private bool coroutineAllowed;
 
     new void Start()
@@ -75,7 +74,6 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
             }
             float curRot = transform.rotation.eulerAngles.z;
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
-           // rig.velocity = -transform.up * moveSpeed;
         }
     }
 

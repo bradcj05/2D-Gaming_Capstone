@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!60 &538547675676979470
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -225,10 +225,9 @@ MonoBehaviour:
   rig: {fileID: 538547675676979458}
   turretL1: {fileID: 2143285099219235545}
   turretR2: {fileID: 0}
-  bezierSpeed: 0.3
-  rotateSpeed: 0.01
+  bezierSpeed: 0.2
+  rotateSpeed: 1
   routes: []
-  speed: 0
 --- !u!1001 &823859443639803211
 PrefabInstance:
   m_ObjectHideFlags: 0

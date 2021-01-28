@@ -51,8 +51,8 @@ MonoBehaviour:
   preLine: {fileID: 4476682115956432668}
   timeBetweenFiring: 4
   preLaserDuration: 2
-  laserDuration: 4
-  laserLength: 40
+  laserDuration: 3
+  laserLength: 50
   layerMask:
     serializedVersion: 2
     m_Bits: 256
