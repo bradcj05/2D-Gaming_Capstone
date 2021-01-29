@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO fix 
 public class ObjectPoolManager : MonoBehaviour
 {
      public List<ObjectPool> poolList;
@@ -24,6 +25,7 @@ public class ObjectPoolManager : MonoBehaviour
                {
                     GameObject obj = GameObject.Instantiate(pool.pooledObject);
                     obj.SetActive(false);
+                    obj.name = pool.name;
                     poolQueue.Enqueue(obj);
                }
 
@@ -39,7 +41,8 @@ public class ObjectPoolManager : MonoBehaviour
                if (objectpoolDictionary[poolName].Count > 0)
                {
                     GameObject obj = objectpoolDictionary[poolName].Dequeue();
-                    //obj.SetActive(true);
+                    if (poolName == "S-2AP")
+                         Debug.Log(objectpoolDictionary[poolName].Count);
                     return obj;
                }
                else
@@ -56,7 +59,7 @@ public class ObjectPoolManager : MonoBehaviour
      }
 
      // Returns the object to its pool
-     public static void ReturnPooledObject(string poolName, GameObject obj)
+     public void ReturnPooledObject(string poolName, GameObject obj)
      {
           if (objectpoolDictionary.ContainsKey(poolName))
           {

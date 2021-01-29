@@ -328,7 +328,7 @@ MonoBehaviour:
   name: KA-4PShell
   pooledObject: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
     type: 3}
-  poolSize: 28
+  poolSize: 100
 --- !u!4 &308049126
 Transform:
   m_ObjectHideFlags: 0
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   name: S-2AP
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
-  poolSize: 3
+  poolSize: 25
 --- !u!4 &1380488001
 Transform:
   m_ObjectHideFlags: 0

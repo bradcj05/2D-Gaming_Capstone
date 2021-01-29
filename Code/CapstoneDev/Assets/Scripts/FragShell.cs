@@ -35,10 +35,16 @@ public class FragShell : MonoBehaviour
                 angle = curAngle + spin;
             }
             // Implements the rotation math from the HM
-            GameObject bullet = Instantiate(fragProjectile, transform.position, transform.rotation) as GameObject;
-            // Now rotate
-            float curRot = transform.localRotation.eulerAngles.z;
-            bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
+            GameObject bullet = ObjectPoolManager.SharedInstance.GetPooledObject(fragProjectile.name);
+               if (bullet != null)
+               {
+                    bullet.transform.position = transform.position;
+                    bullet.transform.rotation = transform.rotation;
+                    bullet.SetActive(true);
+                    // Now rotate
+                    float curRot = transform.localRotation.eulerAngles.z;
+                    bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
+               }
             // FRAGMENT WILL BE PROPELLED FORWARD BY ITS OWN SPEED
             // (Trying to manipulate it here is useless)
         }
