@@ -65,8 +65,14 @@ public class Gun : MonoBehaviour
             // Account for spread by generating random angle
             float curRot = bulletSpawn.rotation.eulerAngles.z;
             Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2)));
-            // Create bullet
-            GameObject bullet = Instantiate(shellType, bulletSpawn.position, bulletAngle) as GameObject;
+               // Create bullet
+            GameObject bullet = ObjectPoolManager.SharedInstance.GetPooledObject(shellType.name);
+            if(bullet != null)
+               {
+                    bullet.transform.position = bulletSpawn.transform.position;
+                    bullet.transform.rotation = bulletAngle;
+                    bullet.SetActive(true);
+               }
             Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
             // Apply speed and power buff
             float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
