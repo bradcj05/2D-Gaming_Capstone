@@ -1019,7 +1019,7 @@ PrefabInstance:
         type: 3}
       propertyPath: levelBoss
       value: 
-      objectReference: {fileID: 1483172042}
+      objectReference: {fileID: 0}
     - target: {fileID: 483736761828627262, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
         type: 3}
       propertyPath: gameOverMenu
@@ -2534,12 +2534,12 @@ PrefabInstance:
     - target: {fileID: 4895027038234742267, guid: ed0f28773ff02f043b449cf876422728,
         type: 3}
       propertyPath: m_LinearOffset.x
-      value: 0.02224956
+      value: -0.0023979023
       objectReference: {fileID: 0}
     - target: {fileID: 4895027038234742267, guid: ed0f28773ff02f043b449cf876422728,
         type: 3}
       propertyPath: m_LinearOffset.y
-      value: 1.4172561
+      value: 8.197573
       objectReference: {fileID: 0}
     - target: {fileID: 4895027038323041901, guid: ed0f28773ff02f043b449cf876422728,
         type: 3}
@@ -2671,6 +2671,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrod
       objectReference: {fileID: 0}
+    - target: {fileID: 4895027039873484411, guid: ed0f28773ff02f043b449cf876422728,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4895027039922956005, guid: ed0f28773ff02f043b449cf876422728,
         type: 3}
       propertyPath: m_LinearOffset.x
@@ -2683,12 +2688,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed0f28773ff02f043b449cf876422728, type: 3}
---- !u!1 &1483172042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4895027039873484411, guid: ed0f28773ff02f043b449cf876422728,
-    type: 3}
-  m_PrefabInstance: {fileID: 1483172041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1572864538
 GameObject:
   m_ObjectHideFlags: 0
