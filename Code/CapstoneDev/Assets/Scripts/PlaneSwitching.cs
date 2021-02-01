@@ -14,7 +14,7 @@ public class PlaneSwitching : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        switchTimer = 0;
+        switchTimer = 0f;
         squadronSize = transform.childCount;
 
         //Assign numbers to the planes

@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 5671753289216525510}
   - component: {fileID: 5671753289216525529}
   m_Layer: 0
-  m_Name: Terrod (1)
+  m_Name: Terrod 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

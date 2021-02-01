@@ -295,6 +295,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Airos_missle_launcher
       objectReference: {fileID: 0}
+    - target: {fileID: 7845238585054273065, guid: b97d5b419d64c524187551d15dbcde6e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7845238585054273067, guid: b97d5b419d64c524187551d15dbcde6e,
         type: 3}
       propertyPath: m_LocalPosition.x

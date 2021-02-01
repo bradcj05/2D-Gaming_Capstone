@@ -141,6 +141,9 @@ MonoBehaviour:
   penetration: 5
   deterioration: 0.05
   selfDestructTime: 5
+  targetTags:
+  - ActivePlayer
+  - Ally
   trailEffect: {fileID: 0}
   engineEffect: {fileID: 0}
   coverEffect: {fileID: 0}

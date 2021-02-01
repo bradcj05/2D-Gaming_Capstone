@@ -8,7 +8,7 @@ public class Player : Destructible
     //To get access to scriptable objects information
     public Card cards;
     public Text nameText;
-    public Slider CooldownSlider;
+    public HealthBar cooldownSlider;
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
     Vector2 movement;
@@ -24,21 +24,22 @@ public class Player : Destructible
     new void Start()
     {
         base.Start();
-        //To display name on HealthDock
+        // To display name on HealthDock
         nameText.text = cards.name;
         maxHealth = health;
         isDestroyed = 1;
+        // Set cooldown slider 
     }
 
     // Update is called once per frame
-    //Input
+    // Input
     new void Update()
     {
         base.Update();
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //Get Mouse Position
+        // Get Mouse Position
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 

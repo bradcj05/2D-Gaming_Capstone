@@ -12,6 +12,9 @@ public class Bullet : MonoBehaviour
     public float selfDestructTime = -1; // Time until self-destruct for effect. Negative to disable
     protected float time = 0;
 
+    // Kinds of targets the bullet is effective towards (see tags)
+    public string[] targetTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
+
     // Effects
     public ParticleSystem trailEffect;
     public ParticleSystem engineEffect;
@@ -76,69 +79,77 @@ public class Bullet : MonoBehaviour
     // Collision behavior
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        //TODO add hit effect
-        Destructible e = collision.collider.GetComponent<Destructible>();
-
-        // Effect calls
-        FragShell fs = gameObject.GetComponent<FragShell>();
-        Explosion expl = gameObject.GetComponent<Explosion>();
-
-        // Hit behavior (allow first frame tolerance so bullet doesn't collide with shooter upon spawn)
-        if (e != null && time > 0)
+        // Check if the collision was with a viable target
+        foreach (string targetTag in targetTags)
         {
-            // Calculate effective defense [Effective defense = defense / cos(angle of contact)]
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 5);
-            Vector3 normal = hit.normal;
-            float penCoeff = Mathf.Abs(Vector3.Cross(rb.velocity.normalized, normal).z);
-            // Debug penCoeff for "bullet traps"
-            if (penCoeff < 0.2f)
+            if (collision.collider.tag == targetTag)
             {
-                penCoeff = 1f - penCoeff;
-            }
-            if (float.IsNaN(penCoeff) || float.IsInfinity(penCoeff))
-            {
-                penCoeff = 1f;
-            }
-            float effectiveDefense = e.defense / penCoeff;
+                //TODO add hit effect
+                Destructible e = collision.collider.GetComponent<Destructible>();
 
-            // Calculate effective damage [Damage = power * (1- det*time)^2 - Max (effective defense - penetration, 0)]
-            float damage = power * Mathf.Pow(1f - deterioration * time, 2f) - Mathf.Max(effectiveDefense - penetration, 0);
-            e.TakeDamage(damage);
-
-            // Determine penetration status
-            if (damage > 0)
-            {
-                // Frag shell effect
-                if (fs != null)
-                    fs.Fracture();
-
-                // Explosion effect
-                if (expl != null)
-                    expl.Detonate();
-
-                // Generate hit effect (assuming explosion)
-                if (hitEffect != null)
+                // Hit behavior (allow first frame tolerance so bullet doesn't collide with shooter upon spawn)
+                if (e != null && time > 0)
                 {
-                    ParticleSystem curHitEffect = Instantiate(hitEffect, this.transform.position, Quaternion.identity) as ParticleSystem;
-                    var main = curHitEffect.main;
-                    main.simulationSpeed = main.duration / hitEffectDuration;
-                    float scale = hitEffectRadius / baseExplosionRadius;
-                    curHitEffect.transform.localScale = new Vector3(scale, scale, scale);
-                    curHitEffect.Play(true);
+                    // Effect calls
+                    FragShell fs = gameObject.GetComponent<FragShell>();
+                    Explosion expl = gameObject.GetComponent<Explosion>();
+
+                    // Calculate effective defense [Effective defense = defense / cos(angle of contact)]
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 5);
+                    Vector3 normal = hit.normal;
+                    float penCoeff = Mathf.Abs(Vector3.Cross(rb.velocity.normalized, normal).z);
+                    // Debug penCoeff for "bullet traps"
+                    if (penCoeff < 0.2f)
+                    {
+                        penCoeff = 1f - penCoeff;
+                    }
+                    if (float.IsNaN(penCoeff) || float.IsInfinity(penCoeff))
+                    {
+                        penCoeff = 1f;
+                    }
+                    float effectiveDefense = e.defense / penCoeff;
+
+                    // Calculate effective damage [Damage = power * (1- det*time)^2 - Max (effective defense - penetration, 0)]
+                    float damage = power * Mathf.Pow(1f - deterioration * time, 2f) - Mathf.Max(effectiveDefense - penetration, 0);
+                    e.TakeDamage(damage);
+
+                    // Determine penetration status
+                    if (damage > 0)
+                    {
+                        // Frag shell effect
+                        if (fs != null)
+                            fs.Fracture();
+
+                        // Explosion effect
+                        if (expl != null)
+                            expl.Detonate();
+
+                        // Generate hit effect (assuming explosion)
+                        if (hitEffect != null)
+                        {
+                            ParticleSystem curHitEffect = Instantiate(hitEffect, this.transform.position, Quaternion.identity) as ParticleSystem;
+                            var main = curHitEffect.main;
+                            main.simulationSpeed = main.duration / hitEffectDuration;
+                            float scale = hitEffectRadius / baseExplosionRadius;
+                            curHitEffect.transform.localScale = new Vector3(scale, scale, scale);
+                            curHitEffect.Play(true);
+                        }
+                        Destroy(gameObject);
+                    }
+                    // Non-penetration, reflect with energy loss.
+                    else
+                    {
+                        time = time + (1f / deterioration - time) * penCoeff; // HAX
+                        rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
+                        //Store new direction
+                        Vector3 newDirection = Vector3.Reflect(transform.up, normal);
+                        //Rotate bullet to new direction
+                        newDirection = Quaternion.Euler(0, 0, -90) * newDirection;
+                        Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: newDirection);
+                        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100000);
+                    }
                 }
-                Destroy(gameObject);
-            }
-            // Non-penetration, reflect with energy loss.
-            else
-            {
-                time = time + (1f / deterioration - time) * penCoeff; // HAX
-                rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
-                //Store new direction
-                Vector3 newDirection = Vector3.Reflect(transform.up, normal);
-                //Rotate bullet to new direction
-                newDirection = Quaternion.Euler(0, 0, -90) * newDirection;
-                Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: newDirection);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100000);
+                break;
             }
         }
     }

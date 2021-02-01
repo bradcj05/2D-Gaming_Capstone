@@ -23,7 +23,7 @@ public class HomingMissile : Bullet
         // May have to change player target to something else for allies
         try
         {
-            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
+            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
         }
         catch (System.NullReferenceException e)
         {
@@ -39,7 +39,7 @@ public class HomingMissile : Bullet
         // Try to find target
         try
         {
-            target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
+            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
         }
         catch (System.NullReferenceException e)
         {
