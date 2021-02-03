@@ -33,7 +33,7 @@ public class HomingMissile : Bullet
         timer = 0f;
     }
 
-    public void Update()
+    public new void Update()
     {
         base.Update();
         // Try to find target

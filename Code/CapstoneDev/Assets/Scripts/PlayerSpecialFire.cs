@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpecialFire : Gun
+public class PlayerSpecialFire : SecondaryWeapon
 {
-    private bool active = false;
-
     // Start is called before the first frame update
     public new void Start()
     {
@@ -15,8 +13,9 @@ public class PlayerSpecialFire : Gun
     // Update is called once per frame
     public new void Update()
     {
-        timer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space) && timer >= waitTime)
+        base.Update();
+        // Firing code
+        if (Input.GetKeyDown(KeyCode.Space) && timer >= waitTime && active)
         {
             Fire();
             timer = 0f;

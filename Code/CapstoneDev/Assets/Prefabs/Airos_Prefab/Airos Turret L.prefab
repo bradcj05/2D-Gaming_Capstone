@@ -201,8 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   defense: 0
-  hb: {fileID: 4460403997668654421}
-  db: {fileID: 5860688003586221725}
+  healthBar: {fileID: 4460403997668654421}
+  defenseBar: {fileID: 5860688003586221725}
   explosion: {fileID: 3716944717677847712}
   explosionDuration: 1
   crater: {fileID: 0}

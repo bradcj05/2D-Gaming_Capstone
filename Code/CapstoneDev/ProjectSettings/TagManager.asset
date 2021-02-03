@@ -7,6 +7,12 @@ TagManager:
   - Bullet
   - Enemy
   - ActivePlayer
+  - SecondaryWeapon
+  - HealthBar
+  - DefenseBar
+  - Cooldown
+  - Ammo
+  - NameText
   layers:
   - Default
   - TransparentFX

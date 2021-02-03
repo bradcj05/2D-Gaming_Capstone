@@ -5,9 +5,10 @@ using UnityEngine;
 public class Destructible : MonoBehaviour
 {
     public float health;
+    protected float maxHealth;
     public float defense;
-    public HealthBar hb; // Health bar
-    public HealthBar db; // Transparent DEFENSE bar
+    public HealthBar healthBar; // Health bar
+    public HealthBar defenseBar; // Transparent DEFENSE bar
     
     // Explosion effects
     public ParticleSystem explosion;
@@ -31,19 +32,20 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
-        if (db != null)
+        if (defenseBar != null)
         {
-            db.SetMax(defense);
+            defenseBar.SetMax(defense);
         }
-        if (hb != null)
+        maxHealth = health;
+        if (healthBar != null)
         {
-            hb.SetMax(health);
+            healthBar.SetMax(maxHealth);
         }
     }
 
     public void Update() {
-        // If defense bar is present
-        if (db != null)
+        // If defense bar is present, set defense bar back after flash
+        if (defenseBar != null)
         {
             if (nonPenetration)
             {
@@ -52,7 +54,7 @@ public class Destructible : MonoBehaviour
             if (penetrationTimer > penetrationTime)
             {
                 nonPenetration = false;
-                db.SetHealth(defense);
+                defenseBar.SetHealth(defense);
             }
         }
     }
@@ -60,16 +62,16 @@ public class Destructible : MonoBehaviour
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
-        if (damage > 0 && hb != null)
+        if (damage > 0 && healthBar != null)
         {
             health -= damage;
-            hb.SetHealth(health);
+            healthBar.SetHealth(health);
         }
-        else if (damage < 0 && db != null)
+        else if (damage < 0 && defenseBar != null)
         {
             nonPenetration = true;
             penetrationTimer = 0f;
-            db.SetHealth(-damage);
+            defenseBar.SetHealth(-damage);
         }
         if (health <= 0)
         {
@@ -103,5 +105,11 @@ public class Destructible : MonoBehaviour
 
         //Actually destroy object
         Destroy(gameObject);
+    }
+
+    // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH
+    public float getMaxHealth()
+    {
+        return maxHealth;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlaneSwitching : MonoBehaviour
 {
@@ -106,6 +107,25 @@ public class PlaneSwitching : MonoBehaviour
                 plane.gameObject.SetActive(true);
                 plane.gameObject.tag = "ActivePlayer";
                 plane.position = prevPos;
+                Player planeObj = plane.GetComponent<Player>();
+                // Update health bars
+                HealthBar hb = planeObj.healthBar;
+                HealthBar db = planeObj.defenseBar;
+                if (db != null)
+                {
+                    db.SetMax(plane.GetComponent<Destructible>().defense);
+                }
+                if (hb != null)
+                {
+                    hb.SetMax(plane.GetComponent<Destructible>().getMaxHealth());
+                    hb.SetHealth(plane.GetComponent<Destructible>().health);
+                }
+                // Reset cooldown slider and secondary ammo text accordingly
+                if (planeObj.numberOfSecondaryWeapons == 0)
+                {
+                    planeObj.getCooldownSlider().SetMax(0);
+                    planeObj.getSecondaryAmmo().text = "";
+                }
             }
             else if (plane != null)
             {

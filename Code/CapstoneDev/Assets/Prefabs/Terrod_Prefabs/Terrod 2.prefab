@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5671753287408944764}
   - component: {fileID: 5671753287408944767}
-  - component: {fileID: 5671753287408944762}
   - component: {fileID: 5671753287408944765}
+  - component: {fileID: 2756436820962853133}
+  - component: {fileID: 862366788701832457}
   m_Layer: 12
   m_Name: Left Track
   m_TagString: Enemy
@@ -85,28 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5671753287408944762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5671753287408944766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19adf15c84a8f37409ea3e4121f77b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 30
-  defense: 0
-  hb: {fileID: 2284007462001974046}
-  db: {fileID: 8287113502839783638}
-  explosion: {fileID: 0}
-  explosionDuration: 2
-  crater: {fileID: 0}
-  parent: {fileID: 0}
-  CenterOfMass: {x: 0, y: 0, z: 0}
-  repairTime: 5
 --- !u!60 &5671753287408944765
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +175,49 @@ PolygonCollider2D:
       - {x: 0.835, y: 4.105}
       - {x: 0.885, y: 4.265}
       - {x: 0.885, y: 4.7149997}
+--- !u!50 &2756436820962853133
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671753287408944766}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &862366788701832457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671753287408944766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19adf15c84a8f37409ea3e4121f77b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  defense: 0
+  healthBar: {fileID: 2284007462001974046}
+  defenseBar: {fileID: 8287113502839783638}
+  explosion: {fileID: 0}
+  explosionDuration: 2
+  crater: {fileID: 0}
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  repairTime: 5
 --- !u!1 &5671753288725150032
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +230,7 @@ GameObject:
   - component: {fileID: 5671753288725150033}
   - component: {fileID: 5671753288725150044}
   - component: {fileID: 5671753288725150047}
+  - component: {fileID: 133852024452434620}
   m_Layer: 12
   m_Name: Right Track
   m_TagString: Enemy
@@ -295,12 +318,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   defense: 0
-  hb: {fileID: 2284007461400208761}
-  db: {fileID: 8287113502267162289}
+  healthBar: {fileID: 2284007461400208761}
+  defenseBar: {fileID: 8287113502267162289}
   explosion: {fileID: 0}
   explosionDuration: 2
   crater: {fileID: 0}
-  parent: {fileID: 0}
+  parent: {fileID: 5671753289216525528}
   CenterOfMass: {x: 0, y: 0, z: 0}
   repairTime: 5
 --- !u!60 &5671753288725150047
@@ -398,6 +421,27 @@ PolygonCollider2D:
       - {x: -0.19999999, y: 4.06}
       - {x: -0.19, y: 4.11}
       - {x: -0.19, y: 4.35}
+--- !u!50 &133852024452434620
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671753288725150032}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5671753289216525528
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +522,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 23acce043abb5bb45858be28cf018bd5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa0ea63bc9b2d7e4c8f2ff26528449a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -663,8 +707,7 @@ PrefabInstance:
         type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 4895027039873484411, guid: ed0f28773ff02f043b449cf876422728,
-        type: 3}
+      objectReference: {fileID: 5671753289216525528}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dceae21f6b4a2c8418e503c15cf8cde3, type: 3}
 --- !u!4 &5671753287800800644 stripped
@@ -711,6 +754,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8410924365959853169, guid: 0f389feebc99efc4391eda38b767236c,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 5671753289216525528}
     - target: {fileID: 8410924365959853173, guid: 0f389feebc99efc4391eda38b767236c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1265,8 +1313,7 @@ PrefabInstance:
         type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 4895027039873484411, guid: ed0f28773ff02f043b449cf876422728,
-        type: 3}
+      objectReference: {fileID: 5671753289216525528}
     - target: {fileID: 2088311986729981586, guid: dea1770edf0936d4687dcd0583420c5e,
         type: 3}
       propertyPath: m_Name
@@ -1369,15 +1416,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea1770edf0936d4687dcd0583420c5e, type: 3}
---- !u!4 &5671753289133909081 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2088311986729981588, guid: dea1770edf0936d4687dcd0583420c5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 5930450301873156813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &5671753289133909084 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2088311986729981585, guid: dea1770edf0936d4687dcd0583420c5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5930450301873156813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5671753289133909081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2088311986729981588, guid: dea1770edf0936d4687dcd0583420c5e,
     type: 3}
   m_PrefabInstance: {fileID: 5930450301873156813}
   m_PrefabAsset: {fileID: 0}

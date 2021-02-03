@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TerrodTracks : Enemy
 {
-    protected float maxHealth;
     protected bool isWorking;
     public float repairTime;
     protected float repairTimer;
@@ -13,8 +12,7 @@ public class TerrodTracks : Enemy
 
     public new void Start()
     {
-        maxHealth = health;
-        hb.SetMax(maxHealth);
+        base.Start();
         isWorking = true;
         collider = GetComponent<Collider2D>();
 
@@ -25,13 +23,19 @@ public class TerrodTracks : Enemy
     //If the track becomes broken, start repairing it
     public new void Update()
     {
+        base.Update();
+        /* DEBUG: Find out why this isn't working in Start */
+        healthBar.SetMax(maxHealth);
+        healthBar.SetHealth(health);
+        defenseBar.SetMax(defense);
+        /*-------------------------------------------------*/
         if (!isWorking)
         {
             repairTimer += Time.deltaTime;
             if (repairTimer >= repairTime)
             {
                 health = maxHealth * repairRate;
-                hb.SetHealth(health);
+                healthBar.SetHealth(health);
                 if (repairRate > 0.3f)
                     repairRate -= 0.1f;
                 repairTimer = 0f;
@@ -48,13 +52,12 @@ public class TerrodTracks : Enemy
         {
             health -= (damage - defense);
         }
-        hb.SetHealth(health);
 
         if (health <= 0)
         {
             //Set health to 0 just in case health is below 0
             health = 0;
-            hb.SetHealth(health);
+            healthBar.SetHealth(health);
             //Disable track and collider
             isWorking = false;
             collider.enabled = false;

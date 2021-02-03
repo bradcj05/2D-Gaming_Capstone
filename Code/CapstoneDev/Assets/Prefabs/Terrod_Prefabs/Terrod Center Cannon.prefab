@@ -184,7 +184,7 @@ MonoBehaviour:
   bulletSpawns:
   - {fileID: 8410924364880801706}
   - {fileID: 8410924366570895860}
-  rotateSpeed: 0.3
+  rotateSpeed: 0.4
   target: {fileID: 0}
   attack: 0
   numShellsPerAttack: 4
@@ -202,8 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   defense: 5
-  hb: {fileID: 2719587148437099043}
-  db: {fileID: 5264210330773113323}
+  healthBar: {fileID: 2719587148437099043}
+  defenseBar: {fileID: 5264210330773113323}
   explosion: {fileID: 3432601346539245754}
   explosionDuration: 1.5
   crater: {fileID: 0}

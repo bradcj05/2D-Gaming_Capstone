@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAsynchronousLauncher : Gun
+public class PlayerAsynchronousLauncher : SecondaryWeapon
 {
     public int firstLauncher = 0;
     public float timeBetweenShots = 0.5f;
@@ -19,17 +19,23 @@ public class PlayerAsynchronousLauncher : Gun
 
     public new void Update()
     {
+        base.Update();
+        // Reset cooldown slider as needed between sub-shots
+        if (activated && cooldownSlider != null && ammo > 0 && active)
+        {
+            cooldownSlider.SetMax(timeBetweenShots);
+            cooldownSlider.SetHealth(subTimer);
+        }
         // Update timers
-        timer += Time.deltaTime;
         subTimer += Time.deltaTime;
         // Once reload time is reached, activate firing
-        if (timer >= waitTime)
+        if (timer >= waitTime && active)
         {
             activated = true;
             timer -= waitTime;
         }
         // If subtimer reaches time between shots, fire each launcher until first launcher is reached again
-        if (subTimer >= timeBetweenShots && activated && Input.GetKeyDown(KeyCode.Space))
+        if (subTimer >= timeBetweenShots && activated && Input.GetKeyDown(KeyCode.Space) && active)
         {
             Fire(bulletSpawns[curLauncher]);
             curLauncher = (curLauncher + 1) % bulletSpawns.Length;

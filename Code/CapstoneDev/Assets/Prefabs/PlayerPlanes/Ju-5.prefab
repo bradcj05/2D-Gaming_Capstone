@@ -104,8 +104,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   defense: 0
-  hb: {fileID: 0}
-  db: {fileID: 0}
+  healthBar: {fileID: 0}
+  defenseBar: {fileID: 0}
   explosion: {fileID: 5619712717429477361}
   explosionDuration: 2
   crater: {fileID: 0}
@@ -117,6 +117,10 @@ MonoBehaviour:
   maxSpeed: 11
   enginePower: 700
   cam: {fileID: 0}
+  activeSecondaryWeapon: 0
+  activeShellGroup: 0
+  numberOfSecondaryWeapons: 2
+  numberOfShellGroups: 1
 --- !u!50 &4858288967080734106
 Rigidbody2D:
   serializedVersion: 4
@@ -238,6 +242,11 @@ PrefabInstance:
     - target: {fileID: 5195146381229979192, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771010140928253562, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: group
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7612785795190104653, guid: f025cbed342c3f147bad5a1a2db3f5cb,
@@ -468,6 +477,11 @@ PrefabInstance:
     - target: {fileID: 5195146381229979192, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771010140928253562, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: group
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7612785795190104653, guid: f025cbed342c3f147bad5a1a2db3f5cb,
