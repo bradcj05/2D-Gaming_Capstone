@@ -104,13 +104,13 @@ MonoBehaviour:
   spread: 0
   powerBuff: 0
   speedBuff: 0
-  ammo: 3
+  ammo: 6
   bulletSpawns:
   - {fileID: 8008107903755394762}
   - {fileID: 8008107903370207120}
   - {fileID: 8008107904731627390}
   firstLauncher: 0
-  timeBetweenShots: 0.5
+  timeBetweenShots: 1
 --- !u!1 &8008107903370207121
 GameObject:
   m_ObjectHideFlags: 0
