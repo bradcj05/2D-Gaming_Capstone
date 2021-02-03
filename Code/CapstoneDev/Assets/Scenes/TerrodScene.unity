@@ -322,7 +322,7 @@ MonoBehaviour:
   name: KA-4PShell
   pooledObject: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
     type: 3}
-  poolSize: 100
+  poolSize: 60
 --- !u!4 &308049126
 Transform:
   m_ObjectHideFlags: 0
@@ -946,6 +946,7 @@ MonoBehaviour:
   - {fileID: 232878014}
   - {fileID: 1418895971}
   - {fileID: 1080970018}
+  - {fileID: 1626264057}
 --- !u!4 &713024163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483736761828627263, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
@@ -2040,7 +2041,7 @@ MonoBehaviour:
   name: S-2AP
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
-  poolSize: 25
+  poolSize: 70
 --- !u!4 &1380488001
 Transform:
   m_ObjectHideFlags: 0
@@ -2055,6 +2056,30 @@ Transform:
   m_Father: {fileID: 713024163}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1398515056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1689283356198551243, guid: 56a2cc2025bb0994f968ec947111166a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1689283357494090683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1398515060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1689283356198551247, guid: 56a2cc2025bb0994f968ec947111166a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1689283357494090683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1418895970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,30 +2127,6 @@ Transform:
   m_Father: {fileID: 713024163}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1398515056 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1689283356198551243, guid: 56a2cc2025bb0994f968ec947111166a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1689283357494090683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1398515060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1689283356198551247, guid: 56a2cc2025bb0994f968ec947111166a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1689283357494090683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1472654373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2528,6 +2529,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572864538}
   m_CullTransparentMesh: 0
+--- !u!1 &1626264055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626264056}
+  - component: {fileID: 1626264057}
+  m_Layer: 0
+  m_Name: Airos Missle Ally
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1626264056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626264055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 713024163}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626264057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626264055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Airos Missle Ally
+  pooledObject: {fileID: 4449166682222306337, guid: d2526dc27c70f2a458c717f00b366aa0,
+    type: 3}
+  poolSize: 4
 --- !u!1001 &1714762025
 PrefabInstance:
   m_ObjectHideFlags: 0
