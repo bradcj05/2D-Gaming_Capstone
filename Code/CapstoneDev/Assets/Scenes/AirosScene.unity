@@ -3860,7 +3860,7 @@ MonoBehaviour:
   name: S-2AP
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
-  poolSize: 70
+  poolSize: 50
 --- !u!1 &1191722374
 GameObject:
   m_ObjectHideFlags: 0
