@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public float penetration = 0;
     public float deterioration = 0; //ratio/second
     public float selfDestructTime = -1; // Time until self-destruct for effect. Negative to disable
-    protected float time = 0;
+    public float time = 0;
 
     // Kinds of targets the bullet is effective towards (see tags)
     public string[] targetTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
@@ -42,8 +42,9 @@ public class Bullet : MonoBehaviour
         // Speed deterioration, destroy without any behavior if expires
         if (deterioration * time >= 0.9)
         {
-            Destroy(gameObject);
-        }
+               time = 0;
+               ObjectPoolManager.SharedInstance.ReturnPooledObject(gameObject.name, gameObject);
+          }
         rb.velocity = speed * (1f - deterioration * time) * rb.transform.up;
 
         // Effect calls
@@ -71,8 +72,9 @@ public class Bullet : MonoBehaviour
                 curHitEffect.Play(true);
             }
 
-            // Destroy shell
-            Destroy(gameObject);
+               // Return shell to object pool
+               time = 0;
+               ObjectPoolManager.SharedInstance.ReturnPooledObject(gameObject.name, gameObject);
         }
     }
 
@@ -134,21 +136,21 @@ public class Bullet : MonoBehaviour
                             curHitEffect.transform.localScale = new Vector3(scale, scale, scale);
                             curHitEffect.Play(true);
                         }
-                        Destroy(gameObject);
-                    }
-                    // Non-penetration, reflect with energy loss.
-                    else
-                    {
-                        time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
-                        //Store new direction
-                        Vector3 newDirection = Vector3.Reflect(transform.up, normal);
-                        //Rotate bullet to new direction
-                        newDirection = Quaternion.Euler(0, 0, -90) * newDirection;
-                        Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: newDirection);
-                        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100000);
-                    }
-                }
+                // Return shell to object pool
+                time = 0;
+                ObjectPoolManager.SharedInstance.ReturnPooledObject(gameObject.name, gameObject);
+               }
+            // Non-penetration, reflect with energy loss.
+            else
+            {
+                time = time + (1f / deterioration - time) * penCoeff; // HAX
+                rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
+                //Store new direction
+                Vector3 newDirection = Vector3.Reflect(transform.up, normal);
+                //Rotate bullet to new direction
+                newDirection = Quaternion.Euler(0, 0, -90) * newDirection;
+                Quaternion targetRotation = Quaternion.LookRotation(forward: Vector3.forward, upwards: newDirection);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 100000);
                 break;
             }
         }
