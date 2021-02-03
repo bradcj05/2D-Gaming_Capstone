@@ -51,7 +51,7 @@ public class SecondaryWeapon : Gun
         // Set cooldown slider
         if (active && cooldownSlider != null)
         {
-            if (ammo > 0)
+            if (ammo != 0)
             {
                 cooldownSlider.SetMax(waitTime);
                 cooldownSlider.SetHealth(timer);
@@ -64,7 +64,14 @@ public class SecondaryWeapon : Gun
         // Set ammo text
         if (active && ammoText != null)
         {
-            ammoText.text = ammo.ToString();
+            if (ammo >= 0)
+            {
+                ammoText.text = ammo.ToString();
+            }
+            else
+            {
+                ammoText.text = "Inf";
+            }
         }
     }
 }
