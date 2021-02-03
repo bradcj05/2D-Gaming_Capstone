@@ -227,7 +227,7 @@ MonoBehaviour:
   turretR2: {fileID: 0}
   bezierSpeed: 0.2
   rotateSpeed: 1
-  routes: []
+  Path: []
 --- !u!1001 &823859443639803211
 PrefabInstance:
   m_ObjectHideFlags: 0
