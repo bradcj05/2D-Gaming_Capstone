@@ -17,11 +17,25 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     protected Transform target;
 
     [SerializeField]
-    private Transform[] routes;
+    private Transform[] Path;
     private int routeToGo;
     private float tParam;
     private Vector2 AirPosition;
     private bool coroutineAllowed;
+
+   
+    //Path randomizer variables and selector
+    double p1 = 0.3;
+    double p2 = 0.4;
+    double p3 = 0.3;
+
+    double Rp1 = 0.4;
+    double Rp2 = 0.6;
+
+    double select;
+    int start = 1;  /// keep an eye on the start position switching
+    int path;
+
 
     new void Start()
     {
@@ -29,6 +43,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
+        Randomize(); // random start path
 
         try
         {
@@ -82,10 +97,12 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
         coroutineAllowed = false;
 
-        Vector2 p0 = routes[routeNumber].GetChild(0).position;
-        Vector2 p1 = routes[routeNumber].GetChild(1).position;
-        Vector2 p2 = routes[routeNumber].GetChild(2).position;
-        Vector2 p3 = routes[routeNumber].GetChild(3).position;
+        //Path --> route --> position point.  what this code is doing
+
+        Vector2 p0 = Path[path].GetChild(routeNumber).GetChild(0).position;  
+        Vector2 p1 = Path[path].GetChild(routeNumber).GetChild(1).position;
+        Vector2 p2 = Path[path].GetChild(routeNumber).GetChild(2).position;
+        Vector2 p3 = Path[path].GetChild(routeNumber).GetChild(3).position;
 
         while (tParam < 1)
         {
@@ -104,13 +121,55 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
         routeToGo += 1;
 
-        if (routeToGo > routes.Length - 1)
+        if (routeToGo > Path[path].childCount - 1){ ///was routes.Length still counts the number of routes
             routeToGo = 0;
+            Randomize();
+        }
 
         coroutineAllowed = true;
 
     }
 
+
+
+    public void Randomize()   // Path randomizer
+    {
+        select = Random.Range(0.0f, 1.0f);
+        if (start == 1)
+        {
+
+            if (select <= p1)
+            {
+                path = 0;
+
+            }
+            else if (select < p1 + p2)
+            {
+                path = 1;
+                start = 2;
+
+            }
+            else
+            {
+                path = 2;
+                start = 2;
+            }
+        }
+        else
+        {
+            if (select <= Rp1)
+            {
+                path = 3;
+
+            }
+            else
+            {
+                path = 4;
+                start = 1;
+            }
+        }
+        
+    }
 }
 
 
