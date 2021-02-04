@@ -36,7 +36,6 @@ public class HomingMissile : Bullet
     public new void Update()
     {
         base.Update();
-        // Try to find target
         try
         {
             target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
@@ -98,7 +97,7 @@ public class HomingMissile : Bullet
         if (headingDown)
         {
             rb.velocity = -transform.up * speed;
-        } 
+        }
         else
         {
             rb.velocity = transform.up * speed;

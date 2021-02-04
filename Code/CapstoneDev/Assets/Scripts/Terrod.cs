@@ -91,7 +91,7 @@ public class Terrod : MonoBehaviour
                 Run();
             } 
             // Else reverse, but again only if closer than optimum distance
-            else if (distance.magnitude > optimumDistance)
+            else if (distance.magnitude < optimumDistance)
             {
                 Reverse();
             }
