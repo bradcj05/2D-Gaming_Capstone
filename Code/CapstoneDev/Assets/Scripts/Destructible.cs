@@ -45,7 +45,7 @@ public class Destructible : MonoBehaviour
 
     public void Update() {
         // If defense bar is present, set defense bar back after flash
-        if (defenseBar != null)
+        /*if (defenseBar != null)
         {
             if (nonPenetration)
             {
@@ -56,7 +56,7 @@ public class Destructible : MonoBehaviour
                 nonPenetration = false;
                 defenseBar.SetHealth(defense);
             }
-        }
+        }*/
     }
 
     // Damage calculations
@@ -66,11 +66,12 @@ public class Destructible : MonoBehaviour
         {
             health -= damage;
             healthBar.SetHealth(health);
+            defenseBar.SetHealth(0);
         }
         else if (damage < 0 && defenseBar != null)
-        {
+        {/*
             nonPenetration = true;
-            penetrationTimer = 0f;
+            penetrationTimer = 0f;*/
             defenseBar.SetHealth(-damage);
         }
         if (health <= 0)
