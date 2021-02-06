@@ -14,6 +14,7 @@ public class Destructible : MonoBehaviour
     public ParticleSystem explosion;
     public float explosionDuration = 2f;
     public GameObject crater;
+    public GameObject coin;
 
     public GameObject parent;
 
@@ -95,8 +96,12 @@ public class Destructible : MonoBehaviour
             }
         }
 
-        //Play explosion
-        if (explosion != null)
+          //Spawn coin if supposed to
+          if (coin != null)
+               Instantiate(coin, transform.position, transform.rotation);
+
+          //Play explosion
+          if (explosion != null)
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;

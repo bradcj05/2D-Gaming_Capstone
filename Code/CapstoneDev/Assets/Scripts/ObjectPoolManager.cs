@@ -41,8 +41,6 @@ public class ObjectPoolManager : MonoBehaviour
                if (objectpoolDictionary[poolName].Count > 0)
                {
                     GameObject obj = objectpoolDictionary[poolName].Dequeue();
-                    if (poolName == "S-2AP")
-                         Debug.Log(objectpoolDictionary[poolName].Count);
                     return obj;
                }
                else
