@@ -2017,6 +2017,12 @@ PrefabInstance:
       propertyPath: planeBoom
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 370273182241405722, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 499611909279409423, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2337,6 +2343,12 @@ PrefabInstance:
       propertyPath: bezierSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 2143285099219235540, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_Enabled
@@ -2397,6 +2409,12 @@ PrefabInstance:
       propertyPath: m_LinearOffset.y
       value: 1.0510044
       objectReference: {fileID: 0}
+    - target: {fileID: 3605396637820013586, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 3942193517134132356, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2497,6 +2515,12 @@ PrefabInstance:
       propertyPath: planeBoom
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4882851472757366700, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 5135857861562769008, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_LinearOffset.x
@@ -2557,6 +2581,12 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6629342479520929514, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 7004648611609178438, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_LinearOffset.x

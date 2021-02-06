@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
-  m_Name: P62Info
+  m_Name: R-5APInfo
   m_EditorClassIdentifier: 
-  cardType: 1
-  obj: {fileID: 6973898103469409744, guid: b4c878b797dc8cf42825ebd96a280674, type: 3}
-  name: P 62
-  cost: 2000
-  artwork: {fileID: 21300000, guid: f274b40870737aa47ac7b41cc7c2201d, type: 3}
-  speed: 15
-  defense: 10
-  health: 12
+  cardType: 3
+  obj: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487, type: 3}
+  name: R-5AP
+  cost: 100
+  artwork: {fileID: 21300000, guid: c2bdbf6031b23b24285c3cd24f0ef5b8, type: 3}
+  speed: 0
+  defense: 0
+  health: 0
   reloadTime: 0
   powerBuff: 0
   speedBuff: 0
-  power: 0
-  shellSpeed: 0
-  penetration: 0
-  deterioration: 0
+  power: 8
+  shellSpeed: 10
+  penetration: 5
+  deterioration: 0.15

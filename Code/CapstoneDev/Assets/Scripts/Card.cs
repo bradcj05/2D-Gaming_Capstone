@@ -7,14 +7,25 @@ using UnityEngine.UI;
 //This will be a template frr the data to store.
 
 public class Card : ScriptableObject{
+     public int cardType; // 1 for plane, 2 for gun, 3 for shell
+     public GameObject obj;
     public new string name;
-    public string cost;
+    public int cost;
     public Sprite artwork;
 
+    // Plane values
     public string speed;
     public string defense;
     public string health;
 
+     // Gun values
+     public string reloadTime;
+     public string powerBuff;
+     public string speedBuff;
 
-
+     // Shell values
+     public string power;
+     public string shellSpeed;
+     public string penetration;
+     public string deterioration;
 }

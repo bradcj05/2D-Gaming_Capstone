@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
-  m_Name: P62Info
+  m_Name: R51TInfo
   m_EditorClassIdentifier: 
-  cardType: 1
-  obj: {fileID: 6973898103469409744, guid: b4c878b797dc8cf42825ebd96a280674, type: 3}
-  name: P 62
-  cost: 2000
-  artwork: {fileID: 21300000, guid: f274b40870737aa47ac7b41cc7c2201d, type: 3}
-  speed: 15
-  defense: 10
-  health: 12
-  reloadTime: 0
+  cardType: 2
+  obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
+  name: R51T
+  cost: 100
+  artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
+  speed: 0
+  defense: 0
+  health: 0
+  reloadTime: 1
   powerBuff: 0
   speedBuff: 0
   power: 0
