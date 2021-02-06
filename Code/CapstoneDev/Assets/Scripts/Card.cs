@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Card : ScriptableObject{
      public int cardType; // 1 for plane, 2 for gun, 3 for shell
      public GameObject obj;
+     public int unlock;
     public new string name;
     public int cost;
     public Sprite artwork;

@@ -23,9 +23,13 @@ public class cardDisplay : MonoBehaviour
     //TODO Finish
     void Start()
     {
-        nameText.text = cards.name;
-        costText.text = cards.cost.ToString();
-        artwork.sprite = cards.artwork;
+          nameText.text = cards.name;
+          costText.text = cards.cost.ToString();
+
+          if (cards.unlock == -1 || Progression.progress[cards.unlock])
+               artwork.sprite = cards.artwork;
+          else
+               gameObject.SetActive(false);
 
           switch (cards.cardType)
           {
@@ -49,6 +53,14 @@ public class cardDisplay : MonoBehaviour
                     break;
           }
     }
+
+     void Update()
+     {
+          if (cards.unlock == -1 || Progression.progress[cards.unlock])
+               artwork.sprite = cards.artwork;
+          else
+               gameObject.SetActive(false);
+     }
 
      // May not be the right script for this function
      public void BuyItem()

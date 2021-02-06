@@ -73,6 +73,8 @@ public class Terrod : MonoBehaviour
         // "Death" upon destruction of all mounted weapons
         if (turretRigMain == null && turretRig1 == null && turretRig2 == null && flak1 == null && flak2 == null)
         {
+               //Set the correct progression bool to true
+               Progression.progress[1] = true;
             //Death animation
             Destroy(gameObject);
         }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 1
   obj: {fileID: 6973898103469409744, guid: b4c878b797dc8cf42825ebd96a280674, type: 3}
+  unlock: -1
   name: P 62
   cost: 2000
   artwork: {fileID: 21300000, guid: f274b40870737aa47ac7b41cc7c2201d, type: 3}

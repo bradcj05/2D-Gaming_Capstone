@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 2
   obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
+  unlock: 0
   name: R51T
   cost: 100
   artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
