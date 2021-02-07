@@ -1385,6 +1385,91 @@ Transform:
   m_Father: {fileID: 5154266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &493115631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2116028204}
+    m_Modifications:
+    - target: {fileID: 6128804582576133783, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 1521400050}
+    - target: {fileID: 6128804582576133783, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 789255647}
+    - target: {fileID: 6128804582576133783, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: cards
+      value: 
+      objectReference: {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937,
+        type: 2}
+    - target: {fileID: 8266578753041035190, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_Name
+      value: Airos Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b544ac8b8659974a84e89f14d22cd54, type: 3}
 --- !u!1 &504908999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +2028,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694671228}
   m_CullTransparentMesh: 0
+--- !u!4 &710336271 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
+    type: 3}
+  m_PrefabInstance: {fileID: 493115631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736108737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3960,7 +4051,7 @@ MonoBehaviour:
   name: S-2AP
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
-  poolSize: 50
+  poolSize: 168
 --- !u!1 &1191722374
 GameObject:
   m_ObjectHideFlags: 0
@@ -6655,6 +6746,7 @@ Transform:
   - {fileID: 1973670011}
   - {fileID: 1399536223}
   - {fileID: 390038585}
+  - {fileID: 710336271}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
