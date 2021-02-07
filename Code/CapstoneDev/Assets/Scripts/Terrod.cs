@@ -73,8 +73,8 @@ public class Terrod : MonoBehaviour
         // "Death" upon destruction of all mounted weapons
         if (turretRigMain == null && turretRig1 == null && turretRig2 == null && flak1 == null && flak2 == null)
         {
-               //Set the correct progression bool to true
-               Progression.progress[1] = true;
+            //Set the correct progression bool to true
+            Progression.progress[1] = true;
             //Death animation
             Destroy(gameObject);
         }
@@ -91,7 +91,7 @@ public class Terrod : MonoBehaviour
             if (distance.magnitude > optimumDistance && !reverse)
             {
                 Run();
-            } 
+            }
             // Else reverse, but again only if closer than optimum distance
             else if (distance.magnitude < optimumDistance)
             {
@@ -126,7 +126,7 @@ public class Terrod : MonoBehaviour
 
     // Custom acceleration and deceleration (ASSUME SPRITE FACING DOWNWARD!!!)
     public void Run()
-    { 
+    {
         // If reversing, stop first
         if (reverse)
         {
@@ -164,10 +164,10 @@ public class Terrod : MonoBehaviour
         // Velocity capping, also rotate when "completely" stopped
         if (Vector2.Dot(rig.velocity, prevVelocity) < 0)
         {
-            rig.velocity = new Vector2(0,0);
+            rig.velocity = new Vector2(0, 0);
         }
         // Rotate when tank achieves "stability" (active engine power = 10% total engine power)
-        if ((!reverse && rig.velocity.magnitude < moveSpeed / 10) || (reverse && rig.velocity.magnitude < reverseSpeed / 10)) 
+        if ((!reverse && rig.velocity.magnitude < moveSpeed / 10) || (reverse && rig.velocity.magnitude < reverseSpeed / 10))
         {
             Rotate();
         }

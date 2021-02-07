@@ -1316,30 +1316,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 713024160}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &713024164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713024161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a2eedd9152731b44a16e0b215ebdef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &713024165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713024161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8c09c712d31e14694a517eb53ba06a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &750965054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,7 +2909,7 @@ MonoBehaviour:
   name: S-2AP
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
-  poolSize: 50
+  poolSize: 168
 --- !u!4 &1380488001
 Transform:
   m_ObjectHideFlags: 0
@@ -3250,12 +3226,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5671753287273887659, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
-        type: 3}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
-        type: 3}
     - target: {fileID: 3672529635741551191, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
         type: 3}
       propertyPath: cam
@@ -3306,6 +3276,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5671753287273887659, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6,
+        type: 3}
     - target: {fileID: 5671753287408944762, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
         type: 3}
       propertyPath: healthBar

@@ -5002,7 +5002,7 @@ MonoBehaviour:
   preLaserDuration: 2
   laserDuration: 3
   laserLength: 50
-  power: 20
+  power: 30
   laserEfficiency: 0.5
   piercing: 0
 --- !u!1001 &6014557489839669181

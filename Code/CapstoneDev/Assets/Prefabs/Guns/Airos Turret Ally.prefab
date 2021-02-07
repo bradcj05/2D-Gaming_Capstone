@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4444240159038916760}
   - component: {fileID: 4444240159038916758}
-  - component: {fileID: 5739230397868009103}
+  - component: {fileID: 8921838255013231556}
   m_Layer: 10
   m_Name: Airos Turret Ally
   m_TagString: Enemy
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5739230397868009103
+--- !u!114 &8921838255013231556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,20 +125,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4444240159038916761}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e87d4f3ecdb925459f120fb3a38a0a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 71ca92b5d3cf3354e88d4bcd4263862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shellTypes:
   - {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa, type: 3}
-  waitTime: 0.25
+  waitTime: 0.2
   spread: 3
-  powerBuff: 0
-  speedBuff: 0
+  powerBuff: 0.5
+  speedBuff: 0.2
   ammo: -1
   bulletSpawns:
   - {fileID: 4444240158761708301}
   - {fileID: 4444240159710948019}
   - {fileID: 4444240159735023175}
+  rotateSpeed: 1.5
+  target: {fileID: 0}
 --- !u!1 &4444240159710948016
 GameObject:
   m_ObjectHideFlags: 0

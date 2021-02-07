@@ -102,6 +102,7 @@ MonoBehaviour:
   penetration: 0
   deterioration: 0.2
   selfDestructTime: -1
+  time: 0
   targetTags:
   - Enemy
   trailEffect: {fileID: 0}

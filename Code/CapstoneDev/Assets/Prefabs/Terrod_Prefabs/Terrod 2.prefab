@@ -215,6 +215,7 @@ MonoBehaviour:
   explosion: {fileID: 0}
   explosionDuration: 2
   crater: {fileID: 0}
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   repairTime: 5
@@ -323,6 +324,7 @@ MonoBehaviour:
   explosion: {fileID: 0}
   explosionDuration: 2
   crater: {fileID: 0}
+  coin: {fileID: 0}
   parent: {fileID: 5671753289216525528}
   CenterOfMass: {x: 0, y: 0, z: 0}
   repairTime: 5
@@ -456,7 +458,7 @@ GameObject:
   - component: {fileID: 5671753289216525529}
   m_Layer: 0
   m_Name: Terrod 2
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
