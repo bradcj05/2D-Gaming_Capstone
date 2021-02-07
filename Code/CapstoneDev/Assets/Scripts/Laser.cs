@@ -10,10 +10,12 @@ public class Laser : MonoBehaviour
     // Effect variables
     public ParticleSystem laserStartParticles;
     public ParticleSystem prelaserStartParticles;
+    public ParticleSystem laserEndParticles;
     public LineRenderer line;
     public LineRenderer preLine;
     private bool startParticlesPlaying = false;
     private bool prestartParticlesPlaying = false;
+    private bool endParticlesPlaying = false;
 
     // Timing variables
     public float timeBetweenFiring = 10;
@@ -124,12 +126,26 @@ public class Laser : MonoBehaviour
                         line.SetPosition(1, new Vector3(distance, 0, 0));
                         // Take damage by Sigmoid function
                         e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                        //Move impact particles to correct position
+                        laserEndParticles.gameObject.transform.position = hit.point;
+                        //Start impact particles
+                        if (endParticlesPlaying == false)
+                        {
+                            laserEndParticles.Play(true);
+                            endParticlesPlaying = true;
+                        }
                     }
                 }
                 // If hit not detected, laser has normal length
                 else
                 {
                     line.SetPosition(1, new Vector3(laserLength, 0, 0));
+                    //Ensure impact particles are off.
+                    if (endParticlesPlaying == true)
+                    {
+                        laserEndParticles.Stop(true);
+                        endParticlesPlaying = false;
+                    }
                 }
             }
         }

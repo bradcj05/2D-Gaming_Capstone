@@ -13,7 +13,8 @@ public class Destructible : MonoBehaviour
     // Explosion effects
     public ParticleSystem explosion;
     public float explosionDuration = 2f;
-    public GameObject crater;
+    public ParticleSystem crater;
+    public bool groundCrater = false;
     public GameObject coin;
 
     public GameObject parent;
@@ -89,10 +90,14 @@ public class Destructible : MonoBehaviour
         //Add crater
         if (crater != null)
         {
-            GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
-            if (parent != null)
+            if (groundCrater == false) crater.Play(true);
+            //GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
+            //if (parent != null)
+            else
             {
-                c.transform.parent = parent.transform;
+                //c.transform.parent = parent.transform;
+                ParticleSystem curCrater = Instantiate(crater, this.transform.position, explosion.transform.rotation) as ParticleSystem;
+                curCrater.Play(true);
             }
         }
 
