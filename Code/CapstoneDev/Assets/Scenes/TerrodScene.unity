@@ -3226,6 +3226,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3634996420183677590, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634996420183677590, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3672529635741551191, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
         type: 3}
       propertyPath: cam
@@ -3266,6 +3276,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4523529532355211436, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523529532355211436, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4567338654931537118, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3276,6 +3296,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4604677233326414879, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8554503372586222729}
     - target: {fileID: 5671753287273887659, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
         type: 3}
       propertyPath: coin
@@ -3402,7 +3427,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7264119488599360844, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264119488599360844, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344950534493678079, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 8554503372586222729}
+    - target: {fileID: 7528754038468063094, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528754038468063094, guid: f7cb2e73596e22c4cbf46e0f2b44c17f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4058904290693034577, guid: f7cb2e73596e22c4cbf46e0f2b44c17f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f7cb2e73596e22c4cbf46e0f2b44c17f, type: 3}
 --- !u!1 &1572864538
 GameObject:
@@ -3667,7 +3718,7 @@ MonoBehaviour:
   name: Airos Missle Ally
   pooledObject: {fileID: 4449166682222306337, guid: d2526dc27c70f2a458c717f00b366aa0,
     type: 3}
-  poolSize: 4
+  poolSize: 6
 --- !u!1001 &1639819730
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,7 +23,6 @@ public class PlayerLaser : SecondaryWeapon
     protected float startTime;
     protected float timePassed;
     protected float timeDifference;
-    protected float hitTimer = 0;
 
     // Laser damage variables
     public float power; // Maximum power per second
@@ -87,7 +86,6 @@ public class PlayerLaser : SecondaryWeapon
                 laserStartParticles.Stop(true);
                 line.enabled = false;
                 timer = 0; // Reset reload timer
-                hitTimer = 0; // Reset hit timer
                 return;
             }
         }
@@ -108,8 +106,7 @@ public class PlayerLaser : SecondaryWeapon
                     if (e != null)
                     {
                         // Take damage by Sigmoid function
-                        hitTimer += Time.deltaTime;
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
                     }
                 }
             }
@@ -126,8 +123,7 @@ public class PlayerLaser : SecondaryWeapon
                         float distance = (hit.point - (Vector2)transform.position).magnitude;
                         line.SetPosition(1, new Vector3(distance, 0, 0));
                         // Take damage by Sigmoid function
-                        hitTimer += Time.deltaTime;
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
                         //Move impact particles to correct position
                         laserEndParticles.gameObject.transform.position = hit.point;
                         //Start impact particles
@@ -150,7 +146,6 @@ public class PlayerLaser : SecondaryWeapon
                 // If hit not detected, laser has normal length and hit timer is reset (i.e. target is no longer being cut through)
                 else
                 {
-                    hitTimer = 0;
                     line.SetPosition(1, new Vector3(laserLength, 0, 0));
                     //Ensure impact particles are off.
                     if (endParticlesPlaying == true)
