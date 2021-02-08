@@ -25,9 +25,10 @@ public class Laser : MonoBehaviour
     public LayerMask layerMask;
 
     // Timer variables
-    float startTime;
-    float timePassed;
-    float timeDifference;
+    protected float startTime;
+    protected float timePassed;
+    protected float timeDifference;
+    protected float hitTimer = 0;
 
     // Laser damage variables
     public float power; // Maximum power per second
@@ -88,6 +89,7 @@ public class Laser : MonoBehaviour
                 startParticlesPlaying = false;
                 laserStartParticles.Stop(true);
                 line.enabled = false;
+                hitTimer = 0;
                 return;
             }
         }
@@ -108,7 +110,8 @@ public class Laser : MonoBehaviour
                     if (e != null)
                     {
                         // Take damage by Sigmoid function
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                        hitTimer += Time.deltaTime;
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
                     }
                 }
             }
@@ -125,7 +128,8 @@ public class Laser : MonoBehaviour
                         float distance = (hit.point - (Vector2)transform.position).magnitude;
                         line.SetPosition(1, new Vector3(distance, 0, 0));
                         // Take damage by Sigmoid function
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                        hitTimer += Time.deltaTime;
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
                         //Move impact particles to correct position
                         laserEndParticles.gameObject.transform.position = hit.point;
                         //Start impact particles
@@ -136,18 +140,22 @@ public class Laser : MonoBehaviour
                         }
                     }
                 }
-                // If hit not detected, laser has normal length
+                // If hit not detected, laser has normal length and hit timer is reset (i.e. target is no longer being cut through)
                 else
                 {
+                    hitTimer = 0;
                     line.SetPosition(1, new Vector3(laserLength, 0, 0));
                     //Ensure impact particles are off.
-                    if (endParticlesPlaying == true)
-                    {
-                        laserEndParticles.Stop(true);
-                        endParticlesPlaying = false;
-                    }
+                    laserEndParticles.Stop(true);
+                    endParticlesPlaying = false;
                 }
             }
+        }
+        else
+        {
+            // If laser is no longer active, stop impact particles
+            laserEndParticles.Stop(true);
+            endParticlesPlaying = false;
         }
     }
 }

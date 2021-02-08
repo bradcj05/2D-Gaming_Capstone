@@ -180,6 +180,8 @@ MonoBehaviour:
   explosion: {fileID: 4812404356510475165}
   explosionDuration: 1
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!114 &6440880128789791620

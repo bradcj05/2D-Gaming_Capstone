@@ -178,7 +178,7 @@ RelativeJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 2006663933584001032}
+  m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_MaxForce: 10000
@@ -206,6 +206,8 @@ MonoBehaviour:
   explosion: {fileID: 0}
   explosionDuration: 2
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 2006663933584001037}
   CenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!114 &2006663932666690393
@@ -269,12 +271,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2006663933584001038}
   - component: {fileID: 2006663933584001039}
-  - component: {fileID: 2006663933584001032}
-  - component: {fileID: 2006663933584001034}
-  - component: {fileID: 2006663933584001033}
   m_Layer: 11
   m_Name: Terrod Left Flak
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,115 +344,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2006663933584001032
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006663933584001037}
-  m_BodyType: 1
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 28.077105
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!254 &2006663933584001034
-RelativeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006663933584001037}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_MaxForce: 10000
-  m_MaxTorque: 10000
-  m_CorrectionScale: 0.3
-  m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: 4.17, y: -0.9200001}
-  m_AngularOffset: 0
---- !u!60 &2006663933584001033
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006663933584001037}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 3.76}
-    newSize: {x: 1.28, y: 3.76}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.35, y: -0.62}
-      - {x: 0.39, y: -0.45}
-      - {x: 0.42999998, y: -0.19}
-      - {x: 0.51, y: 0.37}
-      - {x: 0.53, y: 0.5}
-      - {x: 0.62, y: 1.13}
-      - {x: 0.64, y: 1.23}
-      - {x: 0.64, y: 1.42}
-      - {x: 0.61, y: 1.48}
-      - {x: 0.48, y: 1.5}
-      - {x: 0.51, y: 1.64}
-      - {x: 0.5, y: 1.74}
-      - {x: 0.47, y: 1.81}
-      - {x: 0.44, y: 1.8399999}
-      - {x: 0.14999999, y: 1.88}
-      - {x: -0.01, y: 1.88}
-      - {x: -0.02, y: 1.87}
-      - {x: -0.03, y: 1.8199999}
-      - {x: -0.04, y: 1.75}
-      - {x: -0.06, y: 1.5799999}
-      - {x: -0.17999999, y: 1.5899999}
-      - {x: -0.24, y: 1.5899999}
-      - {x: -0.26999998, y: 1.56}
-      - {x: -0.32, y: 1.2099999}
-      - {x: -0.34, y: 1.0799999}
-      - {x: -0.39, y: 0.72999996}
-      - {x: -0.41, y: 0.59999996}
-      - {x: -0.51, y: -0.099999994}
-      - {x: -0.53999996, y: -0.22999999}
-      - {x: -0.53999996, y: -0.55}
-      - {x: -0.55, y: -0.56}
-      - {x: -0.59, y: -1.06}
-      - {x: -0.59999996, y: -1.18}
-      - {x: -0.62, y: -1.4399999}
-      - {x: -0.63, y: -1.56}
-      - {x: -0.64, y: -1.67}
-      - {x: -0.64, y: -1.8499999}
-      - {x: -0.63, y: -1.86}
-      - {x: -0.57, y: -1.87}
-      - {x: -0.26999998, y: -1.88}
-      - {x: 0.06, y: -1.88}
-      - {x: 0.08, y: -1.81}
-      - {x: 0.14, y: -1.54}
-      - {x: 0.22, y: -1.1899999}
 --- !u!1001 &2006663933671677778
 PrefabInstance:
   m_ObjectHideFlags: 0

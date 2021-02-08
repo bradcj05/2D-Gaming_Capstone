@@ -160,7 +160,7 @@ RelativeJoint2D:
   m_MaxTorque: 10000
   m_CorrectionScale: 0.3
   m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: -1.4357454, y: 0.7255288}
+  m_LinearOffset: {x: -2.8714907, y: 1.4510574}
   m_AngularOffset: -3.1216607
 --- !u!114 &8524875316918628160
 MonoBehaviour:
@@ -206,6 +206,8 @@ MonoBehaviour:
   explosion: {fileID: 3716944717677847712}
   explosionDuration: 1
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6, type: 3}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!60 &6643389657022654752
@@ -418,6 +420,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5837915534816854490, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -870944659
+      objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -526,12 +533,12 @@ PrefabInstance:
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.005
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.005
+      value: 0.004
       objectReference: {fileID: 0}
     - target: {fileID: 5837915535233713416, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}

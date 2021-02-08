@@ -7,10 +7,12 @@ public class PlayerLaser : SecondaryWeapon
     // Effect variables
     public ParticleSystem laserStartParticles;
     public ParticleSystem prelaserStartParticles;
+    public ParticleSystem laserEndParticles;
     public LineRenderer line;
     public LineRenderer preLine;
     private bool startParticlesPlaying = false;
     private bool prestartParticlesPlaying = false;
+    private bool endParticlesPlaying = false;
 
     // Timing variables
     public float preLaserDuration = 2;
@@ -18,9 +20,10 @@ public class PlayerLaser : SecondaryWeapon
     public float laserLength = 25f;
 
     // Timer variables
-    float startTime;
-    float timePassed;
-    float timeDifference;
+    protected float startTime;
+    protected float timePassed;
+    protected float timeDifference;
+    protected float hitTimer = 0;
 
     // Laser damage variables
     public float power; // Maximum power per second
@@ -83,7 +86,8 @@ public class PlayerLaser : SecondaryWeapon
                 startParticlesPlaying = false;
                 laserStartParticles.Stop(true);
                 line.enabled = false;
-                timer = 0;
+                timer = 0; // Reset reload timer
+                hitTimer = 0; // Reset hit timer
                 return;
             }
         }
@@ -94,25 +98,74 @@ public class PlayerLaser : SecondaryWeapon
         // Hit effect
         if (startParticlesPlaying == true)
         {
-            // If piercing laser, ray cast all and deal damage to each target if it's an enemy
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserLength);
-            foreach (RaycastHit2D hit in hits)
+            // If piercing laser, ray cast all and deal damage to each target
+            if (piercing)
             {
-                Enemy e = hit.collider.gameObject.GetComponent<Enemy>();
-                if (e != null)
+                RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, transform.right, laserLength);
+                foreach (RaycastHit2D hit in hits)
                 {
-                    // Take damage by Sigmoid function
-                    e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
-                    // If not piercing, reduce laser distance and break out of loop (do not damage other enemies)
-                    // Shorten laser to hit point only
-                    if (!piercing)
+                    Enemy e = hit.collider.gameObject.GetComponent<Enemy>();
+                    if (e != null)
                     {
-                        float distance = (hit.point - (Vector2)transform.position).magnitude;
-                        line.SetPosition(1, new Vector3(distance, 0, 0));
-                        break;
+                        // Take damage by Sigmoid function
+                        hitTimer += Time.deltaTime;
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
                     }
                 }
             }
+            else
+            // If not a piercing, use normal ray cast
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, laserLength);
+                if (hit.collider != null)
+                {
+                    Enemy e = hit.collider.gameObject.GetComponent<Enemy>();
+                    if (e != null)
+                    {
+                        // Shorten laser to hit point only
+                        float distance = (hit.point - (Vector2)transform.position).magnitude;
+                        line.SetPosition(1, new Vector3(distance, 0, 0));
+                        // Take damage by Sigmoid function
+                        hitTimer += Time.deltaTime;
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-hitTimer * laserEfficiency)) - 1));
+                        //Move impact particles to correct position
+                        laserEndParticles.gameObject.transform.position = hit.point;
+                        //Start impact particles
+                        if (endParticlesPlaying == false)
+                        {
+                            laserEndParticles.Play(true);
+                            endParticlesPlaying = true;
+                        }
+                    }
+                    else
+                    {
+                        // If laser is no longer active, stop impact particles
+                        if (endParticlesPlaying == true)
+                        {
+                            laserEndParticles.Stop(true);
+                            endParticlesPlaying = false;
+                        }
+                    }
+                }
+                // If hit not detected, laser has normal length and hit timer is reset (i.e. target is no longer being cut through)
+                else
+                {
+                    hitTimer = 0;
+                    line.SetPosition(1, new Vector3(laserLength, 0, 0));
+                    //Ensure impact particles are off.
+                    if (endParticlesPlaying == true)
+                    {
+                        laserEndParticles.Stop(true);
+                        endParticlesPlaying = false;
+                    }
+                }
+            }
+        }
+        else
+        {
+            // If laser is no longer active, stop impact particles
+            laserEndParticles.Stop(true);
+            endParticlesPlaying = false;
         }
     }
 }
