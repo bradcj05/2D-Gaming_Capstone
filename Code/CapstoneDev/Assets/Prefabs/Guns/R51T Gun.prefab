@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shellTypes:
   - {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487, type: 3}
+  - {fileID: 4929854973103880808, guid: 155b3667690212048ab6a43ba7ad2dab, type: 3}
   waitTime: 1
   spread: 3
   powerBuff: 0

@@ -122,18 +122,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   defense: 3
-  hb: {fileID: 0}
-  db: {fileID: 0}
+  healthBar: {fileID: 0}
+  defenseBar: {fileID: 0}
   explosion: {fileID: 6977633893847995241}
   explosionDuration: 2
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937, type: 2}
-  CooldownSlider: {fileID: 0}
   maxSpeed: 5
   enginePower: 1500
   cam: {fileID: 0}
+  activeSecondaryWeapon: 0
+  activeShellGroup: 0
+  numberOfSecondaryWeapons: 0
+  numberOfShellGroups: 1
 --- !u!60 &1124189146208134926
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -366,17 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6973898103469409756}
     m_Modifications:
-    - target: {fileID: 3068016708045959597, guid: 9ac853685815c8b46a0e25e1b144d1b8,
-        type: 3}
-      propertyPath: shellTypes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3068016708045959597, guid: 9ac853685815c8b46a0e25e1b144d1b8,
-        type: 3}
-      propertyPath: shellTypes.Array.data[0]
-      value: 
-      objectReference: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
-        type: 3}
     - target: {fileID: 5365192277569748272, guid: 9ac853685815c8b46a0e25e1b144d1b8,
         type: 3}
       propertyPath: m_LocalPosition.z

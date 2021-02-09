@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     public float penetration = 0;
     public float deterioration = 0; //ratio/second
     public float selfDestructTime = -1; // Time until self-destruct for effect. Negative to disable
-    public float time = 0;
+    protected float time = 0;
 
     // Kinds of targets the bullet is effective towards (see tags)
     public string[] targetTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
