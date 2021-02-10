@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: BulletDecalMetal
   m_Shader: {fileID: 4800000, guid: b7839dad95683814aa64166edc107ae2, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _METALLICSPECGLOSSMAP _NORMALMAP
+  m_ShaderKeywords: _ALPHAMODULATE_ON _ALPHATEST_ON _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -79,7 +79,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 1
-    - _Blend: 0
+    - _Blend: 3
     - _BlendOp: 0
     - _BumpScale: 0.5
     - _CameraFadingEnabled: 0
@@ -93,7 +93,7 @@ Material:
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionEnabled: 0
     - _EnableExternalAlpha: 0
     - _FlipbookBlending: 0
@@ -115,7 +115,7 @@ Material:
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
+    - _SrcBlend: 2
     - _Surface: 1
     - _UVSec: 0
     - _ZWrite: 0
