@@ -9,6 +9,11 @@ public class TerrodTracks : Enemy
     protected float repairTimer;
     protected float repairRate; //Percentage of HP after repair
     protected Collider2D collider;
+    public ParticleSystem explosion;
+    public ParticleSystem explosion1;
+    public ParticleSystem explosion2;
+    public ParticleSystem explosion3;
+    public ParticleSystem explosion4;
 
     public new void Start()
     {
@@ -61,6 +66,11 @@ public class TerrodTracks : Enemy
             //Disable track and collider
             isWorking = false;
             collider.enabled = false;
+            explosion.Play(true);
+            explosion1.Play(true);
+            explosion2.Play(true);
+            explosion3.Play(true);
+            explosion4.Play(true);
         }
     }
 

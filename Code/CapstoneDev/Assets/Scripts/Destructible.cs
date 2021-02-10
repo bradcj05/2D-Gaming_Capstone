@@ -12,9 +12,15 @@ public class Destructible : MonoBehaviour
     
     // Explosion effects
     public ParticleSystem explosion;
+    /**public ParticleSystem explosion1;
+    public ParticleSystem explosion2;
+    public ParticleSystem explosion3;
+    public ParticleSystem explosion4;**/
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
+    public bool isAiros = false;
+    //public bool treadExplosion = false;
     public GameObject coin;
 
     public GameObject parent;
@@ -86,6 +92,7 @@ public class Destructible : MonoBehaviour
     public void Die()
     {
         //Play death animation
+        //if (isAiros) DeathAnimation();
 
         //Add crater
         if (crater != null)
@@ -105,9 +112,18 @@ public class Destructible : MonoBehaviour
           if (coin != null)
                Instantiate(coin, transform.position, transform.rotation);
 
-          //Play explosion
-          if (explosion != null)
+        //Play explosion
+        /**if (treadExplosion == true)
         {
+            explosion.Play(true);
+            explosion1.Play(true);
+            explosion2.Play(true);
+            explosion3.Play(true);
+            explosion4.Play(true);
+        }**/
+        if (explosion != null)
+        {
+            
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;

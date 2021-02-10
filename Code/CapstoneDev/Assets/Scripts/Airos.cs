@@ -15,6 +15,8 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     public float rotateSpeed = 0.01f;
     protected float rotateAmount; //public for better testing
     protected Transform target;
+    protected int deathCounter = 0;
+    public bool endDeathAnimation = false;
 
     [SerializeField]
     private Transform[] Path;
@@ -58,6 +60,20 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
     new void Update() //// check on this HERE!!!!!!!!
     {
+        if (deathCounter > 0)
+        {
+            rig.MoveRotation(deathCounter);
+            deathCounter++;
+            if (deathCounter % 10 == 0)
+            {
+                explosion.Play(true);
+            }
+
+            if(deathCounter == 400)
+            {
+                endDeathAnimation = true;
+            }
+        }
         base.Update();
         //Try to find the next player plane when it spawns
         try
@@ -169,6 +185,11 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
             }
         }
         
+    }
+
+    public void DeathAnimation()
+    {
+        deathCounter = 1;
     }
 }
 
