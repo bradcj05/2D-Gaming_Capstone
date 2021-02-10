@@ -660,6 +660,11 @@ PrefabInstance:
       propertyPath: timeBetweenShots
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5771010140928253562, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: group
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436392, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
       propertyPath: m_FlipY
@@ -864,6 +869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeBetweenShots
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771010140928253562, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: group
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436392, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}

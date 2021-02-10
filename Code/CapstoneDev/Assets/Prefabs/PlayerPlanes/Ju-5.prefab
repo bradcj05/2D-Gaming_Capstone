@@ -109,17 +109,18 @@ MonoBehaviour:
   explosion: {fileID: 5619712717429477361}
   explosionDuration: 2
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: 1e6ed8639ebff84469fa9d633246601e, type: 2}
-  nameText: {fileID: 0}
-  cooldownSlider: {fileID: 0}
   maxSpeed: 11
   enginePower: 700
   cam: {fileID: 0}
   activeSecondaryWeapon: 0
   activeShellGroup: 0
-  numberOfSecondaryWeapons: 2
+  numberOfSecondaryWeapons: 1
   numberOfShellGroups: 1
 --- !u!50 &4858288967080734106
 Rigidbody2D:

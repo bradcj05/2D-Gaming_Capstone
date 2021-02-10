@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,12 +12,11 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
     public GameObject OptionMenu;
-
     public AudioMixer audioMixer;
-
     public Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
+    protected bool fullscreen = true;
 
     public AudioSource myFx;
     public AudioClip hoverFx;
@@ -46,31 +46,39 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        resolutions = Screen.resolutions;
+        // Get distinct supported resolutions
+        var resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct();
 
-        //clear out default options to start with a cealn resoulation 
+        // clear out default options to start with a cealn resoulation 
         resolutionDropdown.ClearOptions();
 
-        //converting array to list for add options
+        // converting array to list for add options
         List<string> options = new List<string>();
 
-        //add element option list
-        for (int i = 0; i < resolutions.Length; i++)
+        // add element option list
+        foreach (Resolution res in resolutions)
         {
-
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-
+            string option = res.width + " x " + res.height;
             options.Add(option);
-
         }
         resolutionDropdown.AddOptions(options);
-
+        resolutionDropdown.onValueChanged.AddListener(delegate { ResolutionChanged(resolutionDropdown); });
     }
 
+    // Change resolution
+    protected void ResolutionChanged(Dropdown menu)
+    {
+        string[] chosenRes = menu.captionText.text.Split(' ');
+        int chosenWidth, chosenHeight;
+        int.TryParse(chosenRes[0], out chosenWidth);
+        int.TryParse(chosenRes[2], out chosenHeight);
+        Screen.SetResolution(chosenWidth, chosenHeight, fullscreen);
+    }
 
-
+    // Set fullscreen
     public void SetFullScreen(bool isFullscreen)
     {
+        fullscreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
     }
 
@@ -82,20 +90,20 @@ public class MainMenu : MonoBehaviour
 
 
 
-    //Starts the game
+    // Starts the game
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    //Goes to settings menu
-    //TODO: Modify this so that we don't have to change it each time the scene order is changed
+    // Goes to settings menu
+    // TODO: Modify this so that we don't have to change it each time the scene order is changed
     public void GoToSettings()
     {
         SceneManager.LoadScene(5);
     }
 
-    //adjust music 
+    // Adjust music 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
@@ -103,7 +111,7 @@ public class MainMenu : MonoBehaviour
 
 
 
-    //Quits the application
+    // Quits the application
     public void QuitGame()
     {
         Debug.Log("Game Quit");
