@@ -6,6 +6,7 @@ public class PlayerGunFire : Gun
 {
     protected int activeType;
     protected int numTypes;
+    protected bool auto = false;
 
     // Start
     public new void Start()
@@ -33,9 +34,15 @@ public class PlayerGunFire : Gun
             timer = 0;
         }
 
+        // Engaging auto-fire
+        if (Input.GetMouseButtonDown(2))
+        {
+            auto = !auto;
+        }
+
         // Firing code
         timer += Time.deltaTime;
-        if (Input.GetButton("Fire1") && timer >= waitTime)
+        if ((Input.GetButton("Fire1") || auto) && timer >= waitTime)
         {
             Fire(shellTypes[activeType]);
             timer = 0f;

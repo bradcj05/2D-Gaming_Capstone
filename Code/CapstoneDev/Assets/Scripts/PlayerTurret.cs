@@ -39,7 +39,7 @@ public class PlayerTurret : PlayerGunFire
             target = null;
         }
         // Mode switching between auto and manual
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(1))
         {
             auto = !auto;
         }
