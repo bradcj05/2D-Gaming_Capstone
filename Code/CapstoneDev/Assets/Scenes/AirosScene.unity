@@ -5156,7 +5156,7 @@ MonoBehaviour:
   name: Airos Missle
   pooledObject: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
     type: 3}
-  poolSize: 6
+  poolSize: 12
 --- !u!1 &2045419069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 538547675676979459, guid: e16174609714ee542aa2a44458941801,
