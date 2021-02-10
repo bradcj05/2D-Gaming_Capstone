@@ -103,6 +103,7 @@ MonoBehaviour:
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  recoilForce: 1500
   ammo: -1
   bulletSpawns:
   - {fileID: 5365192277569748272}

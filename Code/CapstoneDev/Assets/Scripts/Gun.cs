@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     public float spread; // In degrees
     public float powerBuff; // In portion of base damage
     public float speedBuff; // In portion of base damage
+    public float recoilForce = 0f;
 
     public int ammo = -1; // Negative for infinite
 
@@ -79,6 +80,12 @@ public class Gun : MonoBehaviour
                 bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
                 // Push bullet
                 rig.velocity = bulletSpawn.up * bulletSpeed;
+                // Recoil
+                Rigidbody2D parent = transform.parent.GetComponent<Rigidbody2D>();
+                if (parent != null)
+                {
+                    parent.AddForce(-recoilForce * bulletSpawn.up, ForceMode2D.Force);
+                }
                 // Deplete ammo if not unlimited
                 if (ammo > 0)
                 {
