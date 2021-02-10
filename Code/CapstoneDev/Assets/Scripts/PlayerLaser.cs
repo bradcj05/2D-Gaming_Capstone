@@ -49,7 +49,7 @@ public class PlayerLaser : SecondaryWeapon
         // Firing code
         timePassed = Time.time;
         timeDifference = timePassed - startTime;
-        if ((timeDifference > waitTime && active && Input.GetKeyDown(KeyCode.Space)) ||
+        if ((timeDifference > waitTime && active && Input.GetKey(KeyCode.Space)) ||
             (timeDifference > preLaserDuration && prestartParticlesPlaying == true) ||
             (timeDifference > laserDuration && startParticlesPlaying == true))
         {

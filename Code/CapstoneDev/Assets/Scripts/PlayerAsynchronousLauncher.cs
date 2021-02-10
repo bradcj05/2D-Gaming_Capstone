@@ -35,7 +35,7 @@ public class PlayerAsynchronousLauncher : SecondaryWeapon
             timer -= waitTime;
         }
         // If subtimer reaches time between shots, fire each launcher until first launcher is reached again
-        if (subTimer >= timeBetweenShots && activated && Input.GetKeyDown(KeyCode.Space) && active)
+        if (subTimer >= timeBetweenShots && activated && Input.GetKey(KeyCode.Space) && active)
         {
             Fire(bulletSpawns[curLauncher]);
             curLauncher = (curLauncher + 1) % bulletSpawns.Length;

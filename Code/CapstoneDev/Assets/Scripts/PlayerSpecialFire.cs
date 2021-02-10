@@ -15,7 +15,7 @@ public class PlayerSpecialFire : SecondaryWeapon
     {
         base.Update();
         // Firing code
-        if (Input.GetKeyDown(KeyCode.Space) && timer >= waitTime && active)
+        if (Input.GetKey(KeyCode.Space) && timer >= waitTime && active)
         {
             Fire();
             timer = 0f;
