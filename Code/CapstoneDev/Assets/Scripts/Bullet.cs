@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Parameters
+    // ORIGINAL stats for use when returned to object pool
     public float power;
     public float speed;
+
+    // Parameters
+    protected float curPower;
+    protected float curSpeed;
     public float penetration = 0;
     public float deterioration = 0; //ratio/second
     public float selfDestructTime = -1; // Time until self-destruct for effect. Negative to disable
-    public float time = 0;
+    protected float time = 0;
 
     // Kinds of targets the bullet is effective towards (see tags)
     public string[] targetTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
@@ -33,6 +37,9 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        // Set default stats
+        curPower = power;
+        curSpeed = speed;
     }
 
     // Update is called every frame
@@ -45,7 +52,7 @@ public class Bullet : MonoBehaviour
             time = 0;
             ObjectPoolManager.SharedInstance.ReturnPooledObject(gameObject.name, gameObject);
         }
-        rb.velocity = speed * (1f - deterioration * time) * rb.transform.up;
+        rb.velocity = curSpeed * (1f - deterioration * time) * rb.transform.up;
 
         // Effect calls
         if (time >= selfDestructTime && selfDestructTime > 0)
@@ -112,7 +119,7 @@ public class Bullet : MonoBehaviour
                     float effectiveDefense = e.defense / penCoeff;
 
                     // Calculate effective damage [Damage = power * (1- det*time)^2 - Max (effective defense - penetration, 0)]
-                    float damage = power * Mathf.Pow(1f - deterioration * time, 2f) - Mathf.Max(effectiveDefense - penetration, 0);
+                    float damage = curPower * Mathf.Pow(1f - deterioration * time, 2f) - Mathf.Max(effectiveDefense - penetration, 0);
                     e.TakeDamage(damage);
 
                     // Determine penetration status
@@ -144,7 +151,7 @@ public class Bullet : MonoBehaviour
                     else
                     {
                         time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(speed * (1f - deterioration * time) * rb.velocity, normal);
+                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity, normal);
                         //Store new direction
                         Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                         //Rotate bullet to new direction
@@ -156,5 +163,18 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
+    }
+
+    // Getters
+
+    // Setters
+    public void SetCurPower(float input)
+    {
+        curPower = input;
+    }
+
+    public void SetCurSpeed(float input)
+    {
+        curSpeed = input;
     }
 }

@@ -13,7 +13,9 @@ public class Destructible : MonoBehaviour
     // Explosion effects
     public ParticleSystem explosion;
     public float explosionDuration = 2f;
-    public GameObject crater;
+    public ParticleSystem crater;
+    public bool groundCrater = false;
+    public GameObject coin;
 
     public GameObject parent;
 
@@ -45,7 +47,7 @@ public class Destructible : MonoBehaviour
 
     public void Update() {
         // If defense bar is present, set defense bar back after flash
-        if (defenseBar != null)
+        /*if (defenseBar != null)
         {
             if (nonPenetration)
             {
@@ -56,7 +58,7 @@ public class Destructible : MonoBehaviour
                 nonPenetration = false;
                 defenseBar.SetHealth(defense);
             }
-        }
+        }*/
     }
 
     // Damage calculations
@@ -66,11 +68,12 @@ public class Destructible : MonoBehaviour
         {
             health -= damage;
             healthBar.SetHealth(health);
+            defenseBar.SetHealth(0);
         }
         else if (damage < 0 && defenseBar != null)
-        {
+        {/*
             nonPenetration = true;
-            penetrationTimer = 0f;
+            penetrationTimer = 0f;*/
             defenseBar.SetHealth(-damage);
         }
         if (health <= 0)
@@ -87,15 +90,23 @@ public class Destructible : MonoBehaviour
         //Add crater
         if (crater != null)
         {
-            GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
-            if (parent != null)
+            if (groundCrater == false) crater.Play(true);
+            //GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
+            //if (parent != null)
+            else
             {
-                c.transform.parent = parent.transform;
+                //c.transform.parent = parent.transform;
+                ParticleSystem curCrater = Instantiate(crater, this.transform.position, explosion.transform.rotation) as ParticleSystem;
+                curCrater.Play(true);
             }
         }
 
-        //Play explosion
-        if (explosion != null)
+          //Spawn coin if supposed to
+          if (coin != null)
+               Instantiate(coin, transform.position, transform.rotation);
+
+          //Play explosion
+          if (explosion != null)
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;

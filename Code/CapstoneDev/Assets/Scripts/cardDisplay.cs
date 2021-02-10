@@ -15,26 +15,120 @@ public class cardDisplay : MonoBehaviour
     public Text nameText;
     public Text costText;
 
-    public Text speedText;
-    public Text healthText;
-    public Text defenseText;
+    public Text t1;
+    public Text t2;
+    public Text t3;
 
     // Start is called before the first frame update
+    //TODO Finish
     void Start()
     {
-        nameText.text = cards.name;
-        costText.text = cards.cost;
-        artwork.sprite = cards.artwork;
+          nameText.text = cards.name;
+          costText.text = cards.cost.ToString();
 
-        speedText.text = cards.speed;
-        healthText.text = cards.health;
-        defenseText.text = cards.defense;
+          if (cards.unlock == -1 || Progression.progress[cards.unlock])
+               artwork.sprite = cards.artwork;
+          else
+               gameObject.SetActive(false);
 
-
-
+          switch (cards.cardType)
+          {
+               case 1:
+                    t1.text = cards.speed;
+                    t2.text = cards.health;
+                    t3.text = cards.defense;
+                    break;
+               case 2:
+                    t1.text = cards.reloadTime;
+                    t2.text = cards.powerBuff;
+                    t3.text = cards.speedBuff;
+                    break;
+               case 3:
+                    t1.text = cards.power;
+                    t2.text = cards.shellSpeed;
+                    t3.text = cards.penetration;
+                    break;
+               default:
+                    Debug.Log("Please give this card the right card type.");
+                    break;
+          }
     }
 
-   
+     void Update()
+     {
+          if (cards.unlock == -1 || Progression.progress[cards.unlock])
+               artwork.sprite = cards.artwork;
+          else
+               gameObject.SetActive(false);
+     }
 
+     // May not be the right script for this function
+     public void BuyItem()
+     {
+          if (ScoreTextScript.coinAmount >= cards.cost)
+          {
+               bool purchased = false;
 
+               // Add gameObject to the appropriate list of available objects
+               // TODO Fix, something wrong with foreach loop
+               switch (cards.cardType)
+               {
+                    case 1:
+                         foreach (GameObject plane in ObjectList.planeList)
+                         {
+                              if(cards.obj == plane)
+                              {
+                                   Debug.Log("This item was already purchased.");
+                                   purchased = true;
+                                   break;
+                              }
+                         }
+                         if (!purchased)
+                         {
+                              ObjectList.planeList.Add(cards.obj);
+                              ScoreTextScript.coinAmount -= cards.cost;
+                         }
+                         break;
+                    case 2:
+                         foreach (GameObject gun in ObjectList.gunList)
+                         {
+                              if (cards.obj == gun)
+                              {
+                                   Debug.Log("This item was already purchased.");
+                                   purchased = true;
+                                   break;
+                              }
+                         }
+                         if (!purchased)
+                         {
+                              ObjectList.gunList.Add(cards.obj);
+                              ScoreTextScript.coinAmount -= cards.cost;
+                         }
+                         break;
+                    case 3:
+                         foreach (GameObject shell in ObjectList.shellList)
+                         {
+                              if (cards.obj == shell)
+                              {
+                                   Debug.Log("This item was already purchased.");
+                                   purchased = true;
+                                   break;
+                              }
+                         }
+                         if (!purchased)
+                         {
+                              ObjectList.shellList.Add(cards.obj);
+                              ScoreTextScript.coinAmount -= cards.cost;
+                         }
+                         break;
+                    default:
+                         Debug.Log("Please give this card the right card type.");
+                         break;
+               }
+          }
+          else
+          {
+               Debug.Log("Not enough coins.");
+          }
+     }
 }

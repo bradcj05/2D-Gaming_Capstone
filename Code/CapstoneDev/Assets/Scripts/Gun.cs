@@ -73,9 +73,10 @@ public class Gun : MonoBehaviour
                 bullet.transform.rotation = bulletAngle;
                 bullet.SetActive(true);
                 Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
-                // Apply speed and power buff
+                // Apply speed and power buff if bullet is just created (i.e. not recovered from object pool)
                 float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
-                bullet.GetComponent<Bullet>().power *= (1 + powerBuff);
+                bullet.GetComponent<Bullet>().SetCurSpeed(bulletSpeed);
+                bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
                 // Push bullet
                 rig.velocity = bulletSpawn.up * bulletSpeed;
                 // Deplete ammo if not unlimited

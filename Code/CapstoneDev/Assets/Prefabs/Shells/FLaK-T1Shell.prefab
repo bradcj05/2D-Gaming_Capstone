@@ -156,8 +156,9 @@ MonoBehaviour:
   power: 5
   speed: 4
   penetration: 0
-  deterioration: 0
+  deterioration: 0.1
   selfDestructTime: 2
+  time: 0
   targetTags:
   - ActivePlayer
   - Ally
