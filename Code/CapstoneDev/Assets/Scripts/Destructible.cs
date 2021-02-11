@@ -12,15 +12,9 @@ public class Destructible : MonoBehaviour
     
     // Explosion effects
     public ParticleSystem explosion;
-    /**public ParticleSystem explosion1;
-    public ParticleSystem explosion2;
-    public ParticleSystem explosion3;
-    public ParticleSystem explosion4;**/
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
-    public bool isAiros = false;
-    //public bool treadExplosion = false;
     public GameObject coin;
 
     public GameObject parent;
@@ -52,19 +46,6 @@ public class Destructible : MonoBehaviour
     }
 
     public void Update() {
-        // If defense bar is present, set defense bar back after flash
-        /*if (defenseBar != null)
-        {
-            if (nonPenetration)
-            {
-                penetrationTimer += Time.deltaTime;
-            }
-            if (penetrationTimer > penetrationTime)
-            {
-                nonPenetration = false;
-                defenseBar.SetHealth(defense);
-            }
-        }*/
     }
 
     // Damage calculations
@@ -77,9 +58,7 @@ public class Destructible : MonoBehaviour
             defenseBar.SetHealth(0);
         }
         else if (damage < 0 && defenseBar != null)
-        {/*
-            nonPenetration = true;
-            penetrationTimer = 0f;*/
+        {
             defenseBar.SetHealth(-damage);
         }
         if (health <= 0)
@@ -92,7 +71,6 @@ public class Destructible : MonoBehaviour
     public void Die()
     {
         //Play death animation
-        //if (isAiros) DeathAnimation();
 
         //Add crater
         if (crater != null)
@@ -113,14 +91,6 @@ public class Destructible : MonoBehaviour
                Instantiate(coin, transform.position, transform.rotation);
 
         //Play explosion
-        /**if (treadExplosion == true)
-        {
-            explosion.Play(true);
-            explosion1.Play(true);
-            explosion2.Play(true);
-            explosion3.Play(true);
-            explosion4.Play(true);
-        }**/
         if (explosion != null)
         {
             
