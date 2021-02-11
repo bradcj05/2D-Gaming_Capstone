@@ -9,7 +9,6 @@ public class TerrodTracks : Enemy
     protected float repairTimer;
     protected float repairRate; //Percentage of HP after repair
     protected Collider2D collider;
-    public ParticleSystem explosion;
     public ParticleSystem explosion1;
     public ParticleSystem explosion2;
     public ParticleSystem explosion3;
@@ -36,6 +35,7 @@ public class TerrodTracks : Enemy
         /*-------------------------------------------------*/
         if (!isWorking)
         {
+            // Repair code
             repairTimer += Time.deltaTime;
             if (repairTimer >= repairTime)
             {
@@ -46,6 +46,7 @@ public class TerrodTracks : Enemy
                 repairTimer = 0f;
                 isWorking = true;
                 collider.enabled = true;
+                gameObject.tag = "Enemy";
             }
         }
     }
@@ -66,6 +67,7 @@ public class TerrodTracks : Enemy
             //Disable track and collider
             isWorking = false;
             collider.enabled = false;
+            gameObject.tag = "Untagged";
             explosion.Play(true);
             explosion1.Play(true);
             explosion2.Play(true);
