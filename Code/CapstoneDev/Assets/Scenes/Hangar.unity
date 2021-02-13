@@ -5062,7 +5062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 0
 --- !u!222 &1677682883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5176,14 +5176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planes:
-  - {fileID: 6973898103469409744, guid: b4c878b797dc8cf42825ebd96a280674, type: 3}
-  - {fileID: 2183660915927818866, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
-  - {fileID: 5191979653864110402, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
-  - {fileID: 8266578753041035190, guid: 6b544ac8b8659974a84e89f14d22cd54, type: 3}
+  - {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937, type: 2}
+  - {fileID: 11400000, guid: 1e6ed8639ebff84469fa9d633246601e, type: 2}
   guns:
-  - {fileID: 6120377998642513973, guid: 04820f265e0467d488fe3761de6df88f, type: 3}
-  - {fileID: 4444240159038916761, guid: 8cb64ad1fa5a66a4a8afd28b79f75ec4, type: 3}
-  - {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb, type: 3}
+  - {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   shells: []
 --- !u!4 &1746549329
 Transform:

@@ -84,9 +84,9 @@ public class cardDisplay : MonoBehaviour
                switch (cards.cardType)
                {
                     case 1:
-                         foreach (GameObject plane in ObjectList.planeList)
+                         foreach (Card plane in ObjectList.planeList)
                          {
-                              if(cards.obj == plane)
+                              if(cards == plane)
                               {
                                    Debug.Log("This item was already purchased.");
                                    purchased = true;
@@ -95,14 +95,15 @@ public class cardDisplay : MonoBehaviour
                          }
                          if (!purchased)
                          {
-                              ObjectList.planeList.Add(cards.obj);
+                              //Maybe add sound effect here to indicate a purchase has been made
+                              ObjectList.planeList.Add(cards);
                               ScoreTextScript.coinAmount -= cards.cost;
                          }
                          break;
                     case 2:
-                         foreach (GameObject gun in ObjectList.gunList)
+                         foreach (Card gun in ObjectList.gunList)
                          {
-                              if (cards.obj == gun)
+                              if (cards == gun)
                               {
                                    Debug.Log("This item was already purchased.");
                                    purchased = true;
@@ -111,14 +112,15 @@ public class cardDisplay : MonoBehaviour
                          }
                          if (!purchased)
                          {
-                              ObjectList.gunList.Add(cards.obj);
+                              //Maybe add sound effect here to indicate a purchase has been made
+                              ObjectList.gunList.Add(cards);
                               ScoreTextScript.coinAmount -= cards.cost;
                          }
                          break;
                     case 3:
-                         foreach (GameObject shell in ObjectList.shellList)
+                         foreach (Card shell in ObjectList.shellList)
                          {
-                              if (cards.obj == shell)
+                              if (cards == shell)
                               {
                                    Debug.Log("This item was already purchased.");
                                    purchased = true;
@@ -127,7 +129,8 @@ public class cardDisplay : MonoBehaviour
                          }
                          if (!purchased)
                          {
-                              ObjectList.shellList.Add(cards.obj);
+                              //Maybe add sound effect here to indicate a purchase has been made
+                              ObjectList.shellList.Add(cards);
                               ScoreTextScript.coinAmount -= cards.cost;
                          }
                          break;
