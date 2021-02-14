@@ -5,13 +5,13 @@ using UnityEngine;
 public class ObjectList : MonoBehaviour
 {
      // Lists for each object type, added to in the shop menu, accessed in the hanger menu
-     public static List<GameObject> planeList;
-     public static List<GameObject> gunList;
-     public static List<GameObject> shellList;
+     public static List<Card> planeList;
+     public static List<Card> gunList;
+     public static List<Card> shellList;
 
-     public List<GameObject> planes;
-     public List<GameObject> guns;
-     public List<GameObject> shells;
+     public List<Card> planes;
+     public List<Card> guns;
+     public List<Card> shells;
 
     // Start is called before the first frame update
     void Start()

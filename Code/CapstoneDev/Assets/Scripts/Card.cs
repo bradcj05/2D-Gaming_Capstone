@@ -18,6 +18,9 @@ public class Card : ScriptableObject{
     public string speed;
     public string defense;
     public string health;
+     //Don't know if we'll need this
+     public string[] gunSlotClass;
+     public string[] gunSlotSpecs;
 
      // Gun values
      public string reloadTime;
@@ -29,4 +32,9 @@ public class Card : ScriptableObject{
      public string shellSpeed;
      public string penetration;
      public string deterioration;
+
+     // Only needed for guns and shells
+     //Don't know if we'll need this
+     public string type;
+     public string classOf;
 }

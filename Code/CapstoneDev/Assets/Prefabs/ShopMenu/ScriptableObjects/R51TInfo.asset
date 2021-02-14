@@ -21,6 +21,8 @@ MonoBehaviour:
   speed: 0
   defense: 0
   health: 0
+  gunSlotClass: []
+  gunSlotSpecs: []
   reloadTime: 1
   powerBuff: 0
   speedBuff: 0
@@ -28,3 +30,5 @@ MonoBehaviour:
   shellSpeed: 0
   penetration: 0
   deterioration: 0
+  type: light
+  classOf: primary
