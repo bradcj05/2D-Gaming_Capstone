@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 2344585794407880210}
   - {fileID: 2344585795555407558}
   - {fileID: 2344585794539953798}
-  explosionTiming: 0.25
+  explosionTiming: 0.15
 --- !u!114 &1450010560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
   - {fileID: 2344585795698791564}
   - {fileID: 2344585795229238552}
   - {fileID: 2344585795564274356}
-  explosionTiming: 0.25
+  explosionTiming: 0.15
 --- !u!1001 &6938023355321247807
 PrefabInstance:
   m_ObjectHideFlags: 0
