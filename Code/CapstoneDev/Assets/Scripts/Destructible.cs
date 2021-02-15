@@ -11,15 +11,7 @@ public class Destructible : MonoBehaviour
     public HealthBar defenseBar; // Transparent DEFENSE bar
     
     // Explosion effects
-<<<<<<< HEAD
-    public ParticleSystem explosion;
-=======
     public ParticleSystem explosion = null;
-    /**public ParticleSystem explosion1;
-    public ParticleSystem explosion2;
-    public ParticleSystem explosion3;
-    public ParticleSystem explosion4;**/
->>>>>>> origin/Matt_HongSecondary
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
