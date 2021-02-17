@@ -153,12 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fff76c42603c3a46ac62f40ec625637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
+  grade: 2
+  category: 0
   power: 5
   speed: 4
   penetration: 0
   deterioration: 0.1
   selfDestructTime: 2
-  time: 0
   targetTags:
   - ActivePlayer
   - Ally
