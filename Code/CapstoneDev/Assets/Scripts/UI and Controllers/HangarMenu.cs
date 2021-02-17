@@ -2,28 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HangarMenu : MonoBehaviour
 {
      int index;
      int selectionIndex;
+     public Image plane1;
+     public Image plane2;
+     public Image plane3;
+     public Image i;
 
      //List of objects TODO: use
-     public Transform planes;
+     //public Transform planes;
      //public Transform guns;
      //public Transform shells;
 
-     public GameObject AS57;
-     public GameObject P62;
-     public GameObject gunR51T;
-     public GameObject shellR5AP;
+     //public GameObject AS57;
+     //public GameObject P62;
+     //public GameObject gunR51T;
+     //public GameObject shellR5AP;
 
      GameObject selectedPlane;
      GameObject selectedGun;
      GameObject selectedShell;
 
-     void Awake()
+     void Start()
      {
+          i.sprite = ObjectList.planeList[0].artwork;
           index = 0;
           selectionIndex = 0;
      }
@@ -32,7 +38,7 @@ public class HangarMenu : MonoBehaviour
      {
           //Select Option and move to next part
           //Need to properly implement part selection
-          switch (selectionIndex)
+          /*switch (selectionIndex)
           {
                case 0:
                     if(AS57.activeInHierarchy == true)
@@ -62,6 +68,45 @@ public class HangarMenu : MonoBehaviour
                     break;
                default:
                     break;
+          }*/
+
+          switch (selectionIndex)
+          {
+               case 0:
+                    plane1.sprite = ObjectList.planeList[index].artwork;
+                    selectionIndex++;
+                    break;
+               case 1:
+                    plane2.sprite = ObjectList.planeList[index].artwork;
+                    selectionIndex++;
+                    break;
+               case 2:
+                    plane3.sprite = ObjectList.planeList[index].artwork;
+                    selectionIndex++;
+                    break;
+               default:
+                    break;
+          }
+     }
+
+     public void DeselectOption()
+     {
+          switch (selectionIndex)
+          {
+               case 3:
+                    plane3.sprite = null;
+                    selectionIndex--;
+                    break;
+               case 2:
+                    plane2.sprite = null;
+                    selectionIndex--;
+                    break;
+               case 1:
+                    plane1.sprite = null;
+                    selectionIndex--;
+                    break;
+               default:
+                    break;
           }
      }
 
@@ -71,7 +116,7 @@ public class HangarMenu : MonoBehaviour
           //Set next image to active
 
           //Temporary Solution
-          if(selectionIndex == 0)
+          /*if(selectionIndex == 0)
           {
                if (index >= planes.childCount - 1)
                     index = 0;
@@ -87,6 +132,22 @@ public class HangarMenu : MonoBehaviour
                          current.gameObject.SetActive(false);
                     p++;
                }
+          }*/
+
+          if (index >= ObjectList.planeList.Count - 1)
+               index = 0;
+          else
+               index++;
+
+          int p = 0;
+          foreach(Card current in ObjectList.planeList)
+          {
+               if (p == index)
+               {
+                    i.sprite = current.artwork;
+                    break;
+               }
+               p++;
           }
      }
 
@@ -96,7 +157,7 @@ public class HangarMenu : MonoBehaviour
           //Set next image to active
 
           //Temporary Solution
-          if (selectionIndex == 0)
+          /*if (selectionIndex == 0)
           {
                if (index <= 0)
                     index = planes.childCount - 1;
@@ -112,6 +173,22 @@ public class HangarMenu : MonoBehaviour
                          current.gameObject.SetActive(false);
                     p++;
                }
+          }*/
+
+          if (index <= 0)
+               index = ObjectList.planeList.Count - 1;
+          else
+               index--;
+
+          int p = 0;
+          foreach (Card current in ObjectList.planeList)
+          {
+               if (p == index)
+               {
+                    i.sprite = current.artwork;
+                    break;
+               }
+               p++;
           }
      }
 

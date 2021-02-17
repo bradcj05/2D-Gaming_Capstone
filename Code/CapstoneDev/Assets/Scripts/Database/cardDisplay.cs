@@ -35,11 +35,11 @@ public class cardDisplay : MonoBehaviour
     {
           nameText.text = cards.name;
           costText.text = cards.cost.ToString();
-
+          
           if (cards.unlock == -1 || Progression.progress[cards.unlock])
                artwork.sprite = cards.artwork;
           else
-               gameObject.SetActive(false);
+               gameObject.GetComponent<Button>().interactable = false;
 
           switch (cards.cardType)
           {
@@ -69,7 +69,7 @@ public class cardDisplay : MonoBehaviour
           if (cards.unlock == -1 || Progression.progress[cards.unlock])
                artwork.sprite = cards.artwork;
           else
-               gameObject.SetActive(false);
+               gameObject.GetComponent<Button>().interactable = false;
      }
 
      // May not be the right script for this function
