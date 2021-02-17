@@ -131,16 +131,19 @@ MonoBehaviour:
   shellTypes:
   - {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa, type: 3}
   waitTime: 0.2
+  type: 0
+  grade: 2
+  category: 1
   spread: 3
   powerBuff: 0.5
   speedBuff: 0.2
+  recoilForce: 0
   ammo: -1
   bulletSpawns:
   - {fileID: 4444240158761708301}
   - {fileID: 4444240159710948019}
   - {fileID: 4444240159735023175}
   rotateSpeed: 1.5
-  target: {fileID: 0}
 --- !u!1 &4444240159710948016
 GameObject:
   m_ObjectHideFlags: 0

@@ -177,9 +177,13 @@ MonoBehaviour:
   - {fileID: 3415526167857150346, guid: 490cc2aeac5035346b8353aa66d3b36f, type: 3}
   - {fileID: 1927717893260739586, guid: 8b44b6ebc0c217f4b92e142979d95759, type: 3}
   waitTime: 5
+  type: 1
+  grade: 2
+  category: 0
   spread: 2
   powerBuff: 0
   speedBuff: 0
+  recoilForce: 0
   ammo: -1
   bulletSpawns:
   - {fileID: 8410924364880801706}
@@ -207,6 +211,8 @@ MonoBehaviour:
   explosion: {fileID: 3432601346539245754}
   explosionDuration: 1.5
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!60 &8410924365959853171

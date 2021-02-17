@@ -101,6 +101,9 @@ MonoBehaviour:
   shellTypes:
   - {fileID: 4449166682222306337, guid: d2526dc27c70f2a458c717f00b366aa0, type: 3}
   waitTime: 10
+  type: 1
+  grade: 1
+  category: 2
   spread: 0
   powerBuff: 0
   speedBuff: 0

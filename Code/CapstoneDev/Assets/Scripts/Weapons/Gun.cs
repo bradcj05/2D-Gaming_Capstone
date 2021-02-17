@@ -10,6 +10,36 @@ public class Gun : MonoBehaviour
     public float waitTime = 5f; // Time between shots in seconds. Inverse of fire rate.
     protected float timer = 0f;
 
+    // Gun classification params
+    [System.Serializable]
+    public enum Category
+    {
+        Enemy = 0,
+        Primary = 1,
+        Secondary = 2
+    }
+
+    [System.Serializable]
+    public enum Grade
+    {
+        Light = 0,
+        Medium = 1,
+        Heavy = 2,
+    }
+
+    [System.Serializable]
+    public enum Type
+    {
+        RPM = 0,
+        Damage = 1,
+        Penetration = 2
+    }
+
+    public Type type;
+    public Grade grade;
+    public Category category;
+
+
     public float spread; // In degrees
     public float powerBuff; // In portion of base damage
     public float speedBuff; // In portion of base damage
