@@ -9,10 +9,6 @@ public class TerrodTracks : Enemy
     protected float repairTimer;
     protected float repairRate; //Percentage of HP after repair
     protected Collider2D collider;
-    public ParticleSystem explosion1;
-    public ParticleSystem explosion2;
-    public ParticleSystem explosion3;
-    public ParticleSystem explosion4;
 
     public new void Start()
     {
@@ -61,6 +57,7 @@ public class TerrodTracks : Enemy
 
         if (health <= 0)
         {
+            gameObject.GetComponent<ExplosionChain>().TriggerExplosionChain();
             //Set health to 0 just in case health is below 0
             health = 0;
             healthBar.SetHealth(health);
@@ -68,11 +65,6 @@ public class TerrodTracks : Enemy
             isWorking = false;
             collider.enabled = false;
             gameObject.tag = "Untagged";
-            explosion.Play(true);
-            explosion1.Play(true);
-            explosion2.Play(true);
-            explosion3.Play(true);
-            explosion4.Play(true);
         }
     }
 

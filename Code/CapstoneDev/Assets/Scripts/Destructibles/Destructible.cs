@@ -11,7 +11,7 @@ public class Destructible : MonoBehaviour
     public HealthBar defenseBar; // Transparent DEFENSE bar
     
     // Explosion effects
-    public ParticleSystem explosion;
+    public ParticleSystem explosion = null;
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
