@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : WeaponsClassification
 {
     // ORIGINAL stats for use when returned to object pool
     public float power;
@@ -33,8 +33,9 @@ public class Bullet : MonoBehaviour
     public float baseExplosionRadius = 3f;
 
     // Start is called before first frame
-    public void Start()
+    public new void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         // Set default stats
@@ -43,8 +44,9 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called every frame
-    public void Update()
+    public new void Update()
     {
+        base.Update();
         time += Time.deltaTime;
         // Speed deterioration, destroy without any behavior if expires
         if (deterioration * time >= 0.9)

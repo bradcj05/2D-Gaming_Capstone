@@ -4,41 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : WeaponsClassification
 {
     public GameObject[] shellTypes;
     public float waitTime = 5f; // Time between shots in seconds. Inverse of fire rate.
     protected float timer = 0f;
-
-    // Gun classification params
-    [System.Serializable]
-    public enum Category
-    {
-        Enemy = 0,
-        Primary = 1,
-        Secondary = 2
-    }
-
-    [System.Serializable]
-    public enum Grade
-    {
-        Light = 0,
-        Medium = 1,
-        Heavy = 2,
-    }
-
-    [System.Serializable]
-    public enum Type
-    {
-        RPM = 0,
-        Damage = 1,
-        Penetration = 2
-    }
-
-    public Type type;
-    public Grade grade;
-    public Category category;
-
 
     public float spread; // In degrees
     public float powerBuff; // In portion of base damage
@@ -50,11 +20,12 @@ public class Gun : MonoBehaviour
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
-    public void Start() { }
+    public new void Start() { base.Start(); }
 
     // Update is called once per frame
-    public void Update()
+    public new void Update()
     {
+        base.Update();
         // Update timer
         timer += Time.deltaTime;
         if (timer >= waitTime)

@@ -46,11 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67dc46bd50a89c428930781067c2b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
+  grade: 2
+  category: 2
   shellTypes: []
   waitTime: 4
   spread: 0
   powerBuff: 0
   speedBuff: 0
+  recoilForce: 0
   ammo: -1
   bulletSpawns: []
   group: 0
