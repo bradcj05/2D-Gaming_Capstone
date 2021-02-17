@@ -171,6 +171,8 @@ MonoBehaviour:
   explosion: {fileID: 5805126872217734408}
   explosionDuration: 0.7
   crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
 --- !u!50 &4530364101076584756
@@ -228,9 +230,13 @@ MonoBehaviour:
   shellTypes:
   - {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9, type: 3}
   waitTime: 10
+  type: 1
+  grade: 1
+  category: 0
   spread: 0
   powerBuff: 0
   speedBuff: 0
+  recoilForce: 0
   ammo: -1
   bulletSpawns:
   - {fileID: 7845238584968810634}

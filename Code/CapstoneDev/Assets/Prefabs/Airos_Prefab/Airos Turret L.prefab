@@ -177,9 +177,13 @@ MonoBehaviour:
   shellTypes:
   - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
   waitTime: 0.5
+  type: 0
+  grade: 2
+  category: 0
   spread: 3
   powerBuff: 0
   speedBuff: 0
+  recoilForce: 0
   ammo: -1
   bulletSpawns:
   - {fileID: 7846107219708766423}
