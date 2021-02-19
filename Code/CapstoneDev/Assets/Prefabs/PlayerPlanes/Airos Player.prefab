@@ -943,7 +943,7 @@ PrefabInstance:
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
       propertyPath: m_Name
-      value: Ju-5 Launcher
+      value: Airos Launcher Ally
       objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
@@ -1243,7 +1243,7 @@ PrefabInstance:
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
       propertyPath: m_Name
-      value: Ju-5 Launcher (1)
+      value: Airos Launcher Ally (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}

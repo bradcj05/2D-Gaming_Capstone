@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444240158761708301}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: BulletSpawn (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,9 +41,9 @@ GameObject:
   - component: {fileID: 4444240159038916760}
   - component: {fileID: 4444240159038916758}
   - component: {fileID: 8921838255013231556}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Airos Turret Ally
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,12 +128,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ca92b5d3cf3354e88d4bcd4263862f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellTypes:
-  - {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa, type: 3}
-  waitTime: 0.2
   type: 0
   grade: 2
   category: 1
+  shellTypes:
+  - {fileID: 4669196573904171017, guid: 54ca85538fb6ebf44834c2b34ebee005, type: 3}
+  waitTime: 0.2
   spread: 3
   powerBuff: 0.5
   speedBuff: 0.2
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444240159710948019}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: BulletSpawn (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444240159735023175}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: BulletSpawn (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

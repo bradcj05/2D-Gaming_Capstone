@@ -175,7 +175,7 @@ MonoBehaviour:
   radius: 5
   effectDuration: 0.5
   effect: {fileID: 5808457256571256282}
-  forceThreshold: 0.5
+  forceThreshold: 3000
   decentralized: 0
   layerMask:
     serializedVersion: 2
