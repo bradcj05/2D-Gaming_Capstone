@@ -126,12 +126,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e87d4f3ecdb925459f120fb3a38a0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  grade: 0
+  category: 1
   shellTypes:
   - {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa, type: 3}
   waitTime: 0.2
-  type: 0
-  grade: 0
-  category: 0
   spread: 2
   powerBuff: 0
   speedBuff: 0.4

@@ -3524,53 +3524,6 @@ Transform:
   m_Father: {fileID: 58423309}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1069341505
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1069341506}
-  - component: {fileID: 1069341507}
-  m_Layer: 0
-  m_Name: S-2AP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1069341506
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069341505}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.273186, y: 2.4361527, z: -422.30692}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 483736762401702701}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1069341507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069341505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: S-2AP
-  pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
-    type: 3}
-  poolSize: 168
 --- !u!1 &1191722374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,53 +3833,6 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 1256503469}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1257933002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1257933003}
-  - component: {fileID: 1257933004}
-  m_Layer: 0
-  m_Name: Airos Bullet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1257933003
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257933002}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.90349, y: 0.9151876, z: -1.7552795}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 483736762401702701}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1257933004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257933002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Airos Bullet
-  pooledObject: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
-    type: 3}
-  poolSize: 84
 --- !u!1 &1286982701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5625,53 +5531,6 @@ Transform:
   m_Father: {fileID: 945607911}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2005734716
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2005734717}
-  - component: {fileID: 2005734718}
-  m_Layer: 0
-  m_Name: Airos Missle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2005734717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005734716}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.273186, y: 2.4361527, z: -422.30692}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 483736762401702701}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2005734718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005734716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Airos Missle
-  pooledObject: {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9,
-    type: 3}
-  poolSize: 6
 --- !u!1 &2045419069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 538547675676979459, guid: e16174609714ee542aa2a44458941801,
@@ -5957,100 +5816,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2125034276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2125034277}
-  - component: {fileID: 2125034278}
-  m_Layer: 0
-  m_Name: R-5AP
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2125034277
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125034276}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.90349, y: 0.9151876, z: -1.7552795}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 483736762401702701}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2125034278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125034276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: R-5AP
-  pooledObject: {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487,
-    type: 3}
-  poolSize: 7
---- !u!1 &2127957484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2127957485}
-  - component: {fileID: 2127957486}
-  m_Layer: 0
-  m_Name: Airos Missle Ally
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2127957485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127957484}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.273186, y: 2.4361527, z: -422.30692}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 483736762401702701}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2127957486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127957484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Airos Missle Ally
-  pooledObject: {fileID: 4449166682222306337, guid: d2526dc27c70f2a458c717f00b366aa0,
-    type: 3}
-  poolSize: 6
 --- !u!1 &2140193454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,44 +5928,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1257933004}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.data[1]
-      value: 
-      objectReference: {fileID: 2005734718}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.data[2]
-      value: 
-      objectReference: {fileID: 2127957486}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.data[3]
-      value: 
-      objectReference: {fileID: 2125034278}
-    - target: {fileID: 6970381199646618520, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-        type: 3}
-      propertyPath: poolList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1069341507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eae34fa2d0f2854db8cfd9b21719cb5, type: 3}
---- !u!4 &483736762401702701 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 483736761828627263, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
-    type: 3}
-  m_PrefabInstance: {fileID: 483736762401702700}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3809051795180502468
 PrefabInstance:
   m_ObjectHideFlags: 0
