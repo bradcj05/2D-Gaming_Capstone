@@ -16,6 +16,11 @@ public class Destructible : MonoBehaviour
     public ParticleSystem crater;
     public bool groundCrater = false;
     public GameObject coin;
+    protected Animator deathAnimation;
+    public bool hasAnimator = false;
+    public bool isAiros = false;
+    //public AnimationClip airosdeathanim = null;
+    //private Animation anim;
 
     public GameObject parent;
 
@@ -63,7 +68,20 @@ public class Destructible : MonoBehaviour
         }
         if (health <= 0)
         {
-            Die();
+            
+            if (hasAnimator == true) deathAnimation = gameObject.GetComponent<Animator>();
+            if (isAiros == true)
+            {
+                //gameObject.GetComponent<Laser>().stoplaser();
+                
+                //gameObject.   FlameSystem.stop(true);
+                deathAnimation.SetBool("PlayAirosDeath", true);
+
+            }
+
+
+
+            else Die();
         }
     }
 
@@ -71,7 +89,12 @@ public class Destructible : MonoBehaviour
     public void Die()
     {
         //Play death animation
-
+        /**if (airosdeathanim != null)
+        {
+            anim = GetComponent<Animation>();
+            anim.Play();
+        }**/
+        //airosdeathanim = gameObject.GetComponent();
         //Add crater
         if (crater != null)
         {
