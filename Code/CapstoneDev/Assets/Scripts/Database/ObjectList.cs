@@ -13,17 +13,17 @@ public class ObjectList : MonoBehaviour
      public List<Card> guns;
      public List<Card> shells;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
+     // Start is called before the first frame update
+     void Awake()
+     {
           planeList = planes;
           gunList = guns;
           shellList = shells;
-    }
+     }
 
-    // Update is called once per frame
-    void Update()
-    {
+     // Update is called once per frame
+     void Update()
+     {
           planes = planeList;
           guns = gunList;
           shells = shellList;

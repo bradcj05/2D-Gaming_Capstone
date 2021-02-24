@@ -12,6 +12,7 @@ public class HangarMenu : MonoBehaviour
      public Image plane2;
      public Image plane3;
      public Image i;
+     public Transform squadron;
 
      //List of objects TODO: use
      //public Transform planes;
@@ -22,10 +23,6 @@ public class HangarMenu : MonoBehaviour
      //public GameObject P62;
      //public GameObject gunR51T;
      //public GameObject shellR5AP;
-
-     GameObject selectedPlane;
-     GameObject selectedGun;
-     GameObject selectedShell;
 
      void Start()
      {
@@ -74,15 +71,32 @@ public class HangarMenu : MonoBehaviour
           {
                case 0:
                     plane1.sprite = ObjectList.planeList[index].artwork;
+                    plane1.gameObject.SetActive(true);
                     selectionIndex++;
                     break;
                case 1:
-                    plane2.sprite = ObjectList.planeList[index].artwork;
-                    selectionIndex++;
+                    if (plane1.sprite != ObjectList.planeList[index].artwork)
+                    {
+                         plane2.sprite = ObjectList.planeList[index].artwork;
+                         plane2.gameObject.SetActive(true);
+                         selectionIndex++;
+                    }
+                    else
+                    {
+                         Debug.Log("Choose a different plane");
+                    }
                     break;
                case 2:
-                    plane3.sprite = ObjectList.planeList[index].artwork;
-                    selectionIndex++;
+                    if (plane1.sprite != ObjectList.planeList[index].artwork && plane2.sprite != ObjectList.planeList[index].artwork)
+                    {
+                         plane3.sprite = ObjectList.planeList[index].artwork;
+                         plane3.gameObject.SetActive(true);
+                         selectionIndex++;
+                    }
+                    else
+                    {
+                         Debug.Log("Choose a different plane");
+                    }
                     break;
                default:
                     break;
@@ -94,14 +108,17 @@ public class HangarMenu : MonoBehaviour
           switch (selectionIndex)
           {
                case 3:
+                    plane3.gameObject.SetActive(false);
                     plane3.sprite = null;
                     selectionIndex--;
                     break;
                case 2:
+                    plane2.gameObject.SetActive(false);
                     plane2.sprite = null;
                     selectionIndex--;
                     break;
                case 1:
+                    plane1.gameObject.SetActive(false);
                     plane1.sprite = null;
                     selectionIndex--;
                     break;
@@ -140,7 +157,7 @@ public class HangarMenu : MonoBehaviour
                index++;
 
           int p = 0;
-          foreach(Card current in ObjectList.planeList)
+          foreach (Card current in ObjectList.planeList)
           {
                if (p == index)
                {
@@ -193,8 +210,54 @@ public class HangarMenu : MonoBehaviour
      }
 
      //May or May not need this function
-     void LoadPlane(GameObject plane, GameObject gun, GameObject shell)
+     //Messy will need fixing
+     public void LoadPlanes()
      {
+          if (selectionIndex < 1)
+          {
+               Debug.Log("Please add some planes to the squadron.");
+               return;
+          }
 
+          for (int p = 0; p < 3; p++)
+          {
+               switch (p)
+               {
+                    case 0:
+                         foreach (Card current in ObjectList.planeList)
+                         {
+                              if (current.artwork == plane1.sprite)
+                              {
+                                   PlaneSwitching.squadArr[0] = current.obj;
+                                   break;
+                              }
+                         }
+                         break;
+                    case 1:
+                         foreach (Card current in ObjectList.planeList)
+                         {
+                              if (current.artwork == plane2.sprite)
+                              {
+                                   PlaneSwitching.squadArr[1] = current.obj;
+                                   break;
+                              }
+                         }
+                         break;
+                    case 2:
+                         foreach (Card current in ObjectList.planeList)
+                         {
+                              if (current.artwork == plane3.sprite)
+                              {
+                                   PlaneSwitching.squadArr[2] = current.obj;
+                                   break;
+                              }
+                         }
+                         break;
+                    default:
+                         break;
+               }
+          }
+
+          SceneTransition.NextScene();
      }
 }
