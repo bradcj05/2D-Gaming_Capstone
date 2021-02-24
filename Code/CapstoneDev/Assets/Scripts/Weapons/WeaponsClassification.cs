@@ -10,7 +10,8 @@ public class WeaponsClassification : MonoBehaviour
     {
         Enemy = 0,
         Primary = 1,
-        Secondary = 2
+        SecondaryAir = 2,
+        SecondaryGround = 3
     }
 
     [System.Serializable]
@@ -19,6 +20,7 @@ public class WeaponsClassification : MonoBehaviour
         Light = 0,
         Medium = 1,
         Heavy = 2,
+        Special = 3
     }
 
     [System.Serializable]
