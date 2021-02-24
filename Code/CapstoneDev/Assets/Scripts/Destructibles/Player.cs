@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : Destructible
 {
@@ -29,79 +30,89 @@ public class Player : Destructible
 
     new void Start()
     {
-        // Initialize HUD components
-        HUD = GameObject.Find("HUD").GetComponent<Transform>();
-        cam = Camera.main;
-        healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
-        defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
-        cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
-        nameText = FindTag("NameText").GetComponent<Text>();
-        secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
-        // Base start
-        base.Start();
-        // To display name on HealthDock
-        nameText.text = cards.name;
-        maxHealth = health;
-        isDestroyed = 1;
-        // Set cooldown slider 
+          if(SceneManager.GetActiveScene().name != "Hangar")
+          {
+               // Initialize HUD components
+               HUD = GameObject.Find("HUD").GetComponent<Transform>();
+               cam = Camera.main;
+               healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
+               defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
+               cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
+               nameText = FindTag("NameText").GetComponent<Text>();
+               secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
+               // Base start
+               base.Start();
+               // To display name on HealthDock
+               nameText.text = cards.name;
+               maxHealth = health;
+               isDestroyed = 1;
+               // Set cooldown slider 
+          }
     }
 
     public void SetUp()
     {
-        Start();
+          if (SceneManager.GetActiveScene().name != "Hangar")
+               Start();
     }
 
     // Update is called once per frame
     // Input
     new void Update()
     {
-        base.Update();
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               base.Update();
 
-        // Movement
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+               // Movement
+               movement.x = Input.GetAxisRaw("Horizontal");
+               movement.y = Input.GetAxisRaw("Vertical");
 
-        // Get Mouse Position
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+               // Get Mouse Position
+               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        // Update active secondary weapon
-        if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-        {
-            activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-        {
-            activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-        }
+               // Update active secondary weapon
+               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+               }
+               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+               }
 
-        // Update active shell group
-        if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-        {
-            activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-        }
-        else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-        {
-            activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-        }
+               // Update active shell group
+               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+               }
+               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+               }
+          }
     }
 
     //Movement
     void FixedUpdate()
     {
-        movement.Normalize();
-        // Move in the direction specified, then force the speed back to max speed if it is already reached.
-        // (Provided the max speed is due to moment and not knockback or external factor)
-        rb.AddForce(movement * enginePower, ForceMode2D.Force);
-        Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
-        if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-        {
-            rb.velocity = maxSpeed * moveDir;
-        }
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               movement.Normalize();
+               // Move in the direction specified, then force the speed back to max speed if it is already reached.
+               // (Provided the max speed is due to moment and not knockback or external factor)
+               rb.AddForce(movement * enginePower, ForceMode2D.Force);
+               Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
+               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+               {
+                    rb.velocity = maxSpeed * moveDir;
+               }
 
-        //Rotate the Player
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+               //Rotate the Player
+               Vector2 lookDir = mousePos - rb.position;
+               float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+               rb.rotation = angle;
+          }
     }
 
     //Player Death

@@ -22,7 +22,6 @@ public class Card : ScriptableObject
     public int cost;
     public Sprite artwork;
     public string description;
-    public GameObject hangarView; //For planes only
 
     // Plane values
     protected string speed;

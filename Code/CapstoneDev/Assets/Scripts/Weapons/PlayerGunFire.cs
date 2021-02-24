@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerGunFire : Gun
 {
@@ -42,7 +43,7 @@ public class PlayerGunFire : Gun
 
         // Firing code
         timer += Time.deltaTime;
-        if ((Input.GetButton("Fire1") || auto) && timer >= waitTime)
+        if ((Input.GetButton("Fire1") || auto) && timer >= waitTime && SceneManager.GetActiveScene().name != "Hangar")
         {
             Fire(shellTypes[activeType]);
             timer = 0f;

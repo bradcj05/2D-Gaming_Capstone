@@ -14,6 +14,15 @@ public class HangarMenu : MonoBehaviour
      public Image i;
      public Transform squadron;
 
+     public Image primary;
+     public Image secondary;
+     public GameObject shop;
+     public GameObject primaryArmory;
+     public GameObject secondaryArmory;
+     public GameObject ammoArmoury;
+
+     Image gs;
+
      void Start()
      {
           i.sprite = ObjectList.planeList[0].artwork;
@@ -126,7 +135,6 @@ public class HangarMenu : MonoBehaviour
           }
      }
 
-     //May or May not need this function
      //Messy may need fixing
      public void LoadPlanes()
      {
@@ -176,5 +184,39 @@ public class HangarMenu : MonoBehaviour
           }
 
           SceneTransition.NextScene();
+     }
+
+     //Will need improvements
+     public void selectSlot(Image slot)
+     {
+          if (slot.sprite == primary.sprite)
+          {
+               shop.SetActive(false);
+               primaryArmory.SetActive(true);
+          }
+          else if (slot.sprite == secondary.sprite)
+          {
+               shop.SetActive(false);
+               secondaryArmory.SetActive(true);
+          }
+          gs = slot;
+     }
+
+     //Will need improvements
+     public void selectGun()
+     {
+
+
+          primaryArmory.SetActive(false);
+          secondaryArmory.SetActive(false);
+          ammoArmoury.SetActive(true);
+     }
+
+     //Will need improvements
+     public void selectShell()
+     {
+
+          ammoArmoury.SetActive(false);
+          shop.SetActive(true);
      }
 }
