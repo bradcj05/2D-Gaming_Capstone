@@ -35,7 +35,9 @@ public class cardDisplay : MonoBehaviour
     void Start()
     {
         nameText.text = cards.name;
-        costText.text = cards.cost.ToString();
+          if(costText != null)
+               costText.text = cards.cost.ToString();
+          
 
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
             lockImage.gameObject.SetActive(false);

@@ -14,21 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 2
   obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
-  unlock: 0
+  unlockLevel: -1
   name: R51T
   cost: 100
   artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
-  speed: 0
-  defense: 0
-  health: 0
-  gunSlotClass: []
-  gunSlotSpecs: []
-  reloadTime: 1
-  powerBuff: 0
-  speedBuff: 0
-  power: 0
-  shellSpeed: 0
-  penetration: 0
-  deterioration: 0
-  type: light
-  classOf: primary
+  description: 
