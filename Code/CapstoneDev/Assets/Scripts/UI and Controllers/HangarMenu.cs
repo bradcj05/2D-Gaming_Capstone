@@ -14,8 +14,8 @@ public class HangarMenu : MonoBehaviour
      public Image i;
      public Transform squadron;
 
-     public Image primary;
-     public Image secondary;
+     public Sprite primary;
+     public Sprite secondary;
      public GameObject shop;
      public GameObject primaryArmory;
      public GameObject secondaryArmory;
@@ -189,23 +189,30 @@ public class HangarMenu : MonoBehaviour
      //Will need improvements
      public void selectSlot(Image slot)
      {
-          if (slot.sprite == primary.sprite)
+          if (slot.sprite == primary)
           {
                shop.SetActive(false);
                primaryArmory.SetActive(true);
+               secondaryArmory.SetActive(false);
           }
-          else if (slot.sprite == secondary.sprite)
+          else if (slot.sprite == secondary)
           {
                shop.SetActive(false);
+               primaryArmory.SetActive(false);
                secondaryArmory.SetActive(true);
           }
           gs = slot;
      }
 
      //Will need improvements
-     public void selectGun()
+     public void selectGun(Card c)
      {
-
+          if(gs.transform.childCount > 0)
+          {
+               Destroy(gs.transform.GetChild(0).gameObject);
+          }
+          Instantiate(c.obj, gs.transform);
+          gs.transform.GetChild(0).localScale = new Vector3(20, 20, 20);
 
           primaryArmory.SetActive(false);
           secondaryArmory.SetActive(false);
@@ -213,8 +220,9 @@ public class HangarMenu : MonoBehaviour
      }
 
      //Will need improvements
-     public void selectShell()
+     public void selectShell(Card c)
      {
+          
 
           ammoArmoury.SetActive(false);
           shop.SetActive(true);
