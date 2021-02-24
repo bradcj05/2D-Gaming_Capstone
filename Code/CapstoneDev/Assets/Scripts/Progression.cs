@@ -7,7 +7,7 @@ public class Progression : MonoBehaviour
      public static bool[] progress;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
           //Update to have more later if need be.
           progress = new bool[3];

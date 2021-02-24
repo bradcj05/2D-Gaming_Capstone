@@ -6,18 +6,19 @@ using UnityEngine.UI;
 
 public class cardDisplay : MonoBehaviour
 {
-    public GameObject attributes;
-  
+     public GameObject attributes;
+     bool purchased = false;
 
-    public Card cards;
+     public Card cards;
 
-    public Image artwork;
-    public Text nameText;
-    public Text costText;
+     public Image artwork;
+     public Text nameText;
+     public Text costText;
+     public Image lockImage;
 
-    public Text t1;
-    public Text t2;
-    public Text t3;
+     public Text t1;
+     public Text t2;
+     public Text t3;
 
      //For Stats bars
      public Slider s1;
@@ -30,16 +31,16 @@ public class cardDisplay : MonoBehaviour
      public Text st4;
 
      // Start is called before the first frame update
-     //TODO Finish
      void Start()
-    {
+     {
           nameText.text = cards.name;
           costText.text = cards.cost.ToString();
+          artwork.sprite = cards.artwork;
 
           if (cards.unlock == -1 || Progression.progress[cards.unlock])
-               artwork.sprite = cards.artwork;
+               lockImage.gameObject.SetActive(false);
           else
-               gameObject.SetActive(false);
+               lockImage.gameObject.SetActive(true);
 
           switch (cards.cardType)
           {
@@ -62,31 +63,34 @@ public class cardDisplay : MonoBehaviour
                     Debug.Log("Please give this card the right card type.");
                     break;
           }
-    }
+     }
 
      void Update()
      {
           if (cards.unlock == -1 || Progression.progress[cards.unlock])
-               artwork.sprite = cards.artwork;
+               lockImage.gameObject.SetActive(false);
           else
-               gameObject.SetActive(false);
+               lockImage.gameObject.SetActive(true);
      }
 
      // May not be the right script for this function
      public void BuyItem()
      {
+          if(cards.unlock != -1 && !Progression.progress[cards.unlock])
+          {
+               Debug.Log("Item is locked.");
+               return;
+          }
+
           if (ScoreTextScript.coinAmount >= cards.cost)
           {
-               bool purchased = false;
-
                // Add gameObject to the appropriate list of available objects
-               // TODO Fix, something wrong with foreach loop
                switch (cards.cardType)
                {
                     case 1:
                          foreach (Card plane in ObjectList.planeList)
                          {
-                              if(cards == plane)
+                              if (cards == plane)
                               {
                                    Debug.Log("This item was already purchased.");
                                    purchased = true;

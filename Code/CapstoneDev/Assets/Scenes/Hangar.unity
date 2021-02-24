@@ -705,17 +705,18 @@ MonoBehaviour:
   artwork: {fileID: 685231579}
   nameText: {fileID: 175796105}
   costText: {fileID: 1524521031}
+  lockImage: {fileID: 1798754786}
   t1: {fileID: 282075839}
   t2: {fileID: 324540945}
   t3: {fileID: 1479748029}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &24658593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,7 +2424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91082550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021785342}
+        m_TargetAssemblyTypeName: HangarMenu, Assembly-CSharp
+        m_MethodName: SelectOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &91082550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4028,7 +4041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &199545423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4207,17 +4220,18 @@ MonoBehaviour:
   artwork: {fileID: 750235578}
   nameText: {fileID: 1206791570}
   costText: {fileID: 1102775578}
+  lockImage: {fileID: 740474162}
   t1: {fileID: 549303960}
   t2: {fileID: 261653499}
   t3: {fileID: 1298127564}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &208230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4933,17 +4947,18 @@ MonoBehaviour:
   artwork: {fileID: 273792430}
   nameText: {fileID: 883062571}
   costText: {fileID: 1251598790}
+  lockImage: {fileID: 1595399564}
   t1: {fileID: 140711444}
   t2: {fileID: 746332099}
   t3: {fileID: 2115946968}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &249284548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5910,7 +5925,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11, y: -0.000030517578}
+  m_AnchoredPosition: {x: 11, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &322201584
@@ -6662,17 +6677,18 @@ MonoBehaviour:
   artwork: {fileID: 113419596}
   nameText: {fileID: 213164300}
   costText: {fileID: 896209177}
+  lockImage: {fileID: 1135577970}
   t1: {fileID: 61024394}
   t2: {fileID: 467356154}
   t3: {fileID: 325496299}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &334594717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7071,7 +7087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 350905866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021785342}
+        m_TargetAssemblyTypeName: HangarMenu, Assembly-CSharp
+        m_MethodName: NextOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350905866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7933,17 +7961,18 @@ MonoBehaviour:
   artwork: {fileID: 1239854350}
   nameText: {fileID: 1012545146}
   costText: {fileID: 256561078}
+  lockImage: {fileID: 281945404}
   t1: {fileID: 387598475}
   t2: {fileID: 1617943251}
   t3: {fileID: 181695070}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &401436480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8382,17 +8411,18 @@ MonoBehaviour:
   artwork: {fileID: 428803749}
   nameText: {fileID: 1609347542}
   costText: {fileID: 1811663879}
+  lockImage: {fileID: 192897739}
   t1: {fileID: 224022607}
   t2: {fileID: 1360253033}
   t3: {fileID: 163138698}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &422264999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11312,17 +11342,18 @@ MonoBehaviour:
   artwork: {fileID: 1311450373}
   nameText: {fileID: 608591900}
   costText: {fileID: 864449228}
+  lockImage: {fileID: 402597891}
   t1: {fileID: 1592315642}
   t2: {fileID: 820918149}
   t3: {fileID: 1381665298}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &621213447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11536,17 +11567,18 @@ MonoBehaviour:
   artwork: {fileID: 1935321728}
   nameText: {fileID: 23297827}
   costText: {fileID: 2089154828}
+  lockImage: {fileID: 226392007}
   t1: {fileID: 1277600723}
   t2: {fileID: 428959937}
   t3: {fileID: 582742862}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &623132734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11839,17 +11871,18 @@ MonoBehaviour:
   artwork: {fileID: 1548356184}
   nameText: {fileID: 1850803584}
   costText: {fileID: 1038292851}
+  lockImage: {fileID: 719737404}
   t1: {fileID: 2037373263}
   t2: {fileID: 85960699}
   t3: {fileID: 1772155938}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &636754231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12500,17 +12533,18 @@ MonoBehaviour:
   artwork: {fileID: 90248980}
   nameText: {fileID: 489837738}
   costText: {fileID: 570081003}
+  lockImage: {fileID: 146977628}
   t1: {fileID: 637909318}
   t2: {fileID: 613270599}
   t3: {fileID: 213680101}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &653609012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13642,17 +13676,18 @@ MonoBehaviour:
   artwork: {fileID: 1162495930}
   nameText: {fileID: 517411198}
   costText: {fileID: 1832589789}
+  lockImage: {fileID: 195469695}
   t1: {fileID: 951277370}
   t2: {fileID: 1091818156}
   t3: {fileID: 634874745}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &713652241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14707,17 +14742,18 @@ MonoBehaviour:
   artwork: {fileID: 999449369}
   nameText: {fileID: 1374883177}
   costText: {fileID: 655960744}
+  lockImage: {fileID: 64075097}
   t1: {fileID: 186486355}
   t2: {fileID: 718446153}
   t3: {fileID: 1407768665}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &755150980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16626,17 +16662,18 @@ MonoBehaviour:
   artwork: {fileID: 1924535245}
   nameText: {fileID: 180302107}
   costText: {fileID: 1953955143}
+  lockImage: {fileID: 2038706138}
   t1: {fileID: 329011804}
   t2: {fileID: 819847301}
   t3: {fileID: 1791364634}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &865364789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16850,17 +16887,18 @@ MonoBehaviour:
   artwork: {fileID: 1624111050}
   nameText: {fileID: 57593139}
   costText: {fileID: 1999120324}
+  lockImage: {fileID: 584350267}
   t1: {fileID: 68321608}
   t2: {fileID: 2011942302}
   t3: {fileID: 988921711}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &879188475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17307,17 +17345,18 @@ MonoBehaviour:
   artwork: {fileID: 1666453370}
   nameText: {fileID: 988045371}
   costText: {fileID: 1613656525}
+  lockImage: {fileID: 411210837}
   t1: {fileID: 2089960389}
   t2: {fileID: 937083159}
   t3: {fileID: 166389935}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &894649001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18480,17 +18519,18 @@ MonoBehaviour:
   artwork: {fileID: 406118994}
   nameText: {fileID: 1423134266}
   costText: {fileID: 1988391116}
+  lockImage: {fileID: 1421154001}
   t1: {fileID: 21626714}
   t2: {fileID: 661939789}
   t3: {fileID: 2094400783}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &955883373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18666,7 +18706,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1907199937}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.3118997
+  m_Size: 0.2930777
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19602,21 +19642,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 1267229385}
-  cards: {fileID: 11400000, guid: 3294c449e9aabca4ab83818584e7734a, type: 2}
+  cards: {fileID: 11400000, guid: cf03b39b211470f44a78b7e2b736f037, type: 2}
   artwork: {fileID: 84382894}
   nameText: {fileID: 1144575236}
   costText: {fileID: 2087934152}
+  lockImage: {fileID: 680584870}
   t1: {fileID: 1495650015}
   t2: {fileID: 1317605495}
   t3: {fileID: 1082540516}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1017167087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19988,17 +20029,18 @@ MonoBehaviour:
   artwork: {fileID: 1459378920}
   nameText: {fileID: 1446607090}
   costText: {fileID: 780046924}
+  lockImage: {fileID: 483426685}
   t1: {fileID: 422380171}
   t2: {fileID: 1099852740}
   t3: {fileID: 1023183412}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1025039347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24543,17 +24585,18 @@ MonoBehaviour:
   artwork: {fileID: 966757680}
   nameText: {fileID: 1076526364}
   costText: {fileID: 2107312503}
+  lockImage: {fileID: 257991529}
   t1: {fileID: 2042142600}
   t2: {fileID: 504763334}
   t3: {fileID: 1566422064}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1312796719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25458,17 +25501,18 @@ MonoBehaviour:
   artwork: {fileID: 19399025}
   nameText: {fileID: 154804879}
   costText: {fileID: 1502083792}
+  lockImage: {fileID: 584854012}
   t1: {fileID: 1345822989}
   t2: {fileID: 496370158}
   t3: {fileID: 2041522413}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1361091741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26456,17 +26500,18 @@ MonoBehaviour:
   artwork: {fileID: 151261976}
   nameText: {fileID: 1191296198}
   costText: {fileID: 698021684}
+  lockImage: {fileID: 1938525257}
   t1: {fileID: 1733831224}
   t2: {fileID: 1585498837}
   t3: {fileID: 1458380578}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1397673315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26759,17 +26804,18 @@ MonoBehaviour:
   artwork: {fileID: 821718477}
   nameText: {fileID: 342030328}
   costText: {fileID: 1486430290}
+  lockImage: {fileID: 1876854558}
   t1: {fileID: 85238993}
   t2: {fileID: 1775644614}
   t3: {fileID: 543642609}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1409657282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27177,7 +27223,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1428437471}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021785342}
+        m_TargetAssemblyTypeName: HangarMenu, Assembly-CSharp
+        m_MethodName: PreviousOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1428437471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27694,6 +27752,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462269292}
   m_CullTransparentMesh: 0
+--- !u!1 &1462633141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462633142}
+  m_Layer: 0
+  m_Name: Squadron
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1462633142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462633141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 670.8363, y: 238.43579, z: 9439.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477332528
 GameObject:
   m_ObjectHideFlags: 0
@@ -27814,17 +27902,18 @@ MonoBehaviour:
   artwork: {fileID: 125754222}
   nameText: {fileID: 890150298}
   costText: {fileID: 133344762}
+  lockImage: {fileID: 1295769719}
   t1: {fileID: 1570427198}
   t2: {fileID: 1083073603}
   t3: {fileID: 2036950675}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1477332532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28851,17 +28940,18 @@ MonoBehaviour:
   artwork: {fileID: 1481541901}
   nameText: {fileID: 2030544594}
   costText: {fileID: 1571106146}
+  lockImage: {fileID: 502408892}
   t1: {fileID: 1290906627}
   t2: {fileID: 1422234761}
   t3: {fileID: 327862798}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1515991296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30838,17 +30928,18 @@ MonoBehaviour:
   artwork: {fileID: 1177428867}
   nameText: {fileID: 646309176}
   costText: {fileID: 684632072}
+  lockImage: {fileID: 774329119}
   t1: {fileID: 259599592}
   t2: {fileID: 344147110}
   t3: {fileID: 1389003601}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1661998484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31341,17 +31432,18 @@ MonoBehaviour:
   artwork: {fileID: 1524786280}
   nameText: {fileID: 1020282080}
   costText: {fileID: 438300070}
+  lockImage: {fileID: 965590395}
   t1: {fileID: 76155398}
   t2: {fileID: 1379959503}
   t3: {fileID: 703392935}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1685677468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32281,8 +32373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planes:
-  - {fileID: 11400000, guid: 1e6ed8639ebff84469fa9d633246601e, type: 2}
   - {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937, type: 2}
+  - {fileID: 11400000, guid: 1e6ed8639ebff84469fa9d633246601e, type: 2}
+  - {fileID: 11400000, guid: a20efb37bc0f6d644a52832a56d491dc, type: 2}
+  - {fileID: 11400000, guid: cf03b39b211470f44a78b7e2b736f037, type: 2}
   guns:
   - {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   shells:
@@ -34449,17 +34543,18 @@ MonoBehaviour:
   artwork: {fileID: 454340914}
   nameText: {fileID: 1182705862}
   costText: {fileID: 1229617835}
+  lockImage: {fileID: 57807500}
   t1: {fileID: 383673291}
   t2: {fileID: 1392484147}
   t3: {fileID: 401413505}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &1900204271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36157,11 +36252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34af5c299b80d7945a0b05408de767d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planes: {fileID: 0}
-  AS57: {fileID: 0}
-  P62: {fileID: 0}
-  gunR51T: {fileID: 702681125}
-  shellR5AP: {fileID: 2096750692}
+  plane1: {fileID: 1816836436}
+  plane2: {fileID: 199545424}
+  plane3: {fileID: 2036305595}
+  i: {fileID: 91082550}
+  squadron: {fileID: 1462633142}
 --- !u!4 &2021785343
 Transform:
   m_ObjectHideFlags: 0
@@ -36434,7 +36529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2036305594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37856,17 +37951,18 @@ MonoBehaviour:
   artwork: {fileID: 524026568}
   nameText: {fileID: 357472577}
   costText: {fileID: 1290304380}
+  lockImage: {fileID: 1248991335}
   t1: {fileID: 1782490194}
   t2: {fileID: 31397137}
   t3: {fileID: 42585174}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
+  s1: {fileID: 396540870}
+  st1: {fileID: 965191539}
+  s2: {fileID: 647903}
+  st2: {fileID: 1144099544}
+  s3: {fileID: 743374641}
+  st3: {fileID: 496485626}
+  s4: {fileID: 1185037563}
+  st4: {fileID: 555795521}
 --- !u!114 &2126753770
 MonoBehaviour:
   m_ObjectHideFlags: 0
