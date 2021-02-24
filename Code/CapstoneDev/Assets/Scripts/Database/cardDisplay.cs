@@ -35,6 +35,7 @@ public class cardDisplay : MonoBehaviour
     void Start()
     {
         // Rotate image to the right
+        artwork.sprite = cards.artwork;
         artwork.preserveAspect = false;
         artwork.transform.Rotate(0,0,-90);
         artwork.preserveAspect = true;
