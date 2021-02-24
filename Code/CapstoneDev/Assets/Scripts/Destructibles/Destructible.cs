@@ -73,9 +73,7 @@ public class Destructible : MonoBehaviour
             if (isAiros == true)
             {
                 //gameObject.GetComponent<Laser>().stoplaser();
-
-                //gameObject.   FlameSystem.stop(true);
-                
+                //gameObject.FlameSystem.stop(true);
                 deathAnimation.SetBool("PlayAirosDeath", true);
                 
 

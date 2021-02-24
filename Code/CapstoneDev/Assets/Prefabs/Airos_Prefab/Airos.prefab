@@ -225,6 +225,8 @@ MonoBehaviour:
   crater: {fileID: 3484107807383113428}
   groundCrater: 1
   coin: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6, type: 3}
+  hasAnimator: 1
+  isAiros: 1
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   rig: {fileID: 538547675676979458}
@@ -232,6 +234,7 @@ MonoBehaviour:
   turretR2: {fileID: 0}
   bezierSpeed: 0.2
   rotateSpeed: 1
+  endDeathAnimation: 0
   Path:
   - {fileID: 0}
   - {fileID: 0}
