@@ -76,7 +76,7 @@ public class cardDisplay : MonoBehaviour
     // May not be the right script for this function
     public void BuyItem()
     {
-        if(cards.unlock != -1 && !Progression.progress[cards.unlock])
+        if(cards.unlockLevel != -1 && !Progression.progress[cards.unlockLevel])
         {
             Debug.Log("Item is locked.");
             return;
@@ -91,19 +91,6 @@ public class cardDisplay : MonoBehaviour
                 {
                     Debug.Log("This item was already purchased.");
                     purchased = true;
-                    break;
-               case 2:
-                    t1.text = "Reload Time: " + cards.getReloadTime();
-                    t2.text = "Power Buff: " + cards.getPowerBuff();
-                    t3.text = "Speed Buff: " + cards.getSpeedBuff();
-                    break;
-               case 3:
-                    t1.text = "Power: " + cards.getPower();
-                    t2.text = "Speed: " + cards.getShellSpeed();
-                    t3.text = "Penetration: " + cards.getPenetration();
-                    break;
-               default:
-                    Debug.Log("Please give this card the right card type.");
                     break;
                 }
             }

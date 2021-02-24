@@ -24,11 +24,6 @@ public class Card : ScriptableObject
     public string description;
     public GameObject hangarView; //For planes only
 
-
-     // Gun values
-     public string reloadTime;
-     public string powerBuff;
-     public string speedBuff;
     // Plane values
     protected string speed;
     protected string defense;
