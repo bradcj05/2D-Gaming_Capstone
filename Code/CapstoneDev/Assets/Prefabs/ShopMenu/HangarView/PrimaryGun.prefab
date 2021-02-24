@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8850510105904736318}
   - component: {fileID: 8850510105904736319}
+  - component: {fileID: 2999451048745552116}
   m_Layer: 0
   m_Name: PrimaryGun
   m_TagString: Untagged
@@ -113,3 +114,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2999451048745552116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8850510105904736304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3411b54eea838e429f4bb3a74889ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  grade: 0
+  category: 1
