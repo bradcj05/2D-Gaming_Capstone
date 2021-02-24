@@ -10,14 +10,15 @@ public class Card : ScriptableObject{
      public int cardType; // 1 for plane, 2 for gun, 3 for shell
      public GameObject obj;
      public int unlock;
-    public new string name;
-    public int cost;
-    public Sprite artwork;
+     public new string name;
+     public int cost;
+     public Sprite artwork;
+     public GameObject hangarView; //For planes only
 
-    // Plane values
-    public string speed;
-    public string defense;
-    public string health;
+     // Plane values
+     public string speed;
+     public string defense;
+     public string health;
      //Don't know if we'll need this
      public string[] gunSlotClass;
      public string[] gunSlotSpecs;
