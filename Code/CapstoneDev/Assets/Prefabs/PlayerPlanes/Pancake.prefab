@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2183660915927818866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20abb79ed1663a64183b3ae251094373, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e4f5a91116acfb4e800b237b33eb16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
@@ -129,6 +129,8 @@ MonoBehaviour:
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
+  hasAnimator: 0
+  isAiros: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   HUD: {fileID: 0}

@@ -1232,7 +1232,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cards
       value: 
-      objectReference: {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937,
+      objectReference: {fileID: 11400000, guid: cf03b39b211470f44a78b7e2b736f037,
         type: 2}
     - target: {fileID: 8266578753041035190, guid: 6b544ac8b8659974a84e89f14d22cd54,
         type: 3}
@@ -2091,11 +2091,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
         type: 3}
-      propertyPath: Path.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
       propertyPath: Path.Array.data[0]
       value: 
       objectReference: {fileID: 1902701699}
@@ -2214,41 +2209,6 @@ PrefabInstance:
       propertyPath: routes.Array.data[17]
       value: 
       objectReference: {fileID: 1616655581}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: Path.Array.data[0]
-      value: 
-      objectReference: {fileID: 1902701699}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: Path.Array.data[1]
-      value: 
-      objectReference: {fileID: 428570322}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: Path.Array.data[2]
-      value: 
-      objectReference: {fileID: 935605073}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: Path.Array.data[3]
-      value: 
-      objectReference: {fileID: 913392804}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: Path.Array.data[4]
-      value: 
-      objectReference: {fileID: 178328239}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: speed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: bezierSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: bezierSpeed
@@ -5833,11 +5793,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2116028202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32ac4ee39840ba44b90b8e8fff1facd, type: 3}
+  m_Script: {fileID: 11500000, guid: eb2906134e2b3714f9fd3f7be728ba74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   selectedPlane: 0
-  switchTimer: 0
+  switchTimer: 5
 --- !u!4 &2116028204
 Transform:
   m_ObjectHideFlags: 0

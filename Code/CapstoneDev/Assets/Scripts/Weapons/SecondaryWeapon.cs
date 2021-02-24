@@ -14,14 +14,16 @@ public class SecondaryWeapon : Gun
     protected bool active = false;
     protected HealthBar cooldownSlider;
     protected Text ammoText;
+    protected Player parent;
 
     // Start is called before the first frame update
     public new void Start()
     {
         base.Start();
+        parent = transform.parent.parent.gameObject.GetComponent<Player>(); // Take grandparent because the direct parent is the gun slot
         // Setup cooldown slider and ammo text
-        cooldownSlider = transform.parent.gameObject.GetComponent<Player>().getCooldownSlider();
-        ammoText = transform.parent.gameObject.GetComponent<Player>().getSecondaryAmmo();
+        cooldownSlider = parent.getCooldownSlider();
+        ammoText = parent.getSecondaryAmmo();
     }
 
     // Update is called once per frame
@@ -30,16 +32,16 @@ public class SecondaryWeapon : Gun
         // Setup cooldown slider and ammo text
         if (cooldownSlider == null)
         {
-            cooldownSlider = transform.parent.gameObject.GetComponent<Player>().getCooldownSlider();
+            cooldownSlider = parent.getCooldownSlider();
         }
         if (ammoText == null)
         {
-            ammoText = transform.parent.gameObject.GetComponent<Player>().getSecondaryAmmo();
+            ammoText = parent.getSecondaryAmmo();
         }
         // Update timer
         timer += Time.deltaTime;
         // Setup active group
-        activeGroup = transform.parent.gameObject.GetComponent<Player>().activeSecondaryWeapon;
+        activeGroup = parent.activeSecondaryWeapon;
         if (group == activeGroup)
         {
             active = true;
