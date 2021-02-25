@@ -38,6 +38,9 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     int start = 1;  /// keep an eye on the start position switching
     int path;
 
+    //Boolean to help prep for deathanimation.
+    protected bool isDying = false;
+
 
     new void Start()
     {
@@ -85,13 +88,14 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
             Debug.Log(e);
             target = null;
         }
-        if (coroutineAllowed)
+        if (isDying == true) return;
+        else if (coroutineAllowed)
             StartCoroutine(GoByTheRoute(routeToGo));
     }           //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     void FixedUpdate()
     {
-        if (target != null)
+        if (target != null && isDying == false)
         {
             Vector2 direction = (Vector2)target.position - rig.position;
             direction.Normalize();
@@ -190,6 +194,11 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     public void DeathAnimation()
     {
         deathCounter = 1;
+    }
+
+    public void endDefaultAnimation()
+    {
+        isDying = true;
     }
 }
 
