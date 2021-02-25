@@ -7,8 +7,6 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     //Movement Variables
     
     public Rigidbody2D rig;
-    public Rigidbody2D turretL1;
-    public Rigidbody2D turretR2;
     //Vector2 movement;
 
     public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
@@ -16,6 +14,8 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     protected float rotateAmount; //public for better testing
     protected Transform target;
     protected int deathCounter = 0;
+    protected ExplosionChain explosionChain;
+    public ParticleSystem smoke;
     public bool endDeathAnimation = false;
 
     [SerializeField]
@@ -49,7 +49,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         tParam = 0f;
         coroutineAllowed = true;
         Randomize(); // random start path
-
+        // Select player plane to track
         try
         {
             target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
@@ -59,24 +59,12 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
             Debug.Log(e);
             target = null;
         }
+        // Assign explosion chain for death animation
+        explosionChain = GetComponent<ExplosionChain>();
     }
 
     new void Update() //// check on this HERE!!!!!!!!
     {
-        if (deathCounter > 0)
-        {
-            rig.MoveRotation(deathCounter);
-            deathCounter++;
-            if (deathCounter % 10 == 0)
-            {
-                explosion.Play(true);
-            }
-
-            if(deathCounter == 400)
-            {
-                endDeathAnimation = true;
-            }
-        }
         base.Update();
         //Try to find the next player plane when it spawns
         try
@@ -95,6 +83,21 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 
     void FixedUpdate()
     {
+        if (deathCounter > 0)
+        {
+            rig.MoveRotation(deathCounter);
+            deathCounter++;
+
+            if (deathCounter == 30)
+            {
+                smoke.Play(true);
+            }
+
+            if (deathCounter == 400)
+            {
+                endDeathAnimation = true;
+            }
+        }
         if (target != null && isDying == false)
         {
             Vector2 direction = (Vector2)target.position - rig.position;
@@ -194,6 +197,8 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     public void DeathAnimation()
     {
         deathCounter = 1;
+        if (explosionChain != null)
+            explosionChain.TriggerExplosionChain();
     }
 
     public void endDefaultAnimation()

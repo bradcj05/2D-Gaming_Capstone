@@ -95,12 +95,12 @@ public class Destructible : MonoBehaviour
         //Add crater
         if (crater != null)
         {
-            if (groundCrater == false) crater.Play(true);
-            //GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
-            //if (parent != null)
+            if (groundCrater == false)
+            {
+                crater.Play(true);
+            }
             else
             {
-                //c.transform.parent = parent.transform;
                 ParticleSystem curCrater = Instantiate(crater, this.transform.position, explosion.transform.rotation) as ParticleSystem;
                 curCrater.Play(true);
             }
