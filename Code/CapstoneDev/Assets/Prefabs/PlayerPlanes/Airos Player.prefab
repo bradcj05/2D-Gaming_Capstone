@@ -962,6 +962,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
+      propertyPath: m_Name
+      value: Airos Launcher Ally
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: m_Name
+      value: Airos Launcher Ally
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
@@ -1352,6 +1362,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: m_Name
+      value: Airos Launcher Ally (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
+        type: 3}
+      propertyPath: m_Name
+      value: Airos Launcher Ally (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb,
         type: 3}
