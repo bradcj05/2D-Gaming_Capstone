@@ -2082,7 +2082,7 @@ PrefabInstance:
     - target: {fileID: 2143285099083355965, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: health
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2465529104237549041, guid: e16174609714ee542aa2a44458941801,
         type: 3}
@@ -5567,6 +5567,11 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 1521400050}
+    - target: {fileID: 4439171013570698791, guid: e7cf459c099d0884f9888c21f4f753e8,
+        type: 3}
+      propertyPath: health
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 5079230432520896642, guid: e7cf459c099d0884f9888c21f4f753e8,
         type: 3}
       propertyPath: m_AnchorMax.x
