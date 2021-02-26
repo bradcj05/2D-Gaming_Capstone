@@ -472,6 +472,16 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -555,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 4070438452170193839, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193839, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
@@ -1621,6 +1631,16 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2227,8 +2247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion:
   - {fileID: 1317905001}
-  - {fileID: 183281306}
   - {fileID: 613531056}
+  - {fileID: 183281306}
   explosionTiming: 0.5
 --- !u!1 &1248061503
 GameObject:
@@ -2507,6 +2527,16 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2581,6 +2611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193839, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}
@@ -3365,7 +3400,7 @@ PrefabInstance:
     - target: {fileID: 3544117578777555905, guid: 856f672470cfdc94d8539afb983c8685,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3544117578777555910, guid: 856f672470cfdc94d8539afb983c8685,
         type: 3}
