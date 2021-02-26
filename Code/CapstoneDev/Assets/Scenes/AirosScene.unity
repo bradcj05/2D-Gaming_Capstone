@@ -2094,24 +2094,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2932797701393944809, guid: e16174609714ee542aa2a44458941801,
+    - target: {fileID: 2932797702592059801, guid: e16174609714ee542aa2a44458941801,
         type: 3}
-      propertyPath: EmissionModule.enabled
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2932797702047322748, guid: e16174609714ee542aa2a44458941801,
+    - target: {fileID: 2932797702978870028, guid: e16174609714ee542aa2a44458941801,
         type: 3}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932797702592059800, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2932797702978870029, guid: e16174609714ee542aa2a44458941801,
-        type: 3}
-      propertyPath: moveWithTransform
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3351670367091392459, guid: e16174609714ee542aa2a44458941801,

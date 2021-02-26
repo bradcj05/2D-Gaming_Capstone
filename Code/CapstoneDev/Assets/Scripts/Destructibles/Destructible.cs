@@ -18,7 +18,6 @@ public class Destructible : MonoBehaviour
     public GameObject coin;
     protected Animator deathAnimation;
     public bool hasAnimator = false;
-    public bool isAiros = false;
     //public AnimationClip airosdeathanim = null;
     //private Animation anim;
 
@@ -68,16 +67,13 @@ public class Destructible : MonoBehaviour
         }
         if (health <= 0)
         {
-            
-            if (hasAnimator == true) deathAnimation = gameObject.GetComponent<Animator>();
-            if (isAiros == true)
-            {
-                //gameObject.GetComponent<Laser>().stoplaser();
-                //gameObject.FlameSystem.stop(true);
-                deathAnimation.SetBool("PlayAirosDeath", true);
-                
 
+            if (hasAnimator == true)
+            {
+                deathAnimation = gameObject.GetComponent<Animator>();
+                deathAnimation.SetBool("PlayDeathAnimation", true);
             }
+
             else Die();
         }
     }
@@ -85,13 +81,6 @@ public class Destructible : MonoBehaviour
     // Destruction function
     public void Die()
     {
-        //Play death animation
-        /**if (airosdeathanim != null)
-        {
-            anim = GetComponent<Animation>();
-            anim.Play();
-        }**/
-        //airosdeathanim = gameObject.GetComponent();
         //Add crater
         if (crater != null)
         {
