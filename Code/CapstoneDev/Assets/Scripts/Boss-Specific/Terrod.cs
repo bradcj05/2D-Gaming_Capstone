@@ -80,7 +80,6 @@ public class Terrod : MonoBehaviour
             //Set the correct progression bool to true
             Progression.progress[1] = true;
             //Death animation
-            //Destroy(gameObject);
             terrodAnimator = gameObject.GetComponent<Animator>();
             terrodAnimator.SetBool("PlayDeathAnimation", true);
         }
@@ -214,7 +213,6 @@ public class Terrod : MonoBehaviour
         //Play explosion
         if (explosion != null)
         {
-
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;
