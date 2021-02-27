@@ -2193,6 +2193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlameSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 679768878512422482, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1098126464357968830, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_LinearOffset.x
@@ -2416,6 +2421,11 @@ PrefabInstance:
     - target: {fileID: 4179810800271187234, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248737422191799181, guid: e16174609714ee542aa2a44458941801,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4260542061196603793, guid: e16174609714ee542aa2a44458941801,
