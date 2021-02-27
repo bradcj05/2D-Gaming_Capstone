@@ -153,7 +153,7 @@ public class HangarMenu : MonoBehaviour
                          {
                               if (current.artwork == plane1.sprite)
                               {
-                                   //TODO fix (GameObject is destroyed after this scene, might be causing issues)
+                                   //TODO: Update to allow for positioning of new weapons
                                    Instantiate(current.obj, squadron);
                                    for (int j = 0; j < plane1.transform.childCount; j++)
                                    {
@@ -235,7 +235,6 @@ public class HangarMenu : MonoBehaviour
                Destroy(gs.transform.GetChild(0).gameObject);
           }
           Instantiate(c.obj, gs.transform);
-          gs.transform.GetChild(0).localScale = new Vector3(20, 20, 20);
 
           primaryArmory.SetActive(false);
           secondaryArmory.SetActive(false);
