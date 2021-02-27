@@ -30,7 +30,8 @@ public class PlaneSwitching : MonoBehaviour
         {
             if (squadArr[i] != null)
             {
-                /*squadArr[i] = Instantiate(squadArr[i], transform);*/
+                    /*squadArr[i] = Instantiate(squadArr[i], transform);*/
+                    Debug.Log("Setup should work");
                 squadArr[i].GetComponent<Player>().SetUp();
             }
         }

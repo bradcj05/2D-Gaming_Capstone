@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PancakeInfo
   m_EditorClassIdentifier: 
   cardType: 1
-  obj: {fileID: 2183660915927818866, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
+  obj: {fileID: 7042112017271631860, guid: a9d216ec3119a1142832d90f59a7272e, type: 3}
   unlockLevel: 1
   name: Pancake
   cost: 1000

@@ -153,8 +153,31 @@ public class HangarMenu : MonoBehaviour
                          {
                               if (current.artwork == plane1.sprite)
                               {
-                                   PlaneSwitching.squadArr[0] = current.obj;
-                                   break;
+                                   //TODO fix (GameObject is destroyed after this scene, might be causing issues)
+                                   Instantiate(current.obj, squadron);
+                                   for (int j = 0; j < plane1.transform.childCount; j++)
+                                   {
+                                        if (plane1.transform.GetChild(j).childCount > 0)
+                                        {
+                                             Destroy(squadron.GetChild(0).GetChild(j).gameObject);
+                                             Instantiate(plane1.transform.GetChild(j).GetChild(0).gameObject, squadron.GetChild(0).transform);
+                                        }
+                                   }
+                                   PlaneSwitching.squadArr[0] = squadron.GetChild(0).gameObject;
+                                   Debug.Log("HangarMenu: " + PlaneSwitching.squadArr[0].name);
+
+                                   /*GameObject temp1 = current.obj;
+                                   for (int j = 0; j < plane1.transform.childCount; j++)
+                                   {
+                                        if (plane1.transform.GetChild(j).childCount > 0)
+                                        {
+                                             Destroy(temp1.transform.GetChild(j).gameObject);
+                                             Instantiate(plane1.transform.GetChild(j).GetChild(0).gameObject, temp1.transform);
+                                        }
+                                   }
+                                   PlaneSwitching.squadArr[0] = temp1;
+                                   Debug.Log("HangarMenu: " + PlaneSwitching.squadArr[0].name);
+                                   break;*/
                               }
                          }
                          break;
@@ -222,7 +245,7 @@ public class HangarMenu : MonoBehaviour
      //Will need improvements
      public void selectShell(Card c)
      {
-          
+          gs.transform.GetChild(0).GetComponent<PlayerGunFire>().shellTypes[0] = c.obj;
 
           ammoArmoury.SetActive(false);
           shop.SetActive(true);

@@ -6736,6 +6736,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327862796}
   m_CullTransparentMesh: 0
+--- !u!1 &328826961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 328826963}
+  - component: {fileID: 328826962}
+  m_Layer: 0
+  m_Name: SceneTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &328826962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328826961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7672d1c011cfea41af2d2397677b055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 3
+  squad: {fileID: 1462633141}
+--- !u!4 &328826963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328826961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 722.18835, y: 135.23622, z: 5610.2627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329011802
 GameObject:
   m_ObjectHideFlags: 0
@@ -9662,7 +9707,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: Engage
 --- !u!222 &481211157
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18412,7 +18457,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923438151}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -19076,8 +19121,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1907199938}
   m_HandleRect: {fileID: 1907199937}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.2930777
+  m_Value: 1
+  m_Size: 0.29216468
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28297,6 +28342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1462633142}
+  - component: {fileID: 1462633143}
   m_Layer: 0
   m_Name: Squadron
   m_TagString: Untagged
@@ -28318,6 +28364,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1462633143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462633141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2906134e2b3714f9fd3f7be728ba74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedPlane: 0
+  switchTimer: 0
 --- !u!1 &1477332528
 GameObject:
   m_ObjectHideFlags: 0
@@ -38778,7 +38838,7 @@ GameObject:
   - component: {fileID: 2116411524}
   - component: {fileID: 2116411523}
   m_Layer: 5
-  m_Name: ResetButton
+  m_Name: EngageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38846,7 +38906,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2116411524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021785342}
+        m_TargetAssemblyTypeName: HangarMenu, Assembly-CSharp
+        m_MethodName: LoadPlanes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2116411524
 MonoBehaviour:
   m_ObjectHideFlags: 0
