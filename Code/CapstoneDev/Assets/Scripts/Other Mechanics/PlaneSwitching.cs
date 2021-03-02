@@ -10,6 +10,7 @@ public class PlaneSwitching : MonoBehaviour
     float switchDelay = 2f;
     public float switchTimer; // Public for better testing
     static int squadronSize = 3;
+     int size = squadronSize;
     public static GameObject[] squadArr = new GameObject[squadronSize];
     Vector3 startPos;
 
@@ -20,10 +21,10 @@ public class PlaneSwitching : MonoBehaviour
           {
                //Debug.Break();
                switchTimer = 0f;
-               squadronSize = transform.childCount;
-
+               //squadronSize = transform.childCount;
+               Debug.Log("Max Planes: " + squadArr.Length);
                //Assign numbers to the planes
-               squadArr = new GameObject[transform.childCount];
+               //squadArr = new GameObject[transform.childCount];
                for (int i = 0; i < transform.childCount; i++)
                {
                     squadArr[i] = transform.GetChild(i).gameObject;
@@ -35,7 +36,7 @@ public class PlaneSwitching : MonoBehaviour
                     if (squadArr[i] != null)
                     {
                          //squadArr[i] = Instantiate(squadArr[i], transform);
-                         Debug.Log("Setup should work");
+                         //Debug.Log("Setup should work");
                          squadArr[i].GetComponent<Player>().SetUp();
                     }
                }
@@ -43,30 +44,6 @@ public class PlaneSwitching : MonoBehaviour
                SelectPlane(new Vector3(0.06f, -11.27f, 0f));
                startPos = new Vector3(0.06f, -11.27f, 0f);
           }
-         /* //Debug.Break();
-        switchTimer = 0f;
-        squadronSize = transform.childCount;
-
-        //Assign numbers to the planes
-        squadArr = new GameObject[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            squadArr[i] = transform.GetChild(i).gameObject;
-        }
-
-        //spawn planes in
-        for (int i = 0; i < squadronSize; i++)
-        {
-            if (squadArr[i] != null)
-            {
-                    //squadArr[i] = Instantiate(squadArr[i], transform);
-                    Debug.Log("Setup should work");
-                squadArr[i].GetComponent<Player>().SetUp();
-            }
-        }
-
-        SelectPlane(new Vector3(0.06f, -11.27f, 0f));
-        startPos = new Vector3(0.06f, -11.27f, 0f);*/
     }
 
      public void SetUp()
@@ -125,9 +102,10 @@ public class PlaneSwitching : MonoBehaviour
                }
 
                //TODO swap to next plane if previous plane dies
-               //Fix?
-               if (squadronSize > transform.childCount)
+               //Fix
+               if (size > transform.childCount)
                {
+                    Debug.Log("New PLane should spawn");
                     for (int j = 0; j < squadArr.Length; j++)
                     {
                          if (squadArr[j] != null)
@@ -135,73 +113,13 @@ public class PlaneSwitching : MonoBehaviour
                               selectedPlane = j;
                               SelectPlane(startPos);
                               switchTimer = 0f;
-                              squadronSize = transform.childCount;
+                              size--;
+                              Debug.Log("Planes in squadron: " + size);
                               break;
                          }
                     }
                }
           }
-        /*if (transform.childCount == 0)
-            Destroy(transform.gameObject);
-
-        if (switchTimer < switchDelay)
-            switchTimer += Time.deltaTime;
-
-        int previousPlane = selectedPlane;
-        //Q and E based plane switching
-        if (switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.Q) && transform.childCount != 1)
-        {
-            int j = selectedPlane - 1;
-            while (j != selectedPlane)
-            {
-                if (j < 0)
-                    j = transform.childCount - 1;
-
-                if (squadArr[j] != null)
-                {
-                    selectedPlane = j;
-                    SelectPlane(squadArr[previousPlane].transform.position);
-                    break;
-                }
-                j--;
-            }
-            switchTimer = 0;
-        }
-        else if (switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.E) && transform.childCount != 1)
-        {
-            int j = selectedPlane + 1;
-            while (j != selectedPlane)
-            {
-                if (j == transform.childCount)
-                    j = 0;
-
-                if (squadArr[j] != null)
-                {
-                    selectedPlane = j;
-                    SelectPlane(squadArr[previousPlane].transform.position);
-                    break;
-                }
-                j++;
-            }
-            switchTimer = 0;
-        }
-
-        //TODO swap to next plane if previous plane dies
-        //Fix?
-        if (squadronSize > transform.childCount)
-        {
-            for (int j = 0; j < squadArr.Length; j++)
-            {
-                if (squadArr[j] != null)
-                {
-                    selectedPlane = j;
-                    SelectPlane(startPos);
-                    switchTimer = 0f;
-                    squadronSize = transform.childCount;
-                    break;
-                }
-            }
-        }*/
     }
 
     //Changes which of the planes in the squadron are active
