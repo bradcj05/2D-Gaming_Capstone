@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PancakeInfo
   m_EditorClassIdentifier: 
   cardType: 1
-  obj: {fileID: 2183660915927818866, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
+  obj: {fileID: 7042112017271631860, guid: a9d216ec3119a1142832d90f59a7272e, type: 3}
   unlockLevel: 1
   name: Pancake
   cost: 1000
   artwork: {fileID: 21300000, guid: 8ea85f2217a20364996721701145b882, type: 3}
-  description: An old relic from World War II, fittingly dubbed the Flying Tank,
-    the P62 can barely fly but is adept at crippling heavy armor. Most fighters of
-    the time could not penetrate its enforced frame, so they just used missiles instead.
+  description: An old relic from World War II, fittingly dubbed the Flying Tank, the
+    P62 can barely fly but is adept at crippling heavy armor. Most fighters of the
+    time could not penetrate its enforced frame, so they just used missiles instead.

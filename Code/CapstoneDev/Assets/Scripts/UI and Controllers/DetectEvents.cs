@@ -15,8 +15,11 @@ public class DetectEvents : MonoBehaviour
     protected float levelEndTimer = 0f;
     protected float levelEndTime = 4f;
 
-    public void Start()
+    public void Awake()
     {
+          //Find player squadron
+          player = GameObject.Find("Squadron");
+          player.GetComponent<PlaneSwitching>().SetUp();
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
