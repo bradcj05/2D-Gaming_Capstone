@@ -21,8 +21,8 @@ public class SceneTransition : MonoBehaviour
      //Transitions to the next scene after the Hangar Scene
      public static void NextScene()
      {
-          DontDestroyOnLoad(squadron);
           squadron.SetActive(true);
+          DontDestroyOnLoad(squadron);
           SceneManager.LoadScene(upcomingScene);
      }
 
