@@ -17,9 +17,26 @@ public class HangarMenu : MonoBehaviour
      public Sprite primary;
      public Sprite secondary;
      public GameObject shop;
-     public GameObject primaryArmory;
-     public GameObject secondaryArmory;
-     public GameObject ammoArmoury;
+     public static GameObject primaryArmory;
+     public static GameObject secondaryArmory;
+     public static GameObject ammoArmory;
+     public static GameObject buttonPreFab;
+
+     //Used to set the static values
+     public GameObject primaryList;
+     public GameObject secondaryList;
+     public GameObject ammo;
+     public GameObject button;
+
+     //For Button's Stats bars
+     public Slider s1;
+     public Text st1;
+     public Slider s2;
+     public Text st2;
+     public Slider s3;
+     public Text st3;
+     public Slider s4;
+     public Text st4;
 
      Image gs;
 
@@ -28,6 +45,31 @@ public class HangarMenu : MonoBehaviour
           i.sprite = ObjectList.planeList[0].artwork;
           index = 0;
           selectionIndex = 0;
+          primaryArmory = primaryList;
+          secondaryArmory = secondaryList;
+          ammoArmory = ammo;
+          buttonPreFab = button;
+
+          //Add Sliders to buttons
+          buttonPreFab.GetComponent<cardDisplay>().s1 = s1;
+          buttonPreFab.GetComponent<cardDisplay>().st1 = st1;
+          buttonPreFab.GetComponent<cardDisplay>().s2 = s2;
+          buttonPreFab.GetComponent<cardDisplay>().st2 = st2;
+          buttonPreFab.GetComponent<cardDisplay>().s3 = s3;
+          buttonPreFab.GetComponent<cardDisplay>().st3 = st3;
+          buttonPreFab.GetComponent<cardDisplay>().s4 = s4;
+          buttonPreFab.GetComponent<cardDisplay>().st4 = st4;
+
+          //Create the Buttons from the Object Lists.
+          foreach(Card c in ObjectList.gunList)
+          {
+               AddButton(c);
+          }
+
+          foreach (Card c in ObjectList.shellList)
+          {
+               AddButton(c);
+          }
      }
 
      public void SelectOption()
@@ -246,7 +288,7 @@ public class HangarMenu : MonoBehaviour
 
           primaryArmory.SetActive(false);
           secondaryArmory.SetActive(false);
-          ammoArmoury.SetActive(true);
+          ammoArmory.SetActive(true);
      }
 
      //Will need improvements
@@ -254,7 +296,40 @@ public class HangarMenu : MonoBehaviour
      {
           gs.transform.GetChild(0).GetComponent<PlayerGunFire>().shellTypes[0] = c.obj;
 
-          ammoArmoury.SetActive(false);
+          ammoArmory.SetActive(false);
           shop.SetActive(true);
+     }
+
+     //Adds the buttons to the object lists
+     public static void AddButton(Card c)
+     {
+          //TODO: Test
+          GameObject g = buttonPreFab;
+          g.GetComponent<cardDisplay>().cards = c;
+
+          switch ((int)c.cardType)
+          {
+               case 1:
+                    Debug.Log("No Plane List");
+                    break;
+               case 2:
+                    //TODO: Fix
+                    Debug.Log((int)c.getCategory());
+                    if ((int)c.getCategory() == 1)
+                    {
+                         Instantiate(g, primaryArmory.transform.GetChild(1).GetChild(0));
+                    }
+                    else
+                    {
+                         Instantiate(g, secondaryArmory.transform.GetChild(1).GetChild(0));
+                    }
+                    break;
+               case 3:
+                    Instantiate(g, ammoArmory.transform.GetChild(1).GetChild(0));
+                    break;
+               default:
+                    Debug.Log("Please give this card the right card type.");
+                    break;
+          }
      }
 }

@@ -28,9 +28,13 @@ public class Card : ScriptableObject
     protected string defense;
     protected string health;
     protected string mass;
+    //public 
+    public WeaponsClassification.Type slotType;
+    public WeaponsClassification.Grade slotGrade;
+    public WeaponsClassification.Category slotCategory;
 
-    // Gun classification params
-    protected WeaponsClassification.Type type;
+     // Gun classification params
+     protected WeaponsClassification.Type type;
     protected WeaponsClassification.Grade grade;
     protected WeaponsClassification.Category category;
 
@@ -47,7 +51,7 @@ public class Card : ScriptableObject
     protected string deterioration;
 
     // Retrieve info from object
-    public void Start()
+    public void Awake()
     {
         switch ((int)cardType)
         {

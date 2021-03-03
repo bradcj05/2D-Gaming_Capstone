@@ -228,8 +228,8 @@ GameObject:
   - component: {fileID: 7096910263496070469}
   - component: {fileID: 7096910263496070470}
   - component: {fileID: 7096910263496070471}
-  - component: {fileID: 7096910263496070468}
   - component: {fileID: 7096910263496070467}
+  - component: {fileID: 6927929315088624465}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7096910263496070468}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: cardDisplay, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 1
@@ -355,34 +355,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7096910263496070468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7096910263496070457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8234142baaff0d04d84c2d3cae638a80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 7096910263239311361}
-  cards: {fileID: 11400000, guid: 3294c449e9aabca4ab83818584e7734a, type: 2}
-  artwork: {fileID: 7096910263119228713}
-  nameText: {fileID: 7096910263604503980}
-  costText: {fileID: 7096910264641254209}
-  t1: {fileID: 7096910263524852883}
-  t2: {fileID: 7096910263993371972}
-  t3: {fileID: 7096910264834251615}
-  s1: {fileID: 0}
-  st1: {fileID: 0}
-  s2: {fileID: 0}
-  st2: {fileID: 0}
-  s3: {fileID: 0}
-  st3: {fileID: 0}
-  s4: {fileID: 0}
-  st4: {fileID: 0}
 --- !u!114 &7096910263496070467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +384,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 7096910263496070468}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: cardDisplay, Assembly-CSharp
           m_MethodName: UpdateStats
           m_Mode: 1
@@ -440,6 +412,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &6927929315088624465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096910263496070457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 7096910263239311361}
+  cards: {fileID: 0}
+  artwork: {fileID: 7096910263119228713}
+  nameText: {fileID: 7096910263604503980}
+  costText: {fileID: 7096910264641254209}
+  lockImage: {fileID: 7096910264314744587}
+  t1: {fileID: 7096910263524852883}
+  t2: {fileID: 7096910263993371972}
+  t3: {fileID: 7096910264834251615}
+  s1: {fileID: 0}
+  st1: {fileID: 0}
+  s2: {fileID: 0}
+  st2: {fileID: 0}
+  s3: {fileID: 0}
+  st3: {fileID: 0}
+  s4: {fileID: 0}
+  st4: {fileID: 0}
 --- !u!1 &7096910263524852885
 GameObject:
   m_ObjectHideFlags: 0
