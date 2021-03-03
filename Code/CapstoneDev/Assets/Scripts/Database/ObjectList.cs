@@ -19,6 +19,13 @@ public class ObjectList : MonoBehaviour
           planeList = planes;
           gunList = guns;
           shellList = shells;
+
+          foreach (Card p in planeList)
+               p.Awake();
+          foreach (Card g in gunList)
+               g.Awake();
+          foreach (Card s in shellList)
+               s.Awake();
      }
 
      // Update is called once per frame

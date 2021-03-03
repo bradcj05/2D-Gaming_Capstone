@@ -7,7 +7,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
   m_Name: PancakeInfo
@@ -21,3 +21,9 @@ MonoBehaviour:
   description: An old relic from World War II, fittingly dubbed the Flying Tank,
     the P62 can barely fly but is adept at crippling heavy armor. Most fighters of
     the time could not penetrate its enforced frame, so they just used missiles instead.
+  gunSlotNum: 1
+  gunSlotObj:
+  - {fileID: 0}
+  slotType: 00000000
+  slotGrade: 00000000
+  slotCategory: 00000000

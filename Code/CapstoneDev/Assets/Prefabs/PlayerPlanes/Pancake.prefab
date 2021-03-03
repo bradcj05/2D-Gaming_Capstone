@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 9.28034, y: -7.3953805, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
-  - {fileID: 7679111153802336357}
+  - {fileID: 2998186598024040076}
   - {fileID: 7799366224445709756}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -378,7 +378,7 @@ PolygonCollider2D:
       - {x: -0.59499997, y: -3.37}
       - {x: -0.545, y: -3.26}
       - {x: -0.545, y: -2.72}
---- !u!1001 &1171774711274942555
+--- !u!1001 &6001300353066968754
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -393,12 +393,12 @@ PrefabInstance:
     - target: {fileID: 8850510105904736318, guid: 05423d4e755bff845b0549c3db3d1a9c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.31
+      value: 0.309999
       objectReference: {fileID: 0}
     - target: {fileID: 8850510105904736318, guid: 05423d4e755bff845b0549c3db3d1a9c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.743
+      value: 0.7430005
       objectReference: {fileID: 0}
     - target: {fileID: 8850510105904736318, guid: 05423d4e755bff845b0549c3db3d1a9c,
         type: 3}
@@ -445,13 +445,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8850510105904736319, guid: 05423d4e755bff845b0549c3db3d1a9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05423d4e755bff845b0549c3db3d1a9c, type: 3}
---- !u!4 &7679111153802336357 stripped
+--- !u!4 &2998186598024040076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8850510105904736318, guid: 05423d4e755bff845b0549c3db3d1a9c,
     type: 3}
-  m_PrefabInstance: {fileID: 1171774711274942555}
+  m_PrefabInstance: {fileID: 6001300353066968754}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6071398166110266901
 PrefabInstance:
@@ -539,7 +544,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7679111153802336357}
+    m_TransformParent: {fileID: 2998186598024040076}
     m_Modifications:
     - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
         type: 3}

@@ -28,13 +28,15 @@ public class Card : ScriptableObject
     protected string defense;
     protected string health;
     protected string mass;
-    //public 
-    public WeaponsClassification.Type slotType;
-    public WeaponsClassification.Grade slotGrade;
-    public WeaponsClassification.Category slotCategory;
+     
+     public int gunSlotNum;
+    public GameObject[] gunSlotObj;
+    public WeaponsClassification.Type[] slotType;
+    public WeaponsClassification.Grade[] slotGrade;
+    public WeaponsClassification.Category[] slotCategory;
 
-     // Gun classification params
-     protected WeaponsClassification.Type type;
+    // Gun classification params
+    protected WeaponsClassification.Type type;
     protected WeaponsClassification.Grade grade;
     protected WeaponsClassification.Category category;
 
@@ -53,6 +55,7 @@ public class Card : ScriptableObject
     // Retrieve info from object
     public void Awake()
     {
+          //Debug.Log("Card Awake");
         switch ((int)cardType)
         {
             case 1:
@@ -62,6 +65,19 @@ public class Card : ScriptableObject
                 defense = plane.defense.ToString();
                 health = plane.health.ToString();
                 mass = planeRig.mass.ToString();
+
+                    gunSlotObj = new GameObject[gunSlotNum];
+                    slotType = new WeaponsClassification.Type[gunSlotNum];
+                    slotGrade = new WeaponsClassification.Grade[gunSlotNum];
+                    slotCategory = new WeaponsClassification.Category[gunSlotNum];
+                for(int p = 0; p < gunSlotNum; p++)
+                {
+                         //Debug.Log("Assigning gun slots in the card of " + obj.name);
+                         gunSlotObj[p] = obj.transform.GetChild(p).GetChild(0).gameObject;
+                         slotType[p] = gunSlotObj[p].GetComponent<Gun>().type;
+                         slotGrade[p] = gunSlotObj[p].GetComponent<Gun>().grade;
+                         slotCategory[p] = gunSlotObj[p].GetComponent<Gun>().category;
+                }
                 break;
             case 2:
                 Gun gun = obj.GetComponent<Gun>();
