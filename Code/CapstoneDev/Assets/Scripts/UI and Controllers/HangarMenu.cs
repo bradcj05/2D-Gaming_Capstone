@@ -144,7 +144,7 @@ public class HangarMenu : MonoBehaviour
                return;
           }
 
-          for (int p = 0; p < 3; p++)
+          for (int p = 0; p < selectionIndex; p++)
           {
                switch (p)
                {
@@ -164,20 +164,7 @@ public class HangarMenu : MonoBehaviour
                                         }
                                    }
                                    PlaneSwitching.squadArr[0] = squadron.GetChild(0).gameObject;
-                                   Debug.Log("HangarMenu: " + PlaneSwitching.squadArr[0].name);
-
-                                   /*GameObject temp1 = current.obj;
-                                   for (int j = 0; j < plane1.transform.childCount; j++)
-                                   {
-                                        if (plane1.transform.GetChild(j).childCount > 0)
-                                        {
-                                             Destroy(temp1.transform.GetChild(j).gameObject);
-                                             Instantiate(plane1.transform.GetChild(j).GetChild(0).gameObject, temp1.transform);
-                                        }
-                                   }
-                                   PlaneSwitching.squadArr[0] = temp1;
-                                   Debug.Log("HangarMenu: " + PlaneSwitching.squadArr[0].name);
-                                   break;*/
+                                   break;
                               }
                          }
                          break;
@@ -186,7 +173,17 @@ public class HangarMenu : MonoBehaviour
                          {
                               if (current.artwork == plane2.sprite)
                               {
-                                   PlaneSwitching.squadArr[1] = current.obj;
+                                   //TODO: Update to allow for positioning of new weapons
+                                   Instantiate(current.obj, squadron);
+                                   for (int j = 0; j < plane2.transform.childCount; j++)
+                                   {
+                                        if (plane2.transform.GetChild(j).childCount > 0)
+                                        {
+                                             Destroy(squadron.GetChild(1).GetChild(j).gameObject);
+                                             Instantiate(plane2.transform.GetChild(j).GetChild(0).gameObject, squadron.GetChild(1).transform);
+                                        }
+                                   }
+                                   PlaneSwitching.squadArr[1] = squadron.GetChild(1).gameObject;
                                    break;
                               }
                          }
@@ -196,7 +193,18 @@ public class HangarMenu : MonoBehaviour
                          {
                               if (current.artwork == plane3.sprite)
                               {
-                                   PlaneSwitching.squadArr[2] = current.obj;
+                                   //TODO: Update to allow for positioning of new weapons
+                                   Instantiate(current.obj, squadron);
+                                   for (int j = 0; j < plane3.transform.childCount; j++)
+                                   {
+                                        if (plane3.transform.GetChild(j).childCount > 0)
+                                        {
+                                             Destroy(squadron.GetChild(2).GetChild(j).gameObject);
+                                             Instantiate(plane3.transform.GetChild(j).GetChild(0).gameObject, squadron.GetChild(2).transform);
+                                        }
+                                   }
+                                   PlaneSwitching.squadArr[2] = squadron.GetChild(2).gameObject;
+                                   //Debug.Log(PlaneSwitching.squadArr.Length);
                                    break;
                               }
                          }

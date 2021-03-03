@@ -33,7 +33,7 @@ public class Player : Destructible
           Debug.Log(SceneManager.GetActiveScene().name);
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
-               Debug.Log("Start assigning values for the player");
+               //Debug.Log("Start assigning values for the player");
                // Initialize HUD components
                HUD = GameObject.Find("HUD").GetComponent<Transform>();
                cam = Camera.main;
