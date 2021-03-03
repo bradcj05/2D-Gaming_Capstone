@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlaneSwitching : MonoBehaviour
 {
@@ -13,8 +14,36 @@ public class PlaneSwitching : MonoBehaviour
     Vector3 startPos;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               //Debug.Break();
+               switchTimer = 0f;
+               squadronSize = transform.childCount;
+
+               //Assign numbers to the planes
+               squadArr = new GameObject[transform.childCount];
+               for (int i = 0; i < transform.childCount; i++)
+               {
+                    squadArr[i] = transform.GetChild(i).gameObject;
+               }
+
+               //spawn planes in
+               for (int i = 0; i < squadronSize; i++)
+               {
+                    if (squadArr[i] != null)
+                    {
+                         //squadArr[i] = Instantiate(squadArr[i], transform);
+                         Debug.Log("Setup should work");
+                         squadArr[i].GetComponent<Player>().SetUp();
+                    }
+               }
+
+               SelectPlane(new Vector3(0.06f, -11.27f, 0f));
+               startPos = new Vector3(0.06f, -11.27f, 0f);
+          }
+         /* //Debug.Break();
         switchTimer = 0f;
         squadronSize = transform.childCount;
 
@@ -30,19 +59,89 @@ public class PlaneSwitching : MonoBehaviour
         {
             if (squadArr[i] != null)
             {
-                /*squadArr[i] = Instantiate(squadArr[i], transform);*/
+                    //squadArr[i] = Instantiate(squadArr[i], transform);
+                    Debug.Log("Setup should work");
                 squadArr[i].GetComponent<Player>().SetUp();
             }
         }
 
         SelectPlane(new Vector3(0.06f, -11.27f, 0f));
-        startPos = new Vector3(0.06f, -11.27f, 0f);
+        startPos = new Vector3(0.06f, -11.27f, 0f);*/
     }
+
+     public void SetUp()
+     {
+          this.Start();
+     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.childCount == 0)
+          if(SceneManager.GetActiveScene().name != "Hangar")
+          {
+               if (transform.childCount == 0)
+                    Destroy(transform.gameObject);
+
+               if (switchTimer < switchDelay)
+                    switchTimer += Time.deltaTime;
+
+               int previousPlane = selectedPlane;
+               //Q and E based plane switching
+               if (switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.Q) && transform.childCount != 1)
+               {
+                    int j = selectedPlane - 1;
+                    while (j != selectedPlane)
+                    {
+                         if (j < 0)
+                              j = transform.childCount - 1;
+
+                         if (squadArr[j] != null)
+                         {
+                              selectedPlane = j;
+                              SelectPlane(squadArr[previousPlane].transform.position);
+                              break;
+                         }
+                         j--;
+                    }
+                    switchTimer = 0;
+               }
+               else if (switchTimer >= switchDelay && Input.GetKeyDown(KeyCode.E) && transform.childCount != 1)
+               {
+                    int j = selectedPlane + 1;
+                    while (j != selectedPlane)
+                    {
+                         if (j == transform.childCount)
+                              j = 0;
+
+                         if (squadArr[j] != null)
+                         {
+                              selectedPlane = j;
+                              SelectPlane(squadArr[previousPlane].transform.position);
+                              break;
+                         }
+                         j++;
+                    }
+                    switchTimer = 0;
+               }
+
+               //TODO swap to next plane if previous plane dies
+               //Fix?
+               if (squadronSize > transform.childCount)
+               {
+                    for (int j = 0; j < squadArr.Length; j++)
+                    {
+                         if (squadArr[j] != null)
+                         {
+                              selectedPlane = j;
+                              SelectPlane(startPos);
+                              switchTimer = 0f;
+                              squadronSize = transform.childCount;
+                              break;
+                         }
+                    }
+               }
+          }
+        /*if (transform.childCount == 0)
             Destroy(transform.gameObject);
 
         if (switchTimer < switchDelay)
@@ -102,7 +201,7 @@ public class PlaneSwitching : MonoBehaviour
                     break;
                 }
             }
-        }
+        }*/
     }
 
     //Changes which of the planes in the squadron are active
