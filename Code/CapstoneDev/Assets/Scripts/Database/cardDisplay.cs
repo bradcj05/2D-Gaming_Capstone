@@ -111,12 +111,15 @@ public class cardDisplay : MonoBehaviour
                     case 1:
                         //Maybe add sound effect here to indicate a purchase has been made
                         ObjectList.planeList.Add(cards);
+                        HangarMenu.AddButton(cards);
                         break;
                     case 2:
                         ObjectList.gunList.Add(cards);
+                        HangarMenu.AddButton(cards);
                         break;
                     case 3:
                         ObjectList.shellList.Add(cards);
+                        HangarMenu.AddButton(cards);
                         break;
                     default:
                         Debug.Log("Please give this card the right card type.");
