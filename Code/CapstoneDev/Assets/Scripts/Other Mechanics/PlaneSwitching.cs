@@ -40,7 +40,6 @@ public class PlaneSwitching : MonoBehaviour
                          squadArr[i].GetComponent<Player>().SetUp();
                     }
                }
-
                SelectPlane(new Vector3(0.06f, -11.27f, 0f));
                startPos = new Vector3(0.06f, -11.27f, 0f);
           }

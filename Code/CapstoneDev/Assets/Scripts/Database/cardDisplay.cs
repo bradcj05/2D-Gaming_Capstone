@@ -74,18 +74,19 @@ public class cardDisplay : MonoBehaviour
         }
     }
 
-    void Update()
+    /*void Update()
     {
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
             lockImage.gameObject.SetActive(false);
         else
             lockImage.gameObject.SetActive(true);
-    }
+    }*/
 
     // May not be the right script for this function
     public void BuyItem()
     {
-        if (cards.unlockLevel != -1 && !Progression.progress[cards.unlockLevel])
+          Debug.Log(lockImage.gameObject.activeSelf);
+        if(lockImage.gameObject.activeSelf)
         {
             Debug.Log("Item is locked.");
             return;
