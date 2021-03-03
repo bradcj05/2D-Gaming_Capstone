@@ -545,6 +545,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8850510105904736319, guid: 05423d4e755bff845b0549c3db3d1a9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05423d4e755bff845b0549c3db3d1a9c, type: 3}
 --- !u!1 &8331037395149110913 stripped
@@ -971,6 +976,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondaryGun (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4987630469147023861, guid: 470d72891bf3ead478748e024a8aa723,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714930600171871308, guid: 470d72891bf3ead478748e024a8aa723,
         type: 3}
       propertyPath: grade
@@ -1071,6 +1081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850510105904736319, guid: 05423d4e755bff845b0549c3db3d1a9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05423d4e755bff845b0549c3db3d1a9c, type: 3}
@@ -1337,6 +1352,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecondaryGun
       objectReference: {fileID: 0}
+    - target: {fileID: 4987630469147023861, guid: 470d72891bf3ead478748e024a8aa723,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714930600171871308, guid: 470d72891bf3ead478748e024a8aa723,
         type: 3}
       propertyPath: grade
@@ -1546,6 +1566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SecondaryGun (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4987630469147023861, guid: 470d72891bf3ead478748e024a8aa723,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8714930600171871308, guid: 470d72891bf3ead478748e024a8aa723,
         type: 3}

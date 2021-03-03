@@ -7,36 +7,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
   m_Name: Ju-5Info
   m_EditorClassIdentifier: 
   cardType: 1
-  obj: {fileID: 5191979653864110402, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
-  unlock: 0
+  obj: {fileID: 7837649921252861507, guid: 3565b9f7e0284924ea5d6b03f689356c, type: 3}
+  unlockLevel: 1
   name: Ju-5
   cost: 0
   artwork: {fileID: 21300000, guid: 4da60e5525cd8f04a94e01223747ced0, type: 3}
-  speed: 11
-  defense: 0
-  health: 20
-  gunSlotClass:
-  - 
-  - 
-  - 
-  - 
-  gunSlotSpecs:
-  - 
-  - 
-  - 
-  - 
-  reloadTime: 0
-  powerBuff: 0
-  speedBuff: 0
-  power: 0
-  shellSpeed: 0
-  penetration: 0
-  deterioration: 0
-  type: 0
-  classOf: 0
+  description: 
+  gunSlotNum: 4
+  gunSlotObj:
+  - {fileID: 1623911600385347926, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
+  - {fileID: 2142098329240353756, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
+  - {fileID: 6066901573245638249, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
+  - {fileID: 582562983681557819, guid: e7cf459c099d0884f9888c21f4f753e8, type: 3}
+  slotType: 00000000000000000100000001000000
+  slotGrade: 00000000000000000000000000000000
+  slotCategory: 01000000010000000200000002000000
