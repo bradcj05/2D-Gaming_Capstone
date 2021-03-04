@@ -10,7 +10,7 @@ public class PlaneSwitching : MonoBehaviour
     float switchDelay = 2f;
     public float switchTimer; // Public for better testing
     static int squadronSize = 3;
-     int size = squadronSize;
+    int size = squadronSize;
     public static GameObject[] squadArr = new GameObject[squadronSize];
     Vector3 startPos;
 
