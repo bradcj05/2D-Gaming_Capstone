@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Destructible : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Destructible : MonoBehaviour
     public float defense;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar
-    
+
     // Explosion effects
     public ParticleSystem explosion = null;
     public float explosionDuration = 2f;
@@ -41,6 +42,9 @@ public class Destructible : MonoBehaviour
         if (defenseBar != null)
         {
             defenseBar.SetMax(defense);
+            Color defenseColor = defenseBar.transform.GetChild(0).GetComponent<Image>().color;
+            defenseColor.a = 2f / (1f + Mathf.Exp(-defense / 2)) - 1f;
+            defenseBar.transform.GetChild(0).GetComponent<Image>().color = defenseColor;
         }
         maxHealth = health;
         if (healthBar != null)
@@ -49,7 +53,8 @@ public class Destructible : MonoBehaviour
         }
     }
 
-    public void Update() {
+    public void Update()
+    {
     }
 
     // Damage calculations
@@ -59,11 +64,11 @@ public class Destructible : MonoBehaviour
         {
             health -= damage;
             healthBar.SetHealth(health);
-            defenseBar.SetHealth(0);
+            defenseBar.SetHealth(defense * health / maxHealth);
         }
         else if (damage < 0 && defenseBar != null)
         {
-            defenseBar.SetHealth(-damage);
+            defenseBar.SetHealth(-damage * health / maxHealth);
         }
         if (health <= 0)
         {
@@ -95,14 +100,14 @@ public class Destructible : MonoBehaviour
             }
         }
 
-          //Spawn coin if supposed to
-          if (coin != null)
-               Instantiate(coin, transform.position, transform.rotation);
+        //Spawn coin if supposed to
+        if (coin != null)
+            Instantiate(coin, transform.position, transform.rotation);
 
         //Play explosion
         if (explosion != null)
         {
-            
+
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;
