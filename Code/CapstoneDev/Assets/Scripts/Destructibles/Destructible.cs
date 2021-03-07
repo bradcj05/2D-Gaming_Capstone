@@ -13,6 +13,8 @@ public class Destructible : MonoBehaviour
 
     // Explosion effects
     public ParticleSystem explosion = null;
+    protected ExplosionChain explosionChain;
+    public bool hasExplosionChain = false;
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
@@ -50,6 +52,11 @@ public class Destructible : MonoBehaviour
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);
+        }
+        // Register explosion chain as a death effect
+        if (hasExplosionChain)
+        {
+            explosionChain = GetComponent<ExplosionChain>();
         }
     }
 
@@ -112,6 +119,12 @@ public class Destructible : MonoBehaviour
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;
             curExplosion.Play(true);
+        }
+
+        // Play explosion chain
+        if (hasExplosionChain)
+        {
+            explosionChain.TriggerExplosionChain();
         }
 
         //Actually destroy object
