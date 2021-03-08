@@ -20,8 +20,12 @@ public class C_Boundary : MonoBehaviour{   //for orthographic view
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
-        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
+        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x/3, screenBounds.x - objectWidth / 2);
+        viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y/3, screenBounds.y - objectHeight);
+
+        //original version from source code
+        //viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
+        //viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
         transform.position = viewPos;
     }
 }
