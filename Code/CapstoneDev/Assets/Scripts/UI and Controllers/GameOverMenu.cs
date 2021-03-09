@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //Manages the Game Over menu
-//TODO: Implement Game Over into gameplay
 public class GameOverMenu : MonoBehaviour
 {
     public void Retry()

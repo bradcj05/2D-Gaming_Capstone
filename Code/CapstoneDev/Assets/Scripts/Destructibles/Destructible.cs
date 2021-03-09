@@ -119,8 +119,11 @@ public class Destructible : MonoBehaviour
             curExplosion.Play(true);
         }
 
-        //Actually destroy object
-        Destroy(gameObject);
+          //Actually destroy object
+          if (transform.gameObject.GetComponent("Player") != null)
+               transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
+          else
+               Destroy(gameObject);
     }
 
     // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH

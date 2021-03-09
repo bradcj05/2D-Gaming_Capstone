@@ -46,7 +46,11 @@ public class Player : Destructible
                base.Start();
                // To display name on HealthDock
                nameText.text = cards.name;
-               maxHealth = health;
+               //TODO: Fix this issue
+               if (maxHealth > 0)
+                    health = maxHealth;
+               else
+                    maxHealth = health;
                isDestroyed = 1;
                // Set cooldown slider 
           }
@@ -122,8 +126,9 @@ public class Player : Destructible
     {
         if (isDestroyed == 1)
         {
-            //Play death animation
-            Destroy(gameObject);
+               //Play death animation
+               //Destroy(gameObject);
+               transform.gameObject.SetActive(false);
             isDestroyed = 0;
         }
     }
@@ -138,6 +143,11 @@ public class Player : Destructible
     {
         return secondaryAmmo;
     }
+
+     public int GetIsDestroyed()
+     {
+          return isDestroyed;
+     }
 
     public void setCooldownSlider(HealthBar input)
     {
