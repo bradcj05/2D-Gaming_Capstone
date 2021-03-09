@@ -9,7 +9,7 @@ public class ExplosionChain : MonoBehaviour
     protected int counter;
     public float explosionTiming = 1f;
     public int timesRepeated = 1;
-    protected int currentIteration = 0;
+    protected int currentIteration = 1;
     protected float explosionTimer;
 
     // Start is called before the first frame update

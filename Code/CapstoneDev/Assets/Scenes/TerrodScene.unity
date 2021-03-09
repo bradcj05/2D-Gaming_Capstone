@@ -1977,6 +1977,7 @@ MonoBehaviour:
   - {fileID: 613531056}
   - {fileID: 183281306}
   explosionTiming: 0.5
+  timesRepeated: 1
 --- !u!1 &1248061503
 GameObject:
   m_ObjectHideFlags: 0
