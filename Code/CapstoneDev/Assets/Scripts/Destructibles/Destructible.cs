@@ -114,7 +114,6 @@ public class Destructible : MonoBehaviour
         //Play explosion
         if (explosion != null)
         {
-
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;
@@ -128,7 +127,10 @@ public class Destructible : MonoBehaviour
         }
 
         //Actually destroy object
-        Destroy(gameObject);
+        if (transform.gameObject.GetComponent("Player") != null)
+            transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
+        else
+            Destroy(gameObject);
     }
 
     // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH

@@ -25,7 +25,7 @@ public class DetectEvents : MonoBehaviour
 
     public void Update()
     {
-        if (player == null)
+        if (player.GetComponent<PlaneSwitching>().GetIsDead())
         {
             gameOverMenu.SetActive(true);
         }

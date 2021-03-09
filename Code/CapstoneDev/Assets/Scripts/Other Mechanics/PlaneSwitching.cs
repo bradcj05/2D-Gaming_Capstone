@@ -12,17 +12,18 @@ public class PlaneSwitching : MonoBehaviour
     static int squadronSize = 3;
     int size = squadronSize;
     public static GameObject[] squadArr = new GameObject[squadronSize];
+
     Vector3 startPos;
+     protected bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
-               //Debug.Break();
                switchTimer = 0f;
+               isDead = false;
                //squadronSize = transform.childCount;
-               Debug.Log("Max Planes: " + squadArr.Length);
                //Assign numbers to the planes
                //squadArr = new GameObject[transform.childCount];
                for (int i = 0; i < transform.childCount; i++)
@@ -40,6 +41,15 @@ public class PlaneSwitching : MonoBehaviour
                          squadArr[i].GetComponent<Player>().SetUp();
                     }
                }
+
+               //Ensure weapons are active
+               for(int i = 0; i < transform.childCount; i++)
+               {
+                    for(int j = 0; j < transform.GetChild(i).childCount - 1; j++)
+                    {
+                         transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                    }
+               }
                SelectPlane(new Vector3(0.06f, -11.27f, 0f));
                startPos = new Vector3(0.06f, -11.27f, 0f);
           }
@@ -55,8 +65,12 @@ public class PlaneSwitching : MonoBehaviour
     {
           if(SceneManager.GetActiveScene().name != "Hangar")
           {
+               /*/TODO: Change this
                if (transform.childCount == 0)
-                    Destroy(transform.gameObject);
+               {
+                    isDead = true;
+                    transform.gameObject.SetActive(false); //Just in case
+               }*/
 
                if (switchTimer < switchDelay)
                     switchTimer += Time.deltaTime;
@@ -71,7 +85,7 @@ public class PlaneSwitching : MonoBehaviour
                          if (j < 0)
                               j = transform.childCount - 1;
 
-                         if (squadArr[j] != null)
+                         if (squadArr[j] != null && squadArr[j].GetComponent<Player>().GetIsDestroyed() == 1)
                          {
                               selectedPlane = j;
                               SelectPlane(squadArr[previousPlane].transform.position);
@@ -89,7 +103,7 @@ public class PlaneSwitching : MonoBehaviour
                          if (j == transform.childCount)
                               j = 0;
 
-                         if (squadArr[j] != null)
+                         if (squadArr[j] != null && squadArr[j].GetComponent<Player>().GetIsDestroyed() == 1)
                          {
                               selectedPlane = j;
                               SelectPlane(squadArr[previousPlane].transform.position);
@@ -100,19 +114,26 @@ public class PlaneSwitching : MonoBehaviour
                     switchTimer = 0;
                }
 
-               //TODO swap to next plane if previous plane dies
-               //Fix
-               if (size > transform.childCount)
+               //swap to next plane if previous plane dies
+               //TODO: Fix
+               if (squadArr[selectedPlane].GetComponent<Player>().GetIsDestroyed() == 0)
                {
-                    Debug.Log("New PLane should spawn");
+                    size--;
+                    if(size <= 0)
+                    {
+                         isDead = true;
+                         //transform.gameObject.SetActive(false); //Just in case
+                    }
+
+                    //Debug.Log("New PLane should spawn");
                     for (int j = 0; j < squadArr.Length; j++)
                     {
-                         if (squadArr[j] != null)
+                         if (squadArr[j] != null && squadArr[j].GetComponent<Player>().GetIsDestroyed() == 1)
                          {
                               selectedPlane = j;
                               SelectPlane(startPos);
                               switchTimer = 0f;
-                              size--;
+                              //size--;
                               Debug.Log("Planes in squadron: " + size);
                               break;
                          }
@@ -162,4 +183,9 @@ public class PlaneSwitching : MonoBehaviour
             i++;
         }
     }
+
+     public bool GetIsDead()
+     {
+          return isDead;
+     }
 }

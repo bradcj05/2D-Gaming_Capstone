@@ -433,7 +433,7 @@ public class HangarMenu : MonoBehaviour
           }
      }
 
-     //Messy may need fixing
+     //TODO: Fix
      public void LoadPlanes()
      {
           if (selectionIndex < 1)
@@ -457,7 +457,10 @@ public class HangarMenu : MonoBehaviour
                                         if (slots1[x].transform.childCount > 0)
                                         {
                                              Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
-                                             Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).transform);
+                                             Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).GetChild(x));
+                                             //Debug.Log("Plane: " + squadron.GetChild(0).GetChild(x).name);
+                                             squadron.GetChild(0).GetChild(x).GetChild(0).gameObject.SetActive(true);
+                                             //Debug.Log("Weapon: " + squadron.GetChild(0).GetChild(x).GetChild(0).name);
                                         }
                                    }
                                    PlaneSwitching.squadArr[0] = squadron.GetChild(0).gameObject;
@@ -476,7 +479,8 @@ public class HangarMenu : MonoBehaviour
                                         if (slots2[x].transform.childCount > 0)
                                         {
                                              Destroy(squadron.GetChild(1).GetChild(x).GetChild(0).gameObject);
-                                             Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).transform.rotation, squadron.GetChild(1).transform);
+                                             Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).transform.rotation, squadron.GetChild(1).GetChild(x));
+                                             squadron.GetChild(1).GetChild(x).GetChild(0).gameObject.SetActive(true);
                                         }
                                    }
                                    PlaneSwitching.squadArr[1] = squadron.GetChild(1).gameObject;
@@ -495,7 +499,9 @@ public class HangarMenu : MonoBehaviour
                                         if (slots3[x].transform.childCount > 0)
                                         {
                                              Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
-                                             Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).transform);
+                                             Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).GetChild(x));
+                                             squadron.GetChild(1).GetChild(x).gameObject.SetActive(true);
+                                             squadron.GetChild(1).GetChild(x).GetChild(0).gameObject.SetActive(true);
                                         }
                                    }
                                    PlaneSwitching.squadArr[2] = squadron.GetChild(2).gameObject;
