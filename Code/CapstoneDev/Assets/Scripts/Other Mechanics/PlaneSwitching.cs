@@ -45,9 +45,19 @@ public class PlaneSwitching : MonoBehaviour
                //Ensure weapons are active
                for(int i = 0; i < transform.childCount; i++)
                {
-                    for(int j = 0; j < transform.GetChild(i).childCount - 1; j++)
+                    if (transform.GetChild(i).name == "Airos Player Variant(Clone)")
                     {
-                         transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                         for (int j = 0; j < transform.GetChild(i).childCount - 2; j++)
+                         {
+                              transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                         }
+                    }
+                    else
+                    {
+                         for (int j = 0; j < transform.GetChild(i).childCount - 1; j++)
+                         {
+                              transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                         }
                     }
                }
                SelectPlane(new Vector3(0.06f, -11.27f, 0f));

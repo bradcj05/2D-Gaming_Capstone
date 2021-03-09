@@ -452,7 +452,7 @@ public class HangarMenu : MonoBehaviour
                               if (current.artwork == plane1.sprite)
                               {
                                    Instantiate(current.obj, squadron);
-                                   for (int x = 0; x < ObjectList.planeList[index].gunSlotNum; x++)
+                                   for (int x = 0; x < current.gunSlotNum; x++)
                                    {
                                         if (slots1[x].transform.childCount > 0)
                                         {
@@ -474,7 +474,7 @@ public class HangarMenu : MonoBehaviour
                               if (current.artwork == plane2.sprite)
                               {
                                    Instantiate(current.obj, squadron);
-                                   for (int x = 0; x < ObjectList.planeList[index].gunSlotNum; x++)
+                                   for (int x = 0; x < current.gunSlotNum; x++)
                                    {
                                         if (slots2[x].transform.childCount > 0)
                                         {
@@ -494,14 +494,13 @@ public class HangarMenu : MonoBehaviour
                               if (current.artwork == plane3.sprite)
                               {
                                    Instantiate(current.obj, squadron);
-                                   for (int x = 0; x < ObjectList.planeList[index].gunSlotNum; x++)
+                                   for (int x = 0; x < current.gunSlotNum; x++)
                                    {
                                         if (slots3[x].transform.childCount > 0)
                                         {
                                              Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
                                              Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).GetChild(x));
-                                             squadron.GetChild(1).GetChild(x).gameObject.SetActive(true);
-                                             squadron.GetChild(1).GetChild(x).GetChild(0).gameObject.SetActive(true);
+                                             squadron.GetChild(2).GetChild(x).gameObject.SetActive(true);
                                         }
                                    }
                                    PlaneSwitching.squadArr[2] = squadron.GetChild(2).gameObject;
