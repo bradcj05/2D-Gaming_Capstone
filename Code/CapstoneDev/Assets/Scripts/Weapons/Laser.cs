@@ -125,7 +125,7 @@ public class Laser : MonoBehaviour
                         float distance = (hit.point - (Vector2)transform.position).magnitude;
                         line.SetPosition(1, new Vector3(distance, 0, 0));
                         // Take damage by Sigmoid function
-                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2 / (1 + Mathf.Exp(-timeDifference * laserEfficiency)) - 1));
+                        e.TakeDamage((power - e.defense) * Time.deltaTime * (2f / (1f + Mathf.Exp(-timeDifference * laserEfficiency)) - 1f));
                         //Move impact particles to correct position
                         laserEndParticles.gameObject.transform.position = hit.point;
                         //Start impact particles

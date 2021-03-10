@@ -33,6 +33,20 @@ public class HomingMissile : Bullet
         timer = 0f;
     }
 
+    public void OnEnable()
+    {
+        try
+        {
+            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
+        }
+        catch (System.NullReferenceException e)
+        {
+            Debug.Log(e);
+            target = null;
+        }
+        timer = 0f;
+    }
+
     public new void Update()
     {
         base.Update();

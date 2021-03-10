@@ -30,6 +30,10 @@ public class Terrod : MonoBehaviour
     bool reverse = false; // Check if reversing
 
     //Add death animation
+    public ParticleSystem crater = null;
+    public ParticleSystem explosion = null;
+    public float explosionDuration = 2f;
+    protected Animator terrodAnimator;
 
     public void Start()
     {
@@ -76,7 +80,8 @@ public class Terrod : MonoBehaviour
             //Set the correct progression bool to true
             Progression.progress[1] = true;
             //Death animation
-            Destroy(gameObject);
+            terrodAnimator = gameObject.GetComponent<Animator>();
+            terrodAnimator.SetBool("PlayDeathAnimation", true);
         }
     }
 
@@ -194,5 +199,27 @@ public class Terrod : MonoBehaviour
                 rig.velocity = transform.up * reverseSpeed;
             }
         }
+    }
+
+    public void TerrodDeath()
+    {
+        //Add crater
+        if (crater != null)
+        {
+                ParticleSystem curCrater = Instantiate(crater, this.transform.position, explosion.transform.rotation) as ParticleSystem;
+                curCrater.Play(true);
+        }
+
+        //Play explosion
+        if (explosion != null)
+        {
+            ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
+            var main = curExplosion.main;
+            main.simulationSpeed = main.duration / explosionDuration;
+            curExplosion.Play(true);
+        }
+
+        //Actually destroy object
+        Destroy(gameObject);
     }
 }
