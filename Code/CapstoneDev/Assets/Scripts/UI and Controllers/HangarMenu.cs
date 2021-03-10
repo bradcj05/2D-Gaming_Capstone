@@ -45,7 +45,7 @@ public class HangarMenu : MonoBehaviour
      public Text st4;
 
      static Image gs;
-     //static int slotPlane;
+     static Image gunImage;
 
      void Start()
      {
@@ -95,7 +95,7 @@ public class HangarMenu : MonoBehaviour
           int p = 0;
           int s = 0;
           //Select Option and move to next part
-          //In regards to the plane's children, 0-2 are primary weapons and 3-5 are secondary weapons
+          //In regards to the plane's children, 1-3 are primary weapons and 4-6 are secondary weapons
           //TODO: FIX positioning of the slots in the Hangar
           switch (selectionIndex)
           {
@@ -109,25 +109,82 @@ public class HangarMenu : MonoBehaviour
                               switch (p)
                               {
                                    case 0:
-                                        plane1.transform.GetChild(0).gameObject.SetActive(true);
-                                        //plane1.transform.GetChild(0).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                        slots1[x] = plane1.transform.GetChild(0);
-                                        Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
-                                        slots1[x].GetChild(0).gameObject.SetActive(false);
-                                        p++;
-                                        break;
-                                   case 1:
                                         plane1.transform.GetChild(1).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(1).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(1).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(1).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(1).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
                                         //plane1.transform.GetChild(1).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                         slots1[x] = plane1.transform.GetChild(1);
                                         Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
                                         slots1[x].GetChild(0).gameObject.SetActive(false);
                                         p++;
                                         break;
-                                   case 2:
+                                   case 1:
                                         plane1.transform.GetChild(2).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(2).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(2).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(2).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(2).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
                                         //plane1.transform.GetChild(2).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                         slots1[x] = plane1.transform.GetChild(2);
+                                        Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                        slots1[x].GetChild(0).gameObject.SetActive(false);
+                                        p++;
+                                        break;
+                                   case 2:
+                                        plane1.transform.GetChild(3).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(3).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(3).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(3).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(3).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
+                                        //plane1.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
+                                        slots1[x] = plane1.transform.GetChild(3);
                                         Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
                                         slots1[x].GetChild(0).gameObject.SetActive(false);
                                         p++;
@@ -142,25 +199,86 @@ public class HangarMenu : MonoBehaviour
                               switch (s)
                               {
                                    case 0:
-                                        plane1.transform.GetChild(3).gameObject.SetActive(true);
-                                        //plane1.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                        slots1[x] = plane1.transform.GetChild(3);
-                                        Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
-                                        slots1[x].GetChild(0).gameObject.SetActive(false);
-                                        s++;
-                                        break;
-                                   case 1:
                                         plane1.transform.GetChild(4).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(4).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(4).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(4).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(4).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
                                         //plane1.transform.GetChild(4).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                         slots1[x] = plane1.transform.GetChild(4);
                                         Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
                                         slots1[x].GetChild(0).gameObject.SetActive(false);
                                         s++;
                                         break;
-                                   case 2:
+                                   case 1:
                                         plane1.transform.GetChild(5).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(5).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(5).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(5).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(5).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
                                         //plane1.transform.GetChild(5).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                         slots1[x] = plane1.transform.GetChild(5);
+                                        Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                        slots1[x].GetChild(0).gameObject.SetActive(false);
+                                        s++;
+                                        break;
+                                   case 2:
+                                        plane1.transform.GetChild(6).gameObject.SetActive(true);
+                                        if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                        {
+                                             plane1.transform.GetChild(6).GetComponent<Image>().color = Color.green;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                        {
+                                             plane1.transform.GetChild(6).GetComponent<Image>().color = Color.white;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                        {
+                                             plane1.transform.GetChild(6).GetComponent<Image>().color = Color.red;
+                                        }
+                                        else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                        {
+                                             plane1.transform.GetChild(6).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                        }
+                                        //plane1.transform.GetChild(6).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                        plane1.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                                        // To Accomidate for Airos' Laser not having a Sprite Renderer
+                                        if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
+                                        {
+                                             plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                        }
+
+                                        slots1[x] = plane1.transform.GetChild(6);
                                         Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
                                         slots1[x].GetChild(0).gameObject.SetActive(false);
                                         s++;
@@ -187,25 +305,82 @@ public class HangarMenu : MonoBehaviour
                                    switch (p)
                                    {
                                         case 0:
-                                             plane2.transform.GetChild(0).gameObject.SetActive(true);
-                                             //plane2.transform.GetChild(0).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                             slots2[x] = plane2.transform.GetChild(0);
-                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
-                                             slots2[x].GetChild(0).gameObject.SetActive(false);
-                                             p++;
-                                             break;
-                                        case 1:
                                              plane2.transform.GetChild(1).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(1).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(1).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(1).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(1).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane2.transform.GetChild(1).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                                             plane2.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots2[x] = plane2.transform.GetChild(1);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
                                              slots2[x].GetChild(0).gameObject.SetActive(false);
                                              p++;
                                              break;
-                                        case 2:
+                                        case 1:
                                              plane2.transform.GetChild(2).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(2).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(2).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(2).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(2).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane2.transform.GetChild(2).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                                             plane2.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots2[x] = plane2.transform.GetChild(2);
+                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                             slots2[x].GetChild(0).gameObject.SetActive(false);
+                                             p++;
+                                             break;
+                                        case 2:
+                                             plane2.transform.GetChild(3).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(3).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(3).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(3).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(3).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
+                                             //plane2.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                                             plane2.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
+                                             slots2[x] = plane2.transform.GetChild(3);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
                                              slots2[x].GetChild(0).gameObject.SetActive(false);
                                              p++;
@@ -220,25 +395,86 @@ public class HangarMenu : MonoBehaviour
                                    switch (s)
                                    {
                                         case 0:
-                                             plane2.transform.GetChild(3).gameObject.SetActive(true);
-                                             //plane2.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                             slots2[x] = plane2.transform.GetChild(3);
-                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
-                                             slots2[x].GetChild(0).gameObject.SetActive(false);
-                                             s++;
-                                             break;
-                                        case 1:
                                              plane2.transform.GetChild(4).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(4).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(4).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(4).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(4).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane2.transform.GetChild(4).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                                             plane2.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots2[x] = plane2.transform.GetChild(4);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
                                              slots2[x].GetChild(0).gameObject.SetActive(false);
                                              s++;
                                              break;
-                                        case 2:
+                                        case 1:
                                              plane2.transform.GetChild(5).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(5).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(5).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(5).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(5).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane2.transform.GetChild(5).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                                             plane2.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots2[x] = plane2.transform.GetChild(5);
+                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                             slots2[x].GetChild(0).gameObject.SetActive(false);
+                                             s++;
+                                             break;
+                                        case 2:
+                                             plane2.transform.GetChild(6).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane2.transform.GetChild(6).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane2.transform.GetChild(6).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane2.transform.GetChild(6).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane2.transform.GetChild(6).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
+                                             //plane2.transform.GetChild(6).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane2.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                                             // To Accomidate for Airos' Laser not having a Sprite Renderer
+                                             if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
+                                             {
+                                                  plane2.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             }
+
+                                             slots2[x] = plane2.transform.GetChild(6);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
                                              slots2[x].GetChild(0).gameObject.SetActive(false);
                                              s++;
@@ -270,25 +506,82 @@ public class HangarMenu : MonoBehaviour
                                    switch (p)
                                    {
                                         case 0:
-                                             plane3.transform.GetChild(0).gameObject.SetActive(true);
-                                             //plane3.transform.GetChild(0).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                             slots3[x] = plane3.transform.GetChild(0);
-                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
-                                             slots3[x].GetChild(0).gameObject.SetActive(false);
-                                             p++;
-                                             break;
-                                        case 1:
                                              plane3.transform.GetChild(1).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(1).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(1).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(1).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(1).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane3.transform.GetChild(1).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                                             plane3.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots3[x] = plane3.transform.GetChild(1);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
                                              slots3[x].GetChild(0).gameObject.SetActive(false);
                                              p++;
                                              break;
-                                        case 2:
+                                        case 1:
                                              plane3.transform.GetChild(2).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(2).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(2).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(2).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(2).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane3.transform.GetChild(2).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                                             plane3.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots3[x] = plane3.transform.GetChild(2);
+                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                             slots3[x].GetChild(0).gameObject.SetActive(false);
+                                             p++;
+                                             break;
+                                        case 2:
+                                             plane3.transform.GetChild(3).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(3).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(3).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(3).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(3).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
+                                             //plane3.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                                             plane3.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
+                                             slots3[x] = plane3.transform.GetChild(3);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
                                              slots3[x].GetChild(0).gameObject.SetActive(false);
                                              p++;
@@ -303,25 +596,86 @@ public class HangarMenu : MonoBehaviour
                                    switch (s)
                                    {
                                         case 0:
-                                             plane3.transform.GetChild(3).gameObject.SetActive(true);
-                                             //plane3.transform.GetChild(3).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
-                                             slots3[x] = plane3.transform.GetChild(3);
-                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
-                                             slots3[x].GetChild(0).gameObject.SetActive(false);
-                                             s++;
-                                             break;
-                                        case 1:
                                              plane3.transform.GetChild(4).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(4).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(4).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(4).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(4).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane3.transform.GetChild(4).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                                             plane3.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots3[x] = plane3.transform.GetChild(4);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
                                              slots3[x].GetChild(0).gameObject.SetActive(false);
                                              s++;
                                              break;
-                                        case 2:
+                                        case 1:
                                              plane3.transform.GetChild(5).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(5).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(5).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(5).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(5).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
                                              //plane3.transform.GetChild(5).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                                             plane3.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+
                                              slots3[x] = plane3.transform.GetChild(5);
+                                             Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                             slots3[x].GetChild(0).gameObject.SetActive(false);
+                                             s++;
+                                             break;
+                                        case 2:
+                                             plane3.transform.GetChild(6).gameObject.SetActive(true);
+                                             if ((int)ObjectList.planeList[index].slotGrade[x] == 0)
+                                             {
+                                                  plane3.transform.GetChild(6).GetComponent<Image>().color = Color.green;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 1)
+                                             {
+                                                  plane3.transform.GetChild(6).GetComponent<Image>().color = Color.white;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 2)
+                                             {
+                                                  plane3.transform.GetChild(6).GetComponent<Image>().color = Color.red;
+                                             }
+                                             else if ((int)ObjectList.planeList[index].slotGrade[x] == 3)
+                                             {
+                                                  plane3.transform.GetChild(6).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
+                                             }
+                                             //plane3.transform.GetChild(6).position = ObjectList.planeList[index].gunSlotObj[x].transform.position;
+                                             plane3.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
+                                             // To Accomidate for Airos' Laser not having a Sprite Renderer
+                                             if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
+                                             {
+                                                  plane3.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             }
+
+                                             slots3[x] = plane3.transform.GetChild(6);
                                              Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
                                              slots3[x].GetChild(0).gameObject.SetActive(false);
                                              s++;
@@ -356,7 +710,8 @@ public class HangarMenu : MonoBehaviour
                          if (slots3[x] != null && slots3[x].childCount > 0)
                               Destroy(slots3[x].GetChild(0).gameObject);
                          slots3[x] = null;
-                         plane3.transform.GetChild(x).gameObject.SetActive(false);
+                         plane3.transform.GetChild(0).GetChild(x).gameObject.SetActive(false);
+                         plane3.transform.GetChild(x + 1).gameObject.SetActive(false);
                     }
                     plane3.gameObject.SetActive(false);
                     plane3.sprite = null;
@@ -368,7 +723,8 @@ public class HangarMenu : MonoBehaviour
                          if (slots2[x] != null && slots2[x].childCount > 0)
                               Destroy(slots2[x].GetChild(0).gameObject);
                          slots2[x] = null;
-                         plane2.transform.GetChild(x).gameObject.SetActive(false);
+                         plane2.transform.GetChild(0).GetChild(x).gameObject.SetActive(false);
+                         plane2.transform.GetChild(x + 1).gameObject.SetActive(false);
                     }
                     plane2.gameObject.SetActive(false);
                     plane2.sprite = null;
@@ -380,7 +736,8 @@ public class HangarMenu : MonoBehaviour
                          if (slots1[x] != null && slots1[x].childCount > 0)
                               Destroy(slots1[x].GetChild(0).gameObject);
                          slots1[x] = null;
-                         plane1.transform.GetChild(x).gameObject.SetActive(false);
+                         plane1.transform.GetChild(0).GetChild(x).gameObject.SetActive(false);
+                         plane1.transform.GetChild(x + 1).gameObject.SetActive(false);
                     }
                     plane1.gameObject.SetActive(false);
                     plane1.sprite = null;
@@ -519,25 +876,24 @@ public class HangarMenu : MonoBehaviour
      //Will need improvements
      public void selectSlot(Image slot)
      {
-          //slotPlane = 0;
           for(int x = 0; x < 6; x++)
           {
                if (slots1[x] != null && slot.transform == slots1[x].transform)
                {
                     gs = slots1[x].GetComponent<Image>();
-                    //slotPlane = 1;
+                    gunImage = plane1.transform.GetChild(0).GetChild(x).GetComponent<Image>();
                     break;
                }
                else if (slots2[x] != null && slot.transform == slots2[x].transform)
                {
                     gs = slots2[x].GetComponent<Image>();
-                    //slotPlane = 2;
+                    gunImage = plane2.transform.GetChild(0).GetChild(x).GetComponent<Image>();
                     break;
                }
                else if (slots3[x] != null && slot.transform == slots3[x].transform)
                {
                     gs = slots3[x].GetComponent<Image>();
-                    //slotPlane = 3;
+                    gunImage = plane3.transform.GetChild(0).GetChild(x).GetComponent<Image>();
                     break;
                }
           }
@@ -592,6 +948,7 @@ public class HangarMenu : MonoBehaviour
                     Destroy(gs.transform.GetChild(0).gameObject);
                }
                Instantiate(c.cards.obj, gs.transform);
+               gunImage.sprite = c.cards.artwork;
 
                primaryArmory.SetActive(false);
                secondaryArmory.SetActive(false);
