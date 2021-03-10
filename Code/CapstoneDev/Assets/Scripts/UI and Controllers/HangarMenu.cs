@@ -545,6 +545,8 @@ public class HangarMenu : MonoBehaviour
           if (slot.sprite == primary)
           {
                shop.SetActive(false);
+               primaryArmory.SetActive(true);
+               secondaryArmory.SetActive(false);
                for (int x = 0; x < primaryArmory.transform.GetChild(1).GetChild(0).childCount; x++)
                {
                     if((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
@@ -558,16 +560,12 @@ public class HangarMenu : MonoBehaviour
                          primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(true);
                     }
                }
-               primaryArmory.SetActive(true);
-               secondaryArmory.SetActive(false);
-               Debug.Log((int)gs.transform.GetChild(0).GetComponent<Gun>().type);
-               Debug.Log((int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<cardDisplay>().cards.getType());
-               Debug.Log(primaryArmory.transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<cardDisplay>().lockImage.gameObject.activeSelf);
           }
           else if (slot.sprite == secondary)
           {
                shop.SetActive(false);
                primaryArmory.SetActive(false);
+               secondaryArmory.SetActive(true);
                for (int x = 0; x < secondaryArmory.transform.GetChild(1).GetChild(0).childCount; x++)
                {
                     if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
@@ -581,15 +579,13 @@ public class HangarMenu : MonoBehaviour
                          secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(true);
                     }
                }
-               secondaryArmory.SetActive(true);
           }
-          //Debug.Log(gs.name);
      }
 
      //Will need improvements
      public void selectGun(cardDisplay c)
      {
-          if (c.lockImage.gameObject.activeSelf)
+          if (!(c.lockImage.gameObject.activeSelf))
           {
                if (gs.transform.childCount > 0)
                {
@@ -599,7 +595,7 @@ public class HangarMenu : MonoBehaviour
 
                primaryArmory.SetActive(false);
                secondaryArmory.SetActive(false);
-               ammoArmory.SetActive(false);
+               ammoArmory.SetActive(true);
                for (int x = 0; x < ammoArmory.transform.GetChild(1).GetChild(0).childCount; x++)
                {
                     if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
@@ -613,16 +609,14 @@ public class HangarMenu : MonoBehaviour
                          ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(true);
                     }
                }
-               ammoArmory.SetActive(true);
           }
           else
                Debug.Log("Item is unequippable for this slot.");
      }
 
-     //Will need improvements
      public void selectShell(cardDisplay c)
      {
-          if (c.lockImage.gameObject.activeSelf)
+          if (!(c.lockImage.gameObject.activeSelf))
           {
                gs.transform.GetChild(0).GetComponent<PlayerGunFire>().shellTypes[0] = c.cards.obj;
 

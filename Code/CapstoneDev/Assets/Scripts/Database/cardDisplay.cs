@@ -32,12 +32,12 @@ public class cardDisplay : MonoBehaviour
 
     // Start is called before the first frame update
     //TODO Finish
-    void Start()
+    void Awake()
     {
         nameText.text = cards.name;
           if(costText != null)
                costText.text = cards.cost.ToString();
-          
+          artwork.sprite = cards.artwork;
 
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
             lockImage.gameObject.SetActive(false);
@@ -75,10 +75,8 @@ public class cardDisplay : MonoBehaviour
             lockImage.gameObject.SetActive(true);
     }*/
 
-    // May not be the right script for this function
     public void BuyItem()
     {
-          Debug.Log(lockImage.gameObject.activeSelf);
         if(lockImage.gameObject.activeSelf)
         {
             Debug.Log("Item is locked.");
@@ -87,7 +85,6 @@ public class cardDisplay : MonoBehaviour
         if (ScoreTextScript.coinAmount >= cards.cost)
         {
             // Add gameObject to the appropriate list of available objects
-            // TODO Fix, something wrong with foreach loop
             foreach (Card card in ObjectList.planeList)
             {
                 if (cards == card)
