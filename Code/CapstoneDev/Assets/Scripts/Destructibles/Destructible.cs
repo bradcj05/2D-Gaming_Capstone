@@ -5,7 +5,7 @@ using UnityEngine;
 public class Destructible : MonoBehaviour
 {
     public float health;
-    protected float maxHealth;
+    protected static float maxHealth;
     public float defense;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar
@@ -43,7 +43,10 @@ public class Destructible : MonoBehaviour
         {
             defenseBar.SetMax(defense);
         }
-        maxHealth = health;
+        if (maxHealth > 0)
+             health = maxHealth;
+        else
+             maxHealth = health;
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);

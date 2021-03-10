@@ -46,7 +46,6 @@ public class Player : Destructible
                base.Start();
                // To display name on HealthDock
                nameText.text = cards.name;
-               //TODO: Fix this issue
                if (maxHealth > 0)
                     health = maxHealth;
                else
