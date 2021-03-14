@@ -26,7 +26,7 @@ MonoBehaviour:
     a machinegun on out of frustration.
   gunSlotNum: 1
   gunSlotObj:
-  - {fileID: 6973898103564951685, guid: b4c878b797dc8cf42825ebd96a280674, type: 3}
+  - {fileID: 7119300060750479612, guid: 3b9d17012a5ce7148a2b00b41d5e8337, type: 3}
   slotType: 02000000
   slotGrade: 01000000
   slotCategory: 01000000

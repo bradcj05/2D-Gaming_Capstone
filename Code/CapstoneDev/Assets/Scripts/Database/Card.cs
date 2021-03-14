@@ -55,6 +55,11 @@ public class Card : ScriptableObject
     // Retrieve info from object
     public void Awake()
     {
+          //if(artwork.name == "Airos_final_done")
+          //{
+
+          //}
+
           //Debug.Log("Card Awake");
         switch ((int)cardType)
         {
