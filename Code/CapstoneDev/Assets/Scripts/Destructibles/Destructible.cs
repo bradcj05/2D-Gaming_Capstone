@@ -41,6 +41,7 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
+
         if (defenseBar != null)
         {
             defenseBar.SetMax(defense);
@@ -48,10 +49,12 @@ public class Destructible : MonoBehaviour
             defenseColor.a = 2f / (1f + Mathf.Exp(-defense / 2)) - 1f;
             defenseBar.transform.GetChild(0).GetComponent<Image>().color = defenseColor;
         }
+
         if (maxHealth > 0)
              health = maxHealth;
         else
              maxHealth = health;
+
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);

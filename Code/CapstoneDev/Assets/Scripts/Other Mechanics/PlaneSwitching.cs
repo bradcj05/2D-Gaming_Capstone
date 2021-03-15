@@ -50,6 +50,7 @@ public class PlaneSwitching : MonoBehaviour
                          for (int j = 0; j < transform.GetChild(i).childCount - 2; j++)
                          {
                               transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                              transform.GetChild(i).GetChild(j).GetChild(0).GetComponent<Gun>().SetUp();
                          }
                     }
                     else
@@ -57,6 +58,7 @@ public class PlaneSwitching : MonoBehaviour
                          for (int j = 0; j < transform.GetChild(i).childCount - 1; j++)
                          {
                               transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                              transform.GetChild(i).GetChild(j).GetChild(0).GetComponent<Gun>().SetUp();
                          }
                     }
                }
