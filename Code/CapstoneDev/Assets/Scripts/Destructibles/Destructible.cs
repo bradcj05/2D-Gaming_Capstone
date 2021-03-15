@@ -88,7 +88,6 @@ public class Destructible : MonoBehaviour
                 deathAnimation = gameObject.GetComponent<Animator>();
                 GameObject.Find("TextEffects").GetComponent<Animator>().SetBool("AirosDoomed", true);
                 deathAnimation.SetBool("PlayDeathAnimation", true);
-                
             }
 
             else Die();
