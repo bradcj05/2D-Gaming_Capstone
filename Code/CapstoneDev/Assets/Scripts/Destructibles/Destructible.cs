@@ -39,14 +39,17 @@ public class Destructible : MonoBehaviour
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
+
         if (defenseBar != null)
         {
             defenseBar.SetMax(defense);
         }
+
         if (maxHealth > 0)
              health = maxHealth;
         else
              maxHealth = health;
+
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);

@@ -16,11 +16,24 @@ public class Gun : WeaponsClassification
     public float recoilForce = 0f;
 
     public int ammo = -1; // Negative for infinite
+     static int maxAmmo;
 
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
-    public new void Start() { base.Start(); }
+    public new void Start()
+     {
+          base.Start();
+          if (maxAmmo != null && maxAmmo > 0)
+               ammo = maxAmmo;
+          else
+               maxAmmo = ammo;
+     }
+
+     public void SetUp()
+     {
+          this.Start();
+     }
 
     // Update is called once per frame
     public new void Update()
