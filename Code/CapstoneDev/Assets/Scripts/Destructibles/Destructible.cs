@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Destructible : MonoBehaviour
 {
@@ -9,16 +10,17 @@ public class Destructible : MonoBehaviour
     public float defense;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar
-    
+
     // Explosion effects
     public ParticleSystem explosion = null;
+    protected ExplosionChain explosionChain;
+    public bool hasExplosionChain = false;
     public float explosionDuration = 2f;
     public ParticleSystem crater;
     public bool groundCrater = false;
     public GameObject coin;
     protected Animator deathAnimation;
     public bool hasAnimator = false;
-    public bool isAiros = false;
     //public AnimationClip airosdeathanim = null;
     //private Animation anim;
 
@@ -42,6 +44,9 @@ public class Destructible : MonoBehaviour
         if (defenseBar != null)
         {
             defenseBar.SetMax(defense);
+            Color defenseColor = defenseBar.transform.GetChild(0).GetComponent<Image>().color;
+            defenseColor.a = 2f / (1f + Mathf.Exp(-defense / 2)) - 1f;
+            defenseBar.transform.GetChild(0).GetComponent<Image>().color = defenseColor;
         }
         if (maxHealth > 0)
              health = maxHealth;
@@ -51,9 +56,15 @@ public class Destructible : MonoBehaviour
         {
             healthBar.SetMax(maxHealth);
         }
+        // Register explosion chain as a death effect
+        if (hasExplosionChain)
+        {
+            explosionChain = GetComponent<ExplosionChain>();
+        }
     }
 
-    public void Update() {
+    public void Update()
+    {
     }
 
     // Damage calculations
@@ -63,23 +74,22 @@ public class Destructible : MonoBehaviour
         {
             health -= damage;
             healthBar.SetHealth(health);
-            defenseBar.SetHealth(0);
+            defenseBar.SetHealth(defense * health / maxHealth);
         }
         else if (damage < 0 && defenseBar != null)
         {
-            defenseBar.SetHealth(-damage);
+            defenseBar.SetHealth(-damage * health / maxHealth);
         }
         if (health <= 0)
         {
-            
-            if (hasAnimator == true) deathAnimation = gameObject.GetComponent<Animator>();
-            if (isAiros == true)
-            {
-                //gameObject.GetComponent<Laser>().stoplaser();
-                //gameObject.FlameSystem.stop(true);
-                deathAnimation.SetBool("PlayAirosDeath", true);
 
+            if (hasAnimator == true)
+            {
+                deathAnimation = gameObject.GetComponent<Animator>();
+                GameObject.Find("TextEffects").GetComponent<Animator>().SetBool("AirosDoomed", true);
+                deathAnimation.SetBool("PlayDeathAnimation", true);
             }
+
             else Die();
         }
     }
@@ -87,46 +97,44 @@ public class Destructible : MonoBehaviour
     // Destruction function
     public void Die()
     {
-        //Play death animation
-        /**if (airosdeathanim != null)
-        {
-            anim = GetComponent<Animation>();
-            anim.Play();
-        }**/
-        //airosdeathanim = gameObject.GetComponent();
         //Add crater
         if (crater != null)
         {
-            if (groundCrater == false) crater.Play(true);
-            //GameObject c = Instantiate(crater, this.transform.position, this.transform.rotation) as GameObject;
-            //if (parent != null)
+            if (groundCrater == false)
+            {
+                crater.Play(true);
+            }
             else
             {
-                //c.transform.parent = parent.transform;
                 ParticleSystem curCrater = Instantiate(crater, this.transform.position, explosion.transform.rotation) as ParticleSystem;
                 curCrater.Play(true);
             }
         }
 
-          //Spawn coin if supposed to
-          if (coin != null)
-               Instantiate(coin, transform.position, transform.rotation);
+        //Spawn coin if supposed to
+        if (coin != null)
+            Instantiate(coin, transform.position, transform.rotation);
 
         //Play explosion
         if (explosion != null)
         {
-            
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
             main.simulationSpeed = main.duration / explosionDuration;
             curExplosion.Play(true);
         }
 
-          //Actually destroy object
-          if (transform.gameObject.GetComponent("Player") != null)
-               transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
-          else
-               Destroy(gameObject);
+        // Play explosion chain
+        if (hasExplosionChain)
+        {
+            explosionChain.TriggerExplosionChain();
+        }
+
+        //Actually destroy object
+        if (transform.gameObject.GetComponent("Player") != null)
+            transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
+        else
+            Destroy(gameObject);
     }
 
     // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH

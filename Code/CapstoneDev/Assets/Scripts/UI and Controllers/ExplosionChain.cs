@@ -8,6 +8,8 @@ public class ExplosionChain : MonoBehaviour
     protected bool activateExplosions;
     protected int counter;
     public float explosionTiming = 1f;
+    public int timesRepeated = 1;
+    protected int currentIteration = 1;
     protected float explosionTimer;
 
     // Start is called before the first frame update
@@ -16,7 +18,7 @@ public class ExplosionChain : MonoBehaviour
         //explosion = new ParticleSystem[10];
         activateExplosions = false;
         counter = 0;
-        explosionTimer = 0f;
+        explosionTimer = explosionTiming; // Always play first explosion upon activation
     }
 
     // Update is called once per frame
@@ -24,8 +26,6 @@ public class ExplosionChain : MonoBehaviour
     {
         if (activateExplosions)
         {
-            //explosion[0].Play(true);
-            //explosion[counter] != null && 
             explosionTimer += Time.deltaTime;
             if (explosionTimer >= explosionTiming)
             {
@@ -36,7 +36,15 @@ public class ExplosionChain : MonoBehaviour
 
             if (counter == explosion.Length)
             {
-                activateExplosions = false;
+                if (currentIteration >= timesRepeated)
+                {
+                    activateExplosions = false;
+                    currentIteration = 0;
+                }
+                else
+                {
+                    currentIteration++;
+                }
                 counter = 0;
             }
         }

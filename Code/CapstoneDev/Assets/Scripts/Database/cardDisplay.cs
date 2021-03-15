@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public class cardDisplay : MonoBehaviour
 {
-     public GameObject attributes;
-     bool purchased = false;
+    public GameObject attributes;
+    bool purchased = false;
 
-     public Card cards;
+    public Card cards;
 
-     public Image artwork;
-     public Text nameText;
-     public Text costText;
-     public Image lockImage;
+    public Image artwork;
+    public Text nameText;
+    public Text costText;
+    public Image lockImage;
 
-     public Text t1;
-     public Text t2;
-     public Text t3;
+    public Text t1;
+    public Text t2;
+    public Text t3;
 
     //For Stats bars
     public Slider s1;
@@ -34,10 +34,17 @@ public class cardDisplay : MonoBehaviour
     //TODO Finish
     void Awake()
     {
+        // Rotate image to the right
+        artwork.sprite = cards.artwork;
+        artwork.preserveAspect = false;
+        artwork.transform.Rotate(0,0,-90);
+        artwork.preserveAspect = true;
+        artwork.transform.localScale = new Vector3(2, 2, 2);
+
+        // Set values
         nameText.text = cards.name;
-          if(costText != null)
-               costText.text = cards.cost.ToString();
-          artwork.sprite = cards.artwork;
+        if (costText != null)
+            costText.text = cards.cost.ToString();
 
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
             lockImage.gameObject.SetActive(false);
