@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6343052319580483489, guid: 6b544ac8b8659974a84e89f14d22cd54,
+        type: 3}
+      propertyPath: grade
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8266578753041035190, guid: 6b544ac8b8659974a84e89f14d22cd54,
         type: 3}
       propertyPath: m_Name
-      value: Airos Player
+      value: Airos Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8266578753041035194, guid: 6b544ac8b8659974a84e89f14d22cd54,
         type: 3}
