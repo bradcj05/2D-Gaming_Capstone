@@ -18,15 +18,12 @@ MonoBehaviour:
   name: P-62
   cost: 2000
   artwork: {fileID: 21300000, guid: f274b40870737aa47ac7b41cc7c2201d, type: 3}
-  description: A rare museum piece, only two were ever produced and both were considered
-    marvelous feats of aerodynamic engineering during World War II. One got sold
-    off in some auction, and the other somehow got to Commander Jones, who then used
-    it as a training plane in his base. Remarkably maneuverable, but the project
-    was canceled before weapons could be made for it. Until some navy dude slapped
-    a machinegun on out of frustration.
+  description: An old relic from World War II, fittingly dubbed the Flying Tank,
+    the P62 can barely fly but is adept at crippling heavy armor. Most fighters of
+    the time could not penetrate its enforced frame, so they just used missiles instead.
   gunSlotNum: 1
   gunSlotObj:
-  - {fileID: 7119300060750479612, guid: 3b9d17012a5ce7148a2b00b41d5e8337, type: 3}
+  - {fileID: 0}
   slotType: 02000000
   slotGrade: 01000000
   slotCategory: 01000000

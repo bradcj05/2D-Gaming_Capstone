@@ -18,12 +18,15 @@ MonoBehaviour:
   name: Pancake
   cost: 1000
   artwork: {fileID: 21300000, guid: 8ea85f2217a20364996721701145b882, type: 3}
-  description: An old relic from World War II, fittingly dubbed the Flying Tank, the
-    P62 can barely fly but is adept at crippling heavy armor. Most fighters of the
-    time could not penetrate its enforced frame, so they just used missiles instead.
+  description: A rare museum piece, only two were ever produced and both were considered
+    marvelous feats of aerodynamic engineering during World War II. One got sold
+    off in some auction, and the other somehow got to Commander Jones, who then used
+    it as a training plane in his base. Remarkably maneuverable, but the project
+    was canceled before weapons could be made for it. Until some navy dude slapped
+    a machinegun on out of frustration.
   gunSlotNum: 1
   gunSlotObj:
-  - {fileID: 0}
+  - {fileID: 6801159979702014603, guid: a9d216ec3119a1142832d90f59a7272e, type: 3}
   slotType: 00000000
   slotGrade: 00000000
-  slotCategory: 00000000
+  slotCategory: 01000000

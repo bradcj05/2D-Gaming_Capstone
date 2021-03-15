@@ -70,7 +70,6 @@ public class Card : ScriptableObject
                 defense = plane.defense.ToString();
                 health = plane.health.ToString();
                 mass = planeRig.mass.ToString();
-                }
                 break;
             case 2:
                 Gun gun = obj.GetComponent<Gun>();
