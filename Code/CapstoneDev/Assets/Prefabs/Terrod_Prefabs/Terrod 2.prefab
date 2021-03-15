@@ -124,10 +124,12 @@ MonoBehaviour:
   healthBar: {fileID: 2284007462001974046}
   defenseBar: {fileID: 8287113502839783638}
   explosion: {fileID: 0}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
+  hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   repairTime: 5
@@ -323,10 +325,12 @@ MonoBehaviour:
   healthBar: {fileID: 2284007461400208761}
   defenseBar: {fileID: 8287113502267162289}
   explosion: {fileID: 0}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
+  hasAnimator: 0
   parent: {fileID: 5671753289216525528}
   CenterOfMass: {x: 0, y: 0, z: 0}
   repairTime: 5
@@ -458,6 +462,7 @@ GameObject:
   - component: {fileID: 5671753289216525511}
   - component: {fileID: 5671753289216525510}
   - component: {fileID: 5671753289216525529}
+  - component: {fileID: 2184085717175276451}
   m_Layer: 0
   m_Name: Terrod 2
   m_TagString: Untagged
@@ -587,6 +592,28 @@ MonoBehaviour:
   optimumDistance: 15
   accelTime: 3
   decelTime: 1
+  crater: {fileID: 0}
+  explosion: {fileID: 0}
+  explosionDuration: 2
+--- !u!95 &2184085717175276451
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671753289216525528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87f12e0fc07960244a67fd52ed4595f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1717146662547621404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,15 +890,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f389feebc99efc4391eda38b767236c, type: 3}
---- !u!50 &5671753287701548881 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8410924365959853182, guid: 0f389feebc99efc4391eda38b767236c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4183710691983375151}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5671753287701548890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8410924365959853173, guid: 0f389feebc99efc4391eda38b767236c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4183710691983375151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &5671753287701548881 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 8410924365959853182, guid: 0f389feebc99efc4391eda38b767236c,
     type: 3}
   m_PrefabInstance: {fileID: 4183710691983375151}
   m_PrefabAsset: {fileID: 0}
@@ -1357,18 +1384,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: badb78e174c033641bd5d98afe0b0eba, type: 3}
---- !u!114 &2284007462001974046 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5837915535480465994, guid: badb78e174c033641bd5d98afe0b0eba,
-    type: 3}
-  m_PrefabInstance: {fileID: 5671753288353329492}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2284007461323698313 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
@@ -1378,6 +1393,18 @@ RectTransform:
 --- !u!114 &8287113502839783638 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4447199362982867330, guid: badb78e174c033641bd5d98afe0b0eba,
+    type: 3}
+  m_PrefabInstance: {fileID: 5671753288353329492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2284007462001974046 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5837915535480465994, guid: badb78e174c033641bd5d98afe0b0eba,
     type: 3}
   m_PrefabInstance: {fileID: 5671753288353329492}
   m_PrefabAsset: {fileID: 0}

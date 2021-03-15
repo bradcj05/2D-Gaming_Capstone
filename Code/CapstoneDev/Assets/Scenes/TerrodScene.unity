@@ -1941,43 +1941,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6938023356505506684}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1163572537
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163572536}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 87f12e0fc07960244a67fd52ed4595f5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1163572538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163572536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc047be8e16fdd84a91536ccbef35df7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosion:
-  - {fileID: 1317905001}
-  - {fileID: 613531056}
-  - {fileID: 183281306}
-  explosionTiming: 0.5
-  timesRepeated: 1
 --- !u!1 &1248061503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3806,6 +3769,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6054540703024427018, guid: 550a367e5b690b84995a937792877d74,
+        type: 3}
+      propertyPath: explosion.Array.data[0]
+      value: 
+      objectReference: {fileID: 1317905001}
+    - target: {fileID: 6054540703024427018, guid: 550a367e5b690b84995a937792877d74,
+        type: 3}
+      propertyPath: explosion.Array.data[1]
+      value: 
+      objectReference: {fileID: 613531056}
+    - target: {fileID: 6054540703024427018, guid: 550a367e5b690b84995a937792877d74,
+        type: 3}
+      propertyPath: explosion.Array.data[2]
+      value: 
+      objectReference: {fileID: 183281306}
     - target: {fileID: 6813384793864881870, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
       propertyPath: m_AnchorMax.x
