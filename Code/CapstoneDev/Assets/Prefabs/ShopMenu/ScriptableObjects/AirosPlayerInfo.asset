@@ -18,7 +18,10 @@ MonoBehaviour:
   name: Airos
   cost: 0
   artwork: {fileID: 21300000, guid: 43e4b0a2dbb48ac43a681bc8f2c7efce, type: 3}
-  description: 
+  description: A recent experiment from the fine folks at Eglin, Airos is less of
+    a warplane and more of a suicide vehicle. Flying at breakneck speed and armed
+    to the teeth with a giant fuel tank just waiting to explode, it's no wonder the
+    hawk's pilots tend to go big or go home.
   gunSlotNum: 5
   gunSlotObj:
   - {fileID: 4267489263255516703, guid: 66ccad57f439f8441857d1700d235a9a, type: 3}
