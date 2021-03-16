@@ -43,6 +43,7 @@ public class HangarMenu : MonoBehaviour
     public Text st3;
     public Slider s4;
     public Text st4;
+    public Text description;
 
     public Slider planeSlider1;
     public Slider planeSlider2;
@@ -82,6 +83,7 @@ public class HangarMenu : MonoBehaviour
         gunButtonPreFab.GetComponent<cardDisplay>().st3 = st3;
         gunButtonPreFab.GetComponent<cardDisplay>().s4 = s4;
         gunButtonPreFab.GetComponent<cardDisplay>().st4 = st4;
+        gunButtonPreFab.GetComponent<cardDisplay>().description = description;
 
         shellButtonPreFab.GetComponent<cardDisplay>().s1 = s1;
         shellButtonPreFab.GetComponent<cardDisplay>().st1 = st1;
@@ -91,6 +93,7 @@ public class HangarMenu : MonoBehaviour
         shellButtonPreFab.GetComponent<cardDisplay>().st3 = st3;
         shellButtonPreFab.GetComponent<cardDisplay>().s4 = s4;
         shellButtonPreFab.GetComponent<cardDisplay>().st4 = st4;
+        shellButtonPreFab.GetComponent<cardDisplay>().description = description;
 
         //Create the Buttons from the Object Lists.
         foreach (Card c in ObjectList.gunList)

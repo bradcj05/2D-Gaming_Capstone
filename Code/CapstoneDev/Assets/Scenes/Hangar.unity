@@ -4278,6 +4278,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &208230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4913,7 +4914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5110,6 +5111,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &249284548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5964,7 +5966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.399902, y: -243.42993}
+  m_AnchoredPosition: {x: -57.400024, y: -243.42987}
   m_SizeDelta: {x: -1337.8259, y: -548.735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298927307
@@ -9932,8 +9934,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138.5, y: -0.000017512}
-  m_SizeDelta: {x: 78.07864, y: 33.787533}
+  m_AnchoredPosition: {x: -78, y: -0.000017512}
+  m_SizeDelta: {x: 200, y: 33.787533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496485626
 MonoBehaviour:
@@ -9948,7 +9950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9962,13 +9964,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Accracy
+  m_Text: Accuracy
 --- !u!222 &496485627
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10835,8 +10837,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145.87, y: -0.000017512}
-  m_SizeDelta: {x: 78.07864, y: 33.787533}
+  m_AnchoredPosition: {x: -78, y: -0.000017512}
+  m_SizeDelta: {x: 200, y: 33.787533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555795521
 MonoBehaviour:
@@ -10851,7 +10853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10865,7 +10867,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -19436,6 +19438,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &955883373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19610,7 +19613,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1907199938}
   m_HandleRect: {fileID: 1907199937}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19688,8 +19691,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -144.16, y: 0.000032783}
-  m_SizeDelta: {x: 91.504486, y: 33.787533}
+  m_AnchoredPosition: {x: -78, y: 0.000032783}
+  m_SizeDelta: {x: 200, y: 33.787533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965191539
 MonoBehaviour:
@@ -19704,7 +19707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19718,7 +19721,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -20484,6 +20487,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &1017167087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20867,6 +20871,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &1025039347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21416,7 +21421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.399902, y: 303}
+  m_AnchoredPosition: {x: -57.400024, y: 303}
   m_SizeDelta: {x: -1438.4012, y: -625.7479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065068869
@@ -22900,8 +22905,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -135.9, y: -0.000017512}
-  m_SizeDelta: {x: 78.07864, y: 33.787533}
+  m_AnchoredPosition: {x: -78, y: -0.000017512}
+  m_SizeDelta: {x: 200, y: 33.787533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144099544
 MonoBehaviour:
@@ -22916,7 +22921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22930,7 +22935,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -25924,7 +25929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -26225,7 +26230,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1963233267}
   m_HandleRect: {fileID: 1963233266}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1.0000002
   m_Size: 0.6799744
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -26714,7 +26719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -32182,7 +32187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -32418,6 +32423,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 0}
 --- !u!114 &1661998484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38010,7 +38016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.3882353, g: 0.3882353, b: 0.3882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -40704,5 +40710,10 @@ PrefabInstance:
       propertyPath: planeDescription
       value: 
       objectReference: {fileID: 1574297842}
+    - target: {fileID: 6543970222750219843, guid: 3fad96370cdd1ee4488bf8508a9df4ab,
+        type: 3}
+      propertyPath: description
+      value: 
+      objectReference: {fileID: 1804366559}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fad96370cdd1ee4488bf8508a9df4ab, type: 3}

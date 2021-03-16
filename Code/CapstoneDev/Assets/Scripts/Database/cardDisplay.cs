@@ -29,6 +29,7 @@ public class cardDisplay : MonoBehaviour
     public Text st3;
     public Slider s4;
     public Text st4;
+    public Text description;
 
     // Start is called before the first frame update
     //TODO Finish
@@ -74,6 +75,7 @@ public class cardDisplay : MonoBehaviour
         }
     }
 
+    // ENABLE IN RELEASE BUILD
     /*void Update()
     {
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
@@ -84,7 +86,7 @@ public class cardDisplay : MonoBehaviour
 
     public void BuyItem()
     {
-        if(lockImage.gameObject.activeSelf)
+        if (lockImage.gameObject.activeSelf)
         {
             Debug.Log("Item is locked.");
             return;
@@ -153,9 +155,9 @@ public class cardDisplay : MonoBehaviour
                 s1.value = 0.03f / float.Parse(cards.getReloadTime());
                 st1.text = "FIRE RATE: " + 60f / float.Parse(cards.getReloadTime()) + " RPM";
                 s2.value = float.Parse(cards.getPowerBuff()) * 0.5f;
-                st2.text = "POWER BUFF: " + cards.getPowerBuff();
+                st2.text = "POWER BUFF: " + float.Parse(cards.getPowerBuff()) * 100f + "%";
                 s3.value = float.Parse(cards.getSpeedBuff()) * 0.5f;
-                st3.text = "SPEED BUFF: " + cards.getSpeedBuff();
+                st3.text = "SPEED BUFF: " + float.Parse(cards.getSpeedBuff()) * 100f + "%";
                 s4.value = 0.5f / float.Parse(cards.getSpread());
                 st4.text = "SPREAD: " + cards.getSpread() + " Degrees";
                 break;
@@ -167,11 +169,13 @@ public class cardDisplay : MonoBehaviour
                 s3.value = float.Parse(cards.getPenetration()) * 0.1f;
                 st3.text = "PENETRATION: " + cards.getPenetration();
                 s4.value = 0.03f / float.Parse(cards.getDeterioration());
-                st4.text = "DETERIORATION: " + float.Parse(cards.getDeterioration()) * 100f + "%";
+                st4.text = "DETERIORATION: " + float.Parse(cards.getDeterioration()) * 100f + "% / s";
                 break;
             default:
                 Debug.Log("Please give this card the right card tyoe.");
                 break;
         }
+        // Display description
+        description.text = "Description: " + cards.description;
     }
 }

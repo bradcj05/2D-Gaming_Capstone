@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 200
   artwork: {fileID: 21300000, guid: 0df6876664694d942b28a2e79977d230, type: 3}
   description: 'Fast Stinger missile with long fuse life, excellent against fighters.\nExplosive
-    Power: 30'
+    Power: 30\nSeek Time: 7 s'
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 
