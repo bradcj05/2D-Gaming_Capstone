@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class cardDisplay : MonoBehaviour
 {
-    public GameObject attributes;
     bool purchased = false;
 
     public Card cards;
@@ -15,10 +14,6 @@ public class cardDisplay : MonoBehaviour
     public Text nameText;
     public Text costText;
     public Image lockImage;
-
-    public Text t1;
-    public Text t2;
-    public Text t3;
 
     //For Stats bars
     public Slider s1;
@@ -51,28 +46,6 @@ public class cardDisplay : MonoBehaviour
             lockImage.gameObject.SetActive(false);
         else
             lockImage.gameObject.SetActive(true);
-
-        switch ((int)cards.cardType)
-        {
-            case 1:
-                t1.text = "Speed: " + cards.getSpeed();
-                t2.text = "Health: " + cards.getHealth();
-                t3.text = "Defense: " + cards.getDefense();
-                break;
-            case 2:
-                t1.text = "RPM: " + cards.getReloadTime();
-                t2.text = "Pow Buff: " + cards.getPowerBuff();
-                t3.text = "Spd Buff: " + cards.getSpeedBuff();
-                break;
-            case 3:
-                t1.text = "Power: " + cards.getPower();
-                t2.text = "Speed: " + cards.getShellSpeed();
-                t3.text = "Pen: " + cards.getPenetration();
-                break;
-            default:
-                Debug.Log("Please give this card the right card type.");
-                break;
-        }
     }
 
     // ENABLE IN RELEASE BUILD

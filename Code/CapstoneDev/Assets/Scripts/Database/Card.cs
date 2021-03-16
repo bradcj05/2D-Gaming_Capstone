@@ -21,6 +21,7 @@ public class Card : ScriptableObject
     public new string name;
     public int cost;
     public Sprite artwork;
+    [TextArea]
     public string description;
 
     // Plane values
@@ -95,27 +96,14 @@ public class Card : ScriptableObject
                 spread = gun.spread.ToString();
                 break;
             case 3:
-                if (obj.GetComponent("Bullet") != null) {
-                     Bullet shell = obj.GetComponent<Bullet>();
-                     type = shell.type;
-                     grade = shell.grade;
-                     category = shell.category;
-                     power = shell.power.ToString();
-                     shellSpeed = shell.speed.ToString();
-                     penetration = shell.penetration.ToString();
-                     deterioration = shell.deterioration.ToString();
-                }
-                else
-                {
-                     PlayerLaser shell = obj.GetComponent<PlayerLaser>();
-                     type = shell.type;
-                     grade = shell.grade;
-                     category = shell.category;
-                     power = shell.power.ToString();
-                     shellSpeed = "-1";
-                     penetration = "-1";
-                     deterioration = "-1";
-                }
+                Bullet shell = obj.GetComponent<Bullet>();
+                type = shell.type;
+                grade = shell.grade;
+                category = shell.category;
+                power = shell.power.ToString();
+                shellSpeed = shell.speed.ToString();
+                penetration = shell.penetration.ToString();
+                deterioration = shell.deterioration.ToString();
                 break;
             default:
                 Debug.Log("Please give this card the right card type.");

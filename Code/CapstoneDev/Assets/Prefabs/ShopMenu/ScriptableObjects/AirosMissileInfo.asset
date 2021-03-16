@@ -18,8 +18,13 @@ MonoBehaviour:
   name: Airos Missile
   cost: 200
   artwork: {fileID: 21300000, guid: 964ed9c5617741a48a7fe5ccef8b7c1d, type: 3}
-  description: 'Armor-destroying missiles used by Airoses.\nExplosive Power: 50\nSeek
-    Time: 5 s'
+  description: 'Armor-destroying missiles used by Airoses.
+
+
+    EXPLOSIVE POWER:
+    50
+
+    SEEK TIME: 5 s'
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 
