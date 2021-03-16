@@ -17,7 +17,7 @@ MonoBehaviour:
   unlockLevel: 1
   name: Airos
   cost: 0
-  artwork: {fileID: 21300000, guid: 43e4b0a2dbb48ac43a681bc8f2c7efce, type: 3}
+  artwork: {fileID: 21300000, guid: 4fccfa3763b67724eb678177cc5c146a, type: 3}
   description: A recent experiment from the fine folks at Eglin, Airos is less of
     a warplane and more of a suicide vehicle. Flying at breakneck speed and armed
     to the teeth with a giant fuel tank just waiting to explode, it's no wonder the
