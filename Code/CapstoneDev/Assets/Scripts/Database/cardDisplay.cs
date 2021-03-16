@@ -125,8 +125,18 @@ public class cardDisplay : MonoBehaviour
                 st4.text = "MASS: " + cards.getMass();
                 break;
             case 2:
-                s1.value = 0.03f / float.Parse(cards.getReloadTime());
-                st1.text = "FIRE RATE: " + 60f / float.Parse(cards.getReloadTime()) + " RPM";
+                // Primary weapons have fairly large fire rate (max 2000 RPM)
+                if (cards.getCategory() == WeaponsClassification.Category.Primary)
+                {
+                    s1.value = 0.03f / float.Parse(cards.getReloadTime());
+                    st1.text = "FIRE RATE: " + 60f / float.Parse(cards.getReloadTime()) + " RPM";
+                }
+                // Compared to secondary weapons (max 1 charge / 3s)
+                else
+                {
+                    s1.value = 3f / float.Parse(cards.getReloadTime());
+                    st1.text = "COOLDOWN: " + cards.getReloadTime() + " s";
+                }
                 s2.value = float.Parse(cards.getPowerBuff()) * 0.5f;
                 st2.text = "POWER BUFF: " + float.Parse(cards.getPowerBuff()) * 100f + "%";
                 s3.value = float.Parse(cards.getSpeedBuff()) * 0.5f;
