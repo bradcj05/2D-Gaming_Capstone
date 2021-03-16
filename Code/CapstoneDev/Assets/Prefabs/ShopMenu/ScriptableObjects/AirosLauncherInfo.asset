@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
-  m_Name: R51TInfo
+  m_Name: AirosLauncherInfo
   m_EditorClassIdentifier: 
   cardType: 2
-  obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
-  unlockLevel: 2
-  name: R51T
-  cost: 300
-  artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
-  description: World War II-era light cannon, mountable on planes.
+  obj: {fileID: 8008107903335436393, guid: f025cbed342c3f147bad5a1a2db3f5cb, type: 3}
+  unlockLevel: 1
+  name: Airos Launcher
+  cost: 1000
+  artwork: {fileID: 21300000, guid: 8ca73c4203868054795775ea32fe1b45, type: 3}
+  description: Experimental missile launcher mounted on Airoses.
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 

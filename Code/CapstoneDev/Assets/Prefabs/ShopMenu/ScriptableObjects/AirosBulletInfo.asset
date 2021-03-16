@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
-  m_Name: R51TInfo
+  m_Name: AirosBulletInfo
   m_EditorClassIdentifier: 
-  cardType: 2
-  obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
-  unlockLevel: 2
-  name: R51T
-  cost: 300
-  artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
-  description: World War II-era light cannon, mountable on planes.
+  cardType: 3
+  obj: {fileID: 4669196573904171017, guid: 54ca85538fb6ebf44834c2b34ebee005, type: 3}
+  unlockLevel: 1
+  name: Airos Bullet
+  cost: 150
+  artwork: {fileID: 21300000, guid: fb89c7f1f1ea9d24980e539c0887d04d, type: 3}
+  description: Experimental machine-gun shell used by Airoses
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 

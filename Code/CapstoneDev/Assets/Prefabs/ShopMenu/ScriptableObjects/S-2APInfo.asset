@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c20efd7a412b6458a692962830f6a7, type: 3}
-  m_Name: R51TInfo
+  m_Name: S-2APInfo
   m_EditorClassIdentifier: 
-  cardType: 2
-  obj: {fileID: 5714245901337699405, guid: 9ac853685815c8b46a0e25e1b144d1b8, type: 3}
-  unlockLevel: 2
-  name: R51T
-  cost: 300
-  artwork: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
-  description: World War II-era light cannon, mountable on planes.
+  cardType: 3
+  obj: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa, type: 3}
+  unlockLevel: 1
+  name: S-2AP
+  cost: 100
+  artwork: {fileID: 21300000, guid: 4fd6194d3feef6c41b548ed003881eee, type: 3}
+  description: Basic machinegun bullet for simple guns.
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 

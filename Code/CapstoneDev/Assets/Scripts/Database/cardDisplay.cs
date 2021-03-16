@@ -36,10 +36,10 @@ public class cardDisplay : MonoBehaviour
     {
         // Rotate image to the right
         artwork.sprite = cards.artwork;
-        artwork.preserveAspect = false;
+        /*artwork.preserveAspect = false;
         artwork.transform.Rotate(0,0,-90);
         artwork.preserveAspect = true;
-        artwork.transform.localScale = new Vector3(2, 2, 2);
+        artwork.transform.localScale = new Vector3(2, 2, 2);*/
 
         // Set values
         nameText.text = cards.name;
