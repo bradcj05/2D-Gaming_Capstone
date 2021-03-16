@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  grade: 2
+  grade: 3
   category: 2
   shellTypes: []
   waitTime: 4

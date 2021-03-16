@@ -938,8 +938,7 @@ public class HangarMenu : MonoBehaviour
             secondaryArmory.SetActive(false);
             for (int x = 0; x < primaryArmory.transform.GetChild(1).GetChild(0).childCount; x++)
             {
-                if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
-                (int)gs.transform.GetChild(0).GetComponent<Gun>().grade == (int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getGrade() &&
+                if ((int)gs.transform.GetChild(0).GetComponent<Gun>().grade == (int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getGrade() &&
                 (int)gs.transform.GetChild(0).GetComponent<Gun>().category == (int)primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getCategory())
                 {
                     primaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(false);
@@ -957,8 +956,7 @@ public class HangarMenu : MonoBehaviour
             secondaryArmory.SetActive(true);
             for (int x = 0; x < secondaryArmory.transform.GetChild(1).GetChild(0).childCount; x++)
             {
-                if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
-                (int)gs.transform.GetChild(0).GetComponent<Gun>().grade == (int)secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getGrade() &&
+                if ((int)gs.transform.GetChild(0).GetComponent<Gun>().grade == (int)secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getGrade() &&
                 (int)gs.transform.GetChild(0).GetComponent<Gun>().category == (int)secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getCategory())
                 {
                     secondaryArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(false);
@@ -989,7 +987,6 @@ public class HangarMenu : MonoBehaviour
             for (int x = 0; x < ammoArmory.transform.GetChild(1).GetChild(0).childCount; x++)
             {
                 if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
-                (int)gs.transform.GetChild(0).GetComponent<Gun>().grade == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getGrade() &&
                 (int)gs.transform.GetChild(0).GetComponent<Gun>().category == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getCategory())
                 {
                     ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(false);

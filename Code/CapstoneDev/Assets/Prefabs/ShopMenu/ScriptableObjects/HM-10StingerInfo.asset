@@ -18,7 +18,8 @@ MonoBehaviour:
   name: HM-10 Stinger
   cost: 200
   artwork: {fileID: 21300000, guid: 0df6876664694d942b28a2e79977d230, type: 3}
-  description: Fast Stinger missile with long fuse life, excellent against fighters.
+  description: 'Fast Stinger missile with long fuse life, excellent against fighters.\nExplosive
+    Power: 30'
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 

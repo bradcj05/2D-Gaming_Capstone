@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  grade: 0
+  grade: 2
   category: 0
   power: 2
   speed: 12

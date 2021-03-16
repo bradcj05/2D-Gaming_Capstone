@@ -150,24 +150,24 @@ public class cardDisplay : MonoBehaviour
                 st4.text = "MASS: " + cards.getMass();
                 break;
             case 2:
-                s1.value = 1f / float.Parse(cards.getReloadTime()) * 0.1f;
-                st1.text = "FIRE RATE: " + cards.getReloadTime();
-                s2.value = float.Parse(cards.getPowerBuff()) * 0.1f;
+                s1.value = 0.03f / float.Parse(cards.getReloadTime());
+                st1.text = "FIRE RATE: " + 60f / float.Parse(cards.getReloadTime()) + " RPM";
+                s2.value = float.Parse(cards.getPowerBuff()) * 0.5f;
                 st2.text = "POWER BUFF: " + cards.getPowerBuff();
-                s3.value = float.Parse(cards.getSpeedBuff()) * 0.1f;
+                s3.value = float.Parse(cards.getSpeedBuff()) * 0.5f;
                 st3.text = "SPEED BUFF: " + cards.getSpeedBuff();
-                s4.value = float.Parse(cards.getSpread()) * 0.1f; ;
-                st4.text = "SPREAD: " + cards.getSpread();
+                s4.value = 0.5f / float.Parse(cards.getSpread());
+                st4.text = "SPREAD: " + cards.getSpread() + " Degrees";
                 break;
             case 3:
-                s1.value = float.Parse(cards.getPower()) * 0.1f;
+                s1.value = float.Parse(cards.getPower()) * 0.05f;
                 st1.text = "POWER: " + cards.getPower();
-                s2.value = float.Parse(cards.getShellSpeed()) * 0.1f;
+                s2.value = (float.Parse(cards.getShellSpeed()) - 5) / 30f;
                 st2.text = "SPEED: " + cards.getShellSpeed();
                 s3.value = float.Parse(cards.getPenetration()) * 0.1f;
                 st3.text = "PENETRATION: " + cards.getPenetration();
-                s4.value = float.Parse(cards.getDeterioration()) * 0.1f;
-                st4.text = "DETERIORATION: " + cards.getDeterioration();
+                s4.value = 0.03f / float.Parse(cards.getDeterioration());
+                st4.text = "DETERIORATION: " + float.Parse(cards.getDeterioration()) * 100f + "%";
                 break;
             default:
                 Debug.Log("Please give this card the right card tyoe.");
