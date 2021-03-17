@@ -35,6 +35,9 @@ public class Card : ScriptableObject
     public WeaponsClassification.Grade[] slotGrade;
     public WeaponsClassification.Category[] slotCategory;
 
+     public float[] positionScaleX;
+     public float[] positionScaleY;
+
     // Gun classification params
     protected WeaponsClassification.Type type;
     protected WeaponsClassification.Grade grade;
@@ -55,12 +58,6 @@ public class Card : ScriptableObject
     // Retrieve info from object
     public void Awake()
     {
-        //if(artwork.name == "Airos_final_done")
-        //{
-
-        //}
-
-        //Debug.Log("Card Awake");
         switch ((int)cardType)
         {
             case 1:
