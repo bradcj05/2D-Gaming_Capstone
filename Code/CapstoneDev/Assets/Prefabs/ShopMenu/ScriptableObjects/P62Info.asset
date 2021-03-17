@@ -27,3 +27,7 @@ MonoBehaviour:
   slotType: 02000000
   slotGrade: 01000000
   slotCategory: 01000000
+  positionScaleX:
+  - 0
+  positionScaleY:
+  - 31.41361
