@@ -1,4 +1,4 @@
-﻿// Class to be used for every gun in the game
+// Class to be used for every gun in the game
 
 using System.Collections;
 using System.Collections.Generic;

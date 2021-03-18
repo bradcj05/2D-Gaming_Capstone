@@ -549,6 +549,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1377914649509258240, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649509258269, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649509258270, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649509258270, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649509258270, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270479, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270512, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270512, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270512, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270512, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377914649871270514, guid: 7724e83ac02ea224f9f6ad268db95078,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1377914650299594927, guid: 7724e83ac02ea224f9f6ad268db95078,
         type: 3}
       propertyPath: m_Name
