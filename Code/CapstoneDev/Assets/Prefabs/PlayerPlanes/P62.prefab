@@ -125,12 +125,12 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 6977633893847995241}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
   hasAnimator: 0
-  isAiros: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
   HUD: {fileID: 0}
