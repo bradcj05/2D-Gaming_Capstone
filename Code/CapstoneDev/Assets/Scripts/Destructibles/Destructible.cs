@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Destructible : MonoBehaviour
 {
     public float health;
-    protected static float maxHealth;
+    protected float maxHealth;
     public float defense;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar

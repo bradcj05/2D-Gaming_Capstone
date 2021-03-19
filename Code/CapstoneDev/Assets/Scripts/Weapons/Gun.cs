@@ -16,7 +16,7 @@ public class Gun : WeaponsClassification
     public float recoilForce = 0f;
 
     public int ammo = -1; // Negative for infinite
-     static int maxAmmo;
+    protected int maxAmmo;
 
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
