@@ -18,7 +18,10 @@ MonoBehaviour:
   name: R-5HE
   cost: 100
   artwork: {fileID: 0}
-  description: 'High-explosive shell for 42mm cannons.\nExplosive Power: 30'
+  description: 'High-explosive shell for 42mm cannons.
+
+
+    EXPLOSIVE POWER: 30'
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 

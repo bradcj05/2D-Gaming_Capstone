@@ -81,6 +81,7 @@ public class Terrod : MonoBehaviour
             Progression.progress[1] = true;
             //Death animation
             terrodAnimator = gameObject.GetComponent<Animator>();
+            GameObject.Find("TextEffectsTerrod").GetComponent<Animator>().SetBool("BossDoomed", true);
             terrodAnimator.SetBool("PlayDeathAnimation", true);
         }
     }

@@ -1,4 +1,4 @@
-﻿// Class to be used for every gun in the game
+// Class to be used for every gun in the game
 
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ public class Gun : WeaponsClassification
     public float recoilForce = 0f;
 
     public int ammo = -1; // Negative for infinite
-     static int maxAmmo;
+    protected int maxAmmo;
 
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;

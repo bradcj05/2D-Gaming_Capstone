@@ -18,7 +18,15 @@ MonoBehaviour:
   name: ST-6 Launcher
   cost: 300
   artwork: {fileID: 21300000, guid: c9f6534b29ec1f34d86ebfc9d86355e6, type: 3}
-  description: Small missile launcher for Stinger missiles.
+  description: 'Small missile launcher for Stinger missiles.
+
+
+    CAPACITY: 6 missiles
+
+    SALVO
+    SIZE: 3
+
+    SALVO COOLDOWN: 1 s'
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 
