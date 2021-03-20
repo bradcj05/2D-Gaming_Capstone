@@ -59,7 +59,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   power: 30
-  laserEfficiency: 0.5
+  laserEfficiency: 1
   piercing: 0
 --- !u!1 &4476682115903611889
 GameObject:
