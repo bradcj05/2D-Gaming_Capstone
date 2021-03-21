@@ -4351,15 +4351,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 26174017}
   cards: {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   artwork: {fileID: 750235578}
   nameText: {fileID: 1206791570}
   costText: {fileID: 1102775578}
   lockImage: {fileID: 740474162}
-  t1: {fileID: 549303960}
-  t2: {fileID: 261653499}
-  t3: {fileID: 1298127564}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -4368,6 +4364,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &208230947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5183,15 +5180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 527307398}
   cards: {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   artwork: {fileID: 273792430}
   nameText: {fileID: 883062571}
   costText: {fileID: 1251598790}
   lockImage: {fileID: 1595399564}
-  t1: {fileID: 140711444}
-  t2: {fileID: 746332099}
-  t3: {fileID: 2115946968}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -5200,6 +5193,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &249284548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19376,15 +19370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 1136433869}
   cards: {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   artwork: {fileID: 406118994}
   nameText: {fileID: 1423134266}
   costText: {fileID: 1988391116}
   lockImage: {fileID: 1421154001}
-  t1: {fileID: 21626714}
-  t2: {fileID: 661939789}
-  t3: {fileID: 2094400783}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -19393,6 +19383,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &955883373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20424,15 +20415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 1267229385}
   cards: {fileID: 11400000, guid: 3294c449e9aabca4ab83818584e7734a, type: 2}
   artwork: {fileID: 84382894}
   nameText: {fileID: 1144575236}
   costText: {fileID: 2087934152}
   lockImage: {fileID: 680584870}
-  t1: {fileID: 1495650015}
-  t2: {fileID: 1317605495}
-  t3: {fileID: 1082540516}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -20441,6 +20428,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &1017167087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20807,15 +20795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 1001654158}
   cards: {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   artwork: {fileID: 1459378920}
   nameText: {fileID: 1446607090}
   costText: {fileID: 780046924}
   lockImage: {fileID: 483426685}
-  t1: {fileID: 422380171}
-  t2: {fileID: 1099852740}
-  t3: {fileID: 1023183412}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -20824,6 +20808,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &1025039347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32474,15 +32459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e622fe2528fc646b087a97a739f1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 1712255768}
   cards: {fileID: 11400000, guid: cd89b8de244534d489f8546229956bb4, type: 2}
   artwork: {fileID: 1177428867}
   nameText: {fileID: 646309176}
   costText: {fileID: 684632072}
   lockImage: {fileID: 774329119}
-  t1: {fileID: 259599592}
-  t2: {fileID: 344147110}
-  t3: {fileID: 1389003601}
   s1: {fileID: 396540870}
   st1: {fileID: 965191539}
   s2: {fileID: 647903}
@@ -32491,6 +32472,7 @@ MonoBehaviour:
   st3: {fileID: 496485626}
   s4: {fileID: 1185037563}
   st4: {fileID: 555795521}
+  description: {fileID: 1694334920}
 --- !u!114 &1661998484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33862,7 +33844,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c08eb30487c75e84caf9a0194da6ac95, type: 2}
   - {fileID: 11400000, guid: eda6f1784416f244ba99331712fd7035, type: 2}
   - {fileID: 11400000, guid: 0e58e8b079d0a724d91af2f0d2fc8dac, type: 2}
-  - {fileID: 11400000, guid: 4ac330b05fe49ec47aabcc4b5e35717a, type: 2}
   - {fileID: 11400000, guid: b1f1715b61af18a4fb1ae927929061e8, type: 2}
 --- !u!4 &1746549329
 Transform:
@@ -40698,5 +40679,10 @@ PrefabInstance:
       propertyPath: planeDescription
       value: 
       objectReference: {fileID: 1574297842}
+    - target: {fileID: 6543970222750219843, guid: 3fad96370cdd1ee4488bf8508a9df4ab,
+        type: 3}
+      propertyPath: description
+      value: 
+      objectReference: {fileID: 1694334920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fad96370cdd1ee4488bf8508a9df4ab, type: 3}
