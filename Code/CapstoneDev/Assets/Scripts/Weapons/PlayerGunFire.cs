@@ -8,11 +8,13 @@ public class PlayerGunFire : Gun
     protected int activeType;
     protected int numTypes;
     protected bool auto = false;
+    protected Player player;
 
     // Start
     public new void Start()
     {
         base.Start();
+        player = transform.parent.parent.GetComponent<Player>();
         numTypes = shellTypes.Length;
         activeType = 0;
     }
@@ -45,7 +47,18 @@ public class PlayerGunFire : Gun
         timer += Time.deltaTime;
         if ((Input.GetButton("Fire1") || auto) && timer >= waitTime && SceneManager.GetActiveScene().name != "Hangar")
         {
-            Fire(shellTypes[activeType]);
+            // DEV MODE - Set power to 9999, fire, then reset
+            if (player.devMode && Input.GetKey(KeyCode.V))
+            {
+                dev = true;
+                Fire(shellTypes[activeType]);
+            }
+            else
+            {
+                // Fire normally
+                dev = false;
+                Fire(shellTypes[activeType]);
+            }
             timer = 0f;
         }
     }

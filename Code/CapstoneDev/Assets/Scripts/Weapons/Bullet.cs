@@ -38,9 +38,6 @@ public class Bullet : WeaponsClassification
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        // Set default stats
-        curPower = power;
-        curSpeed = speed;
     }
 
     // Update is called every frame

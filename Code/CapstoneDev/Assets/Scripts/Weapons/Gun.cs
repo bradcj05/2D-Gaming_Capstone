@@ -18,6 +18,9 @@ public class Gun : WeaponsClassification
     public int ammo = -1; // Negative for infinite
     protected int maxAmmo;
 
+    // Dev mode
+    protected bool dev = false;
+
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
@@ -91,7 +94,16 @@ public class Gun : WeaponsClassification
                 // Apply speed and power buff if bullet is just created (i.e. not recovered from object pool)
                 float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
                 bullet.GetComponent<Bullet>().SetCurSpeed(bulletSpeed);
-                bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
+                // DEV MODE - Set power to 9999, fire, then reset
+                if (dev)
+                {
+                    bullet.GetComponent<Bullet>().SetCurPower(9999f);
+                    Debug.Log("DEV!!!");
+                }
+                else
+                {
+                    bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
+                }
                 // Push bullet
                 rig.velocity = bulletSpawn.up * bulletSpeed;
                 // Recoil

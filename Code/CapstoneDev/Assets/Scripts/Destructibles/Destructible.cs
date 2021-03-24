@@ -21,10 +21,9 @@ public class Destructible : MonoBehaviour
     public GameObject coin;
     protected Animator deathAnimation;
     public bool hasAnimator = false;
-    //public AnimationClip airosdeathanim = null;
-    //private Animation anim;
 
     public GameObject parent;
+    protected DestructibleSpawn spawner = null;
 
     protected Rigidbody2D rb;
     public Vector3 CenterOfMass;
@@ -85,16 +84,20 @@ public class Destructible : MonoBehaviour
         }
         if (health <= 0)
         {
-
             if (hasAnimator == true)
             {
                 deathAnimation = gameObject.GetComponent<Animator>();
-                GameObject.Find("TextEffectsAiros").GetComponent<Animator>().SetBool("AirosDoomed", true);
-                deathAnimation.SetBool("PlayDeathAnimation", true);
+                DeathAnimationProcess();
             }
 
             else Die();
         }
+    }
+
+    // Death animation processor, more for specific enemies
+    public void DeathAnimationProcess()
+    {
+        deathAnimation.SetBool("PlayDeathAnimation", true);
     }
 
     // Destruction function
@@ -133,6 +136,12 @@ public class Destructible : MonoBehaviour
             explosionChain.TriggerExplosionChain();
         }
 
+        // Report to spawner that it's dead, if eligible
+        if (spawner)
+        {
+            spawner.SetAlive(false);
+        }
+
         //Actually destroy object
         if (transform.gameObject.GetComponent("Player") != null)
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
@@ -140,9 +149,15 @@ public class Destructible : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH
+    // Getters and setters
     public float getMaxHealth()
     {
         return maxHealth;
+    }
+
+    // Setters
+    public void SetSpawner(DestructibleSpawn spawner)
+    {
+        this.spawner = spawner;
     }
 }
