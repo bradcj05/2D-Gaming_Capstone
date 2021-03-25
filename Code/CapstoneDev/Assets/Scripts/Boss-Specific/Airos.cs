@@ -194,6 +194,13 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         
     }
 
+    // DeathAnimation stuff
+    public new void DeathAnimationProcess()
+    {
+        GameObject.Find("TextEffectsAiros").GetComponent<Animator>().SetBool("AirosDoomed", true);
+        deathAnimation.SetBool("PlayDeathAnimation", true);
+    }
+    
     public void DeathAnimation()
     {
         deathCounter = 1;

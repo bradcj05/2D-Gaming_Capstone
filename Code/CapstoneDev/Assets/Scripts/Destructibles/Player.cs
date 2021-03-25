@@ -26,7 +26,11 @@ public class Player : Destructible
     public int numberOfShellGroups = 1;
 
     int isDestroyed;
+
     //Add death animation
+
+    // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
+    public bool devMode = false;
 
     new void Start()
     {

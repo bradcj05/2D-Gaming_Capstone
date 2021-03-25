@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class PlayerSpecialFire : SecondaryWeapon
 {
+    protected Player player;
+
     // Start is called before the first frame update
     public new void Start()
     {
         base.Start();
+        // References
+        player = transform.parent.parent.GetComponent<Player>();
     }
 
     // Update is called once per frame
     public new void Update()
     {
         base.Update();
-        // Firing code
-        if (Input.GetKey(KeyCode.Space) && timer >= waitTime && active)
+        // DEV MODE - Set power to 9999, fire, then reset
+        if (player.devMode && Input.GetKey(KeyCode.V))
         {
+            dev = true;
             Fire();
-            timer = 0f;
         }
+        else
+        {
+            // Fire normally
+            dev = false;
+            Fire();
+        }
+        timer = 0f;
     }
 }
