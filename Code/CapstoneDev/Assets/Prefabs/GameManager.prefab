@@ -107,7 +107,6 @@ MonoBehaviour:
   player: {fileID: 0}
   levelBoss: {fileID: 0}
   gameOverMenu: {fileID: 0}
-  nextSceneLoad: 1
 --- !u!114 &6970381199646618520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +508,7 @@ MonoBehaviour:
   name: Airos Bullet
   pooledObject: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
     type: 3}
-  poolSize: 100
+  poolSize: 150
 --- !u!1 &6178916325250858666
 GameObject:
   m_ObjectHideFlags: 0

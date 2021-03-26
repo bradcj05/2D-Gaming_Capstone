@@ -28,7 +28,7 @@ public class Battle : MonoBehaviour
         BattleOver,
     }
 
-    public float timer;
+    public float timer; // Timer is time the battle will start AFTER THE PREVIOUS BATTLE STARTED
     [SerializeField] private ColliderTrigger colliderTrigger;
     [SerializeField] private Wave[] waveArray;
 
@@ -122,7 +122,7 @@ public class Battle : MonoBehaviour
     {
 
         [SerializeField] private DestructibleSpawn[] destructibleSpawnArray;
-        [SerializeField] private float timer;
+        [SerializeField] private float timer; // Timer is the time the wave will be started AFTER THE BATTLE STARTS
         [SerializeField] private float waveLength = -1;
 
 
