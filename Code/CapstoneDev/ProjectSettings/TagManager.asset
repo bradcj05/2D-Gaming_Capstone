@@ -13,6 +13,7 @@ TagManager:
   - Cooldown
   - Ammo
   - NameText
+  - Ally
   layers:
   - Default
   - TransparentFX

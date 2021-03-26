@@ -36,9 +36,9 @@ GameObject:
   - component: {fileID: 6865542358809407592}
   - component: {fileID: 2009730010550488590}
   - component: {fileID: 3738660719984530825}
-  - component: {fileID: 1892149727714578725}
   - component: {fileID: 4000276828056394194}
   - component: {fileID: 1529702893614140919}
+  - component: {fileID: 8011905543381087469}
   m_Layer: 0
   m_Name: GeeBee
   m_TagString: Enemy
@@ -143,41 +143,6 @@ MonoBehaviour:
   - ActivePlayer
   - Ally
   mass: 5
---- !u!114 &1892149727714578725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5699155158152707026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e641d6355045a74ca09d5248d9c6974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  grade: 0
-  category: 0
-  power: 0
-  speed: 7
-  penetration: 0
-  deterioration: 0
-  selfDestructTime: -1
-  targetTags:
-  - ActivePlayer
-  - Ally
-  trailEffect: {fileID: 0}
-  engineEffect: {fileID: 0}
-  coverEffect: {fileID: 0}
-  hitEffect: {fileID: 0}
-  hitEffectRadius: 5
-  hitEffectDuration: 0.5
-  baseExplosionRadius: 3
-  rotateSpeed: 10
-  timer: 0
-  rotationTime: 20
-  headingDown: 1
-  timed: 1
 --- !u!60 &4000276828056394194
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -288,6 +253,43 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &8011905543381087469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5699155158152707026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffd56a61e0f4ed4c9af76955b81c9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  grade: 0
+  category: 0
+  power: 0
+  speed: 7
+  penetration: 0
+  deterioration: 0
+  selfDestructTime: -1
+  targetTags:
+  - ActivePlayer
+  - Ally
+  trailEffect: {fileID: 0}
+  engineEffect: {fileID: 0}
+  coverEffect: {fileID: 0}
+  hitEffect: {fileID: 0}
+  hitEffectRadius: 5
+  hitEffectDuration: 0.5
+  baseExplosionRadius: 3
+  rotateSpeed: 1.5
+  rotationTime: 20
+  headingDown: 1
+  timed: 1
+  allyTags:
+  - Enemy
+  avoidRadius: 5
 --- !u!1001 &6630222026103396100
 PrefabInstance:
   m_ObjectHideFlags: 0

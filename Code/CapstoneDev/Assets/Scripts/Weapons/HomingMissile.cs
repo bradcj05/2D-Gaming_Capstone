@@ -10,8 +10,10 @@ public class HomingMissile : Bullet
     public float rotateSpeed = 10f;
     protected float rotateAmount;          //public for better testing
 
-    private Transform target;
-    public float timer;                 //public for better testing
+    protected Transform target;
+    protected float distanceToTarget = Mathf.Infinity;
+
+    protected float timer = 0f;                 
     public float rotationTime = 5f;
 
     public bool headingDown = false;    // Whether the sprite is heading down
@@ -21,44 +23,54 @@ public class HomingMissile : Bullet
     {
         base.Start();
         // May have to change player target to something else for allies
-        try
-        {
-            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
-        }
-        catch (System.NullReferenceException e)
-        {
-            Debug.Log(e);
-            target = null;
-        }
+        FindClosestTarget();
         timer = 0f;
     }
 
     public void OnEnable()
     {
+        FindClosestTarget();
+        timer = 0f;
+    }
+
+    // Function to find closest target across EVERY tag
+    public void FindClosestTarget()
+    {
         try
         {
-            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
+            float distance = Mathf.Infinity;
+            Vector3 position = transform.position;
+            GameObject closest = null;
+            foreach (string tag in targetTags)
+            {
+                GameObject[] gos;
+                gos = GameObject.FindGameObjectsWithTag(tag);
+                foreach (GameObject go in gos)
+                {
+                    Vector3 diff = go.transform.position - position;
+                    float curDistance = diff.sqrMagnitude;
+                    if (curDistance < distance)
+                    {
+                        closest = go;
+                        distance = curDistance;
+                    }
+                }
+            }
+            target = closest.transform;
+            distanceToTarget = Mathf.Sqrt(distance);
         }
         catch (System.NullReferenceException e)
         {
             Debug.Log(e);
             target = null;
+            distanceToTarget = Mathf.Infinity;
         }
-        timer = 0f;
     }
 
     public new void Update()
     {
         base.Update();
-        try
-        {
-            target = GameObject.FindGameObjectWithTag(targetTags[0]).transform;
-        }
-        catch (System.NullReferenceException e)
-        {
-            Debug.Log(e);
-            target = null;
-        }
+        FindClosestTarget();
     }
 
     //Handles the physics and math for the homing missile
