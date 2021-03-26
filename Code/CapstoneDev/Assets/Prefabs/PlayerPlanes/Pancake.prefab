@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &4427152316762893356
 MonoBehaviour:
@@ -125,14 +125,15 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 7799366224445709757}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
   hasAnimator: 0
-  isAiros: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
   HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: 1e6ed8639ebff84469fa9d633246601e, type: 2}
   maxSpeed: 9
@@ -142,6 +143,7 @@ MonoBehaviour:
   activeShellGroup: 0
   numberOfSecondaryWeapons: 0
   numberOfShellGroups: 1
+  devMode: 0
 --- !u!60 &989908066360215635
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -503,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
@@ -558,33 +560,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
-        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
         type: 3}
@@ -609,7 +586,7 @@ PrefabInstance:
     - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026394665152238691, guid: 04820f265e0467d488fe3761de6df88f,
         type: 3}

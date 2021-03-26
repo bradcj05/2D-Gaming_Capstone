@@ -6,7 +6,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 {
     //Movement Variables
     
-    public Rigidbody2D rig;
+    protected Rigidbody2D rb;
     //Vector2 movement;
 
     public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
@@ -48,6 +48,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
+        rb = gameObject.GetComponent<Rigidbody2D>();
         Randomize(); // random start path
         // Select player plane to track
         try
@@ -85,7 +86,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
     {
         if (deathCounter > 0)
         {
-            rig.MoveRotation(deathCounter);
+            rb.MoveRotation(deathCounter);
             deathCounter++;
 
             if (deathCounter == 30)
@@ -100,7 +101,7 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         }
         if (target != null && isDying == false)
         {
-            Vector2 direction = (Vector2)target.position - rig.position;
+            Vector2 direction = (Vector2)target.position - rb.position;
             direction.Normalize();
             if (Vector3.Dot(direction, -transform.up) <= 0)
             {
@@ -131,12 +132,15 @@ public class Airos : Enemy /// Always include "Enemy" and "Die()" function
         {
             tParam += Time.deltaTime * bezierSpeed;   /// requires some form of speed variable
 
+            Vector2 lastPosition = transform.position;
+
             AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
                        3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
                        3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
                         Mathf.Pow(tParam, 3) * p3;
 
-            transform.position = AirPosition;
+            //transform.position = AirPosition;
+            rb.velocity = AirPosition - lastPosition;
             yield return new WaitForEndOfFrame();
         }
 

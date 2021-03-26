@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 4264921784464582672}
   - component: {fileID: 8052317364172398658}
   - component: {fileID: 2778283043514081498}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Airos
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4928,9 +4928,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 20
   m_LinearDrag: 0
-  m_AngularDrag: 100
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5041,6 +5041,7 @@ MonoBehaviour:
   healthBar: {fileID: 2778283044180085564}
   defenseBar: {fileID: 2778283043720915568}
   explosion: {fileID: 2778283042740590835}
+  hasExplosionChain: 0
   explosionDuration: 3
   crater: {fileID: 2778283044318918754}
   groundCrater: 1
@@ -5048,7 +5049,10 @@ MonoBehaviour:
   hasAnimator: 1
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
-  rig: {fileID: 2447495243558342191}
+  collidableTags:
+  - ActivePlayer
+  - Ally
+  mass: 20
   bezierSpeed: 0.2
   rotateSpeed: 1
   smoke: {fileID: 3450170200904647039}
@@ -5078,6 +5082,7 @@ MonoBehaviour:
   - {fileID: 2778283043081441557}
   - {fileID: 2778283043599938165}
   explosionTiming: 1
+  timesRepeated: 1
 --- !u!95 &2778283043514081498
 Animator:
   serializedVersion: 3
@@ -20099,7 +20104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &2778283042740590834
 GameObject:
   m_ObjectHideFlags: 0
@@ -59451,6 +59455,7 @@ MonoBehaviour:
   healthBar: {fileID: 2778283043605975326}
   defenseBar: {fileID: 2778283044146686032}
   explosion: {fileID: 2778283042690386428}
+  hasExplosionChain: 0
   explosionDuration: 0.7
   crater: {fileID: 0}
   groundCrater: 0
@@ -59458,6 +59463,8 @@ MonoBehaviour:
   hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!50 &2778283043189643983
 Rigidbody2D:
   serializedVersion: 4
@@ -59802,6 +59809,7 @@ MonoBehaviour:
   healthBar: {fileID: 2778283043969123747}
   defenseBar: {fileID: 2778283043406723786}
   explosion: {fileID: 2778283044028521483}
+  hasExplosionChain: 0
   explosionDuration: 0.7
   crater: {fileID: 0}
   groundCrater: 0
@@ -59809,6 +59817,8 @@ MonoBehaviour:
   hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!50 &2778283043351264944
 Rigidbody2D:
   serializedVersion: 4
@@ -79706,6 +79716,7 @@ MonoBehaviour:
   healthBar: {fileID: 2778283044151478315}
   defenseBar: {fileID: 2778283042362531968}
   explosion: {fileID: 2778283043435226740}
+  hasExplosionChain: 0
   explosionDuration: 1
   crater: {fileID: 2778283042390265998}
   groundCrater: 0
@@ -79713,6 +79724,8 @@ MonoBehaviour:
   hasAnimator: 0
   parent: {fileID: 2447495243558342190}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!60 &2778283043601273340
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -80273,7 +80286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &2778283043720915575
 GameObject:
   m_ObjectHideFlags: 0
@@ -85404,6 +85416,7 @@ MonoBehaviour:
   healthBar: {fileID: 2778283044056748355}
   defenseBar: {fileID: 2778283042583177694}
   explosion: {fileID: 2778283043413777390}
+  hasExplosionChain: 0
   explosionDuration: 1
   crater: {fileID: 2778283043127026248}
   groundCrater: 0
@@ -85411,6 +85424,8 @@ MonoBehaviour:
   hasAnimator: 0
   parent: {fileID: 2447495243558342190}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!60 &2778283043811754350
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -100796,7 +100811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &2778283044178557973
 GameObject:
   m_ObjectHideFlags: 0
@@ -120546,7 +120560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &2778283044392200585
 GameObject:
   m_ObjectHideFlags: 0
@@ -120660,7 +120673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &2778283044477788761
 GameObject:
   m_ObjectHideFlags: 0

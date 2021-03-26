@@ -107,10 +107,10 @@ public class Bullet : WeaponsClassification
                     Vector3 normal = hit.normal;
                     float penCoeff = Mathf.Abs(Vector3.Cross(rb.velocity.normalized, normal).z);
                     // Debug penCoeff for "bullet traps"
-                    if (penCoeff < 0.2f)
+                    /*if (penCoeff < 0.2f)
                     {
                         penCoeff = 1f - penCoeff;
-                    }
+                    }*/
                     if (float.IsNaN(penCoeff) || float.IsInfinity(penCoeff))
                     {
                         penCoeff = 1f;
@@ -150,7 +150,7 @@ public class Bullet : WeaponsClassification
                     else
                     {
                         time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity, normal);
+                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal);
                         //Store new direction
                         Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                         //Rotate bullet to new direction

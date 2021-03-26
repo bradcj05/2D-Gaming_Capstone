@@ -173,13 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c54167ff8e6c2fc4692f5a54078f5642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
+  grade: 2
+  category: 0
   shellTypes:
   - {fileID: 3415526167857150346, guid: 490cc2aeac5035346b8353aa66d3b36f, type: 3}
   - {fileID: 1927717893260739586, guid: 8b44b6ebc0c217f4b92e142979d95759, type: 3}
   waitTime: 5
-  type: 1
-  grade: 2
-  category: 0
   spread: 2
   powerBuff: 0
   speedBuff: 0
@@ -209,12 +209,16 @@ MonoBehaviour:
   healthBar: {fileID: 2719587148437099043}
   defenseBar: {fileID: 5264210330773113323}
   explosion: {fileID: 3432601346539245754}
+  hasExplosionChain: 0
   explosionDuration: 1.5
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
+  hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 100
 --- !u!60 &8410924365959853171
 PolygonCollider2D:
   m_ObjectHideFlags: 0

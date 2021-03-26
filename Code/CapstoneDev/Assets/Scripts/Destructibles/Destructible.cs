@@ -33,6 +33,9 @@ public class Destructible : MonoBehaviour
     protected float penetrationTimer = 0f;
     protected float penetrationTime = 0.1f;
 
+    // Kinds of objects the destructible can deal collision damage with (see tags)
+    public string[] collidableTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -50,9 +53,9 @@ public class Destructible : MonoBehaviour
         }
 
         if (maxHealth > 0)
-             health = maxHealth;
+            health = maxHealth;
         else
-             maxHealth = health;
+            maxHealth = health;
 
         if (healthBar != null)
         {
