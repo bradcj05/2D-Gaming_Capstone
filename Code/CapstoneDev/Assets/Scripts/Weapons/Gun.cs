@@ -21,22 +21,35 @@ public class Gun : WeaponsClassification
     // Dev mode
     protected bool dev = false;
 
+    // Shoot when not moving feature
+    public bool shootWhenNotMoving = false;
+    public float movementEpsilon = 0.3f; // When slower than this, considered "not moving"
+    protected Vector3 lastPosition;
+    protected float speed;
+
+    // Shoot when target visible feature
+    public bool shootWhenTargetVisible = false;
+    public string[] targetTags;
+    public float visibleRangeInDegrees = 60f;
+    public float visibleDistance = 50f;
+
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
     public new void Start()
-     {
-          base.Start();
-          if (maxAmmo != null && maxAmmo > 0)
-               ammo = maxAmmo;
-          else
-               maxAmmo = ammo;
-     }
+    {
+        base.Start();
+        lastPosition = transform.position;
+        if (maxAmmo != null && maxAmmo > 0)
+            ammo = maxAmmo;
+        else
+            maxAmmo = ammo;
+    }
 
-     public void SetUp()
-     {
-          this.Start();
-     }
+    public void SetUp()
+    {
+        this.Start();
+    }
 
     // Update is called once per frame
     public new void Update()
@@ -44,11 +57,68 @@ public class Gun : WeaponsClassification
         base.Update();
         // Update timer
         timer += Time.deltaTime;
-        if (timer >= waitTime)
+
+        CalculateSpeed();
+
+        if (timer >= waitTime &&
+            (speed < movementEpsilon || !shootWhenNotMoving) &&
+            (IsTargetVisible() || !shootWhenTargetVisible))
         {
             Fire();
-            timer -= waitTime;
+            timer = 0;
         }
+    }
+
+    // Function
+    // ConeCast function to find targets in a cone
+    public static RaycastHit2D[] ConeCastAll(Vector3 origin, float maxRadius, Vector3 direction, float maxDistance, float coneAngle, string tag)
+    {
+        RaycastHit2D[] sphereCastHits = Physics2D.CircleCastAll(origin - new Vector3(0, 0, maxRadius), maxRadius, direction, maxDistance);
+        List<RaycastHit2D> coneCastHitList = new List<RaycastHit2D>();
+
+        if (sphereCastHits.Length > 0)
+        {
+            for (int i = 0; i < sphereCastHits.Length; i++)
+            {
+                if (sphereCastHits[i].transform.gameObject.tag == tag)
+                {
+                    Vector3 hitPoint = sphereCastHits[i].point;
+                    Vector3 directionToHit = hitPoint - origin;
+                    float angleToHit = Vector3.Angle(direction, directionToHit);
+
+                    if (angleToHit < coneAngle)
+                    {
+                        coneCastHitList.Add(sphereCastHits[i]);
+                    }
+                }
+            }
+        }
+
+        RaycastHit2D[] coneCastHits = new RaycastHit2D[coneCastHitList.Count];
+        coneCastHits = coneCastHitList.ToArray();
+
+        return coneCastHits;
+    }
+
+    // Check if there's a target in the visible range.
+    public bool IsTargetVisible()
+    {
+        foreach (string tag in targetTags)
+        {
+            if (ConeCastAll(transform.position, visibleDistance, transform.up, visibleDistance, visibleRangeInDegrees/2, tag).Length > 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Calculate speed
+    public void CalculateSpeed()
+    {
+        // Calculate speed during update for "shoot when not moving" feature
+        speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
+        lastPosition = transform.position;
     }
 
     // Shoot from each bulletSpawn
