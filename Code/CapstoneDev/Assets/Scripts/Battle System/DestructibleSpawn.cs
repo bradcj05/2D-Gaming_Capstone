@@ -14,7 +14,7 @@ public class DestructibleSpawn : MonoBehaviour
 
     private void Awake()
     {
-        obj = Instantiate(obj, transform) as Destructible;
+        obj = transform.GetChild(0).gameObject.GetComponent<Destructible>();
         obj.gameObject.SetActive(false);
     }
 
@@ -24,9 +24,15 @@ public class DestructibleSpawn : MonoBehaviour
 
     public void Spawn()
     {
+        //obj = Instantiate(obj, transform) as Destructible;
         obj.gameObject.SetActive(true);
         alive = true;
         obj.SetSpawner(this);
+    }
+
+    public void Die()
+    {
+        obj.Die();
     }
 
     // Getters and setters
