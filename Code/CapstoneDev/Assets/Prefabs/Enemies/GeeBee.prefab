@@ -23,6 +23,14 @@ MonoBehaviour:
   speedBuff: 0
   recoilForce: 0
   ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 1
+  targetTags:
+  - ActivePlayer
+  - Ally
+  visibleRangeInDegrees: 60
+  visibleDistance: 50
   bulletSpawns:
   - {fileID: 5621699509701520898}
 --- !u!1 &5699155158152707026

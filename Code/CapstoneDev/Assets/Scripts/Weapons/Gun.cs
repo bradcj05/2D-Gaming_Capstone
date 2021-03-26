@@ -30,7 +30,7 @@ public class Gun : WeaponsClassification
     // Shoot when target visible feature
     public bool shootWhenTargetVisible = false;
     public string[] targetTags;
-    public float visibleRangeInDegrees = 60f;
+    public float visibleRangeInDegrees = 90f;
     public float visibleDistance = 50f;
 
     // Code to have variable bulletSpawns
