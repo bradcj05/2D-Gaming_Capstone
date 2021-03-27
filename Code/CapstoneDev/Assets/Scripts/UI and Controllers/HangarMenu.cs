@@ -149,6 +149,7 @@ public class HangarMenu : MonoBehaviour
                                      ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                 plane1.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                                plane1.transform.GetChild(0).GetChild(0).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
                                 plane1.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                      ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                 plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
@@ -181,6 +182,7 @@ public class HangarMenu : MonoBehaviour
                                     ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                 plane1.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(1).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
                                         plane1.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
@@ -213,6 +215,7 @@ public class HangarMenu : MonoBehaviour
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                         plane1.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(2).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
                                         plane1.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
@@ -254,6 +257,7 @@ public class HangarMenu : MonoBehaviour
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                         plane1.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(3).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
                                         plane1.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
@@ -286,6 +290,7 @@ public class HangarMenu : MonoBehaviour
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                         plane1.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
+                                        plane1.transform.GetChild(0).GetChild(4).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
                                         plane1.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
@@ -318,7 +323,8 @@ public class HangarMenu : MonoBehaviour
                                    ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
                                 plane1.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
-                                plane1.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                        plane1.transform.GetChild(0).GetChild(5).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                        plane1.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                    ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                 // To Accomidate for Airos' Laser not having a Sprite Renderer
                                 if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
@@ -375,7 +381,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(0).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -407,7 +414,8 @@ public class HangarMenu : MonoBehaviour
                                          ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(1).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -439,7 +447,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(2).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -480,7 +489,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(3).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -512,7 +522,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(4).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -544,7 +555,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane2.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
-                                    plane2.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane2.transform.GetChild(0).GetChild(5).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane2.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     // To Accomidate for Airos' Laser not having a Sprite Renderer
                                     if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
@@ -606,7 +618,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(0).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -638,7 +651,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(1).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -670,7 +684,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(2).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -711,7 +726,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(3).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -743,7 +759,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(4).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(4).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
 
@@ -775,7 +792,8 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x] / 2, 0);
 
                                     plane3.transform.GetChild(0).GetChild(5).gameObject.SetActive(true);
-                                    plane3.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
+                                             plane3.transform.GetChild(0).GetChild(5).localScale = new Vector3(ObjectList.planeList[index].hangarScaleX[x], ObjectList.planeList[index].hangarScaleY[x], 1);
+                                             plane3.transform.GetChild(0).GetChild(5).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     // To Accomidate for Airos' Laser not having a Sprite Renderer
                                     if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)

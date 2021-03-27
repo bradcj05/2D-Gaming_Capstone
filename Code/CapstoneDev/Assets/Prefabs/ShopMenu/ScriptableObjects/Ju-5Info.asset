@@ -41,3 +41,13 @@ MonoBehaviour:
   - 194.4
   - 115.813
   - 115.813
+  hangarScaleX:
+  - 0.3
+  - 0.3
+  - 0.35
+  - 0.35
+  hangarScaleY:
+  - 1.2
+  - 1.2
+  - 1
+  - 1
