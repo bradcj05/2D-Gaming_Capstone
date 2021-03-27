@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6509039666198654048}
   - component: {fileID: 5733053980298207626}
   - component: {fileID: 7752123746852008551}
+  - component: {fileID: -6608834149923286599}
+  - component: {fileID: 1023041534327379476}
   m_Layer: 13
   m_Name: MG-74 Shell
   m_TagString: Bullet
@@ -69,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -870944659
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: df8dd4fc7438ea04381c324d11eb1baf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -113,3 +115,40 @@ MonoBehaviour:
   hitEffectRadius: 5
   hitEffectDuration: 0.5
   baseExplosionRadius: 3
+--- !u!70 &-6608834149923286599
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959298833998398696}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02096777, y: -0.053361155}
+  m_Size: {x: 0.54832596, y: 1.3606725}
+  m_Direction: 0
+--- !u!50 &1023041534327379476
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959298833998398696}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
