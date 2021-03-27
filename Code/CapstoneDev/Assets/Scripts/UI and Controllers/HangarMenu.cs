@@ -16,6 +16,9 @@ public class HangarMenu : MonoBehaviour
     public static Transform[] slots1 = new Transform[6];
     public static Transform[] slots2 = new Transform[6];
     public static Transform[] slots3 = new Transform[6];
+     Image[] slotI1 = new Image[6];
+     Image[] slotI2 = new Image[6];
+     Image[] slotI3 = new Image[6];
 
     public Sprite primary;
     public Sprite secondary;
@@ -51,6 +54,7 @@ public class HangarMenu : MonoBehaviour
     public Slider planeSlider4;
     public Slider planeSlider5;
     public Text planeDescription;
+     public Text planeName;
 
      public Sprite laserSprite;
     static Image gs;
@@ -70,10 +74,11 @@ public class HangarMenu : MonoBehaviour
 
         planeSlider1.value = ObjectList.planeList[index].obj.GetComponent<Player>().health * 0.01f;
         planeSlider2.value = ObjectList.planeList[index].obj.GetComponent<Player>().defense * 0.2f;
-        planeSlider3.value = ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass / 30f; //I don't know where the value for mass is
-        planeSlider4.value = (ObjectList.planeList[index].obj.GetComponent<Player>().maxSpeed - 2) * 0.1f; //Need to find better value to multiply by for speed
+        planeSlider3.value = ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass / 30f;
+        planeSlider4.value = (ObjectList.planeList[index].obj.GetComponent<Player>().maxSpeed - 2) * 0.1f;
         planeSlider5.value = (ObjectList.planeList[index].obj.GetComponent<Player>().enginePower / ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass) * 0.002f;
         planeDescription.text = "Description: " + ObjectList.planeList[index].description;
+        planeName.text = ObjectList.planeList[index].name;
 
         //Add Sliders to buttons
         gunButtonPreFab.GetComponent<cardDisplay>().s1 = s1;
@@ -152,6 +157,7 @@ public class HangarMenu : MonoBehaviour
                                 plane1.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                      ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                 plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                slotI1[x] = plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(1);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -186,6 +192,7 @@ public class HangarMenu : MonoBehaviour
                                         plane1.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                        slotI1[x] = plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(2);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -220,6 +227,7 @@ public class HangarMenu : MonoBehaviour
                                         plane1.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                        slotI1[x] = plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(3);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -263,6 +271,7 @@ public class HangarMenu : MonoBehaviour
                                         plane1.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                        slotI1[x] = plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(4);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -297,6 +306,7 @@ public class HangarMenu : MonoBehaviour
                                         plane1.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                              ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                         plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                        slotI1[x] = plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(5);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -335,6 +345,7 @@ public class HangarMenu : MonoBehaviour
                                     plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
                                 else
                                     plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
+                                slotI1[x] = plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>();
 
                                 slots1[x] = plane1.transform.GetChild(6);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -390,6 +401,7 @@ public class HangarMenu : MonoBehaviour
                                              plane2.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI2[x] = plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(1);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -424,6 +436,7 @@ public class HangarMenu : MonoBehaviour
                                              plane2.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI2[x] = plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(2);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -458,6 +471,7 @@ public class HangarMenu : MonoBehaviour
                                              plane2.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI2[x] = plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(3);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -501,6 +515,7 @@ public class HangarMenu : MonoBehaviour
                                              plane2.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI2[x] = plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(4);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -535,6 +550,7 @@ public class HangarMenu : MonoBehaviour
                                              plane2.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane2.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI2[x] = plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(5);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -573,6 +589,7 @@ public class HangarMenu : MonoBehaviour
                                         plane2.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
                                     else
                                         plane2.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
+                                    slotI2[x] = plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>();
 
                                     slots2[x] = plane2.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -633,6 +650,7 @@ public class HangarMenu : MonoBehaviour
                                              plane3.transform.GetChild(0).GetChild(0).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI3[x] = plane1.transform.GetChild(0).GetChild(0).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(1);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -667,6 +685,7 @@ public class HangarMenu : MonoBehaviour
                                              plane3.transform.GetChild(0).GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI3[x] = plane1.transform.GetChild(0).GetChild(1).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(2);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -701,6 +720,7 @@ public class HangarMenu : MonoBehaviour
                                              plane3.transform.GetChild(0).GetChild(2).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI3[x] = plane1.transform.GetChild(0).GetChild(2).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(3);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -744,6 +764,7 @@ public class HangarMenu : MonoBehaviour
                                              plane3.transform.GetChild(0).GetChild(3).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI3[x] = plane1.transform.GetChild(0).GetChild(3).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(4);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -778,6 +799,7 @@ public class HangarMenu : MonoBehaviour
                                              plane3.transform.GetChild(0).GetChild(4).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     plane3.transform.GetChild(0).GetChild(4).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
+                                             slotI3[x] = plane1.transform.GetChild(0).GetChild(4).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(5);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -816,6 +838,7 @@ public class HangarMenu : MonoBehaviour
                                         plane3.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
                                     else
                                         plane3.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
+                                    slotI3[x] = plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>();
 
                                     slots3[x] = plane3.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -927,6 +950,7 @@ public class HangarMenu : MonoBehaviour
                 planeSlider4.value = (ObjectList.planeList[index].obj.GetComponent<Player>().maxSpeed - 2) * 0.1f;
                 planeSlider5.value = (ObjectList.planeList[index].obj.GetComponent<Player>().enginePower / ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass) * 0.002f;
                 planeDescription.text = "Description: " + ObjectList.planeList[index].description;
+                planeName.text = ObjectList.planeList[index].name;
                 break;
             }
             p++;
@@ -956,8 +980,17 @@ public class HangarMenu : MonoBehaviour
                                 if (slots1[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
                                     Debug.Log("Swapping Weapons");
-                                    Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
-                                    Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).GetChild(x));
+
+                                             if (slots1[x].GetChild(0).name != "Airos Laser Ally(Clone)")
+                                             {
+                                                  Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
+                                                  Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).GetChild(x));
+                                             }
+                                             else
+                                             {
+                                                  Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).GetChild(0).rotation, squadron.GetChild(0).GetChild(x));
+                                                  Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
+                                             }
                                     squadron.GetChild(0).GetChild(x).GetChild(0).gameObject.SetActive(true);
                                 }
                             }
@@ -976,8 +1009,16 @@ public class HangarMenu : MonoBehaviour
                             {
                                 if (slots2[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
-                                    Destroy(squadron.GetChild(1).GetChild(x).GetChild(0).gameObject);
-                                    Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).transform.rotation, squadron.GetChild(1).GetChild(x));
+                                             if (slots2[x].GetChild(0).name != "Airos Laser Ally(Clone)")
+                                             {
+                                                  Destroy(squadron.GetChild(1).GetChild(x).GetChild(0).gameObject);
+                                                  Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).transform.rotation, squadron.GetChild(1).GetChild(x));
+                                             }
+                                             else
+                                             {
+                                                  Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).GetChild(0).rotation, squadron.GetChild(1).GetChild(x));
+                                                  Destroy(squadron.GetChild(1).GetChild(x).GetChild(0).gameObject);
+                                             }
                                     squadron.GetChild(1).GetChild(x).GetChild(0).gameObject.SetActive(true);
                                 }
                             }
@@ -996,8 +1037,16 @@ public class HangarMenu : MonoBehaviour
                             {
                                 if (slots3[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
-                                    Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
-                                    Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).GetChild(x));
+                                             if (slots3[x].GetChild(0).name != "Airos Laser Ally(Clone)")
+                                             {
+                                                  Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
+                                                  Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).GetChild(x));
+                                             }
+                                             else
+                                             {
+                                                  Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).GetChild(0).rotation, squadron.GetChild(2).GetChild(x));
+                                                  Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
+                                             }
                                     squadron.GetChild(2).GetChild(x).gameObject.SetActive(true);
                                 }
                             }
@@ -1021,20 +1070,21 @@ public class HangarMenu : MonoBehaviour
         {
             if (slots1[x] != null && slot.transform == slots1[x].transform)
             {
+                    Debug.Log(x);
                 gs = slots1[x].GetComponent<Image>();
-                gunImage = plane1.transform.GetChild(0).GetChild(x).GetComponent<Image>();
+                gunImage = slotI1[x];
                 break;
             }
             else if (slots2[x] != null && slot.transform == slots2[x].transform)
             {
                 gs = slots2[x].GetComponent<Image>();
-                gunImage = plane2.transform.GetChild(0).GetChild(x).GetComponent<Image>();
+                gunImage = slotI2[x];
                 break;
             }
             else if (slots3[x] != null && slot.transform == slots3[x].transform)
             {
                 gs = slots3[x].GetComponent<Image>();
-                gunImage = plane3.transform.GetChild(0).GetChild(x).GetComponent<Image>();
+                gunImage = slotI3[x];
                 break;
             }
         }
@@ -1086,27 +1136,33 @@ public class HangarMenu : MonoBehaviour
             {
                 Destroy(gs.transform.GetChild(0).gameObject);
             }
-               //gs.transform.gameObject.SetActive(false); //To fix a bug with selecting Airos' laser in the Hangar.
             Instantiate(c.cards.obj, gs.transform);
-               gs.transform.GetChild(0).gameObject.SetActive(false);
-               //gs.transform.gameObject.SetActive(true);
+            gs.transform.GetChild(0).gameObject.SetActive(false);
+
+            gunImage.transform.localScale = new Vector3(c.cards.gunScaleX, c.cards.gunScaleY, 1);
             gunImage.sprite = c.cards.artwork;
 
             primaryArmory.SetActive(false);
             secondaryArmory.SetActive(false);
-            ammoArmory.SetActive(true);
-            for (int x = 0; x < ammoArmory.transform.GetChild(1).GetChild(0).childCount; x++)
-            {
-                if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
-                (int)gs.transform.GetChild(0).GetComponent<Gun>().category == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getCategory())
-                {
-                    ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(false);
-                }
-                else
-                {
-                    ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(true);
-                }
-            }
+               if (c.cards.obj.name != "Airos Laser Ally") {
+                    ammoArmory.SetActive(true);
+                    for (int x = 0; x < ammoArmory.transform.GetChild(1).GetChild(0).childCount; x++)
+                    {
+                         if ((int)gs.transform.GetChild(0).GetComponent<Gun>().type == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getType() &&
+                         (int)gs.transform.GetChild(0).GetComponent<Gun>().category == (int)ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().cards.getCategory())
+                         {
+                              ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(false);
+                         }
+                         else
+                         {
+                              ammoArmory.transform.GetChild(1).GetChild(0).GetChild(x).GetComponent<cardDisplay>().lockImage.gameObject.SetActive(true);
+                         }
+                    }
+               }
+               else
+               {
+                    shop.SetActive(true);
+               }
         }
         else
             Debug.Log("Item is unequippable for this slot.");
@@ -1116,7 +1172,7 @@ public class HangarMenu : MonoBehaviour
     {
         if (!(c.lockImage.gameObject.activeSelf))
         {
-            gs.transform.GetChild(0).GetComponent<PlayerGunFire>().shellTypes[0] = c.cards.obj;
+            gs.transform.GetChild(0).GetComponent<Gun>().shellTypes[0] = c.cards.obj;
 
             ammoArmory.SetActive(false);
             shop.SetActive(true);
