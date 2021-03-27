@@ -31,3 +31,7 @@ MonoBehaviour:
   - 0
   positionScaleY:
   - 31.41361
+  hangarScaleX:
+  - 1
+  hangarScaleY:
+  - 1

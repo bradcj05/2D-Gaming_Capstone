@@ -38,6 +38,8 @@ public class Card : ScriptableObject
 
      public float[] positionScaleX;
      public float[] positionScaleY;
+     public float[] hangarScaleX;
+     public float[] hangarScaleY;
 
     // Gun classification params
     protected WeaponsClassification.Type type;
