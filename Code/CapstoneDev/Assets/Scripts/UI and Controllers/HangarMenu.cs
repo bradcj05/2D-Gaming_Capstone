@@ -52,6 +52,7 @@ public class HangarMenu : MonoBehaviour
     public Slider planeSlider5;
     public Text planeDescription;
 
+     public Sprite laserSprite;
     static Image gs;
     static Image gunImage;
 
@@ -113,7 +114,6 @@ public class HangarMenu : MonoBehaviour
         int s = 0;
         //Select Option and move to next part
         //In regards to the plane's children, 1-3 are primary weapons and 4-6 are secondary weapons
-        //TODO: FIX positioning of the slots in the Hangar
         switch (selectionIndex)
         {
             case 0:
@@ -143,8 +143,7 @@ public class HangarMenu : MonoBehaviour
                                 {
                                     plane1.transform.GetChild(1).GetComponent<Image>().color = new Color(.5f, 0f, 1f, 1f);
                                 }
-
-                                //TESTING
+                                
                                 plane1.transform.GetChild(1).localPosition = new Vector3(ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.x * ObjectList.planeList[index].positionScaleX[x],
                                      ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
 
@@ -328,9 +327,9 @@ public class HangarMenu : MonoBehaviour
                                    ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                 // To Accomidate for Airos' Laser not having a Sprite Renderer
                                 if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
-                                {
                                     plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
-                                }
+                                else
+                                    plane1.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
 
                                 slots1[x] = plane1.transform.GetChild(6);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
@@ -560,9 +559,9 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     // To Accomidate for Airos' Laser not having a Sprite Renderer
                                     if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
-                                    {
                                         plane2.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
-                                    }
+                                    else
+                                        plane2.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
 
                                     slots2[x] = plane2.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
@@ -797,9 +796,9 @@ public class HangarMenu : MonoBehaviour
                                         ObjectList.planeList[index].obj.transform.GetChild(x).localPosition.y * ObjectList.planeList[index].positionScaleY[x], 0);
                                     // To Accomidate for Airos' Laser not having a Sprite Renderer
                                     if (ObjectList.planeList[index].gunSlotObj[x].GetComponent("Sprite Renderer") != null)
-                                    {
                                         plane3.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = ObjectList.planeList[index].gunSlotObj[x].GetComponent<SpriteRenderer>().sprite;
-                                    }
+                                    else
+                                        plane3.transform.GetChild(0).GetChild(5).GetComponent<Image>().sprite = laserSprite;
 
                                     slots3[x] = plane3.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
@@ -906,8 +905,8 @@ public class HangarMenu : MonoBehaviour
                 i.sprite = current.artwork;
                 planeSlider1.value = ObjectList.planeList[index].obj.GetComponent<Player>().health * 0.01f;
                 planeSlider2.value = ObjectList.planeList[index].obj.GetComponent<Player>().defense * 0.2f;
-                planeSlider3.value = ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass / 30f; //I don't know where the value for mass is
-                planeSlider4.value = (ObjectList.planeList[index].obj.GetComponent<Player>().maxSpeed - 2) * 0.1f; //Need to find better value to multiply by for speed
+                planeSlider3.value = ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass / 30f;
+                planeSlider4.value = (ObjectList.planeList[index].obj.GetComponent<Player>().maxSpeed - 2) * 0.1f;
                 planeSlider5.value = (ObjectList.planeList[index].obj.GetComponent<Player>().enginePower / ObjectList.planeList[index].obj.GetComponent<Rigidbody2D>().mass) * 0.002f;
                 planeDescription.text = "Description: " + ObjectList.planeList[index].description;
                 break;
@@ -915,8 +914,7 @@ public class HangarMenu : MonoBehaviour
             p++;
         }
     }
-
-    //TODO: Fix
+     
     public void LoadPlanes()
     {
         if (selectionIndex < 1)
@@ -941,9 +939,7 @@ public class HangarMenu : MonoBehaviour
                                 {
                                     Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
                                     Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).GetChild(x));
-                                    //Debug.Log("Plane: " + squadron.GetChild(0).GetChild(x).name);
                                     squadron.GetChild(0).GetChild(x).GetChild(0).gameObject.SetActive(true);
-                                    //Debug.Log("Weapon: " + squadron.GetChild(0).GetChild(x).GetChild(0).name);
                                 }
                             }
                             PlaneSwitching.squadArr[0] = squadron.GetChild(0).gameObject;
@@ -1071,7 +1067,10 @@ public class HangarMenu : MonoBehaviour
             {
                 Destroy(gs.transform.GetChild(0).gameObject);
             }
+               //gs.transform.gameObject.SetActive(false); //To fix a bug with selecting Airos' laser in the Hangar.
             Instantiate(c.cards.obj, gs.transform);
+               gs.transform.GetChild(0).gameObject.SetActive(false);
+               //gs.transform.gameObject.SetActive(true);
             gunImage.sprite = c.cards.artwork;
 
             primaryArmory.SetActive(false);
