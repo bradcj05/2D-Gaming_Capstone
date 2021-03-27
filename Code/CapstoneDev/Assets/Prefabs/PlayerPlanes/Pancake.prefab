@@ -143,7 +143,7 @@ MonoBehaviour:
   activeShellGroup: 0
   numberOfSecondaryWeapons: 0
   numberOfShellGroups: 1
-  devMode: 0
+  devMode: 1
 --- !u!60 &989908066360215635
 PolygonCollider2D:
   m_ObjectHideFlags: 0
