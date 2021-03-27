@@ -8,6 +8,7 @@ public class Destructible : MonoBehaviour
     public float health;
     protected float maxHealth;
     public float defense;
+    protected Billboard enemyHealth;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar
 
@@ -39,7 +40,17 @@ public class Destructible : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        // Grab rigidbody and healthbars
         rb = GetComponent<Rigidbody2D>();
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.GetComponent<Billboard>() != null)
+            {
+                enemyHealth = child.gameObject.GetComponent<Billboard>();
+                healthBar = enemyHealth.transform.GetChild(0).GetComponent<HealthBar>();
+                defenseBar = enemyHealth.transform.GetChild(1).GetComponent<HealthBar>();
+            }
+        }
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
