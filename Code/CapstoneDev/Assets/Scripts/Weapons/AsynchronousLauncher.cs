@@ -25,10 +25,12 @@ public class AsynchronousLauncher : Gun
         timer += Time.deltaTime;
         subTimer += Time.deltaTime;
         // Once reload time is reached, activate firing
-        if (timer >= waitTime)
+        if (timer >= waitTime &&
+            ((CalculateSpeed() < movementEpsilon) || !shootWhenNotMoving) &&
+            (IsTargetVisible() || !shootWhenTargetVisible))
         {
             activated = true;
-            timer -= waitTime;
+            timer = 0;
         }
         // If subtimer reaches time between shots, fire each launcher until first launcher is reached again
         if (subTimer >= timeBetweenShots && activated)

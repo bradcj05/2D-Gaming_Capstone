@@ -163,7 +163,7 @@ public class Destructible : MonoBehaviour
         }
 
         //Actually destroy object
-        if (transform.gameObject.GetComponent("Player") != null)
+        if (transform.gameObject.GetComponent<Player>() != null)
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
         else
             Destroy(gameObject);

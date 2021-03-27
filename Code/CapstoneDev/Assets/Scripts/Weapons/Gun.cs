@@ -57,7 +57,7 @@ public class Gun : WeaponsClassification
         timer += Time.deltaTime;
 
         if (timer >= waitTime &&
-            ((CalculateSpeed() < movementEpsilon) || !shootWhenNotMoving) &&
+            (CalculateSpeed() < movementEpsilon || !shootWhenNotMoving) &&
             (IsTargetVisible() || !shootWhenTargetVisible))
         {
             Fire();
