@@ -155,6 +155,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(1);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 p++;
                                 break;
@@ -188,6 +189,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(2);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 p++;
                                 break;
@@ -221,6 +223,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(3);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 p++;
                                 break;
@@ -263,6 +266,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(4);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 s++;
                                 break;
@@ -296,6 +300,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(5);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 s++;
                                 break;
@@ -333,6 +338,7 @@ public class HangarMenu : MonoBehaviour
 
                                 slots1[x] = plane1.transform.GetChild(6);
                                 Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots1[x]);
+                                slots1[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                 slots1[x].GetChild(0).gameObject.SetActive(false);
                                 s++;
                                 break;
@@ -387,6 +393,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(1);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -420,6 +427,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(2);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -453,6 +461,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(3);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -495,6 +504,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(4);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -528,6 +538,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(5);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -565,6 +576,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots2[x] = plane2.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots2[x]);
+                                    slots2[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots2[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -624,6 +636,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(1);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -657,6 +670,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(2);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -690,6 +704,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(3);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     p++;
                                     break;
@@ -732,6 +747,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(4);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -765,6 +781,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(5);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -802,6 +819,7 @@ public class HangarMenu : MonoBehaviour
 
                                     slots3[x] = plane3.transform.GetChild(6);
                                     Instantiate(ObjectList.planeList[index].gunSlotObj[x], slots3[x]);
+                                    slots3[x].GetChild(0).name = ObjectList.planeList[index].gunSlotObj[x].name;
                                     slots3[x].GetChild(0).gameObject.SetActive(false);
                                     s++;
                                     break;
@@ -935,8 +953,9 @@ public class HangarMenu : MonoBehaviour
                             Instantiate(current.obj, squadron);
                             for (int x = 0; x < current.gunSlotNum; x++)
                             {
-                                if (slots1[x].transform.childCount > 0)
+                                if (slots1[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
+                                    Debug.Log("Swapping Weapons");
                                     Destroy(squadron.GetChild(0).GetChild(x).GetChild(0).gameObject);
                                     Instantiate(slots1[x].GetChild(0), squadron.GetChild(0).GetChild(x).transform.position, squadron.GetChild(0).GetChild(x).transform.rotation, squadron.GetChild(0).GetChild(x));
                                     squadron.GetChild(0).GetChild(x).GetChild(0).gameObject.SetActive(true);
@@ -955,7 +974,7 @@ public class HangarMenu : MonoBehaviour
                             Instantiate(current.obj, squadron);
                             for (int x = 0; x < current.gunSlotNum; x++)
                             {
-                                if (slots2[x].transform.childCount > 0)
+                                if (slots2[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
                                     Destroy(squadron.GetChild(1).GetChild(x).GetChild(0).gameObject);
                                     Instantiate(slots2[x].GetChild(0), squadron.GetChild(1).GetChild(x).transform.position, squadron.GetChild(1).GetChild(x).transform.rotation, squadron.GetChild(1).GetChild(x));
@@ -975,7 +994,7 @@ public class HangarMenu : MonoBehaviour
                             Instantiate(current.obj, squadron);
                             for (int x = 0; x < current.gunSlotNum; x++)
                             {
-                                if (slots3[x].transform.childCount > 0)
+                                if (slots3[x].GetChild(0).name != current.gunSlotObj[x].name)
                                 {
                                     Destroy(squadron.GetChild(2).GetChild(x).GetChild(0).gameObject);
                                     Instantiate(slots3[x].GetChild(0), squadron.GetChild(2).GetChild(x).transform.position, squadron.GetChild(2).GetChild(x).transform.rotation, squadron.GetChild(2).GetChild(x));

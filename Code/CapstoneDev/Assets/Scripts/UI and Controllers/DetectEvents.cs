@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// THIS SCRIPT CONTROLS SCENE SWITCHES AND IN-GAME MENUS
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,16 +12,16 @@ public class DetectEvents : MonoBehaviour
     public GameObject levelBoss;
 
     public GameObject gameOverMenu;
-    public int nextSceneLoad;
+    protected int nextSceneLoad;
 
     protected float levelEndTimer = 0f;
     protected float levelEndTime = 4f;
 
     public void Awake()
     {
-          //Find player squadron
-          player = GameObject.Find("Squadron");
-          player.GetComponent<PlaneSwitching>().SetUp();
+        //Find player squadron
+        player = GameObject.Find("Squadron");
+        player.GetComponent<PlaneSwitching>().SetUp();
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
@@ -37,7 +39,7 @@ public class DetectEvents : MonoBehaviour
             if (levelEndTimer >= levelEndTime)
             {
                 Debug.Log("boss is dead");
-                SceneManager.LoadScene(nextSceneLoad);
+                SceneManager.LoadScene("Hangar");
 
                 if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
                 {
