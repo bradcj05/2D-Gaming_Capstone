@@ -156,7 +156,8 @@ public class Battle : MonoBehaviour
         {
             foreach (DestructibleSpawn destructibleSpawn in destructibleSpawnArray)
             {
-                destructibleSpawn.gameObject.SetActive(true);
+                if (!destructibleSpawn.gameObject.activeSelf)
+                    destructibleSpawn.gameObject.SetActive(true);
                 destructibleSpawn.Spawn();
             }
         }

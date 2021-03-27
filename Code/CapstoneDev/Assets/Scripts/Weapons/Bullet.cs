@@ -107,10 +107,10 @@ public class Bullet : WeaponsClassification
                     Vector3 normal = hit.normal;
                     float penCoeff = Mathf.Abs(Vector3.Cross(rb.velocity.normalized, normal).z);
                     // Debug penCoeff for "bullet traps"
-                    /*if (penCoeff < 0.2f)
+                    if (penCoeff < 0.2f)
                     {
                         penCoeff = 1f - penCoeff;
-                    }*/
+                    }
                     if (float.IsNaN(penCoeff) || float.IsInfinity(penCoeff))
                     {
                         penCoeff = 1f;

@@ -136,8 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   defense: 0
-  healthBar: {fileID: 3454812873341055380}
-  defenseBar: {fileID: 4846479565118466652}
+  healthBar: {fileID: 0}
+  defenseBar: {fileID: 0}
   explosion: {fileID: 7241328575464139948}
   hasExplosionChain: 0
   explosionDuration: 2
@@ -702,27 +702,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9148366921551092702}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3454812873341055380 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5837915535480465994, guid: badb78e174c033641bd5d98afe0b0eba,
-    type: 3}
-  m_PrefabInstance: {fileID: 9148366921551092702}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4846479565118466652 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4447199362982867330, guid: badb78e174c033641bd5d98afe0b0eba,
-    type: 3}
-  m_PrefabInstance: {fileID: 9148366921551092702}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
