@@ -29,3 +29,5 @@ MonoBehaviour:
   slotCategory: 
   positionScaleX: []
   positionScaleY: []
+  hangarScaleX: []
+  hangarScaleY: []

@@ -24,3 +24,9 @@ MonoBehaviour:
   slotType: 
   slotGrade: 
   slotCategory: 
+  positionScaleX: []
+  positionScaleY: []
+  hangarScaleX: []
+  hangarScaleY: []
+  gunScaleX: 0.7
+  gunScaleY: 0.7

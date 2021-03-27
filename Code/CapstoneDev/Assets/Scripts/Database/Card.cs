@@ -41,6 +41,10 @@ public class Card : ScriptableObject
      public float[] hangarScaleX;
      public float[] hangarScaleY;
 
+     //Not a perfect fix to allow for image scaleing after selecting a new weapon, but will do
+     public float gunScaleX;
+     public float gunScaleY;
+
     // Gun classification params
     protected WeaponsClassification.Type type;
     protected WeaponsClassification.Grade grade;
