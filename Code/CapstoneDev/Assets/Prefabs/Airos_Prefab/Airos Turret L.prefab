@@ -160,7 +160,7 @@ RelativeJoint2D:
   m_MaxTorque: 10000
   m_CorrectionScale: 0.3
   m_AutoConfigureOffset: 1
-  m_LinearOffset: {x: -2.8714907, y: 1.4510574}
+  m_LinearOffset: {x: -1.4357454, y: 0.7255288}
   m_AngularOffset: -3.1216607
 --- !u!114 &8524875316918628160
 MonoBehaviour:
@@ -174,17 +174,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db582c1e28e26f74e9094c3f6a89c2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellTypes:
-  - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
-  waitTime: 0.5
   type: 0
   grade: 2
   category: 0
+  shellTypes:
+  - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
+  waitTime: 0.5
   spread: 3
   powerBuff: 0
   speedBuff: 0
   recoilForce: 0
   ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
   bulletSpawns:
   - {fileID: 7846107219708766423}
   - {fileID: 7846107220772301161}
@@ -208,12 +214,16 @@ MonoBehaviour:
   healthBar: {fileID: 4460403997668654421}
   defenseBar: {fileID: 5860688003586221725}
   explosion: {fileID: 3716944717677847712}
+  hasExplosionChain: 0
   explosionDuration: 1
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6, type: 3}
+  hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!60 &6643389657022654752
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -568,6 +578,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_Value
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6751079352522190642, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}

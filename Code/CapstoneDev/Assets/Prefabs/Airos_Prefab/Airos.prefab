@@ -79833,9 +79833,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -90272,9 +90272,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -95366,9 +95366,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -100489,9 +100489,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 15
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 15
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -120236,6 +120236,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2447495243558342178}
     m_Modifications:
+    - target: {fileID: 1491153754707409592, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491153754707409592, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854489, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Name

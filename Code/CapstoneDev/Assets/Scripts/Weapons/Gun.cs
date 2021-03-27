@@ -24,7 +24,6 @@ public class Gun : WeaponsClassification
     // Shoot when not moving feature
     public bool shootWhenNotMoving = false;
     public float movementEpsilon = 0.3f; // When slower than this, considered "not moving"
-    protected Vector3 lastPosition;
     protected float speed;
 
     // Shoot when target visible feature
@@ -39,7 +38,6 @@ public class Gun : WeaponsClassification
     public new void Start()
     {
         base.Start();
-        lastPosition = transform.position;
         if (maxAmmo != null && maxAmmo > 0)
             ammo = maxAmmo;
         else
@@ -58,10 +56,8 @@ public class Gun : WeaponsClassification
         // Update timer
         timer += Time.deltaTime;
 
-        CalculateSpeed();
-
         if (timer >= waitTime &&
-            (speed < movementEpsilon || !shootWhenNotMoving) &&
+            ((CalculateSpeed() < movementEpsilon) || !shootWhenNotMoving) &&
             (IsTargetVisible() || !shootWhenTargetVisible))
         {
             Fire();
@@ -114,11 +110,10 @@ public class Gun : WeaponsClassification
     }
 
     // Calculate speed
-    public void CalculateSpeed()
+    public float CalculateSpeed()
     {
         // Calculate speed during update for "shoot when not moving" feature
-        speed = (transform.position - lastPosition).magnitude / Time.deltaTime;
-        lastPosition = transform.position;
+        return transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
     // Shoot from each bulletSpawn

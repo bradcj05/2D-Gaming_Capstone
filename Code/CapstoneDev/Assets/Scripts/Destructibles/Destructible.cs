@@ -38,7 +38,7 @@ public class Destructible : MonoBehaviour
     public string[] collidableTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
 
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
         // Grab rigidbody and healthbars
         rb = GetComponent<Rigidbody2D>();
@@ -77,6 +77,10 @@ public class Destructible : MonoBehaviour
         {
             explosionChain = GetComponent<ExplosionChain>();
         }
+    }
+
+    public void Start()
+    {
     }
 
     public void Update()

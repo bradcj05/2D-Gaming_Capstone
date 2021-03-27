@@ -169,12 +169,16 @@ MonoBehaviour:
   healthBar: {fileID: 5139003667366214912}
   defenseBar: {fileID: 3162294285964486344}
   explosion: {fileID: 5805126872217734408}
+  hasExplosionChain: 0
   explosionDuration: 0.7
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
+  hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
 --- !u!50 &4530364101076584756
 Rigidbody2D:
   serializedVersion: 4
@@ -227,17 +231,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1690551e9b0c7e045a90125999fb49c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellTypes:
-  - {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9, type: 3}
-  waitTime: 10
   type: 1
   grade: 1
   category: 0
+  shellTypes:
+  - {fileID: 8977783968469312899, guid: b51bfa3d65f1d5841a196a312c9fc2a9, type: 3}
+  waitTime: 10
   spread: 0
   powerBuff: 0
   speedBuff: 0
   recoilForce: 0
   ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
   bulletSpawns:
   - {fileID: 7845238584968810634}
   - {fileID: 7845238585089757648}
@@ -461,6 +471,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Health Bar ML
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
+        type: 3}
+      propertyPath: m_Value
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6751079352522190642, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
