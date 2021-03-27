@@ -16,7 +16,7 @@ MonoBehaviour:
   grade: 0
   category: 0
   shellTypes:
-  - {fileID: 1732377341931273075}
+  - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
   waitTime: 0.2
   spread: 3
   powerBuff: 0
@@ -378,86 +378,6 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4070438452170193832, guid: 008fbdfa2e839414a9bca5f8b6168f98,
     type: 3}
   m_PrefabInstance: {fileID: 6630222026103396100}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7250191701148491504
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6662555555997556615}
-    m_Modifications:
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6148192901085592837, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_Name
-      value: Airos Bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
---- !u!1 &1732377341931273075 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7250191701148491504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8469528257660931044
 PrefabInstance:

@@ -7613,7 +7613,7 @@ AudioSource:
   m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -8579,19 +8579,15 @@ MonoBehaviour:
     timer: 0
     waveLength: 30
   - destructibleSpawnArray:
-    - {fileID: 0}
     - {fileID: 1120042879}
     - {fileID: 82239245}
     - {fileID: 1259730081}
-    - {fileID: 0}
     timer: 10
     waveLength: 0
   - destructibleSpawnArray:
-    - {fileID: 0}
     - {fileID: 1571804496}
     - {fileID: 1473918147}
     - {fileID: 590029421}
-    - {fileID: 0}
     timer: 11
     waveLength: 0
 --- !u!1 &1950166511

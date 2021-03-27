@@ -32,7 +32,7 @@ public class DestructibleSpawn : MonoBehaviour
 
     public void Die()
     {
-        obj.Die();
+        StartCoroutine(obj.Die());
     }
 
     // Getters and setters

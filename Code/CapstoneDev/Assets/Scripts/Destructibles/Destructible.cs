@@ -104,7 +104,7 @@ public class Destructible : MonoBehaviour
                 DeathAnimationProcess();
             }
 
-            else Die();
+            else StartCoroutine(Die());
         }
     }
 
@@ -115,7 +115,7 @@ public class Destructible : MonoBehaviour
     }
 
     // Destruction function
-    public void Die()
+    public IEnumerator Die()
     {
         //Add crater
         if (crater != null)
@@ -148,6 +148,8 @@ public class Destructible : MonoBehaviour
         if (hasExplosionChain)
         {
             explosionChain.TriggerExplosionChain();
+            float waitTime = explosionChain.explosionTiming * (explosionChain.explosion.Length * explosionChain.timesRepeated - 1f) + 0.9f; // 2 is the default explosion time
+            yield return new WaitForSeconds(waitTime);
         }
 
         // Report to spawner that it's dead, if eligible
@@ -161,6 +163,8 @@ public class Destructible : MonoBehaviour
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
         else
             Destroy(gameObject);
+
+        yield return new WaitForSeconds(1);
     }
 
     // Getters and setters
