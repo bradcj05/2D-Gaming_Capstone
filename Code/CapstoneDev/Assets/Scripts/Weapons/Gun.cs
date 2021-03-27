@@ -113,7 +113,12 @@ public class Gun : WeaponsClassification
     public float CalculateSpeed()
     {
         // Calculate speed during update for "shoot when not moving" feature
-        return transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
+        // Return velocity from either parent or grandparent
+        // The carrier should really not be the great-grandparent of the gun or something like that
+        if (transform.parent.gameObject.GetComponent<Rigidbody2D>() != null)
+            return transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
+        else
+            return transform.parent.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
     // Shoot from each bulletSpawn
