@@ -38,9 +38,6 @@ public class Bullet : WeaponsClassification
         base.Start();
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        // Set default stats
-        curPower = power;
-        curSpeed = speed;
     }
 
     // Update is called every frame
@@ -153,7 +150,7 @@ public class Bullet : WeaponsClassification
                     else
                     {
                         time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity, normal);
+                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal);
                         //Store new direction
                         Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                         //Rotate bullet to new direction

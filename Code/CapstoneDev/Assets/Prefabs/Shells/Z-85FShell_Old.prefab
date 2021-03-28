@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2514942025714022222}
   - component: {fileID: 8055132858426331548}
   - component: {fileID: 85143465969558225}
-  - component: {fileID: 9203012090478578261}
+  - component: {fileID: 6112049970868796754}
   m_Layer: 13
   m_Name: Z-85FShell_Old
   m_TagString: Bullet
@@ -154,7 +154,7 @@ MonoBehaviour:
   hitEffectRadius: 0.5
   hitEffectDuration: 0.3
   baseExplosionRadius: 3
---- !u!114 &9203012090478578261
+--- !u!114 &6112049970868796754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

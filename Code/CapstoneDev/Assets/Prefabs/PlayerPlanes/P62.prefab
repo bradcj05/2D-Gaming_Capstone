@@ -133,6 +133,7 @@ MonoBehaviour:
   hasAnimator: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
   HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937, type: 2}
   maxSpeed: 5
@@ -142,6 +143,7 @@ MonoBehaviour:
   activeShellGroup: 0
   numberOfSecondaryWeapons: 0
   numberOfShellGroups: 2
+  devMode: 1
 --- !u!60 &1124189146208134926
 PolygonCollider2D:
   m_ObjectHideFlags: 0

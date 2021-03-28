@@ -103,7 +103,7 @@ MonoBehaviour:
   power: 2
   speed: 15
   penetration: 0
-  deterioration: 0.2
+  deterioration: 0.16
   selfDestructTime: -1
   targetTags:
   - Enemy

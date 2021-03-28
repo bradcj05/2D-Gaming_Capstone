@@ -13,6 +13,7 @@ TagManager:
   - Cooldown
   - Ammo
   - NameText
+  - Ally
   layers:
   - Default
   - TransparentFX
@@ -29,6 +30,7 @@ TagManager:
   - Tracks
   - Enemy Bullets
   - Player Bullets
+  - Screen
   - Screen
   - camera_target
   - 
