@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 //Manages the Game Over menu
 public class GameOverMenu : MonoBehaviour
 {
+    public int currentLevel = 1; // Will probably need to think of a better solution for checkpoints resetting.
+
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -14,9 +16,19 @@ public class GameOverMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        // Reset checkpoints
-        Scene1Controller.ResetCheckpoints();
+        // Reset checkpoints of every scene
+        ResetCheckpoints();
         SceneManager.LoadScene(0);
         Debug.Log("Back to Main Menu");
+    }
+
+    public void ResetCheckpoints()
+    {
+        switch (currentLevel)
+        {
+            case 1:
+                Scene1Controller.ResetCheckpoints();
+                break;
+        }
     }
 }
