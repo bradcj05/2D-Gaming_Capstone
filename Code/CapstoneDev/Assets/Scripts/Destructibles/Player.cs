@@ -16,7 +16,7 @@ public class Player : Destructible
     public float enginePower = 1000f;
     Vector2 movement;
     //Values for rotation
-    public Camera cam;
+    protected Camera cam;
     Vector2 mousePos;
 
     // Active weapons stuff
@@ -34,94 +34,95 @@ public class Player : Destructible
 
     new void Start()
     {
-          Debug.Log(SceneManager.GetActiveScene().name);
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               //Debug.Log("Start assigning values for the player");
-               // Initialize HUD components
-               HUD = GameObject.Find("HUD").GetComponent<Transform>();
-               cam = Camera.main;
-               healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
-               defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
-               cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
-               nameText = FindTag("NameText").GetComponent<Text>();
-               secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
-               // Base start
-               base.Start();
-               // To display name on HealthDock
-               nameText.text = cards.name;
-               if (maxHealth > 0)
-                    health = maxHealth;
-               else
-                    maxHealth = health;
-               isDestroyed = 1;
-               // Set cooldown slider 
-          }
+        Debug.Log(SceneManager.GetActiveScene().name);
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            //Debug.Log("Start assigning values for the player");
+            // Initialize HUD components
+            HUD = GameObject.Find("HUD").GetComponent<Transform>();
+            cam = Camera.main;
+            healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
+            defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
+            cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
+            nameText = FindTag("NameText").GetComponent<Text>();
+            secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
+            // Base start
+            base.Start();
+            // To display name on HealthDock
+            nameText.text = cards.name;
+            if (maxHealth > 0)
+                health = maxHealth;
+            else
+                maxHealth = health;
+            isDestroyed = 1;
+            // Set cooldown slider 
+        }
     }
 
     public void SetUp()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-               Start();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+            Start();
     }
 
     // Update is called once per frame
     // Input
     new void Update()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               base.Update();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            base.Update();
 
-               // Movement
-               movement.x = Input.GetAxisRaw("Horizontal");
-               movement.y = Input.GetAxisRaw("Vertical");
+            // Movement
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-               // Get Mouse Position
-               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            // Get Mouse Position
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-               // Update active secondary weapon
-               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-               }
-               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-               }
+            // Update active secondary weapon
+            if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+            }
 
-               // Update active shell group
-               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-               }
-               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-               }
-          }
+            // Update active shell group
+            if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+            }
+            else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+            }
+        }
     }
 
     //Movement
     void FixedUpdate()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               movement.Normalize();
-               // Move in the direction specified, then force the speed back to max speed if it is already reached.
-               // (Provided the max speed is due to moment and not knockback or external factor)
-               rb.AddForce(movement * enginePower, ForceMode2D.Force);
-               Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
-               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-               {
-                    rb.velocity = maxSpeed * moveDir;
-               }
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            movement.Normalize();
+            // Move in the direction specified, then force the speed back to max speed if it is already reached.
+            // (Provided the max speed is due to moment and not knockback or external factor)
+            rb.AddForce(movement * enginePower, ForceMode2D.Force);
+            Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
+            if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+            {
+                rb.velocity = maxSpeed * moveDir;
+            }
 
-               //Rotate the Player
-               Vector2 lookDir = mousePos - rb.position;
-               float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-               rb.rotation = angle;
-          }
+            //Rotate the Player
+            Vector2 lookDir = mousePos - rb.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angle;
+        }
     }
 
     //Player Death
@@ -129,9 +130,9 @@ public class Player : Destructible
     {
         if (isDestroyed == 1)
         {
-               //Play death animation
-               //Destroy(gameObject);
-               transform.gameObject.SetActive(false);
+            //Play death animation
+            //Destroy(gameObject);
+            transform.gameObject.SetActive(false);
             isDestroyed = 0;
         }
     }
@@ -147,10 +148,10 @@ public class Player : Destructible
         return secondaryAmmo;
     }
 
-     public int GetIsDestroyed()
-     {
-          return isDestroyed;
-     }
+    public int GetIsDestroyed()
+    {
+        return isDestroyed;
+    }
 
     public void setCooldownSlider(HealthBar input)
     {

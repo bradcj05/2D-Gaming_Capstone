@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Scene1Controller : MonoBehaviour
 {
     public Battle[] battles;
+    public AudioSource levelMusic;
+    public AudioSource bossMusic;
+    public int bossBattleId = 4;
+    public float bossWait = 2f;
     protected static int checkpointAt = 0;
+
+    // For music
+    public AudioMixer mixer;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemySpawner());
+        StartCoroutine(BattleController());
     }
 
     // Update is called once per frame
@@ -19,17 +27,8 @@ public class Scene1Controller : MonoBehaviour
     }
 
     // Time-based enemy spawner
-    IEnumerator EnemySpawner()
+    IEnumerator BattleController()
     {
-        // -- PHASE 1 --
-
-        // -- PHASE 2 --
-
-        // -- PHASE 3 --
-
-        // -- PHASE 4 --
-
-        // -- BOSS (Test) --
         // Start battle with checkpoint if there's a checkpoint reached.
         Debug.Log("Start battle: " + checkpointAt);
         for (int i = checkpointAt; i < battles.Length; i++)
@@ -42,10 +41,31 @@ public class Scene1Controller : MonoBehaviour
                 Battle prevBattle = battles[i - 1];
                 yield return new WaitUntil(() => prevBattle.TestBattleOver());
             }
+
+            // If it's the boss battle, delay a little before starting for dramatic effect.
+            if (i == bossBattleId && i != checkpointAt)
+            {
+                StartCoroutine(FadeMixerGroup.Fade(mixer, "levelVolume", 2f, 0f));
+                yield return new WaitForSeconds(bossWait);
+            }
+            battle.StartBattle();
+
+            // Play level music or boss music depending on the battle 
+            if (i == checkpointAt && i != bossBattleId)
+            {
+                levelMusic.volume = 0.8f;
+                levelMusic.Play();
+            }
+            else if (i == bossBattleId)
+            {
+                bossMusic.Play();
+                mixer.SetFloat("bossVolume", 0f);
+                StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, 0.8f));
+            }
+
             // Save a checkpoint if battle is specified to have a checkpoint before it.
             if (battle.checkpointBefore)
                 checkpointAt = i;
-            battle.StartBattle();
         }
     }
 
