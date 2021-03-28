@@ -168,7 +168,7 @@ public class Destructible : MonoBehaviour
         else
             Destroy(gameObject);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForEndOfFrame();
     }
 
     // Getters and setters

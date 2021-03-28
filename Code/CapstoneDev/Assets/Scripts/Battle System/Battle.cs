@@ -17,9 +17,9 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
-
     public event EventHandler OnBattleStarted;
     public event EventHandler OnBattleOver;
+    public bool checkpointBefore = false;
 
     private enum State
     {
@@ -81,18 +81,21 @@ public class Battle : MonoBehaviour
         }
     }
 
-    public void TestBattleOver()
+    public bool TestBattleOver()
     {
-        if (state == State.Active)
+        if (state == State.Active && AreWavesOver())
         {
-            if (AreWavesOver())
-            {
-                // Battle is over!
-                state = State.BattleOver;
-                Debug.Log("Battle Over!");
-                OnBattleOver?.Invoke(this, EventArgs.Empty);
-            }
+            // Battle is over!
+            state = State.BattleOver;
+            Debug.Log("Battle Over!");
+            OnBattleOver?.Invoke(this, EventArgs.Empty);
+            return true;
         }
+        if (state == State.BattleOver)
+        {
+            return true;
+        }
+        return false;
     }
 
     public bool AreWavesOver()

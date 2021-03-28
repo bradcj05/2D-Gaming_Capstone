@@ -7,14 +7,16 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public void Retry()
-     {
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-          Debug.Log("Reloading Scene");
-     }
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Reloading Scene");
+    }
 
-     public void BackToMainMenu()
-     {
-          SceneManager.LoadScene(0);
-          Debug.Log("Back to Main Menu");
-     }
+    public void BackToMainMenu()
+    {
+        // Reset checkpoints
+        Scene1Controller.ResetCheckpoints();
+        SceneManager.LoadScene(0);
+        Debug.Log("Back to Main Menu");
+    }
 }

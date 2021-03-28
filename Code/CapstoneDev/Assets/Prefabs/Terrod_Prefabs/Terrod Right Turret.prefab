@@ -154,7 +154,7 @@ MonoBehaviour:
   speedBuff: 0
   recoilForce: 0
   ammo: -1
-  shootWhenNotMoving: 1
+  shootWhenNotMoving: 0
   movementEpsilon: 0.1
   shootWhenTargetVisible: 1
   targetTags:
