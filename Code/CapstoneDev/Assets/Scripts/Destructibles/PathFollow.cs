@@ -1,14 +1,15 @@
-﻿using System.Collections;
+﻿// AI script for path-following enemies. Based on Airos.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PathFollow : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] path;
-    public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
+    private Path[] paths;
 
-    private int routeToGo;
+    private int routeToGo = 0;
     private float tParam;
     private Vector2 AirPosition;
 
@@ -31,6 +32,8 @@ public class PathFollow : MonoBehaviour
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
+        if (coroutineAllowed)
+            StartCoroutine(Go());
         if (rotateTowardsTarget)
             FindClosestTarget();
     }
@@ -40,8 +43,6 @@ public class PathFollow : MonoBehaviour
     {
         if (rotateTowardsTarget)
             FindClosestTarget();
-        if (coroutineAllowed)
-            StartCoroutine(GoByTheRoute(routeToGo));
     }
 
     // Rotate towards playercode
@@ -97,41 +98,53 @@ public class PathFollow : MonoBehaviour
         }
     }
 
-    private IEnumerator GoByTheRoute(int routeNumber)
+    private IEnumerator Go()
     {
-        if (routeToGo <= path.Length - 1)
+        for (int i = 0; i < paths.Length; i++)
         {
-            coroutineAllowed = false;
-
-            Vector2 p0 = path[routeNumber].GetChild(0).position;
-            Vector2 p1 = path[routeNumber].GetChild(1).position;
-            Vector2 p2 = path[routeNumber].GetChild(2).position;
-            Vector2 p3 = path[routeNumber].GetChild(3).position;
-
-            while (tParam < 1)
+            Path path = paths[i];
+            for (int routeToGo = 0; routeToGo <= path.pathObject.childCount - 1; routeToGo++)
             {
-                tParam += Time.deltaTime * bezierSpeed;   /// requires some form of speed variable
-                Vector2 lastPosition = transform.position;
-                AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
-                           3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
-                           3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
-                            Mathf.Pow(tParam, 3) * p3;
+                coroutineAllowed = false;
 
-                //transform.position = AirPosition;
-                rb.velocity = AirPosition - lastPosition;
-                yield return new WaitForEndOfFrame();
+                Vector2 p0 = path.pathObject.GetChild(routeToGo).GetChild(0).position;
+                Vector2 p1 = path.pathObject.GetChild(routeToGo).GetChild(1).position;
+                Vector2 p2 = path.pathObject.GetChild(routeToGo).GetChild(2).position;
+                Vector2 p3 = path.pathObject.GetChild(routeToGo).GetChild(3).position;
+
+                while (tParam < 1)
+                {
+                    tParam += Time.deltaTime * path.bezierSpeed;   /// requires some form of speed variable
+                    Vector2 lastPosition = transform.position;
+                    AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
+                               3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
+                               3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
+                                Mathf.Pow(tParam, 3) * p3;
+
+                    //transform.position = AirPosition;
+                    rb.velocity = AirPosition - lastPosition;
+                    yield return new WaitForEndOfFrame();
+                }
+
+                tParam = 0;
+
+                if (i == paths.Length - 1 && routeToGo > path.pathObject.childCount - 1 && repeating)
+                    i = 0;
             }
-
-            tParam = 0;
-
-            routeToGo += 1;
-
-            if (routeToGo > path.Length - 1 && repeating)
-                routeToGo = 0;
-            else
-                rb.velocity = new Vector2(0, 0);
-
+            // If reached the end of path, temporarily resets velocity to 0.
+            // Velocity might be increased back to follow next path later.
+            rb.velocity = new Vector2(0, 0);
             coroutineAllowed = true;
+            yield return new WaitForSeconds(path.delayBeforeNextPath);
         }
+    }
+
+    // Represent a single path
+    [System.Serializable]
+    private class Path
+    {
+        public Transform pathObject;
+        public float delayBeforeNextPath = 0f; // Timer is the time the wave will be started AFTER THE BATTLE STARTS
+        public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
     }
 }

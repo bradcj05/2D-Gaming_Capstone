@@ -13,7 +13,7 @@ public class HomingMissile : Bullet
     protected Transform target;
     protected float distanceToTarget = Mathf.Infinity;
 
-    protected float timer = 0f;                 
+    protected float timer = 0f;
     public float rotationTime = 5f;
 
     public bool headingDown = false;    // Whether the sprite is heading down
@@ -86,7 +86,28 @@ public class HomingMissile : Bullet
                 direction.Normalize();
                 if ((Vector3.Dot(direction, transform.up) <= 0 && !headingDown) || (Vector3.Dot(direction, -transform.up) <= 0 && headingDown))
                 {
-                    rotateAmount = 1;
+                    if (headingDown)
+                    {
+                        if (Vector3.Cross(direction, -transform.up).z >= 0)
+                        {
+                            rotateAmount = 1;
+                        }
+                        else
+                        {
+                            rotateAmount = -1;
+                        }
+                    }
+                    else
+                    {
+                        if (Vector3.Cross(direction, transform.up).z >= 0)
+                        {
+                            rotateAmount = 1;
+                        }
+                        else
+                        {
+                            rotateAmount = -1;
+                        }
+                    }
                 }
                 else
                 {

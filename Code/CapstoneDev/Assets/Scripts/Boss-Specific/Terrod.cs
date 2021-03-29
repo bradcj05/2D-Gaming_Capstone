@@ -120,7 +120,14 @@ public class Terrod : MonoBehaviour
         Vector2 direction = ((Vector2)target.position - rig.position).normalized;
         if (Vector3.Dot(direction, -transform.up) <= 0)
         {
-            rotateAmount = 1f;
+            if (Vector3.Cross(direction, -transform.up).z >= 0)
+            {
+                rotateAmount = 1;
+            }
+            else
+            {
+                rotateAmount = -1;
+            }
         }
         else
         {
