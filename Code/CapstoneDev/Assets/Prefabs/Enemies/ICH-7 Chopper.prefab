@@ -233,8 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cce4eb7cfbc01f4da2e5d4ed4d18456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: []
-  bezierSpeed: 0.1
+  paths: []
   repeating: 0
   rotateTowardsTarget: 1
   targetTags:
@@ -579,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.353
+      value: 2.716
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
