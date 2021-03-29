@@ -8595,7 +8595,7 @@ PrefabInstance:
     - target: {fileID: 8908188668105365967, guid: 24cc6420ce80312409e3f88fec89c774,
         type: 3}
       propertyPath: paths.Array.data[0].delayBeforeNextPath
-      value: 30
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8908188668105365967, guid: 24cc6420ce80312409e3f88fec89c774,
         type: 3}
@@ -19244,7 +19244,7 @@ PrefabInstance:
     - target: {fileID: 8908188668105365967, guid: 24cc6420ce80312409e3f88fec89c774,
         type: 3}
       propertyPath: paths.Array.data[0].delayBeforeNextPath
-      value: 30
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8908188668105365967, guid: 24cc6420ce80312409e3f88fec89c774,
         type: 3}
@@ -22601,7 +22601,7 @@ MonoBehaviour:
     - {fileID: 955794607}
     - {fileID: 1882014616}
     - {fileID: 842636163}
-    timer: 68
+    timer: 65
     waveLength: 0
 --- !u!1 &1941990640
 GameObject:
