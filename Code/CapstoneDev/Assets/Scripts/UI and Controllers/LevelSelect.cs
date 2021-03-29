@@ -8,21 +8,19 @@ public class LevelSelect : MonoBehaviour
 
 {
     public void AirosStart()
-     {
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
+    public void TerrodStart()
+    {
+        SceneManager.LoadScene("Hangar");
+    }
 
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-     }
-
-     public void TerrodStart()
-     {
-          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-     }
-
-     public void LynchStart()
-     {
-          Debug.Log("Coming Soon");
-     }
+    public void LynchStart()
+    {
+        Debug.Log("Coming Soon");
+    }
 
 
 }
