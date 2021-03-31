@@ -16,6 +16,8 @@ public class PlaneSwitching : MonoBehaviour
     Vector3 startPos;
      protected bool isDead = false;
 
+     Sidebars bars;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class PlaneSwitching : MonoBehaviour
           {
                switchTimer = 0f;
                isDead = false;
+               bars = GameObject.Find("HUD").GetComponent<Sidebars>();
                //squadronSize = transform.childCount;
                //Assign numbers to the planes
                //squadArr = new GameObject[transform.childCount];
@@ -194,6 +197,8 @@ public class PlaneSwitching : MonoBehaviour
             }
             i++;
         }
+
+          bars.UpdatePlanes(selectedPlane);
     }
 
      public bool GetIsDead()
