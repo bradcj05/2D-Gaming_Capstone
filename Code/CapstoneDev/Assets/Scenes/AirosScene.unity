@@ -1053,7 +1053,8 @@ AudioSource:
   m_GameObject: {fileID: 62778711}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5195271420031616108, guid: c967b4b768a2d1e469bb2b66d04fd31c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 21ecc8606bbaa8b439af81e9619ab890, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -29139,7 +29140,7 @@ MonoBehaviour:
   levelMusic: {fileID: 62778712}
   bossMusic: {fileID: 1767794095}
   bossBattleId: 3
-  bossWait: 3
+  bossWait: 4
   mixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
 --- !u!4 &1423632346
 Transform:
@@ -31370,6 +31371,16 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1689283356692265178, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689283356692265178, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1689283356692265188, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -31483,6 +31494,11 @@ PrefabInstance:
     - target: {fileID: 1689283357443586007, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689283357443586007, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1689283357451841953, guid: 56a2cc2025bb0994f968ec947111166a,
@@ -36951,7 +36967,8 @@ AudioSource:
   m_GameObject: {fileID: 1767794094}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -716734902049489283, guid: c967b4b768a2d1e469bb2b66d04fd31c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 97c521778f4d69c47af54f9a5499fc1a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
