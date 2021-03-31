@@ -123,6 +123,13 @@ public class PathFollow : MonoBehaviour
 
                     //transform.position = AirPosition;
                     rb.velocity = AirPosition - lastPosition;
+                    // If not rotating towards target, rotate towards direction of movement
+                    if (!rotateTowardsTarget)
+                    {
+                        var dir = AirPosition - lastPosition;
+                        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+                        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                    }
                     yield return new WaitForEndOfFrame();
                 }
 
