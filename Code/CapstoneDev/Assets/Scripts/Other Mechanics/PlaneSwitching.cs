@@ -19,7 +19,7 @@ public class PlaneSwitching : MonoBehaviour
      Sidebars bars;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
@@ -72,7 +72,7 @@ public class PlaneSwitching : MonoBehaviour
 
      public void SetUp()
      {
-          this.Start();
+          this.Awake();
      }
 
     // Update is called once per frame
