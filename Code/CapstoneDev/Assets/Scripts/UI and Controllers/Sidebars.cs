@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Sidebars : MonoBehaviour
 {
-     //Needs to be Tested and Fixed
      public Text currentPlaneName;
      public Image currentPlaneIcon;
-     public HealthBar hb0;
+     //public HealthBar healthBar0; //Don't know if we'll need these
+     //public HealthBar defenseBar0;
+     //public HealthBar cooldownBar0;
      public Image currentPlanePrimary;
      public Image currentPlaneSecondary;
      public Text secondaryAmmo0;
@@ -17,12 +18,18 @@ public class Sidebars : MonoBehaviour
 
      public Text sidePlaneName1;
      public Image sidePlaneIcon1;
+     public HealthBar healthBar1;
+     public HealthBar defenseBar1;
+     public HealthBar cooldownBar1;
      public Image sidePlaneSecondary1;
      public Text secondaryAmmo1;
      public Image sidePlaneSpecial1;
 
      public Text sidePlaneName2;
      public Image sidePlaneIcon2;
+     public HealthBar healthBar2;
+     public HealthBar defenseBar2;
+     public HealthBar cooldownBar2;
      public Image sidePlaneSecondary2;
      public Text secondaryAmmo2;
      public Image sidePlaneSpecial2;
@@ -35,41 +42,57 @@ public class Sidebars : MonoBehaviour
           //Find the initial plane
           currentPlaneName.text = PlaneSwitching.squadArr[0].name;
           currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-          //hb0.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
-          //hb0.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
           EquipmentUpdate(0, 0);
           if(PlaneSwitching.squadArr[1] != null && PlaneSwitching.squadArr[2] != null)
           {
                //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+               defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(1, 1);
                //sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+               healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+               healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+               defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                EquipmentUpdate(2, 2);
           }
           else if (PlaneSwitching.squadArr[1] != null)
           {
                //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+               defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(1, 1);
                //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+               healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+               defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(2, 1);
           }
           else
           {
                //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+               healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+               healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+               defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                EquipmentUpdate(1, 0);
                //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+               healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+               healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+               defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                EquipmentUpdate(2, 0);
           }
      }
-
-     public void UpdatePlanes(int currentPlane)
+     
+     public void UpdatePlanes(int currentPlane, int initialSize)
      {
-          switch (PlaneSwitching.squadArr.Length)
+          switch (initialSize)
           {
                case 1:
                     break;
@@ -81,10 +104,16 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 0);
                          //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 1);
                          //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                         EquipmentUpdate(2, 2);
+                         healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                         EquipmentUpdate(2, 1);
                     }
                     else
                     {
@@ -93,9 +122,15 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 1);
                          //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 0);
                          //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 0);
                     }
                     break;
@@ -107,9 +142,15 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 0);
                          //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 1);
                          //sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 2);
                     }
                     else if (currentPlane == 1)
@@ -119,9 +160,15 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 1);
                          //sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 2);
                          //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 0);
                     }
                     else
@@ -131,9 +178,15 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 2);
                          //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 0);
                          //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 1);
                     }
                     break;
@@ -181,6 +234,7 @@ public class Sidebars : MonoBehaviour
                     sidePlaneSecondary1.gameObject.SetActive(false);
                     secondaryAmmo1.text = "0";
                     sidePlaneSpecial1.gameObject.SetActive(false);
+                    cooldownBar1.SetHealth(0);
 
                     for(int i = 0; i < PlaneSwitching.squadArr[plane].transform.childCount - 1; i++)
                     {
@@ -190,6 +244,8 @@ public class Sidebars : MonoBehaviour
                               sidePlaneSecondary1.gameObject.SetActive(true);
                               sidePlaneSecondary1.sprite = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite;
                               secondaryAmmo1.text = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().ammo.ToString();
+                              cooldownBar1.SetMax(PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().waitTime);
+                              cooldownBar1.SetHealth(PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().GetTimerValue());
                          }
                          else if ((int)PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().grade == 3)
                          {
@@ -202,6 +258,7 @@ public class Sidebars : MonoBehaviour
                     sidePlaneSecondary2.gameObject.SetActive(false);
                     secondaryAmmo2.text = "0";
                     sidePlaneSpecial2.gameObject.SetActive(false);
+                    cooldownBar2.SetHealth(0);
 
                     for (int i = 0; i < PlaneSwitching.squadArr[plane].transform.childCount - 1; i++)
                     {
@@ -211,6 +268,8 @@ public class Sidebars : MonoBehaviour
                               sidePlaneSecondary2.gameObject.SetActive(true);
                               sidePlaneSecondary2.sprite = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite;
                               secondaryAmmo2.text = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().ammo.ToString();
+                              cooldownBar2.SetMax(PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().waitTime);
+                              cooldownBar2.SetHealth(PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().GetTimerValue());
                          }
                          else if ((int)PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().grade == 3)
                          {
@@ -223,5 +282,10 @@ public class Sidebars : MonoBehaviour
                     Debug.Log("This message should not appear. Issue with EquipmentUpdate in the Sidebars script.");
                     break;
           }
+     }
+
+     public void ResetSidebar()
+     {
+          this.Start();
      }
 }

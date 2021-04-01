@@ -1162,7 +1162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlaneName: {fileID: 1689283356435767647}
   currentPlaneIcon: {fileID: 2580522223422387697}
-  hb0: {fileID: 1689283356692265179}
   currentPlanePrimary: {fileID: 5141589430584454825}
   currentPlaneSecondary: {fileID: 6445487677792013038}
   secondaryAmmo0: {fileID: 7930150526093198415}
@@ -1170,11 +1169,17 @@ MonoBehaviour:
   currentPlaneAmmo: {fileID: 5560236911078737516}
   sidePlaneName1: {fileID: 0}
   sidePlaneIcon1: {fileID: 3403586977971593770}
+  healthBar1: {fileID: 5898907756704405141}
+  defenseBar1: {fileID: 6464358886224359803}
+  cooldownBar1: {fileID: 4589211552312022982}
   sidePlaneSecondary1: {fileID: 7550605423603161757}
   secondaryAmmo1: {fileID: 2068772158579750409}
   sidePlaneSpecial1: {fileID: 1311835024193315287}
   sidePlaneName2: {fileID: 0}
   sidePlaneIcon2: {fileID: 6983135239164469810}
+  healthBar2: {fileID: 2558760229184482452}
+  defenseBar2: {fileID: 9116478679136925029}
+  cooldownBar2: {fileID: 9014961014579540158}
   sidePlaneSecondary2: {fileID: 5842374623582798784}
   secondaryAmmo2: {fileID: 6057336581402432891}
   sidePlaneSpecial2: {fileID: 1761395380903663623}

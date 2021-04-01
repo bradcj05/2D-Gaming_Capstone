@@ -190,4 +190,9 @@ public class Gun : WeaponsClassification
             }
         }
     }
+
+     public float GetTimerValue()
+     {
+          return timer;
+     }
 }

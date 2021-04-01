@@ -80,13 +80,6 @@ public class PlaneSwitching : MonoBehaviour
     {
           if(SceneManager.GetActiveScene().name != "Hangar")
           {
-               /*/TODO: Change this
-               if (transform.childCount == 0)
-               {
-                    isDead = true;
-                    transform.gameObject.SetActive(false); //Just in case
-               }*/
-
                if (switchTimer < switchDelay)
                     switchTimer += Time.deltaTime;
 
@@ -130,14 +123,13 @@ public class PlaneSwitching : MonoBehaviour
                }
 
                //swap to next plane if previous plane dies
-               //TODO: Fix
+               //TODO add stuff to update sidebars
                if (squadArr[selectedPlane].GetComponent<Player>().GetIsDestroyed() == 0)
                {
                     size--;
                     if(size <= 0)
                     {
                          isDead = true;
-                         //transform.gameObject.SetActive(false); //Just in case
                     }
 
                     //Debug.Log("New PLane should spawn");
@@ -148,7 +140,6 @@ public class PlaneSwitching : MonoBehaviour
                               selectedPlane = j;
                               SelectPlane(startPos);
                               switchTimer = 0f;
-                              //size--;
                               Debug.Log("Planes in squadron: " + size);
                               break;
                          }
@@ -198,7 +189,13 @@ public class PlaneSwitching : MonoBehaviour
             i++;
         }
 
-          bars.UpdatePlanes(selectedPlane);
+          int activePlanes = 3;
+          for(int j = 0; j < squadronSize; j++)
+          {
+               if (squadArr[j] == null)
+                    activePlanes--;
+          }
+          bars.UpdatePlanes(selectedPlane, activePlanes);
     }
 
      public bool GetIsDead()
