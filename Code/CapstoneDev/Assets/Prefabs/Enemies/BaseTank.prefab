@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1670832299472690924}
   m_Layer: 0
   m_Name: BaseTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,15 +98,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: backGun
       objectReference: {fileID: 0}
+    - target: {fileID: 1375278533992911810, guid: b3330d761d2177d4f8a48f4edcc19981,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15234101
+      value: -0.145
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5798778
+      value: -0.441
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
@@ -116,22 +121,22 @@ PrefabInstance:
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
@@ -151,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 2641100846722614495, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3330d761d2177d4f8a48f4edcc19981, type: 3}
@@ -173,15 +178,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Front heavy gun
       objectReference: {fileID: 0}
+    - target: {fileID: 111420543525373468, guid: bcfd0182fe0f26947b5fd2be23936221,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 944675969891649832, guid: bcfd0182fe0f26947b5fd2be23936221,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09103004
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 944675969891649832, guid: bcfd0182fe0f26947b5fd2be23936221,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18767636
+      value: 0.033
       objectReference: {fileID: 0}
     - target: {fileID: 944675969891649832, guid: bcfd0182fe0f26947b5fd2be23936221,
         type: 3}
@@ -248,15 +258,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: front gun_1
       objectReference: {fileID: 0}
+    - target: {fileID: 605811123807095781, guid: 4a99c969b9c5f454897793e996c02c8e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4457251774449708561, guid: 4a99c969b9c5f454897793e996c02c8e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.14064066
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 4457251774449708561, guid: 4a99c969b9c5f454897793e996c02c8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.115133144
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4457251774449708561, guid: 4a99c969b9c5f454897793e996c02c8e,
         type: 3}
@@ -323,15 +338,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: top gun
       objectReference: {fileID: 0}
+    - target: {fileID: 1834207188583335450, guid: efcf697c97a0572439a98305bd330112,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6447860510282882513, guid: efcf697c97a0572439a98305bd330112,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.002574486
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 6447860510282882513, guid: efcf697c97a0572439a98305bd330112,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18440017
+      value: -0.242
       objectReference: {fileID: 0}
     - target: {fileID: 6447860510282882513, guid: efcf697c97a0572439a98305bd330112,
         type: 3}
