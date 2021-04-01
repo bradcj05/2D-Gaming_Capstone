@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 1689283357484659545}
   - component: {fileID: 1689283357484659546}
   - component: {fileID: 1689283357484659547}
+  - component: {fileID: 7651621301661248283}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1147,6 +1148,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7651621301661248283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689283357484659556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff8ec19375fcb8f4698a6b8fde59a268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentPlaneName: {fileID: 1689283356435767647}
+  currentPlaneIcon: {fileID: 2580522223422387697}
+  currentPlanePrimary: {fileID: 5141589430584454825}
+  currentPlaneSecondary: {fileID: 6445487677792013038}
+  secondaryAmmo0: {fileID: 7930150526093198415}
+  currentPlaneSpecial: {fileID: 783759338707756977}
+  currentPlaneAmmo: {fileID: 5560236911078737516}
+  sidePlaneName1: {fileID: 0}
+  sidePlaneIcon1: {fileID: 3403586977971593770}
+  sidePlaneSecondary1: {fileID: 7550605423603161757}
+  secondaryAmmo1: {fileID: 2068772158579750409}
+  sidePlaneSpecial1: {fileID: 1311835024193315287}
+  sidePlaneName2: {fileID: 0}
+  sidePlaneIcon2: {fileID: 6983135239164469810}
+  sidePlaneSecondary2: {fileID: 5842374623582798784}
+  secondaryAmmo2: {fileID: 6057336581402432891}
+  sidePlaneSpecial2: {fileID: 1761395380903663623}
+  laserSprite: {fileID: 21300000, guid: 1b6e1db7f8ded7840957f4e3b01737fd, type: 3}
 --- !u!1 &1689283357601344116
 GameObject:
   m_ObjectHideFlags: 0
