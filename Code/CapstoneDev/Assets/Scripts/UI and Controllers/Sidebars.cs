@@ -8,6 +8,7 @@ public class Sidebars : MonoBehaviour
      //Needs to be Tested and Fixed
      public Text currentPlaneName;
      public Image currentPlaneIcon;
+     public HealthBar hb0;
      public Image currentPlanePrimary;
      public Image currentPlaneSecondary;
      public Text secondaryAmmo0;
@@ -24,7 +25,6 @@ public class Sidebars : MonoBehaviour
      public Image sidePlaneIcon2;
      public Image sidePlaneSecondary2;
      public Text secondaryAmmo2;
-
      public Image sidePlaneSpecial2;
 
      public Sprite laserSprite;
@@ -34,33 +34,35 @@ public class Sidebars : MonoBehaviour
      {
           //Find the initial plane
           currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-          currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+          currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+          //hb0.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+          //hb0.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
           EquipmentUpdate(0, 0);
           if(PlaneSwitching.squadArr[1] != null && PlaneSwitching.squadArr[2] != null)
           {
-               sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+               //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(1, 1);
-               sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
-               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<Image>().sprite;
+               //sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
+               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(2, 2);
           }
           else if (PlaneSwitching.squadArr[1] != null)
           {
-               sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+               //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(1, 1);
-               sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+               //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(2, 1);
           }
           else
           {
-               sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+               //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+               sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(1, 0);
-               sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+               //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+               sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                EquipmentUpdate(2, 0);
           }
      }
@@ -75,25 +77,25 @@ public class Sidebars : MonoBehaviour
                     if (currentPlane == 0)
                     {
                          currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(0, 0);
-                         sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(1, 1);
-                         sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(2, 2);
                     }
                     else
                     {
                          currentPlaneName.text = PlaneSwitching.squadArr[1].name;
-                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(0, 1);
-                         sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(1, 0);
-                         sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(2, 0);
                     }
                     break;
@@ -101,37 +103,37 @@ public class Sidebars : MonoBehaviour
                     if (currentPlane == 0)
                     {
                          currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(0, 0);
-                         sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         //sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(1, 1);
-                         sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
-                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<Image>().sprite;
+                         //sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(2, 2);
                     }
                     else if (currentPlane == 1)
                     {
                          currentPlaneName.text = PlaneSwitching.squadArr[1].name;
-                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(0, 1);
-                         sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
-                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<Image>().sprite;
+                         //sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(1, 2);
-                         sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         //sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(2, 0);
                     }
                     else
                     {
                          currentPlaneName.text = PlaneSwitching.squadArr[2].name;
-                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[2].GetComponent<Image>().sprite;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(0, 2);
-                         sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<Image>().sprite;
+                         //sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(1, 0);
-                         sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<Image>().sprite;
+                         //sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
                          EquipmentUpdate(2, 1);
                     }
                     break;
@@ -148,6 +150,7 @@ public class Sidebars : MonoBehaviour
                case 0:
                     currentPlanePrimary.gameObject.SetActive(false);
                     currentPlaneSecondary.gameObject.SetActive(false);
+                    currentPlaneAmmo.gameObject.SetActive(false);
                     secondaryAmmo0.text = "0";
                     currentPlaneSpecial.gameObject.SetActive(false);
 
@@ -163,6 +166,8 @@ public class Sidebars : MonoBehaviour
                          {
                               currentPlaneSecondary.gameObject.SetActive(true);
                               currentPlaneSecondary.sprite = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<SpriteRenderer>().sprite;
+                              currentPlaneAmmo.gameObject.SetActive(true);
+                              currentPlaneAmmo.sprite = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().shellTypes[0].GetComponent<SpriteRenderer>().sprite;
                               secondaryAmmo0.text = PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().ammo.ToString();
                          }
                          else if ((int)PlaneSwitching.squadArr[plane].transform.GetChild(i).GetChild(0).GetComponent<Gun>().grade == 3)

@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlaneName: {fileID: 1689283356435767647}
   currentPlaneIcon: {fileID: 2580522223422387697}
+  hb0: {fileID: 1689283356692265179}
   currentPlanePrimary: {fileID: 5141589430584454825}
   currentPlaneSecondary: {fileID: 6445487677792013038}
   secondaryAmmo0: {fileID: 7930150526093198415}
