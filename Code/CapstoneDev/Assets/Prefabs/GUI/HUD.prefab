@@ -471,9 +471,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1167,7 +1167,6 @@ MonoBehaviour:
   secondaryAmmo0: {fileID: 7930150526093198415}
   currentPlaneSpecial: {fileID: 783759338707756977}
   currentPlaneAmmo: {fileID: 5560236911078737516}
-  sidePlaneName1: {fileID: 0}
   sidePlaneIcon1: {fileID: 3403586977971593770}
   healthBar1: {fileID: 5898907756704405141}
   defenseBar1: {fileID: 6464358886224359803}
@@ -1175,7 +1174,6 @@ MonoBehaviour:
   sidePlaneSecondary1: {fileID: 7550605423603161757}
   secondaryAmmo1: {fileID: 2068772158579750409}
   sidePlaneSpecial1: {fileID: 1311835024193315287}
-  sidePlaneName2: {fileID: 0}
   sidePlaneIcon2: {fileID: 6983135239164469810}
   healthBar2: {fileID: 2558760229184482452}
   defenseBar2: {fileID: 9116478679136925029}
@@ -1350,9 +1348,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4548,9 +4546,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

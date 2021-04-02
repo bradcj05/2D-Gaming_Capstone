@@ -48,7 +48,7 @@ public class PlaneSwitching : MonoBehaviour
                //Ensure weapons are active
                for(int i = 0; i < transform.childCount; i++)
                {
-                    if (transform.GetChild(i).name == "Airos Player Variant(Clone)")
+                    if (transform.GetChild(i).name == "Airos")
                     {
                          for (int j = 0; j < transform.GetChild(i).childCount - 2; j++)
                          {
@@ -72,6 +72,8 @@ public class PlaneSwitching : MonoBehaviour
 
      public void SetUp()
      {
+          selectedPlane = 0;
+          isDead = false;
           this.Awake();
      }
 
@@ -190,12 +192,19 @@ public class PlaneSwitching : MonoBehaviour
         }
 
           int activePlanes = 3;
+          int[] isDeadValues = new int[squadronSize];
           for(int j = 0; j < squadronSize; j++)
           {
                if (squadArr[j] == null)
+               {
                     activePlanes--;
+               }
+               else
+               {
+                    isDeadValues[j] = squadArr[j].GetComponent<Player>().GetIsDestroyed();
+               }
           }
-          bars.UpdatePlanes(selectedPlane, activePlanes);
+          bars.UpdatePlanes(selectedPlane, activePlanes, isDeadValues);
     }
 
      public bool GetIsDead()
