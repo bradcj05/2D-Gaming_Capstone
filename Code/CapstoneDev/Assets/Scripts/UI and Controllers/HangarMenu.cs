@@ -975,6 +975,7 @@ public class HangarMenu : MonoBehaviour
                         if (current.artwork == plane1.sprite)
                         {
                             Instantiate(current.obj, squadron);
+                            squadron.GetChild(0).name = current.name;
                             for (int x = 0; x < current.gunSlotNum; x++)
                             {
                                 if (slots1[x].GetChild(0).name != current.gunSlotObj[x].name)
