@@ -8,9 +8,11 @@ public class Narration : MonoBehaviour
      public Image portrait;
      public Text textBox;
 
-     public Line[] lines;
+     public Sprite[] sprites;
+     public string[] lines;
+     public float[] triggers;
      int currentLine;
-     public float timer;//public for testing
+     float timer;
 
      // Start is called before the first frame update
      void Start()
@@ -23,11 +25,11 @@ public class Narration : MonoBehaviour
      void Update()
      {
           timer += Time.deltaTime;
-          if(currentLine < lines.Length && lines[currentLine].trigger <= timer)
+          if(currentLine < lines.Length && triggers[currentLine] <= timer)
           {
                //Play line
-               portrait.sprite = lines[currentLine].portrait;
-               textBox.text = lines[currentLine].text;
+               portrait.sprite = sprites[currentLine];
+               textBox.text = lines[currentLine];
                currentLine++;
           }
      }
