@@ -10,6 +10,7 @@ public class Narration : MonoBehaviour
 
      public Sprite[] sprites;
      public string[] lines;
+     public int[] spriteToUse;
      public float[] triggers;
      int currentLine;
      float timer;
@@ -28,7 +29,7 @@ public class Narration : MonoBehaviour
           if(currentLine < lines.Length && triggers[currentLine] <= timer)
           {
                //Play line
-               portrait.sprite = sprites[currentLine];
+               portrait.sprite = sprites[spriteToUse[currentLine]];
                textBox.text = lines[currentLine];
                currentLine++;
           }
