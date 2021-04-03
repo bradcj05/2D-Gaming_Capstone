@@ -23,6 +23,7 @@ public class PlaneSwitching : MonoBehaviour
     {
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
+               size = squadronSize;
                switchTimer = 0f;
                isDead = false;
                bars = GameObject.Find("HUD").GetComponent<Sidebars>();
