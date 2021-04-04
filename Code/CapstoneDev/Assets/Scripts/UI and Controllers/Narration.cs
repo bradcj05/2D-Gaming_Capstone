@@ -5,33 +5,34 @@ using UnityEngine.UI;
 
 public class Narration : MonoBehaviour
 {
-     public Image portrait;
-     public Text textBox;
+    public Image portrait;
+    public Text textBox;
 
-     public Sprite[] sprites;
-     public string[] lines;
-     public int[] spriteToUse;
-     public float[] triggers;
-     int currentLine;
-     float timer;
+    public Sprite[] sprites;
+    public string[] lines;
+    public int[] spriteToUse;
+    public float[] triggers; // TIME-BASED TRIGGERS
+                             // Will probably need more improvements later on for event-based triggers as well.
+    int currentLine;
+    float timer;
 
-     // Start is called before the first frame update
-     void Start()
-     {
-          timer = 0;
-          currentLine = 0;
-     }
+    // Start is called before the first frame update
+    void Start()
+    {
+        timer = 0;
+        currentLine = 0;
+    }
 
-     // Update is called once per frame
-     void Update()
-     {
-          timer += Time.deltaTime;
-          if(currentLine < lines.Length && triggers[currentLine] <= timer)
-          {
-               //Play line
-               portrait.sprite = sprites[spriteToUse[currentLine]];
-               textBox.text = lines[currentLine];
-               currentLine++;
-          }
-     }
+    // Update is called once per frame
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (currentLine < lines.Length && triggers[currentLine] <= timer)
+        {
+            //Play line
+            portrait.sprite = sprites[spriteToUse[currentLine]];
+            textBox.text = lines[currentLine];
+            currentLine++;
+        }
+    }
 }

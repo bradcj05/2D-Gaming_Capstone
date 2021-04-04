@@ -26,6 +26,7 @@ public class Terrod : MonoBehaviour
     public float accelTime = 1f;  // Acceleration time (until maximum engine power in either direction)
     public float decelTime = 0.5f;  // Deceleration time
     protected float rotateAmount; //public for better testing
+    protected float originalRotation;
     protected Transform target;
     bool reverse = false; // Check if reversing
 
@@ -39,6 +40,7 @@ public class Terrod : MonoBehaviour
     {
         isWorking1 = true;
         isWorking2 = true;
+        originalRotation = transform.eulerAngles.z;
         try
         {
             target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
@@ -133,8 +135,18 @@ public class Terrod : MonoBehaviour
         {
             rotateAmount = Vector3.Cross(direction, -transform.up).z;
         }
-        float curRot = transform.rotation.eulerAngles.z;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+        float curRot = transform.eulerAngles.z - originalRotation;
+        // Limit retrieved angle to +- pi for math.
+        if (curRot > 180)
+        {
+            curRot = -360 + curRot;
+        }
+        else if (curRot < -180)
+        {
+            curRot = 360 + curRot;
+        }
+        float rotationAfter = curRot - rotateSpeed * rotateAmount;
+        transform.eulerAngles = new Vector3(0, 0, originalRotation + rotationAfter);
     }
 
     // Custom acceleration and deceleration (ASSUME SPRITE FACING DOWNWARD!!!)

@@ -18,7 +18,7 @@ public class Turret : Gun
     public new void Start()
     {
         base.Start();
-        originalRotation = transform.rotation.eulerAngles.z;
+        originalRotation = transform.localEulerAngles.z;
     }
 
     // Update is called once per frame
@@ -48,22 +48,30 @@ public class Turret : Gun
             {
                 rotateAmount = Vector3.Cross(direction, transform.up).z;
             }
-            float curRot = transform.rotation.eulerAngles.z;
+            float curRot = transform.localEulerAngles.z - originalRotation;
+            // Limit retrieved angle to +- pi for math.
+            if (curRot > 180)
+            {
+                curRot = -360 + curRot;
+            }
+            else if (curRot < -180)
+            {
+                curRot = 360 + curRot;
+            }
             float rotationAfter = curRot - rotateSpeed * rotateAmount;
-            float angle = rotationAfter - originalRotation;
 
             // Check if turret will be in the allowed rotation range. If not, snap.
-            if (limitRotation && angle > limitRotationCCW)
+            if (limitRotation && rotationAfter > limitRotationCCW)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, originalRotation + limitRotationCCW));
+                transform.localEulerAngles = new Vector3(0, 0, originalRotation + limitRotationCCW);
             }
-            else if (limitRotation && angle < -limitRotationCW)
+            else if (limitRotation && rotationAfter < -limitRotationCW)
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, originalRotation - limitRotationCW));
+                transform.localEulerAngles = new Vector3(0, 0, originalRotation - limitRotationCW);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotationAfter));
+                transform.localEulerAngles = new Vector3(0, 0, originalRotation + rotationAfter);
             }
         }
     }
