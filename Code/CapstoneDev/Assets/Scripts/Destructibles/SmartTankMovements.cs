@@ -18,7 +18,7 @@ public class SmartTankMovements : MonoBehaviour
     // Kinds of targets the bullet is effective towards (see tags)
     public string[] targetTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
     protected float distanceToTarget = Mathf.Infinity;
-    bool reverse = false; // Check if reversing
+    bool targetOnBack = false; // Check if reversing
 
     public new void Start()
     {
@@ -78,14 +78,14 @@ public class SmartTankMovements : MonoBehaviour
         if (target != null)
         {
             Vector2 distance = (Vector2)target.position - rig.position;
-            reverse = Vector2.Dot(distance, transform.up) < 0;
+            targetOnBack = Vector2.Dot(distance, transform.up) < 0;
             // Move forward only if distance to player is larger than "optimum" distance and player is in front
-            if (distance.magnitude > optimumDistance && !reverse)
+            if (distance.magnitude > optimumDistance && !targetOnBack)
             {
                 Run();
             }
             // Else reverse, but again only if closer than optimum distance
-            else if (distance.magnitude < optimumDistance || reverse)
+            else if (distance.magnitude < optimumDistance || targetOnBack)
             {
                 Reverse();
             }
@@ -95,7 +95,6 @@ public class SmartTankMovements : MonoBehaviour
                 Stop();
                 Rotate();
             }
-
         }
     }
 
@@ -137,22 +136,30 @@ public class SmartTankMovements : MonoBehaviour
     public void Run()
     {
         // If reversing, stop first
-        if (reverse)
+        if (IsReversing())
         {
             Stop();
         }
-        // Acceleration
-        if (rig.velocity.magnitude < moveSpeed)
+        else
         {
-            rig.velocity = transform.up * (rig.velocity.magnitude + moveSpeed * Time.deltaTime / accelTime);
+            // Rotate when running
+            Rotate();
+            // Acceleration
+            float curVelocity = rig.velocity.magnitude;
+            if (curVelocity < moveSpeed)
+            {
+                rig.velocity = transform.up * (curVelocity + moveSpeed * Time.deltaTime / accelTime);
+                // Velocity capping
+                if (rig.velocity.magnitude > moveSpeed)
+                {
+                    rig.velocity = transform.up * moveSpeed;
+                }
+            }
+            else
+            {
+                rig.velocity = transform.up * moveSpeed;
+            }
         }
-        // Velocity capping
-        if (rig.velocity.magnitude > moveSpeed)
-        {
-            rig.velocity = transform.up * moveSpeed;
-        }
-        // Rotate when running
-        Rotate();
     }
 
     public void Stop()
@@ -161,9 +168,9 @@ public class SmartTankMovements : MonoBehaviour
         Vector2 prevVelocity = new Vector2(rig.velocity.x, rig.velocity.y);
         if (rig.velocity.magnitude > 0)
         {
-            if (reverse)
+            if (Vector2.Dot(prevVelocity, transform.up) < 0)
             {
-                rig.velocity = prevVelocity - prevVelocity.normalized * (reverseSpeed * Time.deltaTime / accelTime);
+                rig.velocity = prevVelocity - prevVelocity.normalized * (reverseSpeed * Time.deltaTime / decelTime);
             }
             else
             {
@@ -176,7 +183,7 @@ public class SmartTankMovements : MonoBehaviour
             rig.velocity = new Vector2(0, 0);
         }
         // Rotate when tank achieves "stability" (active engine power = 10% total engine power)
-        if ((!reverse && rig.velocity.magnitude < moveSpeed / 10) || (reverse && rig.velocity.magnitude < reverseSpeed / 10))
+        if ((!IsReversing() && rig.velocity.magnitude < moveSpeed / 10) || (IsReversing() && rig.velocity.magnitude < reverseSpeed / 10))
         {
             Rotate();
         }
@@ -185,23 +192,35 @@ public class SmartTankMovements : MonoBehaviour
     public void Reverse()
     {
         // Stop first if still going forward
-        if (!reverse)
+        if (!IsReversing() && rig.velocity.magnitude > 0)
         {
             Stop();
         }
         else
         {
-            // Reverse until reverseSpeed
-            if (rig.velocity.magnitude < reverseSpeed)
-            {
-                rig.velocity = -transform.up * (rig.velocity.magnitude + reverseSpeed * Time.deltaTime / accelTime);
-            }
-            if (rig.velocity.magnitude > reverseSpeed)
-            {
-                rig.velocity = -transform.up * reverseSpeed;
-            }
             // Also rotate
             Rotate();
+            // Reverse until reverseSpeed
+            float curVelocity = rig.velocity.magnitude;
+            if (curVelocity < reverseSpeed)
+            {
+                rig.velocity = -transform.up * (curVelocity + reverseSpeed * Time.deltaTime / decelTime);
+                // Velocity capping
+                if (rig.velocity.magnitude > reverseSpeed)
+                {
+                    rig.velocity = (-transform.up) * reverseSpeed;
+                }
+            }
+            else
+            {
+                rig.velocity = (-transform.up) * reverseSpeed;
+            }
         }
+    }
+
+    // Check if tank is reversing
+    public bool IsReversing()
+    {
+        return Vector3.Dot(rig.velocity, transform.up) < 0;
     }
 }

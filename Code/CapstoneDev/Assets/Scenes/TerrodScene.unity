@@ -31404,20 +31404,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 655451552638306941, guid: 550a367e5b690b84995a937792877d74,
+    - target: {fileID: 655451552638306943, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
-      propertyPath: health
-      value: 60
+      propertyPath: m_LinearOffset.x
+      value: 5.6188984
       objectReference: {fileID: 0}
     - target: {fileID: 819993341704465080, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1021978511503054884, guid: 550a367e5b690b84995a937792877d74,
+    - target: {fileID: 1021978511503054882, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
-      propertyPath: health
-      value: 60
+      propertyPath: m_LinearOffset.x
+      value: -5.5747833
       objectReference: {fileID: 0}
     - target: {fileID: 2125406075360026584, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
@@ -31429,15 +31429,15 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 3386375876592728380, guid: 550a367e5b690b84995a937792877d74,
+    - target: {fileID: 3386375876592728378, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
-      propertyPath: health
-      value: 100
+      propertyPath: m_LinearOffset.x
+      value: 0.16750988
       objectReference: {fileID: 0}
-    - target: {fileID: 3386375877567542240, guid: 550a367e5b690b84995a937792877d74,
+    - target: {fileID: 3386375876592728378, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
-      propertyPath: health
-      value: 20
+      propertyPath: m_LinearOffset.y
+      value: 8.196437
       objectReference: {fileID: 0}
     - target: {fileID: 3386375878303789734, guid: 550a367e5b690b84995a937792877d74,
         type: 3}
@@ -31498,11 +31498,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Terrod 2 Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3386375878385783359, guid: 550a367e5b690b84995a937792877d74,
-        type: 3}
-      propertyPath: health
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3409057393990608378, guid: 550a367e5b690b84995a937792877d74,
         type: 3}

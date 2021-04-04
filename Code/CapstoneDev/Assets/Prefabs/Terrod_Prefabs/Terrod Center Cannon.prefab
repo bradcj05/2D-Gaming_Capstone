@@ -195,6 +195,9 @@ MonoBehaviour:
   - {fileID: 8410924364880801706}
   - {fileID: 8410924366570895860}
   rotateSpeed: 0.4
+  limitRotation: 0
+  limitRotationCW: 180
+  limitRotationCCW: 180
   target: {fileID: 0}
   attack: 0
   numShellsPerAttack: 4
@@ -210,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 708499c71b3d3ca41b0156224b6f47a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   defense: 5
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
@@ -761,12 +764,12 @@ PrefabInstance:
     - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_MaxValue
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5837915535480465997, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Value
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6670237109765636993, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
