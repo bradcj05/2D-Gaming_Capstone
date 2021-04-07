@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 15
-  radius: 10
+  radius: 8
   effectDuration: 0.5
   effect: {fileID: 7427581996009582965}
   forceThreshold: 3000
