@@ -13,17 +13,32 @@ public class Full_LVL1_Camera : MonoBehaviour
     AudioListener cameraTwoAudioLis;
 
 
-  //  [SerializeField]
-    public CinemachineVirtualCamera vcam1;
+    [SerializeField]
+    private CinemachineVirtualCamera vcam1;
 
-   // [SerializeField]
-    public CinemachineVirtualCamera vcam2;
+    [SerializeField]
+    private CinemachineVirtualCamera vcam2;
 
-  //  [SerializeField]
-    public CinemachineVirtualCamera vcam3;
+   [SerializeField]
+    private CinemachineVirtualCamera vcam3;
+
+    [SerializeField]
+    private CinemachineVirtualCamera vcam4;
+
+    [SerializeField]
+    private CinemachineVirtualCamera vcam5;
+
+    [SerializeField]
+    private CinemachineVirtualCamera vcam6;
 
     public float timer = 0;
     // Use this for initialization
+
+    bool Phase1 = true;
+    bool PhaseN, Phase2, Phase3, Phase4, Phase5 = false;
+ 
+
+
     void Start()
     {
 
@@ -38,27 +53,52 @@ public class Full_LVL1_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        timer += Time.deltaTime;
+        if (Phase1 && timer > 4) ///enable drag
+        {
             vcam1.Priority = 0;
             vcam2.Priority = 1;
-            
+            Phase1 = !Phase1;
+            PhaseN = !PhaseN;
 
-        
-         if (timer == 16)
+        }
+        else if (PhaseN && timer > 8)
         {
 
             vcam2.Priority = 0;
             vcam3.Priority = 1;
-         
+            PhaseN = !PhaseN;
+            Phase2 = !Phase2;
 
         }
-        else if (timer == 21)
+        else if (Phase2 && timer > 12)
         {
 
-            //vcam3.Priority = 0;
-            //vcam1.Priority = 1;
-            
+            vcam3.Priority = 0;
+            vcam4.Priority = 1;
+            Phase2 = !Phase2;
+            Phase3 = !Phase3;
+            cameraPositionChange(1);
+        }
 
+       // add if statement between theses times ^| to disable drag
+        else if (Phase3 && timer > 17)
+        {
+
+            vcam4.Priority = 0;
+            vcam5.Priority = 1;
+            Phase3 = !Phase3;
+            Phase4 = !Phase4;
+            
+        }
+        else if (Phase4 && timer > 21)
+        {
+
+            vcam5.Priority = 0;
+            vcam1.Priority = 1;
+            Phase4 = !Phase4;
+
+            cameraPositionChange(0);
         }
     }
 
@@ -89,10 +129,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             cameraTwoAudioLis.enabled = false;
             cameraTwo.SetActive(false);
 
-           vcam1= cameraOne.transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>();
-           vcam2= cameraOne.transform.GetChild(1).gameObject.GetComponent<CinemachineVirtualCamera>();
-           vcam3= cameraOne.transform.GetChild(2).gameObject.GetComponent<CinemachineVirtualCamera>();
-           
+         
         }
 
         //Set camera position 2
@@ -104,10 +141,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             cameraOneAudioLis.enabled = false;
             cameraOne.SetActive(false);
 
-            vcam1 = cameraTwo.transform.GetChild(0).gameObject.GetComponent<CinemachineVirtualCamera>();
-            vcam2 = cameraTwo.transform.GetChild(1).gameObject.GetComponent<CinemachineVirtualCamera>();
-            vcam3 = cameraTwo.transform.GetChild(2).gameObject.GetComponent<CinemachineVirtualCamera>();
-
+          
         }
 
     }

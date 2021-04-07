@@ -162,6 +162,9 @@ public class Player : Destructible
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
+        
+        //if both movement directions are greater than 0!!!
+        
         if (moveDir.x < 0 && !right)
         {
             rb.drag = drg;
