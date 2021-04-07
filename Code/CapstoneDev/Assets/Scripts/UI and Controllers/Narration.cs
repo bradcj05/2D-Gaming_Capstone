@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Events;//May use this
 
 public class Narration : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Narration : MonoBehaviour
      public float[] triggers;
      int currentLine;
      float timer;
+
+
 
      // Start is called before the first frame update
      void Start()
@@ -33,5 +36,11 @@ public class Narration : MonoBehaviour
                textBox.text = lines[currentLine];
                currentLine++;
           }
+     }
+
+     public void ChangeText(string l, int s)
+     {
+          portrait.sprite = sprites[s];
+          textBox.text = l;
      }
 }
