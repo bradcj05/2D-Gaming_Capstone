@@ -56172,7 +56172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0044ee9da46e9de4581c10ca8e2a05c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.29
+  scrollSpeed: 0.6
 --- !u!64 &2136380358
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56282,7 +56282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0044ee9da46e9de4581c10ca8e2a05c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.1
+  scrollSpeed: 0.2
 --- !u!64 &2136979629
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -154,7 +154,6 @@ MonoBehaviour:
   hitEffectDuration: 0.5
   baseExplosionRadius: 3
   rotateSpeed: 10
-  timer: 0
   rotationTime: 5
   headingDown: 0
   timed: 1
@@ -178,7 +177,7 @@ MonoBehaviour:
   decentralized: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 269825
   baseExplosionRadius: 3
 --- !u!1001 &3898828498970011614
 PrefabInstance:
