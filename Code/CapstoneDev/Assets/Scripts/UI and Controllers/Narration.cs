@@ -17,7 +17,7 @@ public class Narration : MonoBehaviour
     int currentLine;
     float timer;
 
-
+     
 
      // Start is called before the first frame update
      void Start()
