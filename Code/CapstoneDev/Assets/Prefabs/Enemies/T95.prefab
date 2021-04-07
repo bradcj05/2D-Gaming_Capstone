@@ -119,6 +119,7 @@ MonoBehaviour:
   CenterOfMass: {x: 0, y: 0, z: 0}
   collidableTags:
   - Ally
+  - Enemy
   mass: 100
 --- !u!50 &6191835344177666503
 Rigidbody2D:
