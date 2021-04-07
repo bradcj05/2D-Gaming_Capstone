@@ -19,8 +19,10 @@ public class BlackCondorLv1 : Enemy
     protected float originalRotation = 0;
     public float scanRadius = 20f; // If a bullet is inside this radius, attempts to avoid
     public float maxSpeed = 12f;
-    public float accelSpeed = 15f;
-    public float decelSpeed = 15f;
+    public float accelSpeed = 25f;
+    public float decelSpeed = 25f;
+    public float leftBound = -13f;
+    public float rightBound = 16f;
 
     // Start is called before the first frame update
     public new void Start()
@@ -99,15 +101,82 @@ public class BlackCondorLv1 : Enemy
     // Avoidant strafing movement
     void FixedUpdate()
     {
-        if (0 < distanceToTarget && distanceToTarget <= scanRadius)
+        if (0 < distanceToTarget && distanceToTarget <= scanRadius && Vector3.Dot(transform.up, directionToTarget) <= 0)
         {
-            if (Vector3.Cross(transform.up, directionToTarget).z >= 0)
+            // There's an object to avoid in the scanning radius
+            if (Vector3.Cross(transform.up, directionToTarget).z >= -0.05 && transform.position.x < rightBound)
             {
                 rb.velocity = transform.right * maxSpeed * Mathf.Min(1, scanRadius / (distanceToTarget * 10f));
             }
-            else
+            else if (Vector3.Cross(transform.up, directionToTarget).z < -0.05 && transform.position.x > leftBound)
             {
                 rb.velocity = -transform.right * maxSpeed * Mathf.Min(1, scanRadius / (distanceToTarget * 10f));
+            }
+            else
+            {
+                FlyTowardsCenter();
+            }
+        }
+        else
+        {
+            // There's no object to avoid, stop
+            FlyTowardsCenter();
+        }
+    }
+
+    public void Stop()
+    {
+        // Deceleration
+        Vector2 prevVelocity = new Vector2(rb.velocity.x, rb.velocity.y);
+        if (rb.velocity.magnitude > 0)
+        {
+            rb.velocity = prevVelocity - prevVelocity.normalized * (decelSpeed * Time.deltaTime);
+        }
+        // Velocity capping
+        if (Vector2.Dot(rb.velocity, prevVelocity) < 0)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+    }
+
+    public void FlyTowardsCenter()
+    {
+        // If to the right of center, fly left
+        if (transform.position.x > 1.73)
+        {
+            Vector2 unitLeft = new Vector2(-1, 0);
+            if (rb.velocity.x > 0)
+            {
+                Stop();
+            }
+            else
+            {
+                if (rb.velocity.magnitude < maxSpeed)
+                    rb.velocity += unitLeft * (accelSpeed * Time.deltaTime);
+                if (rb.velocity.magnitude > maxSpeed)
+                    rb.velocity = unitLeft * maxSpeed;
+                float newPos = transform.position.x - rb.velocity.x;
+                if (newPos < 1.73)
+                    Stop();
+            }
+        }
+        else
+        {
+            // Else fly right
+            Vector2 unitRight = new Vector2(1, 0);
+            if (rb.velocity.x < 0)
+            {
+                Stop();
+            }
+            else
+            {
+                if (rb.velocity.magnitude < maxSpeed)
+                    rb.velocity += unitRight * (accelSpeed * Time.deltaTime);
+                if (rb.velocity.magnitude > maxSpeed)
+                    rb.velocity = unitRight * maxSpeed;
+                float newPos = transform.position.x + rb.velocity.x;
+                if (newPos > 1.73)
+                    Stop();
             }
         }
     }
