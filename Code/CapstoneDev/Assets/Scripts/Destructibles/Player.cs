@@ -15,7 +15,7 @@ public class Player : Destructible
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
     Vector2 movement;
-    Vector2 moveDir;
+    Vector2 moveDir; // for the triggers
     public Collider2D area;
     //Values for rotation
     protected Camera cam;
@@ -31,12 +31,14 @@ public class Player : Destructible
 
     //Add death animation
 
+    public int drg = 10;
+
     int sx = 1;  //stop speed variable
     int sy = 1;
 
-    bool left, right, up, down = false;
-    // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
-    public bool devMode = false;
+
+
+   public bool left, right, up, down = false; // for the triggers
 
     new void Start()
     {
@@ -80,8 +82,8 @@ public class Player : Destructible
         {
             base.Update();
 
-            if (left == true && Input.GetAxisRaw("Horizontal") > 0)
-            {
+            // delete later
+           /* if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
                 sx = 1;
                 left = false;
             }
@@ -100,36 +102,36 @@ public class Player : Destructible
                 sy = 1;
                 down = false;
             }
+            */
 
 
+               // Movement
+               movement.x = Input.GetAxisRaw("Horizontal") *sx;
+               movement.y = Input.GetAxisRaw("Vertical") * sy;
 
-            // Movement
-            movement.x = Input.GetAxisRaw("Horizontal") * sx;
-            movement.y = Input.GetAxisRaw("Vertical") * sy;
+               // Get Mouse Position
+               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-            // Get Mouse Position
-            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+               // Update active secondary weapon
+               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+               }
+               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+               }
 
-            // Update active secondary weapon
-            if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-            {
-                activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-            {
-                activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-            }
-
-            // Update active shell group
-            if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-            {
-                activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-            }
-            else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-            {
-                activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-            }
-        }
+               // Update active shell group
+               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+               }
+               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+               }
+          }
     }
 
     //Movement
@@ -155,35 +157,159 @@ public class Player : Destructible
     }
 
 
-
-
+    // need to define which collider was hit instead of movment direction.
+ 
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        if (moveDir.x < 0)
+        if (moveDir.x < 0 && !right)
         {
+            rb.drag = drg;
             sx = 0;
             left = true;
         }
-        if (moveDir.x > 0)
+        if (moveDir.x > 0 && !left)
         {
+            rb.drag = drg;
             sx = 0;
             right = true;
         }
-        if (moveDir.y > 0)
+        if (moveDir.y > 0 && !down)
         {
+            rb.drag = drg;
             sy = 0;
             up = true;
         }
-        if (moveDir.y < 0)
+        if (moveDir.y < 0 && !up)
         {
+            rb.drag = drg;
             sy = 0;
             down = true;
+        }
+
+        Debug.Log("enter");  //proof that the code ran.
+    }
+
+    void OnTriggerStay2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
+    {  //OnCollisionEnter2D  runs this code
+        if (left == true)
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                rb.drag = 3;
+                sx = 1;
+
+            }
+            else
+            {
+                rb.drag = drg;
+                sx = 0;
+            }
+        }
+        if (right == true)
+        {
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                rb.drag = 3;
+                sx = 1;
+
+            }
+            else
+            {
+                rb.drag = drg;
+                sx = 0;
+            }
+        }
+        if (up == true)
+        {
+            if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                rb.drag = 3;
+                sy = 1;
+
+            }
+            else
+            {
+                rb.drag = drg;
+                sy = 0;
+            }
+        }
+        if (down == true)
+        {
+            if (Input.GetAxisRaw("Vertical") > 0)
+            {
+                rb.drag = 3;
+                sy = 1;
+            }
+            else
+            {
+                rb.drag = drg;
+                sy = 0;
+            }
+        }
+
+        Debug.Log("stay");  //proof that the code ran.
+    }
+
+    void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
+    {  //OnCollisionEnter2D  runs this code
+        if (moveDir.x > 0)
+        {
+            sx = 1;
+            left = false;
+        }
+        if (moveDir.x < 0)
+        {
+            sx = 1;
+            right = false;
+        }
+        if (moveDir.y < 0)
+        {
+            sy = 1;
+            up = false;
+        }
+        if (moveDir.y > 0)
+        {
+            sy = 1;
+            down = false;
         }
 
         Debug.Log("exit");  //proof that the code ran.
     }
 
+    /* void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
+     {  //OnCollisionEnter2D  runs this code
+
+         if (up == true || down == true)
+         {
+             if (rb.velocity.x < 0)
+             {
+                 sx = 0;
+                 left = true;
+             }
+             if (rb.velocity.x > 0)
+             {
+                 sx = 0;
+                 right = true;
+             }
+         }
+
+         if (left == true || right == true)
+         {
+             if (rb.velocity.y > 0)
+             {
+                 sy = 0;
+                 up = true;
+             }
+             if (rb.velocity.y < 0)
+             {
+                 sy = 0;
+                 down = true;
+             }
+         }
+         Debug.Log("exit");  //proof that the code ran.
+     }
+     */
     //Player Death
     public new void Die()
     {
