@@ -30,6 +30,69 @@ Transform:
   m_Father: {fileID: 1211888589314771838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!1 &1401471164162872630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5710498626654615846}
+  - component: {fileID: 4018112505629644527}
+  m_Layer: 0
+  m_Name: Fire Airmine Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5710498626654615846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401471164162872630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5768366734522817039}
+  m_Father: {fileID: 7451509331481466832}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4018112505629644527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401471164162872630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb74da4e87b9089458b8f2dc32f867d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  grade: 3
+  category: 0
+  shellTypes:
+  - {fileID: 8831955114338234873, guid: a0f56013d6c363a4191bd0c009e85e2f, type: 3}
+  waitTime: 23
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  recoilForce: 0
+  ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
+  bulletSpawns:
+  - {fileID: 5768366734522817039}
 --- !u!1 &2263533938778612567
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +318,36 @@ Transform:
   m_Father: {fileID: 4683562807980720303}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6857780323834356964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5768366734522817039}
+  m_Layer: 0
+  m_Name: Bullet Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5768366734522817039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857780323834356964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5710498626654615846}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6911922766212657146
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +385,7 @@ Transform:
   - {fileID: 1211888589314771838}
   - {fileID: 3471087775365524752}
   - {fileID: 6374475886065652069}
+  - {fileID: 5710498626654615846}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
