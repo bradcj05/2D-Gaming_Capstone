@@ -1454,7 +1454,7 @@ MonoBehaviour:
   - 10 Seconds have passed
   - 15 Seconds have passed
   - 20 Seconds have passed
-  spriteToUse: 0000000000000000000000000400000004000000
+  spriteToUse: 0000000001000000020000000300000004000000
   triggers:
   - 0
   - 5

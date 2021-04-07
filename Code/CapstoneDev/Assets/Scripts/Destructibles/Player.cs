@@ -131,7 +131,7 @@ public class Player : Destructible
         if (isDestroyed == 1)
         {
             //Play death animation
-            //Destroy(gameObject);
+            HUD.GetComponent<Narration>().ChangeText(transform.name + " has been destroyed.", 0);
             transform.gameObject.SetActive(false);
             isDestroyed = 0;
         }
