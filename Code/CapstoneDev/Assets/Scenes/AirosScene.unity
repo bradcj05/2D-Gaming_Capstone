@@ -11803,7 +11803,7 @@ MonoBehaviour:
   - destructibleSpawnArray:
     - {fileID: 795357750}
     timer: 0
-    waveLength: 0
+    waveLength: 65
 --- !u!1 &450889933
 GameObject:
   m_ObjectHideFlags: 0
