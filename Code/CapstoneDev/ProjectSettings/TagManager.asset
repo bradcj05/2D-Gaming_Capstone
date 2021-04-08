@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - ActivePlayer
+  - SecondaryWeapon
+  - HealthBar
+  - DefenseBar
+  - Cooldown
+  - Ammo
+  - NameText
+  - Ally
   layers:
   - Default
   - TransparentFX
@@ -18,14 +26,14 @@ TagManager:
   - Player
   - Turret
   - Side Turret
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Flak
+  - Tracks
+  - Enemy Bullets
+  - Player Bullets
+  - Screen
+  - Screen
+  - camera_target
+  - Ground Enemies
   - 
   - 
   - 
