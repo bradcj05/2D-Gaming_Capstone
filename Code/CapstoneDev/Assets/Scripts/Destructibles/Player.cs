@@ -18,7 +18,7 @@ public class Player : Destructible
     Vector2 moveDir; // for the triggers
     public Collider2D area;
     //Values for rotation
-    public Camera cam;
+    protected Camera cam;
     Vector2 mousePos;
     // Active weapons stuff
     public int activeSecondaryWeapon = 0;
@@ -27,6 +27,7 @@ public class Player : Destructible
     public int numberOfShellGroups = 1;
 
     int isDestroyed;
+
     //Add death animation
 
     public int drg = 10;
@@ -40,35 +41,36 @@ public class Player : Destructible
 
     new void Start()
     {
-          Debug.Log(SceneManager.GetActiveScene().name);
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               //Debug.Log("Start assigning values for the player");
-               // Initialize HUD components
-               HUD = GameObject.Find("HUD").GetComponent<Transform>();
-               cam = Camera.main;
-               healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
-               defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
-               cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
-               nameText = FindTag("NameText").GetComponent<Text>();
-               secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
-               // Base start
-               base.Start();
-               // To display name on HealthDock
-               nameText.text = cards.name;
-               if (maxHealth > 0)
-                    health = maxHealth;
-               else
-                    maxHealth = health;
-               isDestroyed = 1;
-               // Set cooldown slider 
-          }
+        Debug.Log(SceneManager.GetActiveScene().name);
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            //Debug.Log("Start assigning values for the player");
+            // Initialize HUD components
+            HUD = GameObject.Find("HUD").GetComponent<Transform>();
+            cam = Camera.main;
+            healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
+            defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
+            cooldownSlider = FindTag("Cooldown").GetComponent<HealthBar>();
+            nameText = FindTag("NameText").GetComponent<Text>();
+            secondaryAmmo = FindTag("Ammo").GetComponent<Text>();
+            // Base start
+            base.Start();
+            // To display name on HealthDock
+            nameText.text = cards.name;
+            if (maxHealth > 0)
+                health = maxHealth;
+            else
+                maxHealth = health;
+            isDestroyed = 1;
+            // Set cooldown slider 
+        }
     }
 
     public void SetUp()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-               Start();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+            Start();
     }
 
     // Update is called once per frame
@@ -312,9 +314,9 @@ public class Player : Destructible
     {
         if (isDestroyed == 1)
         {
-               //Play death animation
-               //Destroy(gameObject);
-               transform.gameObject.SetActive(false);
+            //Play death animation
+            HUD.GetComponent<Narration>().ChangeText(transform.name + " has been destroyed.", 0);
+            transform.gameObject.SetActive(false);
             isDestroyed = 0;
         }
     }
@@ -330,10 +332,10 @@ public class Player : Destructible
         return secondaryAmmo;
     }
 
-     public int GetIsDestroyed()
-     {
-          return isDestroyed;
-     }
+    public int GetIsDestroyed()
+    {
+        return isDestroyed;
+    }
 
     public void setCooldownSlider(HealthBar input)
     {

@@ -107,14 +107,15 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 5619712717429477361}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
   hasAnimator: 0
-  isAiros: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
   HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: a20efb37bc0f6d644a52832a56d491dc, type: 2}
   maxSpeed: 11
@@ -124,6 +125,7 @@ MonoBehaviour:
   activeShellGroup: 0
   numberOfSecondaryWeapons: 1
   numberOfShellGroups: 1
+  devMode: 1
 --- !u!50 &4858288967080734106
 Rigidbody2D:
   serializedVersion: 4
@@ -842,11 +844,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}

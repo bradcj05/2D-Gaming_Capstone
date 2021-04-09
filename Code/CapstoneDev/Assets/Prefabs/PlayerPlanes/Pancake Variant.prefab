@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 2183660915927818866, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: m_Name
-      value: Pancake
+      value: Pancake Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: devMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620f5d37d30baab449af0727a80947d8, type: 3}

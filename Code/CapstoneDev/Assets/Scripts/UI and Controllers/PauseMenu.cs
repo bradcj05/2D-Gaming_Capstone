@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public int currentLevel = 1;
 
     void Start()
     {
@@ -47,12 +48,26 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
+        // Reset checkpoints of every scene
+        ResetCheckpoints();
         SceneManager.LoadScene("RickysMainMenu");
     }
 
     public void Quit()
     {
         Debug.Log("Quiting game");
+        // Reset checkpoints of every scene
+        ResetCheckpoints();
         Application.Quit();
+    }
+
+    public void ResetCheckpoints()
+    {
+        switch (currentLevel)
+        {
+            case 1:
+                Scene1Controller.ResetCheckpoints();
+                break;
+        }
     }
 }

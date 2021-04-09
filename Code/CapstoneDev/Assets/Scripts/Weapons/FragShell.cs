@@ -18,7 +18,7 @@ public class FragShell : MonoBehaviour
     public void Fracture()
     {
         // Set seed based on position so bullets launched at the same time can still be random.
-        Random.seed += (int)((transform.position.x + transform.position.y)*65535);
+        Random.seed += (int)((transform.position.x + transform.position.y) * 65535);
 
         for (int i = 0; i < numFragments; i++)
         {
@@ -31,22 +31,22 @@ public class FragShell : MonoBehaviour
             }
             else
             {
-                curAngle = Random.Range(0,360);
+                curAngle = Random.Range(0, 360);
                 angle = curAngle + spin;
             }
             // Implements the rotation math from the HM
             GameObject bullet = ObjectPoolManager.SharedInstance.GetPooledObject(fragProjectile.name);
-               if (bullet != null)
-               {
-                    bullet.transform.position = transform.position;
-                    bullet.transform.rotation = transform.rotation;
-                    bullet.SetActive(true);
-                    // Now rotate
-                    float curRot = transform.localRotation.eulerAngles.z;
-                    bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
-               }
-            // FRAGMENT WILL BE PROPELLED FORWARD BY ITS OWN SPEED
-            // (Trying to manipulate it here is useless)
+            if (bullet != null)
+            {
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = transform.rotation;
+                bullet.SetActive(true);
+                // Now rotate
+                float curRot = transform.localRotation.eulerAngles.z;
+                bullet.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - angle));
+                // And set speed
+                bullet.GetComponent<Bullet>().SetCurSpeed(bullet.GetComponent<Bullet>().speed);
+            }
         }
     }
 }

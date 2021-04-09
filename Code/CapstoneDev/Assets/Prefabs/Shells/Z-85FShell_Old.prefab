@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2514942025714022222}
   - component: {fileID: 8055132858426331548}
   - component: {fileID: 85143465969558225}
-  - component: {fileID: 9203012090478578261}
+  - component: {fileID: 6112049970868796754}
   m_Layer: 13
   m_Name: Z-85FShell_Old
   m_TagString: Bullet
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3415526167857150346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6878055060390120119}
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   speed: 10
   penetration: 2
   deterioration: 0.15
-  selfDestructTime: 1.5
+  selfDestructTime: 1
   targetTags:
   - ActivePlayer
   - Ally
@@ -154,7 +154,7 @@ MonoBehaviour:
   hitEffectRadius: 0.5
   hitEffectDuration: 0.3
   baseExplosionRadius: 3
---- !u!114 &9203012090478578261
+--- !u!114 &6112049970868796754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

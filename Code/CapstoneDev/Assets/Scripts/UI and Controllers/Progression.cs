@@ -10,7 +10,7 @@ public class Progression : MonoBehaviour
     void Awake()
     {
           //Update to have more later if need be.
-          progress = new bool[3];
+          progress = new bool[9];
           for(int b = 0; b < progress.Length; b++)
           {
                progress[b] = false;

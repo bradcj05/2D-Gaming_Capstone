@@ -16,13 +16,17 @@ public class PlaneSwitching : MonoBehaviour
     Vector3 startPos;
      protected bool isDead = false;
 
+     Sidebars bars;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
+               size = squadronSize;
                switchTimer = 0f;
                isDead = false;
+               bars = GameObject.Find("HUD").GetComponent<Sidebars>();
                //squadronSize = transform.childCount;
                //Assign numbers to the planes
                //squadArr = new GameObject[transform.childCount];
@@ -45,11 +49,12 @@ public class PlaneSwitching : MonoBehaviour
                //Ensure weapons are active
                for(int i = 0; i < transform.childCount; i++)
                {
-                    if (transform.GetChild(i).name == "Airos Player Variant(Clone)")
+                    if (transform.GetChild(i).name == "Airos")
                     {
                          for (int j = 0; j < transform.GetChild(i).childCount - 2; j++)
                          {
                               transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                              transform.GetChild(i).GetChild(j).GetChild(0).GetComponent<Gun>().SetUp();
                          }
                     }
                     else
@@ -57,6 +62,7 @@ public class PlaneSwitching : MonoBehaviour
                          for (int j = 0; j < transform.GetChild(i).childCount - 1; j++)
                          {
                               transform.GetChild(i).GetChild(j).GetChild(0).gameObject.SetActive(true);
+                              transform.GetChild(i).GetChild(j).GetChild(0).GetComponent<Gun>().SetUp();
                          }
                     }
                }
@@ -67,7 +73,9 @@ public class PlaneSwitching : MonoBehaviour
 
      public void SetUp()
      {
-          this.Start();
+          selectedPlane = 0;
+          isDead = false;
+          this.Awake();
      }
 
     // Update is called once per frame
@@ -75,13 +83,6 @@ public class PlaneSwitching : MonoBehaviour
     {
           if(SceneManager.GetActiveScene().name != "Hangar")
           {
-               /*/TODO: Change this
-               if (transform.childCount == 0)
-               {
-                    isDead = true;
-                    transform.gameObject.SetActive(false); //Just in case
-               }*/
-
                if (switchTimer < switchDelay)
                     switchTimer += Time.deltaTime;
 
@@ -125,14 +126,13 @@ public class PlaneSwitching : MonoBehaviour
                }
 
                //swap to next plane if previous plane dies
-               //TODO: Fix
+               //TODO add stuff to update sidebars
                if (squadArr[selectedPlane].GetComponent<Player>().GetIsDestroyed() == 0)
                {
                     size--;
                     if(size <= 0)
                     {
                          isDead = true;
-                         //transform.gameObject.SetActive(false); //Just in case
                     }
 
                     //Debug.Log("New PLane should spawn");
@@ -143,7 +143,6 @@ public class PlaneSwitching : MonoBehaviour
                               selectedPlane = j;
                               SelectPlane(startPos);
                               switchTimer = 0f;
-                              //size--;
                               Debug.Log("Planes in squadron: " + size);
                               break;
                          }
@@ -192,6 +191,21 @@ public class PlaneSwitching : MonoBehaviour
             }
             i++;
         }
+
+          int activePlanes = 3;
+          int[] isDeadValues = new int[squadronSize];
+          for(int j = 0; j < squadronSize; j++)
+          {
+               if (squadArr[j] == null)
+               {
+                    activePlanes--;
+               }
+               else
+               {
+                    isDeadValues[j] = squadArr[j].GetComponent<Player>().GetIsDestroyed();
+               }
+          }
+          bars.UpdatePlanes(selectedPlane, activePlanes, isDeadValues);
     }
 
      public bool GetIsDead()

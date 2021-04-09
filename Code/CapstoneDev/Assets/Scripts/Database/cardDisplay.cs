@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class cardDisplay : MonoBehaviour
 {
-    public GameObject attributes;
     bool purchased = false;
 
     public Card cards;
@@ -15,10 +14,6 @@ public class cardDisplay : MonoBehaviour
     public Text nameText;
     public Text costText;
     public Image lockImage;
-
-    public Text t1;
-    public Text t2;
-    public Text t3;
 
     //For Stats bars
     public Slider s1;
@@ -29,6 +24,7 @@ public class cardDisplay : MonoBehaviour
     public Text st3;
     public Slider s4;
     public Text st4;
+    public Text description;
 
     // Start is called before the first frame update
     //TODO Finish
@@ -36,10 +32,10 @@ public class cardDisplay : MonoBehaviour
     {
         // Rotate image to the right
         artwork.sprite = cards.artwork;
-        artwork.preserveAspect = false;
+        /*artwork.preserveAspect = false;
         artwork.transform.Rotate(0,0,-90);
         artwork.preserveAspect = true;
-        artwork.transform.localScale = new Vector3(2, 2, 2);
+        artwork.transform.localScale = new Vector3(2, 2, 2);*/
 
         // Set values
         nameText.text = cards.name;
@@ -50,30 +46,9 @@ public class cardDisplay : MonoBehaviour
             lockImage.gameObject.SetActive(false);
         else
             lockImage.gameObject.SetActive(true);
-
-        switch ((int)cards.cardType)
-        {
-            case 1:
-                t1.text = "Speed: " + cards.getSpeed();
-                t2.text = "Health: " + cards.getHealth();
-                t3.text = "Defense: " + cards.getDefense();
-                break;
-            case 2:
-                t1.text = "RPM: " + cards.getReloadTime();
-                t2.text = "Pow Buff: " + cards.getPowerBuff();
-                t3.text = "Spd Buff: " + cards.getSpeedBuff();
-                break;
-            case 3:
-                t1.text = "Power: " + cards.getPower();
-                t2.text = "Speed: " + cards.getShellSpeed();
-                t3.text = "Pen: " + cards.getPenetration();
-                break;
-            default:
-                Debug.Log("Please give this card the right card type.");
-                break;
-        }
     }
 
+    // ENABLE IN RELEASE BUILD
     /*void Update()
     {
         if (cards.unlockLevel == -1 || Progression.progress[cards.unlockLevel])
@@ -84,7 +59,7 @@ public class cardDisplay : MonoBehaviour
 
     public void BuyItem()
     {
-        if(lockImage.gameObject.activeSelf)
+        if (lockImage.gameObject.activeSelf)
         {
             Debug.Log("Item is locked.");
             return;
@@ -150,28 +125,40 @@ public class cardDisplay : MonoBehaviour
                 st4.text = "MASS: " + cards.getMass();
                 break;
             case 2:
-                s1.value = 1f / float.Parse(cards.getReloadTime()) * 0.1f;
-                st1.text = "FIRE RATE: " + cards.getReloadTime();
-                s2.value = float.Parse(cards.getPowerBuff()) * 0.1f;
-                st2.text = "POWER BUFF: " + cards.getPowerBuff();
-                s3.value = float.Parse(cards.getSpeedBuff()) * 0.1f;
-                st3.text = "SPEED BUFF: " + cards.getSpeedBuff();
-                s4.value = float.Parse(cards.getSpread()) * 0.1f; ;
-                st4.text = "SPREAD: " + cards.getSpread();
+                // Primary weapons have fairly large fire rate (max 2000 RPM)
+                if (cards.getCategory() == WeaponsClassification.Category.Primary)
+                {
+                    s1.value = 0.03f / float.Parse(cards.getReloadTime());
+                    st1.text = "FIRE RATE: " + 60f / float.Parse(cards.getReloadTime()) + " RPM";
+                }
+                // Compared to secondary weapons (max 1 charge / 3s)
+                else
+                {
+                    s1.value = 3f / float.Parse(cards.getReloadTime());
+                    st1.text = "COOLDOWN: " + cards.getReloadTime() + " s";
+                }
+                s2.value = float.Parse(cards.getPowerBuff()) * 0.5f;
+                st2.text = "POWER BUFF: " + float.Parse(cards.getPowerBuff()) * 100f + "%";
+                s3.value = float.Parse(cards.getSpeedBuff()) * 0.5f;
+                st3.text = "SPEED BUFF: " + float.Parse(cards.getSpeedBuff()) * 100f + "%";
+                s4.value = 0.5f / float.Parse(cards.getSpread());
+                st4.text = "SPREAD: " + cards.getSpread() + " Degrees";
                 break;
             case 3:
-                s1.value = float.Parse(cards.getPower()) * 0.1f;
+                s1.value = float.Parse(cards.getPower()) * 0.05f;
                 st1.text = "POWER: " + cards.getPower();
-                s2.value = float.Parse(cards.getShellSpeed()) * 0.1f;
+                s2.value = (float.Parse(cards.getShellSpeed()) - 5) / 30f;
                 st2.text = "SPEED: " + cards.getShellSpeed();
                 s3.value = float.Parse(cards.getPenetration()) * 0.1f;
                 st3.text = "PENETRATION: " + cards.getPenetration();
-                s4.value = float.Parse(cards.getDeterioration()) * 0.1f;
-                st4.text = "DETERIORATION: " + cards.getDeterioration();
+                s4.value = 0.03f / float.Parse(cards.getDeterioration());
+                st4.text = "DETERIORATION: " + float.Parse(cards.getDeterioration()) * 100f + "% / s";
                 break;
             default:
                 Debug.Log("Please give this card the right card tyoe.");
                 break;
         }
+        // Display description
+        description.text = "Description: " + cards.description;
     }
 }

@@ -262,14 +262,15 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 1858959167953221152}
+  hasExplosionChain: 0
   explosionDuration: 2
   crater: {fileID: 0}
   groundCrater: 0
   coin: {fileID: 0}
   hasAnimator: 0
-  isAiros: 0
   parent: {fileID: 0}
   CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
   HUD: {fileID: 0}
   cards: {fileID: 11400000, guid: cf03b39b211470f44a78b7e2b736f037, type: 2}
   maxSpeed: 12
@@ -279,6 +280,7 @@ MonoBehaviour:
   activeShellGroup: 0
   numberOfSecondaryWeapons: 2
   numberOfShellGroups: 1
+  devMode: 1
 --- !u!114 &8230454820417957061
 MonoBehaviour:
   m_ObjectHideFlags: 0

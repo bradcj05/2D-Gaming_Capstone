@@ -1,4 +1,4 @@
-﻿// Class to be used for every gun in the game
+// Class to be used for every gun in the game
 
 using System.Collections;
 using System.Collections.Generic;
@@ -16,11 +16,38 @@ public class Gun : WeaponsClassification
     public float recoilForce = 0f;
 
     public int ammo = -1; // Negative for infinite
+    protected int maxAmmo;
+
+    // Dev mode
+    protected bool dev = false;
+
+    // Shoot when not moving feature
+    public bool shootWhenNotMoving = false;
+    public float movementEpsilon = 0.3f; // When slower than this, considered "not moving"
+    protected float speed;
+
+    // Shoot when target visible feature
+    public bool shootWhenTargetVisible = false;
+    public string[] targetTags;
+    public float visibleRangeInDegrees = 90f;
+    public float visibleDistance = 50f;
 
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
-    public new void Start() { base.Start(); }
+    public new void Start()
+    {
+        base.Start();
+        if (maxAmmo != null && maxAmmo > 0)
+            ammo = maxAmmo;
+        else
+            maxAmmo = ammo;
+    }
+
+    public void SetUp()
+    {
+        this.Start();
+    }
 
     // Update is called once per frame
     public new void Update()
@@ -28,11 +55,70 @@ public class Gun : WeaponsClassification
         base.Update();
         // Update timer
         timer += Time.deltaTime;
-        if (timer >= waitTime)
+
+        if (timer >= waitTime &&
+            (CalculateSpeed() < movementEpsilon || !shootWhenNotMoving) &&
+            (IsTargetVisible() || !shootWhenTargetVisible))
         {
             Fire();
-            timer -= waitTime;
+            timer = 0;
         }
+    }
+
+    // Function
+    // ConeCast function to find targets in a cone
+    public static RaycastHit2D[] ConeCastAll(Vector3 origin, float maxRadius, Vector3 direction, float maxDistance, float coneAngle, string tag)
+    {
+        RaycastHit2D[] sphereCastHits = Physics2D.CircleCastAll(origin - new Vector3(0, 0, maxRadius), maxRadius, direction, maxDistance);
+        List<RaycastHit2D> coneCastHitList = new List<RaycastHit2D>();
+
+        if (sphereCastHits.Length > 0)
+        {
+            for (int i = 0; i < sphereCastHits.Length; i++)
+            {
+                if (sphereCastHits[i].transform.gameObject.tag == tag)
+                {
+                    Vector3 hitPoint = sphereCastHits[i].point;
+                    Vector3 directionToHit = hitPoint - origin;
+                    float angleToHit = Vector3.Angle(direction, directionToHit);
+
+                    if (angleToHit < coneAngle)
+                    {
+                        coneCastHitList.Add(sphereCastHits[i]);
+                    }
+                }
+            }
+        }
+
+        RaycastHit2D[] coneCastHits = new RaycastHit2D[coneCastHitList.Count];
+        coneCastHits = coneCastHitList.ToArray();
+
+        return coneCastHits;
+    }
+
+    // Check if there's a target in the visible range.
+    public bool IsTargetVisible()
+    {
+        foreach (string tag in targetTags)
+        {
+            if (ConeCastAll(transform.position, visibleDistance, transform.up, visibleDistance, visibleRangeInDegrees/2, tag).Length > 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Calculate speed
+    public float CalculateSpeed()
+    {
+        // Calculate speed during update for "shoot when not moving" feature
+        // Return velocity from either parent or grandparent
+        // The carrier should really not be the great-grandparent of the gun or something like that
+        if (transform.parent.gameObject.GetComponent<Rigidbody2D>() != null)
+            return transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
+        else
+            return transform.parent.parent.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
     // Shoot from each bulletSpawn
@@ -59,7 +145,7 @@ public class Gun : WeaponsClassification
     }
 
     // Stock method to fire specific bullet at a specific gun
-    protected void Fire(Transform bulletSpawn, GameObject shellType)
+    protected virtual void Fire(Transform bulletSpawn, GameObject shellType)
     {
         // Fire only if ammo is not 0
         if (ammo != 0)
@@ -78,7 +164,16 @@ public class Gun : WeaponsClassification
                 // Apply speed and power buff if bullet is just created (i.e. not recovered from object pool)
                 float bulletSpeed = bullet.GetComponent<Bullet>().speed * (1 + speedBuff);
                 bullet.GetComponent<Bullet>().SetCurSpeed(bulletSpeed);
-                bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
+                // DEV MODE - Set power to 9999, fire, then reset
+                if (dev)
+                {
+                    bullet.GetComponent<Bullet>().SetCurPower(9999f);
+                    Debug.Log("DEV!!!");
+                }
+                else
+                {
+                    bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power * (1 + powerBuff));
+                }
                 // Push bullet
                 rig.velocity = bulletSpawn.up * bulletSpeed;
                 // Recoil
@@ -95,4 +190,9 @@ public class Gun : WeaponsClassification
             }
         }
     }
+
+     public float GetTimerValue()
+     {
+          return timer;
+     }
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   decentralized: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 335361
   baseExplosionRadius: 3
 --- !u!1001 &541572499170615230
 PrefabInstance:

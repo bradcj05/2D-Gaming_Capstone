@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Destructible : MonoBehaviour
 {
     public float health;
-    protected static float maxHealth;
+    protected float maxHealth;
     public float defense;
+    protected Billboard enemyHealth;
     public HealthBar healthBar; // Health bar
     public HealthBar defenseBar; // Transparent DEFENSE bar
 
@@ -21,10 +22,9 @@ public class Destructible : MonoBehaviour
     public GameObject coin;
     protected Animator deathAnimation;
     public bool hasAnimator = false;
-    //public AnimationClip airosdeathanim = null;
-    //private Animation anim;
 
     public GameObject parent;
+    protected DestructibleSpawn spawner = null;
 
     protected Rigidbody2D rb;
     public Vector3 CenterOfMass;
@@ -34,13 +34,27 @@ public class Destructible : MonoBehaviour
     protected float penetrationTimer = 0f;
     protected float penetrationTime = 0.1f;
 
+    // Kinds of objects the destructible can deal collision damage with (see tags)
+    public string[] collidableTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
+
     // Start is called before the first frame update
-    public void Start()
+    public void Awake()
     {
+        // Grab rigidbody and healthbars
         rb = GetComponent<Rigidbody2D>();
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.GetComponent<Billboard>() != null)
+            {
+                enemyHealth = child.gameObject.GetComponent<Billboard>();
+                healthBar = enemyHealth.transform.GetChild(0).GetComponent<HealthBar>();
+                defenseBar = enemyHealth.transform.GetChild(1).GetComponent<HealthBar>();
+            }
+        }
         // Set health and center of mass
         if (CenterOfMass != null)
             rb.centerOfMass = CenterOfMass;
+
         if (defenseBar != null)
         {
             defenseBar.SetMax(defense);
@@ -48,10 +62,12 @@ public class Destructible : MonoBehaviour
             defenseColor.a = 2f / (1f + Mathf.Exp(-defense / 2)) - 1f;
             defenseBar.transform.GetChild(0).GetComponent<Image>().color = defenseColor;
         }
+
         if (maxHealth > 0)
-             health = maxHealth;
+            health = maxHealth;
         else
-             maxHealth = health;
+            maxHealth = health;
+
         if (healthBar != null)
         {
             healthBar.SetMax(maxHealth);
@@ -61,6 +77,10 @@ public class Destructible : MonoBehaviour
         {
             explosionChain = GetComponent<ExplosionChain>();
         }
+    }
+
+    public void Start()
+    {
     }
 
     public void Update()
@@ -82,20 +102,24 @@ public class Destructible : MonoBehaviour
         }
         if (health <= 0)
         {
-
             if (hasAnimator == true)
             {
                 deathAnimation = gameObject.GetComponent<Animator>();
-                GameObject.Find("TextEffectsAiros").GetComponent<Animator>().SetBool("AirosDoomed", true);
-                deathAnimation.SetBool("PlayDeathAnimation", true);
+                DeathAnimationProcess();
             }
 
-            else Die();
+            else StartCoroutine(Die());
         }
     }
 
+    // Death animation processor, more for specific enemies
+    public void DeathAnimationProcess()
+    {
+        deathAnimation.SetBool("PlayDeathAnimation", true);
+    }
+
     // Destruction function
-    public void Die()
+    public IEnumerator Die()
     {
         //Add crater
         if (crater != null)
@@ -111,11 +135,17 @@ public class Destructible : MonoBehaviour
             }
         }
 
+        // Detonate Explosion comp for kamikaze enemies
+        if (gameObject.GetComponent<Explosion>() != null)
+        {
+            gameObject.GetComponent<Explosion>().Detonate();
+        }
+
         //Spawn coin if supposed to
         if (coin != null)
             Instantiate(coin, transform.position, transform.rotation);
 
-        //Play explosion
+        //Play explosion effect
         if (explosion != null)
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
@@ -128,18 +158,34 @@ public class Destructible : MonoBehaviour
         if (hasExplosionChain)
         {
             explosionChain.TriggerExplosionChain();
+            float waitTime = explosionChain.explosionTiming * (explosionChain.explosion.Length * explosionChain.timesRepeated - 1f) + 0.9f; // 2 is the default explosion time
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        // Report to spawner that it's dead, if eligible
+        if (spawner)
+        {
+            spawner.SetAlive(false);
         }
 
         //Actually destroy object
-        if (transform.gameObject.GetComponent("Player") != null)
+        if (transform.gameObject.GetComponent<Player>() != null)
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
         else
             Destroy(gameObject);
+
+        yield return new WaitForEndOfFrame();
     }
 
-    // HELPER FUNCTION FOR OTHER OBJECTS (e.g. healthbars) THAT NEED TO ACCESS MAX HEALTH
+    // Getters and setters
     public float getMaxHealth()
     {
         return maxHealth;
+    }
+
+    // Setters
+    public void SetSpawner(DestructibleSpawn spawner)
+    {
+        this.spawner = spawner;
     }
 }
