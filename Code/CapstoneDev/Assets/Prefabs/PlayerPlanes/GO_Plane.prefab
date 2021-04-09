@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6950311152099469030}
   - component: {fileID: 6950311152099469029}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GO_Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: smoke01
       objectReference: {fileID: 0}
+    - target: {fileID: 2651509259406745341, guid: b63535e521dc8c948adb17c5334f6f09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2651509261284100776, guid: b63535e521dc8c948adb17c5334f6f09,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b63535e521dc8c948adb17c5334f6f09, type: 3}
 --- !u!4 &4951842707329450427 stripped
@@ -170,6 +180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GO_p1 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782620011820910545, guid: 8de21817b436bce48835bb2f0d772fed,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4536148391028840963, guid: 8de21817b436bce48835bb2f0d772fed,
         type: 3}
