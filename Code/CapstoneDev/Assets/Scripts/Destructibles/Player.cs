@@ -27,6 +27,7 @@ public class Player : Destructible
     public int numberOfShellGroups = 1;
 
     int isDestroyed;
+     public int lineSetToUse; //May need to change to LineSet Object
 
     //Add death animation
 
@@ -185,7 +186,7 @@ public class Player : Destructible
         if (isDestroyed == 1)
         {
             //Play death animation
-            HUD.GetComponent<Narration>().ChangeLineSet(2); //TODO Change
+            HUD.GetComponent<Narration>().ChangeLineSet(lineSetToUse); //TODO Change
             transform.gameObject.SetActive(false);
             isDestroyed = 0;
         }

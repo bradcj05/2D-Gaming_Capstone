@@ -20,6 +20,7 @@ public class Narration : MonoBehaviour
           timer = 0;
           currentSet = 0;
           currentLine = 0;
+          lines[currentSet].SetIsActive(true);
      }
 
      // Update is called once per frame
@@ -34,11 +35,13 @@ public class Narration : MonoBehaviour
                currentLine++;
           }
      }
-     //TODO
+     
      public void ChangeLineSet(int setNumber)
      {
           timer = 0;
           currentLine = 0;
+          lines[currentSet].SetIsActive(false);
           currentSet = setNumber;
+          lines[currentSet].SetIsActive(true);
      }
 }
