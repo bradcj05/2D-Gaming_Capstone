@@ -28,8 +28,14 @@ public class Scroll_Background : MonoBehaviour
             loadChildObjects(obj);
         }
     }
+
     void loadChildObjects(GameObject obj)
     {
+        if(obj == levels[0]) {
+            choke = 0;
+            }else {
+            choke = -3;
+        }
         float objectHeight = obj.GetComponent<SpriteRenderer>().bounds.size.y - choke;   //
         int childsNeeded = (int)Mathf.Ceil(screenBounds.y * 2 / objectHeight);   //
         GameObject clone = Instantiate(obj) as GameObject;
@@ -43,8 +49,17 @@ public class Scroll_Background : MonoBehaviour
         Destroy(clone);
         Destroy(obj.GetComponent<SpriteRenderer>());
     }
+
     void repositionChildObjects(GameObject obj)
     {
+        if (obj == levels[0]) /// this is the hard way.  we create a new choke value according to the desired beachground object
+        {
+            choke = 0;
+        }
+        else
+        {
+            choke = -3;
+        }
         Transform[] children = obj.GetComponentsInChildren<Transform>();
         if (children.Length > 1)
         {
@@ -60,7 +75,8 @@ public class Scroll_Background : MonoBehaviour
             {
                 lastChild.transform.SetAsFirstSibling();
                 lastChild.transform.position = new Vector3(firstChild.transform.position.x, firstChild.transform.position.y - halfObjectHeight * 2, firstChild.transform.position.z);  //
-            }
+            } 
+            ///(2) a little cleaner if background objects were child objects of the main background, but need to issolate the repeated objects due to a repositioning issue 
         }
     }
     void Update()
