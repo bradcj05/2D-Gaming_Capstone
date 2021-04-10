@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GO_clouds : MonoBehaviour
+public class GO_plane : MonoBehaviour
 {
-    float scrollSpeed = -6f;
+    float scrollSpeed = 6f;
     Vector2 startPos;
 
     // Start is called before the first frame update
