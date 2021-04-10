@@ -40,7 +40,7 @@ public class DetectEvents : MonoBehaviour
         {
                if (!bossNarrationDone)
                {
-                    GameObject.Find("HUD").GetComponent<Narration>().ChangeText("Target destroyed. Nice Work!", 0);
+                    GameObject.Find("HUD").GetComponent<Narration>().ChangeLineSet(1); //TODO Change
                     bossNarrationDone = true;
                }
             levelEndTimer += Time.deltaTime;
