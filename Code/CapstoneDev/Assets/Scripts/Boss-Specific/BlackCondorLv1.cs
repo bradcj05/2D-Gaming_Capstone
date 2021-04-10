@@ -101,7 +101,7 @@ public class BlackCondorLv1 : Enemy
     // Avoidant strafing movement
     void FixedUpdate()
     {
-        if (0 < distanceToTarget && distanceToTarget <= scanRadius && Vector3.Dot(transform.up, directionToTarget) <= 0)
+        if (0 < distanceToTarget && distanceToTarget <= scanRadius && Vector3.Dot(transform.up, directionToTarget) <= 0.3)
         {
             // There's an object to avoid in the scanning radius
             if (Vector3.Cross(transform.up, directionToTarget).z >= -0.05 && transform.position.x < rightBound)

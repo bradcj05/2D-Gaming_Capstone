@@ -87,7 +87,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  baseExplosionRadius: 3
+  baseExplosionRadius: 2
 --- !u!50 &4612162359198619612
 Rigidbody2D:
   serializedVersion: 4
