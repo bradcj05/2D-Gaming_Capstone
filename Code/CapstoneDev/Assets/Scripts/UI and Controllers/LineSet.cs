@@ -9,6 +9,7 @@ public class LineSet : ScriptableObject
 {
      public Line[] allLines;
      protected bool isActive = false;
+     public int priority;
 
      public void SetIsActive(bool newIsActive)
      {

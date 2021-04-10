@@ -10,8 +10,9 @@ PrefabInstance:
     - target: {fileID: 4439171013570698791, guid: e7cf459c099d0884f9888c21f4f753e8,
         type: 3}
       propertyPath: lineSetToUse
-      value: 2
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e,
+        type: 2}
     - target: {fileID: 5191979653864110402, guid: e7cf459c099d0884f9888c21f4f753e8,
         type: 3}
       propertyPath: m_Name
