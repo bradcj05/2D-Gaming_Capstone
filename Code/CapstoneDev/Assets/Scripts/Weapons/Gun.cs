@@ -145,7 +145,7 @@ public class Gun : WeaponsClassification
     }
 
     // Stock method to fire specific bullet at a specific gun
-    protected void Fire(Transform bulletSpawn, GameObject shellType)
+    protected virtual void Fire(Transform bulletSpawn, GameObject shellType)
     {
         // Fire only if ammo is not 0
         if (ammo != 0)
