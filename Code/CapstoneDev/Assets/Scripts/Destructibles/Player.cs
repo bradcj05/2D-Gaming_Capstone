@@ -40,6 +40,9 @@ public class Player : Destructible
 
    public bool left, right, up, down = false; // for the triggers
 
+    // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
+    public bool devMode = false;
+
     new void Start()
     {
         Debug.Log(SceneManager.GetActiveScene().name);
@@ -48,7 +51,7 @@ public class Player : Destructible
         {
             //Debug.Log("Start assigning values for the player");
             // Initialize HUD components
-            HUD = GameObject.Find("HUD").GetComponent<Transform>();
+          //  HUD = GameObject.Find("HUD").GetComponent<Transform>();
             cam = Camera.main;
             healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
             defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
