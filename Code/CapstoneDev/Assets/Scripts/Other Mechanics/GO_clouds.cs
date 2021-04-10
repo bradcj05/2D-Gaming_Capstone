@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GO_clouds : MonoBehaviour
 {
-    float scrollSpeed = -6f;
+    float scrollSpeed = -3f;
     Vector2 startPos;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class GO_clouds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newPos = Mathf.Repeat(Time.time * scrollSpeed, 40);
+        float newPos = Mathf.Repeat(Time.time * scrollSpeed, 20);
         transform.position = startPos + Vector2.right * newPos;
     }
 }
