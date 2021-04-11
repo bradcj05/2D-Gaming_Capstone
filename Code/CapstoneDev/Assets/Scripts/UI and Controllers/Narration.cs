@@ -8,9 +8,10 @@ public class Narration : MonoBehaviour
 {
      public Image portrait;
      public Text textBox;
-     
-     public LineSet[] lines; //Current format for testing has 0 for "* seconds have passed", 1 for boss defeated text, and 2 for plane destroyed text
-     int currentSet;
+
+     public LineSet startSet;
+     int currentPriority;
+     LineSet currentSet;
      int currentLine;
      float timer;
 
@@ -18,30 +19,35 @@ public class Narration : MonoBehaviour
      void Start()
      {
           timer = 0;
-          currentSet = 0;
+          currentSet = startSet;
+          currentPriority = currentSet.priority;
           currentLine = 0;
-          lines[currentSet].SetIsActive(true);
+          currentSet.SetIsActive(true);
      }
 
      // Update is called once per frame
      void Update()
      {
           timer += Time.deltaTime;
-          if(currentLine < lines[currentSet].allLines.Length && lines[currentSet].allLines[currentLine].time <= timer)
+          if(currentLine < currentSet.allLines.Length && currentSet.allLines[currentLine].time <= timer)
           {
                //Play line
-               portrait.sprite = lines[currentSet].allLines[currentLine].sprite;
-               textBox.text = lines[currentSet].allLines[currentLine].textLine;
+               portrait.sprite = currentSet.allLines[currentLine].sprite;
+               textBox.text = currentSet.allLines[currentLine].textLine;
                currentLine++;
           }
      }
      
-     public void ChangeLineSet(int setNumber)
+     public void ChangeLineSet(LineSet newSet)
      {
-          timer = 0;
-          currentLine = 0;
-          lines[currentSet].SetIsActive(false);
-          currentSet = setNumber;
-          lines[currentSet].SetIsActive(true);
+          if (newSet.priority > currentSet.priority)
+          {
+               timer = 0;
+               currentLine = 0;
+               currentSet.SetIsActive(false);
+               currentSet = newSet;
+               currentSet.SetIsActive(true);
+               currentPriority = currentSet.priority;
+          }
      }
 }

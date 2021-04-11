@@ -18,7 +18,7 @@ public class DetectEvents : MonoBehaviour
     protected float levelEndTime = 4f;
 
      bool bossNarrationDone;
-     public int lineSetToUse; //May need to change to LineSet Object
+     public LineSet lineSetToUse;
 
      public void Awake()
     {
@@ -41,7 +41,7 @@ public class DetectEvents : MonoBehaviour
         {
                if (!bossNarrationDone)
                {
-                    GameObject.Find("HUD").GetComponent<Narration>().ChangeLineSet(lineSetToUse); //TODO Change
+                    GameObject.Find("HUD").GetComponent<Narration>().ChangeLineSet(lineSetToUse);
                     bossNarrationDone = true;
                }
             levelEndTimer += Time.deltaTime;

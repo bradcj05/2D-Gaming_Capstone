@@ -15,8 +15,9 @@ PrefabInstance:
     - target: {fileID: 6128804582576133783, guid: 6b544ac8b8659974a84e89f14d22cd54,
         type: 3}
       propertyPath: lineSetToUse
-      value: 2
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e,
+        type: 2}
     - target: {fileID: 6343052319580483489, guid: 6b544ac8b8659974a84e89f14d22cd54,
         type: 3}
       propertyPath: grade

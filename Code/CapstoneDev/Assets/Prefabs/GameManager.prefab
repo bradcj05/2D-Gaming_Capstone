@@ -111,7 +111,7 @@ MonoBehaviour:
   player: {fileID: 0}
   levelBoss: {fileID: 0}
   gameOverMenu: {fileID: 0}
-  lineSetToUse: 1
+  lineSetToUse: {fileID: 11400000, guid: 84cf7b9226bbe0649850758d1b4ab30f, type: 2}
 --- !u!114 &6970381199646618520
 MonoBehaviour:
   m_ObjectHideFlags: 0

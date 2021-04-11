@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allLines:
   - {fileID: 11400000, guid: bf99733307249a94fb4fef06b4c32f3f, type: 2}
+  priority: 10
