@@ -13,15 +13,19 @@ public class Narration : MonoBehaviour
      int currentPriority;
      LineSet currentSet;
      int currentLine;
+     int priorityLine;
      float timer;
+     float priorityTimer;
 
      // Start is called before the first frame update
      void Start()
      {
           timer = 0;
+          priorityTimer = 0;
           currentSet = startSet;
           currentPriority = currentSet.priority;
           currentLine = 0;
+          priorityLine = 0;
           currentSet.SetIsActive(true);
      }
 
@@ -29,12 +33,33 @@ public class Narration : MonoBehaviour
      void Update()
      {
           timer += Time.deltaTime;
-          if(currentLine < currentSet.allLines.Length && currentSet.allLines[currentLine].time <= timer)
+          if (currentPriority == 0)
           {
-               //Play line
-               portrait.sprite = currentSet.allLines[currentLine].sprite;
-               textBox.text = currentSet.allLines[currentLine].textLine;
-               currentLine++;
+               if (currentLine < currentSet.allLines.Length && currentSet.allLines[currentLine].time <= timer)
+               {
+                    //Play line
+                    portrait.sprite = currentSet.allLines[currentLine].sprite;
+                    textBox.text = currentSet.allLines[currentLine].textLine;
+                    currentLine++;
+               }
+          }
+          else
+          {
+               priorityTimer += Time.deltaTime;
+               if(priorityLine < currentSet.allLines.Length && currentSet.allLines[priorityLine].time <= priorityTimer)
+               {
+                    //Play line
+                    portrait.sprite = currentSet.allLines[priorityLine].sprite;
+                    textBox.text = currentSet.allLines[priorityLine].textLine;
+                    priorityLine++;
+               }
+               else if (priorityLine == currentSet.allLines.Length && (priorityTimer - currentSet.allLines[priorityLine - 1].time) > 2)
+               {
+                    currentPriority = 0;
+                    currentSet.SetIsActive(false);
+                    currentSet = startSet;
+                    currentSet.SetIsActive(true);
+               }
           }
      }
      
@@ -42,8 +67,8 @@ public class Narration : MonoBehaviour
      {
           if (newSet.priority > currentSet.priority)
           {
-               timer = 0;
-               currentLine = 0;
+               priorityTimer = 0;
+               priorityLine = 0;
                currentSet.SetIsActive(false);
                currentSet = newSet;
                currentSet.SetIsActive(true);
