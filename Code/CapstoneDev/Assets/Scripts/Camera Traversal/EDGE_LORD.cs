@@ -12,13 +12,13 @@ public class EDGE_LORD : MonoBehaviour {
     {
         poly = gameObject.AddComponent<PolygonCollider2D>();
     }
-        while (poly.GetPath(i) != null) {
+        for (int i=0; i<4; i++) {
             points = poly.GetPath(i);
             EdgeCollider2D edge = gameObject.AddComponent<EdgeCollider2D>();
             edge.points = points;
             edge.edgeRadius = 0.2f;
             edge.isTrigger = true;
-            i++;
+           
         }
     Destroy(poly);
 }
