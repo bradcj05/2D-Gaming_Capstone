@@ -35,9 +35,10 @@ public class Player : Destructible
     int sx = 1;  //stop speed variable
     int sy = 1;
 
+    Stack<int> stack = new Stack<int>();
 
 
-   public bool left, right, up, down = false; // for the triggers
+    public bool left, right, up, down = false; // for the triggers
 
     // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
     public bool devMode = false;
@@ -85,27 +86,27 @@ public class Player : Destructible
                base.Update();
 
             // delete later
-           /* if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
-                sx = 1;
-                left = false;
-            }
-            if (right == true && Input.GetAxisRaw("Horizontal") < 0) {
-                sx = 1;
-                right = false;
-            }
-            if (up == true && Input.GetAxisRaw("Vertical") < 0) {
-                sy = 1;
-                up = false;
-            }
-            if (down == true && Input.GetAxisRaw("Vertical") > 0) {
-                sy = 1;
-                down = false;
-            }
-            */
+            /* if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
+                 sx = 1;
+                 left = false;
+             }
+             if (right == true && Input.GetAxisRaw("Horizontal") < 0) {
+                 sx = 1;
+                 right = false;
+             }
+             if (up == true && Input.GetAxisRaw("Vertical") < 0) {
+                 sy = 1;
+                 up = false;
+             }
+             if (down == true && Input.GetAxisRaw("Vertical") > 0) {
+                 sy = 1;
+                 down = false;
+             }
+             */
+            // stack.Push();
 
-
-               // Movement
-               movement.x = Input.GetAxisRaw("Horizontal") *sx;
+            // Movement
+            movement.x = Input.GetAxisRaw("Horizontal") *sx;
                movement.y = Input.GetAxisRaw("Vertical") * sy;
 
                // Get Mouse Position

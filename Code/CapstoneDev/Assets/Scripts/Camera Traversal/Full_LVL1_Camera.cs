@@ -129,7 +129,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         }
 
-
+        //****trade for translating the self looping background coordinates.
 
         // scroll the  backgrounds 
        
