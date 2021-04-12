@@ -3792,6 +3792,12 @@ PrefabInstance:
       propertyPath: devMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: lineSetToUse
+      value: 
+      objectReference: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
 --- !u!1 &157850317
@@ -44618,7 +44624,7 @@ MonoBehaviour:
   - destructibleSpawnArray:
     - {fileID: 316153845}
     timer: 16
-    waveLength: 0
+    waveLength: 10
 --- !u!1 &1691556617
 GameObject:
   m_ObjectHideFlags: 0

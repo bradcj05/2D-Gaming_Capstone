@@ -138,11 +138,12 @@ MonoBehaviour:
   cards: {fileID: 11400000, guid: 279f63a0ce1e0cc48bdcbbdbfcc80937, type: 2}
   maxSpeed: 5
   enginePower: 1500
-  cam: {fileID: 0}
+  area: {fileID: 0}
   activeSecondaryWeapon: 0
   activeShellGroup: 0
   numberOfSecondaryWeapons: 0
   numberOfShellGroups: 2
+  lineSetToUse: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e, type: 2}
   devMode: 1
 --- !u!60 &1124189146208134926
 PolygonCollider2D:

@@ -17,10 +17,16 @@ MonoBehaviour:
   unlockLevel: 2
   name: R-5AP
   cost: 100
-  artwork: {fileID: 21300000, guid: c2bdbf6031b23b24285c3cd24f0ef5b8, type: 3}
+  artwork: {fileID: 21300000, guid: 8d1d41e5f923b7e41be9adbc815590fa, type: 3}
   description: Basic armor-piercing shell for 42mm cannons.
   gunSlotNum: 0
   gunSlotObj: []
   slotType: 
   slotGrade: 
   slotCategory: 
+  positionScaleX: []
+  positionScaleY: []
+  hangarScaleX: []
+  hangarScaleY: []
+  gunScaleX: 0
+  gunScaleY: 0
