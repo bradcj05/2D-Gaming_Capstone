@@ -20,6 +20,7 @@ public class Battle : MonoBehaviour
     public event EventHandler OnBattleStarted;
     public event EventHandler OnBattleOver;
     public bool checkpointBefore = false;
+    public LineSet narrationLineSet;
 
     private enum State
     {
@@ -63,6 +64,10 @@ public class Battle : MonoBehaviour
     {
         Debug.Log("StartBattle");
         state = State.Active;
+        // Start narration
+        Transform HUD = GameObject.Find("HUD").GetComponent<Transform>();
+        HUD.GetComponent<Narration>().ChangeLineSet(narrationLineSet);
+        // Stock event listener
         OnBattleStarted?.Invoke(this, EventArgs.Empty);
     }
 

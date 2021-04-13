@@ -8,7 +8,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Line : ScriptableObject
 {
-     public string textLine;
-     public Sprite sprite;
-     public float time;
+    [TextArea]
+    public string textLine;
+    public Sprite sprite;
+    public float time;
 }

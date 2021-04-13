@@ -53,19 +53,19 @@ public class Narration : MonoBehaviour
                     textBox.text = currentSet.allLines[priorityLine].textLine;
                     priorityLine++;
                }
-               else if (priorityLine == currentSet.allLines.Length && (priorityTimer - currentSet.allLines[priorityLine - 1].time) > 2)
+               /*else if (priorityLine == currentSet.allLines.Length && (priorityTimer - currentSet.allLines[priorityLine - 1].time) > 2)
                {
                     currentPriority = 0;
                     currentSet.SetIsActive(false);
                     currentSet = startSet;
                     currentSet.SetIsActive(true);
-               }
+               }*/
           }
      }
      
      public void ChangeLineSet(LineSet newSet)
      {
-          if (newSet.priority > currentSet.priority)
+          if (newSet.priority >= currentSet.priority)
           {
                priorityTimer = 0;
                priorityLine = 0;

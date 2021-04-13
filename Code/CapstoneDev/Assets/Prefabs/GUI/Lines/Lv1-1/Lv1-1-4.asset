@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
-  m_Name: Test0
+  m_Name: Lv1-1-4
   m_EditorClassIdentifier: 
-  textLine: Start
-  sprite: {fileID: 21300000, guid: 1786de9a5e4b9b843b03e0de030065e2, type: 3}
-  time: 0
+  textLine: <color=lime><b>Commander:</b></color> You in the black jet. Identify
+    yourself!
+  sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
+  time: 10

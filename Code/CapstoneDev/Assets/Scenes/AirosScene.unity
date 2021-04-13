@@ -11811,6 +11811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointBefore: 1
+  narrationLineSet: {fileID: 11400000, guid: d385556f9dba11949b7931dfd3c6e130, type: 2}
   timer: 0
   colliderTrigger: {fileID: 0}
   waveArray:
@@ -39537,7 +39538,7 @@ PrefabInstance:
     - target: {fileID: 626546257891267452, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000091552734
+      value: -0.00012397766
       objectReference: {fileID: 0}
     - target: {fileID: 1031672925102881405, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -40187,7 +40188,7 @@ PrefabInstance:
     - target: {fileID: 8476642522913424018, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00010597706
+      value: -0.000035583973
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a2cc2025bb0994f968ec947111166a, type: 3}
@@ -44604,6 +44605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointBefore: 1
+  narrationLineSet: {fileID: 11400000, guid: 59a4fea572b90b943bda71e5068d80b5, type: 2}
   timer: 0
   colliderTrigger: {fileID: 0}
   waveArray:
@@ -47065,6 +47067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointBefore: 1
+  narrationLineSet: {fileID: 11400000, guid: d93c1c971c404d84c842ea925b7f2a5a, type: 2}
   timer: 0
   colliderTrigger: {fileID: 0}
   waveArray:
@@ -51804,6 +51807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointBefore: 1
+  narrationLineSet: {fileID: 11400000, guid: 6dd3d86d065d23f4bb2fa275853a89eb, type: 2}
   timer: 0
   colliderTrigger: {fileID: 0}
   waveArray:
@@ -56532,6 +56536,11 @@ PrefabInstance:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 305222081}
+    - target: {fileID: 483736761828627262, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
+        type: 3}
+      propertyPath: levelEndTime
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 483736761828627263, guid: 0eae34fa2d0f2854db8cfd9b21719cb5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57179,72 +57188,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe251c66d94aa54c82d7440a29bf2b3, type: 3}
---- !u!1001 &6657828621344217894
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -29.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582178, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657828621708582181, guid: e2b85933c3c178a4eb698e64f66225fc,
-        type: 3}
-      propertyPath: m_Name
-      value: EnergyExplosion
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e2b85933c3c178a4eb698e64f66225fc, type: 3}

@@ -15,7 +15,7 @@ public class DetectEvents : MonoBehaviour
     protected int nextSceneLoad;
 
     protected float levelEndTimer = 0f;
-    protected float levelEndTime = 4f;
+    public float levelEndTime = 4f;
 
      bool bossNarrationDone;
      public LineSet lineSetToUse;

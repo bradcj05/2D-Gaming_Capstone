@@ -27,7 +27,7 @@ public class Player : Destructible
     public int numberOfShellGroups = 1;
 
     int isDestroyed;
-     public LineSet lineSetToUse;
+    public LineSet lineSetToUse;
 
     //Add death animation
 
@@ -76,83 +76,87 @@ public class Player : Destructible
     // Input
     new void Update()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               base.Update();
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            base.Update();
 
-            if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
+            if (left == true && Input.GetAxisRaw("Horizontal") > 0)
+            {
                 sx = 1;
                 left = false;
             }
-            if (right == true && Input.GetAxisRaw("Horizontal") < 0) {
+            if (right == true && Input.GetAxisRaw("Horizontal") < 0)
+            {
                 sx = 1;
                 right = false;
             }
-            if (up == true && Input.GetAxisRaw("Vertical") < 0) {
+            if (up == true && Input.GetAxisRaw("Vertical") < 0)
+            {
                 sy = 1;
                 up = false;
             }
-            if (down == true && Input.GetAxisRaw("Vertical") > 0) {
+            if (down == true && Input.GetAxisRaw("Vertical") > 0)
+            {
                 sy = 1;
                 down = false;
             }
-            
 
 
-               // Movement
-               movement.x = Input.GetAxisRaw("Horizontal") *sx;
-               movement.y = Input.GetAxisRaw("Vertical") * sy;
 
-               // Get Mouse Position
-               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            // Movement
+            movement.x = Input.GetAxisRaw("Horizontal") * sx;
+            movement.y = Input.GetAxisRaw("Vertical") * sy;
 
-               // Update active secondary weapon
-               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-               }
-               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-               }
+            // Get Mouse Position
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-               // Update active shell group
-               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-               }
-               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-               }
-          }
+            // Update active secondary weapon
+            if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+            }
+
+            // Update active shell group
+            if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+            }
+            else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+            }
+        }
     }
 
     //Movement
     void FixedUpdate()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
-          {
-               movement.Normalize();
-               // Move in the direction specified, then force the speed back to max speed if it is already reached.
-               // (Provided the max speed is due to moment and not knockback or external factor)
-               rb.AddForce(movement * enginePower, ForceMode2D.Force);
-               moveDir = rb.velocity / rb.velocity.magnitude;
-               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-               {
-                    rb.velocity = maxSpeed * moveDir;
-               }
+        if (SceneManager.GetActiveScene().name != "Hangar")
+        {
+            movement.Normalize();
+            // Move in the direction specified, then force the speed back to max speed if it is already reached.
+            // (Provided the max speed is due to moment and not knockback or external factor)
+            rb.AddForce(movement * enginePower, ForceMode2D.Force);
+            moveDir = rb.velocity / rb.velocity.magnitude;
+            if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+            {
+                rb.velocity = maxSpeed * moveDir;
+            }
 
-               //Rotate the Player
-               Vector2 lookDir = mousePos - rb.position;
-               float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-               rb.rotation = angle;
-          }
+            //Rotate the Player
+            Vector2 lookDir = mousePos - rb.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angle;
+        }
     }
 
 
-    
- 
+
+
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code

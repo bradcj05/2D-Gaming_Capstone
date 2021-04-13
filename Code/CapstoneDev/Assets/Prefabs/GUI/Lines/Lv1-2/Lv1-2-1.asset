@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03de416cf45f314ea77f36dc7fc960e, type: 3}
-  m_Name: TestSet
+  m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
+  m_Name: Lv1-2-1
   m_EditorClassIdentifier: 
-  allLines:
-  - {fileID: 11400000, guid: 18a96366958951642afc6b314c40c10f, type: 2}
-  priority: 0
+  textLine: <color=lime><b>Commander:</b></color> Damn it. That guy got away!
+  sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
+  time: 0
