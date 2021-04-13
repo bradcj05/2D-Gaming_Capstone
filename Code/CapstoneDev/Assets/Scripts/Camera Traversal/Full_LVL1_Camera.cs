@@ -44,7 +44,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
     void Start()
     {
-
+        timer = 0;
         //Get Camera Listeners
         cameraOneAudioLis = cameraOne.GetComponent<AudioListener>();
         cameraTwoAudioLis = cameraTwo.GetComponent<AudioListener>();
@@ -82,14 +82,14 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         }
 
-        if(vcam3.Priority == 0 && Phase3_4) // dummy test connection between Ground_Phase scripts 
+        /*if(vcam4.Priority == 0 && Phase3_4) // dummy test connection between Ground_Phase scripts 
         {
             vcam2.Priority = 1;
         }
 
         //AIROS CAMERAS
 
-       /* else if (Phase3_4 && timer > 12) //TRANSITION TO AIROS FIGHT
+        else if (Phase3_4 && timer > 12) //TRANSITION TO AIROS FIGHT
         {
 
             vcam3.Priority = 0;

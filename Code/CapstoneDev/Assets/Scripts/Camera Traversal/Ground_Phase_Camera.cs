@@ -9,6 +9,8 @@ public class Ground_Phase_Camera : MonoBehaviour
     private CinemachineVirtualCamera vcam1, //PHASES 3 & 4
         vcam2, vcam3;
 
+    int prior;
+
     [SerializeField]
     private Transform[] Path;
    
@@ -26,7 +28,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 
     public float P4_speed;
 
-    public float timer = 0;
+   // public float timer = 0;
 
     private bool coroutineAllowed;
 
@@ -37,15 +39,22 @@ public class Ground_Phase_Camera : MonoBehaviour
         tParam = 0f;
         coroutineAllowed = true;
         speed = P3_speed;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        //timer += Time.deltaTime;
+        prior = vcam2.Priority;
 
-        if (vcam3.Priority == 1 && coroutineAllowed) { 
+
+        if (vcam3.Priority == 1 || vcam2.Priority == 1)
+        {
+            if (coroutineAllowed)
+            {
                 StartCoroutine(GoByTheRoute(routeToGo));
+            }
         }
     }
 
@@ -56,7 +65,13 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         // add if statements if(path==# && routeNumber == #){ change [speed] value for each route as needed. 
 
-
+        if (path == 1 && routeNumber == 0){
+            speed = P4_speed;
+            }
+        if (path == 1 && routeNumber == 1)
+        {
+            speed = .088f;
+        }
         //Path --> route --> position point.  what this code is doing
 
         Vector2 p0 = Path[path].GetChild(routeNumber).GetChild(0).position;
@@ -84,12 +99,14 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         routeToGo += 1;
 
-        Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
+       // Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
 
         if (routeToGo > Path[path].childCount - 1)
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
             path++;
+            vcam2.Priority = 0;
+            vcam3.Priority = 1;
         }
 
         coroutineAllowed = true;

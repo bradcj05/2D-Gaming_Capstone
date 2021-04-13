@@ -133,6 +133,22 @@ public class Player : Destructible
                     activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
                }
           }
+       /* if (Input.GetKeyDown(KeyCode.LeftArrow)) // left  !!!CANNOT TAKE TWO KEYS AT ONCE!!!
+        {
+            stack.Push(1);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow)) //right
+        {
+            stack.Push(3);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow)) //down
+        {
+            stack.Push(4);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow)) //up
+        {
+            stack.Push(2);
+        }*/
     }
 
     //Movement
@@ -166,25 +182,25 @@ public class Player : Destructible
         
         //if both movement directions are greater than 0!!!
         
-        if (moveDir.x < 0 && !right)
+        if (moveDir.x < 0 && !left)
         {
             rb.drag = drg;
             sx = 0;
             left = true;
         }
-        if (moveDir.x > 0 && !left)
+        if (moveDir.x > 0 && !right)
         {
             rb.drag = drg;
             sx = 0;
             right = true;
         }
-        if (moveDir.y > 0 && !down)
+        if (moveDir.y > 0 && !up)
         {
             rb.drag = drg;
             sy = 0;
             up = true;
         }
-        if (moveDir.y < 0 && !up)
+        if (moveDir.y < 0 && !down)
         {
             rb.drag = drg;
             sy = 0;
