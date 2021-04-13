@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LVL1_CameraBlends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: CM Phase1
-    m_To: CM NextStage
+  - m_From: CM Phase1&2
+    m_To: CM NextStage_Ground
     m_Blend:
       m_Style: 3
       m_Time: 4
@@ -24,8 +24,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: CM NextStage
-    m_To: CM Phase2
+  - m_From: CM NextStage_Ground
+    m_To: CM Phase3
     m_Blend:
       m_Style: 2
       m_Time: 4
@@ -35,8 +35,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: CM Phase2
-    m_To: CM Phase1
+  - m_From: CM Phase3
+    m_To: CM Phase4
     m_Blend:
       m_Style: 6
       m_Time: 3
@@ -46,8 +46,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: CM Phase2
-    m_To: CM NextStage3
+  - m_From: CM Phase4
+    m_To: CM NextStage_Boss
     m_Blend:
       m_Style: 4
       m_Time: 2
@@ -57,8 +57,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: CM NextStage3
-    m_To: CM Phase3
+  - m_From: CM NextStage_Boss
+    m_To: CM Phase_Boss
     m_Blend:
       m_Style: 5
       m_Time: 2
