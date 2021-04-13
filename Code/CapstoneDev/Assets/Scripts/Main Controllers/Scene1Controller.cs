@@ -30,7 +30,6 @@ public class Scene1Controller : MonoBehaviour
     IEnumerator BattleController()
     {
         // Start battle with checkpoint if there's a checkpoint reached.
-        Debug.Log("Start battle: " + checkpointAt);
         for (int i = checkpointAt; i < battles.Length; i++)
         {
             // Start battle after timer since previous battle started, but only if previous battle has been finished.

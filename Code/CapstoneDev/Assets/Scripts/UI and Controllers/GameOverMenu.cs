@@ -11,8 +11,8 @@ public class GameOverMenu : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-          GameObject.Find("Squadron").GetComponent<PlaneSwitching>().SetUp();
-          GameObject.Find("HUD").GetComponent<Sidebars>().Reset();
+        GameObject.Find("Squadron").GetComponent<PlaneSwitching>().SetUp();
+        GameObject.Find("HUD").GetComponent<Sidebars>().Reset();
         Debug.Log("Reloading Scene");
     }
 

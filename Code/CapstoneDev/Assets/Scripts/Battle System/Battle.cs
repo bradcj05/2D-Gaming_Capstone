@@ -65,7 +65,7 @@ public class Battle : MonoBehaviour
         Debug.Log("StartBattle");
         state = State.Active;
         // Start narration
-        Transform HUD = GameObject.Find("HUD").GetComponent<Transform>();
+        GameObject HUD = GameObject.Find("HUD");
         HUD.GetComponent<Narration>().ChangeLineSet(narrationLineSet);
         // Stock event listener
         OnBattleStarted?.Invoke(this, EventArgs.Empty);
