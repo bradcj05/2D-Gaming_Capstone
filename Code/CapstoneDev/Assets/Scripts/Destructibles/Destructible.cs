@@ -37,6 +37,8 @@ public class Destructible : MonoBehaviour
     // Kinds of objects the destructible can deal collision damage with (see tags)
     public string[] collidableTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
 
+     ObjectivesSystem objSys;
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -77,6 +79,9 @@ public class Destructible : MonoBehaviour
         {
             explosionChain = GetComponent<ExplosionChain>();
         }
+
+        if(transform.gameObject.GetComponent<Player>() == null)
+          objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
     }
 
     public void Start()
@@ -166,7 +171,10 @@ public class Destructible : MonoBehaviour
         if (transform.gameObject.GetComponent<Player>() != null)
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
         else
+        {
+            objSys.DestroyUpdate(transform.name);
             Destroy(gameObject);
+        }
 
         yield return new WaitForEndOfFrame();
     }
