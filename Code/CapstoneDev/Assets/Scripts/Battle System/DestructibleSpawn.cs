@@ -32,7 +32,8 @@ public class DestructibleSpawn : MonoBehaviour
 
     public void Die()
     {
-        StartCoroutine(obj.Die());
+          if(obj != null) //Helps fix an issue where the call for the obj.Die Coroutine would constantly stop the game with errors as obj was already destroyed
+               StartCoroutine(obj.Die());
     }
 
     // Getters and setters

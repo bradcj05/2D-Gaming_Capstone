@@ -69,11 +69,11 @@ public class Scene1Controller : MonoBehaviour
                {
                     if (objSys == null)
                          objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
-                    if (checkpointAt != 0)
-                         objSys.CompleteAutomatic(checkpointAt, -1);
                     checkpointAt = i;
                     Debug.Log("Current Phase: " + checkpointAt);
-                    if(checkpointAt != 3)
+                    if (checkpointAt != 0)
+                         objSys.CompleteAutomatic(checkpointAt - 1, -1);
+                    if (checkpointAt != 3)
                          objSys.ActivateObjectives(checkpointAt, -1);
                }
         }
