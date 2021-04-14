@@ -28,7 +28,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 
     public float P4_speed;
 
-   // public float timer = 0;
+    public float timer = 0;
 
     private bool coroutineAllowed;
 
@@ -45,7 +45,7 @@ public class Ground_Phase_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //timer += Time.deltaTime;
+        timer += Time.deltaTime;
         prior = vcam2.Priority;
 
 
@@ -63,7 +63,9 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         coroutineAllowed = false;
 
-        // add if statements if(path==# && routeNumber == #){ change [speed] value for each route as needed. 
+
+       //HONG: if statements for the speed of the curves.
+
 
         if (path == 1 && routeNumber == 0){
             speed = P4_speed;
@@ -101,7 +103,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         routeToGo += 1;
 
-       // Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
+        Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
 
         if (routeToGo > Path[path].childCount - 1)
         { ///was routes.Length still counts the number of routes
