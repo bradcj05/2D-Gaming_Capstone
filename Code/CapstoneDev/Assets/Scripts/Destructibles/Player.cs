@@ -333,7 +333,7 @@ public class Player : Destructible
     //Player Death
     public new void Die()
     {
-        if (isDestroyed == 1)
+        if (isDestroyed == 1 && !devMode)
         {
             //Play death animation
             HUD.GetComponent<Narration>().ChangeLineSet(lineSetToUse);
