@@ -45,11 +45,17 @@ public class ObjectivesSystem : MonoBehaviour
                     objectives[i].IncreaseCurrent();
           }
      }
-     //TODO: Code
-     /*public void TowerUpdate()
-     {
 
-     }*/
+     //TODO: Test
+     public void TowerUpdate()
+     {
+          for(int i = 0; i < objectives.Length; i++)
+          {
+               if (objectives[i].status == Objective.ObjectiveStatus.Active && objectives[i].type == Objective.ObjectiveType.Tower)
+                    objectives[i].IncreaseCurrent();
+          }
+     }
+
      //TODO: TEST and most likely fix 
      public void ActivateObjectives(int obj1, int obj2)
      {
@@ -69,6 +75,7 @@ public class ObjectivesSystem : MonoBehaviour
           if (objectives[obj1].type == Objective.ObjectiveType.Failproof)
           {
                objectives[obj1].status = Objective.ObjectiveStatus.Completed;
+               ScoreTextScript.coinAmount += objectives[obj1].reward;
           }
           else if (objectives[obj1].type == Objective.ObjectiveType.Impossible)
           {
@@ -84,6 +91,7 @@ public class ObjectivesSystem : MonoBehaviour
                if (objectives[obj2].type == Objective.ObjectiveType.Failproof)
                {
                     objectives[obj2].status = Objective.ObjectiveStatus.Completed;
+                    ScoreTextScript.coinAmount += objectives[obj2].reward;
                }
                else if (objectives[obj2].type == Objective.ObjectiveType.Impossible)
                {

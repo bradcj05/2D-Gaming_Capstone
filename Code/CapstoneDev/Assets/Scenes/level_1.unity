@@ -979,10 +979,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cce4eb7cfbc01f4da2e5d4ed4d18456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  routes:
-  - {fileID: 1722943581}
-  - {fileID: 31650795}
-  speed: 1
+  paths: []
+  repeating: 0
+  rotateTowardsTarget: 1
+  targetTags: []
+  rotateSpeed: 0
 --- !u!1 &258958389
 GameObject:
   m_ObjectHideFlags: 3
@@ -1231,6 +1232,35 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: objectives.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: objectives.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6467f1471b3e324e8a9f2677b6b8715,
+        type: 2}
+    - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: objectives.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 12906386839b43b4bbf05739d49d770a,
+        type: 2}
+    - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: objectives.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f561492388b220443b94e19d0601f977,
+        type: 2}
+    - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
+        type: 3}
+      propertyPath: objectives.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 27a3de3391b97e349963e7387f8909a0,
+        type: 2}
     - target: {fileID: 1689283357443586007, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2386,6 +2416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 761086316}
+  - component: {fileID: 761086317}
   m_Layer: 0
   m_Name: Phase1
   m_TagString: Untagged
@@ -2852,6 +2883,7 @@ GameObject:
   - component: {fileID: 1261735394}
   - component: {fileID: 1261735393}
   - component: {fileID: 1261735395}
+  - component: {fileID: 1261735396}
   m_Layer: 15
   m_Name: CM Phase1
   m_TagString: Untagged
