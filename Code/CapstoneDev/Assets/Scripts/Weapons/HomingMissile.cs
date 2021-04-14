@@ -9,6 +9,7 @@ public class HomingMissile : Bullet
 {
     public float rotateSpeed = 10f;
     protected float rotateAmount;          //public for better testing
+    protected float originalRotation;
 
     protected Transform target;
     protected float distanceToTarget = Mathf.Infinity;
@@ -22,6 +23,7 @@ public class HomingMissile : Bullet
     public new void Start()
     {
         base.Start();
+        originalRotation = transform.localEulerAngles.z;
         // May have to change player target to something else for allies
         FindClosestTarget();
         timer = 0f;
@@ -132,8 +134,18 @@ public class HomingMissile : Bullet
                 rotateAmount = 0;
             }
             // Set rotation angle by rotating by rotateSpeed * rotateAmount
-            float curRot = transform.localRotation.eulerAngles.z;
-            transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+            float curRot = transform.localEulerAngles.z - originalRotation;
+            // Limit retrieved angle to +- pi for math.
+            if (curRot > 180)
+            {
+                curRot = -360 + curRot;
+            }
+            else if (curRot < -180)
+            {
+                curRot = 360 + curRot;
+            }
+            float rotationAfter = curRot - rotateSpeed * rotateAmount;
+            transform.localEulerAngles = new Vector3(0, 0, originalRotation + rotationAfter);
         }
         else
         {

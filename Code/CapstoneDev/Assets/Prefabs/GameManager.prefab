@@ -90,6 +90,9 @@ Transform:
   - {fileID: 7953647631073883236}
   - {fileID: 8680410749380932783}
   - {fileID: 3230279024107668355}
+  - {fileID: 4711427917413698246}
+  - {fileID: 6083960526848174967}
+  - {fileID: 330379944087252783}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,6 +139,9 @@ MonoBehaviour:
   - {fileID: 8717504259216363341}
   - {fileID: 5054985649844107766}
   - {fileID: 5274870357437247813}
+  - {fileID: 5240849696131869849}
+  - {fileID: 3887843697607026840}
+  - {fileID: 3078690713883056706}
 --- !u!1 &1010562282282630206
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +283,53 @@ MonoBehaviour:
   pooledObject: {fileID: 3850216058706245252, guid: 63afa626e20635541870a4e06d030caa,
     type: 3}
   poolSize: 168
+--- !u!1 &2950220827145458948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330379944087252783}
+  - component: {fileID: 3078690713883056706}
+  m_Layer: 0
+  m_Name: EAR-2 Airmine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330379944087252783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950220827145458948}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483736761828627263}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3078690713883056706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950220827145458948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: EAR-2 Airmine
+  pooledObject: {fileID: 1379189701670919262, guid: 0bc356f50fc1872428e5876713cfcbc8,
+    type: 3}
+  poolSize: 10
 --- !u!1 &3313083650680239642
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +518,53 @@ MonoBehaviour:
   pooledObject: {fileID: 4449166682222306337, guid: d2526dc27c70f2a458c717f00b366aa0,
     type: 3}
   poolSize: 6
+--- !u!1 &5745782674547542570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6083960526848174967}
+  - component: {fileID: 3887843697607026840}
+  m_Layer: 0
+  m_Name: BC-18 Missile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6083960526848174967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745782674547542570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483736761828627263}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3887843697607026840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745782674547542570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: BC-18 Missile
+  pooledObject: {fileID: 6391795292075661843, guid: 07ad1c4498c875045a2b088cc87b5501,
+    type: 3}
+  poolSize: 10
 --- !u!1 &5863560452968255493
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +800,53 @@ MonoBehaviour:
   pooledObject: {fileID: 5508660762800847285, guid: f618d44c3d210da4fb4fb7e54ea3abe7,
     type: 3}
   poolSize: 16
+--- !u!1 &7795491232079271937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4711427917413698246}
+  - component: {fileID: 5240849696131869849}
+  m_Layer: 0
+  m_Name: HG-75 Shell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4711427917413698246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795491232079271937}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 483736761828627263}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5240849696131869849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795491232079271937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0534e37392d20d5429893db58e45fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: HG-75 Shell
+  pooledObject: {fileID: 2409501978042204487, guid: 9dc02fc6c2ca4f446b79493613d8d026,
+    type: 3}
+  poolSize: 10
 --- !u!1 &8308287176594349059
 GameObject:
   m_ObjectHideFlags: 0

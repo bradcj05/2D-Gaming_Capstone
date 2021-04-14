@@ -154,6 +154,7 @@ MonoBehaviour:
   CenterOfMass: {x: 0, y: 0, z: 0}
   collidableTags:
   - Ally
+  - Enemy
   mass: 10
 --- !u!60 &1061334482456374596
 PolygonCollider2D:

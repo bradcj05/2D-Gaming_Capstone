@@ -12,6 +12,7 @@ public class EDGE_LORD : MonoBehaviour {
     Vector2[] points = poly.points;
     EdgeCollider2D edge = gameObject.AddComponent<EdgeCollider2D>();
     edge.points = points;
+    edge.isTrigger = true;
     Destroy(poly);
 }
 }

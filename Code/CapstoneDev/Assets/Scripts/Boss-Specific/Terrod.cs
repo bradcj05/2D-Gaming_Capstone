@@ -26,8 +26,9 @@ public class Terrod : MonoBehaviour
     public float accelTime = 1f;  // Acceleration time (until maximum engine power in either direction)
     public float decelTime = 0.5f;  // Deceleration time
     protected float rotateAmount; //public for better testing
+    protected float originalRotation;
     protected Transform target;
-    bool reverse = false; // Check if reversing
+    bool targetOnBack = false; // Check if reversing
 
     //Add death animation
     public ParticleSystem crater = null;
@@ -39,6 +40,7 @@ public class Terrod : MonoBehaviour
     {
         isWorking1 = true;
         isWorking2 = true;
+        originalRotation = transform.eulerAngles.z;
         try
         {
             target = GameObject.FindGameObjectWithTag("ActivePlayer").transform;
@@ -88,18 +90,18 @@ public class Terrod : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //Changing Terrod's movement
-        if (target != null && isWorking1 && isWorking2)
+        //Changing tank's movement
+        if (target != null)
         {
             Vector2 distance = (Vector2)target.position - rig.position;
-            reverse = Vector2.Dot(distance, -transform.up) < 0;
+            targetOnBack = Vector2.Dot(distance, -transform.up) < 0;
             // Move forward only if distance to player is larger than "optimum" distance and player is in front
-            if (distance.magnitude > optimumDistance && !reverse)
+            if (distance.magnitude > optimumDistance && !targetOnBack)
             {
                 Run();
             }
             // Else reverse, but again only if closer than optimum distance
-            else if (distance.magnitude < optimumDistance)
+            else if (distance.magnitude < optimumDistance || targetOnBack)
             {
                 Reverse();
             }
@@ -109,11 +111,10 @@ public class Terrod : MonoBehaviour
                 Stop();
                 Rotate();
             }
-
         }
     }
 
-    // Custom rotation (ASSUME SPRITE FACING DOWNWARD!!!)
+    // Custom rotation
     public void Rotate()
     {
         // Rotate
@@ -133,29 +134,47 @@ public class Terrod : MonoBehaviour
         {
             rotateAmount = Vector3.Cross(direction, -transform.up).z;
         }
-        float curRot = transform.rotation.eulerAngles.z;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, curRot - rotateSpeed * rotateAmount));
+        float curRot = transform.localEulerAngles.z - originalRotation;
+        // Limit retrieved angle to +- pi for math.
+        if (curRot > 180)
+        {
+            curRot = -360 + curRot;
+        }
+        else if (curRot < -180)
+        {
+            curRot = 360 + curRot;
+        }
+        float rotationAfter = curRot - rotateSpeed * rotateAmount;
+        transform.localEulerAngles = new Vector3(0, 0, originalRotation + rotationAfter);
     }
 
     // Custom acceleration and deceleration (ASSUME SPRITE FACING DOWNWARD!!!)
     public void Run()
     {
         // If reversing, stop first
-        if (reverse)
+        if (IsReversing())
         {
             Stop();
         }
-        // Rotate when running
-        Rotate();
-        // Acceleration
-        if (rig.velocity.magnitude < moveSpeed)
+        else
         {
-            rig.velocity = -transform.up * (rig.velocity.magnitude + moveSpeed * Time.deltaTime / accelTime);
-        }
-        // Velocity capping
-        if (rig.velocity.magnitude > moveSpeed)
-        {
-            rig.velocity = -transform.up * moveSpeed;
+            // Rotate when running
+            Rotate();
+            // Acceleration
+            float curVelocity = rig.velocity.magnitude;
+            if (curVelocity < moveSpeed)
+            {
+                rig.velocity = -transform.up * (curVelocity + moveSpeed * Time.deltaTime / accelTime);
+                // Velocity capping
+                if (rig.velocity.magnitude > moveSpeed)
+                {
+                    rig.velocity = -transform.up * moveSpeed;
+                }
+            }
+            else
+            {
+                rig.velocity = -transform.up * moveSpeed;
+            }
         }
     }
 
@@ -165,9 +184,9 @@ public class Terrod : MonoBehaviour
         Vector2 prevVelocity = new Vector2(rig.velocity.x, rig.velocity.y);
         if (rig.velocity.magnitude > 0)
         {
-            if (reverse)
+            if (Vector2.Dot(prevVelocity, -transform.up) < 0)
             {
-                rig.velocity = prevVelocity - prevVelocity.normalized * (reverseSpeed * Time.deltaTime / accelTime);
+                rig.velocity = prevVelocity - prevVelocity.normalized * (reverseSpeed * Time.deltaTime / decelTime);
             }
             else
             {
@@ -180,7 +199,7 @@ public class Terrod : MonoBehaviour
             rig.velocity = new Vector2(0, 0);
         }
         // Rotate when tank achieves "stability" (active engine power = 10% total engine power)
-        if ((!reverse && rig.velocity.magnitude < moveSpeed / 10) || (reverse && rig.velocity.magnitude < reverseSpeed / 10))
+        if ((!IsReversing() && rig.velocity.magnitude < moveSpeed / 10) || (IsReversing() && rig.velocity.magnitude < reverseSpeed / 10))
         {
             Rotate();
         }
@@ -189,7 +208,7 @@ public class Terrod : MonoBehaviour
     public void Reverse()
     {
         // Stop first if still going forward
-        if (!reverse)
+        if (!IsReversing() && rig.velocity.magnitude > 0)
         {
             Stop();
         }
@@ -198,15 +217,27 @@ public class Terrod : MonoBehaviour
             // Also rotate
             Rotate();
             // Reverse until reverseSpeed
-            if (rig.velocity.magnitude < reverseSpeed)
+            float curVelocity = rig.velocity.magnitude;
+            if (curVelocity < reverseSpeed)
             {
-                rig.velocity = transform.up * (rig.velocity.magnitude + reverseSpeed * Time.deltaTime / accelTime);
+                rig.velocity = transform.up * (curVelocity + reverseSpeed * Time.deltaTime / decelTime);
+                // Velocity capping
+                if (rig.velocity.magnitude > reverseSpeed)
+                {
+                    rig.velocity = (transform.up) * reverseSpeed;
+                }
             }
-            if (rig.velocity.magnitude > reverseSpeed)
+            else
             {
-                rig.velocity = transform.up * reverseSpeed;
+                rig.velocity = (transform.up) * reverseSpeed;
             }
         }
+    }
+
+    // Check if tank is reversing
+    public bool IsReversing()
+    {
+        return Vector3.Dot(rig.velocity, -transform.up) < 0;
     }
 
     public void TerrodDeath()

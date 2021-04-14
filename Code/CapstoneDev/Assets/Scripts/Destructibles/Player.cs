@@ -15,10 +15,11 @@ public class Player : Destructible
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
     Vector2 movement;
+    Vector2 moveDir;
+    public Collider2D area;
     //Values for rotation
     protected Camera cam;
     Vector2 mousePos;
-
     // Active weapons stuff
     public int activeSecondaryWeapon = 0;
     public int activeShellGroup = 0;
@@ -30,6 +31,10 @@ public class Player : Destructible
 
     //Add death animation
 
+    int sx = 1;  //stop speed variable
+    int sy = 1;
+
+    bool left, right, up, down = false;
     // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
     public bool devMode = false;
 
@@ -71,59 +76,108 @@ public class Player : Destructible
     // Input
     new void Update()
     {
-        if (SceneManager.GetActiveScene().name != "Hangar")
-        {
-            base.Update();
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               base.Update();
 
-            // Movement
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
+                sx = 1;
+                left = false;
+            }
+            if (right == true && Input.GetAxisRaw("Horizontal") < 0) {
+                sx = 1;
+                right = false;
+            }
+            if (up == true && Input.GetAxisRaw("Vertical") < 0) {
+                sy = 1;
+                up = false;
+            }
+            if (down == true && Input.GetAxisRaw("Vertical") > 0) {
+                sy = 1;
+                down = false;
+            }
+            
 
-            // Get Mouse Position
-            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-            // Update active secondary weapon
-            if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-            {
-                activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-            {
-                activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-            }
+               // Movement
+               movement.x = Input.GetAxisRaw("Horizontal") *sx;
+               movement.y = Input.GetAxisRaw("Vertical") * sy;
 
-            // Update active shell group
-            if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-            {
-                activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-            }
-            else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-            {
-                activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-            }
-        }
+               // Get Mouse Position
+               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+               // Update active secondary weapon
+               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+               }
+               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+               {
+                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+               }
+
+               // Update active shell group
+               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+               }
+               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+               {
+                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+               }
+          }
     }
 
     //Movement
     void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().name != "Hangar")
-        {
-            movement.Normalize();
-            // Move in the direction specified, then force the speed back to max speed if it is already reached.
-            // (Provided the max speed is due to moment and not knockback or external factor)
-            rb.AddForce(movement * enginePower, ForceMode2D.Force);
-            Vector2 moveDir = rb.velocity / rb.velocity.magnitude;
-            if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-            {
-                rb.velocity = maxSpeed * moveDir;
-            }
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               movement.Normalize();
+               // Move in the direction specified, then force the speed back to max speed if it is already reached.
+               // (Provided the max speed is due to moment and not knockback or external factor)
+               rb.AddForce(movement * enginePower, ForceMode2D.Force);
+               moveDir = rb.velocity / rb.velocity.magnitude;
+               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+               {
+                    rb.velocity = maxSpeed * moveDir;
+               }
 
-            //Rotate the Player
-            Vector2 lookDir = mousePos - rb.position;
-            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-            rb.rotation = angle;
+               //Rotate the Player
+               Vector2 lookDir = mousePos - rb.position;
+               float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+               rb.rotation = angle;
+          }
+    }
+
+
+    
+ 
+
+    void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
+    {  //OnCollisionEnter2D  runs this code
+        if (moveDir.x < 0)
+        {
+            sx = 0;
+            left = true;
         }
+        if (moveDir.x > 0)
+        {
+            sx = 0;
+            right = true;
+        }
+        if (moveDir.y > 0)
+        {
+            sy = 0;
+            up = true;
+        }
+        if (moveDir.y < 0)
+        {
+            sy = 0;
+            down = true;
+        }
+
+        Debug.Log("exit");  //proof that the code ran.
     }
 
     //Player Death

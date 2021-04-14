@@ -10,8 +10,8 @@ using UnityEngine;
 
 public class self_loop_Background : MonoBehaviour
 {
-    [Range(-1f, 1f)]
-    public float scrollSpeed = 0.1f;
+    
+    public float scrollSpeed = 10f;
     private float offset;
     private Material mat;
     // Start is called before the first frame update

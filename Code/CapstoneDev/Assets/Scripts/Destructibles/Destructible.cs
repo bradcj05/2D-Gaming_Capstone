@@ -140,11 +140,17 @@ public class Destructible : MonoBehaviour
             }
         }
 
+        // Detonate Explosion comp for kamikaze enemies
+        if (gameObject.GetComponent<Explosion>() != null)
+        {
+            gameObject.GetComponent<Explosion>().Detonate();
+        }
+
         //Spawn coin if supposed to
         if (coin != null)
             Instantiate(coin, transform.position, transform.rotation);
 
-        //Play explosion
+        //Play explosion effect
         if (explosion != null)
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
