@@ -73,4 +73,8 @@ public class Scene1Controller : MonoBehaviour
     {
         checkpointAt = 0;
     }
+    public int ReturnProgress()
+    {
+        return checkpointAt;
+    }
 }
