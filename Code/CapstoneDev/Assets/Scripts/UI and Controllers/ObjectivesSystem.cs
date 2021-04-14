@@ -16,8 +16,15 @@ public class ObjectivesSystem : MonoBehaviour
           {
                if (objectives[i].status == Objective.ObjectiveStatus.Active)
                {
-                    boxText += objectives[i].description + ": " +
-                         objectives[i].GetCurrentAmount() + "/" + objectives[i].requiredAmount;
+                    if (objectives[i].requiredAmount > 0)
+                    {
+                         boxText += objectives[i].description + ": " +
+                              objectives[i].GetCurrentAmount() + "/" + objectives[i].requiredAmount;
+                    }
+                    else
+                    {
+                         boxText += objectives[i].description;
+                    }
                     if ((i + 1) < objectives.Length)
                          boxText += "\n";
                }
