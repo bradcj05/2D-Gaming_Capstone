@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLine: "<color=purple><b>Lynch:</b></color> Look how they butchered my boy\u2026"
   sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 0
+  time: 58

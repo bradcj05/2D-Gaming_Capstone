@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
-  m_Name: Lv1-3-6
+  m_Name: Lv1-3-4-O2
   m_EditorClassIdentifier: 
-  textLine: "<color=purple><b>Lynch:</b></color> You can tell by the color of their
-    health bars. There\u2019s a defense indicator overlaid on top of them."
-  sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 33
+  textLine: <color=lime><b>Commander:</b></color> Good thing I put a jammer on that
+    Pancake for my old science project. If you just hover them that should do it!
+  sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
+  time: 20

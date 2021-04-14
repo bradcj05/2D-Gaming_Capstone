@@ -16,4 +16,4 @@ MonoBehaviour:
     interceptor that got lost during transit to our testing lab. We never figured
     out where it went."
   sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 0
+  time: 25

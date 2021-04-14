@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLine: "<color=purple><b>Lynch:</b></color> Don\u2019t worry though, this one\u2019s
     pretty fragile. Even your Flying Pancake might be able to take it down\u2026
-    provided the enemy pilot is dumb enough of course.lab. We never figured out where
-    it went."
+    provided the enemy pilot is dumb enough of course."
   sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 0
+  time: 33

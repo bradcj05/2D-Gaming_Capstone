@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLine: <color=purple><b>Lynch:</b></color> Oh! Looks like here it is.
   sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 0
+  time: 48
