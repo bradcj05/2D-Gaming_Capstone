@@ -63,8 +63,12 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         // MATT!!!!MATT: "cameraPositionChange(1);" FOR THE CUTSCENES   MATT!!!!MATT
 
+        //!!!
+        //HONG  time values for when to switch the cameras
+        //!!!
+
         timer += Time.deltaTime;
-        if (Phase1_2 && timer > 4) /// TRANSITION to GROUND PHASES
+        if (Phase1_2 && timer > 130) /// TRANSITION to GROUND PHASES
         {
             vcam1.Priority = 0;
             vcam2.Priority = 1;
@@ -72,7 +76,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             PhaseN3 = !PhaseN3; //transition
 
         }
-        else if (PhaseN3 && timer > 8) //Phase 3 CAMERA ACTIVATE
+        else if (PhaseN3 && timer > 134) //Phase 3 CAMERA ACTIVATE
         {
 
             vcam2.Priority = 0;
