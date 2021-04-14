@@ -7,7 +7,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 {
     [SerializeField]
     private CinemachineVirtualCamera vcam1, //PHASES 3 & 4
-        vcam2, vcam3;
+        vcam2, vcam3, vcam4;
 
     int prior;
 
@@ -116,6 +116,7 @@ public class Ground_Phase_Camera : MonoBehaviour
         if (path > 1)
         {
             vcam3.Priority = 0;
+            vcam4.Priority = 1;
             coroutineAllowed = false;
         }else{
             coroutineAllowed = true;

@@ -68,7 +68,7 @@ public class PathFollow : MonoBehaviour
                     }
                 }
             }
-            target = closest.transform;
+           // target = closest.transform;
             distanceToTarget = Mathf.Sqrt(distance);
         }
         catch (System.NullReferenceException e)
