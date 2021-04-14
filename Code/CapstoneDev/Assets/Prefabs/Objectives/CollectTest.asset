@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CollectTest
   m_EditorClassIdentifier: 
   type: 1
-  status: 1
+  status: 0
   description: Collect some coins
   target: {fileID: 4817025681163385782, guid: cfabb8ad8de65dd44997946dce2faae6, type: 3}
   reward: 0
