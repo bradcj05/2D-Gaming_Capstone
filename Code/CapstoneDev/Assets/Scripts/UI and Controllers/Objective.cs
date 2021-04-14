@@ -60,9 +60,4 @@ public class Objective : ScriptableObject
      {
           return currentAmount;
      }
-     //Not currently used as a bug was occurring in the ObjectivesSystem script
-     /*public ObjectiveStatus GetStatus()
-     {
-          return status;
-     }*/
 }

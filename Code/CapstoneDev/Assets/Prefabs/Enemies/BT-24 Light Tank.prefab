@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  defense: 1
+  defense: 2
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 1110199340092959050}
