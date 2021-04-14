@@ -10,7 +10,7 @@ public class Scene1Controller : MonoBehaviour
     public AudioSource bossMusic;
     public int bossBattleId = 4;
     public float bossWait = 2f;
-    protected static int checkpointAt = 0;
+    protected static int checkpointAt = 2;
      ObjectivesSystem objSys;
 
     // For music
@@ -77,6 +77,11 @@ public class Scene1Controller : MonoBehaviour
                          objSys.ActivateObjectives(checkpointAt, -1);
                }
         }
+    }
+    
+    public int GetPhase()
+    {
+        return checkpointAt;
     }
 
     public static void ResetCheckpoints()

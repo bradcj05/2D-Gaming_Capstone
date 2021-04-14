@@ -8,6 +8,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
     public GameObject cameraOne;
     public GameObject cameraTwo;
+    public Scene1Controller sceneController;
 
     AudioListener cameraOneAudioLis;
     AudioListener cameraTwoAudioLis;
@@ -15,7 +16,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
     [SerializeField]
     private CinemachineVirtualCamera vcam1, // PHASES 1 & 2
-        vcam2, 
+        vcam2,
         vcam3,  // PHASES 3 & 4
         vcam4, vcam5, vcam6, vcam7;
 
@@ -27,6 +28,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
 
     public float timer = 0;
+    public float subTimer = 0;
     // Use this for initialization 
 
     bool Phase1_2 = true;
@@ -45,11 +47,15 @@ public class Full_LVL1_Camera : MonoBehaviour
     void Start()
     {
         timer = 0;
+        subTimer = 0;
         //Get Camera Listeners
         cameraOneAudioLis = cameraOne.GetComponent<AudioListener>();
         cameraTwoAudioLis = cameraTwo.GetComponent<AudioListener>();
 
-       
+        //Grab scene controller
+        sceneController = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
+
+
         //Camera Position Set
         cameraPositionChange(0);
 
@@ -68,22 +74,23 @@ public class Full_LVL1_Camera : MonoBehaviour
         //!!!
 
         timer += Time.deltaTime;
-        if (Phase1_2 && timer > 130) /// TRANSITION to GROUND PHASES
+        if (PhaseN3)
+            subTimer += Time.deltaTime;
+
+        // CHANGE GET PHASE VALUE ON CUTSCENE IMPLEMENTED!
+        if (Phase1_2 && sceneController.GetPhase() == 2) /// TRANSITION to GROUND PHASES
         {
             vcam1.Priority = 0;
             vcam2.Priority = 1;
             Phase1_2 = !Phase1_2;
             PhaseN3 = !PhaseN3; //transition
-
         }
-        else if (PhaseN3 && timer > 134) //Phase 3 CAMERA ACTIVATE
+        else if (PhaseN3 && subTimer > 2) //Phase 3 CAMERA ACTIVATE
         {
-
             vcam2.Priority = 0;
             vcam3.Priority = 1;
             PhaseN3 = !PhaseN3;
             Phase3_4 = !Phase3_4;
-
         }
 
         /*if(vcam4.Priority == 0 && Phase3_4) // dummy test connection between Ground_Phase scripts 
