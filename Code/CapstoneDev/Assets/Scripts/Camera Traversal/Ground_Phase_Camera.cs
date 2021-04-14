@@ -49,7 +49,7 @@ public class Ground_Phase_Camera : MonoBehaviour
         prior = vcam2.Priority;
 
 
-        if (vcam3.Priority == 1 || vcam2.Priority == 1)
+        if (vcam3.Priority == 1 || vcam2.Priority == 1 || vcam1.Priority == 1)
         {
             if (coroutineAllowed)
             {
@@ -70,6 +70,8 @@ public class Ground_Phase_Camera : MonoBehaviour
             }
         if (path == 1 && routeNumber == 1)
         {
+            vcam2.Priority = 0;
+            vcam3.Priority = 1;
             speed = .088f;
         }
         //Path --> route --> position point.  what this code is doing
@@ -105,8 +107,8 @@ public class Ground_Phase_Camera : MonoBehaviour
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
             path++;
-            vcam2.Priority = 0;
-            vcam3.Priority = 1;
+            vcam1.Priority = 0;
+            vcam2.Priority = 1;
         }
 
         coroutineAllowed = true;
