@@ -11,6 +11,7 @@ public class Scene1Controller : MonoBehaviour
     public int bossBattleId = 4;
     public float bossWait = 2f;
     protected static int checkpointAt = 0;
+     ObjectivesSystem objSys;
 
     // For music
     public AudioMixer mixer;
@@ -19,6 +20,7 @@ public class Scene1Controller : MonoBehaviour
     void Start()
     {
         StartCoroutine(BattleController());
+          objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
     }
 
     // Update is called once per frame
@@ -63,9 +65,18 @@ public class Scene1Controller : MonoBehaviour
                 StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, 0.8f));
             }
 
-            // Save a checkpoint if battle is specified to have a checkpoint before it.
-            if (battle.checkpointBefore)
-                checkpointAt = i;
+               // Save a checkpoint if battle is specified to have a checkpoint before it.
+               if (battle.checkpointBefore)
+               {
+                    if (objSys == null)
+                         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+                    if (checkpointAt != 0)
+                         objSys.CompleteAutomatic(checkpointAt, -1);
+                    checkpointAt = i;
+                    Debug.Log("Current Phase: " + checkpointAt);
+                    if(checkpointAt != 3)
+                         objSys.ActivateObjectives(checkpointAt, -1);
+               }
         }
     }
 

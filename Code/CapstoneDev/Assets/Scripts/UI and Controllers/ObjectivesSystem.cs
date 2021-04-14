@@ -45,8 +45,7 @@ public class ObjectivesSystem : MonoBehaviour
                     objectives[i].IncreaseCurrent();
           }
      }
-
-     //TODO: Test
+     
      public void TowerUpdate()
      {
           for(int i = 0; i < objectives.Length; i++)
@@ -55,8 +54,7 @@ public class ObjectivesSystem : MonoBehaviour
                     objectives[i].IncreaseCurrent();
           }
      }
-
-     //TODO: TEST and most likely fix 
+ 
      public void ActivateObjectives(int obj1, int obj2)
      {
           if (objectives[obj1].status == Objective.ObjectiveStatus.Inactive)
@@ -69,7 +67,6 @@ public class ObjectivesSystem : MonoBehaviour
           }
      }
      
-     //TODO: TEST
      public void CompleteAutomatic(int obj1, int obj2)
      {
           if (objectives[obj1].type == Objective.ObjectiveType.Failproof)
