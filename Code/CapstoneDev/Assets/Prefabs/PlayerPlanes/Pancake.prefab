@@ -144,7 +144,12 @@ MonoBehaviour:
   numberOfSecondaryWeapons: 0
   numberOfShellGroups: 1
   lineSetToUse: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e, type: 2}
-  devMode: 1
+  drg: 10
+  left: 0
+  right: 0
+  up: 0
+  down: 0
+  devMode: 0
 --- !u!60 &989908066360215635
 PolygonCollider2D:
   m_ObjectHideFlags: 0
