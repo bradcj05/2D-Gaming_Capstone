@@ -2391,7 +2391,7 @@ Transform:
   m_Children:
   - {fileID: 58241251}
   m_Father: {fileID: 1423632346}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &87198565
 GameObject:
@@ -11945,7 +11945,7 @@ Transform:
   - {fileID: 382181171}
   - {fileID: 2087003513}
   m_Father: {fileID: 1423632346}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &448499018
 MonoBehaviour:
@@ -28046,7 +28046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOne: {fileID: 789255645}
   cameraTwo: {fileID: 1641048200}
-  sceneController: {fileID: 0}
   vcam1: {fileID: 1611596934}
   vcam2: {fileID: 1807440979}
   vcam3: {fileID: 594804683}
@@ -37130,6 +37129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battles:
+  - {fileID: 1974838275}
   - {fileID: 448499018}
   - {fileID: 1940779710}
   - {fileID: 1688945582}
@@ -37137,7 +37137,7 @@ MonoBehaviour:
   - {fileID: 1779992256}
   levelMusic: {fileID: 62778712}
   bossMusic: {fileID: 1767794095}
-  bossBattleId: 4
+  bossBattleId: 5
   bossWait: 4
   mixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
 --- !u!4 &1423632346
@@ -37151,6 +37151,7 @@ Transform:
   m_LocalPosition: {x: 61.05002, y: 155.6, z: -4.5728507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1974838274}
   - {fileID: 448499017}
   - {fileID: 1940779709}
   - {fileID: 1688945581}
@@ -39990,7 +39991,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectives.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: b6467f1471b3e324e8a9f2677b6b8715,
+      objectReference: {fileID: 11400000, guid: 27a3de3391b97e349963e7387f8909a0,
         type: 2}
     - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -45255,7 +45256,7 @@ Transform:
   - {fileID: 2100445575}
   - {fileID: 671298005}
   m_Father: {fileID: 1423632346}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1688945582
 MonoBehaviour:
@@ -47304,7 +47305,7 @@ Transform:
   m_Children:
   - {fileID: 1819682558}
   m_Father: {fileID: 1423632346}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1779992256
 MonoBehaviour:
@@ -51410,7 +51411,7 @@ Transform:
   - {fileID: 583115450}
   - {fileID: 1652999073}
   m_Father: {fileID: 1423632346}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1940779710
 MonoBehaviour:
@@ -52549,6 +52550,54 @@ Transform:
   m_Father: {fileID: 667036123}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1974838273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974838274}
+  - component: {fileID: 1974838275}
+  m_Layer: 0
+  m_Name: Phase0(Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1974838274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974838273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1423632346}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1974838275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974838273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46c6b70572f8e643bc689c9fef78e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointBefore: 0
+  narrationLineSet: {fileID: 0}
+  timer: 0
+  colliderTrigger: {fileID: 0}
+  waveArray: []
 --- !u!1 &1978659093
 GameObject:
   m_ObjectHideFlags: 0

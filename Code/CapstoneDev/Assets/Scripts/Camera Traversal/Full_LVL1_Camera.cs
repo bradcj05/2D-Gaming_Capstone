@@ -8,7 +8,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
     public GameObject cameraOne;
     public GameObject cameraTwo;
-    public Scene1Controller sceneController;
+    protected Scene1Controller sceneController;
 
     AudioListener cameraOneAudioLis;
     AudioListener cameraTwoAudioLis;
@@ -78,7 +78,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             subTimer += Time.deltaTime;
 
         // CHANGE GET PHASE VALUE ON CUTSCENE IMPLEMENTED!
-        if (Phase1_2 && sceneController.GetPhase() == 2) /// TRANSITION to GROUND PHASES
+        if (Phase1_2 && sceneController.GetPhase() == 3) /// TRANSITION to GROUND PHASES
         {
             vcam1.Priority = 0;
             vcam2.Priority = 1;
@@ -91,6 +91,17 @@ public class Full_LVL1_Camera : MonoBehaviour
             vcam3.Priority = 1;
             PhaseN3 = !PhaseN3;
             Phase3_4 = !Phase3_4;
+        }
+        // Load checkpoint from Phase 4
+        else if (sceneController.GetPhase() == 4)
+        {
+            vcam1.Priority = 0;
+            vcam2.Priority = 0;
+            vcam3.Priority = 0;
+            vcam4.Priority = 1;
+            Phase1_2 = false;
+            PhaseN3 = false;
+            Phase3_4 = true;
         }
 
         /*if(vcam4.Priority == 0 && Phase3_4) // dummy test connection between Ground_Phase scripts 
