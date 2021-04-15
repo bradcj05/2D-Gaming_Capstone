@@ -173,9 +173,7 @@ public class Player : Destructible
         }
     }
 
-
     // need to define which collider was hit instead of movment direction.
- 
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
