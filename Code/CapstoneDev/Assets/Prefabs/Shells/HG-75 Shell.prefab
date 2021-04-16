@@ -121,7 +121,7 @@ MonoBehaviour:
   type: 2
   grade: 2
   category: 0
-  power: 20
+  power: 30
   speed: 30
   penetration: 5
   deterioration: 0.15
