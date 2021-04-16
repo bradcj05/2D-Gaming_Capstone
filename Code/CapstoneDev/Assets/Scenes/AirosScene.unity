@@ -4477,7 +4477,7 @@ PrefabInstance:
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: devMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
@@ -42987,7 +42987,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objectives.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 27a3de3391b97e349963e7387f8909a0,
+      objectReference: {fileID: 11400000, guid: b6467f1471b3e324e8a9f2677b6b8715,
         type: 2}
     - target: {fileID: 1448663284570929614, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -56364,7 +56364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointBefore: 0
-  narrationLineSet: {fileID: 0}
+  narrationLineSet: {fileID: 11400000, guid: 376f4f65e1817f249b4dd9a8597537f8, type: 2}
   timer: 0
   colliderTrigger: {fileID: 0}
   waveArray: []
