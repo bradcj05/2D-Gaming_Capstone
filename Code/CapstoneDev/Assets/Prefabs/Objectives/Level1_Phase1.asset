@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level1_Phase1
   m_EditorClassIdentifier: 
   type: 4
-  status: 0
+  status: 1
   description: Pursue the Assailant
   target: {fileID: 0}
   reward: 0

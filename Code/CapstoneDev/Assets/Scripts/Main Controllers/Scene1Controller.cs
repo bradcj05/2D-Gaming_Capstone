@@ -10,7 +10,7 @@ public class Scene1Controller : MonoBehaviour
     public AudioSource bossMusic;
     public int bossBattleId = 4;
     public float bossWait = 2f;
-    protected static int checkpointAt = 4;
+    protected static int checkpointAt = 0;
     ObjectivesSystem objSys;
 
     // For music
@@ -71,10 +71,11 @@ public class Scene1Controller : MonoBehaviour
                     objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
                 checkpointAt = i;
                 Debug.Log("Current Phase: " + checkpointAt);
-                if (checkpointAt != 0)
+                //Need to reevaluate how I'm changing objectives
+                if (checkpointAt != 1)
                     objSys.CompleteAutomatic(checkpointAt - 1, -1);
-                if (checkpointAt != 3)
-                    objSys.ActivateObjectives(checkpointAt, -1);
+                if (checkpointAt != 4)
+                    objSys.ActivateObjectives(checkpointAt - 1, -1);
             }
         }
     }

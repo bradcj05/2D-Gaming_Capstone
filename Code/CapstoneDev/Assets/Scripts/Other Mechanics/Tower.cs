@@ -38,7 +38,7 @@ public class Tower : MonoBehaviour
           {
                timer += Time.deltaTime;
                jamBar.SetHealth(timer);
-               if (timer >= timeNeeded)
+               if (timer >= timeNeeded && !towerJammed)
                {
                     towerJammed = true;
                     objSys.TowerUpdate();

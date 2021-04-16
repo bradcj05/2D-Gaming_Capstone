@@ -26,12 +26,12 @@ public class Objective : ScriptableObject
      }
 
      public ObjectiveType type;
-     public ObjectiveStatus status;
+     public ObjectiveStatus status; //Make this static?
      public string description;
      public GameObject target;
      public int reward;
      public int requiredAmount;
-     protected int currentAmount;
+     protected int currentAmount; //Make this static?
 
      void Awake()
      {
