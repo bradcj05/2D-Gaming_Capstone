@@ -8,6 +8,14 @@ public class ObjectivesSystem : MonoBehaviour
      public Text objectiveBox;
      public Objective[] objectives;
 
+     void Awake()
+     {
+          for (int i = 0; i <objectives.Length; i++)
+          {
+               objectives[i].status = Objective.ObjectiveStatus.Inactive;
+          }
+     }
+
      // Update is called once per frame
      void Update()
      {
@@ -85,7 +93,7 @@ public class ObjectivesSystem : MonoBehaviour
           {
                objectives[obj1].status = Objective.ObjectiveStatus.Cancelled;
           }
-          else
+          else if (objectives[obj1].status == Objective.ObjectiveStatus.Active)
           {
                objectives[obj1].status = Objective.ObjectiveStatus.Failed;
           }
@@ -101,7 +109,7 @@ public class ObjectivesSystem : MonoBehaviour
                {
                     objectives[obj2].status = Objective.ObjectiveStatus.Cancelled;
                }
-               else
+               else if (objectives[obj1].status == Objective.ObjectiveStatus.Active)
                {
                     objectives[obj2].status = Objective.ObjectiveStatus.Failed;
                }

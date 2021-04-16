@@ -72,10 +72,12 @@ public class Scene1Controller : MonoBehaviour
                 checkpointAt = i;
                 Debug.Log("Current Phase: " + checkpointAt);
                 //Need to reevaluate how I'm changing objectives
-                if (checkpointAt != 1)
-                    objSys.CompleteAutomatic(checkpointAt - 1, -1);
-                if (checkpointAt != 4)
+                if (checkpointAt != 0 && checkpointAt != 1)
+                    objSys.CompleteAutomatic(checkpointAt - 2, -1);
+                if (checkpointAt != 4 && checkpointAt != 5)
                     objSys.ActivateObjectives(checkpointAt - 1, -1);
+                else if (checkpointAt == 5)
+                    objSys.ActivateObjectives(3, -1);
             }
         }
     }

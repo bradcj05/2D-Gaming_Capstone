@@ -150,7 +150,7 @@ public class Bullet : WeaponsClassification
                     else
                     {
                         time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal);
+                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal); //Need to fix as a error is causing NaN
                         //Store new direction
                         Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                         //Rotate bullet to new direction
