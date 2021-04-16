@@ -22,23 +22,23 @@ public class Tutorial : MonoBehaviour
     {
         if (!shootGun)
         {
-            shootGun = Input.GetKey("space");
+            shootGun = Input.GetKey("mouse 0");
         }
         if (!moveUp)
         {
-            moveUp = Input.GetKey("up");
+            moveUp = Input.GetKey("w");
         }
         if (!moveDown)
         {
-            moveDown = Input.GetKey("down");
+            moveDown = Input.GetKey("s");
         }
         if (!turnLeft)
         {
-            turnLeft = Input.GetKey("left");
+            turnLeft = Input.GetKey("a");
         }
         if (!turnRight)
         {
-            turnRight = Input.GetKey("right");
+            turnRight = Input.GetKey("d");
         }
 
         if (shootGun && moveUp && moveDown && turnLeft && turnRight) objectivesComplete = true;

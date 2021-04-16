@@ -16,6 +16,7 @@ public class Player : Destructible
     public float enginePower = 1000f;
     Vector2 movement;
     Vector2 moveDir;
+    bool playerControl = true;
     public Collider2D area;
     //Values for rotation
     protected Camera cam;
@@ -130,7 +131,7 @@ public class Player : Destructible
     //Movement
     void FixedUpdate()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar")
+          if (SceneManager.GetActiveScene().name != "Hangar" && playerControl)
           {
                movement.Normalize();
                // Move in the direction specified, then force the speed back to max speed if it is already reached.
@@ -233,5 +234,14 @@ public class Player : Destructible
             }
         }
         return null;
+    }
+
+    public void SeizeMovement()
+    {
+        playerControl = false;
+    }
+    public void ReleaseMovement()
+    {
+        playerControl = true;
     }
 }

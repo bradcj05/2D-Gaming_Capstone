@@ -12,25 +12,42 @@ public class CutsceneController : MonoBehaviour
     bool tutorialComplete = false;
     bool condorIntroComplete = false;
     bool airosIntroActivated = false;
-    
+    public float timeforintro = 10;
+    public float timefortutorial = 15;
     GameObject sceneAiros;
     GameObject sceneCondor;
+    GameObject player;
     Animator airosMove;
     Animator condorMove;
-    float timer;
+    float timestart, timepassed;
     // Start is called before the first frame update
     void Start()
     {
         sceneControl = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
         cutsceneAnimator = gameObject.GetComponent<Animator>();
+        player = GameObject.FindWithTag("ActivePlayer");
+        player.GetComponent<Player>().SeizeMovement();
+        timestart = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Tutorial checks
+        timepassed = Time.time;
         isTutorialObjectiveDone = gameObject.GetComponent<Tutorial>().ObjectivesDone();
-        if (isTutorialObjectiveDone && !tutorialActivated) StartTutorial();
+        if (timepassed - timestart > timeforintro)
+        {
+            player.GetComponent<Player>().ReleaseMovement();
+            if (isTutorialObjectiveDone && !tutorialActivated) StartTutorial();
+        }
+        if (timepassed - timestart > timefortutorial + timeforintro && tutorialActivated)
+        {
+            tutorialComplete = true;
+        }
+        //Tutorial checks
+        //player = GameObject.FindWithTag("ActivePlayer");
+        
+        //if (player.GetComponent<Animator>().GetBool("introcomplete")) EndTutorial();
 
         //Cutscene checks
         progression = sceneControl.ReturnProgress();
@@ -52,12 +69,15 @@ public class CutsceneController : MonoBehaviour
 
     void StartTutorial()
     {
-        GameObject.FindGameObjectWithTag("ActivePlayer").GetComponent<Animator>().SetBool("freezeplayer", true);
-        if (!GameObject.FindGameObjectWithTag("ActivePlayer").GetComponent<Animator>().GetBool("introcomplete"))
-        {
-            cutsceneAnimator.SetBool("deployDrone", true);
-            tutorialActivated = true;
-        }
+        //player = GameObject.FindWithTag("ActivePlayer");
+        cutsceneAnimator.SetBool("deployDrone", true);
+        tutorialActivated = true;
+    }
+
+    void EndTutorial()
+    {
+        //player.GetComponent<Animator>().SetBool("freezeplayer", true);
+
     }
 
     void StartAirosCutscene()
@@ -69,7 +89,7 @@ public class CutsceneController : MonoBehaviour
 
     void StartCondorCutscene()
     {
-        sceneCondor = GameObject.Find("Black Condor Phase0");
+        sceneCondor = GameObject.FindWithTag("IntroBlackCondor");
         condorMove = sceneCondor.GetComponent<Animator>();
         condorMove.SetBool("startFlyBy", true);
         cutsceneAnimator.SetBool("condorAttack", true);
