@@ -7,14 +7,15 @@ public class Ground_Phase_Camera : MonoBehaviour
 {
     [SerializeField]
     private CinemachineVirtualCamera vcam1, //PHASES 3 & 4
-        vcam2, vcam3, vcam4;
+        vcam2, vcam3;
 
     int prior;
 
     [SerializeField]
     private Transform[] Path;
-   
+
     int path;
+    protected Scene1Controller sceneController;
 
     private int routeToGo;
 
@@ -39,10 +40,16 @@ public class Ground_Phase_Camera : MonoBehaviour
         tParam = 0f;
         coroutineAllowed = true;
         speed = P3_speed;
-        
+
+        //Grab scene controller
+        sceneController = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
+        if (sceneController.GetPhase() == 4)
+        {
+            path = 1;
+        }
     }
 
-     //Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
@@ -63,11 +70,14 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         coroutineAllowed = false;
 
-        // add if statements if(path==# && routeNumber == #){ change [speed] value for each route as needed. 
 
-        if (path == 1 && routeNumber == 0){
+        //HONG: if statements for the speed of the curves.
+
+
+        if (path == 1 && routeNumber == 0)
+        {
             speed = P4_speed;
-            }
+        }
         if (path == 1 && routeNumber == 1)
         {
             vcam2.Priority = 0;
@@ -93,7 +103,7 @@ public class Ground_Phase_Camera : MonoBehaviour
                         Mathf.Pow(tParam, 3) * p3;
 
             transform.position = AirPosition;
-            
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -101,7 +111,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         routeToGo += 1;
 
-        Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
+        Debug.Log("Path: " + path + " Route: " + routeNumber + " Time: " + timer);
 
         if (routeToGo > Path[path].childCount - 1)
         { ///was routes.Length still counts the number of routes
@@ -116,9 +126,10 @@ public class Ground_Phase_Camera : MonoBehaviour
         if (path > 1)
         {
             vcam3.Priority = 0;
-            vcam4.Priority = 1;
             coroutineAllowed = false;
-        }else{
+        }
+        else
+        {
             coroutineAllowed = true;
         }
 
