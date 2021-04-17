@@ -5047,7 +5047,7 @@ PrefabInstance:
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: devMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
@@ -51372,7 +51372,7 @@ MonoBehaviour:
     - {fileID: 1361216652}
     - {fileID: 1908632139}
     timer: 48
-    waveLength: 18
+    waveLength: 0
   - destructibleSpawnArray:
     - {fileID: 332470903}
     timer: 56
@@ -58121,7 +58121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935485372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.46347, y: -35.25815, z: 2078.83}
+  m_LocalPosition: {x: -370.41345, y: -78.9213, z: 2078.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 579502036}
@@ -63792,7 +63792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136998873}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60.413483, y: -11.721298, z: 2078.83}
+  m_LocalPosition: {x: -370.36346, y: -59.121292, z: 2078.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 407652360}

@@ -41,6 +41,19 @@ public class Ground_Phase_Camera : MonoBehaviour
         coroutineAllowed = true;
         speed = P3_speed;
         sceneController = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
+        // Initialize which path to take based on phase
+        switch (sceneController.GetPhase())
+        {
+            case 4:
+                path = 1;
+                break;
+            case 5:
+                path = 2;
+                break;
+            default:
+                path = 0;
+                break;
+        }
     }
 
     //Update is called once per frame
@@ -77,39 +90,41 @@ public class Ground_Phase_Camera : MonoBehaviour
             speed = P4_speed_2;
         }
         //Path --> route --> position point.  what this code is doing
-
-        Vector2 p0 = Path[path].GetChild(routeNumber).GetChild(0).position;
-        Vector2 p1 = Path[path].GetChild(routeNumber).GetChild(1).position;
-        Vector2 p2 = Path[path].GetChild(routeNumber).GetChild(2).position;
-        Vector2 p3 = Path[path].GetChild(routeNumber).GetChild(3).position;
-
-        while (tParam < 1)
+        if (0 <= routeNumber && routeNumber < Path[path].childCount)
         {
-            tParam += Time.deltaTime * speed;   /// requires some form of speed variable
+            Vector2 p0 = Path[path].GetChild(routeNumber).GetChild(0).position;
+            Vector2 p1 = Path[path].GetChild(routeNumber).GetChild(1).position;
+            Vector2 p2 = Path[path].GetChild(routeNumber).GetChild(2).position;
+            Vector2 p3 = Path[path].GetChild(routeNumber).GetChild(3).position;
 
-            Vector2 lastPosition = transform.position;
+            while (tParam < 1)
+            {
+                tParam += Time.deltaTime * speed;   /// requires some form of speed variable
 
-            AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
-                       3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
-                       3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
-                        Mathf.Pow(tParam, 3) * p3;
+                Vector2 lastPosition = transform.position;
 
-            transform.position = AirPosition;
+                AirPosition = Mathf.Pow(1 - tParam, 3) * p0 +
+                           3 * Mathf.Pow(1 - tParam, 2) * tParam * p1 +
+                           3 * (1 - tParam) * Mathf.Pow(tParam, 2) * p2 +
+                            Mathf.Pow(tParam, 3) * p3;
 
-            yield return new WaitForEndOfFrame();
+                transform.position = AirPosition;
+
+                yield return new WaitForEndOfFrame();
+            }
+
+            tParam = 0;
+
+            routeToGo += 1;
+
+            Debug.Log("Path: " + path + " Route: " + routeNumber + " Time: " + timer);
         }
-
-        tParam = 0;
-
-        routeToGo += 1;
-
-        Debug.Log("Path: " + path + " Route: " + routeNumber + " Time: " + timer);
 
         // Only switch to Phase 4 camera if Phase 3 (length of 66 seconds - 2 seconds pre-phase-3 transition) has passed.
         if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 4)
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
-            path++;
+            path = 1;
             vcam1.Priority = 0;
             vcam2.Priority = 1;
         }
@@ -119,7 +134,7 @@ public class Ground_Phase_Camera : MonoBehaviour
         // Switch to Airos camera
         if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 5)
         {
-            path++;
+            path = 2;
             vcam3.Priority = 0;
             vcam4.Priority = 1;
             coroutineAllowed = false;
