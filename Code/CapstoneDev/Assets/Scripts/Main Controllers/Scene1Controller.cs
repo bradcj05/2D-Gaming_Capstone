@@ -8,7 +8,7 @@ public class Scene1Controller : MonoBehaviour
     public Battle[] battles;
     public AudioSource levelMusic;
     public AudioSource bossMusic;
-    public int bossBattleId = 4;
+    public int bossBattleId = 5;
     public float bossWait = 2f;
     protected static int checkpointAt = 0;
     ObjectivesSystem objSys;

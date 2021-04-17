@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2739324238901982514}
   - component: {fileID: 8739544813241553173}
   - component: {fileID: 6197877209728153213}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Dummy Copter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -256,6 +256,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}

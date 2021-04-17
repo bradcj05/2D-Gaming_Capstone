@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3249950115449266981}
   - component: {fileID: 3249950115449266982}
   - component: {fileID: 2346133621739102591}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Jamming Amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2427145193584496076}
   - component: {fileID: 7345398365161995333}
   - component: {fileID: 5557388888234162106}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Health Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 2750986633761030808}
   - component: {fileID: 7543513049982474310}
   - component: {fileID: 4731582352118403964}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Jam Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

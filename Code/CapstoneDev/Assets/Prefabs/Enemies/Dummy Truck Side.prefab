@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4197348922242057358}
   - component: {fileID: 549758246413595299}
   - component: {fileID: 5963599818912946378}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Dummy Truck Side
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -241,6 +241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Basic Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}
