@@ -2865,7 +2865,7 @@ MonoBehaviour:
   - destructibleSpawnArray:
     - {fileID: 469018483}
     timer: 43
-    waveLength: 10
+    waveLength: 14
   - destructibleSpawnArray:
     - {fileID: 759512244}
     timer: 49
@@ -10782,7 +10782,7 @@ MonoBehaviour:
   m_Follow: {fileID: 899532779}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 9
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -22813,7 +22813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759512242}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710665, w: -0.7071069}
-  m_LocalPosition: {x: 68.842545, y: -68.959885, z: 0}
+  m_LocalPosition: {x: 66.4, y: -68.959885, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1900708662}
