@@ -15,7 +15,8 @@ public class Player : Destructible
     public float maxSpeed = 5f;
     public float enginePower = 1000f;
     Vector2 movement;
-    Vector2 moveDir; // for the triggers
+    Vector2 moveDir;
+    bool playerControl = true;
     public Collider2D area;
     //Values for rotation
     protected Camera cam;
@@ -154,17 +155,17 @@ public class Player : Destructible
     //Movement
     void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().name != "Hangar")
-        {
-            movement.Normalize();
-            // Move in the direction specified, then force the speed back to max speed if it is already reached.
-            // (Provided the max speed is due to moment and not knockback or external factor)
-            rb.AddForce(movement * enginePower, ForceMode2D.Force);
-            moveDir = rb.velocity / rb.velocity.magnitude;
-            if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-            {
-                rb.velocity = maxSpeed * moveDir;
-            }
+          if (SceneManager.GetActiveScene().name != "Hangar" && playerControl)
+          {
+               movement.Normalize();
+               // Move in the direction specified, then force the speed back to max speed if it is already reached.
+               // (Provided the max speed is due to moment and not knockback or external factor)
+               rb.AddForce(movement * enginePower, ForceMode2D.Force);
+               moveDir = rb.velocity / rb.velocity.magnitude;
+               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+               {
+                    rb.velocity = maxSpeed * moveDir;
+               }
 
             //Rotate the Player
             Vector2 lookDir = mousePos - rb.position;
@@ -382,5 +383,14 @@ public class Player : Destructible
             }
         }
         return null;
+    }
+
+    public void SeizeMovement()
+    {
+        playerControl = false;
+    }
+    public void ReleaseMovement()
+    {
+        playerControl = true;
     }
 }
