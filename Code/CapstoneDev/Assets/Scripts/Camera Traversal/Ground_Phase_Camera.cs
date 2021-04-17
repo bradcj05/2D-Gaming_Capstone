@@ -9,11 +9,9 @@ public class Ground_Phase_Camera : MonoBehaviour
     private CinemachineVirtualCamera vcam1, //PHASES 3 & 4
         vcam2, vcam3, vcam4;
 
-    int prior;
-
     [SerializeField]
     private Transform[] Path;
-   
+
     int path;
 
     private int routeToGo;
@@ -27,10 +25,13 @@ public class Ground_Phase_Camera : MonoBehaviour
     public float P3_speed;
 
     public float P4_speed;
+    public float P4_speed_2 = 0.088f;
 
     public float timer = 0;
 
     private bool coroutineAllowed;
+
+    private Scene1Controller sceneController;
 
     // Start is called before the first frame update
     void Start()
@@ -39,17 +40,16 @@ public class Ground_Phase_Camera : MonoBehaviour
         tParam = 0f;
         coroutineAllowed = true;
         speed = P3_speed;
-        
+        sceneController = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
     }
 
-     //Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
+        // Count time for debug purposes
         timer += Time.deltaTime;
-        prior = vcam2.Priority;
 
-
-        if (vcam3.Priority == 1 || vcam2.Priority == 1 || vcam1.Priority == 1)
+        if (vcam1.Priority == 1 || vcam2.Priority == 1 || vcam3.Priority == 1)
         {
             if (coroutineAllowed)
             {
@@ -64,15 +64,17 @@ public class Ground_Phase_Camera : MonoBehaviour
         coroutineAllowed = false;
 
         // add if statements if(path==# && routeNumber == #){ change [speed] value for each route as needed. 
-
-        if (path == 1 && routeNumber == 0){
+        // Phase 4 - route 1 (before fence) camera
+        if (path == 1 && routeNumber == 0)
+        {
             speed = P4_speed;
-            }
+        }
+        // Phase 4 - route 2 camera
         if (path == 1 && routeNumber == 1)
         {
             vcam2.Priority = 0;
             vcam3.Priority = 1;
-            speed = .088f;
+            speed = P4_speed_2;
         }
         //Path --> route --> position point.  what this code is doing
 
@@ -93,7 +95,7 @@ public class Ground_Phase_Camera : MonoBehaviour
                         Mathf.Pow(tParam, 3) * p3;
 
             transform.position = AirPosition;
-            
+
             yield return new WaitForEndOfFrame();
         }
 
@@ -101,9 +103,10 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         routeToGo += 1;
 
-        Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
+        Debug.Log("Path: " + path + " Route: " + routeNumber + " Time: " + timer);
 
-        if (routeToGo > Path[path].childCount - 1)
+        // Only switch to Phase 4 camera if Phase 3 (length of 66 seconds - 2 seconds pre-phase-3 transition) has passed.
+        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 4)
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
             path++;
@@ -113,12 +116,16 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         coroutineAllowed = true;
 
-        if (path > 1)
+        // Switch to Airos camera
+        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 5)
         {
+            path++;
             vcam3.Priority = 0;
             vcam4.Priority = 1;
             coroutineAllowed = false;
-        }else{
+        }
+        else
+        {
             coroutineAllowed = true;
         }
 

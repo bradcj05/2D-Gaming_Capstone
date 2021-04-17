@@ -21,8 +21,10 @@ public class BlackCondorLv1 : Enemy
     public float maxSpeed = 12f;
     public float accelSpeed = 25f;
     public float decelSpeed = 25f;
-    public float leftBound = -13f;
-    public float rightBound = 16f;
+    public float screenWidth = 29f;
+    protected float leftBound;
+    protected float rightBound;
+    public float center = 90f;
 
     // Start is called before the first frame update
     public new void Start()
@@ -30,6 +32,9 @@ public class BlackCondorLv1 : Enemy
         base.Start();
         collider = gameObject.GetComponent<Collider2D>();
         originalRotation = transform.localEulerAngles.z;
+        center = transform.position.x;
+        leftBound = center - screenWidth / 2;
+        rightBound = center + screenWidth / 2;
         // May have to change player target to something else for allies
         FindClosestTarget();
     }
@@ -142,7 +147,7 @@ public class BlackCondorLv1 : Enemy
     public void FlyTowardsCenter()
     {
         // If to the right of center, fly left
-        if (transform.position.x > 1.73)
+        if (transform.position.x > center)
         {
             Vector2 unitLeft = new Vector2(-1, 0);
             if (rb.velocity.x > 0)
@@ -156,7 +161,7 @@ public class BlackCondorLv1 : Enemy
                 if (rb.velocity.magnitude > maxSpeed)
                     rb.velocity = unitLeft * maxSpeed;
                 float newPos = transform.position.x - rb.velocity.x;
-                if (newPos < 1.73)
+                if (newPos < center)
                     Stop();
             }
         }
@@ -175,7 +180,7 @@ public class BlackCondorLv1 : Enemy
                 if (rb.velocity.magnitude > maxSpeed)
                     rb.velocity = unitRight * maxSpeed;
                 float newPos = transform.position.x + rb.velocity.x;
-                if (newPos > 1.73)
+                if (newPos > center)
                     Stop();
             }
         }

@@ -5047,7 +5047,7 @@ PrefabInstance:
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: devMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
@@ -24128,7 +24128,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -26909,12 +26909,14 @@ MonoBehaviour:
   vcam1: {fileID: 594804683}
   vcam2: {fileID: 882368982}
   vcam3: {fileID: 340011803}
+  vcam4: {fileID: 0}
   Path:
   - {fileID: 1591562456}
   - {fileID: 972215672}
   speed: 0
   P3_speed: 0.09
   P4_speed: 0.05
+  P4_speed_2: 0.088
   timer: 0
 --- !u!114 &899532781
 MonoBehaviour:
@@ -49068,7 +49070,7 @@ MonoBehaviour:
   m_Follow: {fileID: 872989450}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -49918,7 +49920,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

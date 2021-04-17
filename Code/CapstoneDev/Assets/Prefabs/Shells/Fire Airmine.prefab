@@ -379,7 +379,7 @@ MonoBehaviour:
   mass: 1
   dropSpeed: 4
   rotateSpeed: 60
-  shellType: {fileID: 3959298833998398696, guid: 770782d259e84a64ca66d00c93f8b2bb,
+  shellType: {fileID: 658105602485047370, guid: 7bf3a961587dd5b47b55c9f119c22f46,
     type: 3}
   bulletSpawns:
   - {fileID: 6912194262945948620}

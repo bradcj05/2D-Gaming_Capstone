@@ -85,21 +85,18 @@ public class FireAirmine : Enemy
     {
         // Account for spread by generating random angle
         float curRot = bulletSpawn.rotation.eulerAngles.z;
-        Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2)));
-        // Create bullet
-        GameObject bullet = ObjectPoolManager.SharedInstance.GetPooledObject(shellType.name);
+        Quaternion bulletAngle = Quaternion.Euler(new Vector3(0, 0, curRot + Random.Range(-spread / 2, spread / 2) + 225f));
+        // Create flame wave
+        GameObject bullet = Object.Instantiate(shellType);
+        if (finalShotActivated)
+        {
+            bullet.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
         if (bullet != null)
         {
             bullet.transform.position = bulletSpawn.transform.position;
             bullet.transform.rotation = bulletAngle;
             bullet.SetActive(true);
-            Rigidbody2D rig = bullet.GetComponent<Rigidbody2D>();
-            // Apply speed and power buff if bullet is just created (i.e. not recovered from object pool)
-            float bulletSpeed = bullet.GetComponent<Bullet>().speed;
-            bullet.GetComponent<Bullet>().SetCurSpeed(bulletSpeed);
-            bullet.GetComponent<Bullet>().SetCurPower(bullet.GetComponent<Bullet>().power);
-            // Push bullet
-            rig.velocity = bulletSpawn.up * bulletSpeed;
         }
     }
 }
