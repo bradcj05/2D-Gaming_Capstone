@@ -103,7 +103,7 @@ public class Ground_Phase_Camera : MonoBehaviour
 
         Debug.Log("Path: "+path+ " Route: "+routeNumber+ " Time: "+timer);
 
-        if (routeToGo > Path[path].childCount - 1)
+        if (routeToGo > Path[path].childCount - 1) //if statement that contains something like: && timer ==74
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
             path++;
