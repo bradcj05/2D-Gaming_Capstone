@@ -82,7 +82,7 @@ MonoBehaviour:
   waitTime: 0.15
   spread: 5
   powerBuff: 0.5
-  speedBuff: 0.5
+  speedBuff: 0.3
   recoilForce: 0
   ammo: -1
   shootWhenNotMoving: 0

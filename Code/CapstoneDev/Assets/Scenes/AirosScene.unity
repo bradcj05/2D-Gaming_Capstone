@@ -2865,7 +2865,7 @@ MonoBehaviour:
   - destructibleSpawnArray:
     - {fileID: 469018483}
     timer: 43
-    waveLength: 14
+    waveLength: 10
   - destructibleSpawnArray:
     - {fileID: 759512244}
     timer: 49

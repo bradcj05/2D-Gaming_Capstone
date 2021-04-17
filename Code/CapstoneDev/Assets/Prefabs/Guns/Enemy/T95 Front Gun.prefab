@@ -136,7 +136,7 @@ MonoBehaviour:
   - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
   waitTime: 0.2
   spread: 2
-  powerBuff: 1
+  powerBuff: 0.7
   speedBuff: 0.5
   recoilForce: 0
   ammo: -1
