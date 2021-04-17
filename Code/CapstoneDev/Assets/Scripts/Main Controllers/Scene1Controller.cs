@@ -74,6 +74,7 @@ public class Scene1Controller : MonoBehaviour
                 //Need to reevaluate how I'm changing objectives
                 if (checkpointAt != 0 && checkpointAt != 1)
                     objSys.CompleteAutomatic(checkpointAt - 2, -1);
+
                 if (checkpointAt != 4 && checkpointAt != 5)
                     objSys.ActivateObjectives(checkpointAt - 1, -1);
                 else if (checkpointAt == 5)

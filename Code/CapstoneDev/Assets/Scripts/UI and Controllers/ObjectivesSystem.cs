@@ -13,6 +13,7 @@ public class ObjectivesSystem : MonoBehaviour
           for (int i = 0; i <objectives.Length; i++)
           {
                objectives[i].status = Objective.ObjectiveStatus.Inactive;
+               objectives[i].ResetCurrentAmount();
           }
      }
 

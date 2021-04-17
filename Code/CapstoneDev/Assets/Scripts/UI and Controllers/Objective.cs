@@ -26,12 +26,12 @@ public class Objective : ScriptableObject
      }
 
      public ObjectiveType type;
-     public ObjectiveStatus status; //Make this static?
+     public ObjectiveStatus status;
      public string description;
      public GameObject target;
      public int reward;
      public int requiredAmount;
-     protected int currentAmount; //Make this static?
+     protected int currentAmount;
 
      void Awake()
      {
@@ -59,5 +59,10 @@ public class Objective : ScriptableObject
      public int GetCurrentAmount()
      {
           return currentAmount;
+     }
+
+     public void ResetCurrentAmount()
+     {
+          currentAmount = 0;
      }
 }
