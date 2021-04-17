@@ -106,7 +106,8 @@ public class CutsceneController : MonoBehaviour
 
     public void TutorialTimeDone()
     {
-        tutorialComplete = true;
+        //tutorialComplete = true;
+        cutsceneAnimator.SetBool("deployDrone", false);
     }
     public void CondorIntroDone()
     {
