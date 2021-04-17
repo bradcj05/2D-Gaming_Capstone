@@ -20,6 +20,7 @@ public class Scene1Controller : MonoBehaviour
     void Start()
     {
         StartCoroutine(BattleController());
+          checkpointAt = 0;
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
     }
 
