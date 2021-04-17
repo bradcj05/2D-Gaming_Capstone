@@ -20,6 +20,10 @@ public class SmartTankMovements : MonoBehaviour
     protected float distanceToTarget = Mathf.Infinity;
     bool targetOnBack = false; // Check if reversing
 
+    public float disableAfter = -1;
+    public Transform leavePoint;
+    protected float timer = 0;
+
     public new void Start()
     {
         rig = gameObject.GetComponent<Rigidbody2D>();
@@ -69,7 +73,12 @@ public class SmartTankMovements : MonoBehaviour
 
     public new void Update()
     {
-        FindClosestTarget();
+        timer += Time.deltaTime;
+        // Follow waypoint to leave instead of chasing player if after time specified
+        if (timer >= disableAfter && disableAfter > 0)
+            target = leavePoint;
+        else
+            FindClosestTarget();
     }
 
     public void FixedUpdate()

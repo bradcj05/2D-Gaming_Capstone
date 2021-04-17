@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8474924090274236752}
   - component: {fileID: 3718729419826673552}
   - component: {fileID: 3416200824519790236}
-  - component: {fileID: 2043968367616504202}
+  - component: {fileID: 981342231113886045}
   m_Layer: 0
   m_Name: tower gun
   m_TagString: Enemy
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &2043968367616504202
+--- !u!60 &981342231113886045
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,10 +161,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.062072076, y: 0.039581727}
-      - {x: -0.062072076, y: -0.04041827}
-      - {x: 0.06792792, y: -0.04041827}
-      - {x: 0.06792792, y: 0.039581727}
+    - - {x: -0.155, y: 0.17}
+      - {x: -0.265, y: 0.099999994}
+      - {x: -0.265, y: -0.12}
+      - {x: -0.195, y: -0.17}
+      - {x: 0.155, y: -0.17}
+      - {x: 0.265, y: -0.14}
+      - {x: 0.265, y: 0.13}
+      - {x: 0.114999995, y: 0.17}
 --- !u!1001 &11516015926225664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.467
+      value: -1.447
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -396,6 +400,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072790429775563268, guid: 331dbb97e38d47949b1075064e152533,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175779758099249451, guid: 331dbb97e38d47949b1075064e152533,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.092
       objectReference: {fileID: 0}
     - target: {fileID: 8053452231511872386, guid: 331dbb97e38d47949b1075064e152533,
         type: 3}

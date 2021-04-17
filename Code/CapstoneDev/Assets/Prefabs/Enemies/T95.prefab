@@ -189,9 +189,11 @@ MonoBehaviour:
   optimumDistance: 10
   accelTime: 2
   decelTime: 1
+  leavePoint: {fileID: 0}
   targetTags:
   - ActivePlayer
   - Ally
+  disableAfter: -1
 --- !u!1001 &1462337028633762349
 PrefabInstance:
   m_ObjectHideFlags: 0

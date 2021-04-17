@@ -91,7 +91,7 @@ MonoBehaviour:
   targetTags:
   - ActivePlayer
   - Ally
-  visibleRangeInDegrees: 150
+  visibleRangeInDegrees: 45
   visibleDistance: 50
   bulletSpawns:
   - {fileID: 3175779758099249451}

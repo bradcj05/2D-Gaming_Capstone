@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
+  waitBeforeFirstPath: 0
   repeating: 0
   rotateTowardsTarget: 0
   targetTags: []
@@ -329,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 7188336562652585985, guid: b3330d761d2177d4f8a48f4edcc19981,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5210876767795255145, guid: b3330d761d2177d4f8a48f4edcc19981, type: 3}

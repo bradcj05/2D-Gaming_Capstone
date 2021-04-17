@@ -95,11 +95,13 @@ public class Destructible : MonoBehaviour
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
-        if (damage > 0 && healthBar != null)
+        if (damage > 0)
         {
             health -= damage;
-            healthBar.SetHealth(health);
-            defenseBar.SetHealth(defense * health / maxHealth);
+            if (healthBar != null)
+                healthBar.SetHealth(health);
+            if (defenseBar != null)
+                defenseBar.SetHealth(defense * health / maxHealth);
         }
         else if (damage < 0 && defenseBar != null)
         {
