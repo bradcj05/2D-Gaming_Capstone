@@ -10,7 +10,7 @@ public class Scene1Controller : MonoBehaviour
     public AudioSource bossMusic;
     public int bossBattleId = 4;
     public float bossWait = 2f;
-    protected static int checkpointAt = 4;
+    protected static int checkpointAt = 0;
     ObjectivesSystem objSys;
 
     // For music
