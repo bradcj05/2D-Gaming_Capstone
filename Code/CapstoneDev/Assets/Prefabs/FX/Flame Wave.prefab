@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 658105602485047369}
   - component: {fileID: 658105602485047368}
   - component: {fileID: 658105602485047371}
+  - component: {fileID: 2715532375896200614}
   m_Layer: 13
   m_Name: Flame Wave
   m_TagString: Bullet
@@ -3670,9 +3671,9 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 3
-    type: 0
-    collisionMode: 0
-    colliderForce: 0
+    type: 1
+    collisionMode: 1
+    colliderForce: 500
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
@@ -3738,7 +3739,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3843,14 +3844,14 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.52
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 256
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4870,3 +4871,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2715532375896200614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658105602485047370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f186f2f28a5dc5d44a53ad06acf1c517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerSecond: 8
