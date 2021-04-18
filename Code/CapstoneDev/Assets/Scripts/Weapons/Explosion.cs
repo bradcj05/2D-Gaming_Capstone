@@ -19,15 +19,30 @@ public class Explosion : MonoBehaviour
     // Base explosion's value for effect
     public float baseExplosionRadius = 3f;
 
+    // Function to cascade simulation speed to sub-particle-systems.
+    private void SetSpeedForChildren(ParticleSystem parent, float newSpeed, float scale)
+    {
+        ParticleSystem[] childrenParticleSytems = parent.gameObject.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem child in childrenParticleSytems)
+        {
+            var childmain = child.main;
+            childmain.simulationSpeed = newSpeed;
+            child.transform.localScale = new Vector3(scale, scale, scale);
+        }
+    }
+
     //May not need
     public void Detonate()
     {
         // Generate explosion effect
         ParticleSystem curEffect = Instantiate(effect, this.transform.position, Quaternion.identity) as ParticleSystem;
+        // Adjust explosion effect params and do the same for children effects
         var main = curEffect.main;
-        main.simulationSpeed = main.duration / effectDuration;
+        float newSpeed = main.duration / effectDuration;
+        main.simulationSpeed = newSpeed;
         float scale = radius / baseExplosionRadius;
         curEffect.transform.localScale = new Vector3(scale, scale, scale);
+        SetSpeedForChildren(curEffect, newSpeed, scale);
         curEffect.Play(true);
 
         // Explosion damage code

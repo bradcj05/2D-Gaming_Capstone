@@ -157,7 +157,14 @@ public class Destructible : MonoBehaviour
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
+            float newSpeed = main.duration / explosionDuration;
             main.simulationSpeed = main.duration / explosionDuration;
+            ParticleSystem[] childrenParticleSytems = curExplosion.gameObject.GetComponentsInChildren<ParticleSystem>();
+            foreach (ParticleSystem child in childrenParticleSytems)
+            {
+                var childmain = child.main;
+                childmain.simulationSpeed = newSpeed;
+            }
             curExplosion.Play(true);
         }
 
