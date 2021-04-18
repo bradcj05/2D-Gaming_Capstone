@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 15
-  radius: 8
+  radius: 7.5
   effectDuration: 0.3
   effect: {fileID: 7967721097159222216}
   forceThreshold: 3000
@@ -229,6 +229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1973530426156465466}
     m_Modifications:
+    - target: {fileID: 6657828620488264581, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6657828620711365572, guid: e2b85933c3c178a4eb698e64f66225fc,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
@@ -249,6 +254,16 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.w
       value: 7.7e-44
       objectReference: {fileID: 0}
+    - target: {fileID: 6657828620711365574, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621025103425, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6657828621040270348, guid: e2b85933c3c178a4eb698e64f66225fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,6 +273,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621040270351, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621256151336, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621363305838, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621411582423, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621502307462, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621512298180, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828621666515408, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6657828621666515423, guid: e2b85933c3c178a4eb698e64f66225fc,
         type: 3}
@@ -324,6 +374,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyExplosion
       objectReference: {fileID: 0}
+    - target: {fileID: 6657828621708582181, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828622230402972, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828622322051814, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6657828622324908999, guid: e2b85933c3c178a4eb698e64f66225fc,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
@@ -338,6 +403,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
       value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828622324909049, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828622342956912, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657828622392720891, guid: e2b85933c3c178a4eb698e64f66225fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b85933c3c178a4eb698e64f66225fc, type: 3}
