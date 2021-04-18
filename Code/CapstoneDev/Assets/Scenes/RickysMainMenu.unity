@@ -5609,7 +5609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59.627, y: 18}
+  m_AnchoredPosition: {x: -56.2, y: 19.676}
   m_SizeDelta: {x: 156.4422, y: 18.388622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547198936
@@ -7324,7 +7324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -59.627083, y: 21.549997}
+  m_AnchoredPosition: {x: -55.2, y: 22.126}
   m_SizeDelta: {x: 156.4422, y: 18.388622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979615506
@@ -7360,7 +7360,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SOUND EFFECT
+  m_Text: 'music
+
+'
 --- !u!222 &1979615507
 CanvasRenderer:
   m_ObjectHideFlags: 0
