@@ -4069,7 +4069,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (6)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
@@ -5080,7 +5080,7 @@ PrefabInstance:
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: devMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
@@ -6689,7 +6689,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (3)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
@@ -9698,7 +9698,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (2)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
@@ -15003,7 +15003,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (1)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
@@ -29678,7 +29678,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (4)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
@@ -43970,7 +43970,7 @@ PrefabInstance:
     - target: {fileID: 6081084405466535414, guid: e01ad5621659ce64394b6b8143cee319,
         type: 3}
       propertyPath: m_Name
-      value: RadioTower (5)
+      value: RadioTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01ad5621659ce64394b6b8143cee319, type: 3}
