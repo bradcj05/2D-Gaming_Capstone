@@ -5972,7 +5972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &178328239
 Transform:
   m_ObjectHideFlags: 0
@@ -13042,7 +13042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &428570322
 Transform:
   m_ObjectHideFlags: 0
@@ -27850,7 +27850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &913392804
 Transform:
   m_ObjectHideFlags: 0
@@ -28460,7 +28460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &935605073
 Transform:
   m_ObjectHideFlags: 0
@@ -64288,7 +64288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145092462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.9, y: 246.79999, z: 94733.68}
+  m_LocalPosition: {x: -15.788452, y: 244.8, z: 41.50126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1651836541}
@@ -64313,8 +64313,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 48877489}
+  m_Follow: {fileID: 48877489}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 15
@@ -64775,7 +64775,7 @@ PrefabInstance:
     - target: {fileID: 2447495243558342178, guid: e16174609714ee542aa2a44458941801,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5728507
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2447495243558342178, guid: e16174609714ee542aa2a44458941801,
         type: 3}
