@@ -180,7 +180,6 @@ public class Player : Destructible
     {  //OnCollisionEnter2D  runs this code
 
           //if both movement directions are greater than 0!!!
-          Debug.Log("Player collided with " + other.name);
           if (other.name != "RadioTower")
           {
                if (moveDir.x < 0 && !left)
