@@ -178,35 +178,37 @@ public class Player : Destructible
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        
-        //if both movement directions are greater than 0!!!
-        
-        if (moveDir.x < 0 && !left)
-        {
-            rb.drag = drg;
-            sx = 0;
-            left = true;
-        }
-        if (moveDir.x > 0 && !right)
-        {
-            rb.drag = drg;
-            sx = 0;
-            right = true;
-        }
-        if (moveDir.y > 0 && !up)
-        {
-            rb.drag = drg;
-            sy = 0;
-            up = true;
-        }
-        if (moveDir.y < 0 && !down)
-        {
-            rb.drag = drg;
-            sy = 0;
-            down = true;
-        }
 
-        Debug.Log("enter");  //proof that the code ran.
+          //if both movement directions are greater than 0!!!
+          if (other.name != "RadioTower")
+          {
+               if (moveDir.x < 0 && !left)
+               {
+                    rb.drag = drg;
+                    sx = 0;
+                    left = true;
+               }
+               if (moveDir.x > 0 && !right)
+               {
+                    rb.drag = drg;
+                    sx = 0;
+                    right = true;
+               }
+               if (moveDir.y > 0 && !up)
+               {
+                    rb.drag = drg;
+                    sy = 0;
+                    up = true;
+               }
+               if (moveDir.y < 0 && !down)
+               {
+                    rb.drag = drg;
+                    sy = 0;
+                    down = true;
+               }
+
+               Debug.Log("enter");
+          }  //proof that the code ran.
     }
 
     void OnTriggerStay2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
@@ -272,28 +274,31 @@ public class Player : Destructible
 
     void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        if (moveDir.x > 0)
-        {
-            sx = 1;
-            left = false;
-        }
-        if (moveDir.x < 0)
-        {
-            sx = 1;
-            right = false;
-        }
-        if (moveDir.y < 0)
-        {
-            sy = 1;
-            up = false;
-        }
-        if (moveDir.y > 0)
-        {
-            sy = 1;
-            down = false;
-        }
+          if (other.name != "RadioTower")
+          {
+               if (moveDir.x > 0)
+               {
+                    sx = 1;
+                    left = false;
+               }
+               if (moveDir.x < 0)
+               {
+                    sx = 1;
+                    right = false;
+               }
+               if (moveDir.y < 0)
+               {
+                    sy = 1;
+                    up = false;
+               }
+               if (moveDir.y > 0)
+               {
+                    sy = 1;
+                    down = false;
+               }
 
-        Debug.Log("exit");  //proof that the code ran.
+               Debug.Log("exit");
+          }  //proof that the code ran.
     }
 
     /* void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
