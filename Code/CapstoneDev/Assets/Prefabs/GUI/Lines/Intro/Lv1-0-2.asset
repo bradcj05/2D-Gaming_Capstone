@@ -16,4 +16,4 @@ MonoBehaviour:
     you go take a ride in that Flying Pancake? It\u2019s kind of the tradition for
     this place, you know."
   sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
-  time: 0
+  time: 5
