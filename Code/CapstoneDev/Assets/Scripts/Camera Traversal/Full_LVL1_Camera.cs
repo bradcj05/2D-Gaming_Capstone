@@ -104,41 +104,32 @@ public class Full_LVL1_Camera : MonoBehaviour
             Phase3_4 = true;
         }
 
-        /*if(vcam4.Priority == 0 && Phase3_4) // dummy test connection between Ground_Phase scripts 
-        {
-            vcam2.Priority = 1;
-        }
+          if (vcam4.Priority == 1 && Phase3_4 && sceneController.GetPhase() == 4) // dummy test connection between Ground_Phase scripts 
+          {
+               PhaseNB = !PhaseNB;
+               Phase3_4 = !Phase3_4;
+               timer = 0;
 
-        //AIROS CAMERAS
+          }
 
-        else if (Phase3_4 && timer > 12) //TRANSITION TO AIROS FIGHT
-        {
+          //AIROS CAMERAS
 
-            vcam3.Priority = 0;
-            vcam4.Priority = 1;
-            Phase3_4 = !Phase3_4;
-            PhaseNB = !PhaseNB;
-
-            // cameraPositionChange(1);
-        }
-
-        // add if statement between theses times ^| to disable drag on player
-
-        else if (PhaseNB && timer > 15) // AIROS FIGHT
-        {
-
-            vcam4.Priority = 0;
-            vcam5.Priority = 1;
-            PhaseNB = !PhaseNB;
-            PhaseB = !PhaseB;
-
-        }
+          else if (PhaseNB && timer > 2 && sceneController.GetPhase() == 5) //TRANSITION TO AIROS FIGHT
+          {
+               vcam6.Priority = 0;
+               vcam7.Priority = 1;
+               PhaseNB = !PhaseNB;
+               PhaseB = !PhaseB;
 
 
-        */
+               // cameraPositionChange(1);
+          }
 
 
-    }
+
+
+
+     }
     void LateUpdate()
     {
 
