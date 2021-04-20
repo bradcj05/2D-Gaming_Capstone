@@ -180,7 +180,7 @@ public class Player : Destructible
     {  //OnCollisionEnter2D  runs this code
 
           //if both movement directions are greater than 0!!!
-          if (other.name != "RadioTower")
+          if (other.tag == "MainCamera")
           {
                if (moveDir.x < 0 && !left)
                {
@@ -213,68 +213,70 @@ public class Player : Destructible
 
     void OnTriggerStay2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        if (left == true)
-        {
-            if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                rb.drag = 3;
-                sx = 1;
+          if (other.tag == "MainCamera") {
+               if (left == true)
+               {
+                    if (Input.GetAxisRaw("Horizontal") > 0)
+                    {
+                         rb.drag = 3;
+                         sx = 1;
 
-            }
-            else
-            {
-                rb.drag = drg;
-                sx = 0;
-            }
-        }
-        if (right == true)
-        {
-            if (Input.GetAxisRaw("Horizontal") < 0)
-            {
-                rb.drag = 3;
-                sx = 1;
+                    }
+                    else
+                    {
+                         rb.drag = drg;
+                         sx = 0;
+                    }
+               }
+               if (right == true)
+               {
+                    if (Input.GetAxisRaw("Horizontal") < 0)
+                    {
+                         rb.drag = 3;
+                         sx = 1;
 
-            }
-            else
-            {
-                rb.drag = drg;
-                sx = 0;
-            }
-        }
-        if (up == true)
-        {
-            if (Input.GetAxisRaw("Vertical") < 0)
-            {
-                rb.drag = 3;
-                sy = 1;
+                    }
+                    else
+                    {
+                         rb.drag = drg;
+                         sx = 0;
+                    }
+               }
+               if (up == true)
+               {
+                    if (Input.GetAxisRaw("Vertical") < 0)
+                    {
+                         rb.drag = 3;
+                         sy = 1;
 
-            }
-            else
-            {
-                rb.drag = drg;
-                sy = 0;
-            }
-        }
-        if (down == true)
-        {
-            if (Input.GetAxisRaw("Vertical") > 0)
-            {
-                rb.drag = 3;
-                sy = 1;
-            }
-            else
-            {
-                rb.drag = drg;
-                sy = 0;
-            }
-        }
+                    }
+                    else
+                    {
+                         rb.drag = drg;
+                         sy = 0;
+                    }
+               }
+               if (down == true)
+               {
+                    if (Input.GetAxisRaw("Vertical") > 0)
+                    {
+                         rb.drag = 3;
+                         sy = 1;
+                    }
+                    else
+                    {
+                         rb.drag = drg;
+                         sy = 0;
+                    }
+               }
 
-        Debug.Log("stay");  //proof that the code ran.
+               Debug.Log("stay");
+          }  //proof that the code ran.
     }
 
     void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-          if (other.name != "RadioTower")
+          if (other.tag == "MainCamera")
           {
                if (moveDir.x > 0)
                {
