@@ -35197,7 +35197,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 883242372}
-  - {fileID: 883242372}
   m_Father: {fileID: 1234610609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37817,7 +37816,6 @@ MonoBehaviour:
   colliderTrigger: {fileID: 0}
   waveArray:
   - destructibleSpawnArray:
-    - {fileID: 883242373}
     - {fileID: 883242373}
     timer: 10
     waveLength: 0
@@ -57446,6 +57444,7 @@ Transform:
   - {fileID: 1650286839}
   - {fileID: 138195759}
   - {fileID: 366191682}
+  - {fileID: 1809192323}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
