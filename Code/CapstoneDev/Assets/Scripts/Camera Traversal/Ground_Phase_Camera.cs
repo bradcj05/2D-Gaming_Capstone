@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Script to control camera of Level 1. ADD ONE TO EVERY PHASE NUMBER SINCE WE HAVE TWO INTRO BATTLES!
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -46,10 +48,10 @@ public class Ground_Phase_Camera : MonoBehaviour
         // Initialize which path to take based on phase
         switch (sceneController.GetPhase())
         {
-            case 4:
+            case 5:
                 path = 1;
                 break;
-            case 5:
+            case 6:
                 path = 2;
                 break;
             default:
@@ -124,7 +126,7 @@ public class Ground_Phase_Camera : MonoBehaviour
         }
 
         // Only switch to Phase 4 camera if Phase 3 (length of 66 seconds - 2 seconds pre-phase-3 transition) has passed.
-        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 4)
+        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 5)
         { ///was routes.Length still counts the number of routes
             routeToGo = 0;
             path = 1;
@@ -135,7 +137,7 @@ public class Ground_Phase_Camera : MonoBehaviour
         coroutineAllowed = true;
 
         // Switch to Airos camera
-        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 5)
+        if (routeToGo > Path[path].childCount - 1 && sceneController.GetPhase() == 6)
         {
             path = 2;
             vcam3.Priority = 0;

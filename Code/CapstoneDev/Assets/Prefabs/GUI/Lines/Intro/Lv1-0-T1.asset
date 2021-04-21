@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
   m_Name: Lv1-0-T1
   m_EditorClassIdentifier: 
-  textLine: "<color=lime><b>Commander:</b></color> Yeah. Slick isn\u2019t it? I got
+  textLine: "<color=lime><b>Commander:</b></color> Nice! Slick isn\u2019t it? I got
     it from my old man who got it from a friend of a friend. Rusty thing I know,
     but there\u2019s only two in the world, so I\u2019m keeping it. It\u2019s nice
     to fly in sometimes."

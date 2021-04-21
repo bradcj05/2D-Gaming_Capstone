@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// Script to control camera. ADD ONE TO EVERY PHASE NUMBER SINCE WE HAVE TWO INTRO BATTLES!
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -78,7 +80,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             subTimer += Time.deltaTime;
 
         // CHANGE GET PHASE VALUE ON CUTSCENE IMPLEMENTED!
-        if (Phase1_2 && sceneController.GetPhase() == 3) /// TRANSITION to GROUND PHASES
+        if (Phase1_2 && sceneController.GetPhase() == 4) /// TRANSITION to GROUND PHASES
         {
             vcam1.Priority = 0;
             vcam2.Priority = 1;
@@ -93,7 +95,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             Phase3_4 = !Phase3_4;
         }
         // Load checkpoint from Phase 4
-        else if (sceneController.GetPhase() == 4)
+        else if (sceneController.GetPhase() == 5)
         {
             vcam1.Priority = 0;
             vcam2.Priority = 0;
@@ -104,7 +106,7 @@ public class Full_LVL1_Camera : MonoBehaviour
             Phase3_4 = true;
         }
 
-        if (vcam4.Priority == 1 && Phase3_4 && sceneController.GetPhase() == 4) // dummy test connection between Ground_Phase scripts 
+        if (vcam4.Priority == 1 && Phase3_4 && sceneController.GetPhase() == 5) // dummy test connection between Ground_Phase scripts 
         {
             PhaseNB = !PhaseNB;
             Phase3_4 = !Phase3_4;
@@ -114,7 +116,7 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         //AIROS CAMERAS
 
-        else if (PhaseNB && timer > 2 && sceneController.GetPhase() == 5) //TRANSITION TO AIROS FIGHT
+        else if (PhaseNB && timer > 2 && sceneController.GetPhase() == 6) //TRANSITION TO AIROS FIGHT
         {
             vcam6.Priority = 0;
             vcam7.Priority = 1;

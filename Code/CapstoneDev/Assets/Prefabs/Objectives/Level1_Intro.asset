@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
-  m_Name: Lv1-0-T6
+  m_Script: {fileID: 11500000, guid: ecfd3af0b0a0dad4792342eb27a1763c, type: 3}
+  m_Name: Level1_Intro
   m_EditorClassIdentifier: 
-  textLine: <color=lime><b>Commander:</b></color> Oh...
-  sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
-  time: 25
+  type: 0
+  status: 0
+  description: Practice your shooting
+  target: {fileID: 5264016357078368067, guid: 9c64211fa92fe164e98409898fc1a63d, type: 3}
+  reward: 10
+  requiredAmount: 1
