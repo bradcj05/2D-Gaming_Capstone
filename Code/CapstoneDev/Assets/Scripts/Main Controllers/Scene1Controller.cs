@@ -19,8 +19,8 @@ public class Scene1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(BattleController());
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        StartCoroutine(BattleController());
         ResetCheckpoints();
     }
 
@@ -72,19 +72,20 @@ public class Scene1Controller : MonoBehaviour
                     objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
                 checkpointAt = i;
                 Debug.Log("Current Phase: " + checkpointAt);
-                //Need to reevaluate how I'm changing objectives
-                if (checkpointAt == 3 || checkpointAt == 4)
-                    objSys.CompleteAutomatic(checkpointAt - 2, -1);
-                else if (checkpointAt == 5)
-                    objSys.CompleteAutomatic(2, -1);
-
-                if (checkpointAt == 0)
-                    objSys.ActivateObjectives(checkpointAt, -1);
-                else if (checkpointAt == 2 || checkpointAt == 3 || checkpointAt == 4)
-                    objSys.ActivateObjectives(checkpointAt - 1, -1);
-                else if (checkpointAt == 6)
-                    objSys.ActivateObjectives(3, -1);
             }
+
+            //Need to reevaluate how I'm changing objectives
+            if (i == 3 || i == 4)
+                objSys.CompleteAutomatic(i - 2, -1);
+            else if (i == 5)
+                objSys.CompleteAutomatic(2, -1);
+
+            if (i == 0)
+                objSys.ActivateObjectives(i, -1);
+            else if (i == 2 || i == 3 || i == 4)
+                objSys.ActivateObjectives(i - 1, -1);
+            else if (i == 6)
+                objSys.ActivateObjectives(3, -1);
         }
     }
 
