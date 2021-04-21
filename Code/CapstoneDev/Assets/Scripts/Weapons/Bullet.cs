@@ -51,7 +51,10 @@ public class Bullet : WeaponsClassification
             time = 0;
             ObjectPoolManager.SharedInstance.ReturnPooledObject(gameObject.name, gameObject);
         }
-        rb.velocity = curSpeed * (1f - deterioration * time) * rb.transform.up;
+        if (curSpeed > 0)
+            rb.velocity = curSpeed * (1f - deterioration * time) * rb.transform.up;
+        else
+            rb.velocity = new Vector2(0, 0);
 
         // Effect calls
         if (time >= selfDestructTime && selfDestructTime > 0)
@@ -150,7 +153,11 @@ public class Bullet : WeaponsClassification
                     else
                     {
                         time = time + (1f / deterioration - time) * penCoeff; // HAX
-                        rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal); //Need to fix as a error is causing NaN
+                        // Check to make sure velocity can be assigned (THIS IS SOLELY TO HOLD OFF VELOCITY BUG)
+                        if (curSpeed > 0)
+                            rb.velocity = Vector3.Reflect(curSpeed * (1f - deterioration * time) * rb.velocity.normalized, normal); //Need to fix as a error is causing NaN
+                        else
+                            rb.velocity = new Vector2(0, 0);
                         //Store new direction
                         Vector3 newDirection = Vector3.Reflect(transform.up, normal);
                         //Rotate bullet to new direction
