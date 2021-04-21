@@ -17,6 +17,7 @@ TagManager:
   - IntroBlackCondor
   - Lv1BlackCondor
   - Coin
+  - Airos
   layers:
   - Default
   - TransparentFX

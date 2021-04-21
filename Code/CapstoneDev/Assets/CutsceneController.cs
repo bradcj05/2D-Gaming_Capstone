@@ -98,12 +98,12 @@ public class CutsceneController : MonoBehaviour
         condorMove.SetBool("startFlyBy", true);
         cutsceneAnimator.SetBool("condorAttack", true);
         condorIntroComplete = true;
-        sceneCondor.SetActive(false);
     }
 
     void StartCondorFlees()
     {
         //Scene1BlackCondor = GameObject.Find("Black Condor Lv 1");
+        sceneCondor.SetActive(false);
         condorMove = Scene1BlackCondor.GetComponent<Animator>();
         cutsceneAnimator.SetBool("eucAttack", true);
         condorMove.SetBool("condorEscape", true);
