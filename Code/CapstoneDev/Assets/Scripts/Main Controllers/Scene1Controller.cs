@@ -21,6 +21,7 @@ public class Scene1Controller : MonoBehaviour
     {
         StartCoroutine(BattleController());
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        ResetCheckpoints();
     }
 
     // Update is called once per frame
