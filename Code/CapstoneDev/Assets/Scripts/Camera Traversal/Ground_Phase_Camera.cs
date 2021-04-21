@@ -33,6 +33,8 @@ public class Ground_Phase_Camera : MonoBehaviour
 
     private Scene1Controller sceneController;
 
+     public EdgeCollider2D edge; //Test
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +90,7 @@ public class Ground_Phase_Camera : MonoBehaviour
             vcam2.Priority = 0;
             vcam3.Priority = 1;
             speed = P4_speed_2;
+            edge.enabled = true;
         }
         //Path --> route --> position point.  what this code is doing
         if (0 <= routeNumber && routeNumber < Path[path].childCount)
@@ -137,6 +140,7 @@ public class Ground_Phase_Camera : MonoBehaviour
             path = 2;
             vcam3.Priority = 0;
             vcam4.Priority = 1;
+            edge.enabled = false;
             coroutineAllowed = false;
         }
         else
