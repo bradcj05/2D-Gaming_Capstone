@@ -51,7 +51,7 @@ public class CutsceneController : MonoBehaviour
 
         //Cutscene checks
         progression = sceneControl.ReturnProgress();
-        if(tutorialComplete)
+        if(tutorialComplete && !condorIntroComplete)
         {
             StartCondorCutscene();
         }
@@ -70,7 +70,7 @@ public class CutsceneController : MonoBehaviour
     void StartTutorial()
     {
         //player = GameObject.FindWithTag("ActivePlayer");
-        cutsceneAnimator.SetBool("deployDrone", true);
+        //cutsceneAnimator.SetBool("deployDrone", true);
         tutorialActivated = true;
     }
 
@@ -93,6 +93,7 @@ public class CutsceneController : MonoBehaviour
         condorMove = sceneCondor.GetComponent<Animator>();
         condorMove.SetBool("startFlyBy", true);
         cutsceneAnimator.SetBool("condorAttack", true);
+        condorIntroComplete = true;
     }
 
     void StartCondorPhase1()
