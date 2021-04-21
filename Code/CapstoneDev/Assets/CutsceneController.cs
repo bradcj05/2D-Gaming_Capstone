@@ -12,10 +12,13 @@ public class CutsceneController : MonoBehaviour
     bool tutorialComplete = false;
     bool condorIntroComplete = false;
     bool airosIntroActivated = false;
+    bool condorFled = false;
+    bool airosArrived = false;
     public float timeforintro = 10;
     public float timefortutorial = 15;
-    GameObject sceneAiros;
+    public GameObject Scene1Airos;
     GameObject sceneCondor;
+    public GameObject Scene1BlackCondor;
     GameObject player;
     Animator airosMove;
     Animator condorMove;
@@ -55,11 +58,11 @@ public class CutsceneController : MonoBehaviour
         {
             StartCondorCutscene();
         }
-        if(GameObject.Find("BlackCondor Lv 1") != null)
+        if(GameObject.FindWithTag("Lv1BlackCondor") != null && !condorFled)
         {
-            StartCondorPhase1();
+            StartCondorFlees();
         }
-        if(GameObject.Find("Airos") != null)
+        if(GameObject.FindWithTag("Airos") != null && !airosArrived)
         {
             StartAirosCutscene();
         }
@@ -82,9 +85,10 @@ public class CutsceneController : MonoBehaviour
 
     void StartAirosCutscene()
     {
-        sceneAiros = GameObject.Find("Airos");
-        airosMove = sceneAiros.GetComponent<Animator>();
+        //Scene1Airos = GameObject.Find("Airos");
+        airosMove = Scene1Airos.GetComponent<Animator>();
         airosMove.SetBool("playIntro", true);
+        airosArrived = true;
     }
 
     void StartCondorCutscene()
@@ -94,15 +98,16 @@ public class CutsceneController : MonoBehaviour
         condorMove.SetBool("startFlyBy", true);
         cutsceneAnimator.SetBool("condorAttack", true);
         condorIntroComplete = true;
+        sceneCondor.SetActive(false);
     }
 
-    void StartCondorPhase1()
+    void StartCondorFlees()
     {
-        sceneCondor = GameObject.Find("BlackCondor Lv 1");
-        condorMove = sceneCondor.GetComponent<Animator>();
+        //Scene1BlackCondor = GameObject.Find("Black Condor Lv 1");
+        condorMove = Scene1BlackCondor.GetComponent<Animator>();
         cutsceneAnimator.SetBool("eucAttack", true);
         condorMove.SetBool("condorEscape", true);
-
+        condorFled = true;
     }
 
     public void TutorialTimeDone()
