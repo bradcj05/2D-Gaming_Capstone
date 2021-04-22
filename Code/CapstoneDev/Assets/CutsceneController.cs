@@ -7,6 +7,7 @@ public class CutsceneController : MonoBehaviour
     Animator cutsceneAnimator;
     Scene1Controller sceneControl;
     int progression;
+    public bool introNeeded = true;
     bool isTutorialObjectiveDone;
     bool tutorialActivated = false;
     bool tutorialComplete = false;
@@ -29,7 +30,7 @@ public class CutsceneController : MonoBehaviour
         sceneControl = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
         cutsceneAnimator = gameObject.GetComponent<Animator>();
         player = GameObject.FindWithTag("ActivePlayer");
-        player.GetComponent<Player>().SeizeMovement();
+        if(introNeeded) player.GetComponent<Player>().SeizeMovement();
         timestart = Time.time;
     }
 
@@ -38,15 +39,16 @@ public class CutsceneController : MonoBehaviour
     {
         timepassed = Time.time;
         isTutorialObjectiveDone = gameObject.GetComponent<Tutorial>().ObjectivesDone();
-        if (timepassed - timestart > timeforintro)
+        if (timepassed - timestart > timeforintro && introNeeded)
         {
             player.GetComponent<Player>().ReleaseMovement();
             if (isTutorialObjectiveDone && !tutorialActivated) StartTutorial();
         }
-        if (timepassed - timestart > timefortutorial + timeforintro && tutorialActivated)
+        if (timepassed - timestart > timefortutorial + timeforintro && tutorialActivated && introNeeded)
         {
             tutorialComplete = true;
         }
+
         //Tutorial checks
         //player = GameObject.FindWithTag("ActivePlayer");
         
@@ -54,7 +56,7 @@ public class CutsceneController : MonoBehaviour
 
         //Cutscene checks
         progression = sceneControl.ReturnProgress();
-        if(tutorialComplete && !condorIntroComplete)
+        if(GameObject.FindWithTag("IntroCondor") != null && !condorIntroComplete)
         {
             StartCondorCutscene();
         }
