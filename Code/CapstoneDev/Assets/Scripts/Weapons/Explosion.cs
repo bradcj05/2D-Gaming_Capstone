@@ -10,6 +10,7 @@ public class Explosion : MonoBehaviour
     public float radius = 5f;
     public float effectDuration = 0.5f;
     public ParticleSystem effect;
+    public bool startOnAwake = false;
 
     public float forceThreshold = 3000f;
 
@@ -18,6 +19,11 @@ public class Explosion : MonoBehaviour
 
     // Base explosion's value for effect
     public float baseExplosionRadius = 3f;
+
+    private void Start()
+    {
+        if (startOnAwake) Detonate();
+    }
 
     // Function to cascade simulation speed to sub-particle-systems.
     private void SetSpeedForChildren(ParticleSystem parent, float newSpeed, float scale)
