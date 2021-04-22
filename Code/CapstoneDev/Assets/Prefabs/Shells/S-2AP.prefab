@@ -101,7 +101,7 @@ MonoBehaviour:
   grade: 0
   category: 1
   power: 2
-  speed: 15
+  speed: 20
   penetration: 0
   deterioration: 0.16
   selfDestructTime: -1

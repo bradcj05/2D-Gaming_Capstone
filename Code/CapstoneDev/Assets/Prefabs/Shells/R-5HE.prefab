@@ -124,7 +124,7 @@ MonoBehaviour:
   grade: 1
   category: 1
   power: 5
-  speed: 10
+  speed: 14
   penetration: 0
   deterioration: 0.1
   selfDestructTime: -1
@@ -153,6 +153,7 @@ MonoBehaviour:
   radius: 1
   effectDuration: 0.5
   effect: {fileID: 4609741417569231894}
+  startOnAwake: 0
   forceThreshold: 3000
   decentralized: 0
   layerMask:
