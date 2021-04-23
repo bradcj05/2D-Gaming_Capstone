@@ -32,6 +32,18 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 8603360476886495250}
+--- !u!114 &-8314948464725207976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f036258504f0c7d46b40741cf30870f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1109 &-7784759417586400972
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -55,7 +67,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: playerIntro
+    m_ConditionEvent: playIntro
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9216801160935097039}
@@ -142,7 +154,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: playerIntro
+  - m_Name: playIntro
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PlayDeathAnimation
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -252,8 +270,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5688011855301452488}
-  m_StateMachineBehaviours:
-  - {fileID: -476868669855065984}
+  m_StateMachineBehaviours: [{fileID: -8314948464725207976}, {fileID: -476868669855065984}]
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
