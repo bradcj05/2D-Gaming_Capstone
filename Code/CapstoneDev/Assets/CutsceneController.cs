@@ -100,7 +100,6 @@ public class CutsceneController : MonoBehaviour
         condorMove.SetBool("startFlyBy", true);
         cutsceneAnimator.SetBool("condorAttack", true);
         condorIntroComplete = true;
-        sceneCondor.SetActive(false);
     }
 
     void StartCondorFlees()
