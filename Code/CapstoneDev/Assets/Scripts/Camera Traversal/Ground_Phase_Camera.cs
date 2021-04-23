@@ -143,6 +143,7 @@ public class Ground_Phase_Camera : MonoBehaviour
             vcam3.Priority = 0;
             vcam4.Priority = 1;
             edge.enabled = false;
+               Debug.Log("Turning the smaller collider off.");
             coroutineAllowed = false;
         }
         else
