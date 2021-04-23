@@ -14208,10 +14208,10 @@ MonoBehaviour:
   - destructibleSpawnArray:
     - {fileID: 795357750}
     timer: 0
-    waveLength: 80
+    waveLength: 74
   - destructibleSpawnArray:
     - {fileID: 30265212}
-    timer: 70
+    timer: 64
     waveLength: 10
 --- !u!1 &449323716
 GameObject:

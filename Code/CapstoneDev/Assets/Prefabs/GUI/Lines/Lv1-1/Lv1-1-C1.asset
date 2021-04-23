@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLine: <color=lime><b>Commander:</b></color> What the...
   sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
-  time: 0
+  time: 65

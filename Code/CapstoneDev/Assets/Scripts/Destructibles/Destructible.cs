@@ -194,8 +194,35 @@ public class Destructible : MonoBehaviour
         yield return new WaitForEndOfFrame();
     }
 
-    // Getters and setters
-    public float getMaxHealth()
+    // Disable weapons
+    public void DisableWeapons()
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            gun.Disable();
+        }
+    }
+
+    public void EnableWeapons()
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            gun.Enable();
+        }
+    }
+    public void DisableWeaponsFor(float seconds)
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            StartCoroutine(gun.DisableFor(seconds));
+        }
+    }
+
+    // Getters
+    public float GetMaxHealth()
     {
         return maxHealth;
     }

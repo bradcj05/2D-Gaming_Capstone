@@ -5,7 +5,6 @@ using UnityEngine;
 // For use in player's turrets with auto-aiming feature.
 public class PlayerTurret : PlayerGunFire
 {
-    protected bool auto = true; // Whether auto-aiming is activated
     protected Transform target;
     public float rotateSpeed = 1f;
     protected float rotateAmount; //public for better testing

@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class Airos : Enemy /// Always include "Enemy" and "Die()" function
 {
-    //Movement Variables
-    
-    protected Rigidbody2D rb;
-    //Vector2 movement;
-
     public float bezierSpeed = 0.1f; // = 1 / (Time to finish a Bezier Curve)
     public float rotateSpeed = 0.01f;
     protected float rotateAmount; //public for better testing
     protected Transform target;
     protected int deathCounter = 0;
-    protected ExplosionChain explosionChain;
     public ParticleSystem smoke;
     public bool endDeathAnimation = false;
 

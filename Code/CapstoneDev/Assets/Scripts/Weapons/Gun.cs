@@ -32,13 +32,15 @@ public class Gun : WeaponsClassification
     public float visibleRangeInDegrees = 90f;
     public float visibleDistance = 50f;
 
+    public bool firingEnabled = true;
+
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
     public new void Start()
     {
         base.Start();
-        if (maxAmmo != null && maxAmmo > 0)
+        if (maxAmmo > 0)
             ammo = maxAmmo;
         else
             maxAmmo = ammo;
@@ -58,7 +60,7 @@ public class Gun : WeaponsClassification
 
         if (timer >= waitTime &&
             (CalculateSpeed() < movementEpsilon || !shootWhenNotMoving) &&
-            (IsTargetVisible() || !shootWhenTargetVisible))
+            (IsTargetVisible() || !shootWhenTargetVisible) && firingEnabled)
         {
             Fire();
             timer = 0;
@@ -101,7 +103,7 @@ public class Gun : WeaponsClassification
     {
         foreach (string tag in targetTags)
         {
-            if (ConeCastAll(transform.position, visibleDistance, transform.up, visibleDistance, visibleRangeInDegrees/2, tag).Length > 0)
+            if (ConeCastAll(transform.position, visibleDistance, transform.up, visibleDistance, visibleRangeInDegrees / 2, tag).Length > 0)
             {
                 return true;
             }
@@ -191,8 +193,27 @@ public class Gun : WeaponsClassification
         }
     }
 
-     public float GetTimerValue()
-     {
-          return timer;
-     }
+    // Disable weapon
+    public void Disable()
+    {
+        firingEnabled = false;
+    }
+
+    public void Enable()
+    {
+        firingEnabled = true;
+    }
+
+    public IEnumerator DisableFor(float seconds)
+    {
+        firingEnabled = false;
+        yield return new WaitForSeconds(seconds);
+        firingEnabled = true;
+    }
+
+    // Getters
+    public float GetTimerValue()
+    {
+        return timer;
+    }
 }

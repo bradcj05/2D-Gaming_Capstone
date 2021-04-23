@@ -49,13 +49,13 @@ public class Sidebars : MonoBehaviour
           {
                sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(1, 1);
                sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-               healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+               healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                EquipmentUpdate(2, 2);
@@ -64,13 +64,13 @@ public class Sidebars : MonoBehaviour
           {
                sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(1, 1);
                sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-               healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+               healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                EquipmentUpdate(2, 1);
@@ -119,13 +119,13 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 0);
                          sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                         healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                          healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                          defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 1);
                          sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                         healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                          healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                          defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 1);
@@ -138,13 +138,13 @@ public class Sidebars : MonoBehaviour
                          EquipmentUpdate(0, 1);
                          sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                         healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                          healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                          defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(1, 0);
                          sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                          sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                         healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                         healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                          healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                          defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                          EquipmentUpdate(2, 0);
@@ -192,13 +192,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 1);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 2);
@@ -207,13 +207,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 1);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 1);
@@ -222,13 +222,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 2);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 2);
@@ -254,13 +254,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 2);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 0);
@@ -269,13 +269,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 0);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 0);
@@ -284,13 +284,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 2);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 2);
@@ -316,13 +316,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 0);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 1);
@@ -331,13 +331,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 0);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 0);
@@ -346,13 +346,13 @@ public class Sidebars : MonoBehaviour
                               {
                                    sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(1, 1);
                                    sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
                                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().getMaxHealth());
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
                                    healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
                                    defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
                                    EquipmentUpdate(2, 1);
