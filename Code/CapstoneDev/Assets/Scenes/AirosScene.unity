@@ -27225,7 +27225,7 @@ MonoBehaviour:
   vcam1: {fileID: 594804683}
   vcam2: {fileID: 882368982}
   vcam3: {fileID: 340011803}
-  vcam4: {fileID: 918407584}
+  vcam4: {fileID: 2145092464}
   Path:
   - {fileID: 1591562456}
   - {fileID: 972215672}
@@ -32061,17 +32061,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOne: {fileID: 789255645}
   cameraTwo: {fileID: 1641048200}
-  vcam1: {fileID: 1611596934}
-  vcam2: {fileID: 1807440979}
-  vcam3: {fileID: 594804683}
-  vcam4: {fileID: 882368982}
-  vcam5: {fileID: 340011803}
-  vcam6: {fileID: 918407584}
-  vcam7: {fileID: 2145092464}
-  ecam1: {fileID: 0}
-  ecam2: {fileID: 0}
-  ecam3: {fileID: 0}
-  ecam4: {fileID: 0}
+  vcam_1_2: {fileID: 1611596934}
+  vcam_Ground_Transition: {fileID: 1807440979}
+  vcam_3: {fileID: 594804683}
+  vcam_4: {fileID: 882368982}
+  vcam_4_2: {fileID: 340011803}
+  vcam_Boss_Transition: {fileID: 918407584}
+  vcam_Boss: {fileID: 2145092464}
   timer: 0
   subTimer: 0
   scrollSpeed: 7
