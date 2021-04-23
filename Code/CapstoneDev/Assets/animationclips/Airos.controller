@@ -148,12 +148,6 @@ AnimatorController:
   m_Name: Airos
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: PlayDeathAnimation
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: playIntro
     m_Type: 4
     m_DefaultFloat: 0
@@ -270,7 +264,9 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5688011855301452488}
-  m_StateMachineBehaviours: [{fileID: -8314948464725207976}, {fileID: -476868669855065984}]
+  m_StateMachineBehaviours:
+  - {fileID: -8314948464725207976}
+  - {fileID: -476868669855065984}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
