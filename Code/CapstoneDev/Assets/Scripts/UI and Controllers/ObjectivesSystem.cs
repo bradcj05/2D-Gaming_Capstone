@@ -12,8 +12,7 @@ public class ObjectivesSystem : MonoBehaviour
      {
           for (int i = 0; i <objectives.Length; i++)
           {
-               objectives[i].status = Objective.ObjectiveStatus.Inactive;
-               objectives[i].ResetCurrentAmount();
+               objectives[i].ResetObjective();
           }
      }
 
@@ -68,6 +67,15 @@ public class ObjectivesSystem : MonoBehaviour
           {
                if (objectives[i].status == Objective.ObjectiveStatus.Active && objectives[i].type == Objective.ObjectiveType.Tower)
                     objectives[i].IncreaseCurrent();
+          }
+     }
+
+     public void CheckpointUpdate()
+     {
+          for (int i = 0; i < objectives.Length; i++)
+          {
+               if (objectives[i].status == Objective.ObjectiveStatus.Active)
+                    objectives[i].CheckpointUpdate();
           }
      }
  
