@@ -77,13 +77,15 @@ public class Scene1Controller : MonoBehaviour
             //Need to reevaluate how I'm changing objectives
             if (i == 3 || i == 4)
                 objSys.CompleteAutomatic(i - 2, -1);
-            else if (i == 5)
+            else if (i == 6)
                 objSys.CompleteAutomatic(2, -1);
 
             if (i == 0)
                 objSys.ActivateObjectives(i, -1);
             else if (i == 2 || i == 3 || i == 4)
                 objSys.ActivateObjectives(i - 1, -1);
+            else if (i == 5)
+                objSys.ActivateObjectives(2, -1);
             else if (i == 6)
                 objSys.ActivateObjectives(3, -1);
         }

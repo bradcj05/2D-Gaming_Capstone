@@ -33,8 +33,13 @@ public class Objective : ScriptableObject
      public int requiredAmount;
      protected int currentAmount;
 
+     //To help with keeping objectives completed after retrying at a checkpoint
+     protected ObjectiveStatus resetStatus = ObjectiveStatus.Inactive;
+     protected int resetAmount = -1;
+
      void Awake()
      {
+          status = ObjectiveStatus.Inactive;
           currentAmount = 0;
      }
 
@@ -61,8 +66,18 @@ public class Objective : ScriptableObject
           return currentAmount;
      }
 
-     public void ResetCurrentAmount()
+     public void CheckpointUpdate()
      {
-          currentAmount = 0;
+          resetAmount = currentAmount;
+     }
+
+     public void ResetObjective()
+     {
+          status = resetStatus;
+
+          if (resetAmount == -1)
+               currentAmount = 0;
+          else
+               currentAmount = resetAmount;
      }
 }
