@@ -10,7 +10,7 @@ public class Scene1Controller : MonoBehaviour
     public AudioSource bossMusic;
     public int bossBattleId = 5;
     public float bossWait = 2f;
-    protected static int checkpointAt = 0;
+    protected static int checkpointAt = 4;
     ObjectivesSystem objSys;
 
     // For music
@@ -78,16 +78,16 @@ public class Scene1Controller : MonoBehaviour
             if (i == 3 || i == 4)
                 objSys.CompleteAutomatic(i - 2, -1);
             else if (i == 6)
-                objSys.CompleteAutomatic(2, -1);
+                objSys.CompleteAutomatic(3, -1);
 
             if (i == 0)
                 objSys.ActivateObjectives(i, -1);
             else if (i == 2 || i == 3 || i == 4)
                 objSys.ActivateObjectives(i - 1, -1);
             else if (i == 5)
-                objSys.ActivateObjectives(2, -1);
-            else if (i == 6)
                 objSys.ActivateObjectives(3, -1);
+            else if (i == 6)
+                objSys.ActivateObjectives(4, -1);
         }
     }
 
