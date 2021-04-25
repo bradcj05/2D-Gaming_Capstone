@@ -118,31 +118,31 @@ public class Full_LVL1_Camera : MonoBehaviour
         // CHANGE GET PHASE VALUE ON CUTSCENE IMPLEMENTED!
         if (Phase1_2 && sceneController.GetPhase() == 4) /// TRANSITION to GROUND PHASES
         {
-            vcam1.Priority = 0;
-            vcam2.Priority = 1;
+            vcam_1_2.Priority = 0;
+            vcam_Ground_Transition.Priority = 1;
             Phase1_2 = !Phase1_2;
             PhaseN3 = !PhaseN3; //transition
         }
         else if (PhaseN3 && subTimer > 2) //Phase 3 CAMERA ACTIVATE
         {
-            vcam2.Priority = 0;
-            vcam3.Priority = 1;
+            vcam_Ground_Transition.Priority = 0;
+            vcam_3.Priority = 1;
             PhaseN3 = !PhaseN3;
             Phase3_4 = !Phase3_4;
         }
         // Load checkpoint from Phase 4
         else if (sceneController.GetPhase() == 5)
         {
-            vcam1.Priority = 0;
-            vcam2.Priority = 0;
-            vcam3.Priority = 0;
-            vcam4.Priority = 1;
+            vcam_1_2.Priority = 0;
+            vcam_Ground_Transition.Priority = 0;
+            vcam_3.Priority = 0;
+            vcam_4.Priority = 1;
             Phase1_2 = false;
             PhaseN3 = false;
             Phase3_4 = true;
         }
 
-        if (vcam4.Priority == 1 && Phase3_4 && sceneController.GetPhase() == 5) // dummy test connection between Ground_Phase scripts 
+        if (vcam_4.Priority == 1 && Phase3_4 && sceneController.GetPhase() == 5) // dummy test connection between Ground_Phase scripts 
         {
             PhaseNB = !PhaseNB;
             Phase3_4 = !Phase3_4;
@@ -154,8 +154,8 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         else if (PhaseNB && timer > 2 && sceneController.GetPhase() == 6) //TRANSITION TO AIROS FIGHT
         {
-            vcam6.Priority = 0;
-            vcam7.Priority = 1;
+            vcam_Boss_Transition.Priority = 0;
+            vcam_Boss.Priority = 1;
             PhaseNB = !PhaseNB;
             PhaseB = !PhaseB;
 
