@@ -71,9 +71,13 @@ public class Full_LVL1_Camera : MonoBehaviour
           }
           else if (sceneController.GetPhase() == 4)
           {
-               vcam_4.Priority = 1;
+               vcam_3.Priority = 1;
           }
           else if (sceneController.GetPhase() == 5)
+          {
+               vcam_4.Priority = 1;
+          }
+          else if (sceneController.GetPhase() == 6)
           {
                vcam_Boss.Priority = 1;
           }
@@ -93,27 +97,6 @@ public class Full_LVL1_Camera : MonoBehaviour
           timer += Time.deltaTime;
           if (PhaseN3)
                subTimer += Time.deltaTime;
-
-
-          //IF THE PLAYER DIES AND CLICKS RETRY
-          // CHANGE GET PHASE VALUE ON CUTSCENE IMPLEMENTED!
-          if (Phase1_2 && sceneController.GetPhase() == 3) /// TRANSITION to GROUND PHASES
-          {
-               vcam_1_2.Priority = 0;
-               vcam_Ground_Transition.Priority = 1;
-               Phase1_2 = !Phase1_2;
-               PhaseN3 = !PhaseN3; //transition
-          }
-
-          //GROUND_PHASE.CS TAKES OVER
-          else if (PhaseN3 && subTimer > 2) //Phase 3 CAMERA ACTIVATE
-          {
-               vcam_Ground_Transition.Priority = 0;
-               vcam_3.Priority = 1;
-               PhaseN3 = !PhaseN3;
-               Phase3_4 = !Phase3_4;
-          }
-
 
 
         //IF THE PLAYER DIES AND CLICKS RETRY
