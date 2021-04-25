@@ -1027,57 +1027,21 @@ AudioListener:
   m_GameObject: {fileID: 29051090}
   m_Enabled: 1
 --- !u!61 &29051096
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29051090}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 20}
-  m_EdgeRadius: 0
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29051090}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45ac8b841ac5ce4eab584673b597318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraOne: {fileID: 29051090}
-  cameraTwo: {fileID: 499328801}
-  vcam1: {fileID: 1261735394}
-  vcam2: {fileID: 185493458}
-  vcam3: {fileID: 2080309321}
-  vcam4: {fileID: 578022327}
-  vcam5: {fileID: 177699560}
-  vcam6: {fileID: 1944876753}
-  vcam7: {fileID: 592568042}
-  ecam1: {fileID: 1128677343}
-  ecam2: {fileID: 1579417523}
-  ecam3: {fileID: 0}
-  ecam4: {fileID: 0}
-  timer: 6.610114
-  scrollSpeed: 30
+{BoxCollider2D: {m_ObjectHideFlags: 0, m_CorrespondingSourceObject: {fileID: 0}, m_PrefabInstance: {
+      fileID: 0}, m_PrefabAsset: {fileID: 0}, m_GameObject: {fileID: 29051090}, m_Enabled: 0,
+    m_Density: 1, m_Material: {fileID: 0}, m_IsTrigger: 1, m_UsedByEffector: 0, m_UsedByComposite: 0,
+    m_Offset: {x: -1, y: 0}, m_SpriteTilingProperty: {border: {x: 0, y: 0, z: 0, w: 0},
+      pivot: {x: 0, y: 0}, oldSize: {x: 0, y: 0}, newSize: {x: 0, y: 0}, adaptiveTilingThreshold: 0,
+      drawMode: 0, adaptiveTiling: 0}, m_AutoTiling: 0, serializedVersion: 2, m_Size: {
+      x: 20, y: 20}, m_EdgeRadius: 0}, MonoBehaviour: {m_ObjectHideFlags: 0, m_CorrespondingSourceObject: {
+      fileID: 0}, m_PrefabInstance: {fileID: 0}, m_PrefabAsset: {fileID: 0}, m_GameObject: {
+      fileID: 29051090}, m_Enabled: 0, m_EditorHideFlags: 0, m_Script: {fileID: 11500000,
+      guid: e45ac8b841ac5ce4eab584673b597318, type: 3}, m_Name: '', m_EditorClassIdentifier: '',
+    cameraOne: {fileID: 29051090}, cameraTwo: {fileID: 499328801}, vcam1: {fileID: 1261735394},
+    vcam2: {fileID: 185493458}, vcam3: {fileID: 2080309321}, vcam4: {fileID: 578022327},
+    vcam5: {fileID: 177699560}, vcam6: {fileID: 1944876753}, vcam7: {fileID: 592568042},
+    ecam1: {fileID: 1128677343}, ecam2: {fileID: 1579417523}, ecam3: {fileID: 0},
+    ecam4: {fileID: 0}, timer: 6.610114, scrollSpeed: 30}}
 --- !u!60 &29051097
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1148,11 +1112,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2173f7b91b85eb7488bc6c3ccf06ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MCamera: {fileID: 29051091}
   left: {fileID: 871550243}
   right: {fileID: 566189264}
   up: {fileID: 1258069316}
   down: {fileID: 1498568079}
-  vcam1: {fileID: 1261735394}
+  scale: 1
+  vleft: {x: -8, y: 0, z: 0}
+  vright: {x: 8, y: 0, z: 0}
+  vup: {x: 0, y: 10, z: 0}
+  vdown: {x: 0, y: -10, z: 0}
 --- !u!1 &30237158
 GameObject:
   m_ObjectHideFlags: 0
@@ -17552,7 +17521,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
-  waitBeforeFirstPath: 0
   repeating: 0
   rotateTowardsTarget: 1
   targetTags: []
@@ -27601,7 +27569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
-  waitBeforeFirstPath: 0
   repeating: 0
   rotateTowardsTarget: 1
   targetTags: []
@@ -34083,7 +34050,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
-  waitBeforeFirstPath: 0
   repeating: 0
   rotateTowardsTarget: 1
   targetTags: []
@@ -39136,7 +39102,6 @@ MonoBehaviour:
   speed: 0
   P3_speed: 0.09
   P4_speed: 0.05
-  P4_speed_2: 0.088
   timer: 0
 --- !u!1 &1916869334
 GameObject:
@@ -44176,7 +44141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140555766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1eca96d861e204c9b4462b1e137047, type: 3}
   m_Name: 
@@ -44205,7 +44170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140555766}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e45ac8b841ac5ce4eab584673b597318, type: 3}
   m_Name: 
@@ -44224,5 +44189,4 @@ MonoBehaviour:
   ecam3: {fileID: 0}
   ecam4: {fileID: 0}
   timer: 0
-  subTimer: 0
   scrollSpeed: 7
