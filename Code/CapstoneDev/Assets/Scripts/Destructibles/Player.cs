@@ -182,25 +182,25 @@ public class Player : Destructible
         
         //if both movement directions are greater than 0!!!
         
-        if (moveDir.x < 0 && !left)
+        if (other.gameObject.name == "left")
         {
             rb.drag = drg;
             sx = 0;
             left = true;
         }
-        if (moveDir.x > 0 && !right)
+        if (other.gameObject.name == "right")
         {
             rb.drag = drg;
             sx = 0;
             right = true;
         }
-        if (moveDir.y > 0 && !up)
+        if (other.gameObject.name == "up")
         {
             rb.drag = drg;
             sy = 0;
             up = true;
         }
-        if (moveDir.y < 0 && !down)
+        if (other.gameObject.name == "down")
         {
             rb.drag = drg;
             sy = 0;
@@ -273,22 +273,22 @@ public class Player : Destructible
 
     void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        if (moveDir.x > 0)
+        if (other.gameObject.name == "left")
         {
             sx = 1;
             left = false;
         }
-        if (moveDir.x < 0)
+        if (other.gameObject.name == "right")
         {
             sx = 1;
             right = false;
         }
-        if (moveDir.y < 0)
+        if (other.gameObject.name == "up")
         {
             sy = 1;
             up = false;
         }
-        if (moveDir.y > 0)
+        if (other.gameObject.name == "down")
         {
             sy = 1;
             down = false;
