@@ -159,7 +159,6 @@ public class Full_LVL1_Camera : MonoBehaviour
 
         else if (PhaseNB && timer > 2 && sceneController.GetPhase() == 6) //TRANSITION TO AIROS FIGHT
         {
-
             vcam_Boss_Transition.Priority = 0;
             vcam_Boss.Priority = 1;
             PhaseNB = !PhaseNB;
