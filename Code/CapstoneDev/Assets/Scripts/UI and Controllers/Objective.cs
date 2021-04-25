@@ -34,8 +34,8 @@ public class Objective : ScriptableObject
      protected int currentAmount;
 
      //To help with keeping objectives completed after retrying at a checkpoint
-     protected ObjectiveStatus resetStatus = ObjectiveStatus.Inactive;
-     protected int resetAmount = -1;
+     protected static ObjectiveStatus resetStatus = ObjectiveStatus.Inactive;
+     protected static int resetAmount = -1;
 
      void Awake()
      {
