@@ -12,6 +12,8 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
     public GameObject OptionMenu;
+    public Slider musicSlider;
+    public Slider sfxSlider;
     public AudioMixer musicMixer;
     public AudioMixer sfxMixer;
     public Dropdown resolutionDropdown;
@@ -64,15 +66,18 @@ public class MainMenu : MonoBehaviour
         }
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.onValueChanged.AddListener(delegate { ResolutionChanged(resolutionDropdown); });
+
+        // Set volume sliders in options menu
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume", 0.8f);
+        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume", 0.8f);
     }
 
     // Change resolution
     protected void ResolutionChanged(Dropdown menu)
     {
         string[] chosenRes = menu.captionText.text.Split(' ');
-        int chosenWidth, chosenHeight;
-        int.TryParse(chosenRes[0], out chosenWidth);
-        int.TryParse(chosenRes[2], out chosenHeight);
+        int.TryParse(chosenRes[0], out int chosenWidth);
+        int.TryParse(chosenRes[2], out int chosenHeight);
         Screen.SetResolution(chosenWidth, chosenHeight, fullscreen);
     }
 
@@ -107,14 +112,14 @@ public class MainMenu : MonoBehaviour
     // Adjust music 
     public void SetMusicVolume(float volume)
     {
-        musicMixer.SetFloat("volume", volume);
-        musicMixer.SetFloat("levelVolume", 1);
-        musicMixer.SetFloat("bossVolume", 1);
+        PlayerPrefs.SetFloat("musicVolume", volume);
+        musicMixer.SetFloat("volume", Mathf.Log(volume) * 20);
     }
 
     public void SetSFXVolume(float volume)
     {
-        sfxMixer.SetFloat("volume", volume);
+        PlayerPrefs.SetFloat("sfxVolume", volume);
+        sfxMixer.SetFloat("volume", Mathf.Log(volume) * 20);
     }
 
 

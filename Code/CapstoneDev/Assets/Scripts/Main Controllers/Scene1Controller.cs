@@ -8,9 +8,7 @@ public class Scene1Controller : MonoBehaviour
     public Battle[] battles;
 
     public AudioSource levelMusic;
-    protected float baseLevelVolume;
     public AudioSource bossMusic;
-    protected float baseBossVolume;
 
     public int bossBattleId = 5;
     public float bossWait = 2f;
@@ -24,8 +22,7 @@ public class Scene1Controller : MonoBehaviour
     void Start()
     {
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
-        baseLevelVolume = GetLevelVolume();
-        baseBossVolume = GetBossVolume();
+        mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
         StartCoroutine(BattleController());
         ResetCheckpoints();
     }
@@ -61,14 +58,13 @@ public class Scene1Controller : MonoBehaviour
             // Play level music or boss music depending on the battle 
             if (i == checkpointAt && i != bossBattleId)
             {
-                levelMusic.volume = baseLevelVolume;
                 levelMusic.Play();
             }
             else if (i == bossBattleId)
             {
                 bossMusic.Play();
                 mixer.SetFloat("bossVolume", 0f);
-                StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, baseBossVolume));
+                StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, 1f));
             }
 
             // Save a checkpoint if battle is specified to have a checkpoint before it.
@@ -112,14 +108,16 @@ public class Scene1Controller : MonoBehaviour
         return checkpointAt;
     }
 
-    public float GetLevelVolume()
+    public float GetLevelVolumeLinear()
     {
-        float value;
+        float value, temp;
         bool result = mixer.GetFloat("levelVolume", out value);
+        bool result2 = mixer.GetFloat("volume", out temp);
         if (result)
         {
+            Debug.Log("Master Volume: " + temp);
             Debug.Log("Level Volume: " + value);
-            return value;
+            return Mathf.Pow(10f, value/20f);
         }
         else
         {
@@ -127,13 +125,13 @@ public class Scene1Controller : MonoBehaviour
         }
     }
 
-    public float GetBossVolume()
+    public float GetBossVolumeLinear()
     {
         float value;
         bool result = mixer.GetFloat("bossVolume", out value);
         if (result)
         {
-            return value;
+            return Mathf.Pow(10f, value / 20f);
         }
         else
         {
