@@ -14,6 +14,7 @@ public class Scene2Controller : MonoBehaviour
     public float bossWait = 2f;
     protected static int checkpointAt = 0;
     ObjectivesSystem objSys;
+    Sidebars hud;
 
     // For music
     public AudioMixer mixer;
@@ -22,6 +23,7 @@ public class Scene2Controller : MonoBehaviour
     void Start()
     {
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        hud = GameObject.Find("HUD").GetComponent<Sidebars>();
         mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
         StartCoroutine(BattleController());
         ResetCheckpoints();
@@ -77,9 +79,18 @@ public class Scene2Controller : MonoBehaviour
                 Debug.Log("Current Phase: " + checkpointAt);
             }
 
-            //Need to reevaluate how I'm changing objectives
-            if (i == bossBattleId)
-                objSys.ActivateObjectives(0, -1);
+            // Change phase text & objectives based on phase
+            switch (i)
+            {
+                case 0: // Boss
+                    hud.SetPhaseText("!! BOSS !!");
+                    objSys.ActivateObjectives(i, -1);
+                    break;
+                default:
+                    Debug.Log("Error evaluating current phase. Resetting level.");
+                    ResetCheckpoints();
+                    break;
+            }
         }
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Scene1Controller : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Scene1Controller : MonoBehaviour
     public float bossWait = 2f;
     protected static int checkpointAt = 0;
     ObjectivesSystem objSys;
+    Sidebars hud;
 
     // For music
     public AudioMixer mixer;
@@ -22,6 +24,7 @@ public class Scene1Controller : MonoBehaviour
     void Start()
     {
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        hud = GameObject.Find("HUD").GetComponent<Sidebars>();
         mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
         StartCoroutine(BattleController());
         ResetCheckpoints();
@@ -77,20 +80,44 @@ public class Scene1Controller : MonoBehaviour
                 Debug.Log("Current Phase: " + checkpointAt);
             }
 
-            //Need to reevaluate how I'm changing objectives
-            if (i == 3 || i == 4)
-                objSys.CompleteAutomatic(i - 2, -1);
-            else if (i == 6)
-                objSys.CompleteAutomatic(3, -1);
+            // Change phase text & objectives based on phase
+            switch (i)
+            {
+                case 0: // Intro pre-tutorial
+                    hud.SetPhaseText("Phase 0/4");
+                    objSys.ActivateObjectives(i, -1);
+                    break;
+                case 1: // Intro post-tutorial
+                    break;
+                case 2: // Phase 1
+                    hud.SetPhaseText("Phase 1/4");
+                    objSys.ActivateObjectives(i - 1, -1);
+                    break;
+                case 3: // Phase 2
+                    hud.SetPhaseText("Phase 2/4");
+                    objSys.CompleteAutomatic(i - 2, -1);
+                    objSys.ActivateObjectives(i - 1, -1);
+                    break;
+                case 4: // Phase 3
+                    hud.SetPhaseText("Phase 3/4");
+                    objSys.CompleteAutomatic(i - 2, -1);
+                    objSys.ActivateObjectives(i - 1, -1);
+                    break;
+                case 5: // Phase 4
+                    hud.SetPhaseText("Phase 4/4");
+                    objSys.ActivateObjectives(3, -1);
+                    break;
+                case 6: // Boss
+                    hud.SetPhaseText("BOSS");
+                    objSys.CompleteAutomatic(3, -1);
+                    objSys.ActivateObjectives(4, -1);
+                    break;
+                default:
+                    Debug.Log("Error evaluating current phase. Resetting level.");
+                    ResetCheckpoints();
+                    break;
+            }
 
-            if (i == 0)
-                objSys.ActivateObjectives(i, -1);
-            else if (i == 2 || i == 3 || i == 4)
-                objSys.ActivateObjectives(i - 1, -1);
-            else if (i == 5)
-                objSys.ActivateObjectives(3, -1);
-            else if (i == 6)
-                objSys.ActivateObjectives(4, -1);
         }
     }
 
@@ -117,7 +144,7 @@ public class Scene1Controller : MonoBehaviour
         {
             Debug.Log("Master Volume: " + temp);
             Debug.Log("Level Volume: " + value);
-            return Mathf.Pow(10f, value/20f);
+            return Mathf.Pow(10f, value / 20f);
         }
         else
         {
