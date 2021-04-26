@@ -37,8 +37,6 @@ public class Player : Destructible
     int sx = 1;  //stop speed variable
     int sy = 1;
 
-    Stack<int> stack = new Stack<int>();
-
 
     public bool left, right, up, down = false; // for the triggers
 
@@ -86,26 +84,6 @@ public class Player : Destructible
         if (SceneManager.GetActiveScene().name != "Hangar")
         {
             base.Update();
-
-            // delete later
-            /* if (left == true && Input.GetAxisRaw("Horizontal") > 0) {
-                 sx = 1;
-                 left = false;
-             }
-             if (right == true && Input.GetAxisRaw("Horizontal") < 0) {
-                 sx = 1;
-                 right = false;
-             }
-             if (up == true && Input.GetAxisRaw("Vertical") < 0) {
-                 sy = 1;
-                 up = false;
-             }
-             if (down == true && Input.GetAxisRaw("Vertical") > 0) {
-                 sy = 1;
-                 down = false;
-             }
-             */
-            // stack.Push();
 
             // Movement
             movement.x = Input.GetAxisRaw("Horizontal") *sx;
@@ -179,7 +157,6 @@ public class Player : Destructible
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
         
-        //if both movement directions are greater than 0!!!
         
         if (other.gameObject.name == "left")
         {
@@ -206,41 +183,13 @@ public class Player : Destructible
             down = true;
         }
 
-          //if both movement directions are greater than 0!!!
-          if (other.tag == "MainCamera")
-          {
-               if (moveDir.x < 0 && !left)
-               {
-                    rb.drag = drg;
-                    sx = 0;
-                    left = true;
-               }
-               if (moveDir.x > 0 && !right)
-               {
-                    rb.drag = drg;
-                    sx = 0;
-                    right = true;
-               }
-               if (moveDir.y > 0 && !up)
-               {
-                    rb.drag = drg;
-                    sy = 0;
-                    up = true;
-               }
-               if (moveDir.y < 0 && !down)
-               {
-                    rb.drag = drg;
-                    sy = 0;
-                    down = true;
-               }
-
+         
                Debug.Log("enter");
-          }  //proof that the code ran.
-    }
+    }  //proof that the code ran.
+    
 
     void OnTriggerStay2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-          if (other.tag == "MainCamera") {
                if (left == true)
                {
                     if (Input.GetAxisRaw("Horizontal") > 0)
@@ -298,7 +247,7 @@ public class Player : Destructible
                }
 
                Debug.Log("stay");
-          }  //proof that the code ran.
+           //proof that the code ran.
     }
 
     void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
@@ -327,39 +276,6 @@ public class Player : Destructible
                Debug.Log("exit");
     }
 
-    /* void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
-     {  //OnCollisionEnter2D  runs this code
-
-         if (up == true || down == true)
-         {
-             if (rb.velocity.x < 0)
-             {
-                 sx = 0;
-                 left = true;
-             }
-             if (rb.velocity.x > 0)
-             {
-                 sx = 0;
-                 right = true;
-             }
-         }
-
-         if (left == true || right == true)
-         {
-             if (rb.velocity.y > 0)
-             {
-                 sy = 0;
-                 up = true;
-             }
-             if (rb.velocity.y < 0)
-             {
-                 sy = 0;
-                 down = true;
-             }
-         }
-         Debug.Log("exit");  //proof that the code ran.
-     }
-     */
     //Player Death
     public new void Die()
     {

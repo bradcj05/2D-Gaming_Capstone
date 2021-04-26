@@ -26,7 +26,7 @@ public class Camera_Bound : MonoBehaviour
     void Start()
     {
         //Screen.width;
-        scale = MCamera.GetComponent<Camera>().orthographicSize / 17;
+        scale = MCamera.GetComponent<Camera>().orthographicSize / 10;
         vleft = left.transform.localPosition;
         vright = right.transform.localPosition;
         vup = up.transform.localPosition;
@@ -87,7 +87,7 @@ public class Camera_Bound : MonoBehaviour
     void Update()
     {
  
-        scale = MCamera.GetComponent<Camera>().orthographicSize / 17;
+        scale = MCamera.GetComponent<Camera>().orthographicSize / 10;
        
         left.transform.localPosition = vleft * scale;
         right.transform.localPosition = vright * scale;
