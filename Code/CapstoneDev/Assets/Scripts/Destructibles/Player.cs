@@ -51,7 +51,7 @@ public class Player : Destructible
         {
             //Debug.Log("Start assigning values for the player");
             // Initialize HUD components
-          //  HUD = GameObject.Find("HUD").GetComponent<Transform>();
+            //  HUD = GameObject.Find("HUD").GetComponent<Transform>();
             cam = Camera.main;
             healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
             defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
@@ -86,64 +86,64 @@ public class Player : Destructible
             base.Update();
 
             // Movement
-            movement.x = Input.GetAxisRaw("Horizontal") *sx;
-               movement.y = Input.GetAxisRaw("Vertical") * sy;
+            movement.x = Input.GetAxisRaw("Horizontal") * sx;
+            movement.y = Input.GetAxisRaw("Vertical") * sy;
 
-               // Get Mouse Position
-               mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            // Get Mouse Position
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-               // Update active secondary weapon
-               if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
-               }
-               else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
-               {
-                    activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
-               }
+            // Update active secondary weapon
+            if (Input.GetKeyDown(KeyCode.LeftShift) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + 1) % numberOfSecondaryWeapons;
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftControl) && numberOfSecondaryWeapons > 0)
+            {
+                activeSecondaryWeapon = (activeSecondaryWeapon + numberOfSecondaryWeapons - 1) % numberOfSecondaryWeapons;
+            }
 
-               // Update active shell group
-               if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
-               }
-               else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
-               {
-                    activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
-               }
-          }
-       /* if (Input.GetKeyDown(KeyCode.LeftArrow)) // left  !!!CANNOT TAKE TWO KEYS AT ONCE!!!
-        {
-            stack.Push(1);
+            // Update active shell group
+            if (Input.mouseScrollDelta.y > 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + 1) % (numberOfShellGroups + 1);
+            }
+            else if (Input.mouseScrollDelta.y < 0 && numberOfSecondaryWeapons > 0)
+            {
+                activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow)) //right
-        {
-            stack.Push(3);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow)) //down
-        {
-            stack.Push(4);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow)) //up
-        {
-            stack.Push(2);
-        }*/
+        /* if (Input.GetKeyDown(KeyCode.LeftArrow)) // left  !!!CANNOT TAKE TWO KEYS AT ONCE!!!
+         {
+             stack.Push(1);
+         }
+         if (Input.GetKeyDown(KeyCode.RightArrow)) //right
+         {
+             stack.Push(3);
+         }
+         if (Input.GetKeyDown(KeyCode.DownArrow)) //down
+         {
+             stack.Push(4);
+         }
+         if (Input.GetKeyDown(KeyCode.UpArrow)) //up
+         {
+             stack.Push(2);
+         }*/
     }
 
     //Movement
     void FixedUpdate()
     {
-          if (SceneManager.GetActiveScene().name != "Hangar" && playerControl)
-          {
-               movement.Normalize();
-               // Move in the direction specified, then force the speed back to max speed if it is already reached.
-               // (Provided the max speed is due to moment and not knockback or external factor)
-               rb.AddForce(movement * enginePower, ForceMode2D.Force);
-               moveDir = rb.velocity / rb.velocity.magnitude;
-               if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
-               {
-                    rb.velocity = maxSpeed * moveDir;
-               }
+        if (SceneManager.GetActiveScene().name != "Hangar" && playerControl)
+        {
+            movement.Normalize();
+            // Move in the direction specified, then force the speed back to max speed if it is already reached.
+            // (Provided the max speed is due to moment and not knockback or external factor)
+            rb.AddForce(movement * enginePower, ForceMode2D.Force);
+            moveDir = rb.velocity / rb.velocity.magnitude;
+            if (rb.velocity.magnitude > maxSpeed && movement.magnitude > 0)
+            {
+                rb.velocity = maxSpeed * moveDir;
+            }
 
             //Rotate the Player
             Vector2 lookDir = mousePos - rb.position;
@@ -156,8 +156,8 @@ public class Player : Destructible
 
     void OnTriggerEnter2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-        
-        
+
+
         if (other.gameObject.name == "left")
         {
             rb.drag = drg;
@@ -183,71 +183,71 @@ public class Player : Destructible
             down = true;
         }
 
-         
-               Debug.Log("enter");
+
+        Debug.Log("enter");
     }  //proof that the code ran.
-    
+
 
     void OnTriggerStay2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
     {  //OnCollisionEnter2D  runs this code
-               if (left == true)
-               {
-                    if (Input.GetAxisRaw("Horizontal") > 0)
-                    {
-                         rb.drag = 3;
-                         sx = 1;
+        if (left == true)
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                rb.drag = 3;
+                sx = 1;
 
-                    }
-                    else
-                    {
-                         rb.drag = drg;
-                         sx = 0;
-                    }
-               }
-               if (right == true)
-               {
-                    if (Input.GetAxisRaw("Horizontal") < 0)
-                    {
-                         rb.drag = 3;
-                         sx = 1;
+            }
+            else
+            {
+                rb.drag = drg;
+                sx = 0;
+            }
+        }
+        if (right == true)
+        {
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                rb.drag = 3;
+                sx = 1;
 
-                    }
-                    else
-                    {
-                         rb.drag = drg;
-                         sx = 0;
-                    }
-               }
-               if (up == true)
-               {
-                    if (Input.GetAxisRaw("Vertical") < 0)
-                    {
-                         rb.drag = 3;
-                         sy = 1;
+            }
+            else
+            {
+                rb.drag = drg;
+                sx = 0;
+            }
+        }
+        if (up == true)
+        {
+            if (Input.GetAxisRaw("Vertical") < 0)
+            {
+                rb.drag = 3;
+                sy = 1;
 
-                    }
-                    else
-                    {
-                         rb.drag = drg;
-                         sy = 0;
-                    }
-               }
-               if (down == true)
-               {
-                    if (Input.GetAxisRaw("Vertical") > 0)
-                    {
-                         rb.drag = 3;
-                         sy = 1;
-                    }
-                    else
-                    {
-                         rb.drag = drg;
-                         sy = 0;
-                    }
-               }
+            }
+            else
+            {
+                rb.drag = drg;
+                sy = 0;
+            }
+        }
+        if (down == true)
+        {
+            if (Input.GetAxisRaw("Vertical") > 0)
+            {
+                rb.drag = 3;
+                sy = 1;
+            }
+            else
+            {
+                rb.drag = drg;
+                sy = 0;
+            }
+        }
 
-               Debug.Log("stay");
-           //proof that the code ran.
+        Debug.Log("stay");
+        //proof that the code ran.
     }
 
     void OnTriggerExit2D(Collider2D other)  //for edge collider.  OnTriggerExit for polygon and box collider
@@ -273,7 +273,7 @@ public class Player : Destructible
             down = false;
         }
 
-               Debug.Log("exit");
+        Debug.Log("exit");
     }
 
     //Player Death
