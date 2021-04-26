@@ -36,6 +36,7 @@ public class Sidebars : MonoBehaviour
      public Image[] highlights;
      int current = -1;
      int activeWeapon = -1;
+     public Text activeShell;
 
      // Start is called before the first frame update
      void Start()
@@ -101,9 +102,12 @@ public class Sidebars : MonoBehaviour
                          highlights[i].gameObject.SetActive(true);
                }
                activeWeapon = PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeSecondaryWeapon;
+               ShellTextUpdate();
           } 
      }
 
+     //Updates the display for the planes in the sidebars
+     //Needs to be simplified
      public void UpdatePlanes(int currentPlane, int initialSize, int[] squadStatus)
      {
           switch (initialSize)
@@ -376,9 +380,11 @@ public class Sidebars : MonoBehaviour
                default:
                     break;
           }
+          ShellTextUpdate();
      }
 
-     //May need to update to account for Airos
+     //Updates the equipment icons in the sidebar
+     //Needs to be simplified somehow
      void EquipmentUpdate(int slot, int plane)
      {
           int weaponSlots = 0;
@@ -576,6 +582,36 @@ public class Sidebars : MonoBehaviour
                default:
                     Debug.Log("This message should not appear. Issue with EquipmentUpdate in the Sidebars script.");
                     break;
+          }
+     }
+
+     //Update text that shows which shell type is currently active
+     //Made this into its own function to fix issue where text would not update after planes were swapped
+     public void ShellTextUpdate()
+     {
+          if (PlaneSwitching.squadArr[current].transform.GetComponent<Player>().numberOfSecondaryWeapons > 0)
+          {
+               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.GetChildCount(); i++)
+               {
+                    Debug.Log("Checking for shells");
+                    if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerAsynchronousLauncher")
+                         && PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<PlayerAsynchronousLauncher>().group == activeWeapon)
+                    {
+                         int currentShell = PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeShellGroup;
+                         activeShell.text = PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().shellTypes[currentShell].name;
+                         break;
+                    }
+                    else if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerLaser")
+                         && PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<PlayerLaser>().group == activeWeapon)
+                    {
+                         activeShell.text = "Laser";
+                         break;
+                    }
+               }
+          }
+          else
+          {
+               activeShell.text = "";
           }
      }
 

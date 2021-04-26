@@ -12,7 +12,7 @@ public class EDGE_LORD : MonoBehaviour {
     {
         poly = gameObject.AddComponent<PolygonCollider2D>();
     }
-        for (int i=0; i<4; i++) {
+        for (int i = 0; i < poly.pathCount; i++) {
             points = poly.GetPath(i);
             EdgeCollider2D edge = gameObject.AddComponent<EdgeCollider2D>();
             edge.points = points;

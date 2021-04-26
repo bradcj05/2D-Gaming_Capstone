@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
      public static int upcomingScene;
-     public int scene; //Here to provide testing
+     //public int scene; //Here to provide testing
      public static GameObject squadron;
      public GameObject squad;
 
      void Update()
      {
-          if (scene != upcomingScene)
-               upcomingScene = scene;
+          //if (scene != upcomingScene)
+               //upcomingScene = scene;
           if (squad != squadron)
                squadron = squad;
      }
