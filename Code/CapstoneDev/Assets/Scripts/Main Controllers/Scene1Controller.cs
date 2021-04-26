@@ -6,8 +6,12 @@ using UnityEngine.Audio;
 public class Scene1Controller : MonoBehaviour
 {
     public Battle[] battles;
+
     public AudioSource levelMusic;
+    protected float baseLevelVolume;
     public AudioSource bossMusic;
+    protected float baseBossVolume;
+
     public int bossBattleId = 5;
     public float bossWait = 2f;
     protected static int checkpointAt = 0;
@@ -20,6 +24,8 @@ public class Scene1Controller : MonoBehaviour
     void Start()
     {
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        baseLevelVolume = GetLevelVolume();
+        baseBossVolume = GetBossVolume();
         StartCoroutine(BattleController());
         ResetCheckpoints();
     }
@@ -55,14 +61,14 @@ public class Scene1Controller : MonoBehaviour
             // Play level music or boss music depending on the battle 
             if (i == checkpointAt && i != bossBattleId)
             {
-                levelMusic.volume = 0.8f;
+                levelMusic.volume = baseLevelVolume;
                 levelMusic.Play();
             }
             else if (i == bossBattleId)
             {
                 bossMusic.Play();
                 mixer.SetFloat("bossVolume", 0f);
-                StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, 0.8f));
+                StartCoroutine(FadeMixerGroup.Fade(mixer, "bossVolume", 2f, baseBossVolume));
             }
 
             // Save a checkpoint if battle is specified to have a checkpoint before it.
@@ -104,5 +110,34 @@ public class Scene1Controller : MonoBehaviour
     public int ReturnProgress()
     {
         return checkpointAt;
+    }
+
+    public float GetLevelVolume()
+    {
+        float value;
+        bool result = mixer.GetFloat("levelVolume", out value);
+        if (result)
+        {
+            Debug.Log("Level Volume: " + value);
+            return value;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+
+    public float GetBossVolume()
+    {
+        float value;
+        bool result = mixer.GetFloat("bossVolume", out value);
+        if (result)
+        {
+            return value;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 }

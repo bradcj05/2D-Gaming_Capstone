@@ -2758,7 +2758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &718906240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3469,7 +3469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &978479727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3504,8 +3504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26481bf4b2dfb6f4a94368a54a662ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OptionMenu: {fileID: 0}
-  audioMixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
+  OptionMenu: {fileID: 718906239}
+  musicMixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
+  sfxMixer: {fileID: 24100000, guid: bfcf541857d57174a8f9d3d6a87a1ea7, type: 2}
   resolutionDropdown: {fileID: 1282709067}
   myFx: {fileID: 978479729}
   hoverFx: {fileID: 8300000, guid: c13fa6e88e0aca448b11f29b0c33a286, type: 3}
@@ -3519,7 +3520,8 @@ AudioSource:
   m_GameObject: {fileID: 978479726}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3066717928639510758, guid: bfcf541857d57174a8f9d3d6a87a1ea7,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -4013,7 +4015,19 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 978479728}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1119777859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5737,16 +5751,16 @@ MonoBehaviour:
   m_FillRect: {fileID: 2127087981}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 978479728}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7901,7 +7915,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -3.699997, y: -4}
   m_SizeDelta: {x: -11.980682, y: -7.1502075}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8233,7 +8247,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -2.7900085, y: 0.27999878}
   m_SizeDelta: {x: -11.980713, y: -7.1502075}
   m_Pivot: {x: 0.5, y: 0.5}
