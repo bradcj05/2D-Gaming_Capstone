@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1796143006649410900}
   - component: {fileID: 4427152316762893356}
   - component: {fileID: 989908066360215635}
+  - component: {fileID: 7735089233928942691}
   m_Layer: 8
   m_Name: Pancake
   m_TagString: Player
@@ -386,6 +387,25 @@ PolygonCollider2D:
       - {x: -0.59499997, y: -3.37}
       - {x: -0.545, y: -3.26}
       - {x: -0.545, y: -2.72}
+--- !u!95 &7735089233928942691
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2183660915927818866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84d3d365f066ecb4d9d605b057a8542b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6001300353066968754
 PrefabInstance:
   m_ObjectHideFlags: 0
