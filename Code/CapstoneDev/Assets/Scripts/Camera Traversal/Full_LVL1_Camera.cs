@@ -122,6 +122,8 @@ public class Full_LVL1_Camera : MonoBehaviour
         // Load checkpoint from Phase 4
         else if (sceneController.GetPhase() == 5)
         {
+            vcam_1_2.Priority = 0;
+            vcam_Ground_Transition.Priority = 0;
             vcam_3.Priority = 0;
             vcam_4.Priority = 1;
             Phase1_2 = false;
