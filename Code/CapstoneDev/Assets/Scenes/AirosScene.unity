@@ -47163,7 +47163,7 @@ PrefabInstance:
     - target: {fileID: 626546257891267452, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000016324222
+      value: 0.000027447939
       objectReference: {fileID: 0}
     - target: {fileID: 913654741809002419, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -47793,7 +47793,7 @@ PrefabInstance:
     - target: {fileID: 7122033367711594919, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -224
+      value: -211.9502
       objectReference: {fileID: 0}
     - target: {fileID: 7122033367711594919, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -47809,11 +47809,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 1104.0459
-      objectReference: {fileID: 0}
-    - target: {fileID: 7122033367711594919, guid: 56a2cc2025bb0994f968ec947111166a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -211.9502
       objectReference: {fileID: 0}
     - target: {fileID: 7306437455669354240, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -47868,19 +47863,13 @@ PrefabInstance:
     - target: {fileID: 8476642522913424018, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00003429598
+      value: 0.00008732453
       objectReference: {fileID: 0}
     - target: {fileID: 8487622590026577414, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_Text
       value: Currency
       objectReference: {fileID: 0}
-    - target: {fileID: 8487622590026577414, guid: 56a2cc2025bb0994f968ec947111166a,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: b3a64178a3e85284da17fe1b4bbfcb39,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a2cc2025bb0994f968ec947111166a, type: 3}
 --- !u!224 &1521400050 stripped
