@@ -12,7 +12,8 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
     public GameObject OptionMenu;
-    public AudioMixer audioMixer;
+    public AudioMixer musicMixer;
+    public AudioMixer sfxMixer;
     public Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
@@ -104,9 +105,16 @@ public class MainMenu : MonoBehaviour
     }
 
     // Adjust music 
-    public void SetVolume(float volume)
+    public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        musicMixer.SetFloat("volume", volume);
+        musicMixer.SetFloat("levelVolume", 1);
+        musicMixer.SetFloat("bossVolume", 1);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxMixer.SetFloat("volume", volume);
     }
 
 
