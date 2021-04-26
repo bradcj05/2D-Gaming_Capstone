@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecfd3af0b0a0dad4792342eb27a1763c, type: 3}
-  m_Name: Level1_Boss
+  m_Name: Level2_Boss
   m_EditorClassIdentifier: 
   type: 3
   status: 0
-  description: Take down the flaming red hawk
-  target: {fileID: 2447495243558342190, guid: e16174609714ee542aa2a44458941801, type: 3}
-  reward: 100
+  description: Bankrupt the oil magnate
+  target: {fileID: 3386375878303789754, guid: 550a367e5b690b84995a937792877d74, type: 3}
+  reward: 200
   requiredAmount: 1

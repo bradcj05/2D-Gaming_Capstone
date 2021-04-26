@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecfd3af0b0a0dad4792342eb27a1763c, type: 3}
-  m_Name: Level1_Boss
+  m_Script: {fileID: 11500000, guid: 2a2f63616827c174587c8e0a16a2f217, type: 3}
+  m_Name: Lv2-D-1
   m_EditorClassIdentifier: 
-  type: 3
-  status: 0
-  description: Take down the flaming red hawk
-  target: {fileID: 2447495243558342190, guid: e16174609714ee542aa2a44458941801, type: 3}
-  reward: 100
-  requiredAmount: 1
+  textLine: <color=lime><b>Commander:</b></color> Phew.. That was INTENSE!
+  sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
+  time: 0
