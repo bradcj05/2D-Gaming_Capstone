@@ -28027,7 +28027,7 @@ MonoBehaviour:
   P4_speed: 0.05
   P4_speed_2: 0.088
   timer: 0
-  edge: {fileID: 0}
+  edge: {fileID: 1641048201}
 --- !u!114 &899532781
 MonoBehaviour:
   m_ObjectHideFlags: 0

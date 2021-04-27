@@ -32,10 +32,11 @@ public class Sidebars : MonoBehaviour
     public Text secondaryAmmo2;
     public Image sidePlaneSecondary2_2;
 
-    public Sprite laserSprite;
-    public Image[] highlights;
-    int current = -1;
-    int activeWeapon = -1;
+     public Sprite laserSprite;
+     public Image[] highlights;
+     int current = -1;
+     int activeWeapon = -1;
+     public Text activeShell;
 
     public Text phaseText;
 
@@ -90,304 +91,309 @@ public class Sidebars : MonoBehaviour
         }
     }
 
-    public void Update()
-    {
-        if (activeWeapon != PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeSecondaryWeapon)
-        {
-            Debug.Log("Swap Weapons");
-            for (int i = 0; i < 4; i++)
-            {
-                if (highlights[i].gameObject.activeSelf)
-                    highlights[i].gameObject.SetActive(false);
-                else
-                    highlights[i].gameObject.SetActive(true);
-            }
-            activeWeapon = PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeSecondaryWeapon;
-        }
-    }
+     public void Update()
+     {
+          if (activeWeapon != PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeSecondaryWeapon)
+          {
+               Debug.Log("Swap Weapons");
+               for (int i = 0; i < 4; i++)
+               {
+                    if (highlights[i].gameObject.activeSelf)
+                         highlights[i].gameObject.SetActive(false);
+                    else
+                         highlights[i].gameObject.SetActive(true);
+               }
+               activeWeapon = PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeSecondaryWeapon;
+               ShellTextUpdate();
+          } 
+     }
 
-    public void UpdatePlanes(int currentPlane, int initialSize, int[] squadStatus)
-    {
-        switch (initialSize)
-        {
-            case 1:
-                break;
-            case 2:
-                if (currentPlane == 0 && squadStatus[1] == 1)
-                {
-                    currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-                    currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                    current = 0;
-                    EquipmentUpdate(0, 0);
-                    sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                    healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                    healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                    defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                    EquipmentUpdate(1, 1);
-                    sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                    healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                    healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                    defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                    EquipmentUpdate(2, 1);
-                }
-                else if (currentPlane == 1 && squadStatus[0] == 1)
-                {
-                    currentPlaneName.text = PlaneSwitching.squadArr[1].name;
-                    currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                    current = 1;
-                    EquipmentUpdate(0, 1);
-                    sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                    sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                    healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                    healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                    defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                    EquipmentUpdate(1, 0);
-                    sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                    sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                    healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                    healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                    defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                    EquipmentUpdate(2, 0);
-                }
-                else if (currentPlane == 0 && squadStatus[1] == 0)
-                {
-                    currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-                    currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                    current = 0;
-                    EquipmentUpdate(0, 0);
-                    sidePlaneName1.gameObject.SetActive(false);
-                    sidePlaneIcon1.gameObject.SetActive(false);
-                    healthBar1.gameObject.SetActive(false);
-                    defenseBar1.gameObject.SetActive(false);
-                    sidePlaneName2.gameObject.SetActive(false);
-                    sidePlaneIcon2.gameObject.SetActive(false);
-                    healthBar2.gameObject.SetActive(false);
-                    defenseBar2.gameObject.SetActive(false);
-                }
-                else
-                {
-                    currentPlaneName.text = PlaneSwitching.squadArr[1].name;
-                    currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                    current = 1;
-                    EquipmentUpdate(0, 1);
-                    sidePlaneName1.gameObject.SetActive(false);
-                    sidePlaneIcon1.gameObject.SetActive(false);
-                    healthBar1.gameObject.SetActive(false);
-                    defenseBar1.gameObject.SetActive(false);
-                    sidePlaneName2.gameObject.SetActive(false);
-                    sidePlaneIcon2.gameObject.SetActive(false);
-                    healthBar2.gameObject.SetActive(false);
-                    defenseBar2.gameObject.SetActive(false);
-                }
-                break;
-            case 3:
-                switch (currentPlane)
-                {
-                    case 0:
-                        currentPlaneName.text = PlaneSwitching.squadArr[0].name;
-                        currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                        current = 0;
-                        EquipmentUpdate(0, 0);
-                        if (squadStatus[1] == 1 && squadStatus[2] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 1);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 2);
-                        }
-                        else if (squadStatus[1] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 1);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 1);
-                        }
-                        else if (squadStatus[2] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 2);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 2);
-                        }
-                        else
-                        {
-                            sidePlaneName1.gameObject.SetActive(false);
-                            sidePlaneIcon1.gameObject.SetActive(false);
-                            healthBar1.gameObject.SetActive(false);
-                            defenseBar1.gameObject.SetActive(false);
-                            sidePlaneName2.gameObject.SetActive(false);
-                            sidePlaneIcon2.gameObject.SetActive(false);
-                            healthBar2.gameObject.SetActive(false);
-                            defenseBar2.gameObject.SetActive(false);
-                        }
-                        break;
-                    case 1:
-                        currentPlaneName.text = PlaneSwitching.squadArr[1].name;
-                        currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                        current = 1;
-                        EquipmentUpdate(0, 1);
-                        if (squadStatus[2] == 1 && squadStatus[0] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 2);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 0);
-                        }
-                        else if (squadStatus[0] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 0);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 0);
-                        }
-                        else if (squadStatus[2] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 2);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 2);
-                        }
-                        else
-                        {
-                            sidePlaneName1.gameObject.SetActive(false);
-                            sidePlaneIcon1.gameObject.SetActive(false);
-                            healthBar1.gameObject.SetActive(false);
-                            defenseBar1.gameObject.SetActive(false);
-                            sidePlaneName2.gameObject.SetActive(false);
-                            sidePlaneIcon2.gameObject.SetActive(false);
-                            healthBar2.gameObject.SetActive(false);
-                            defenseBar2.gameObject.SetActive(false);
-                        }
-                        break;
-                    case 2:
-                        currentPlaneName.text = PlaneSwitching.squadArr[2].name;
-                        currentPlaneIcon.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
-                        current = 2;
-                        EquipmentUpdate(0, 2);
-                        if (squadStatus[1] == 1 && squadStatus[0] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 0);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 1);
-                        }
-                        else if (squadStatus[0] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 0);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 0);
-                        }
-                        else if (squadStatus[1] == 1)
-                        {
-                            sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(1, 1);
-                            sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
-                            sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
-                            healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
-                            healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
-                            defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
-                            EquipmentUpdate(2, 1);
-                        }
-                        else
-                        {
-                            sidePlaneName1.gameObject.SetActive(false);
-                            sidePlaneIcon1.gameObject.SetActive(false);
-                            healthBar1.gameObject.SetActive(false);
-                            defenseBar1.gameObject.SetActive(false);
-                            sidePlaneName2.gameObject.SetActive(false);
-                            sidePlaneIcon2.gameObject.SetActive(false);
-                            healthBar2.gameObject.SetActive(false);
-                            defenseBar2.gameObject.SetActive(false);
-                        }
-                        break;
-                    default:
-                        break;
-                }
-                break;
-            default:
-                break;
-        }
-    }
+     //Updates the display for the planes in the sidebars
+     //Needs to be simplified
+     public void UpdatePlanes(int currentPlane, int initialSize, int[] squadStatus)
+     {
+          switch (initialSize)
+          {
+               case 1:
+                    break;
+               case 2:
+                    if (currentPlane == 0 && squadStatus[1] == 1)
+                    {
+                         currentPlaneName.text = PlaneSwitching.squadArr[0].name;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         current = 0;
+                         EquipmentUpdate(0, 0);
+                         sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                         EquipmentUpdate(1, 1);
+                         sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                         EquipmentUpdate(2, 1);
+                    }
+                    else if (currentPlane == 1 && squadStatus[0] == 1)
+                    {
+                         currentPlaneName.text = PlaneSwitching.squadArr[1].name;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         current = 1;
+                         EquipmentUpdate(0, 1);
+                         sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                         healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                         EquipmentUpdate(1, 0);
+                         sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                         sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                         healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                         defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                         EquipmentUpdate(2, 0);
+                    }
+                    else if (currentPlane == 0 && squadStatus[1] == 0)
+                    {
+                         currentPlaneName.text = PlaneSwitching.squadArr[0].name;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                         current = 0;
+                         EquipmentUpdate(0, 0);
+                         sidePlaneName1.gameObject.SetActive(false);
+                         sidePlaneIcon1.gameObject.SetActive(false);
+                         healthBar1.gameObject.SetActive(false);
+                         defenseBar1.gameObject.SetActive(false);
+                         sidePlaneName2.gameObject.SetActive(false);
+                         sidePlaneIcon2.gameObject.SetActive(false);
+                         healthBar2.gameObject.SetActive(false);
+                         defenseBar2.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                         currentPlaneName.text = PlaneSwitching.squadArr[1].name;
+                         currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                         current = 1;
+                         EquipmentUpdate(0, 1);
+                         sidePlaneName1.gameObject.SetActive(false);
+                         sidePlaneIcon1.gameObject.SetActive(false);
+                         healthBar1.gameObject.SetActive(false);
+                         defenseBar1.gameObject.SetActive(false);
+                         sidePlaneName2.gameObject.SetActive(false);
+                         sidePlaneIcon2.gameObject.SetActive(false);
+                         healthBar2.gameObject.SetActive(false);
+                         defenseBar2.gameObject.SetActive(false);
+                    }
+                    break;
+               case 3:
+                    switch (currentPlane)
+                    {
+                         case 0:
+                              currentPlaneName.text = PlaneSwitching.squadArr[0].name;
+                              currentPlaneIcon.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                              current = 0;
+                              EquipmentUpdate(0, 0);
+                              if (squadStatus[1] == 1 && squadStatus[2] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 1);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 2);
+                              }
+                              else if (squadStatus[1] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 1);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 1);
+                              }
+                              else if (squadStatus[2] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 2);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 2);
+                              }
+                              else
+                              {
+                                   sidePlaneName1.gameObject.SetActive(false);
+                                   sidePlaneIcon1.gameObject.SetActive(false);
+                                   healthBar1.gameObject.SetActive(false);
+                                   defenseBar1.gameObject.SetActive(false);
+                                   sidePlaneName2.gameObject.SetActive(false);
+                                   sidePlaneIcon2.gameObject.SetActive(false);
+                                   healthBar2.gameObject.SetActive(false);
+                                   defenseBar2.gameObject.SetActive(false);
+                              }
+                              break;
+                         case 1:
+                              currentPlaneName.text = PlaneSwitching.squadArr[1].name;
+                              currentPlaneIcon.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                              current = 1;
+                              EquipmentUpdate(0, 1);
+                              if (squadStatus[2] == 1 && squadStatus[0] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 2);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 0);
+                              }
+                              else if (squadStatus[0] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 0);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 0);
+                              }
+                              else if (squadStatus[2] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 2);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[2].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[2].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[2].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 2);
+                              }
+                              else
+                              {
+                                   sidePlaneName1.gameObject.SetActive(false);
+                                   sidePlaneIcon1.gameObject.SetActive(false);
+                                   healthBar1.gameObject.SetActive(false);
+                                   defenseBar1.gameObject.SetActive(false);
+                                   sidePlaneName2.gameObject.SetActive(false);
+                                   sidePlaneIcon2.gameObject.SetActive(false);
+                                   healthBar2.gameObject.SetActive(false);
+                                   defenseBar2.gameObject.SetActive(false);
+                              }
+                              break;
+                         case 2:
+                              currentPlaneName.text = PlaneSwitching.squadArr[2].name;
+                              currentPlaneIcon.sprite = PlaneSwitching.squadArr[2].GetComponent<SpriteRenderer>().sprite;
+                              current = 2;
+                              EquipmentUpdate(0, 2);
+                              if (squadStatus[1] == 1 && squadStatus[0] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 0);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 1);
+                              }
+                              else if (squadStatus[0] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 0);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[0].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[0].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[0].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[0].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 0);
+                              }
+                              else if (squadStatus[1] == 1)
+                              {
+                                   sidePlaneName1.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon1.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar1.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar1.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(1, 1);
+                                   sidePlaneName2.text = PlaneSwitching.squadArr[1].name;
+                                   sidePlaneIcon2.sprite = PlaneSwitching.squadArr[1].GetComponent<SpriteRenderer>().sprite;
+                                   healthBar2.SetMax(PlaneSwitching.squadArr[1].GetComponent<Player>().GetMaxHealth());
+                                   healthBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().health);
+                                   defenseBar2.SetHealth(PlaneSwitching.squadArr[1].GetComponent<Player>().defense);
+                                   EquipmentUpdate(2, 1);
+                              }
+                              else
+                              {
+                                   sidePlaneName1.gameObject.SetActive(false);
+                                   sidePlaneIcon1.gameObject.SetActive(false);
+                                   healthBar1.gameObject.SetActive(false);
+                                   defenseBar1.gameObject.SetActive(false);
+                                   sidePlaneName2.gameObject.SetActive(false);
+                                   sidePlaneIcon2.gameObject.SetActive(false);
+                                   healthBar2.gameObject.SetActive(false);
+                                   defenseBar2.gameObject.SetActive(false);
+                              }
+                              break;
+                         default:
+                              break;
+                    }
+                    break;
+               default:
+                    break;
+          }
+          ShellTextUpdate();
+     }
 
-    //May need to update to account for Airos
-    void EquipmentUpdate(int slot, int plane)
-    {
-        int weaponSlots = 0;
-        if (PlaneSwitching.squadArr[plane].name == "Airos")
-            weaponSlots = PlaneSwitching.squadArr[plane].transform.childCount - 2;
-        else
-            weaponSlots = PlaneSwitching.squadArr[plane].transform.childCount - 1;
+     //Updates the equipment icons in the sidebar
+     //Needs to be simplified somehow
+     void EquipmentUpdate(int slot, int plane)
+     {
+          int weaponSlots = 0;
+          if (PlaneSwitching.squadArr[plane].name == "Airos")
+               weaponSlots = PlaneSwitching.squadArr[plane].transform.childCount - 2;
+          else
+               weaponSlots = PlaneSwitching.squadArr[plane].transform.childCount - 1;
 
         switch (slot)
         {
@@ -587,8 +593,38 @@ public class Sidebars : MonoBehaviour
         phaseText.text = text;
     }
 
-    public void Reset()
-    {
-        this.Start();
-    }
+     //Update text that shows which shell type is currently active
+     //Made this into its own function to fix issue where text would not update after planes were swapped
+     public void ShellTextUpdate()
+     {
+          if (PlaneSwitching.squadArr[current].transform.GetComponent<Player>().numberOfSecondaryWeapons > 0)
+          {
+               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.childCount; i++)
+               {
+                    Debug.Log("Checking for shells");
+                    if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerAsynchronousLauncher")
+                         && PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<PlayerAsynchronousLauncher>().group == activeWeapon)
+                    {
+                         int currentShell = PlaneSwitching.squadArr[current].transform.GetComponent<Player>().activeShellGroup;
+                         activeShell.text = PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<SecondaryWeapon>().shellTypes[currentShell].name;
+                         break;
+                    }
+                    else if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerLaser")
+                         && PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent<PlayerLaser>().group == activeWeapon)
+                    {
+                         activeShell.text = "Laser";
+                         break;
+                    }
+               }
+          }
+          else
+          {
+               activeShell.text = "";
+          }
+     }
+
+     public void Reset()
+     {
+          this.Start();
+     }
 }
