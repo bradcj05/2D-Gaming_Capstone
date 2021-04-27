@@ -591,7 +591,7 @@ public class Sidebars : MonoBehaviour
      {
           if (PlaneSwitching.squadArr[current].transform.GetComponent<Player>().numberOfSecondaryWeapons > 0)
           {
-               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.GetChildCount() - 1; i++)
+               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.childCount - 1; i++)
                {
                     Debug.Log("Checking for shells");
                     if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerAsynchronousLauncher")

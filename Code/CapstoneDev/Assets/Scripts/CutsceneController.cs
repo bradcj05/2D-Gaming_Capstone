@@ -111,9 +111,8 @@ public class CutsceneController : MonoBehaviour
     void StartCondorFlees()
     {
         //Scene1BlackCondor = GameObject.Find("Black Condor Lv 1");
-        if(sceneCondor == null)
-               sceneCondor = GameObject.FindWithTag("IntroBlackCondor");
-        sceneCondor.SetActive(false);
+        //if(sceneCondor == null) sceneCondor = GameObject.FindWithTag("IntroBlackCondor");
+        //sceneCondor.SetActive(false);
         condorMove = Scene1BlackCondor.GetComponent<Animator>();
         cutsceneAnimator.SetBool("eucAttack", true);
         condorMove.SetBool("condorEscape", true);
