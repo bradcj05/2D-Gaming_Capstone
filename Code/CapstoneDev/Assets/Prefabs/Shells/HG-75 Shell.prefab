@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 10031349640029540}
   - component: {fileID: 2450787611163125101}
   - component: {fileID: -5238892429379451044}
-  - component: {fileID: 7444908813567329587}
   - component: {fileID: -3448589125487995348}
+  - component: {fileID: 5451557088647304955}
   m_Layer: 13
   m_Name: HG-75 Shell
   m_TagString: Bullet
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2409501978042204487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.10791801, y: 0.22249424, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1.1855209}
+  m_LocalScale: {x: 0.05, y: 0.04, z: 1.1855209}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02a82368e76914c4ea49d2459dc66d05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2f7c9c1a9bbb6d40a8f4c86bae5f174, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,22 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!70 &7444908813567329587
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2409501978042204487}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.013637822, y: -0.0027263165}
-  m_Size: {x: 0.54269266, y: 1.6891396}
-  m_Direction: 0
 --- !u!114 &-3448589125487995348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +121,8 @@ MonoBehaviour:
   type: 2
   grade: 2
   category: 0
-  power: 20
-  speed: 30
+  power: 30
+  speed: 25
   penetration: 5
   deterioration: 0.15
   selfDestructTime: -1
@@ -152,3 +136,19 @@ MonoBehaviour:
   hitEffectRadius: 5
   hitEffectDuration: 0.5
   baseExplosionRadius: 3
+--- !u!70 &5451557088647304955
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2409501978042204487}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.1800003, y: 38.943504}
+  m_Direction: 0

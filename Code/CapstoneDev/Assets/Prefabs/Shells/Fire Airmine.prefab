@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8443778890303781478}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1069226335417281432}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6912194262945948620}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717165199499479166}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5299693934122000367}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 4607376107586388874}
   - component: {fileID: 4040653245695689278}
   - component: {fileID: 3116042847524441517}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Airmine
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8831955114338234873}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -263,7 +263,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!60 &4607376107586388874
 PolygonCollider2D:
@@ -375,11 +375,11 @@ MonoBehaviour:
   CenterOfMass: {x: 0, y: 0, z: 0}
   collidableTags:
   - ActivePlayer
-  - Enemy
+  - Ally
   mass: 1
   dropSpeed: 4
   rotateSpeed: 60
-  shellType: {fileID: 3959298833998398696, guid: 770782d259e84a64ca66d00c93f8b2bb,
+  shellType: {fileID: 658105602485047370, guid: 7bf3a961587dd5b47b55c9f119c22f46,
     type: 3}
   bulletSpawns:
   - {fileID: 6912194262945948620}
@@ -422,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6275821643541798118}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Fire Spawn 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ PrefabInstance:
     - target: {fileID: 535266913918286906, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1491153754707409592, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 4207562357305882789, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854489, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 5837915534816854489, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5837915534816854493, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -608,12 +608,12 @@ PrefabInstance:
     - target: {fileID: 5837915535233713417, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5837915535480465992, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6751079352522190642, guid: badb78e174c033641bd5d98afe0b0eba,
         type: 3}
@@ -703,7 +703,7 @@ PrefabInstance:
     - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008fbdfa2e839414a9bca5f8b6168f98, type: 3}

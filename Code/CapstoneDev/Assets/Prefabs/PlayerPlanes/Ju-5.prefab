@@ -120,11 +120,12 @@ MonoBehaviour:
   cards: {fileID: 11400000, guid: a20efb37bc0f6d644a52832a56d491dc, type: 2}
   maxSpeed: 11
   enginePower: 1000
-  cam: {fileID: 0}
+  area: {fileID: 0}
   activeSecondaryWeapon: 0
   activeShellGroup: 0
   numberOfSecondaryWeapons: 1
   numberOfShellGroups: 1
+  lineSetToUse: {fileID: 11400000, guid: 5805d92059889704aa5f36339726511e, type: 2}
   devMode: 1
 --- !u!50 &4858288967080734106
 Rigidbody2D:

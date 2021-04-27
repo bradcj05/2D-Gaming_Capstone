@@ -37,6 +37,8 @@ public class Destructible : MonoBehaviour
     // Kinds of objects the destructible can deal collision damage with (see tags)
     public string[] collidableTags; // Can be ActivePlayer, Player, Ally, Enemy, etc.
 
+     ObjectivesSystem objSys;
+
     // Start is called before the first frame update
     public void Awake()
     {
@@ -77,6 +79,9 @@ public class Destructible : MonoBehaviour
         {
             explosionChain = GetComponent<ExplosionChain>();
         }
+
+        if(transform.gameObject.GetComponent<Player>() == null)
+          objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
     }
 
     public void Start()
@@ -90,11 +95,13 @@ public class Destructible : MonoBehaviour
     // Damage calculations
     public virtual void TakeDamage(float damage)
     {
-        if (damage > 0 && healthBar != null)
+        if (damage > 0)
         {
             health -= damage;
-            healthBar.SetHealth(health);
-            defenseBar.SetHealth(defense * health / maxHealth);
+            if (healthBar != null)
+                healthBar.SetHealth(health);
+            if (defenseBar != null)
+                defenseBar.SetHealth(defense * health / maxHealth);
         }
         else if (damage < 0 && defenseBar != null)
         {
@@ -150,7 +157,14 @@ public class Destructible : MonoBehaviour
         {
             ParticleSystem curExplosion = Instantiate(explosion, this.transform.position, explosion.transform.rotation) as ParticleSystem;
             var main = curExplosion.main;
+            float newSpeed = main.duration / explosionDuration;
             main.simulationSpeed = main.duration / explosionDuration;
+            ParticleSystem[] childrenParticleSytems = curExplosion.gameObject.GetComponentsInChildren<ParticleSystem>();
+            foreach (ParticleSystem child in childrenParticleSytems)
+            {
+                var childmain = child.main;
+                childmain.simulationSpeed = newSpeed;
+            }
             curExplosion.Play(true);
         }
 
@@ -172,13 +186,43 @@ public class Destructible : MonoBehaviour
         if (transform.gameObject.GetComponent<Player>() != null)
             transform.gameObject.GetComponent<Player>().Die(); //Hopefully this works
         else
+        {
+            objSys.DestroyUpdate(transform.name);
             Destroy(gameObject);
+        }
 
         yield return new WaitForEndOfFrame();
     }
 
-    // Getters and setters
-    public float getMaxHealth()
+    // Disable weapons
+    public void DisableWeapons()
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            gun.Disable();
+        }
+    }
+
+    public void EnableWeapons()
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            gun.Enable();
+        }
+    }
+    public void DisableWeaponsFor(float seconds)
+    {
+        Gun[] guns = GetComponentsInChildren<Gun>();
+        foreach (Gun gun in guns)
+        {
+            StartCoroutine(gun.DisableFor(seconds));
+        }
+    }
+
+    // Getters
+    public float GetMaxHealth()
     {
         return maxHealth;
     }

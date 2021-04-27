@@ -14,6 +14,13 @@ TagManager:
   - Ammo
   - NameText
   - Ally
+  - IntroBlackCondor
+  - Lv1BlackCondor
+  - Coin
+  - Airos
+  - Airos
+  - IntroCondor
+  - IntroAiros
   layers:
   - Default
   - TransparentFX
@@ -34,7 +41,7 @@ TagManager:
   - Screen
   - camera_target
   - Ground Enemies
-  - 
+  - Background
   - 
   - 
   - 

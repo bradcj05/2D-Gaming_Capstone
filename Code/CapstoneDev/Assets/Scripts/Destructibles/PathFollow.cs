@@ -15,6 +15,8 @@ public class PathFollow : MonoBehaviour
 
     private bool coroutineAllowed;
     protected Rigidbody2D rb;
+    protected float timer;
+    public float waitBeforeFirstPath = 0f;
 
     // Params for optional features
     public bool repeating = false;
@@ -32,8 +34,6 @@ public class PathFollow : MonoBehaviour
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
-        if (coroutineAllowed)
-            StartCoroutine(Go());
         if (rotateTowardsTarget)
             FindClosestTarget();
     }
@@ -41,6 +41,13 @@ public class PathFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Wait until WaitBeforeFirstPath before going.
+        if (timer <= waitBeforeFirstPath)
+        {
+            timer += Time.deltaTime;
+            if (timer >= waitBeforeFirstPath && coroutineAllowed)
+                StartCoroutine(Go());
+        }
         if (rotateTowardsTarget)
             FindClosestTarget();
     }

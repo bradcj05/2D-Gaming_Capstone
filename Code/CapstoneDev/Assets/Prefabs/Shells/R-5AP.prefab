@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4317993848219017597}
   - component: {fileID: 4317993848219017596}
-  - component: {fileID: 98082189393698161}
   - component: {fileID: 1092141215139076464}
   - component: {fileID: 6004406674698331662}
+  - component: {fileID: 295011350354540322}
   m_Layer: 14
   m_Name: R-5AP
   m_TagString: Bullet
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4317993848219017595}
   m_LocalRotation: {x: -0, y: -0, z: 0.0026066883, w: 0.9999966}
   m_LocalPosition: {x: -11.432491, y: 0.8846621, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.024, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -870944659
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: c2bdbf6031b23b24285c3cd24f0ef5b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d1d41e5f923b7e41be9adbc815590fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &98082189393698161
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4317993848219017595}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.005209416, y: -0.009528279}
-  m_Size: {x: 0.26853186, y: 1.0309548}
-  m_Direction: 0
 --- !u!50 &1092141215139076464
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +122,7 @@ MonoBehaviour:
   grade: 1
   category: 1
   power: 8
-  speed: 10
+  speed: 14
   penetration: 5
   deterioration: 0.15
   selfDestructTime: -1
@@ -151,3 +135,19 @@ MonoBehaviour:
   hitEffectRadius: 5
   hitEffectDuration: 0.5
   baseExplosionRadius: 3
+--- !u!70 &295011350354540322
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317993848219017595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.17, y: 40.242546}
+  m_Direction: 0

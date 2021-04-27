@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2254718535707218477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 496940327534042959}
   - {fileID: 1110199340092959051}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2cc40ed8f6d20d84b9a9480a72acbe3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  defense: 1
+  defense: 2
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
   explosion: {fileID: 1110199340092959050}
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
+  waitBeforeFirstPath: 0
   repeating: 0
   rotateTowardsTarget: 0
   targetTags: []
@@ -326,6 +327,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e248343b84b8a87469c0ee74730dfbc1,
         type: 3}
+    - target: {fileID: 7188336562652585985, guid: b3330d761d2177d4f8a48f4edcc19981,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5210876767795255145, guid: b3330d761d2177d4f8a48f4edcc19981, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b3330d761d2177d4f8a48f4edcc19981, type: 3}
@@ -575,12 +581,12 @@ PrefabInstance:
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193833, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070438452170193838, guid: 008fbdfa2e839414a9bca5f8b6168f98,
         type: 3}

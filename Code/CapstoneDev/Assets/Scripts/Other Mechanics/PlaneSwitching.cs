@@ -174,7 +174,7 @@ public class PlaneSwitching : MonoBehaviour
                 }
                 if (hb != null)
                 {
-                    hb.SetMax(plane.GetComponent<Destructible>().getMaxHealth());
+                    hb.SetMax(plane.GetComponent<Destructible>().GetMaxHealth());
                     hb.SetHealth(plane.GetComponent<Destructible>().health);
                 }
                 // Reset cooldown slider and secondary ammo text accordingly

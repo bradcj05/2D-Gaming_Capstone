@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5907139210737389098}
   - component: {fileID: 4435740476676239141}
   - component: {fileID: 7598643884521062025}
-  - component: {fileID: 6984216032046347504}
   - component: {fileID: 8272616818698846752}
   - component: {fileID: 2298680375916264419}
+  - component: {fileID: 8848672048694760822}
   m_Layer: 14
   m_Name: R-5HE
   m_TagString: Bullet
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4929854973103880808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.2, y: 0.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.03, y: 0.021, z: 1}
   m_Children:
   - {fileID: 4609741417569231895}
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -870944659
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e3448c5e3eda952469a9103f5e0e4f0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67132bcbae9694e4b93238c0c3799215, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,22 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &6984216032046347504
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929854973103880808}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0018028915, y: -0.053472996}
-  m_Size: {x: 0.28831774, y: 0.94305396}
-  m_Direction: 0
 --- !u!114 &8272616818698846752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +124,7 @@ MonoBehaviour:
   grade: 1
   category: 1
   power: 5
-  speed: 10
+  speed: 14
   penetration: 0
   deterioration: 0.1
   selfDestructTime: -1
@@ -169,12 +153,29 @@ MonoBehaviour:
   radius: 1
   effectDuration: 0.5
   effect: {fileID: 4609741417569231894}
+  startOnAwake: 0
   forceThreshold: 3000
   decentralized: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 335361
   baseExplosionRadius: 3
+--- !u!70 &8848672048694760822
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4929854973103880808}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.17, y: 40.242546}
+  m_Direction: 0
 --- !u!1001 &541572499170615230
 PrefabInstance:
   m_ObjectHideFlags: 0
