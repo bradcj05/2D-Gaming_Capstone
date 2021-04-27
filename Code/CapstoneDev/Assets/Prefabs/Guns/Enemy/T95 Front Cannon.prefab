@@ -134,7 +134,7 @@ MonoBehaviour:
   category: 0
   shellTypes:
   - {fileID: 2409501978042204487, guid: 9dc02fc6c2ca4f446b79493613d8d026, type: 3}
-  waitTime: 3
+  waitTime: 5
   spread: 2
   powerBuff: 0
   speedBuff: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   - Ally
   visibleRangeInDegrees: 90
   visibleDistance: 50
+  firingEnabled: 1
   bulletSpawns:
   - {fileID: 9021616674981390871}
   rotateSpeed: 0.75

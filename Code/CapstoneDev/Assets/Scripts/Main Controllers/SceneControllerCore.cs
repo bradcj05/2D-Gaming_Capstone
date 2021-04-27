@@ -13,7 +13,7 @@ public class SceneControllerCore : MonoBehaviour
 
     public int bossBattleId = 5;
     public float bossWait = 2f;
-    protected static int checkpointAt = 0;
+    protected static int checkpointAt = 5;
     protected ObjectivesSystem objSys;
     protected Sidebars hud;
 

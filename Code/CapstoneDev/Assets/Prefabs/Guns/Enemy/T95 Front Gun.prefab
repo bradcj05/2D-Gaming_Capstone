@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4457251774449708561}
   - component: {fileID: 6589167093914398082}
   - component: {fileID: 1876282610473011796}
-  - component: {fileID: 8723091218629376036}
   - component: {fileID: 4995915486890172902}
   - component: {fileID: 1597955037950957829}
+  - component: {fileID: 8356232879741624179}
   m_Layer: 10
   m_Name: T95 Front Gun
   m_TagString: Enemy
@@ -117,44 +117,6 @@ MonoBehaviour:
   collidableTags:
   - Ally
   mass: 9
---- !u!114 &8723091218629376036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605811123807095781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db582c1e28e26f74e9094c3f6a89c2f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  grade: 2
-  category: 0
-  shellTypes:
-  - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
-  waitTime: 0.2
-  spread: 2
-  powerBuff: 0.7
-  speedBuff: 0.5
-  recoilForce: 0
-  ammo: -1
-  shootWhenNotMoving: 0
-  movementEpsilon: 0.3
-  shootWhenTargetVisible: 1
-  targetTags:
-  - ActivePlayer
-  - Ally
-  visibleRangeInDegrees: 90
-  visibleDistance: 50
-  bulletSpawns:
-  - {fileID: 4886213803243984580}
-  rotateSpeed: 1
-  limitRotation: 1
-  limitRotationCW: 15
-  limitRotationCCW: 115
-  target: {fileID: 0}
 --- !u!50 &4995915486890172902
 Rigidbody2D:
   serializedVersion: 4
@@ -209,6 +171,47 @@ PolygonCollider2D:
       - {x: 0.04930192, y: -0.079022676}
       - {x: 0.079301916, y: -0.059022672}
       - {x: 0.079301916, y: 0.17097732}
+--- !u!114 &8356232879741624179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605811123807095781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15eacb34ed8912b42b45bf0097fdbd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  grade: 2
+  category: 0
+  shellTypes:
+  - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
+  waitTime: 1.5
+  spread: 2
+  powerBuff: 0.7
+  speedBuff: 0.5
+  recoilForce: 0
+  ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 1
+  targetTags:
+  - ActivePlayer
+  - Ally
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
+  firingEnabled: 1
+  bulletSpawns:
+  - {fileID: 4886213803243984580}
+  rotateSpeed: 1
+  limitRotation: 1
+  limitRotationCW: 15
+  limitRotationCCW: 115
+  target: {fileID: 0}
+  timeBetweenShots: 0.2
+  burstLength: 5
 --- !u!1 &6304306006040541740
 GameObject:
   m_ObjectHideFlags: 0
