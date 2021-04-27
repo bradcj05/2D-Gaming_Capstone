@@ -34,12 +34,12 @@ public class Sidebars : MonoBehaviour
 
      public Sprite laserSprite;
      public Image[] highlights;
-     int current = -1;
+     int current = 0;
      int activeWeapon = -1;
      public Text activeShell;
 
      // Start is called before the first frame update
-     void Start()
+     void Awake()
      {
           //Find the initial plane
           currentPlaneName.text = PlaneSwitching.squadArr[0].name;
@@ -591,7 +591,7 @@ public class Sidebars : MonoBehaviour
      {
           if (PlaneSwitching.squadArr[current].transform.GetComponent<Player>().numberOfSecondaryWeapons > 0)
           {
-               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.GetChildCount(); i++)
+               for (int i = 0; i < PlaneSwitching.squadArr[current].transform.GetChildCount() - 1; i++)
                {
                     Debug.Log("Checking for shells");
                     if (PlaneSwitching.squadArr[current].transform.GetChild(i).GetChild(0).GetComponent("PlayerAsynchronousLauncher")
@@ -617,6 +617,6 @@ public class Sidebars : MonoBehaviour
 
      public void Reset()
      {
-          this.Start();
+          this.Awake();
      }
 }

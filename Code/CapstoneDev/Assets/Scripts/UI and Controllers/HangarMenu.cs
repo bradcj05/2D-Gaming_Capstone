@@ -965,6 +965,12 @@ public class HangarMenu : MonoBehaviour
             return;
         }
 
+        if (ammoArmory.activeSelf)
+        {
+               Debug.Log("Please select your shell type before entering the next mission.");
+               return;
+        }
+
         for (int p = 0; p < selectionIndex; p++)
         {
             switch (p)
