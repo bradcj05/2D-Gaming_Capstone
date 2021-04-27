@@ -15,6 +15,7 @@ public class CutsceneController : MonoBehaviour
     bool airosIntroActivated = false;
     bool condorFled = false;
     bool airosArrived = false;
+    bool introStarted = false;
     public float timeforintro = 10;
     public float timefortutorial = 15;
     public GameObject Scene1Airos;
@@ -30,13 +31,18 @@ public class CutsceneController : MonoBehaviour
         sceneControl = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
         cutsceneAnimator = gameObject.GetComponent<Animator>();
         player = GameObject.FindWithTag("ActivePlayer");
-        if(introNeeded) player.GetComponent<Player>().SeizeMovement();
         timestart = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        progression = sceneControl.GetPhase();
+        if (introNeeded && progression == 0 && introStarted == false)
+        {
+            player.GetComponent<Player>().SeizeMovement();
+            introStarted = true;
+        }
         timepassed = Time.time;
         isTutorialObjectiveDone = gameObject.GetComponent<Tutorial>().ObjectivesDone();
         if (timepassed - timestart > timeforintro && introNeeded)
@@ -55,7 +61,7 @@ public class CutsceneController : MonoBehaviour
         //if (player.GetComponent<Animator>().GetBool("introcomplete")) EndTutorial();
 
         //Cutscene checks
-        progression = sceneControl.ReturnProgress();
+        
         if(GameObject.FindWithTag("IntroCondor") != null && !condorIntroComplete)
         {
             StartCondorCutscene();
