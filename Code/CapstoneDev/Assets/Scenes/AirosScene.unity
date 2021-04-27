@@ -32923,6 +32923,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2778283043189643982, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.x
+      value: 1.3417946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043189643982, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.y
+      value: 0.76862663
+      objectReference: {fileID: 0}
     - target: {fileID: 2778283043191997212, guid: ce342d94582e424428f116f267d05a3e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -32943,6 +32953,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2778283043351264951, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.x
+      value: -1.2947754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043351264951, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.y
+      value: 0.73570335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043351264951, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_AngularOffset
+      value: 5.6723204
+      objectReference: {fileID: 0}
     - target: {fileID: 2778283043514081498, guid: ce342d94582e424428f116f267d05a3e,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -32958,6 +32983,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2778283043601273343, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.x
+      value: 1.9230912
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043601273343, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.y
+      value: 1.098346
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043601273343, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_AngularOffset
+      value: 3.1615248
+      objectReference: {fileID: 0}
     - target: {fileID: 2778283043626452593, guid: ce342d94582e424428f116f267d05a3e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -32972,6 +33012,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043811754345, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.x
+      value: -2.0100436
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043811754345, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_LinearOffset.y
+      value: 1.0157433
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778283043811754345, guid: ce342d94582e424428f116f267d05a3e,
+        type: 3}
+      propertyPath: m_AngularOffset
+      value: 3.1615248
       objectReference: {fileID: 0}
     - target: {fileID: 2778283043811754351, guid: ce342d94582e424428f116f267d05a3e,
         type: 3}
@@ -55768,7 +55823,7 @@ MonoBehaviour:
   waveArray:
   - destructibleSpawnArray:
     - {fileID: 1819682557}
-    timer: 0
+    timer: 2
     waveLength: 0
 --- !u!1 &1780593433
 GameObject:

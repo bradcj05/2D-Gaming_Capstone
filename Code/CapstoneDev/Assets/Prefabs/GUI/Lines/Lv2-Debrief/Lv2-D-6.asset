@@ -15,4 +15,4 @@ MonoBehaviour:
   textLine: <color=lime><b>Commander:</b></color> We don't expect any fight to happen
     during the meeting, but we got you something with homing missiles just in case.
   sprite: {fileID: 21300000, guid: e30878c3564b3234f97562685947d9f4, type: 3}
-  time: 23
+  time: 24

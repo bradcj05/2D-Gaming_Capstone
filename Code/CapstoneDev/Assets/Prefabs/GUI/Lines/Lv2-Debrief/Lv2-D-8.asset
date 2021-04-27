@@ -15,4 +15,4 @@ MonoBehaviour:
   textLine: <color=purple><b>Lynch:</b></color> I already have a bad feeling about
     this...
   sprite: {fileID: 21300000, guid: 35853b8d9841e8e44bf797556e4f3e02, type: 3}
-  time: 32
+  time: 33
