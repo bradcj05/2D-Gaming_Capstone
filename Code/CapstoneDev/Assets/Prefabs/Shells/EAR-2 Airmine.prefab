@@ -79,9 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 15
-  radius: 7.5
+  radius: 7
   effectDuration: 0.3
   effect: {fileID: 7967721097159222216}
+  startOnAwake: 0
   forceThreshold: 3000
   decentralized: 1
   layerMask:

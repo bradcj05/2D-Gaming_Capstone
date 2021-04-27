@@ -30,7 +30,14 @@ public class CutsceneController : MonoBehaviour
         sceneControl = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
         cutsceneAnimator = gameObject.GetComponent<Animator>();
         player = GameObject.FindWithTag("ActivePlayer");
-        if(introNeeded && sceneControl.GetPhase() == 0) player.GetComponent<Player>().SeizeMovement();
+        if (introNeeded && sceneControl.GetPhase() == 0)
+        {
+            player.GetComponent<Player>().SeizeMovement();
+        }
+        else
+        {
+            player.GetComponent<Player>().ReleaseMovement();
+        }
         timestart = Time.time;
     }
 
