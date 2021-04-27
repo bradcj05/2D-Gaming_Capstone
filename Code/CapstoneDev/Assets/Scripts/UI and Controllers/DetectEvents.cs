@@ -48,6 +48,8 @@ public class DetectEvents : MonoBehaviour
             if (levelEndTimer >= levelEndTime)
             {
                 Debug.Log("boss is dead");
+                    Progression.progress[SceneTransition.upcomingScene - 2] = true; //Upcoming scene still represents the current level
+                    SceneTransition.upcomingScene++; //Update upcomingscene to represent the next level
                 SceneManager.LoadScene("Hangar");
 
                 if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
