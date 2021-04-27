@@ -5263,7 +5263,7 @@ PrefabInstance:
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
       propertyPath: devMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4427152316762893356, guid: 620f5d37d30baab449af0727a80947d8,
         type: 3}
@@ -28023,7 +28023,7 @@ MonoBehaviour:
   - {fileID: 1591562456}
   - {fileID: 972215672}
   speed: 0
-  P3_speed: 0.09
+  P3_speed: 0.087
   P4_speed: 0.05
   P4_speed_2: 0.088
   timer: 0
