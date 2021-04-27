@@ -20,6 +20,7 @@ TagManager:
   - Airos
   - Airos
   - IntroCondor
+  - IntroAiros
   layers:
   - Default
   - TransparentFX
