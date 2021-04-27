@@ -3,39 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class Scene2Controller : MonoBehaviour
+public class Scene2Controller : SceneControllerCore
 {
-    public Battle[] battles;
-
-    public AudioSource levelMusic;
-    public AudioSource bossMusic;
-
-    public int bossBattleId = 0;
-    public float bossWait = 2f;
-    protected static int checkpointAt = 0;
-    ObjectivesSystem objSys;
-    Sidebars hud;
-
-    // For music
-    public AudioMixer mixer;
-
     // Start is called before the first frame update
-    void Start()
+    new void Start()
     {
-        objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
-        hud = GameObject.Find("HUD").GetComponent<Sidebars>();
-        mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
+        base.Start();
         StartCoroutine(BattleController());
-        ResetCheckpoints();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     // Time-based enemy spawner
-    IEnumerator BattleController()
+    new IEnumerator BattleController()
     {
         // Start battle with checkpoint if there's a checkpoint reached.
         for (int i = checkpointAt; i < battles.Length; i++)
@@ -91,51 +69,6 @@ public class Scene2Controller : MonoBehaviour
                     ResetCheckpoints();
                     break;
             }
-        }
-    }
-
-    public int GetPhase()
-    {
-        return checkpointAt;
-    }
-
-    public static void ResetCheckpoints()
-    {
-        checkpointAt = 0;
-    }
-    public int ReturnProgress()
-    {
-        return checkpointAt;
-    }
-
-    public float GetLevelVolumeLinear()
-    {
-        float value, temp;
-        bool result = mixer.GetFloat("levelVolume", out value);
-        bool result2 = mixer.GetFloat("volume", out temp);
-        if (result)
-        {
-            Debug.Log("Master Volume: " + temp);
-            Debug.Log("Level Volume: " + value);
-            return Mathf.Pow(10f, value / 20f);
-        }
-        else
-        {
-            return 0f;
-        }
-    }
-
-    public float GetBossVolumeLinear()
-    {
-        float value;
-        bool result = mixer.GetFloat("bossVolume", out value);
-        if (result)
-        {
-            return Mathf.Pow(10f, value / 20f);
-        }
-        else
-        {
-            return 0f;
         }
     }
 }

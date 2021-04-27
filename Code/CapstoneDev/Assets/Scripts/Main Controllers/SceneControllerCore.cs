@@ -4,16 +4,38 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class Scene1Controller : SceneControllerCore
+public class SceneControllerCore : MonoBehaviour
 {
-    new void Start()
+    public Battle[] battles;
+
+    public AudioSource levelMusic;
+    public AudioSource bossMusic;
+
+    public int bossBattleId = 5;
+    public float bossWait = 2f;
+    protected static int checkpointAt = 0;
+    protected ObjectivesSystem objSys;
+    protected Sidebars hud;
+
+    // For music
+    public AudioMixer mixer;
+
+    // Start is called before the first frame update
+    protected void Start()
     {
-        base.Start();
-        StartCoroutine(BattleController());
+        objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        hud = GameObject.Find("HUD").GetComponent<Sidebars>();
+        mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
+        ResetCheckpoints();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
     }
 
     // Time-based enemy spawner
-    new IEnumerator BattleController()
+    protected IEnumerator BattleController()
     {
         // Start battle with checkpoint if there's a checkpoint reached.
         for (int i = checkpointAt; i < battles.Length; i++)
@@ -56,45 +78,51 @@ public class Scene1Controller : SceneControllerCore
                 objSys.CheckpointUpdate();
                 Debug.Log("Current Phase: " + checkpointAt);
             }
+        }
+    }
 
-            // Change phase text & objectives based on phase
-            switch (i)
-            {
-                case 0: // Intro pre-tutorial
-                    hud.SetPhaseText("Phase 0/4");
-                    objSys.ActivateObjectives(i, -1);
-                    break;
-                case 1: // Intro post-tutorial
-                    break;
-                case 2: // Phase 1
-                    hud.SetPhaseText("Phase 1/4");
-                    objSys.ActivateObjectives(i - 1, -1);
-                    break;
-                case 3: // Phase 2
-                    hud.SetPhaseText("Phase 2/4");
-                    objSys.CompleteAutomatic(i - 2, -1);
-                    objSys.ActivateObjectives(i - 1, -1);
-                    break;
-                case 4: // Phase 3
-                    hud.SetPhaseText("Phase 3/4");
-                    objSys.CompleteAutomatic(i - 2, -1);
-                    objSys.ActivateObjectives(i - 1, -1);
-                    break;
-                case 5: // Phase 4
-                    hud.SetPhaseText("Phase 4/4");
-                    objSys.ActivateObjectives(3, -1);
-                    break;
-                case 6: // Boss
-                    hud.SetPhaseText("BOSS");
-                    objSys.CompleteAutomatic(3, -1);
-                    objSys.ActivateObjectives(4, -1);
-                    break;
-                default:
-                    Debug.Log("Error evaluating current phase. Resetting level.");
-                    ResetCheckpoints();
-                    break;
-            }
+    public int GetPhase()
+    {
+        return checkpointAt;
+    }
 
+    public static void ResetCheckpoints()
+    {
+        checkpointAt = 0;
+    }
+    public int ReturnProgress()
+    {
+        return checkpointAt;
+    }
+
+    public float GetLevelVolumeLinear()
+    {
+        float value, temp;
+        bool result = mixer.GetFloat("levelVolume", out value);
+        bool result2 = mixer.GetFloat("volume", out temp);
+        if (result)
+        {
+            Debug.Log("Master Volume: " + temp);
+            Debug.Log("Level Volume: " + value);
+            return Mathf.Pow(10f, value / 20f);
+        }
+        else
+        {
+            return 0f;
+        }
+    }
+
+    public float GetBossVolumeLinear()
+    {
+        float value;
+        bool result = mixer.GetFloat("bossVolume", out value);
+        if (result)
+        {
+            return Mathf.Pow(10f, value / 20f);
+        }
+        else
+        {
+            return 0f;
         }
     }
 }
