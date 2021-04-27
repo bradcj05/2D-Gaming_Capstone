@@ -1429,6 +1429,7 @@ MonoBehaviour:
   - {fileID: 8412037838260233579}
   - {fileID: 3694135297260224217}
   - {fileID: 1785466711317718506}
+  activeShell: {fileID: 1336370807205541130}
   phaseText: {fileID: 8487622590026577414}
 --- !u!114 &7380373120754542544
 MonoBehaviour:
@@ -3869,7 +3870,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6858891574081433473
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4218,7 +4219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4656022212750046505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4828,7 +4829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2491816672982799538
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5130,7 +5131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5873792035547403879
 RectTransform:
   m_ObjectHideFlags: 0

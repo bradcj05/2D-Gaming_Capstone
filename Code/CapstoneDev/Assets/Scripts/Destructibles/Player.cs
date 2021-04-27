@@ -51,7 +51,7 @@ public class Player : Destructible
         {
             //Debug.Log("Start assigning values for the player");
             // Initialize HUD components
-            //  HUD = GameObject.Find("HUD").GetComponent<Transform>();
+            HUD = GameObject.Find("HUD").GetComponent<Transform>();
             cam = Camera.main;
             healthBar = FindTag("HealthBar").GetComponent<HealthBar>();
             defenseBar = FindTag("DefenseBar").GetComponent<HealthBar>();
