@@ -90,10 +90,6 @@ public class SceneControllerCore : MonoBehaviour
     {
         checkpointAt = 0;
     }
-    public int ReturnProgress()
-    {
-        return checkpointAt;
-    }
 
     public float GetLevelVolumeLinear()
     {

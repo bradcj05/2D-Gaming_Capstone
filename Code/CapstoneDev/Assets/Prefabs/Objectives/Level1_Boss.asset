@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   status: 0
-  description: Take down the flaming red hawk
+  description: Take down the flaming red hawk!
   target: {fileID: 2447495243558342190, guid: e16174609714ee542aa2a44458941801, type: 3}
   reward: 100
-  requiredAmount: 1
+  requiredAmount: 0

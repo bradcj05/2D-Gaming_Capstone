@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   status: 0
-  description: Bankrupt the oil magnate
+  description: Bankrupt the oil magnate!
   target: {fileID: 3386375878303789754, guid: 550a367e5b690b84995a937792877d74, type: 3}
   reward: 200
-  requiredAmount: 1
+  requiredAmount: 0
