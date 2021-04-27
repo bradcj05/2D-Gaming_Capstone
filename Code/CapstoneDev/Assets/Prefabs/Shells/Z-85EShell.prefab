@@ -170,7 +170,8 @@ MonoBehaviour:
   radius: 15
   effectDuration: 0.5
   effect: {fileID: 640691860937166766}
-  forceThreshold: 3000
+  startOnAwake: 0
+  forceThreshold: 2000
   decentralized: 0
   layerMask:
     serializedVersion: 2

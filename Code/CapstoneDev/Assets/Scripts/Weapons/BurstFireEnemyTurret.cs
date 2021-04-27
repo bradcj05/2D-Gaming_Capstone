@@ -9,7 +9,12 @@ public class BurstFireEnemyTurret : EnemyTurret
     public float timeBetweenShots;
     public float burstLength;
     protected float subTimer = 0;
-    protected bool activated = false;
+    protected bool activated = true;
+    public new void Start()
+    {
+        base.Start();
+        timer = -burstLength;
+    }
 
     public new void Update()
     {
@@ -19,6 +24,12 @@ public class BurstFireEnemyTurret : EnemyTurret
         // Update timers
         timer += Time.deltaTime;
         subTimer += Time.deltaTime;
+
+        // Deactivate firing once burstLength is reached
+        if (timer >= 0 && activated)
+        {
+            activated = false;
+        }
 
         // Once reload time is reached, activate firing
         if (timer >= waitTime &&
@@ -34,12 +45,6 @@ public class BurstFireEnemyTurret : EnemyTurret
         {
             Fire();
             subTimer = 0;
-        }
-
-        // Deactivate firing once burstLength is reached
-        if (timer >= 0 && activated)
-        {
-            activated = false;
         }
     }
 }

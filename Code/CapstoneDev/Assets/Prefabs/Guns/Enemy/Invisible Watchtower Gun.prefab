@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265780467335768082}
-  - component: {fileID: 3072790429775563268}
+  - component: {fileID: -6439212359257919962}
   m_Layer: 0
   m_Name: Invisible Watchtower Gun
   m_TagString: Untagged
@@ -62,7 +62,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3072790429775563268
+--- !u!114 &-6439212359257919962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8053452231511872386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db582c1e28e26f74e9094c3f6a89c2f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 15eacb34ed8912b42b45bf0097fdbd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   category: 0
   shellTypes:
   - {fileID: 8977783968469312899, guid: 9edde317f17980d4281681d8437e91b9, type: 3}
-  waitTime: 0.15
+  waitTime: 1
   spread: 5
   powerBuff: 0.5
   speedBuff: 0.3
@@ -88,11 +88,10 @@ MonoBehaviour:
   shootWhenNotMoving: 0
   movementEpsilon: 0.3
   shootWhenTargetVisible: 1
-  targetTags:
-  - ActivePlayer
-  - Ally
+  targetTags: []
   visibleRangeInDegrees: 45
   visibleDistance: 50
+  firingEnabled: 1
   bulletSpawns:
   - {fileID: 3175779758099249451}
   rotateSpeed: 1
@@ -100,3 +99,5 @@ MonoBehaviour:
   limitRotationCW: 75
   limitRotationCCW: 75
   target: {fileID: 0}
+  timeBetweenShots: 0.15
+  burstLength: 3
