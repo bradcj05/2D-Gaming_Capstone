@@ -2730,6 +2730,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: IntroBlackCondor
       objectReference: {fileID: 0}
+    - target: {fileID: 6911922766212657146, guid: 400cf9b47506195409de47707e46e1d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7048848388046712208, guid: 400cf9b47506195409de47707e46e1d1,
         type: 3}
       propertyPath: m_Enabled
@@ -57282,6 +57287,7 @@ MonoBehaviour:
   introNeeded: 1
   timeforintro: 10
   timefortutorial: 10
+  timeforEucalypso: 6
   Scene1Airos: {fileID: 538547675185787082}
   Scene1BlackCondor: {fileID: 909805462}
 --- !u!4 &1823973385

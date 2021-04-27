@@ -26,7 +26,6 @@ public class SceneControllerCore : MonoBehaviour
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
         hud = GameObject.Find("HUD").GetComponent<Sidebars>();
         mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
-        ResetCheckpoints();
     }
 
     // Update is called once per frame
