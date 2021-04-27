@@ -19,6 +19,7 @@ public class CutsceneController : MonoBehaviour
     public float timeforintro = 10;
     public float timefortutorial = 15;
     public float timeforEucalypso = 6;
+    public float timeforAiros = 10;
     public GameObject Scene1Airos;
     GameObject sceneCondor;
     public GameObject Scene1BlackCondor;
@@ -27,32 +28,39 @@ public class CutsceneController : MonoBehaviour
     Animator condorMove;
     float timestart, timepassed;
     float timeEucalypsoAttack = -1;
+    float timeAirosIntro = -1;
     // Start is called before the first frame update
     void Start()
     {
         sceneControl = GameObject.Find("SceneController").GetComponent<Scene1Controller>();
         cutsceneAnimator = gameObject.GetComponent<Animator>();
+        player = GameObject.FindWithTag("ActivePlayer");
         timestart = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timepassed = Time.time;
         player = GameObject.FindWithTag("ActivePlayer");
         progression = sceneControl.GetPhase();
+
         if (progression > 0 && GameObject.FindWithTag("IntroBlackCondor") != null) GameObject.FindWithTag("IntroBlackCondor").SetActive(false);
+
         if (introNeeded && progression == 0 && !introStarted)
         {
             player.GetComponent<Player>().SeizeMovement();
             introStarted = true;
         }
-        timepassed = Time.time;
+        
         isTutorialObjectiveDone = gameObject.GetComponent<Tutorial>().ObjectivesDone();
+
         if (timepassed - timestart > timeforintro && introNeeded)
         {
-            player.GetComponent<Player>().ReleaseMovement();
+            if (player != null) player.GetComponent<Player>().ReleaseMovement();
             if (isTutorialObjectiveDone && !tutorialActivated) StartTutorial();
         }
+
         if (timepassed - timestart > timefortutorial + timeforintro && tutorialActivated && introNeeded)
         {
             tutorialComplete = true;
@@ -69,20 +77,26 @@ public class CutsceneController : MonoBehaviour
         {
             StartCondorCutscene();
         }
+
         if(GameObject.FindWithTag("Lv1BlackCondor") != null && !condorFled)
         {
             StartCondorFlees();
         }
+
         if(timeEucalypsoAttack != -1 && timepassed - timeEucalypsoAttack > timeforEucalypso)
         {
             player.GetComponent<Player>().ReleaseMovement();
         }
+
         if(GameObject.FindWithTag("Airos") != null && !airosArrived)
         {
             StartAirosCutscene();
         }
 
-
+        if(timeAirosIntro != -1 && timepassed - timeAirosIntro > timeforAiros && GameObject.FindWithTag("IntroAiros") != null)
+        {
+            GameObject.FindWithTag("IntroAiros").SetActive(false);
+        }
     }
 
     void StartTutorial()
@@ -101,9 +115,11 @@ public class CutsceneController : MonoBehaviour
     void StartAirosCutscene()
     {
         //Scene1Airos = GameObject.Find("Airos");
-        airosMove = Scene1Airos.GetComponent<Animator>();
+        //airosMove = Scene1Airos.GetComponent<Animator>();
+        airosMove = GameObject.FindWithTag("IntroAiros").GetComponent<Animator>();
         airosMove.SetBool("playIntro", true);
         airosArrived = true;
+        timeAirosIntro = Time.time;
     }
 
     void StartCondorCutscene()
