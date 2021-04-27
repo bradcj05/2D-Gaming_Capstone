@@ -9,10 +9,10 @@ public class LevelSelect : MonoBehaviour
 {
     public void AirosStart()
     {
+          SceneTransition.upcomingScene = 2;
           //If Airos has already been beaten before, allow the player to go to the Hangar
           if (Progression.progress[0] == true)
           {
-               SceneTransition.upcomingScene = 2;
                SceneManager.LoadScene("Hangar");
           }
           else
