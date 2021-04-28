@@ -52,7 +52,7 @@ public class DetectEvents : MonoBehaviour
                 SceneControllerCore.ResetCheckpoints(); // Reset checkpoints of current level so next time level starts at beginning
                  
                 //Clear the squadron
-                for (int i = player.transform.GetChildCount(); i > 0; i--)
+                for (int i = player.transform.childCount; i > 0; i--)
                 {
                      Destroy(player.transform.GetChild(i - 1).gameObject);
                 }
