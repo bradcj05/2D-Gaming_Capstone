@@ -49,9 +49,25 @@ public class DetectEvents : MonoBehaviour
             {
                 Debug.Log("boss is dead");
                 Progression.progress[SceneTransition.upcomingScene - 2] = true; //Upcoming scene still represents the current level
-                SceneTransition.upcomingScene++; //Update upcomingscene to represent the next level
                 SceneControllerCore.ResetCheckpoints(); // Reset checkpoints of current level so next time level starts at beginning
-                SceneManager.LoadScene("Hangar");
+                 
+                //Clear the squadron
+                for (int i = player.transform.GetChildCount(); i > 0; i--)
+                {
+                     Destroy(player.transform.GetChild(i - 1).gameObject);
+                }
+
+                if (SceneTransition.upcomingScene < 3)
+                { 
+                     player.SetActive(false);
+                     SceneTransition.upcomingScene++; //Update upcomingscene to represent the next level
+                     SceneManager.LoadScene("Hangar");
+                }
+                else
+                {
+                     Destroy(player);
+                     SceneManager.LoadScene(0);
+                }
 
                 if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
                 {

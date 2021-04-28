@@ -21,6 +21,7 @@ public class LevelSelect : MonoBehaviour
     public void TerrodStart()
     {
         SceneTransition.upcomingScene = 3;
+          Scene2Controller.ResetCheckpoints();
         SceneManager.LoadScene("Hangar");
     }
 
