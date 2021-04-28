@@ -22,7 +22,7 @@ public class Narration : MonoBehaviour
     {
         timer = 0;
         priorityTimer = 0;
-        currentSet = startSet;
+        if(currentSet == null) currentSet = startSet;
         currentPriority = currentSet.priority;
         currentLine = 0;
         priorityLine = 0;
