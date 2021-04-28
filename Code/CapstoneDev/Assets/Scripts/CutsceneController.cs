@@ -83,7 +83,7 @@ public class CutsceneController : MonoBehaviour
             StartCondorFlees();
         }
 
-        if(timeEucalypsoAttack != -1 && timepassed - timeEucalypsoAttack > timeforEucalypso)
+        if(timeEucalypsoAttack != -1 && timepassed - timeEucalypsoAttack > timeforEucalypso && player != null)
         {
             player.GetComponent<Player>().ReleaseMovement();
         }
