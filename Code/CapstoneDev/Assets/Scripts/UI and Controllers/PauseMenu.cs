@@ -50,6 +50,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         // Reset checkpoints of every scene
         ResetCheckpoints();
+
+        //Remove squadron
+        GameObject player = GameObject.Find("Squadron");
+        Destroy(player);
+
         SceneManager.LoadScene("RickysMainMenu");
     }
 
