@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-     public static int upcomingScene;
+     public static int upcomingScene = 2;
      public static GameObject squadron;
      public GameObject squad;
 
