@@ -47,7 +47,7 @@ public class CutsceneController : MonoBehaviour
 
         if (progression > 0 && GameObject.FindWithTag("IntroBlackCondor") != null) GameObject.FindWithTag("IntroBlackCondor").SetActive(false);
 
-        if (introNeeded && progression == 0 && !introStarted)
+        if (introNeeded && progression == 0 && !introStarted && player != null)
         {
             player.GetComponent<Player>().SeizeMovement();
             introStarted = true;

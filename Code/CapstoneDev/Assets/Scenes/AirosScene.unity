@@ -983,6 +983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watchtower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -22850,6 +22855,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watchtower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -25055,6 +25065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Watchtower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
@@ -42768,6 +42783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watchtower
       objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -60362,6 +60382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watchtower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -64965,6 +64990,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Watchtower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689877504515149904, guid: 660bd5187eb5c764493cc4f0606381f9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8221624734690297387, guid: 660bd5187eb5c764493cc4f0606381f9,
         type: 3}
