@@ -286,7 +286,7 @@ MonoBehaviour:
   right: 0
   up: 0
   down: 0
-  devMode: 0
+  devModeUnlocked: 1
 --- !u!114 &8230454820417957061
 MonoBehaviour:
   m_ObjectHideFlags: 0

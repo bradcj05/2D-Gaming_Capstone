@@ -48,7 +48,7 @@ public class PlayerGunFire : Gun
         if ((Input.GetButton("Fire1") || auto) && timer >= waitTime && SceneManager.GetActiveScene().name != "Hangar")
         {
             // DEV MODE - Set power to 9999, fire, then reset
-            if (player.devMode && Input.GetKey(KeyCode.V))
+            if (player.IsDevMode())
             {
                 dev = true;
                 Fire(shellTypes[activeType]);

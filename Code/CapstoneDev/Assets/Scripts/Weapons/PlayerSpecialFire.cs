@@ -19,7 +19,7 @@ public class PlayerSpecialFire : SecondaryWeapon
     {
         base.Update();
         // DEV MODE - Set power to 9999, fire, then reset
-        if (player.devMode && Input.GetKey(KeyCode.V))
+        if (player.IsDevMode())
         {
             dev = true;
             Fire();
