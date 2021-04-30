@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Level1_Phase3+4
   m_EditorClassIdentifier: 
   type: 2
-  status: 3
+  status: 0
   description: Jam the towers
   target: {fileID: 0}
   reward: 0
   requiredAmount: 7
+  currentAmount: 6

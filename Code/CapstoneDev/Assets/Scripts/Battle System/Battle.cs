@@ -34,6 +34,7 @@ public class Battle : MonoBehaviour
     [SerializeField] private Wave[] waveArray;
 
     private State state;
+     public GameObject gameOverScreen;
 
     protected void Awake()
     {
@@ -62,13 +63,16 @@ public class Battle : MonoBehaviour
 
     public void StartBattle()
     {
-        Debug.Log("StartBattle");
-        state = State.Active;
-        // Start narration
-        GameObject HUD = GameObject.Find("HUD");
-        HUD.GetComponent<Narration>().ChangeLineSet(narrationLineSet);
-        // Stock event listener
-        OnBattleStarted?.Invoke(this, EventArgs.Empty);
+          if (!gameOverScreen.activeSelf)
+          {
+               Debug.Log("StartBattle");
+               state = State.Active;
+               // Start narration
+               GameObject HUD = GameObject.Find("HUD");
+               HUD.GetComponent<Narration>().ChangeLineSet(narrationLineSet);
+               // Stock event listener
+               OnBattleStarted?.Invoke(this, EventArgs.Empty);
+          }
     }
 
     protected void Update()

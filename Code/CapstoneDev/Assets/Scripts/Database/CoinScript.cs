@@ -12,6 +12,7 @@ public class CoinScript : MonoBehaviour
           objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
      }
 
+     //Allow the player to collect the coins
     void OnTriggerEnter2D(Collider2D collision) {
           if(collision.tag == "ActivePlayer")
           {
