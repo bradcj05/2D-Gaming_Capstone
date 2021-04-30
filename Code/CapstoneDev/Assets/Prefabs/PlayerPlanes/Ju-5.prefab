@@ -131,7 +131,7 @@ MonoBehaviour:
   right: 0
   up: 0
   down: 0
-  devModeUnlocked: 1
+  devModeUnlocked: 0
 --- !u!50 &4858288967080734106
 Rigidbody2D:
   serializedVersion: 4

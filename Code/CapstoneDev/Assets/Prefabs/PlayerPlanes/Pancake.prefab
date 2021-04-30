@@ -149,7 +149,7 @@ MonoBehaviour:
   right: 0
   up: 0
   down: 0
-  devModeUnlocked: 1
+  devModeUnlocked: 0
 --- !u!60 &989908066360215635
 PolygonCollider2D:
   m_ObjectHideFlags: 0
