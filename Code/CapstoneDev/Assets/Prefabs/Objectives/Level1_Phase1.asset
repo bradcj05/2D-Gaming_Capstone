@@ -18,3 +18,4 @@ MonoBehaviour:
   target: {fileID: 0}
   reward: 0
   requiredAmount: 0
+  currentAmount: 3

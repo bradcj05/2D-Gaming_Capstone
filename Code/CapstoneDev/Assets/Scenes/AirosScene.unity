@@ -3111,6 +3111,7 @@ MonoBehaviour:
     - {fileID: 1259913596}
     timer: 59
     waveLength: 11
+  gameOverScreen: {fileID: 305222081}
 --- !u!4 &87190906
 Transform:
   m_ObjectHideFlags: 0
@@ -14137,6 +14138,7 @@ MonoBehaviour:
     - {fileID: 30265212}
     timer: 64
     waveLength: 10
+  gameOverScreen: {fileID: 305222081}
 --- !u!1 &449323716
 GameObject:
   m_ObjectHideFlags: 0
@@ -15911,6 +15913,7 @@ MonoBehaviour:
     - {fileID: 1660268001}
     timer: 10
     waveLength: 30
+  gameOverScreen: {fileID: 305222081}
 --- !u!1 &499909484
 GameObject:
   m_ObjectHideFlags: 0
@@ -38477,6 +38480,7 @@ MonoBehaviour:
     - {fileID: 883242373}
     timer: 10
     waveLength: 0
+  gameOverScreen: {fileID: 305222081}
 --- !u!4 &1234610609
 Transform:
   m_ObjectHideFlags: 0
@@ -47808,12 +47812,12 @@ PrefabInstance:
     - target: {fileID: 1689283356198551242, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -659.3401
+      value: -428
       objectReference: {fileID: 0}
     - target: {fileID: 1689283356198551242, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 161.97021
+      value: 104.32
       objectReference: {fileID: 0}
     - target: {fileID: 1689283356198551242, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -47838,7 +47842,7 @@ PrefabInstance:
     - target: {fileID: 1689283356198551242, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 232.3999
+      value: 116.41968
       objectReference: {fileID: 0}
     - target: {fileID: 1689283356198551242, guid: 56a2cc2025bb0994f968ec947111166a,
         type: 3}
@@ -53848,6 +53852,7 @@ MonoBehaviour:
     - {fileID: 332470903}
     timer: 56
     waveLength: 7.5
+  gameOverScreen: {fileID: 305222081}
 --- !u!1 &1691556617
 GameObject:
   m_ObjectHideFlags: 0
@@ -56072,6 +56077,7 @@ MonoBehaviour:
     - {fileID: 1819682557}
     timer: 2
     waveLength: 0
+  gameOverScreen: {fileID: 0}
 --- !u!1 &1780593433
 GameObject:
   m_ObjectHideFlags: 0
@@ -61372,6 +61378,7 @@ MonoBehaviour:
     - {fileID: 842636163}
     timer: 65
     waveLength: 0
+  gameOverScreen: {fileID: 305222081}
 --- !u!1 &1942649639
 GameObject:
   m_ObjectHideFlags: 0
@@ -66137,6 +66144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedPlane: 0
   switchTimer: 5
+  defaultSquad: 1
 --- !u!4 &2116028204
 Transform:
   m_ObjectHideFlags: 0

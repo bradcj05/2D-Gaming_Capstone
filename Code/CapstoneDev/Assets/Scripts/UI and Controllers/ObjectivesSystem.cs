@@ -12,6 +12,7 @@ public class ObjectivesSystem : MonoBehaviour
      {
           for (int i = 0; i <objectives.Length; i++)
           {
+
                objectives[i].ResetObjective();
           }
      }
@@ -40,6 +41,7 @@ public class ObjectivesSystem : MonoBehaviour
           objectiveBox.text = boxText;
      }
      
+     //Update for destroy type objectives
      public void DestroyUpdate(string destroyedName)
      {
           for (int i = 0; i < objectives.Length; i++)
@@ -51,6 +53,7 @@ public class ObjectivesSystem : MonoBehaviour
           }
      }
 
+     //Update for collect type objectives
      public void CollectUpdate()
      {
           for(int i = 0; i < objectives.Length; i++)
@@ -60,7 +63,8 @@ public class ObjectivesSystem : MonoBehaviour
                     objectives[i].IncreaseCurrent();
           }
      }
-     
+
+     //Update for tower type objectives
      public void TowerUpdate()
      {
           for(int i = 0; i < objectives.Length; i++)
@@ -70,15 +74,17 @@ public class ObjectivesSystem : MonoBehaviour
           }
      }
 
-     public void CheckpointUpdate()
+     //Update after a checkpoint
+     public void CheckpointUpdate(int phase)
      {
           for (int i = 0; i < objectives.Length; i++)
           {
                if (objectives[i].status == Objective.ObjectiveStatus.Active)
-                    objectives[i].CheckpointUpdate();
+                    objectives[i].CheckpointUpdate(phase);
           }
      }
  
+     //Activates objectives in the argument
      public void ActivateObjectives(int obj1, int obj2)
      {
           if (objectives[obj1].status == Objective.ObjectiveStatus.Inactive)
@@ -91,6 +97,10 @@ public class ObjectivesSystem : MonoBehaviour
           }
      }
      
+     //Properly updates objectives in the argument based on their type
+     //Impossible objectives get cancelled
+     //Failproof get completed
+     //Active status objectives get marked as failed
      public void CompleteAutomatic(int obj1, int obj2)
      {
           if (objectives[obj1].type == Objective.ObjectiveType.Failproof)
@@ -122,6 +132,17 @@ public class ObjectivesSystem : MonoBehaviour
                {
                     objectives[obj2].status = Objective.ObjectiveStatus.Failed;
                }
+          }
+     }
+
+     //Resets the objectives at the beginning of a scene
+     //Probably a better way to do this
+     public void ResetReset()
+     {
+          for (int i = 0; i < objectives.Length; i++)
+          {
+
+               objectives[i].ResetReset();
           }
      }
 }

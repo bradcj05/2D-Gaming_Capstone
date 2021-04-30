@@ -24,6 +24,8 @@ public class SceneControllerCore : MonoBehaviour
     protected void Start()
     {
         objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
+        if (checkpointAt == 0)
+          objSys.ResetReset();
         hud = GameObject.Find("HUD").GetComponent<Sidebars>();
         mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
     }
@@ -74,7 +76,7 @@ public class SceneControllerCore : MonoBehaviour
                 if (objSys == null)
                     objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
                 checkpointAt = i;
-                objSys.CheckpointUpdate();
+                objSys.CheckpointUpdate(checkpointAt);
                 Debug.Log("Current Phase: " + checkpointAt);
             }
         }

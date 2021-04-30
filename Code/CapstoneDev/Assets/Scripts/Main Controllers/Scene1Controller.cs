@@ -53,7 +53,7 @@ public class Scene1Controller : SceneControllerCore
                 if (objSys == null)
                     objSys = GameObject.Find("HUD").GetComponent<ObjectivesSystem>();
                 checkpointAt = i;
-                objSys.CheckpointUpdate();
+                objSys.CheckpointUpdate(checkpointAt);
                 Debug.Log("Current Phase: " + checkpointAt);
             }
 

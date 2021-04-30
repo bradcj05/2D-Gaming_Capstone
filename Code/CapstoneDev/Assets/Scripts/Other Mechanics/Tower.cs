@@ -32,6 +32,7 @@ public class Tower : MonoBehaviour
           }
      }
 
+     //Increase the bar when the player hovers over the tower
      void OnTriggerStay2D(Collider2D collision)
      {
           if(collision.tag == "ActivePlayer")
@@ -46,6 +47,7 @@ public class Tower : MonoBehaviour
           }
      }
 
+     //Resets the bar if not filled when the player exits the tower's collider
      void OnTriggerExit2D(Collider2D collision)
      {
           if(collision.tag == "ActivePlayer" && !towerJammed)

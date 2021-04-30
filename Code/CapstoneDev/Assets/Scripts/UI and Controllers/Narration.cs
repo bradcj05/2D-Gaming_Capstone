@@ -63,6 +63,7 @@ public class Narration : MonoBehaviour
         }
     }
 
+     //Changes which line set is being read from, with the one with highest priority being used
     public void ChangeLineSet(LineSet newSet)
     {
         if ((newSet != null && currentSet == null) || newSet.priority >= currentSet.priority)

@@ -31,7 +31,7 @@ public class Objective : ScriptableObject
      public GameObject target;
      public int reward;
      public int requiredAmount;
-     protected int currentAmount;
+     public int currentAmount;
 
      //To help with keeping objectives completed after retrying at a checkpoint
      protected static ObjectiveStatus resetStatus = ObjectiveStatus.Inactive;
@@ -43,6 +43,7 @@ public class Objective : ScriptableObject
           currentAmount = 0;
      }
 
+     //Checks to see if the objective should be complete
      void CheckCompletion()
      {
           if(currentAmount >= requiredAmount && status == ObjectiveStatus.Active)
@@ -52,6 +53,7 @@ public class Objective : ScriptableObject
           }
      }
 
+     //Increases the tally towards completing the objective
      public void IncreaseCurrent()
      {
           if (status == ObjectiveStatus.Active)
@@ -61,16 +63,28 @@ public class Objective : ScriptableObject
           }
      }
 
+     //Returns the tally for the objective
      public int GetCurrentAmount()
      {
           return currentAmount;
      }
 
-     public void CheckpointUpdate()
+     //Updates after a checkpoint and ensures a proper reset at the beginning of a scene
+     public void CheckpointUpdate(int phase)
      {
-          resetAmount = currentAmount;
+          if (phase != 0)
+          {
+               resetAmount = currentAmount;
+               ResetObjective();
+          }
+          else
+          {
+               resetAmount = -1;
+               ResetObjective();
+          }
      }
 
+     //Resets the objectives to how they were at the last checkpoint
      public void ResetObjective()
      {
           status = resetStatus;
@@ -79,5 +93,13 @@ public class Objective : ScriptableObject
                currentAmount = 0;
           else
                currentAmount = resetAmount;
+     }
+
+     //Resets the objectives at the beginning of a scene
+     //Probably a better way to do this
+     public void ResetReset()
+     {
+          resetAmount = -1;
+          currentAmount = 0;
      }
 }

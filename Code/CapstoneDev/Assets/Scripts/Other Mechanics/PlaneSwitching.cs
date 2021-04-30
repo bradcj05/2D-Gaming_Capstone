@@ -15,6 +15,7 @@ public class PlaneSwitching : MonoBehaviour
 
     Vector3 startPos;
      protected bool isDead = false;
+     public bool defaultSquad;
 
      Sidebars bars;
 
@@ -23,6 +24,11 @@ public class PlaneSwitching : MonoBehaviour
     {
           if (SceneManager.GetActiveScene().name != "Hangar")
           {
+               if (defaultSquad && Progression.progress[0] == 1)
+                    transform.gameObject.SetActive(false);
+               else if (!defaultSquad && Progression.progress[0] == 1)
+                    transform.parent = GameObject.Find("Main Camera").transform;
+
                size = squadronSize;
                switchTimer = 0f;
                isDead = false;
