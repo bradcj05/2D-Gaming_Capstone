@@ -3,6 +3,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Gun : WeaponsClassification
 {
@@ -37,6 +39,12 @@ public class Gun : WeaponsClassification
     // Code to have variable bulletSpawns
     public Transform[] bulletSpawns;
 
+    // Audio source to play gunshot sounds
+    public AudioSource soundSource;
+    // Array of audio clips for multiple gunshot sound effects
+    public AudioClip[] gunShots;
+    System.Random rand = new System.Random();
+
     public new void Start()
     {
         base.Start();
@@ -44,6 +52,19 @@ public class Gun : WeaponsClassification
             ammo = maxAmmo;
         else
             maxAmmo = ammo;
+
+          // Try to assign
+          if (SceneManager.GetActiveScene().name != "Hangar")
+          {
+               try
+               {
+                    soundSource = GameObject.Find("GameManager").transform.GetComponent<AudioSource>();
+               }
+               catch (System.Exception e)
+               {
+                    Debug.LogException(e, this);
+               } 
+          }
     }
 
     public void SetUp()
@@ -188,6 +209,12 @@ public class Gun : WeaponsClassification
                 if (ammo > 0)
                 {
                     ammo--;
+                }
+
+                if (gunShots.Length > 0)
+                {
+                    int soundToUse = rand.Next(0, gunShots.Length);
+                    soundSource.PlayOneShot(gunShots[soundToUse]);
                 }
             }
         }
