@@ -44482,6 +44482,7 @@ MonoBehaviour:
   bossBattleId: 6
   bossWait: 4
   mixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
+  sfxMixer: {fileID: 24100000, guid: bfcf541857d57174a8f9d3d6a87a1ea7, type: 2}
 --- !u!4 &1423632346
 Transform:
   m_ObjectHideFlags: 0
