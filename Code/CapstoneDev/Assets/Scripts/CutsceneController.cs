@@ -17,7 +17,7 @@ public class CutsceneController : MonoBehaviour
     bool airosArrived = false;
     bool introStarted = false;
     public float timeforintro = 10;
-    public float timefortutorial = 15;
+    public float timefortutorial = 10;
     public float timeforEucalypso = 6;
     public float timeforAiros = 10;
     public GameObject Scene1Airos;
@@ -26,6 +26,7 @@ public class CutsceneController : MonoBehaviour
     GameObject player;
     Animator airosMove;
     Animator condorMove;
+    public GameObject ControlsBillboard = null;
     float timestart, timepassed;
     float timeEucalypsoAttack = -1;
     float timeAirosIntro = -1;
@@ -49,8 +50,9 @@ public class CutsceneController : MonoBehaviour
 
         if (introNeeded && progression == 0 && !introStarted && player != null)
         {
-            player.GetComponent<Player>().SeizeMovement();
             introStarted = true;
+            player.GetComponent<Player>().SeizeMovement();
+            if (ControlsBillboard != null) ControlsBillboard.SetActive(true);
         }
         
         isTutorialObjectiveDone = gameObject.GetComponent<Tutorial>().ObjectivesDone();
@@ -58,12 +60,14 @@ public class CutsceneController : MonoBehaviour
         if (timepassed - timestart > timeforintro && introNeeded)
         {
             if (player != null) player.GetComponent<Player>().ReleaseMovement();
+            
             if (isTutorialObjectiveDone && !tutorialActivated) StartTutorial();
         }
 
         if (timepassed - timestart > timefortutorial + timeforintro && tutorialActivated && introNeeded)
         {
             tutorialComplete = true;
+            if (ControlsBillboard != null) ControlsBillboard.SetActive(false);
         }
 
         //Tutorial checks
