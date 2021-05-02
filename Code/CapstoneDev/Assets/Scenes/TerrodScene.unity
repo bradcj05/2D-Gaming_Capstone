@@ -2911,7 +2911,7 @@ MonoBehaviour:
     - {fileID: 918794196}
     timer: 0
     waveLength: 0
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1256306184}
 --- !u!1 &1572864538
 GameObject:
   m_ObjectHideFlags: 0
