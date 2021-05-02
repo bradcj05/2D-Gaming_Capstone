@@ -191,9 +191,14 @@ MonoBehaviour:
   targetTags: []
   visibleRangeInDegrees: 90
   visibleDistance: 50
+  firingEnabled: 1
   bulletSpawns:
   - {fileID: 8410924364880801706}
   - {fileID: 8410924366570895860}
+  soundSource: {fileID: 0}
+  gunShots:
+  - {fileID: 8300000, guid: 2fb9177ca4c7e4548a3916bf076a7ef1, type: 3}
+  - {fileID: 8300000, guid: 1584a0117fff9ea4bb441d99dc37ba00, type: 3}
   rotateSpeed: 0.4
   limitRotation: 0
   limitRotationCW: 180

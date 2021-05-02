@@ -5292,6 +5292,26 @@ PrefabInstance:
       propertyPath: devModeUnlocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8583940892549331350, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: gunShots.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583940892549331350, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: gunShots.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35cd4b6fcadd48a4f9517b8fb043ac13, type: 3}
+    - target: {fileID: 8583940892549331350, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: gunShots.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 316bd6a1e8a32844f941038a3c3db93e, type: 3}
+    - target: {fileID: 8583940892549331350, guid: 620f5d37d30baab449af0727a80947d8,
+        type: 3}
+      propertyPath: gunShots.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35cd4b6fcadd48a4f9517b8fb043ac13, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620f5d37d30baab449af0727a80947d8, type: 3}
 --- !u!1 &155461959 stripped
