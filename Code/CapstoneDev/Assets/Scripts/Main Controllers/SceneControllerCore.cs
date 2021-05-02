@@ -19,6 +19,8 @@ public class SceneControllerCore : MonoBehaviour
 
     // For music
     public AudioMixer mixer;
+    // For sound effects
+    public AudioMixer sfxMixer;
 
     // Start is called before the first frame update
     protected void Start()
@@ -28,6 +30,7 @@ public class SceneControllerCore : MonoBehaviour
           objSys.ResetReset();
         hud = GameObject.Find("HUD").GetComponent<Sidebars>();
         mixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("musicVolume", 0.8f)) * 20f);
+        sfxMixer.SetFloat("volume", Mathf.Log(PlayerPrefs.GetFloat("sfxVolume", 0.8f)) * 20f);
     }
 
     // Update is called once per frame

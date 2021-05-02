@@ -2911,6 +2911,7 @@ MonoBehaviour:
     - {fileID: 918794196}
     timer: 0
     waveLength: 0
+  gameOverScreen: {fileID: 0}
 --- !u!1 &1572864538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,6 +3661,7 @@ MonoBehaviour:
   bossBattleId: 0
   bossWait: 0
   mixer: {fileID: 24100000, guid: c967b4b768a2d1e469bb2b66d04fd31c, type: 2}
+  sfxMixer: {fileID: 24100000, guid: bfcf541857d57174a8f9d3d6a87a1ea7, type: 2}
 --- !u!4 &1954871272
 Transform:
   m_ObjectHideFlags: 0
