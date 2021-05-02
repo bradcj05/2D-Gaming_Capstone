@@ -112,7 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   levelBoss: {fileID: 0}
-  gameOverMenu: {fileID: 0}
+  gameOverMenu: {fileID: 1536955576157514690, guid: 71eec059a3e95f042b123be40bf0035c,
+    type: 3}
   levelEndTime: 4
   lineSetToUse: {fileID: 11400000, guid: 84cf7b9226bbe0649850758d1b4ab30f, type: 2}
 --- !u!114 &6970381199646618520

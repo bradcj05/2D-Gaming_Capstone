@@ -61,7 +61,7 @@ public class Scene2Controller : SceneControllerCore
             switch (i)
             {
                 case 0: // Boss
-                    hud.SetPhaseText("!-- BOSS --!");
+                    hud.SetPhaseText("BOSS");
                     objSys.ActivateObjectives(i, -1);
                     break;
                 default:

@@ -41,7 +41,9 @@ public class Player : Destructible
     public bool left, right, up, down = false; // for the triggers
 
     // DEV MODE DEV MODE DEV MODE!!! - "V" key to activate
-    public bool devMode = false;
+    public bool devModeUnlocked = false;
+    protected bool devMode = false; // Unlimited (9999) power
+    protected bool invincible = false;
 
     new void Start()
     {
@@ -111,6 +113,17 @@ public class Player : Destructible
             {
                 activeShellGroup = (activeShellGroup + numberOfShellGroups - 1) % (numberOfShellGroups + 1);
             }
+        }
+
+        // Dev mode activate
+        if(devModeUnlocked && Input.GetKeyDown(KeyCode.V))
+        {
+            devMode = !devMode;
+        }
+        
+        if(devModeUnlocked && Input.GetKeyDown(KeyCode.B))
+        {
+            invincible = !invincible;
         }
         /* if (Input.GetKeyDown(KeyCode.LeftArrow)) // left  !!!CANNOT TAKE TWO KEYS AT ONCE!!!
          {
@@ -279,7 +292,7 @@ public class Player : Destructible
     //Player Death
     public new void Die()
     {
-        if (isDestroyed == 1 && !devMode)
+        if (isDestroyed == 1 && !invincible)
         {
             //Play death animation
             HUD.GetComponent<Narration>().ChangeLineSet(lineSetToUse);
@@ -317,6 +330,11 @@ public class Player : Destructible
     public void setSecondaryAmmo(Text input)
     {
         secondaryAmmo = input;
+    }
+
+    public bool IsDevMode()
+    {
+        return devMode;
     }
 
     // Other helper functions

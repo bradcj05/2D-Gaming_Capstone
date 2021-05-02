@@ -299,7 +299,7 @@ MonoBehaviour:
   groundCrater: 0
   coin: {fileID: 0}
   hasAnimator: 0
-  parent: {fileID: 0}
+  parent: {fileID: 5671753289216525528}
   CenterOfMass: {x: 0, y: 0, z: 0}
   collidableTags: []
   mass: 10

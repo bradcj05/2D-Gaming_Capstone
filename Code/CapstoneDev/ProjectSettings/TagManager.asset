@@ -21,6 +21,7 @@ TagManager:
   - Airos
   - IntroCondor
   - IntroAiros
+  - ControlsBillboard
   layers:
   - Default
   - TransparentFX

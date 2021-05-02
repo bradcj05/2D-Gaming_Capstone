@@ -34,7 +34,7 @@ public class Battle : MonoBehaviour
     [SerializeField] private Wave[] waveArray;
 
     private State state;
-     public GameObject gameOverScreen;
+    public GameObject gameOverScreen;
 
     protected void Awake()
     {
@@ -63,7 +63,7 @@ public class Battle : MonoBehaviour
 
     public void StartBattle()
     {
-          if (!gameOverScreen.activeSelf)
+          if (gameOverScreen == null || !gameOverScreen.activeSelf)
           {
                Debug.Log("StartBattle");
                state = State.Active;

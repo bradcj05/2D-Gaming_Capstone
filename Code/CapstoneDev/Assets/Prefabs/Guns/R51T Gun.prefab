@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: ac7f211365dc7b44fa30863e7470408d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,13 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e87d4f3ecdb925459f120fb3a38a0a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  grade: 1
-  category: 1
   shellTypes:
   - {fileID: 4317993848219017595, guid: 9ac97ed68984fb34986275c7e13ff487, type: 3}
   - {fileID: 4929854973103880808, guid: 155b3667690212048ab6a43ba7ad2dab, type: 3}
   waitTime: 1
+  type: 2
+  grade: 1
+  category: 1
   spread: 3
   powerBuff: 0
   speedBuff: 0
