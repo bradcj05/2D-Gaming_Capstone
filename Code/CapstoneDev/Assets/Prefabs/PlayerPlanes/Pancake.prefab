@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1796143006649410900}
   - component: {fileID: 4427152316762893356}
   - component: {fileID: 989908066360215635}
+  - component: {fileID: 4280732385744693128}
   m_Layer: 8
   m_Name: Pancake
   m_TagString: Player
@@ -386,6 +387,14 @@ PolygonCollider2D:
       - {x: -0.59499997, y: -3.37}
       - {x: -0.545, y: -3.26}
       - {x: -0.545, y: -2.72}
+--- !u!81 &4280732385744693128
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2183660915927818866}
+  m_Enabled: 1
 --- !u!1001 &6001300353066968754
 PrefabInstance:
   m_ObjectHideFlags: 0

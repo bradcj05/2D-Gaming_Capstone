@@ -58,7 +58,8 @@ public class Gun : WeaponsClassification
           {
                try
                {
-                    soundSource = GameObject.Find("GameManager").transform.GetComponent<AudioSource>();
+                //soundSource = GameObject.Find("GameManager").transform.GetComponent<AudioSource>();
+                soundSource = gameObject.GetComponent<AudioSource>();
                }
                catch (System.Exception e)
                {
@@ -213,6 +214,7 @@ public class Gun : WeaponsClassification
 
                 if (gunShots.Length > 0)
                 {
+                    soundSource.pitch = rand.Next(1, 20) % 2f;
                     int soundToUse = rand.Next(0, gunShots.Length);
                     soundSource.PlayOneShot(gunShots[soundToUse]);
                 }

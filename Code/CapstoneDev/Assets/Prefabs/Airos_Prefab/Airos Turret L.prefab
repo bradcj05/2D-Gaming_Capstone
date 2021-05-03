@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8524875316918628160}
   - component: {fileID: 8394705290961076878}
   - component: {fileID: 6643389657022654752}
+  - component: {fileID: 222478128017124191}
   m_Layer: 10
   m_Name: Airos Turret L
   m_TagString: Enemy
@@ -191,11 +192,17 @@ MonoBehaviour:
   targetTags: []
   visibleRangeInDegrees: 90
   visibleDistance: 50
+  firingEnabled: 1
   bulletSpawns:
   - {fileID: 7846107219708766423}
   - {fileID: 7846107220772301161}
   - {fileID: 7846107220748141981}
+  soundSource: {fileID: 0}
+  gunShots: []
   rotateSpeed: 1.5
+  limitRotation: 0
+  limitRotationCW: 180
+  limitRotationCCW: 180
   target: {fileID: 0}
 --- !u!114 &8394705290961076878
 MonoBehaviour:
@@ -266,6 +273,102 @@ PolygonCollider2D:
       - {x: 0.20622383, y: -0.12829871}
       - {x: 0.18819363, y: 0.12484075}
       - {x: 0.28622383, y: 0.32170126}
+--- !u!82 &222478128017124191
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846107220638976835}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7846107220748141982
 GameObject:
   m_ObjectHideFlags: 0

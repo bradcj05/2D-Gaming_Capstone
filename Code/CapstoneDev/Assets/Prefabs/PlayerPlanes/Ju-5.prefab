@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4439171013570698791}
   - component: {fileID: 4858288967080734106}
   - component: {fileID: 4544934680833057467}
+  - component: {fileID: 8873936796138682383}
   m_Layer: 8
   m_Name: Ju-5
   m_TagString: Player
@@ -228,6 +229,14 @@ PolygonCollider2D:
       - {x: 0.065, y: -1.04}
       - {x: 0.53499997, y: -1.04}
       - {x: 0.555, y: -1.02}
+--- !u!81 &8873936796138682383
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191979653864110402}
+  m_Enabled: 1
 --- !u!1001 &748909995540033588
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &1151481463439641121
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 9122240790433047819}
 --- !u!1 &1196560049047465744
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +437,7 @@ SpriteRenderer:
   m_Size: {x: 3.96, y: 9.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1571096084824814876
@@ -704,7 +702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &1742676034705855852
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +716,7 @@ GameObject:
   - component: {fileID: 1746120138275466258}
   - component: {fileID: 2773999130068875512}
   - component: {fileID: 1933747026493025938}
+  - component: {fileID: 6670822274825646559}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT (1)
   m_TagString: Enemy
@@ -791,7 +789,7 @@ SpriteRenderer:
   m_Size: {x: 1.82, y: 1.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2950377142593911742
@@ -827,18 +825,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09efb3e351c6e9347afaa4198568c38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  defense: 0
-  hb: {fileID: 7539810544495557995}
-  crater: {fileID: 6337988809978362316, guid: 58dbe780e469019449c2d626276280cb, type: 3}
-  bulletSpawn: {fileID: 6031278772410675228}
-  bulletSpawn2: {fileID: 2182068106030855204}
-  shellType: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
-    type: 3}
-  bulletSpeed: 10
+  type: 0
+  grade: 0
+  category: 0
+  shellTypes: []
   waitTime: 5
-  rb: {fileID: 2950377142593911742}
-  player: {fileID: 0}
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  recoilForce: 0
+  ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
+  firingEnabled: 1
+  bulletSpawns: []
+  soundSource: {fileID: 0}
+  gunShots: []
+  rotateSpeed: 1
+  limitRotation: 0
+  limitRotationCW: 180
+  limitRotationCCW: 180
+  target: {fileID: 0}
 --- !u!60 &2773999130068875512
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -900,6 +911,102 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 2.34, y: -1.0999999}
   m_DampingRatio: 1
   m_Frequency: 1
+--- !u!82 &6670822274825646559
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742676034705855852}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1909895763893614665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 7798294912356797816}
 --- !u!1 &2352064769120955921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 5248602293837254557}
 --- !u!1 &3089827747515101833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &3450618594510881660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 2584252062607288735}
 --- !u!1 &3569696603481797217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &3715729394518204734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,6 +1830,7 @@ GameObject:
   - component: {fileID: 922163504860534836}
   - component: {fileID: 1219643015901902710}
   - component: {fileID: 5985504822157595355}
+  - component: {fileID: 3391096660766126319}
   m_Layer: 0
   m_Name: TerrodSmallTurret_EDIT
   m_TagString: Enemy
@@ -1800,7 +1903,7 @@ SpriteRenderer:
   m_Size: {x: 1.82, y: 1.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &3254349730296300958
@@ -1836,18 +1939,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09efb3e351c6e9347afaa4198568c38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  defense: 0
-  hb: {fileID: 715458172522035164}
-  crater: {fileID: 6337988809978362316, guid: 58dbe780e469019449c2d626276280cb, type: 3}
-  bulletSpawn: {fileID: 5558055605621024182}
-  bulletSpawn2: {fileID: 4622118846608279677}
-  shellType: {fileID: 8386605503765369876, guid: cac9e50877d2ada498d708034c463540,
-    type: 3}
-  bulletSpeed: 10
+  type: 0
+  grade: 0
+  category: 0
+  shellTypes: []
   waitTime: 5
-  rb: {fileID: 3254349730296300958}
-  player: {fileID: 0}
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  recoilForce: 0
+  ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
+  firingEnabled: 1
+  bulletSpawns: []
+  soundSource: {fileID: 0}
+  gunShots: []
+  rotateSpeed: 1
+  limitRotation: 0
+  limitRotationCW: 180
+  limitRotationCCW: 180
+  target: {fileID: 0}
 --- !u!60 &1219643015901902710
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1909,6 +2025,102 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -2.44, y: -1.0799999}
   m_DampingRatio: 1
   m_Frequency: 1
+--- !u!82 &3391096660766126319
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956354324052869860}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &4694785858668283144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,7 +2263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1101147032256527334}
 --- !u!1 &5068049600885249594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &5199122316354569628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,7 +2465,7 @@ SpriteRenderer:
   m_Size: {x: 10.8, y: 9.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &4303817118163597469
@@ -2291,13 +2501,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2276cb130672467438d1c653f03e4840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   rig: {fileID: 4303817118163597469}
   turretRig1: {fileID: 3254349730296300958}
   turretRig2: {fileID: 2950377142593911742}
   turretRigMain: {fileID: 2643179448242269268}
   flak1: {fileID: 6699794537591042036}
   flak2: {fileID: 6771187771981425972}
+  track1: {fileID: 0}
+  track2: {fileID: 0}
+  moveSpeed: 5
+  rotateSpeed: 0.01
+  reverseSpeed: 0.35
+  optimumDistance: 15
+  accelTime: 1
+  decelTime: 0.5
+  crater: {fileID: 0}
+  explosion: {fileID: 0}
+  explosionDuration: 2
 --- !u!1 &5709970727545695395
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 5517236404880213611}
 --- !u!1 &5944349014160653506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,7 +2737,7 @@ SpriteRenderer:
   m_Size: {x: 2.41, y: 4.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6102482597230681664
@@ -2661,7 +2880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 5547199044844046087}
 --- !u!1 &6699794537591042036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,7 +2963,7 @@ SpriteRenderer:
   m_Size: {x: 1.88, y: 4.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!60 &1873967736848730664
@@ -2843,7 +3061,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   defense: 0
-  hb: {fileID: 5318004698286063630}
+  healthBar: {fileID: 0}
+  defenseBar: {fileID: 0}
+  explosion: {fileID: 0}
+  hasExplosionChain: 0
+  explosionDuration: 2
+  crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
+  hasAnimator: 0
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
   gun: {fileID: 3668704708801179685}
   shellType: {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5,
     type: 3}
@@ -2935,7 +3165,7 @@ SpriteRenderer:
   m_Size: {x: 2.18, y: 4.31}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!60 &4162285298940391343
@@ -3027,7 +3257,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   defense: 0
-  hb: {fileID: 7057634519257926580}
+  healthBar: {fileID: 0}
+  defenseBar: {fileID: 0}
+  explosion: {fileID: 0}
+  hasExplosionChain: 0
+  explosionDuration: 2
+  crater: {fileID: 0}
+  groundCrater: 0
+  coin: {fileID: 0}
+  hasAnimator: 0
+  parent: {fileID: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  collidableTags: []
+  mass: 10
   gun: {fileID: 4733831525521122984}
   shellType: {fileID: 1722760165447307521, guid: 9914ef04c594ce4478bac7bafbd562a5,
     type: 3}
@@ -3313,7 +3555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 794066c64e127834f92fb5b73d76271f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &8058745853294978459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,7 +3636,7 @@ SpriteRenderer:
   m_Size: {x: 10.8, y: 9.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8096817794911015943
@@ -3538,7 +3779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704f74ba7181c4ba8e4f67cf451e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1013851466947337531}
 --- !u!1 &8136382699227227409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,7 +3934,7 @@ SpriteRenderer:
   m_Size: {x: 3.55, y: 9.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8307063317220208011
@@ -3776,7 +4016,7 @@ SpriteRenderer:
   m_Size: {x: 2.51, y: 4.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8992804577924838666
@@ -3793,6 +4033,7 @@ GameObject:
   - component: {fileID: 1046880143066191726}
   - component: {fileID: 6812275203410375421}
   - component: {fileID: 7881298080091199498}
+  - component: {fileID: 6012309261319121868}
   m_Layer: 0
   m_Name: TerrodTurret
   m_TagString: Enemy
@@ -3864,7 +4105,7 @@ SpriteRenderer:
   m_Size: {x: 3.42, y: 3.78}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &2643179448242269268
@@ -3987,18 +4228,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09efb3e351c6e9347afaa4198568c38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  defense: 0
-  hb: {fileID: 6344096086306429570}
-  crater: {fileID: 8649370860654125051, guid: 31473258a54f92145a01c74a285e9709, type: 3}
-  bulletSpawn: {fileID: 5385493391951554507}
-  bulletSpawn2: {fileID: 8422973232714488559}
-  shellType: {fileID: 1927717893260739586, guid: 8b44b6ebc0c217f4b92e142979d95759,
-    type: 3}
-  bulletSpeed: 5
+  type: 0
+  grade: 0
+  category: 0
+  shellTypes: []
   waitTime: 5
-  rb: {fileID: 2643179448242269268}
-  player: {fileID: 0}
+  spread: 0
+  powerBuff: 0
+  speedBuff: 0
+  recoilForce: 0
+  ammo: -1
+  shootWhenNotMoving: 0
+  movementEpsilon: 0.3
+  shootWhenTargetVisible: 0
+  targetTags: []
+  visibleRangeInDegrees: 90
+  visibleDistance: 50
+  firingEnabled: 1
+  bulletSpawns: []
+  soundSource: {fileID: 0}
+  gunShots: []
+  rotateSpeed: 1
+  limitRotation: 0
+  limitRotationCW: 180
+  limitRotationCCW: 180
+  target: {fileID: 0}
 --- !u!255 &7881298080091199498
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -4017,6 +4271,102 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.080000006, y: 0.84000015}
   m_DampingRatio: 1
   m_Frequency: 1
+--- !u!82 &6012309261319121868
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8992804577924838666}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9183365948673619127
 GameObject:
   m_ObjectHideFlags: 0

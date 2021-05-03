@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6973898103469409745}
   - component: {fileID: 6973898103469409746}
   - component: {fileID: 1124189146208134926}
+  - component: {fileID: 155156964056054775}
   m_Layer: 8
   m_Name: P62
   m_TagString: ActivePlayer
@@ -375,6 +376,14 @@ PolygonCollider2D:
       - {x: 0.084493406, y: -4.316002}
       - {x: 0.1744934, y: -4.216002}
       - {x: 0.2344934, y: -4.0360017}
+--- !u!81 &155156964056054775
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973898103469409744}
+  m_Enabled: 1
 --- !u!1001 &727907165716622256
 PrefabInstance:
   m_ObjectHideFlags: 0
